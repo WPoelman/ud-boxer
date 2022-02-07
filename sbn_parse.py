@@ -105,8 +105,8 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
             elif index_match := INDEX_PATTERN.match(token):
                 index = int(index_match.group(0))
 
-                assert len(
-                    to_do_stack) == 1, f'Expected clean stack for index {token} {to_do_stack}\n{sbn_line}'
+                assert len(to_do_stack) == 1, \
+                    f'Error parsing index step "{token}" in:\n{sbn_line}'
                 target = to_do_stack.pop()
 
                 edges.append((
@@ -126,8 +126,8 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 name = ' '.join(name_parts)
 
                 # Should be the edge linking this node to the previous
-                assert len(
-                    to_do_stack) == 1, f'Expected clean to do for name {token} {to_do_stack}\n{sbn_line}'
+                assert len(to_do_stack) == 1, \
+                    f'Error parsing name const step "{token}" in:\n{sbn_line}'
                 target = to_do_stack.pop()
 
                 nodes.append((
@@ -142,8 +142,8 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 const_node_id += 1
             elif constant_match := CONSTANTS_PATTERN.match(token):
                 # Should be the edge linking this node to the previous
-                assert len(
-                    to_do_stack) == 1, f'Expected clean to do for const {token} {to_do_stack}\n{sbn_line}'
+                assert len(to_do_stack) == 1, \
+                    f'Error parsing const step "{token}" in:\n{sbn_line}'
                 target = to_do_stack.pop()
 
                 nodes.append((
