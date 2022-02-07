@@ -15,18 +15,22 @@ INDEX_PATTERN = re.compile(r'(-|\+)(\d)')
 
 @dataclass
 class Node:
-    id: str
     type: str
     meta: Optional[Dict[str, Any]] = None
+
+    def __hash__(self) -> int:
+        return hash(self.type, self.meta)
 
 
 @dataclass
 class Edge:
-    id: str
     type: str
     from_node: str
     to_node: str
     meta: Optional[Dict[str, Any]] = None
+
+    def __hash__(self) -> int:
+        return hash(self.type, self.from_node, self.to_node, self.meta)
 
 
 def parse_sbn(input_string):
