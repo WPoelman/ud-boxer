@@ -13,9 +13,6 @@ from typing import Any, Dict, List, Tuple
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# TODO: handle constants that look like indices: 
-#   - pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
-
 # Whitespace is essential since there can be % signs in sense ids and comments
 SBN_COMMENT = r' % '
 SBN_COMMENT_LINE = r'%%%'
@@ -95,7 +92,7 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
     ''' Creates a graph from a single SBN string. '''
 
     # First split everything in lines
-    split_lines = input_string.split('\n')
+    split_lines = input_string.rstrip('\n').split('\n')
 
     # Separate the actual SBN and the comments
     temp_lines = []
@@ -120,6 +117,9 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
 
     nodes, edges = [starting_box], []
     const_node_id, wn_node_id = 1000, 0  # TODO: this is dumb, find nicer way
+
+    min_wn_id = 0
+    max_wn_id = len(temp_lines) - 1
 
     # Not really a stack, if it has > 1 item multiple asserts fail, but it gets
     # treated as a stack to catch possible errors.
@@ -184,16 +184,43 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 active_box_id = new_box_id
             elif index_match := INDEX_PATTERN.match(token):
                 index = int(index_match.group(0))
+                to_id = wn_node_id - 1 + index
 
                 assert len(to_do_stack) == 1, \
                     f'Error parsing index step "{token}" in:\n{sbn_line}'
                 target = to_do_stack.pop()
 
-                edges.append((
-                    wn_node_id - 1,  # from
-                    wn_node_id - 1 + index,  # to
-                    {'type': SBN_EDGE.ROLE, 'token': target}
-                ))
+                if min_wn_id <= to_id <= max_wn_id:
+                    edges.append((
+                        wn_node_id - 1,  # from
+                        to_id,  # to
+                        {'type': SBN_EDGE.ROLE, 'token': target}
+                    ))
+                else:
+                    # This is special case where a constant looks like an idx.
+                    # Example: pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
+                    # This is detected by checking if the provided index points
+                    # at an 'impossible' line (sense) in the file.
+                    nodes.append((
+                        const_node_id,
+                        {
+                            'type': SBN_NODE.CONSTANT,
+                            'token': token,
+                            'comment': comment
+                        }
+                    ))
+                    edges.append((
+                        wn_node_id - 1,
+                        const_node_id,
+                        {'type': SBN_EDGE.ROLE, 'token': target}
+                    ))
+                    edges.append((
+                        active_box_id,
+                        const_node_id,
+                        {'type': SBN_EDGE.BOX_CONNECT, 'token': 'box'}
+                    ))
+
+                    const_node_id += 1
             elif NAME_CONSTANT_PATTERN.match(token):
                 name_parts = [token]
 
@@ -278,7 +305,6 @@ def main():
             total += 1
             try:
                 nodes, edges = parse_sbn(f.read())
-
                 # This is just to test to make sure the nodes and edges get
                 # parsed correctly and are in the proper format for nx.
                 G = nx.Graph()
