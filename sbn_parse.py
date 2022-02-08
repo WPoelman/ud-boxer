@@ -13,6 +13,9 @@ from typing import Any, Dict, List, Tuple
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# TODO: handle constants that look like indices: 
+#   - pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
+
 # Whitespace is essential since there can be % signs in sense ids and comments
 SBN_COMMENT = r' % '
 SBN_COMMENT_LINE = r'%%%'
