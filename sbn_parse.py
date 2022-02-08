@@ -1,7 +1,7 @@
 '''
 
 TODO:
-    - Create special nodes for NEGATION that connect to correct previous 
+    - Create special nodes for NEGATION that connect to correct previous
       'subgraph' (or previously parsed nodes), currently these are not
       parsed correctly.
 '''
@@ -20,10 +20,16 @@ SBN_COMMENT = r' % '
 SBN_COMMENT_LINE = r'%%%'
 CONSTANTS = '|'.join([
     'speaker', 'hearer', 'now', 'unknown_ref',
-    'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
+    'monday', 'tuesday', 'wednesday', 'thursday',
+    'friday', 'saturday', 'sunday'
 ])
 
-NEGATION_ROLE = r'NEGATION'
+NEW_BOX_INDICATORS = '|'.join([
+    'ALTERNATION', 'ATTRIBUTION', 'CONDITION', 'CONSEQUENCE', 'CONTINUATION',
+    'CONTRAST', 'EXPLANATION', 'NECESSITY', 'NEGATION', 'POSSIBILITY',
+    'PRECONDITION', 'RESULT', 'SOURCE'
+])
+NEW_BOX_PATTERN = re.compile(NEW_BOX_INDICATORS)
 
 # The lemma match might seem loose, however there can be a lot of different
 # characters in there: 'r/2.n.01', 'ø.a.01', 'josé_maria_aznar.n.01'
@@ -39,7 +45,7 @@ YEAR_CONSTANT = r'\'([\dX]{4})\''
 QUANTITY_CONSTANT = r'[\+\-\d\?]'
 
 # "Tom got an A on his exam": Value -> "A" NOTE: probably better to catch this
-# with roles instead of constants, for later.
+# with roles, but in all the pmb data this is quite rare.
 VALUE_CONSTANT = r'^[A-Z]$'
 
 # TODO: add named groups to regex so more specific constant types are kept
