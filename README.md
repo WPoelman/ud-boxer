@@ -9,9 +9,14 @@ Source for my master's thesis system for Information Science.
 3. Install dependencies with `pip install -r requirements.txt`
 
 
-## SBN output error: spaces in sense ids
-There are a lot of ids with either a '-' or '_' connecting them and since there are only 3 in the entire dataset, this seems like an error.
+## SBN output error?
+Most ids connect parts together with either a '-' or '_', since there are only three in the entire EN dataset with spaces in them, this seems like an error.
 
 * `pmb-4.0.0/data/en/silver/p92/d0079/en.drs.sbn`: `cocktails at.v.01`
 * `pmb-4.0.0/data/en/silver/p80/d0541/en.drs.sbn`: `of developed.v.01 `
 * `pmb-4.0.0/data/en/bronze/p60/d0288/en.drs.sbn`: `2 million-dollar.a.01`
+
+- In it/de/nl there are more sense ids with spaces in them, but again, not a lot:
+   * IT: 3 / 106737
+   * DE: 22 / 160692
+   * NL: 23 / 31172
