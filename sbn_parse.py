@@ -30,7 +30,7 @@ WORDNET_SENSE_PATTERN = re.compile(r'(.+)\.(n|v|a|r)\.(\d+)')
 INDEX_PATTERN = re.compile(r'((-|\+)\d)')
 NAME_CONSTANT_PATTERN = re.compile(r'\"(.+)\"|\"(.+)')
 
-# Special constants at the final edges
+# Special constants at the 'ending' nodes
 CONSTANTS = '|'.join([
     'speaker', 'hearer', 'now', 'unknown_ref',
     'monday', 'tuesday', 'wednesday', 'thursday',
@@ -45,7 +45,7 @@ YEAR_CONSTANT = r'\'([\dX]{4})\''
 QUANTITY_CONSTANT = r'[\+\-\d\?]'
 
 # "Tom got an A on his exam": Value -> "A" NOTE: arguably better to catch this
-# with roles, but in all the pmb data this is quite rare.
+# with roles, but all other constants are caught.
 VALUE_CONSTANT = r'^[A-Z]$'
 
 # TODO: add named groups to regex so more specific constant types are kept
@@ -121,7 +121,7 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
     min_wn_id = 0
     max_wn_id = len(temp_lines) - 1
 
-    # Not really a stack, if it has > 1 item multiple asserts fail, but it gets
+    # Not really a stack, asserts fail if it has > 1 item, but it gets
     # treated as a stack to catch possible errors.
     to_do_stack = []
     for sbn_line, comment in temp_lines:
@@ -155,14 +155,14 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 # to.
                 box_index = int(tokens.pop(0))
 
-                # In the entire dataset there are no other indices for box
-                # references than -1. Maybe they are needed later, for now just
-                # assume this is correct (and the assert triggers if different
-                # comes up).
+                # In the entire dataset there are no indices for box
+                # references other than -1. Maybe they are needed later, for 
+                # now just assume this is correct (and the assert triggers if 
+                # something different comes up).
                 assert box_index == -1, \
                     f'Unexpected box index found {box_index}'
 
-                # Again, find nicer way of doing this
+                # TODO: Again, find nicer way of doing this
                 new_box_id = (active_box_id[0], active_box_id[1] + 1)
                 new_box = (
                     new_box_id,
@@ -173,8 +173,7 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 )
                 nodes.append(new_box)
 
-                # Connect the current box to the one indicated by the index,
-                # for now always assumes the last, see comment above.
+                # Connect the current box to the one indicated by the index.
                 edges.append((
                     active_box_id,
                     new_box_id,
@@ -192,8 +191,8 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
 
                 if min_wn_id <= to_id <= max_wn_id:
                     edges.append((
-                        wn_node_id - 1,  # from
-                        to_id,  # to
+                        wn_node_id - 1,
+                        to_id,
                         {'type': SBN_EDGE.ROLE, 'token': target}
                     ))
                 else:
