@@ -127,11 +127,16 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
     for sbn_line, comment in temp_lines:
         tokens = sbn_line.split()
 
+        tok_count = 0
         while len(tokens) > 0:
             # Try to 'consume' all tokens from left to right
             token: str = tokens.pop(0)
 
-            if sense_match := WORDNET_SENSE_PATTERN.match(token):
+            # No need to check all tokens for this since only the first
+            # could be a sense id.
+            if tok_count == 0 and (
+                sense_match := WORDNET_SENSE_PATTERN.match(token)
+            ):
                 nodes.append((
                     wn_node_id,
                     {
@@ -156,8 +161,8 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 box_index = int(tokens.pop(0))
 
                 # In the entire dataset there are no indices for box
-                # references other than -1. Maybe they are needed later, for 
-                # now just assume this is correct (and the assert triggers if 
+                # references other than -1. Maybe they are needed later, for
+                # now just assume this is correct (and the assert triggers if
                 # something different comes up).
                 assert box_index == -1, \
                     f'Unexpected box index found {box_index}'
@@ -288,6 +293,7 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 # indices.
                 to_do_stack.append(token)
 
+            tok_count += 1
         if len(to_do_stack) > 0:
             raise ValueError(f'Unhandled tokens left: {to_do_stack}\n')
 
