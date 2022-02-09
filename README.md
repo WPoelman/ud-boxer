@@ -8,6 +8,11 @@ Source for my master's thesis system for Information Science.
    2. The `networkx` extras: `pip install networkx[default,extras]`
 3. Install dependencies with `pip install -r requirements.txt`
 
+## TODO
+- [ ] Maybe use roles spec explicitly in parsing sbn?
+  * related question: is it possible that a constant looks like an index and *is a valid index* (in the range of possible indices for the current file)? Example with invalid index: `pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn` Maybe indicated by the role since such ambiguity should not be possible?
+- [ ] Try out https://github.com/nlp-uoregon/trankit (supposedly better performance than stanza in some areas: https://trankit.readthedocs.io/en/latest/performance.html#universal-dependencies-v2-5)
+- [ ] Read a UD parse into nx.Graph (from file (connl?)? in a program directly using sentence?)
 
 ## SBN output error?
 Most ids connect parts together with either a '-' or '_', since there are only three in the entire EN dataset with spaces in them, this seems like an error.
