@@ -1,2 +1,3 @@
 networkx[default,extras]
 matplotlib
+pytest

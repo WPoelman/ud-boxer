@@ -7,6 +7,7 @@ Source for my master's thesis system for Information Science.
    1. On Debian-based systems: `apt install graphviz libgraphviz-dev pkg-config`
    2. The `networkx` extras: `pip install networkx[default,extras]`
 3. Install dependencies with `pip install -r requirements.txt`
+4. Run `pytest` to go through all tests
 
 ## TODO
 - [ ] Maybe use roles spec explicitly in parsing sbn?
