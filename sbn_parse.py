@@ -1,6 +1,8 @@
 '''
     Author: Wessel Poelman
     Description: Script to parse SBN files into graphs.
+
+    NOTE: Trying to put this into a more reusable format. 
 '''
 import re
 import time
