@@ -3,6 +3,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 from synse.graph.base import BaseGraph
 
+__all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph", "split_comments"]
 
 # Tried with enums, but those get somewhat messed up in the json serialization
 class SBN_NODE_TYPE(str):

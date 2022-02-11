@@ -2,8 +2,7 @@ import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from synse.graph.sbn import SBNGraph
-from synse.graph.ud import UDGraph
+from synse.graph import SBNGraph, UDGraph
 
 
 def get_args() -> Namespace:

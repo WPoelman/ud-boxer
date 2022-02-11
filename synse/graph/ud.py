@@ -2,6 +2,8 @@ from os import PathLike
 from synse.graph.base import BaseGraph
 from stanza.utils.conll import CoNLL
 
+__all__ = ["UDGraph"]
+
 
 class UDGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
