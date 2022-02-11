@@ -12,6 +12,13 @@ def get_args() -> Namespace:
         default='data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold',
         help='Path to start recursively searching for sbn files.'
     )
+
+    parser.add_argument(
+        '-e', '--error_file', type=str,
+        default='errors.txt',
+        help='File to write errors to.'
+    )
+    
     return parser.parse_args()
 
 
@@ -20,13 +27,18 @@ def main():
 
     start = time.perf_counter()
     total, failed = 0, 0
+    errors = []
+
     for filepath in Path(args.starting_path).glob('**/*.sbn'):
         with open(filepath) as f:
             total += 1
             try:
-                G = SBNGraph(sbn_string=f.read())
+                G = SBNGraph().from_string(f.read())
             except Exception as e:
-                print(f'Unable to parse {filepath}\nReason: {e}\n')
+                error_msg = f'Unable to parse {filepath}\nReason: {e}\n'
+                errors.append(error_msg)
+                print(error_msg)
+
                 failed += 1
 
             # TODO: Add UD parse in JSON and SBN in JSON formats to
@@ -34,13 +46,15 @@ def main():
 
     end = round(time.perf_counter() - start, 2)
 
+    with open(args.error_file, 'w') as f:
+        f.write('\n\n'.join(errors))
+
     print(f'''
 
-    Total files:            {total}
-    Parsed without errors:  {total - failed}
-    Parsed with errors:     {failed}
+    Total files:            {total:>{6}}
+    Parsed without errors:  {total - failed:>{6}}
+    Parsed with errors:     {failed:>{6}}
     Took {end} seconds
-
     ''')
 
 

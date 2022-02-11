@@ -33,7 +33,7 @@ def test_split_comments(line, expected):
 
 def test_parse_sense_simple_string():
     single_sense = "brown.a.01                             % A brown     [0-7]"
-    G = SBNGraph(sbn_string=single_sense)
+    G = SBNGraph().from_string(single_sense)
 
     box_id = (SBN_NODE_TYPE.BOX, 0)
     sense_id = (SBN_NODE_TYPE.SENSE, 0)
@@ -53,7 +53,7 @@ def test_parse_sense_simple_string():
 def test_parse_reconstruct_name():
     test_string = 'musical_organization.n.01 Name "Steve Miller Band"'\
         '                 % The Steve Miller Band [0-21]'
-    G = SBNGraph(sbn_string=test_string)
+    G = SBNGraph().from_string(test_string)
 
     name_const_id = (SBN_NODE_TYPE.NAME_CONSTANT, 0)
 
@@ -70,7 +70,7 @@ def test_parse_reconstruct_name():
 @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
 def test_can_parse_full_file(example_string):
     # TODO: expand further, no exceptions means it works (for now!)
-    SBNGraph(example_string)
+    SBNGraph().from_string(example_string)
 
 
 def test_parse_indices():
@@ -84,21 +84,21 @@ def test_add_new_box():
 def test_json_export(tmp_path):
     tmp_file = tmp_path / 'tmp.json'
 
-    G_from_string = SBNGraph(NORMAL_EXAMPLE)
-    G_from_string.to_json(tmp_file)
+    G_string = SBNGraph().from_string(NORMAL_EXAMPLE)
+    G_string.to_json(tmp_file)
 
     # Can export the file
     assert tmp_file.exists()
 
     # Check if nodes and edges are identical after reconstructing the graph
-    G_from_json = SBNGraph.from_json(tmp_file)
+    G_json = SBNGraph().from_json(tmp_file)
 
-    nodes_string = sorted(list(G_from_string.nodes.items()))
-    nodes_json = sorted(list(G_from_json.nodes.items()))
+    nodes_string = sorted(list(G_string.nodes.items()))
+    nodes_json = sorted(list(G_json.nodes.items()))
 
     assert nodes_string == nodes_json
 
-    edges_string = sorted(list(G_from_string.edges.items()))
-    edges_json = sorted(list(G_from_json.edges.items()))
+    edges_string = sorted(list(G_string.edges.items()))
+    edges_json = sorted(list(G_json.edges.items()))
 
     assert edges_string == edges_json

@@ -1,9 +1,7 @@
-import json
-from os import PathLike
 import re
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-import networkx as nx
+from synse.graph.base import BaseGraph
 
 
 # Tried with enums, but those get somewhat messed up in the json serialization
@@ -21,13 +19,9 @@ class SBN_EDGE_TYPE(str):
     BOX_CONNECT = 'box-connect'
 
 
-# Optional additional information associated with an edge or node, such as
-# comments or extra token information.
-META_INFO = Optional[Dict[str, Any]]
-
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
-_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
+SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
 
 
 class SBNSpec:
@@ -101,18 +95,13 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     return temp_lines
 
 
-class SBNGraph(nx.Graph):
-    def __init__(self, sbn_string: str = None, incoming_graph_data=None, **attr):
+class SBNGraph(BaseGraph):
+    def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
 
-        if sbn_string:
-            nodes, edges = self.from_string(sbn_string)
-            self.add_nodes_from(nodes)
-            self.add_edges_from(edges)
-
-    def from_string(self, sbn_string: str):
+    def from_string(self, input_string: str):
         ''' Construct a graph from a single SBN string. '''
-        lines = split_comments(sbn_string)
+        lines = split_comments(input_string)
 
         self.type_indices = {
             SBN_NODE_TYPE.SENSE: 0,
@@ -148,9 +137,9 @@ class SBNGraph(nx.Graph):
                     sense_node = self.create_node(
                         SBN_NODE_TYPE.SENSE, token,
                         {
-                            'lemma': sense_match.group(1),
-                            'pos': sense_match.group(2),
-                            'id': sense_match.group(3),
+                            'wn_lemma': sense_match.group(1),
+                            'wn_pos': sense_match.group(2),
+                            'wn_id': sense_match.group(3),
                             'comment': comment
                         }
                     )
@@ -282,23 +271,27 @@ class SBNGraph(nx.Graph):
             if len(to_do_stack) > 0:
                 raise ValueError(f'Unhandled tokens left: {to_do_stack}\n')
 
-        return nodes, edges
+        self.add_nodes_from(nodes)
+        self.add_edges_from(edges)
+
+        return self
 
     def create_edge(
         self,
-        from_node_id: _ID,
-        to_node_id: _ID,
+        from_node_id: SBN_ID,
+        to_node_id: SBN_ID,
         type: SBN_EDGE_TYPE,
         token: Optional[str] = None,
-        meta: META_INFO = None
+        meta: Optional[Dict[str, Any]] = None
     ):
         ''' Create an edge, if no token is provided, the id will be used. '''
         edge_id = self._id_for_type(type)
+        meta = meta or dict()
         return (
             from_node_id, to_node_id,
             dict(
                 _id=str(edge_id), type=type,
-                token=token or str(edge_id), meta=meta
+                token=token or str(edge_id), **meta
             )
         )
 
@@ -306,40 +299,28 @@ class SBNGraph(nx.Graph):
         self,
         type: SBN_NODE_TYPE,
         token: Optional[str] = None,
-        meta: META_INFO = None
+        meta: Optional[Dict[str, Any]] = None
     ):
         ''' Create a node, if no token is provided, the id will be used. '''
         node_id = self._id_for_type(type)
+        meta = meta or dict()
         return (
             node_id,
             dict(
                 _id=str(node_id), type=type,
-                token=token or str(node_id), meta=meta
+                token=token or str(node_id), **meta
             )
         )
 
-    def _id_for_type(self, type: Union[SBN_NODE_TYPE, SBN_EDGE_TYPE]) -> _ID:
+    def _id_for_type(self, type: Union[SBN_NODE_TYPE, SBN_EDGE_TYPE]) -> SBN_ID:
         _id = (type, self.type_indices[type])
         self.type_indices[type] += 1
         return _id
 
-    def _active_sense_id(self) -> _ID:
+    def _active_sense_id(self) -> SBN_ID:
         return (
             SBN_NODE_TYPE.SENSE, self.type_indices[SBN_NODE_TYPE.SENSE] - 1
         )
 
-    def _active_box_id(self) -> _ID:
+    def _active_box_id(self) -> SBN_ID:
         return (SBN_NODE_TYPE.BOX, self.type_indices[SBN_NODE_TYPE.BOX] - 1)
-
-    def to_json(self, path: PathLike):
-        json_data = nx.readwrite.node_link_data(self)
-        with open(path, 'w') as f:
-            json.dump(json_data, f)
-
-    @classmethod
-    def from_json(cls, path: PathLike):
-        with open(path) as f:
-            json_data = json.load(f)
-        return cls(
-            incoming_graph_data=nx.readwrite.node_link_graph(json_data)
-        )
