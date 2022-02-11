@@ -79,7 +79,7 @@ def get_args() -> Namespace:
     parser.add_argument(
         '-p', '--starting_path', type=str,
         default='data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold',
-        help='Path to strart recursively searching for sbn files.'
+        help='Path to start recursively searching for sbn files.'
     )
     parser.add_argument(
         '-v', '--visualization', action='store_true',
