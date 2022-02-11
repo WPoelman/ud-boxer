@@ -42,9 +42,13 @@ def main():
             current_lang = filepath.stem.split(".")[0]
 
             # TODO: add option to select stanza or trankit here as well
-            ud_filepath = Path(filepath.parent / f"{current_lang}.ud.stanza.conll")
+            ud_filepath = Path(
+                filepath.parent / f"{current_lang}.ud.stanza.conll"
+            )
             if not ud_filepath.exists():
-                raise FileNotFoundError(f"No UD conll file for {filepath.parent}")
+                raise FileNotFoundError(
+                    f"No UD conll file for {filepath.parent}"
+                )
 
             S = SBNGraph().from_string(filepath.read_text())
             U = UDGraph().from_conll(ud_filepath)

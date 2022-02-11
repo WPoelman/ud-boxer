@@ -182,7 +182,9 @@ class SBNGraph(BaseGraph):
                     # references other than -1. Maybe they are needed later and
                     # the assert triggers if something different comes up.
                     box_index = int(tokens.pop(0))
-                    assert box_index == -1, f"Unexpected box index found {box_index}"
+                    assert (
+                        box_index == -1
+                    ), f"Unexpected box index found {box_index}"
 
                     current_box_id = self._active_box_id()
 
@@ -210,7 +212,10 @@ class SBNGraph(BaseGraph):
 
                     if SBNSpec.MIN_SENSE_IDX <= target_idx <= max_wn_idx:
                         role_edge = self.create_edge(
-                            self._active_sense_id(), to_id, SBN_EDGE_TYPE.ROLE, target
+                            self._active_sense_id(),
+                            to_id,
+                            SBN_EDGE_TYPE.ROLE,
+                            target,
                         )
 
                         edges.append(role_edge)
@@ -265,7 +270,9 @@ class SBNGraph(BaseGraph):
                         target,
                     )
                     box_edge = self.create_edge(
-                        self._active_box_id(), name_node[0], SBN_EDGE_TYPE.BOX_CONNECT
+                        self._active_box_id(),
+                        name_node[0],
+                        SBN_EDGE_TYPE.BOX_CONNECT,
                     )
 
                     nodes.append(name_node)
@@ -289,7 +296,9 @@ class SBNGraph(BaseGraph):
                         target,
                     )
                     box_edge = self.create_edge(
-                        self._active_box_id(), name_node[0], SBN_EDGE_TYPE.BOX_CONNECT
+                        self._active_box_id(),
+                        name_node[0],
+                        SBN_EDGE_TYPE.BOX_CONNECT,
                     )
 
                     nodes.append(name_node)
@@ -326,7 +335,12 @@ class SBNGraph(BaseGraph):
         return (
             from_node_id,
             to_node_id,
-            dict(_id=str(edge_id), type=type, token=token or str(edge_id), **meta),
+            dict(
+                _id=str(edge_id),
+                type=type,
+                token=token or str(edge_id),
+                **meta,
+            ),
         )
 
     def create_node(
@@ -340,16 +354,26 @@ class SBNGraph(BaseGraph):
         meta = meta or dict()
         return (
             node_id,
-            dict(_id=str(node_id), type=type, token=token or str(node_id), **meta),
+            dict(
+                _id=str(node_id),
+                type=type,
+                token=token or str(node_id),
+                **meta,
+            ),
         )
 
-    def _id_for_type(self, type: Union[SBN_NODE_TYPE, SBN_EDGE_TYPE]) -> SBN_ID:
+    def _id_for_type(
+        self, type: Union[SBN_NODE_TYPE, SBN_EDGE_TYPE]
+    ) -> SBN_ID:
         _id = (type, self.type_indices[type])
         self.type_indices[type] += 1
         return _id
 
     def _active_sense_id(self) -> SBN_ID:
-        return (SBN_NODE_TYPE.SENSE, self.type_indices[SBN_NODE_TYPE.SENSE] - 1)
+        return (
+            SBN_NODE_TYPE.SENSE,
+            self.type_indices[SBN_NODE_TYPE.SENSE] - 1,
+        )
 
     def _active_box_id(self) -> SBN_ID:
         return (SBN_NODE_TYPE.BOX, self.type_indices[SBN_NODE_TYPE.BOX] - 1)

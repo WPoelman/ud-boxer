@@ -1,9 +1,9 @@
-'''
+"""
     Author: Wessel Poelman
     Description: Script to parse SBN files into graphs.
 
     NOTE: Trying to put this into a more reusable format. 
-'''
+"""
 import re
 import time
 
@@ -16,43 +16,65 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Whitespace is essential since there can be % signs in sense ids and comments
-SBN_COMMENT = r' % '
-SBN_COMMENT_LINE = r'%%%'
+SBN_COMMENT = r" % "
+SBN_COMMENT_LINE = r"%%%"
 
-NEW_BOX_INDICATORS = '|'.join([
-    'ALTERNATION', 'ATTRIBUTION', 'CONDITION', 'CONSEQUENCE', 'CONTINUATION',
-    'CONTRAST', 'EXPLANATION', 'NECESSITY', 'NEGATION', 'POSSIBILITY',
-    'PRECONDITION', 'RESULT', 'SOURCE'
-])
+NEW_BOX_INDICATORS = "|".join(
+    [
+        "ALTERNATION",
+        "ATTRIBUTION",
+        "CONDITION",
+        "CONSEQUENCE",
+        "CONTINUATION",
+        "CONTRAST",
+        "EXPLANATION",
+        "NECESSITY",
+        "NEGATION",
+        "POSSIBILITY",
+        "PRECONDITION",
+        "RESULT",
+        "SOURCE",
+    ]
+)
 NEW_BOX_PATTERN = re.compile(NEW_BOX_INDICATORS)
 
 # The lemma match might seem loose, however there can be a lot of different
 # characters in there: 'r/2.n.01', 'ø.a.01', 'josé_maria_aznar.n.01'
-WORDNET_SENSE_PATTERN = re.compile(r'(.+)\.(n|v|a|r)\.(\d+)')
-INDEX_PATTERN = re.compile(r'((-|\+)\d)')
-NAME_CONSTANT_PATTERN = re.compile(r'\"(.+)\"|\"(.+)')
+WORDNET_SENSE_PATTERN = re.compile(r"(.+)\.(n|v|a|r)\.(\d+)")
+INDEX_PATTERN = re.compile(r"((-|\+)\d)")
+NAME_CONSTANT_PATTERN = re.compile(r"\"(.+)\"|\"(.+)")
 
 # Special constants at the 'ending' nodes
-CONSTANTS = '|'.join([
-    'speaker', 'hearer', 'now', 'unknown_ref',
-    'monday', 'tuesday', 'wednesday', 'thursday',
-    'friday', 'saturday', 'sunday'
-])
+CONSTANTS = "|".join(
+    [
+        "speaker",
+        "hearer",
+        "now",
+        "unknown_ref",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+    ]
+)
 
 # "'2008'" or "'196X'"" for instance, always in single quotes
-YEAR_CONSTANT = r'\'([\dX]{4})\''
+YEAR_CONSTANT = r"\'([\dX]{4})\'"
 
 # Can be "?", single "+/-" or unsigned digit (explicitly signed digits are
 # assumed to be indices and are matched first!)
-QUANTITY_CONSTANT = r'[\+\-\d\?]'
+QUANTITY_CONSTANT = r"[\+\-\d\?]"
 
 # "Tom got an A on his exam": Value -> "A" NOTE: arguably better to catch this
 # with roles, but all other constants are caught.
-VALUE_CONSTANT = r'^[A-Z]$'
+VALUE_CONSTANT = r"^[A-Z]$"
 
 # TODO: add named groups to regex so more specific constant types are kept
 CONSTANTS_PATTERN = re.compile(
-    '|'.join([YEAR_CONSTANT, QUANTITY_CONSTANT, VALUE_CONSTANT, CONSTANTS])
+    "|".join([YEAR_CONSTANT, QUANTITY_CONSTANT, VALUE_CONSTANT, CONSTANTS])
 )
 
 # NOTE: probably nicer to use actual dataclasses, but since the indices
@@ -63,38 +85,44 @@ EDGE = Tuple[int, int, Dict[str, Any]]
 
 
 class SBN_NODE(Enum):
-    ''' Node types '''
-    WORDNET_SENSE = 'wordnet-sense'
-    NAME_CONSTANT = 'name-constant'
-    CONSTANT = 'name-constant'
-    BOX = 'box'
+    """ Node types """
+
+    WORDNET_SENSE = "wordnet-sense"
+    NAME_CONSTANT = "name-constant"
+    CONSTANT = "name-constant"
+    BOX = "box"
 
 
 class SBN_EDGE(Enum):
-    ''' Edge types '''
-    ROLE = 'role'
-    BOX_CONNECT = 'box-connect'
+    """ Edge types """
+
+    ROLE = "role"
+    BOX_CONNECT = "box-connect"
 
 
 def get_args() -> Namespace:
     parser = ArgumentParser()
     parser.add_argument(
-        '-p', '--starting_path', type=str,
-        default='data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold',
-        help='Path to start recursively searching for sbn files.'
+        "-p",
+        "--starting_path",
+        type=str,
+        default="data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold",
+        help="Path to start recursively searching for sbn files.",
     )
     parser.add_argument(
-        '-v', '--visualization', action='store_true',
-        help='Show a visualization of the parsed graph.'
+        "-v",
+        "--visualization",
+        action="store_true",
+        help="Show a visualization of the parsed graph.",
     )
     return parser.parse_args()
 
 
 def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
-    ''' Creates a graph from a single SBN string. '''
+    """ Creates a graph from a single SBN string. """
 
     # First split everything in lines
-    split_lines = input_string.rstrip('\n').split('\n')
+    split_lines = input_string.rstrip("\n").split("\n")
 
     # Separate the actual SBN and the comments
     temp_lines = []
@@ -111,10 +139,10 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
 
     # TODO: find nicer way to construct box ids (and nodes and edges in
     # general), probably with a graph object that handles this internally.
-    active_box_id = ('B', 0)
+    active_box_id = ("B", 0)
     starting_box = (
         active_box_id,
-        {'type': SBN_NODE.BOX, 'token': ''.join(map(str, active_box_id))}
+        {"type": SBN_NODE.BOX, "token": "".join(map(str, active_box_id))},
     )
 
     nodes, edges = [starting_box], []
@@ -139,22 +167,26 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
             if tok_count == 0 and (
                 sense_match := WORDNET_SENSE_PATTERN.match(token)
             ):
-                nodes.append((
-                    wn_node_id,
-                    {
-                        'type': SBN_NODE.WORDNET_SENSE,
-                        'token': token,
-                        'lemma': sense_match.group(1),
-                        'pos': sense_match.group(2),
-                        'id': sense_match.group(3),
-                        'comment': comment
-                    }
-                ))
-                edges.append((
-                    active_box_id,
-                    wn_node_id,
-                    {'type': SBN_EDGE.BOX_CONNECT, 'token': 'box'}
-                ))
+                nodes.append(
+                    (
+                        wn_node_id,
+                        {
+                            "type": SBN_NODE.WORDNET_SENSE,
+                            "token": token,
+                            "lemma": sense_match.group(1),
+                            "pos": sense_match.group(2),
+                            "id": sense_match.group(3),
+                            "comment": comment,
+                        },
+                    )
+                )
+                edges.append(
+                    (
+                        active_box_id,
+                        wn_node_id,
+                        {"type": SBN_EDGE.BOX_CONNECT, "token": "box"},
+                    )
+                )
 
                 wn_node_id += 1
             elif NEW_BOX_PATTERN.match(token):
@@ -166,126 +198,152 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
                 # references other than -1. Maybe they are needed later, for
                 # now just assume this is correct (and the assert triggers if
                 # something different comes up).
-                assert box_index == -1, \
-                    f'Unexpected box index found {box_index}'
+                assert (
+                    box_index == -1
+                ), f"Unexpected box index found {box_index}"
 
                 # TODO: Again, find nicer way of doing this
                 new_box_id = (active_box_id[0], active_box_id[1] + 1)
                 new_box = (
                     new_box_id,
                     {
-                        'type': SBN_NODE.BOX,
-                        'token': ''.join(map(str, new_box_id))
-                    }
+                        "type": SBN_NODE.BOX,
+                        "token": "".join(map(str, new_box_id)),
+                    },
                 )
                 nodes.append(new_box)
 
                 # Connect the current box to the one indicated by the index.
-                edges.append((
-                    active_box_id,
-                    new_box_id,
-                    {'type': SBN_EDGE.BOX_CONNECT, 'token': token}
-                ))
+                edges.append(
+                    (
+                        active_box_id,
+                        new_box_id,
+                        {"type": SBN_EDGE.BOX_CONNECT, "token": token},
+                    )
+                )
 
                 active_box_id = new_box_id
             elif index_match := INDEX_PATTERN.match(token):
                 index = int(index_match.group(0))
                 to_id = wn_node_id - 1 + index
 
-                assert len(to_do_stack) == 1, \
-                    f'Error parsing index step "{token}" in:\n{sbn_line}'
+                assert (
+                    len(to_do_stack) == 1
+                ), f'Error parsing index step "{token}" in:\n{sbn_line}'
                 target = to_do_stack.pop()
 
                 if min_wn_id <= to_id <= max_wn_id:
-                    edges.append((
-                        wn_node_id - 1,
-                        to_id,
-                        {'type': SBN_EDGE.ROLE, 'token': target}
-                    ))
+                    edges.append(
+                        (
+                            wn_node_id - 1,
+                            to_id,
+                            {"type": SBN_EDGE.ROLE, "token": target},
+                        )
+                    )
                 else:
                     # This is special case where a constant looks like an idx.
                     # Example: pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
                     # This is detected by checking if the provided index points
                     # at an 'impossible' line (sense) in the file.
-                    nodes.append((
-                        const_node_id,
-                        {
-                            'type': SBN_NODE.CONSTANT,
-                            'token': token,
-                            'comment': comment
-                        }
-                    ))
-                    edges.append((
-                        wn_node_id - 1,
-                        const_node_id,
-                        {'type': SBN_EDGE.ROLE, 'token': target}
-                    ))
-                    edges.append((
-                        active_box_id,
-                        const_node_id,
-                        {'type': SBN_EDGE.BOX_CONNECT, 'token': 'box'}
-                    ))
+                    nodes.append(
+                        (
+                            const_node_id,
+                            {
+                                "type": SBN_NODE.CONSTANT,
+                                "token": token,
+                                "comment": comment,
+                            },
+                        )
+                    )
+                    edges.append(
+                        (
+                            wn_node_id - 1,
+                            const_node_id,
+                            {"type": SBN_EDGE.ROLE, "token": target},
+                        )
+                    )
+                    edges.append(
+                        (
+                            active_box_id,
+                            const_node_id,
+                            {"type": SBN_EDGE.BOX_CONNECT, "token": "box"},
+                        )
+                    )
 
                     const_node_id += 1
             elif NAME_CONSTANT_PATTERN.match(token):
                 name_parts = [token]
 
                 # Some names contain whitspace and need to be reconstructed
-                while not token.endswith('\"'):
+                while not token.endswith('"'):
                     token = tokens.pop(0)
                     name_parts.append(token)
 
                 # This is faster than constantly creating new strings
-                name = ' '.join(name_parts)
+                name = " ".join(name_parts)
 
-                assert len(to_do_stack) == 1, \
-                    f'Error parsing name const step "{token}" in:\n{sbn_line}'
+                assert (
+                    len(to_do_stack) == 1
+                ), f'Error parsing name const step "{token}" in:\n{sbn_line}'
                 # Should be the edge linking this node to the previous
                 target = to_do_stack.pop()
 
-                nodes.append((
-                    const_node_id,
-                    {
-                        'type': SBN_NODE.NAME_CONSTANT,
-                        'token': name,
-                        'comment': comment
-                    }
-                ))
-                edges.append((
-                    wn_node_id - 1,
-                    const_node_id,
-                    {'type': SBN_EDGE.ROLE, 'token': target}
-                ))
-                edges.append((
-                    active_box_id,
-                    const_node_id,
-                    {'type': SBN_EDGE.BOX_CONNECT, 'token': 'box'}
-                ))
+                nodes.append(
+                    (
+                        const_node_id,
+                        {
+                            "type": SBN_NODE.NAME_CONSTANT,
+                            "token": name,
+                            "comment": comment,
+                        },
+                    )
+                )
+                edges.append(
+                    (
+                        wn_node_id - 1,
+                        const_node_id,
+                        {"type": SBN_EDGE.ROLE, "token": target},
+                    )
+                )
+                edges.append(
+                    (
+                        active_box_id,
+                        const_node_id,
+                        {"type": SBN_EDGE.BOX_CONNECT, "token": "box"},
+                    )
+                )
 
                 const_node_id += 1
             elif constant_match := CONSTANTS_PATTERN.match(token):
-                assert len(to_do_stack) == 1, \
-                    f'Error parsing const step "{token}" in:\n{sbn_line}'
+                assert (
+                    len(to_do_stack) == 1
+                ), f'Error parsing const step "{token}" in:\n{sbn_line}'
                 target = to_do_stack.pop()
 
-                nodes.append((
-                    const_node_id,
-                    {
-                        'type': SBN_NODE.CONSTANT,
-                        'token': constant_match.group(0),
-                        'comment': comment
-                    }
-                ))
-                edges.append((
-                    wn_node_id - 1,
-                    const_node_id,
-                    {'type': SBN_EDGE.ROLE, 'token': target}
-                ))
-                edges.append((
-                    active_box_id,
-                    const_node_id,
-                    {'type': SBN_EDGE.BOX_CONNECT, 'token': 'box'}
-                ))
+                nodes.append(
+                    (
+                        const_node_id,
+                        {
+                            "type": SBN_NODE.CONSTANT,
+                            "token": constant_match.group(0),
+                            "comment": comment,
+                        },
+                    )
+                )
+                edges.append(
+                    (
+                        wn_node_id - 1,
+                        const_node_id,
+                        {"type": SBN_EDGE.ROLE, "token": target},
+                    )
+                )
+                edges.append(
+                    (
+                        active_box_id,
+                        const_node_id,
+                        {"type": SBN_EDGE.BOX_CONNECT, "token": "box"},
+                    )
+                )
 
                 const_node_id += 1
             else:
@@ -297,7 +355,7 @@ def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
 
             tok_count += 1
         if len(to_do_stack) > 0:
-            raise ValueError(f'Unhandled tokens left: {to_do_stack}\n')
+            raise ValueError(f"Unhandled tokens left: {to_do_stack}\n")
 
     return nodes, edges
 
@@ -307,7 +365,7 @@ def main():
 
     start = time.perf_counter()
     total, failed = 0, 0
-    for filepath in Path(args.starting_path).glob('**/*.sbn'):
+    for filepath in Path(args.starting_path).glob("**/*.sbn"):
         with open(filepath) as f:
             total += 1
             try:
@@ -318,8 +376,8 @@ def main():
                 G.add_edges_from(edges)
                 G.add_nodes_from(nodes)
 
-                node_labels = {n: data['token'] for n, data in G.nodes.items()}
-                edge_labels = {n: data['token'] for n, data in G.edges.items()}
+                node_labels = {n: data["token"] for n, data in G.nodes.items()}
+                edge_labels = {n: data["token"] for n, data in G.edges.items()}
 
                 # This is ugly at the moment, probably need to export to dot
                 # and use pydot or pygraphviz to layout correctly and adopt
@@ -332,29 +390,35 @@ def main():
                         G, pos, edge_labels=edge_labels
                     )
                     nx.draw(
-                        G, pos, node_size=1500, node_color='grey', font_size=8,
-                        font_weight='bold'
+                        G,
+                        pos,
+                        node_size=1500,
+                        node_color="grey",
+                        font_size=8,
+                        font_weight="bold",
                     )
                     plt.show()
                     # plt.savefig("Graph.png", format="PNG")
                     # nx.drawing.nx_pydot.write_dot(G, 'networkx_graph.dot')
             except Exception as e:
-                print(f'Unable to parse: {e}')
+                print(f"Unable to parse: {e}")
                 print(filepath)
                 failed += 1
                 continue
 
     end = round(time.perf_counter() - start, 2)
 
-    print(f'''
+    print(
+        f"""
 
     Total files:            {total}
     Parsed without errors:  {total - failed}
     Parsed with errors:     {failed}
     Took {end} seconds
 
-    ''')
+    """
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

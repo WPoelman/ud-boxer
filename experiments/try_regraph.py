@@ -10,9 +10,9 @@ from tqdm import tqdm
 
 from regraph import NXGraph, Rule, plot_graph, plot_instance, plot_rule
 
-SBN_COMMENT = '%'
-WORDNET_SENSE_PATTERN = re.compile(r'([a-z_]+)\.(n|v|a|r)\.(\d+)')
-INDEX_PATTERN = re.compile(r'(-|\+)(\d)')
+SBN_COMMENT = "%"
+WORDNET_SENSE_PATTERN = re.compile(r"([a-z_]+)\.(n|v|a|r)\.(\d+)")
+INDEX_PATTERN = re.compile(r"(-|\+)(\d)")
 
 
 @dataclass
@@ -33,7 +33,7 @@ class Edge:
 
 def parse_sbn(input_string):
     nodes, edges = [], []
-    split_lines = input_string.strip().split('\n')
+    split_lines = input_string.strip().split("\n")
 
     # print(input_string + '\n\n')
 
@@ -57,22 +57,24 @@ def parse_sbn(input_string):
                 # Use hash or generate uuid or something instead of this.
                 # This also doesn't work for the edges at the moment
                 if token in seen_senses:
-                    node_id = f'{token}-{sense_count}'
+                    node_id = f"{token}-{sense_count}"
                     sense_count += 1
                 else:
                     node_id = token
                 seen_senses.add(token)
 
-                nodes.append((
-                    node_id,
-                    {
-                        'type': 'wordnet_sense',
-                        'lemma': result.group(1),
-                        'pos': result.group(2),
-                        'id': result.group(3),
-                        'comment': comment
-                    }
-                ))
+                nodes.append(
+                    (
+                        node_id,
+                        {
+                            "type": "wordnet_sense",
+                            "lemma": result.group(1),
+                            "pos": result.group(2),
+                            "id": result.group(3),
+                            "comment": comment,
+                        },
+                    )
+                )
             elif index := INDEX_PATTERN.match(token):
                 index = int(index.group(0))
                 # Not 100% sure if this direction is always correct (and if
@@ -81,13 +83,13 @@ def parse_sbn(input_string):
                     edge = (
                         parsed_lines[line_idx + index][0][0],  # from
                         tokens[0],  # to
-                        {'type': tokens[token_idx - 1]}
+                        {"type": tokens[token_idx - 1]},
                     )
                 else:
                     edge = (
                         tokens[0],  # from
                         parsed_lines[line_idx + index][0][0],  # to
-                        {'type': tokens[token_idx - 1]}
+                        {"type": tokens[token_idx - 1]},
                     )
                 edges.append(edge)
             # Need to add relations/properties such as EQU, CONTINUATION, etc.
@@ -104,7 +106,7 @@ def parse_sbn(input_string):
 
 
 def get_sbn_files(folder_path):
-    return Path(folder_path).glob('**/*.sbn')
+    return Path(folder_path).glob("**/*.sbn")
 
 
 def get_random_sbn_filepath(folder_path):
@@ -119,7 +121,7 @@ def main():
         with open(filepath) as f:
             try:
                 nodes, edges = parse_sbn(f.read())
-                
+
                 graph = NXGraph()
                 graph.add_nodes_from(nodes)
                 graph.add_edges_from(edges)
@@ -127,16 +129,17 @@ def main():
                 failed += 1
                 pass
         total += 1
-    end = time.perf_counter() -  start
-    print(f'''
+    end = time.perf_counter() - start
+    print(
+        f"""
     Total files:            {total}
     Parsed without errors:  {total - failed}
     Parsed with errors:     {failed}
     Took {end} seconds
-    ''')
+    """
+    )
 
     # print(nodes)
-
 
     # title_words = []
     # for w in [n[1]['comment'] for n in nodes]:
@@ -146,5 +149,5 @@ def main():
     # plot_graph(graph, title=' '.join(title_words))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
