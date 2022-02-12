@@ -1,10 +1,11 @@
-import re
 from enum import Enum
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, Optional, Tuple, Union
 
 from synse.graph.base import BaseGraph
+from synse.graph.sbn_spec import SBNSpec, split_comments
 
-__all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph", "split_comments"]
+__all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph"]
+
 
 class SBN_NODE_TYPE(str, Enum):
     """Node types"""
@@ -25,99 +26,6 @@ class SBN_EDGE_TYPE(str, Enum):
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
 SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
-
-
-class SBNSpec:
-    # Whitespace is essential since there can be % signs in sense ids and comments
-    SBN_COMMENT = r" % "
-    SBN_COMMENT_LINE = r"%%%"
-
-    NEW_BOX_INDICATORS = "|".join(
-        [
-            "ALTERNATION",
-            "ATTRIBUTION",
-            "CONDITION",
-            "CONSEQUENCE",
-            "CONTINUATION",
-            "CONTRAST",
-            "EXPLANATION",
-            "NECESSITY",
-            "NEGATION",
-            "POSSIBILITY",
-            "PRECONDITION",
-            "RESULT",
-            "SOURCE",
-        ]
-    )
-    NEW_BOX_PATTERN = re.compile(NEW_BOX_INDICATORS)
-
-    # The lemma match might seem loose, however there can be a lot of different
-    # characters in there: 'r/2.n.01', 'ø.a.01', 'josé_maria_aznar.n.01'
-    WORDNET_SENSE_PATTERN = re.compile(r"(.+)\.(n|v|a|r)\.(\d+)")
-    INDEX_PATTERN = re.compile(r"((-|\+)\d)")
-    NAME_CONSTANT_PATTERN = re.compile(r"\"(.+)\"|\"(.+)")
-
-    # Special constants at the 'ending' nodes
-    CONSTANTS = "|".join(
-        [
-            "speaker",
-            "hearer",
-            "now",
-            "unknown_ref",
-            "monday",
-            "tuesday",
-            "wednesday",
-            "thursday",
-            "friday",
-            "saturday",
-            "sunday",
-        ]
-    )
-
-    # "'2008'" or "'196X'"" for instance, always in single quotes
-    YEAR_CONSTANT = r"\'([\dX]{4})\'"
-
-    # Can be "?", single "+/-" or unsigned digit (explicitly signed digits are
-    # assumed to be indices and are matched first!)
-    QUANTITY_CONSTANT = r"[\+\-\d\?]"
-
-    # "Tom got an A on his exam": Value -> "A" NOTE: arguably better to catch
-    # this with roles, but all other constants are caught.
-    VALUE_CONSTANT = r"^[A-Z]$"
-
-    # TODO: add named groups to regex so more specific constant types are kept
-    CONSTANTS_PATTERN = re.compile(
-        "|".join([YEAR_CONSTANT, QUANTITY_CONSTANT, VALUE_CONSTANT, CONSTANTS])
-    )
-
-    # Sense indices start at 0
-    MIN_SENSE_IDX = 0
-
-
-def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
-    """
-    Helper to remove starting comments and split the actual sbn and
-    trailing comments per line. Empty comments are converted to None.
-    """
-    # First split everything in lines
-    split_lines = sbn_string.rstrip("\n").split("\n")
-
-    # Separate the actual SBN and the comments
-    temp_lines = []
-    for line in split_lines:
-        # discarded here.
-        if line.startswith(SBNSpec.SBN_COMMENT_LINE):
-            continue
-
-        # Split lines in (<SBN-line>, <comment>) and filter out empty
-        # comments
-        items = line.split(SBNSpec.SBN_COMMENT)
-        assert len(items) == 2, f"Invalid comment format found: {line}"
-
-        sbn, comment = [item.strip() for item in items]
-        temp_lines.append((sbn, comment or None))
-
-    return temp_lines
 
 
 class SBNGraph(BaseGraph):
@@ -143,9 +51,6 @@ class SBNGraph(BaseGraph):
 
         max_wn_idx = len(lines) - 1
 
-        # Not really a stack, asserts fail if it has > 1 item, but it gets
-        # treated as a stack to catch possible errors.
-        to_do_stack: List[str] = []
         for sbn_line, comment in lines:
             tokens = sbn_line.split()
 
@@ -177,7 +82,7 @@ class SBNGraph(BaseGraph):
 
                     nodes.append(sense_node)
                     edges.append(box_edge)
-                elif SBNSpec.NEW_BOX_PATTERN.match(token):
+                elif token in SBNSpec.NEW_BOX_INDICATORS:
                     # In the entire dataset there are no indices for box
                     # references other than -1. Maybe they are needed later and
                     # the assert triggers if something different comes up.
@@ -199,40 +104,93 @@ class SBNGraph(BaseGraph):
 
                     nodes.append(new_box)
                     edges.append(box_edge)
-                elif index_match := SBNSpec.INDEX_PATTERN.match(token):
-                    idx = int(index_match.group(0))
-                    active_id = self._active_sense_id()
-                    target_idx = active_id[1] + idx
-                    to_id = (active_id[0], target_idx)
+                elif token in SBNSpec.ROLES:
+                    target = tokens.pop(0)
 
-                    assert (
-                        len(to_do_stack) == 1
-                    ), f'Error parsing index step "{token}" in: {sbn_line}'
-                    target = to_do_stack.pop()
+                    if index_match := SBNSpec.INDEX_PATTERN.match(target):
+                        idx = int(index_match.group(0))
+                        active_id = self._active_sense_id()
+                        target_idx = active_id[1] + idx
+                        to_id = (active_id[0], target_idx)
 
-                    if SBNSpec.MIN_SENSE_IDX <= target_idx <= max_wn_idx:
+                        if SBNSpec.MIN_SENSE_IDX <= target_idx <= max_wn_idx:
+                            role_edge = self.create_edge(
+                                self._active_sense_id(),
+                                to_id,
+                                SBN_EDGE_TYPE.ROLE,
+                                token,
+                            )
+
+                            edges.append(role_edge)
+                        else:
+                            # This is special case where a constant looks like an
+                            # idx. Example:
+                            # pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
+                            # This is detected by checking if the provided index
+                            # points at an 'impossible' line (sense) in the file.
+                            const_node = self.create_node(
+                                SBN_NODE_TYPE.CONSTANT,
+                                target,
+                                {"comment": comment},
+                            )
+                            role_edge = self.create_edge(
+                                self._active_sense_id(),
+                                const_node[0],
+                                SBN_EDGE_TYPE.ROLE,
+                                token,
+                            )
+                            box_edge = self.create_edge(
+                                self._active_box_id(),
+                                const_node[0],
+                                SBN_EDGE_TYPE.BOX_CONNECT,
+                            )
+
+                            nodes.append(const_node)
+                            edges.append(role_edge)
+                            edges.append(box_edge)
+                    elif SBNSpec.NAME_CONSTANT_PATTERN.match(target):
+                        name_parts = [target]
+
+                        # Some names contain whitspace and need to be
+                        # reconstructed
+                        while not target.endswith('"'):
+                            target = tokens.pop(0)
+                            name_parts.append(target)
+
+                        # This is faster than constantly creating new strings
+                        name = " ".join(name_parts)
+
+                        name_node = self.create_node(
+                            SBN_NODE_TYPE.NAME_CONSTANT,
+                            name,
+                            {"comment": comment},
+                        )
                         role_edge = self.create_edge(
                             self._active_sense_id(),
-                            to_id,
+                            name_node[0],
                             SBN_EDGE_TYPE.ROLE,
-                            target,
+                            token,
+                        )
+                        box_edge = self.create_edge(
+                            self._active_box_id(),
+                            name_node[0],
+                            SBN_EDGE_TYPE.BOX_CONNECT,
                         )
 
+                        nodes.append(name_node)
                         edges.append(role_edge)
+                        edges.append(box_edge)
                     else:
-                        # This is special case where a constant looks like an
-                        # idx. Example:
-                        # pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
-                        # This is detected by checking if the provided index
-                        # points at an 'impossible' line (sense) in the file.
                         const_node = self.create_node(
-                            SBN_NODE_TYPE.CONSTANT, token, {"comment": comment}
+                            SBN_NODE_TYPE.CONSTANT,
+                            target,
+                            {"comment": comment},
                         )
                         role_edge = self.create_edge(
                             self._active_sense_id(),
                             const_node[0],
                             SBN_EDGE_TYPE.ROLE,
-                            target,
+                            token,
                         )
                         box_edge = self.create_edge(
                             self._active_box_id(),
@@ -243,78 +201,10 @@ class SBNGraph(BaseGraph):
                         nodes.append(const_node)
                         edges.append(role_edge)
                         edges.append(box_edge)
-                elif SBNSpec.NAME_CONSTANT_PATTERN.match(token):
-                    name_parts = [token]
-
-                    # Some names contain whitspace and need to be reconstructed
-                    while not token.endswith('"'):
-                        token = tokens.pop(0)
-                        name_parts.append(token)
-
-                    # This is faster than constantly creating new strings
-                    name = " ".join(name_parts)
-
-                    # Should be the edge linking this node to the previous
-                    assert (
-                        len(to_do_stack) == 1
-                    ), f'Error parsing name step "{token}" in: {sbn_line}'
-                    target = to_do_stack.pop()
-
-                    name_node = self.create_node(
-                        SBN_NODE_TYPE.NAME_CONSTANT, name, {"comment": comment}
-                    )
-                    role_edge = self.create_edge(
-                        self._active_sense_id(),
-                        name_node[0],
-                        SBN_EDGE_TYPE.ROLE,
-                        target,
-                    )
-                    box_edge = self.create_edge(
-                        self._active_box_id(),
-                        name_node[0],
-                        SBN_EDGE_TYPE.BOX_CONNECT,
-                    )
-
-                    nodes.append(name_node)
-                    edges.append(role_edge)
-                    edges.append(box_edge)
-                elif constant_match := SBNSpec.CONSTANTS_PATTERN.match(token):
-                    assert (
-                        len(to_do_stack) == 1
-                    ), f'Error parsing const step "{token}" in: {sbn_line}'
-                    target = to_do_stack.pop()
-
-                    name_node = self.create_node(
-                        SBN_NODE_TYPE.CONSTANT,
-                        constant_match.group(0),
-                        {"comment": comment},
-                    )
-                    role_edge = self.create_edge(
-                        self._active_sense_id(),
-                        name_node[0],
-                        SBN_EDGE_TYPE.ROLE,
-                        target,
-                    )
-                    box_edge = self.create_edge(
-                        self._active_box_id(),
-                        name_node[0],
-                        SBN_EDGE_TYPE.BOX_CONNECT,
-                    )
-
-                    nodes.append(name_node)
-                    edges.append(role_edge)
-                    edges.append(box_edge)
                 else:
-                    # At all times the to_do_stack should be empty or have one
-                    # token in it. The asserts above ensure this. The tokens
-                    # that end up here are the roles that then get consumed by
-                    # the indices.
-                    to_do_stack.append(token)
-
-            tok_count += 1
-
-            if len(to_do_stack) > 0:
-                raise ValueError(f"Unhandled tokens left: {to_do_stack}\n")
+                    raise ValueError(
+                        f"Invalid token found '{token}' in line: {sbn_line}"
+                    )
 
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)

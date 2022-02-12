@@ -2,7 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from synse.graph import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph, split_comments
+from synse.graph.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
+from synse.graph.sbn_spec import split_comments
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 NORMAL_EXAMPLE = Path(EXAMPLES_DIR / "normal_example.sbn").read_text()
