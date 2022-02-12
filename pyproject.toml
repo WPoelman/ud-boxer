@@ -2,8 +2,12 @@
 line-length = 79
 target-version = ['py38']
 include = '\.pyi?$'
-extend-exclude = '''
-'''
 
 [tool.isort]
-profile = "black"
+profile = 'black'
+
+[tool.mypy]
+ignore_missing_imports = true
+exclude = [
+    'experiments/*'
+]

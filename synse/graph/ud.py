@@ -1,3 +1,4 @@
+from enum import Enum
 from os import PathLike
 from typing import Any, Dict, Optional, Tuple, Union
 
@@ -8,7 +9,7 @@ from synse.graph.base import BaseGraph
 __all__ = ["UDGraph"]
 
 
-class UD_NODE_TYPE(str):
+class UD_NODE_TYPE(str, Enum):
     """Node types"""
 
     # NOTE: possibly use POS tags as node types directly
@@ -17,7 +18,7 @@ class UD_NODE_TYPE(str):
     ROOT = "root"
 
 
-class UD_EDGE_TYPE(str):
+class UD_EDGE_TYPE(str, Enum):
     """Edge types"""
 
     # NOTE: possibly use dependency relations as edge type directly

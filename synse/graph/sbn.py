@@ -1,4 +1,5 @@
 import re
+from enum import Enum
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from synse.graph.base import BaseGraph
@@ -6,7 +7,7 @@ from synse.graph.base import BaseGraph
 __all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph", "split_comments"]
 
 # Tried with enums, but those get somewhat messed up in the json serialization
-class SBN_NODE_TYPE(str):
+class SBN_NODE_TYPE(str, Enum):
     """Node types"""
 
     SENSE = "wordnet-sense"
@@ -15,7 +16,7 @@ class SBN_NODE_TYPE(str):
     BOX = "box"
 
 
-class SBN_EDGE_TYPE(str):
+class SBN_EDGE_TYPE(str, Enum):
     """Edge types"""
 
     ROLE = "role"
@@ -145,7 +146,7 @@ class SBNGraph(BaseGraph):
 
         # Not really a stack, asserts fail if it has > 1 item, but it gets
         # treated as a stack to catch possible errors.
-        to_do_stack = []
+        to_do_stack: List[str] = []
         for sbn_line, comment in lines:
             tokens = sbn_line.split()
 
