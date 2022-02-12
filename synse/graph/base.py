@@ -12,7 +12,7 @@ NODE = Tuple[_ID, Dict[str, Any]]
 EDGE = Tuple[_ID, _ID, Dict[str, Any]]
 
 
-class BaseGraph(nx.Graph):
+class BaseGraph(nx.DiGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
 
