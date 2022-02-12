@@ -1,11 +1,12 @@
 import random
 import re
 import sys
+import time
 from dataclasses import dataclass
 from enum import Enum, auto
 from pathlib import Path
 from typing import Any, Dict, Optional
-import time
+
 from tqdm import tqdm
 
 from regraph import NXGraph, Rule, plot_graph, plot_instance, plot_rule

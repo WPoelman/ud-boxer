@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pytest
+
 from synse.graph import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph, split_comments
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"

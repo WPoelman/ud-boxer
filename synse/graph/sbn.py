@@ -7,7 +7,7 @@ __all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph", "split_comments"]
 
 # Tried with enums, but those get somewhat messed up in the json serialization
 class SBN_NODE_TYPE(str):
-    """ Node types """
+    """Node types"""
 
     SENSE = "wordnet-sense"
     NAME_CONSTANT = "name-constant"
@@ -16,7 +16,7 @@ class SBN_NODE_TYPE(str):
 
 
 class SBN_EDGE_TYPE(str):
-    """ Edge types """
+    """Edge types"""
 
     ROLE = "role"
     BOX_CONNECT = "box-connect"
@@ -95,9 +95,9 @@ class SBNSpec:
 
 
 def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
-    """ 
-        Helper to remove starting comments and split the actual sbn and
-        trailing comments per line. Empty comments are converted to None.
+    """
+    Helper to remove starting comments and split the actual sbn and
+    trailing comments per line. Empty comments are converted to None.
     """
     # First split everything in lines
     split_lines = sbn_string.rstrip("\n").split("\n")
@@ -125,7 +125,7 @@ class SBNGraph(BaseGraph):
         super().__init__(incoming_graph_data, **attr)
 
     def from_string(self, input_string: str):
-        """ Construct a graph from a single SBN string. """
+        """Construct a graph from a single SBN string."""
         lines = split_comments(input_string)
 
         self.type_indices = {
@@ -329,7 +329,7 @@ class SBNGraph(BaseGraph):
         token: Optional[str] = None,
         meta: Optional[Dict[str, Any]] = None,
     ):
-        """ Create an edge, if no token is provided, the id will be used. """
+        """Create an edge, if no token is provided, the id will be used."""
         edge_id = self._id_for_type(type)
         meta = meta or dict()
         return (
@@ -349,7 +349,7 @@ class SBNGraph(BaseGraph):
         token: Optional[str] = None,
         meta: Optional[Dict[str, Any]] = None,
     ):
-        """ Create a node, if no token is provided, the id will be used. """
+        """Create a node, if no token is provided, the id will be used."""
         node_id = self._id_for_type(type)
         meta = meta or dict()
         return (

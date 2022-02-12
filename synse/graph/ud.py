@@ -2,6 +2,7 @@ from os import PathLike
 from typing import Any, Dict, Optional, Tuple, Union
 
 from stanza.utils.conll import CoNLL
+
 from synse.graph.base import BaseGraph
 
 __all__ = ["UDGraph"]

@@ -6,14 +6,13 @@
 """
 import re
 import time
-
 from argparse import ArgumentParser, Namespace
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-import networkx as nx
 import matplotlib.pyplot as plt
+import networkx as nx
 
 # Whitespace is essential since there can be % signs in sense ids and comments
 SBN_COMMENT = r" % "
@@ -85,7 +84,7 @@ EDGE = Tuple[int, int, Dict[str, Any]]
 
 
 class SBN_NODE(Enum):
-    """ Node types """
+    """Node types"""
 
     WORDNET_SENSE = "wordnet-sense"
     NAME_CONSTANT = "name-constant"
@@ -94,7 +93,7 @@ class SBN_NODE(Enum):
 
 
 class SBN_EDGE(Enum):
-    """ Edge types """
+    """Edge types"""
 
     ROLE = "role"
     BOX_CONNECT = "box-connect"
@@ -119,7 +118,7 @@ def get_args() -> Namespace:
 
 
 def parse_sbn(input_string: str) -> Tuple[List[NODE], List[EDGE]]:
-    """ Creates a graph from a single SBN string. """
+    """Creates a graph from a single SBN string."""
 
     # First split everything in lines
     split_lines = input_string.rstrip("\n").split("\n")
