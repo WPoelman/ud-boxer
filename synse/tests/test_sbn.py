@@ -19,8 +19,12 @@ ALL_EXAMPLES = [example.read_text() for example in EXAMPLES_DIR.glob("*.sbn")]
             [("brown.a.01", "A brown     [0-7]")],
         ),
         (
-            "entity.n.01                                   %                ",
+            "entity.n.01                                   %                 ",
             [("entity.n.01", None)],
+        ),
+        (
+            "entity.n.01       EQU 7                  % 7 % der       [21-28]",
+            [("entity.n.01       EQU 7", "7 % der       [21-28]")],
         ),
     ],
 )
