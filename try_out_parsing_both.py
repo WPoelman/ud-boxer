@@ -2,9 +2,6 @@ import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-import matplotlib.pyplot as plt
-import networkx as nx
-
 from synse.graph import SBNGraph, UDGraph
 
 
@@ -62,24 +59,9 @@ def main():
             S = SBNGraph().from_string(filepath.read_text())
             U = UDGraph().from_conll(ud_filepath)
 
-            node_labels = {n: data["token"] for n, data in U.nodes.items()}
-            edge_labels = {n: data["token"] for n, data in U.edges.items()}
-
             if args.visualization:
-                # pos = nx.drawing.nx_pydot.graphviz_layout(U, prog="dot")
-                # pos = nx.drawing.nx_pydot.graphviz_layout(U)
-                pos = nx.circular_layout(U)
-                nx.draw_networkx_labels(U, pos, labels=node_labels)
-                nx.draw_networkx_edge_labels(U, pos, edge_labels=edge_labels)
-                nx.draw(
-                    U,
-                    pos,
-                    node_size=1500,
-                    node_color="grey",
-                    font_size=8,
-                    font_weight="bold",
-                )
-                plt.show()
+                S.show()
+                U.show()
 
             total += 1
 
