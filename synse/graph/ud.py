@@ -1,8 +1,27 @@
 from os import PathLike
-from synse.graph.base import BaseGraph
+from typing import Any, Dict, Optional, Tuple, Union
+
 from stanza.utils.conll import CoNLL
+from synse.graph.base import BaseGraph
 
 __all__ = ["UDGraph"]
+
+
+class UD_NODE_TYPE(str):
+    """Node types"""
+
+    # NOTE: possibly use POS tags as node types directly
+    SENTENCE = "sentence"
+    TOKEN = "token"
+    ROOT = "root"
+
+
+class UD_EDGE_TYPE(str):
+    """Edge types"""
+
+    # NOTE: possibly use dependency relations as edge type directly
+    SENTENCE_CONNECT = "sentence-connect"
+    DEPENDENCY_RELATION = "dependency-relation"
 
 
 class UDGraph(BaseGraph):
@@ -10,35 +29,21 @@ class UDGraph(BaseGraph):
         super().__init__(incoming_graph_data, **attr)
 
     def from_conll(self, conll_path: PathLike):
+        """Construct the graph using the provided conll file"""
+        sentences, _ = CoNLL.conll2dict(conll_path)
 
-        # TODO: very ugly currently, just to test
-
-        sents, _ = CoNLL.conll2dict(conll_path)
-
-        if len(sents) > 1:
-            # Continuation box relation ?
-            raise ValueError("Document with multiple sentence found, skipping")
-
-        IGNORE_NODE = {"deprel", "misc"}
-        ID = "id"
         nodes, edges = [], []
-
-        for tok in sents[0]:
-            # Ids are read in as tuples, but currently there are no parses with
-            # multiple or duplicate ids (not sure when that happens,
-            # with pre-annotated docs maybe?)
-            assert (
-                len(tok["id"]) == 1
-            ), f"Multiple ids found, cannot parse this currently"
-            tok_id = tok["id"][0]
-
+        for sentence_idx, sentence in enumerate(sentences):
+            # Explicitly add the root node for each sentence
+            root_id = (sentence_idx, UD_NODE_TYPE.ROOT, 0)
             nodes.append(
                 (
-                    0,
+                    root_id,
                     {
-                        "id": 0,
+                        "id": root_id,
                         "text": "ROOT",
                         "token": "ROOT",
+                        "lemma": None,
                         "upos": None,
                         "xpos": None,
                         "feats": None,
@@ -46,18 +51,25 @@ class UDGraph(BaseGraph):
                     },
                 )
             )
+            for token in sentence:
+                # Ids are read in as tuples, but currently there are no parses
+                # with multiple or duplicate ids (not sure when that happens,
+                # with pre-annotated docs maybe?)
+                assert (
+                    len(token["id"]) == 1
+                ), f"Multiple ids found, cannot parse this currently"
 
-            nodes.append(
-                (
-                    tok_id,
-                    {
-                        k if k != "lemma" else "token": v if k != ID else v[0]
-                        for k, v in tok.items()
-                        if k not in IGNORE_NODE
-                    },
-                )
-            )
-            edges.append((tok["head"], tok_id, {"token": tok["deprel"]}))
+                tok_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["id"][0])
+                tok_data = {**token, **{"id": tok_id, "token": token["text"]}}
+
+                if token["head"] == 0:
+                    head_id = (sentence_idx, UD_NODE_TYPE.ROOT, token["head"])
+                else:
+                    head_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["head"])
+                edge_data = {"token": token["deprel"]}
+
+                nodes.append((tok_id, tok_data))
+                edges.append((head_id, tok_id, edge_data))
 
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)
