@@ -56,12 +56,15 @@ def main():
                     f"No UD conll file for {filepath.parent}"
                 )
 
-            S = SBNGraph().from_string(filepath.read_text())
-            U = UDGraph().from_conll(ud_filepath)
+            # TODO: try to extract the pmb id from the path and give it to the
+            # graphs to use in exports.
+            S = SBNGraph().from_path(filepath)
+            U = UDGraph().from_path(ud_filepath)
 
             if args.visualization:
-                S.show()
-                U.show()
+                # TODO: add output directory to args and use id
+                S.show(f"{filepath.stem}.svg")
+                U.show(f"{ud_filepath.stem}.svg")
 
             total += 1
 

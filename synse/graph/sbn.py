@@ -1,4 +1,6 @@
 from enum import Enum
+from os import PathLike
+from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
 
 from synse.graph.base import BaseGraph
@@ -21,6 +23,7 @@ class SBN_EDGE_TYPE(str, Enum):
 
     ROLE = "role"
     BOX_CONNECT = "box-connect"
+    BOX_BOX_CONNECT = "box-box-connect"
 
 
 # Node / edge ids, unique combination of type and index / count for the current
@@ -31,6 +34,10 @@ SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
 class SBNGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
+
+    def from_path(self, path: PathLike):
+        """Construct a graph from the provided filepath."""
+        return self.from_string(Path(path).read_text())
 
     def from_string(self, input_string: str):
         """Construct a graph from a single SBN string."""
@@ -43,9 +50,12 @@ class SBNGraph(BaseGraph):
             SBN_NODE_TYPE.BOX: 0,
             SBN_EDGE_TYPE.ROLE: 0,
             SBN_EDGE_TYPE.BOX_CONNECT: 0,
+            SBN_EDGE_TYPE.BOX_BOX_CONNECT: 0,
         }
 
-        starting_box = self.create_node(SBN_NODE_TYPE.BOX)
+        starting_box = self.create_node(
+            SBN_NODE_TYPE.BOX, self._active_box_token
+        )
 
         nodes, edges = [starting_box], []
 
@@ -75,8 +85,8 @@ class SBNGraph(BaseGraph):
                         },
                     )
                     box_edge = self.create_edge(
-                        self._active_box_id(),
-                        self._active_sense_id(),
+                        self._active_box_id,
+                        self._active_sense_id,
                         SBN_EDGE_TYPE.BOX_CONNECT,
                     )
 
@@ -91,14 +101,16 @@ class SBNGraph(BaseGraph):
                         box_index == -1
                     ), f"Unexpected box index found {box_index}"
 
-                    current_box_id = self._active_box_id()
+                    current_box_id = self._active_box_id
 
                     # Connect the current box to the one indicated by the index
-                    new_box = self.create_node(SBN_NODE_TYPE.BOX)
+                    new_box = self.create_node(
+                        SBN_NODE_TYPE.BOX, self._active_box_token
+                    )
                     box_edge = self.create_edge(
                         current_box_id,
-                        self._active_box_id(),
-                        SBN_EDGE_TYPE.BOX_CONNECT,
+                        self._active_box_id,
+                        SBN_EDGE_TYPE.BOX_BOX_CONNECT,
                         token,
                     )
 
@@ -109,13 +121,13 @@ class SBNGraph(BaseGraph):
 
                     if index_match := SBNSpec.INDEX_PATTERN.match(target):
                         idx = int(index_match.group(0))
-                        active_id = self._active_sense_id()
+                        active_id = self._active_sense_id
                         target_idx = active_id[1] + idx
                         to_id = (active_id[0], target_idx)
 
                         if SBNSpec.MIN_SENSE_IDX <= target_idx <= max_wn_idx:
                             role_edge = self.create_edge(
-                                self._active_sense_id(),
+                                self._active_sense_id,
                                 to_id,
                                 SBN_EDGE_TYPE.ROLE,
                                 token,
@@ -134,20 +146,13 @@ class SBNGraph(BaseGraph):
                                 {"comment": comment},
                             )
                             role_edge = self.create_edge(
-                                self._active_sense_id(),
+                                self._active_sense_id,
                                 const_node[0],
                                 SBN_EDGE_TYPE.ROLE,
                                 token,
                             )
-                            box_edge = self.create_edge(
-                                self._active_box_id(),
-                                const_node[0],
-                                SBN_EDGE_TYPE.BOX_CONNECT,
-                            )
-
                             nodes.append(const_node)
                             edges.append(role_edge)
-                            edges.append(box_edge)
                     elif SBNSpec.NAME_CONSTANT_PATTERN.match(target):
                         name_parts = [target]
 
@@ -166,20 +171,14 @@ class SBNGraph(BaseGraph):
                             {"comment": comment},
                         )
                         role_edge = self.create_edge(
-                            self._active_sense_id(),
+                            self._active_sense_id,
                             name_node[0],
                             SBN_EDGE_TYPE.ROLE,
                             token,
                         )
-                        box_edge = self.create_edge(
-                            self._active_box_id(),
-                            name_node[0],
-                            SBN_EDGE_TYPE.BOX_CONNECT,
-                        )
 
                         nodes.append(name_node)
                         edges.append(role_edge)
-                        edges.append(box_edge)
                     else:
                         const_node = self.create_node(
                             SBN_NODE_TYPE.CONSTANT,
@@ -187,20 +186,14 @@ class SBNGraph(BaseGraph):
                             {"comment": comment},
                         )
                         role_edge = self.create_edge(
-                            self._active_sense_id(),
+                            self._active_sense_id,
                             const_node[0],
                             SBN_EDGE_TYPE.ROLE,
                             token,
                         )
-                        box_edge = self.create_edge(
-                            self._active_box_id(),
-                            const_node[0],
-                            SBN_EDGE_TYPE.BOX_CONNECT,
-                        )
 
                         nodes.append(const_node)
                         edges.append(role_edge)
-                        edges.append(box_edge)
                 else:
                     raise ValueError(
                         f"Invalid token found '{token}' in line: {sbn_line}"
@@ -259,11 +252,30 @@ class SBNGraph(BaseGraph):
         self.type_indices[type] += 1
         return _id
 
+    @property
     def _active_sense_id(self) -> SBN_ID:
         return (
             SBN_NODE_TYPE.SENSE,
             self.type_indices[SBN_NODE_TYPE.SENSE] - 1,
         )
 
+    @property
     def _active_box_id(self) -> SBN_ID:
         return (SBN_NODE_TYPE.BOX, self.type_indices[SBN_NODE_TYPE.BOX] - 1)
+
+    @property
+    def _active_box_token(self) -> str:
+        return f"B-{self.type_indices[SBN_NODE_TYPE.BOX]}"
+
+    @property
+    def type_style_mapping(self):
+        """Style per node type to use in dot export"""
+        return {
+            SBN_NODE_TYPE.SENSE: {},
+            SBN_NODE_TYPE.NAME_CONSTANT: {"shape": "none"},
+            SBN_NODE_TYPE.CONSTANT: {"shape": "none"},
+            SBN_NODE_TYPE.BOX: {"shape": "box"},
+            SBN_EDGE_TYPE.ROLE: {},
+            SBN_EDGE_TYPE.BOX_CONNECT: {"style": "dotted", "label": ""},
+            SBN_EDGE_TYPE.BOX_BOX_CONNECT: {},
+        }

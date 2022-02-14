@@ -63,8 +63,8 @@ def test_parse_reconstruct_name():
     assert name_const_id in G.nodes
 
     assert len(G.nodes) == 3  # box, sense, name
-    # box->box-connect->sense, box->box-connect->name, sense->role->name
-    assert len(G.edges) == 3
+    # box->box-connect->sense, sense->role->name
+    assert len(G.edges) == 2
 
     node_data = G.nodes.get(name_const_id)
     assert node_data["token"] == '"Steve Miller Band"'

@@ -2,7 +2,6 @@ import json
 from os import PathLike
 from typing import Any, Dict, Tuple
 
-import matplotlib.pyplot as plt
 import networkx as nx
 
 __all__ = ["BaseGraph"]
@@ -18,7 +17,12 @@ class BaseGraph(nx.DiGraph):
 
     def from_string(self, input_text: str):
         """Method to construct nodes and edges from input text"""
-        return NotImplemented
+        raise NotImplementedError("Cannot be called directly.")
+
+    @property
+    def type_style_mapping(self):
+        """Style per node abd/or edge type to use in dot export"""
+        raise NotImplementedError("Cannot be called directly.")
 
     def to_json(self, path: PathLike):
         """Export the graph to json and save it at the provided path"""
@@ -36,30 +40,54 @@ class BaseGraph(nx.DiGraph):
 
         return self
 
-    def show(
-        self,
-        node_label_key: str = "token",
-        edge_label_key: str = "token",
-        save_path: PathLike = None,
-    ):
-        node_labels = {
-            n: data[node_label_key] for n, data in self.nodes.items()
-        }
-        edge_labels = {
-            n: data[edge_label_key] for n, data in self.edges.items()
-        }
+    def show(self, save_path: PathLike):
+        """Creates a dot graph svg and saves it at the provided path"""
+        # This is possible, but it's a pain to select the proper labels and
+        # format. It's easier to create it 'manually'.
+        # P = nx.drawing.nx_pydot.to_pydot(self)
+        import pydot
 
-        # pos = nx.drawing.nx_pydot.graphviz_layout(U, prog="dot")
-        # pos = nx.drawing.nx_pydot.graphviz_layout(U)
-        pos = nx.circular_layout(self)
-        nx.draw_networkx_labels(self, pos, labels=node_labels)
-        nx.draw_networkx_edge_labels(self, pos, edge_labels=edge_labels)
-        nx.draw(
-            self,
-            pos,
-            node_size=1500,
-            node_color="grey",
-            font_size=8,
-            font_weight="bold",
-        )
-        plt.show()
+        p_graph = pydot.Dot(save_path)
+
+        token_count: Dict[str, int] = dict()
+        node_dict = dict()
+        for node_id, node_data in self.nodes.items():
+            # Need to do some trickery so no duplicate nodes get added, for
+            # example when a sense occurs > 1 times. Example:
+            # pmb-4.0.0/data/en/bronze/p00/d0075
+            # The tuple ids themselves are not great here.
+            tok = node_data["token"].replace(":", "-")
+            if tok in token_count:
+                token_count[tok] += 1
+                token_id = f"{tok}-{token_count[tok]}"
+            else:
+                token_id = tok
+                token_count[tok] = 0
+            node_dict[node_id] = token_id
+
+            p_graph.add_node(
+                pydot.Node(
+                    token_id,
+                    **{
+                        **self.type_style_mapping[node_data["type"]],
+                        "label": tok,
+                    },
+                )
+            )
+
+        for (from_id, to_id), edge_data in self.edges.items():
+            p_graph.add_edge(
+                pydot.Edge(
+                    node_dict[from_id],
+                    node_dict[to_id],
+                    **{
+                        "label": edge_data["token"].replace(":", "-"),
+                        **self.type_style_mapping[edge_data["type"]],
+                    },
+                )
+            )
+        p_graph.write(save_path, format="png")
+
+        del p_graph
+
+        return self

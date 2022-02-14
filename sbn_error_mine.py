@@ -40,7 +40,7 @@ def main():
     for filepath in Path(args.starting_path).glob("**/*.sbn"):
         total += 1
         try:
-            S = SBNGraph().from_string(filepath.read_text())
+            S = SBNGraph().from_path(filepath)
 
         except Exception as e:
             error_msg = f"Unable to parse {filepath}\nReason: {e}"
