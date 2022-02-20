@@ -34,7 +34,7 @@ def test_split_comments(line, expected):
 
 def test_parse_sense_simple_string():
     single_sense = "brown.a.01                             % A brown     [0-7]"
-    G = SBNGraph().from_string(single_sense)
+    G = SBNGraph().from_string(single_sense, "test-doc-id")
 
     box_id = (SBN_NODE_TYPE.BOX, 0)
     sense_id = (SBN_NODE_TYPE.SENSE, 0)
@@ -56,7 +56,7 @@ def test_parse_reconstruct_name():
         'musical_organization.n.01 Name "Steve Miller Band"'
         "                 % The Steve Miller Band [0-21]"
     )
-    G = SBNGraph().from_string(test_string)
+    G = SBNGraph().from_string(test_string, "test-doc-id")
 
     name_const_id = (SBN_NODE_TYPE.NAME_CONSTANT, 0)
 

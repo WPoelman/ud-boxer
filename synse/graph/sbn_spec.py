@@ -1,4 +1,18 @@
+"""
+This SBN spec is based on the PMB 4.0.0 .
+There are some know issues with SBN that are being looked at:
+    - A constant that looks like an index and *is* a valid index cannot be
+      distinguished from a regular index currently. So with the sentence
+      "The temperature was -1 degrees yesterday", -1 will be interpreted as an
+      index and not a constant.
+    - There are some sense id's that contain whitespace. This gives problems
+      for the tokenization. All examples can be found in 
+      'data/misc/whitespace_in_ids.txt' of this repo.
+"""
+
 import re
+from os import PathLike
+from pathlib import Path
 from typing import List, Optional, Tuple
 
 __all__ = ["SBNSpec", "split_comments"]
@@ -7,6 +21,9 @@ __all__ = ["SBNSpec", "split_comments"]
 class SBNSpec:
     COMMENT = r" % "
     COMMENT_LINE = r"%%%"
+    MIN_SENSE_IDX = 0
+
+    DOC_ID_PATTERN = re.compile(r"(p\d+)\/(d\d+)\/(en|de|it|nl)")
 
     NEW_BOX_INDICATORS = {
         "ALTERNATION",
@@ -141,37 +158,35 @@ class SBNSpec:
 
     # NOTE: Now roles are properly handled instead of indirectly, but these
     # constant patterns might still be handy.
-    # # Special constants at the 'ending' nodes
-    # CONSTANTS = {
-    #     "speaker",
-    #     "hearer",
-    #     "now",
-    #     "unknown_ref",
-    #     "monday",
-    #     "tuesday",
-    #     "wednesday",
-    #     "thursday",
-    #     "friday",
-    #     "saturday",
-    #     "sunday",
-    # }
 
-    # # "'2008'" or "'196X'"" for instance, always in single quotes
-    # YEAR_CONSTANT = r"\'([\dX]{4})\'"
+    # Special constants at the 'ending' nodes
+    CONSTANTS = {
+        "speaker",
+        "hearer",
+        "now",
+        "unknown_ref",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+    }
 
-    # # Can be "?", single "+/-" or unsigned digit (explicitly signed digits are
-    # # assumed to be indices and are matched first!)
-    # QUANTITY_CONSTANT = r"[\+\-\d\?]"
+    # "'2008'" or "'196X'"" for instance, always in single quotes
+    YEAR_CONSTANT = r"\'([\dX]{4})\'"
 
-    # # "Tom got an A on his exam": Value -> "A" NOTE: arguably better to catch
-    # # this with roles, but all other constants are caught.
-    # VALUE_CONSTANT = r"^[A-Z]$"
+    # Can be "?", single "+/-" or unsigned digit (explicitly signed digits are
+    # assumed to be indices and are matched first!)
+    QUANTITY_CONSTANT = r"[\+\-\d\?]"
+
+    # "Tom got an A on his exam": Value -> "A"
+    VALUE_CONSTANT = r"^[A-Z]$"
 
     # CONSTANTS_PATTERN = re.compile(
     #     "|".join([YEAR_CONSTANT, QUANTITY_CONSTANT, VALUE_CONSTANT, CONSTANTS])
     # )
-
-    MIN_SENSE_IDX = 0
 
 
 def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
@@ -196,3 +211,31 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
         temp_lines.append((sbn, comment or None))
 
     return temp_lines
+
+
+def get_doc_id(
+    lang: str = None,
+    p_id: str = None,
+    d_id: str = None,
+    filepath: PathLike = None,
+    sbn_str: str = None,
+) -> str:
+    """
+    Helper to extract a doc id from either the filepath of the sbn file or the
+    starting comment lines. A doc id has the format <lang>-<p>-<d>.
+    """
+    if lang and p_id and d_id:
+        return f"{lang}-{p_id}-{d_id}"
+
+    # Try filepath first since it's shorter
+    if filepath:
+        full_path = str(Path(filepath).resolve())
+        if match := SBNSpec.DOC_ID_PATTERN.findall(full_path):
+            p_match, d_match, lang_match = match[0]
+            return f"{lang_match}-{p_match}-{d_match}"
+
+    if sbn_str and (id_match := SBNSpec.DOC_ID_PATTERN.findall(sbn_str)):
+        p_match, d_match, lang_match = id_match[0]
+        return f"{lang_match}-{p_match}-{d_match}"
+
+    raise ValueError("Cannot create id.")

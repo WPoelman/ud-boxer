@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
 
 from synse.graph.base import BaseGraph
-from synse.graph.sbn_spec import SBNSpec, split_comments
+from synse.graph.sbn_spec import SBNSpec, get_doc_id, split_comments
 
 __all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph"]
 
@@ -35,12 +35,26 @@ class SBNGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
 
-    def from_path(self, path: PathLike):
-        """Construct a graph from the provided filepath."""
-        return self.from_string(Path(path).read_text())
+        # TODO: maybe move to BaseGraph
+        self.doc_id = None
 
-    def from_string(self, input_string: str):
+    def from_path(self, path: PathLike, doc_id: str = None):
+        """Construct a graph from the provided filepath."""
+        if not self.doc_id and doc_id:
+            self.doc_id = doc_id
+        else:
+            self.doc_id = get_doc_id(filepath=path)
+        return self.from_string(Path(path).read_text(), doc_id)
+
+    def from_string(self, input_string: str, doc_id: str = None):
         """Construct a graph from a single SBN string."""
+        # TODO: maybe put this in a nicer spot (and possibly preserve comments
+        # so the sbn can be reconstructed from the graph, including
+        # the comments).
+        if not self.doc_id and doc_id:
+            self.doc_id = doc_id
+        else:
+            self.doc_id = get_doc_id(sbn_str=input_string)
         lines = split_comments(input_string)
 
         self.type_indices = {
