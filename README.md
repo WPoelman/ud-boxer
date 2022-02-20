@@ -18,4 +18,4 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
   * related question: is it possible that a constant looks like an index and *is a valid index* (in the range of possible indices for the current file)? Example with invalid index: `pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn` Maybe indicated by the role since such ambiguity should not be possible?
 - [x] Try out https://github.com/nlp-uoregon/trankit (supposedly better performance than stanza in some areas: https://trankit.readthedocs.io/en/latest/performance.html#universal-dependencies-v2-5)
 - [x] Read a UD parse into nx.Graph (from file (connl?)? in a program directly using sentence?)
-- [ ] Differentiate between UD and enhanced UD, either via args or automatically at conll parsing step (`:` in any dep relation means the graph uses the enhanced UD's)
+- [ ] Differentiate between UD and enhanced UD, either via args or automatically at conll parsing step
