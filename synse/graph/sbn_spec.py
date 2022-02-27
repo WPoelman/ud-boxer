@@ -233,7 +233,7 @@ def get_doc_id(
     d_id: str = None,
     filepath: PathLike = None,
     sbn_str: str = None,
-) -> str:
+) -> Optional[str]:
     """
     Helper to extract a doc id from either the filepath of the sbn file or the
     starting comment lines. A doc id has the format <lang>-<p>-<d>.
@@ -252,4 +252,4 @@ def get_doc_id(
         p_match, d_match, lang_match = id_match[0]
         return f"{lang_match}-{p_match}-{d_match}"
 
-    raise ValueError("Cannot create id.")
+    return None

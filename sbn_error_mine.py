@@ -2,7 +2,8 @@ import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from synse.graph import SBNGraph, UDGraph
+from synse.graph import SBNGraph
+from synse.graph.sbn import sbn_graphs_are_isomorphic
 
 
 def get_args() -> Namespace:
@@ -40,13 +41,32 @@ def main():
     for filepath in Path(args.starting_path).glob("**/*.sbn"):
         total += 1
         try:
-            S = SBNGraph().from_path(filepath)
+            A = SBNGraph().from_path(filepath)
 
         except Exception as e:
             error_msg = f"Unable to parse {filepath}\nReason: {e}"
             errors.append(error_msg)
             print(error_msg)
             failed += 1
+            continue
+
+        try:
+            save_path = Path(f"{filepath.parent}/en.test.sbn")
+            A.to_sbn(save_path)
+            B = SBNGraph().from_path(save_path)
+            if sbn_graphs_are_isomorphic(A, B):
+                save_path.unlink()
+            else:
+                raise AssertionError(
+                    "Reconstructed graph and original are not the same"
+                )
+
+        except Exception as e:
+            error_msg = f"Unable to save {filepath}\nReason: {e}"
+            errors.append(error_msg)
+            print(error_msg)
+            failed += 1
+            continue
 
     end = round(time.perf_counter() - start, 2)
 

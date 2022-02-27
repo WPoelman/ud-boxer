@@ -2,6 +2,9 @@ from enum import Enum
 from os import PathLike
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
+from uuid import uuid4
+
+import networkx as nx
 
 from synse.graph.base import BaseGraph
 from synse.graph.sbn_spec import SBNSpec, get_doc_id, split_comments
@@ -356,7 +359,11 @@ class SBNGraph(BaseGraph):
                 elif token in sense_idx_map:
                     target = sense_idx_map[token] - current_sense_idx + 1
                     tmp_line.append(
-                        f"+{target}" if target > 0 else str(target)
+                        # In PMB dataset, an index of '0' is written as '+0',
+                        # so do that here as well.
+                        f"+{target}"
+                        if target >= 0
+                        else str(target)
                     )
                 else:
                     # It's a regular token
@@ -402,6 +409,8 @@ class SBNGraph(BaseGraph):
     def __try_to_set_doc_id(
         self, doc_id: str = None, path: PathLike = None, sbn_str: str = None
     ):
+        # TODO: probably remove this and always use uuid or force the user to
+        # provide a valid id instead of the graph figuring it out.
         if self.doc_id:
             return
 
@@ -412,4 +421,21 @@ class SBNGraph(BaseGraph):
         elif sbn_str:
             self.doc_id = get_doc_id(sbn_str=sbn_str)
         else:
-            raise ValueError("Cannot set doc id this way")
+            self.doc_id = f"no-id-received-{uuid4()}"
+
+
+# TODO: maybe move to base graph (if token is also used in UD graph)
+def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
+    """
+    Checks if two SBNGraphs are isomorphic this is based on node and edge
+    ids as well as the 'token' meta data per node and edge
+    """
+    # Type and count are already compared implicitly in the id comparison that
+    # is done in the 'is_isomorphic' function. Here compare the token.
+    def node_cmp(node_a, node_b) -> bool:
+        return node_a["token"] == node_b["token"]
+
+    def edge_cmp(edge_a, edge_b) -> bool:
+        return edge_a["token"] == edge_b["token"]
+
+    return nx.is_isomorphic(A, B, node_cmp, edge_cmp)
