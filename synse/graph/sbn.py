@@ -352,7 +352,7 @@ class SBNGraph(BaseGraph):
                     if token in sense_idx_map:
                         tmp_line.append(self.nodes.get(token)["token"])
                         current_sense_idx += 1
-                    # It's a regular token
+                    # It is a regular token
                     else:
                         tmp_line.append(token)
                 # It is a sense which needs to be resolved to an index
@@ -365,8 +365,8 @@ class SBNGraph(BaseGraph):
                         if target >= 0
                         else str(target)
                     )
+                # It is a regular token
                 else:
-                    # It's a regular token
                     tmp_line.append(token)
             # TODO: vertically align tokens just as in the dataset?
             # See: https://docs.python.org/3/library/string.html#format-specification-mini-language
@@ -431,7 +431,7 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
     """
     # Type and count are already compared implicitly in the id comparison that
     # is done in the 'is_isomorphic' function. The tokens are important to
-    # compare since some constants (names, dates etc.) need to be reconstructed 
+    # compare since some constants (names, dates etc.) need to be reconstructed
     # properly with their quotes in order to be valid.
     def node_cmp(node_a, node_b) -> bool:
         return node_a["token"] == node_b["token"]
