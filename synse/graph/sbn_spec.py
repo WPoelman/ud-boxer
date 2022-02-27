@@ -198,17 +198,31 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     split_lines = sbn_string.rstrip("\n").split("\n")
 
     # Separate the actual SBN and the comments
-    temp_lines = []
+    temp_lines: List[Tuple[str, Optional[str]]] = []
     for line in split_lines:
         # discarded here.
         if line.startswith(SBNSpec.COMMENT_LINE):
             continue
 
         # Split lines in (<SBN-line>, <comment>) and filter out empty comments.
-        items = line.split(SBNSpec.COMMENT, 1)
+        items = []
+        for item in line.split(SBNSpec.COMMENT, 1):
+            if item := item.strip():
+                items.append(item)
 
-        sbn, comment = [item.strip() for item in items]
-        temp_lines.append((sbn, comment or None))
+        # An empty line
+        if len(items) == 0:
+            pass
+        # There is no comment
+        elif len(items) == 1:
+            temp_lines.append((items[0], None))
+        # We have a comment
+        elif len(items) == 2:
+            temp_lines.append((items[0], items[1]))
+        else:
+            raise AssertionError(
+                "Unreachable, multiple comments per line are impossible"
+            )
 
     return temp_lines
 
