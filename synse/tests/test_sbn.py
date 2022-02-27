@@ -1,9 +1,13 @@
 from pathlib import Path
 
-import networkx as nx
 import pytest
 
-from synse.graph.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
+from synse.graph.sbn import (
+    SBN_EDGE_TYPE,
+    SBN_NODE_TYPE,
+    SBNGraph,
+    sbn_graphs_are_isomorphic,
+)
 from synse.graph.sbn_spec import split_comments
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
@@ -83,17 +87,7 @@ def test_can_parse_and_reconstruct(tmp_path, example_string):
     path = starting_graph.to_sbn(tmp_path / "test.sbn")
     reconstructed_graph = SBNGraph().from_path(path, "test-id")
 
-    # Type and count are already compared implicitly in the id comparison that
-    # is done in the 'is_isomorphic' function. Here compare the token.
-    def node_cmp(node_a, node_b) -> bool:
-        return node_a["token"] == node_b["token"]
-
-    def edge_cmp(edge_a, edge_b) -> bool:
-        return edge_a["token"] == edge_b["token"]
-
-    assert nx.is_isomorphic(
-        starting_graph, reconstructed_graph, node_cmp, edge_cmp
-    )
+    assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
 
 
 def test_parse_indices():
