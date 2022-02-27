@@ -424,14 +424,15 @@ class SBNGraph(BaseGraph):
             self.doc_id = f"no-id-received-{uuid4()}"
 
 
-# TODO: maybe move to base graph (if token is also used in UD graph)
 def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
     """
     Checks if two SBNGraphs are isomorphic this is based on node and edge
     ids as well as the 'token' meta data per node and edge
     """
     # Type and count are already compared implicitly in the id comparison that
-    # is done in the 'is_isomorphic' function. Here compare the token.
+    # is done in the 'is_isomorphic' function. The tokens are improtant to
+    # compare since some constants (names, dates etc.) need to be reconstructed 
+    # properly with their quotes in order to be valid.
     def node_cmp(node_a, node_b) -> bool:
         return node_a["token"] == node_b["token"]
 
