@@ -40,21 +40,14 @@ class SBNGraph(BaseGraph):
 
     def from_path(self, path: PathLike, doc_id: str = None):
         """Construct a graph from the provided filepath."""
-        if not self.doc_id and doc_id:
-            self.doc_id = doc_id
-        else:
-            self.doc_id = get_doc_id(filepath=path)
-        return self.from_string(Path(path).read_text(), doc_id)
+        sbn_str = Path(path).read_text()
+        self.__try_to_set_doc_id(doc_id, path=path, sbn_str=sbn_str)
+        return self.from_string(sbn_str)
 
     def from_string(self, input_string: str, doc_id: str = None):
         """Construct a graph from a single SBN string."""
-        # TODO: maybe put this in a nicer spot (and possibly preserve comments
-        # so the sbn can be reconstructed from the graph, including
-        # the comments).
-        if not self.doc_id and doc_id:
-            self.doc_id = doc_id
-        else:
-            self.doc_id = get_doc_id(sbn_str=input_string)
+        self.__try_to_set_doc_id(doc_id, sbn_str=input_string)
+
         lines = split_comments(input_string)
 
         self.type_indices = {
@@ -266,6 +259,118 @@ class SBNGraph(BaseGraph):
         self.type_indices[type] += 1
         return _id
 
+    def to_sbn(self, path: PathLike) -> PathLike:
+        """Writes the SBNGraph to an file in sbn format"""
+        path = (
+            Path(path) if str(path).endswith(".sbn") else Path(f"{path}.sbn")
+        )
+
+        path.write_text(self.to_sbn_string())
+        return path
+
+    def to_sbn_string(self) -> str:
+        """Creates a string in sbn format from the SBNGraph"""
+        result = []
+        sense_idx_map: Dict[SBN_ID, int] = dict()
+        line_idx = 0
+
+        box_nodes = [
+            node for node in self.nodes if node[0] == SBN_NODE_TYPE.BOX
+        ]
+        for box_node_id in box_nodes:
+            box_box_connect_to_insert = None
+            for edge_id in self.out_edges(box_node_id):
+                _, to_node_id = edge_id
+                to_node_type, _ = to_node_id
+
+                edge_data = self.edges.get(edge_id)
+                if edge_data["type"] == SBN_EDGE_TYPE.BOX_BOX_CONNECT:
+                    if box_box_connect_to_insert:
+                        raise AssertionError(
+                            "Found box connected to multiple boxes, is that possible?"
+                        )
+                    else:
+                        box_box_connect_to_insert = edge_data["token"]
+
+                if to_node_type == SBN_NODE_TYPE.SENSE:
+                    assert (
+                        to_node_id not in sense_idx_map
+                    ), "Ambiguous sense id found, should not be possible"
+
+                    sense_idx_map[to_node_id] = line_idx
+                    temp_line_result = [to_node_id]
+                    for sense_edge_id in self.out_edges(to_node_id):
+                        _, sense_to_id = sense_edge_id
+
+                        sense_edge_data = self.edges.get(sense_edge_id)
+                        assert (
+                            sense_edge_data["type"] == SBN_EDGE_TYPE.ROLE
+                        ), f"Invalid sense edge connect found: {sense_edge_data['type']}"
+
+                        temp_line_result.append(sense_edge_data["token"])
+
+                        sense_node_to_data = self.nodes.get(sense_to_id)
+                        sense_node_to_type = sense_node_to_data["type"]
+                        assert sense_node_to_type in (
+                            SBN_NODE_TYPE.CONSTANT,
+                            SBN_NODE_TYPE.NAME_CONSTANT,
+                            SBN_NODE_TYPE.SENSE,
+                        ), f"Invalid sense node connect found: {sense_node_to_type}"
+
+                        if sense_node_to_type == SBN_NODE_TYPE.SENSE:
+                            temp_line_result.append(sense_to_id)
+                        else:
+                            temp_line_result.append(
+                                sense_node_to_data["token"]
+                            )
+
+                    result.append(temp_line_result)
+                    line_idx += 1
+                elif to_node_type == SBN_NODE_TYPE.BOX:
+                    pass
+                else:
+                    raise ValueError(f"Invalid node id found: {to_node_id}")
+
+            if box_box_connect_to_insert:
+                result.append([box_box_connect_to_insert, "-1"])
+
+        # Resolve the indices and the correct sense tokens and create the sbn
+        # line strings for the final string
+        final_result = []
+        current_sense_idx = 0
+        for line_idx, line in enumerate(result):
+            tmp_line = []
+
+            for token_idx, token in enumerate(line):
+                # There can never be an index at the first token of a line, so
+                # always start at the second token.
+                if token_idx == 0:
+                    # It is a sense id that needs to be converted to a token
+                    if token in sense_idx_map:
+                        tmp_line.append(self.nodes.get(token)["token"])
+                        current_sense_idx += 1
+                    # It's a regular token
+                    else:
+                        tmp_line.append(token)
+                # It is a sense which needs to be resolved to an index
+                elif token in sense_idx_map:
+                    target = sense_idx_map[token] - current_sense_idx + 1
+                    tmp_line.append(
+                        f"+{target}" if target > 0 else str(target)
+                    )
+                else:
+                    # It's a regular token
+                    tmp_line.append(token)
+            # TODO: vertically align tokens just as in the dataset?
+            # See: https://docs.python.org/3/library/string.html#format-specification-mini-language
+            final_result.append(" ".join(tmp_line))
+
+        # TODO: maybe also include comments if they are present, but then again
+        # they are not officially part of the SBN spec. Might be handy for
+        # debugging and insight purposes.
+        sbn_string = "\n".join(final_result)
+        return sbn_string
+
     @property
     def _active_sense_id(self) -> SBN_ID:
         return (
@@ -293,3 +398,18 @@ class SBNGraph(BaseGraph):
             SBN_EDGE_TYPE.BOX_CONNECT: {"style": "dotted", "label": ""},
             SBN_EDGE_TYPE.BOX_BOX_CONNECT: {},
         }
+
+    def __try_to_set_doc_id(
+        self, doc_id: str = None, path: PathLike = None, sbn_str: str = None
+    ):
+        if self.doc_id:
+            return
+
+        if doc_id:
+            self.doc_id = doc_id
+        elif path:
+            self.doc_id = get_doc_id(filepath=path)
+        elif sbn_str:
+            self.doc_id = get_doc_id(sbn_str=sbn_str)
+        else:
+            raise ValueError("Cannot set doc id this way")
