@@ -430,7 +430,7 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
     ids as well as the 'token' meta data per node and edge
     """
     # Type and count are already compared implicitly in the id comparison that
-    # is done in the 'is_isomorphic' function. The tokens are improtant to
+    # is done in the 'is_isomorphic' function. The tokens are important to
     # compare since some constants (names, dates etc.) need to be reconstructed 
     # properly with their quotes in order to be valid.
     def node_cmp(node_a, node_b) -> bool:
