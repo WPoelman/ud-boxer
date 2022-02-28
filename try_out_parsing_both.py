@@ -2,7 +2,8 @@ import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from synse.graph import SBNGraph, UDGraph
+from synse.sbn import SBNGraph
+from synse.ud import UDGraph
 
 
 def get_args() -> Namespace:
@@ -18,7 +19,7 @@ def get_args() -> Namespace:
         "-e",
         "--error_file",
         type=str,
-        default="errors_comparisons.txt",
+        default="logs/errors_comparisons.txt",
         help="File to write errors to.",
     )
     parser.add_argument(
@@ -26,6 +27,13 @@ def get_args() -> Namespace:
         "--visualization",
         action="store_true",
         help="Show visualizations.",
+    )
+    parser.add_argument(
+        "-o",
+        "--output_path",
+        type=str,
+        default="data/output",
+        help="Path to save output files to.",
     )
     return parser.parse_args()
 
@@ -41,6 +49,7 @@ def main():
     same_no_edges = 0
     same_no_nodes_and_edges = 0
 
+    output_path = Path(args.output_path)
     for filepath in Path(args.starting_path).glob("**/*.sbn"):
         total += 1
         try:
@@ -63,8 +72,14 @@ def main():
 
             if args.visualization:
                 # TODO: add output directory to args and use id
-                S.show(f"{filepath.stem}.svg")
-                U.show(f"{ud_filepath.stem}.svg")
+                S.show(
+                    str(Path(output_path / f"{filepath.stem}.png").resolve())
+                )
+                U.show(
+                    str(
+                        Path(output_path / f"{ud_filepath.stem}.png").resolve()
+                    )
+                )
 
             total += 1
 
@@ -79,12 +94,13 @@ def main():
                 same_no_nodes_and_edges += 1
         except Exception as e:
             error_msg = f"Unable to parse {filepath}\nReason: {e}\n"
+            print(error_msg)
             errors.append(error_msg)
             failed += 1
 
     end = round(time.perf_counter() - start, 2)
 
-    Path(args.error_file).write_text("\n\n".join(errors))
+    errors and Path(args.error_file).write_text("\n\n".join(errors))
 
     print(
         f"""

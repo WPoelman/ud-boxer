@@ -6,10 +6,8 @@ from uuid import uuid4
 
 import networkx as nx
 
-from synse.graph.base import BaseGraph
-from synse.graph.sbn_spec import SBNSpec, get_doc_id, split_comments
-
-__all__ = ["SBN_NODE_TYPE", "SBN_EDGE_TYPE", "SBNGraph"]
+from synse.graph import BaseGraph
+from synse.sbn.sbn_spec import SBNSpec, get_doc_id, split_comments
 
 
 class SBN_NODE_TYPE(str, Enum):

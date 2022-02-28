@@ -2,8 +2,7 @@ import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from synse.graph import SBNGraph
-from synse.graph.sbn import sbn_graphs_are_isomorphic
+from synse.sbn import SBNGraph, sbn_graphs_are_isomorphic
 
 
 def get_args() -> Namespace:
@@ -19,14 +18,8 @@ def get_args() -> Namespace:
         "-e",
         "--error_file",
         type=str,
-        default="sbn_errors.txt",
+        default="../logs/sbn_errors.txt",
         help="File to write errors to.",
-    )
-    parser.add_argument(
-        "-v",
-        "--visualization",
-        action="store_true",
-        help="Show visualizations.",
     )
     return parser.parse_args()
 
@@ -70,7 +63,7 @@ def main():
 
     end = round(time.perf_counter() - start, 2)
 
-    Path(args.error_file).write_text("\n\n".join(errors))
+    errors and Path(args.error_file).write_text("\n\n".join(errors))
 
     print(
         f"""

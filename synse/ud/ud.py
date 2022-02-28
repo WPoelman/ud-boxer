@@ -4,9 +4,7 @@ from typing import Any, Dict, Optional, Tuple, Union
 
 from stanza.utils.conll import CoNLL
 
-from synse.graph.base import BaseGraph
-
-__all__ = ["UDGraph"]
+from synse.graph import BaseGraph
 
 
 class UD_NODE_TYPE(str, Enum):
@@ -84,7 +82,7 @@ class UDGraph(BaseGraph):
                         "token": token["text"],
                         "type": UD_NODE_TYPE.TOKEN,
                     },
-                }
+                }  # TODO: checken dat lemmas meekomen
 
                 if token["head"] == 0:
                     head_id = (sentence_idx, UD_NODE_TYPE.ROOT, token["head"])

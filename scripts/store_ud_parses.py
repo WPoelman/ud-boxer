@@ -29,7 +29,7 @@ def get_args() -> Namespace:
         "-e",
         "--error_file",
         type=str,
-        default="errors_ud.txt",
+        default="../logs/errors_ud.txt",
         help="File to write errors to.",
     )
     parser.add_argument(
@@ -94,7 +94,7 @@ def main():
 
     end = round(time.perf_counter() - start, 2)
 
-    Path(args.error_file).write_text("\n\n".join(errors))
+    errors and Path(args.error_file).write_text("\n\n".join(errors))
 
     print(
         f"""

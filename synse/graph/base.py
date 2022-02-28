@@ -4,8 +4,6 @@ from typing import Any, Dict, Tuple
 
 import networkx as nx
 
-__all__ = ["BaseGraph"]
-
 _ID = Tuple[str, int]
 NODE = Tuple[_ID, Dict[str, Any]]
 EDGE = Tuple[_ID, _ID, Dict[str, Any]]
@@ -41,7 +39,7 @@ class BaseGraph(nx.DiGraph):
         return self
 
     def show(self, save_path: PathLike):
-        """Creates a dot graph svg and saves it at the provided path"""
+        """Creates a dot graph png and saves it at the provided path"""
         # This is possible, but it's a pain to select the proper labels and
         # format. It's easier to create it 'manually'.
         # P = nx.drawing.nx_pydot.to_pydot(self)

@@ -15,8 +15,6 @@ from os import PathLike
 from pathlib import Path
 from typing import List, Optional, Tuple
 
-__all__ = ["SBNSpec", "split_comments"]
-
 
 class SBNSpec:
     COMMENT = r" % "
