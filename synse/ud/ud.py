@@ -32,8 +32,6 @@ class UDGraph(BaseGraph):
         """Construct the graph using the provided conll file"""
         sentences, _ = CoNLL.conll2dict(conll_path)
 
-        # TODO: make this more like the SBN graph, with clearer methods and no
-        # magic numbers.
         nodes, edges = [], []
         for sentence_idx, sentence in enumerate(sentences):
             # Explicitly add the root node for each sentence
@@ -42,14 +40,13 @@ class UDGraph(BaseGraph):
                 (
                     root_id,
                     {
-                        "id": root_id,
-                        "text": "ROOT",
+                        "_id": root_id,
                         "token": "ROOT",
                         "lemma": None,
                         "upos": None,
                         "xpos": None,
                         "feats": None,
-                        "head": None,
+                        "connl_id": None,
                         "type": UD_NODE_TYPE.ROOT,
                     },
                 )
@@ -76,13 +73,15 @@ class UDGraph(BaseGraph):
 
                 tok_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["id"][0])
                 tok_data = {
-                    **token,
-                    **{
-                        "id": tok_id,
-                        "token": token["text"],
-                        "type": UD_NODE_TYPE.TOKEN,
-                    },
-                }  # TODO: checken dat lemmas meekomen
+                    "_id": tok_id,
+                    "token": token["text"],
+                    "lemma": token.get("lemma"),
+                    "upos": token.get("upos"),
+                    "xpos": token.get("xpos"),
+                    "feats": token.get("feats"),
+                    "connl_id": token.get("id"),
+                    "type": UD_NODE_TYPE.ROOT,
+                }
 
                 if token["head"] == 0:
                     head_id = (sentence_idx, UD_NODE_TYPE.ROOT, token["head"])
