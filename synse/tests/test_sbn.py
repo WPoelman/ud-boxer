@@ -90,6 +90,15 @@ def test_can_parse_and_reconstruct(tmp_path, example_string):
     assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
 
 
+@pytest.mark.parametrize("example_string", ALL_EXAMPLES)
+def test_can_parse_and_reconstruct_with_comments(tmp_path, example_string):
+    starting_graph = SBNGraph().from_string(example_string, "test-id")
+    path = starting_graph.to_sbn(tmp_path / "test.sbn", add_comments=True)
+    reconstructed_graph = SBNGraph().from_path(path, "test-id")
+
+    assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
+
+
 def test_parse_indices():
     pass
 

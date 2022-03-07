@@ -260,16 +260,16 @@ class SBNGraph(BaseGraph):
         self.type_indices[type] += 1
         return _id
 
-    def to_sbn(self, path: PathLike) -> PathLike:
+    def to_sbn(self, path: PathLike, add_comments: bool = False) -> PathLike:
         """Writes the SBNGraph to an file in sbn format"""
         path = (
             Path(path) if str(path).endswith(".sbn") else Path(f"{path}.sbn")
         )
 
-        path.write_text(self.to_sbn_string())
+        path.write_text(self.to_sbn_string(add_comments))
         return path
 
-    def to_sbn_string(self) -> str:
+    def to_sbn_string(self, add_comments: bool = False) -> str:
         """Creates a string in sbn format from the SBNGraph"""
         result = []
         sense_idx_map: Dict[SBN_ID, int] = dict()
@@ -341,6 +341,7 @@ class SBNGraph(BaseGraph):
         current_sense_idx = 0
         for line_idx, line in enumerate(result):
             tmp_line = []
+            comment_for_line = None
 
             for token_idx, token in enumerate(line):
                 # There can never be an index at the first token of a line, so
@@ -348,7 +349,13 @@ class SBNGraph(BaseGraph):
                 if token_idx == 0:
                     # It is a sense id that needs to be converted to a token
                     if token in sense_idx_map:
-                        tmp_line.append(self.nodes.get(token)["token"])
+                        node_data = self.nodes.get(token)
+                        tmp_line.append(node_data["token"])
+                        comment_for_line = comment_for_line or (
+                            node_data["comment"]
+                            if "comment" in node_data
+                            else None
+                        )
                         current_sense_idx += 1
                     # It is a regular token
                     else:
@@ -366,6 +373,9 @@ class SBNGraph(BaseGraph):
                 # It is a regular token
                 else:
                     tmp_line.append(token)
+
+            if add_comments and comment_for_line:
+                tmp_line.append(f"{SBNSpec.COMMENT}{comment_for_line}")
             # TODO: vertically align tokens just as in the dataset?
             # See: https://docs.python.org/3/library/string.html#format-specification-mini-language
             final_result.append(" ".join(tmp_line))
