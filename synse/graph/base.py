@@ -69,6 +69,8 @@ class BaseGraph(nx.DiGraph):
 
             label = [tok]
 
+            # TODO: figure out better way of doing this (method to override 
+            # that takes in node data and returns label?)
             if lemma := node_data.get("lemma"):
                 label.append(lemma)
             if upos := node_data.get("upos"):
