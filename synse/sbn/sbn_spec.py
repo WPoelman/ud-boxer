@@ -11,9 +11,23 @@ There are some know issues with SBN that are being looked at:
 """
 
 import re
+from enum import Enum
 from os import PathLike
 from pathlib import Path
 from typing import List, Optional, Tuple
+
+
+class SUPPORTED_LANGUAGES(str, Enum):
+    """Supported languages and their codes, this is based on the PMB 4.0.0"""
+
+    NL = "nl"
+    DE = "de"
+    IT = "it"
+    EN = "en"
+
+    @classmethod
+    def all_values(cls) -> List[str]:
+        return [i.value for i in cls]
 
 
 class SBNSpec:

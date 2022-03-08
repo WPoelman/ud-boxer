@@ -3,7 +3,8 @@ from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
 from synse.sbn import SBNGraph
-from synse.ud import UDGraph
+from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
+from synse.ud import UD_SYSTEM, UDGraph
 
 
 def get_args() -> Namespace:
@@ -35,72 +36,50 @@ def get_args() -> Namespace:
         default="data/output",
         help="Path to save output files to.",
     )
+    parser.add_argument(
+        "-l",
+        "--language",
+        type=str,
+        choices=SUPPORTED_LANGUAGES.all_values(),
+        default=SUPPORTED_LANGUAGES.EN.value,
+        help="Language to use (needed for UD parsing and more)",
+    )
+    parser.add_argument(
+        "-u",
+        "--ud_system",
+        type=str,
+        choices=UD_SYSTEM.all_values(),
+        default=UD_SYSTEM.STANZA.value,
+        help="UD parse to use.",
+    )
     return parser.parse_args()
 
 
 def main():
     args = get_args()
+    lang = args.language
 
     start = time.perf_counter()
     total, failed = 0, 0
-    errors = []
 
-    same_no_nodes = 0
-    same_no_edges = 0
-    same_no_nodes_and_edges = 0
-
-    output_path = Path(args.output_path)
     for filepath in Path(args.starting_path).glob("**/*.sbn"):
         total += 1
-        try:
-            # TODO: find better way to handle language
-            current_lang = filepath.stem.split(".")[0]
 
-            # TODO: add option to select stanza or trankit here as well
-            ud_filepath = Path(
-                filepath.parent / f"{current_lang}.ud.stanza.conll"
-            )
-            if not ud_filepath.exists():
-                raise FileNotFoundError(
-                    f"No UD conll file for {filepath.parent}"
-                )
+        ud_filepath = Path(
+            filepath.parent / f"{lang}.ud.{args.ud_system}.conll"
+        )
+        if not ud_filepath.exists():
+            raise FileNotFoundError(f"No UD conll file for {filepath.parent}")
 
-            # TODO: try to extract the pmb id from the path and give it to the
-            # graphs to use in exports.
-            S = SBNGraph().from_path(filepath)
-            U = UDGraph().from_path(ud_filepath)
+        S = SBNGraph().from_path(filepath)
+        U = UDGraph().from_path(ud_filepath)
 
-            if args.visualization:
-                # TODO: add output directory to args and use id
-                S.show(
-                    str(Path(output_path / f"{filepath.stem}.png").resolve())
-                )
-                U.show(
-                    str(
-                        Path(output_path / f"{ud_filepath.stem}.png").resolve()
-                    )
-                )
-
-            total += 1
-
-            same_nodes = len(S) == len(U)
-            same_edges = len(S.edges) == len(U.edges)
-
-            if same_nodes:
-                same_no_nodes += 1
-            if same_edges:
-                same_no_edges += 1
-            if same_nodes and same_edges:
-                same_no_nodes_and_edges += 1
-        except Exception as e:
-            error_msg = f"Unable to parse {filepath}\nReason: {e}\n"
-            print(error_msg)
-            errors.append(error_msg)
-            failed += 1
+        S.to_png(str(Path(filepath.parent / f"{filepath.stem}.png").resolve()))
+        U.to_png(
+            str(Path(filepath.parent / f"{ud_filepath.stem}.png").resolve())
+        )
 
     end = round(time.perf_counter() - start, 2)
-
-    errors and Path(args.error_file).write_text("\n\n".join(errors))
 
     print(
         f"""
@@ -109,10 +88,6 @@ def main():
     Parsed without errors:   {total - failed:>{6}}
     Parsed with errors:      {failed:>{6}}
      
-    same_no_nodes:           {same_no_nodes:>{6}}
-    same_no_edges:           {same_no_edges:>{6}}
-    same_no_nodes_and_edges: {same_no_nodes_and_edges:>{6}}
-
     Took {end} seconds
     """
     )

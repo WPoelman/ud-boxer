@@ -1,10 +1,29 @@
 from enum import Enum
 from os import PathLike
-from typing import Any, Dict, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from stanza.utils.conll import CoNLL
 
 from synse.graph import BaseGraph
+
+# Used to switch between stanza and trankit language identifiers
+UD_LANG_DICT = {
+    "de": "german",
+    "en": "english",
+    "it": "italian",
+    "nl": "dutch",
+}
+
+
+class UD_SYSTEM(str, Enum):
+    """Supported UD parsers"""
+
+    STANZA = "stanza"
+    TRANKIT = "trankit"
+
+    @classmethod
+    def all_values(cls) -> List[str]:
+        return [c.value for c in cls]
 
 
 class UD_NODE_TYPE(str, Enum):

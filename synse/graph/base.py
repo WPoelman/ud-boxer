@@ -1,6 +1,6 @@
 import json
 from os import PathLike
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, List, Tuple
 
 import networkx as nx
 
@@ -38,7 +38,7 @@ class BaseGraph(nx.DiGraph):
 
         return self
 
-    def show(self, save_path: PathLike):
+    def to_png(self, save_path):
         """Creates a dot graph png and saves it at the provided path"""
         # This is possible, but it's a pain to select the proper labels and
         # format. It's easier to create it 'manually'.
@@ -46,6 +46,10 @@ class BaseGraph(nx.DiGraph):
         import pydot
 
         p_graph = pydot.Dot(save_path)
+
+        if type(save_path) != str:
+            # pydot does not like a Path object
+            save_path = str(save_path)
 
         token_count: Dict[str, int] = dict()
         node_dict = dict()
@@ -63,12 +67,21 @@ class BaseGraph(nx.DiGraph):
                 token_count[tok] = 0
             node_dict[node_id] = token_id
 
+            label = [tok]
+
+            if lemma := node_data.get("lemma"):
+                label.append(lemma)
+            if upos := node_data.get("upos"):
+                label.append(upos)
+            if xpos := node_data.get("xpos"):
+                label.append(xpos)
+
             p_graph.add_node(
                 pydot.Node(
                     token_id,
                     **{
                         **self.type_style_mapping[node_data["type"]],
-                        "label": tok,
+                        "label": "\n".join(label),
                     },
                 )
             )
@@ -89,3 +102,27 @@ class BaseGraph(nx.DiGraph):
         del p_graph
 
         return self
+
+
+class GraphTransformer:
+    @staticmethod
+    def transform(G: BaseGraph) -> BaseGraph:
+        raise NotImplemented
+
+
+class NodeRemover(GraphTransformer):
+    @staticmethod
+    def transform(G: BaseGraph) -> BaseGraph:
+        for node_id, data in G.nodes.items():
+            pass
+        return G
+
+
+class GraphModifier:
+    def __init__(self, transformations: List[GraphTransformer] = None) -> None:
+        self.transformations = transformations or []
+
+    def transform(self, G: BaseGraph) -> BaseGraph:
+        for transformation in self.transformations:
+            G = transformation.transform(G)
+        return G

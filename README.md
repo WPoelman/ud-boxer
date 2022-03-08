@@ -19,3 +19,12 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
 - [x] Try out https://github.com/nlp-uoregon/trankit (supposedly better performance than stanza in some areas: https://trankit.readthedocs.io/en/latest/performance.html#universal-dependencies-v2-5)
 - [x] Read a UD parse into nx.Graph (from file (connl?)? in a program directly using sentence?)
 - [ ] Differentiate between UD and enhanced UD, either via args or automatically at conll parsing step
+
+## Examples to try
+* p00/d0004
+* p00/d0801
+* p00/d1593
+* p00/d2719
+* p03/d2003
+* p04/d0778
+* p04/d1646

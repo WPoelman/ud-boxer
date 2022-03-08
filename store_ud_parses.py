@@ -4,16 +4,8 @@ from pathlib import Path
 
 from tqdm import tqdm
 
-# Used to switch between stanza and trankit language identifiers
-LANG_DICT = {
-    "de": "german",
-    "en": "english",
-    "it": "italian",
-    "nl": "dutch",
-}
-
-STANZA = "stanza"
-TRANKIT = "trankit"
+from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
+from synse.ud import UD_LANG_DICT, UD_SYSTEM
 
 
 def get_args() -> Namespace:
@@ -35,17 +27,17 @@ def get_args() -> Namespace:
     parser.add_argument(
         "-l",
         "--language",
-        default="en",
-        choices=list(LANG_DICT.keys()),
+        default=SUPPORTED_LANGUAGES.EN.value,
+        choices=SUPPORTED_LANGUAGES.all_values(),
         type=str,
         help="Language to use for pipeline.",
     )
     parser.add_argument(
         "-s",
-        "--system",
-        default=STANZA,
+        "--ud_system",
+        default=UD_SYSTEM.STANZA.value,
         type=str,
-        choices=[STANZA, TRANKIT],
+        choices=UD_SYSTEM.all_values(),
         help="System pipeline to use for generating UD parses.",
     )
 
@@ -59,7 +51,7 @@ def main():
     total, failed = 0, 0
     errors = []
 
-    if args.system == STANZA:
+    if args.ud_system == UD_SYSTEM.STANZA:
         from stanza import Pipeline, download
         from stanza.utils.conll import CoNLL
 
@@ -67,13 +59,12 @@ def main():
         processors = "tokenize,mwt,pos,lemma,depparse"
         download(args.language, processors=processors)
         pipeline = Pipeline(lang=args.language, processors=processors)
-    elif args.system == TRANKIT:
+    elif args.ud_system == UD_SYSTEM.TRANKIT:
         from trankit import Pipeline, trankit2conllu
 
-        # Again, no need for NER at the moment
-        pipeline = Pipeline(LANG_DICT[args.language]).posdep
+        pipeline = Pipeline(UD_LANG_DICT[args.language])
 
-    file_format = f"{args.language}.ud.{args.system}.conll"
+    file_format = f"{args.language}.ud.{args.ud_system}.conll"
 
     for file in tqdm(list(Path(args.starting_path).glob("**/*.raw"))):
         total += 1
@@ -81,9 +72,9 @@ def main():
             result = pipeline(file.read_text())
             out_file = Path(file.parent / file_format)
 
-            if args.system == STANZA:
+            if args.ud_system == UD_SYSTEM.STANZA:
                 CoNLL.write_doc2conll(result, out_file)
-            elif args.system == TRANKIT:
+            elif args.ud_system == UD_SYSTEM.TRANKIT:
                 out_file.write_text(trankit2conllu(result))
         except Exception as e:
             error_msg = f"Unable to generate ud for {file}\nReason: {e}\n"

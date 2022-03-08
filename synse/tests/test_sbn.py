@@ -81,6 +81,11 @@ def test_can_parse_full_file(example_string):
     SBNGraph().from_string(example_string)
 
 
+# @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
+# def test_can_create_png(tmp_path, example_string):
+#     SBNGraph().from_string(example_string).to_png(tmp_path / "test.png")
+
+
 @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
 def test_can_parse_and_reconstruct(tmp_path, example_string):
     starting_graph = SBNGraph().from_string(example_string, "test-id")
