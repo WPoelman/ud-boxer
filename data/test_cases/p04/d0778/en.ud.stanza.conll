@@ -1,0 +1,6 @@
+1	Eat	eat	VERB	VB	Mood=Imp|VerbForm=Fin	0	root	_	start_char=0|end_char=3
+2	whatever	whatever	PRON	WP	PronType=Int	1	obj	_	start_char=4|end_char=12
+3	you	you	PRON	PRP	Case=Nom|Person=2|PronType=Prs	4	nsubj	_	start_char=13|end_char=16
+4	like	like	VERB	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	2	acl:relcl	_	start_char=17|end_char=21
+5	.	.	PUNCT	.	_	1	punct	_	start_char=21|end_char=22
+

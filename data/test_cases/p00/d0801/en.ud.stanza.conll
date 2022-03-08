@@ -1,0 +1,12 @@
+1	I	I	PRON	PRP	Case=Nom|Number=Sing|Person=1|PronType=Prs	3	nsubj	_	start_char=0|end_char=1
+2	'm	be	AUX	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	3	aux	_	start_char=1|end_char=3
+3	calling	call	VERB	VBG	Tense=Pres|VerbForm=Part	0	root	_	start_char=4|end_char=11
+4	because	because	SCONJ	IN	_	7	mark	_	start_char=12|end_char=19
+5	I	I	PRON	PRP	Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj	_	start_char=20|end_char=21
+6	've	have	AUX	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	7	aux	_	start_char=21|end_char=24
+7	lost	lose	VERB	VBN	Tense=Past|VerbForm=Part	3	advcl	_	start_char=25|end_char=29
+8	my	my	PRON	PRP$	Number=Sing|Person=1|Poss=Yes|PronType=Prs	10	nmod:poss	_	start_char=30|end_char=32
+9	credit	credit	NOUN	NN	Number=Sing	10	compound	_	start_char=33|end_char=39
+10	card	card	NOUN	NN	Number=Sing	7	obj	_	start_char=40|end_char=44
+11	.	.	PUNCT	.	_	3	punct	_	start_char=44|end_char=45
+

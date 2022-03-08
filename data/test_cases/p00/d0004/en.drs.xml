@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- A brown dog and a grey dog are fighting in the snow --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">A</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">a</tag>
+     <tag type="lemma">a</tag>
+     <tag type="from">0</tag>
+     <tag type="to">1</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DIS</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="tok">brown</tag>
+     <tag type="cat">n/n</tag>
+     <tag type="sym">brown</tag>
+     <tag type="lemma">brown</tag>
+     <tag type="from">2</tag>
+     <tag type="to">7</tag>
+     <tag type="pos">JJ</tag>
+     <tag type="sem">COL</tag>
+     <tag type="wordnet">brown.a.01</tag>
+     <tag type="verbnet" n="1">[Colour]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">dog</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">dog</tag>
+     <tag type="lemma">dog</tag>
+     <tag type="from">8</tag>
+     <tag type="to">11</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">dog.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">and</tag>
+     <tag type="cat">conj:np</tag>
+     <tag type="sym">and</tag>
+     <tag type="lemma">and</tag>
+     <tag type="from">12</tag>
+     <tag type="to">15</tag>
+     <tag type="pos">CC</tag>
+     <tag type="sem">GRP</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">a</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">a</tag>
+     <tag type="lemma">a</tag>
+     <tag type="from">16</tag>
+     <tag type="to">17</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DIS</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="tok">grey</tag>
+     <tag type="cat">n/n</tag>
+     <tag type="sym">grey</tag>
+     <tag type="lemma">grey</tag>
+     <tag type="from">18</tag>
+     <tag type="to">22</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">COL</tag>
+     <tag type="wordnet">grey.a.01</tag>
+     <tag type="verbnet" n="1">[Colour]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">dog</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">dog</tag>
+     <tag type="lemma">dog</tag>
+     <tag type="from">23</tag>
+     <tag type="to">26</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">dog.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">are</tag>
+     <tag type="cat">(s:dcl\np)/(s:ng\np)</tag>
+     <tag type="sym">be</tag>
+     <tag type="lemma">be</tag>
+     <tag type="from">27</tag>
+     <tag type="to">30</tag>
+     <tag type="pos">VBP</tag>
+     <tag type="sem">NOW</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1009">
+   <tags>
+     <tag type="tok">fighting</tag>
+     <tag type="cat">s:ng\np</tag>
+     <tag type="sym">fight</tag>
+     <tag type="lemma">fight</tag>
+     <tag type="from">31</tag>
+     <tag type="to">39</tag>
+     <tag type="pos">VBG</tag>
+     <tag type="sem">EXG</tag>
+     <tag type="wordnet">fight.v.01</tag>
+     <tag type="verbnet" n="1">[Agent]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1010">
+   <tags>
+     <tag type="tok">in</tag>
+     <tag type="cat">((s:dcl\np)\(s:dcl\np))/np</tag>
+     <tag type="sym">in</tag>
+     <tag type="lemma">in</tag>
+     <tag type="from">40</tag>
+     <tag type="to">42</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Location]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1011">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">the</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">the</tag>
+     <tag type="lemma">the</tag>
+     <tag type="from">43</tag>
+     <tag type="to">46</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1012">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">snow</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">snow</tag>
+     <tag type="lemma">snow</tag>
+     <tag type="from">47</tag>
+     <tag type="to">51</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">snow.n.02</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b1">
+  <domain>
+   <dr label="b1" name="x1" from="12" to="15"></dr>
+   <dr label="b1" name="x2" from="0" to="1"></dr>
+   <dr label="b1" name="s1" from="2" to="7"></dr>
+   <dr label="b1" name="x3" from="16" to="17"></dr>
+   <dr label="b1" name="s2" from="18" to="22"></dr>
+   <dr label="b1" name="e1" from="31" to="39"></dr>
+   <dr label="b1" name="t1" from="27" to="30"></dr>
+   <dr label="b2" name="x4" from="43" to="46"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="s1" symbol="brown" synset="brown.a.01" from="2" to="7"></pred>
+   </cond>
+   <cond label="b1">
+    <pred arg="x2" symbol="dog" synset="dog.n.01" from="8" to="11"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="x2" arg2="s1" symbol="Colour" framenet="Colour" from="2" to="7"></rel>
+   </cond>
+   <cond label="b1">
+    <pred arg="x1" symbol="entity" synset="entity.n.01" from="12" to="15"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="x1" arg2="x3" symbol="Sub" framenet="Sub" from="12" to="15"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="x1" arg2="x2" symbol="Sub" framenet="Sub" from="12" to="15"></rel>
+   </cond>
+   <cond label="b1">
+    <pred arg="s2" symbol="grey" synset="grey.a.01" from="18" to="22"></pred>
+   </cond>
+   <cond label="b1">
+    <pred arg="x3" symbol="dog" synset="dog.n.01" from="23" to="26"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="x3" arg2="s2" symbol="Colour" framenet="Colour" from="18" to="22"></rel>
+   </cond>
+   <cond label="b1">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="27" to="30"></pred>
+   </cond>
+   <cond label="b1">
+    <comp symbol="EQU" arg1="t1" arg2="now" from="27" to="30"></comp>
+   </cond>
+   <cond label="b1">
+    <pred arg="e1" symbol="fight" synset="fight.v.01" from="31" to="39"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="x4" symbol="Location" framenet="Containing@Container" from="40" to="42"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="27" to="30"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="x1" symbol="Agent" framenet="Communication@Communicator" from="31" to="39"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x4" symbol="snow" synset="snow.n.02" from="47" to="51"></pred>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

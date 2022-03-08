@@ -1,0 +1,14 @@
+1	The	the	DET	DT	Definite=Def|PronType=Art	4	det	_	start_char=0|end_char=3
+2	Steve	Steve	PROPN	NNP	Number=Sing	4	compound	_	start_char=4|end_char=9
+3	Miller	Miller	PROPN	NNP	Number=Sing	2	flat	_	start_char=10|end_char=16
+4	Band	Band	PROPN	NNP	Number=Sing	5	nsubj	_	start_char=17|end_char=21
+5	released	release	VERB	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	start_char=22|end_char=30
+6	a	a	DET	DT	Definite=Ind|PronType=Art	8	det	_	start_char=31|end_char=32
+7	new	new	ADJ	JJ	Degree=Pos	8	amod	_	start_char=33|end_char=36
+8	album	album	NOUN	NN	Number=Sing	5	obj	_	start_char=37|end_char=42
+9	in	in	ADP	IN	_	10	case	_	start_char=43|end_char=45
+10	June	June	PROPN	NNP	Number=Sing	5	obl	_	start_char=46|end_char=50
+11	of	of	ADP	IN	_	12	case	_	start_char=51|end_char=53
+12	2010	2010	NUM	CD	NumType=Card	10	nmod	_	start_char=54|end_char=58
+13	.	.	PUNCT	.	_	5	punct	_	start_char=58|end_char=59
+

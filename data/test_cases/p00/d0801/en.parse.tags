@@ -1,0 +1,26 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'I', [from:0, to:1, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+  ba(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/(s:ng\np), '\'m', [from:1, to:3, pos:'VBP', lemma:'be', sem:'NOW', wordnet:'O']),
+    t(s:ng\np, 'calling', [from:4, to:11, pos:'VBG', lemma:'call', sem:'EXG', wordnet:'call.v.03', verbnet:['Agent']])),
+   fa((s\np)\(s\np),
+    t(((s\np)\(s\np))/s:dcl, 'because', [from:12, to:19, pos:'IN', lemma:'because', sem:'SUB', wordnet:'O']),
+    ba(s:dcl,
+     t(np, 'I', [from:20, to:21, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+     fa(s:dcl\np,
+      t((s:dcl\np)/(s:pt\np), '\'ve', [from:21, to:24, pos:'VBP', lemma:'have', sem:'NOW', wordnet:'O']),
+      fa(s:pt\np,
+       t((s:pt\np)/np, 'lost', [from:25, to:29, pos:'VBN', lemma:'lose', sem:'EXT', wordnet:'lose.v.05', verbnet:['Theme','Agent']]),
+       rp(np,
+        fa(np,
+         t(np/(n/pp), 'my', [from:30, to:32, pos:'PRP$', lemma:'speaker', sem:'HAS', wordnet:'O', verbnet:['User']]),
+         t(n/pp, 'credit~card', [from:33, to:44, pos:'NN', lemma:'credit~card', sem:'CON', wordnet:'credit_card.n.01'])),
+        t(., '.', [from:44, to:45, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))))))).
+

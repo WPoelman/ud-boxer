@@ -1,0 +1,6 @@
+1	Tracy	Tracy	PROPN	NNP	Number=Sing	2	nsubj	_	_
+2	lost	lose	VERB	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	_
+3	her	she	PRON	PRP$	Gender=Fem|Number=Sing|Person=3|Poss=Yes|PronType=Prs	4	nmod:poss	_	_
+4	glasses	glass	NOUN	NNS	Number=Plur	2	obj	_	_
+5	.	.	PUNCT	.	_	2	punct	_	_
+

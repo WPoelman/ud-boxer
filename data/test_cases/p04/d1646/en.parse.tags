@@ -1,0 +1,17 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Tracy', [from:0, to:5, pos:'NNP', lemma:'tracy', sem:'PER', wordnet:'female.n.02'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'lost', [from:6, to:10, pos:'VBD', lemma:'lose', sem:'EPS', wordnet:'lose.v.05', verbnet:['Theme','Agent']]),
+   rp(np,
+    fa(np,
+     t(np/(n/pp), 'her', [antecedent:'0,5', from:11, to:14, pos:'PRP$', lemma:'female', sem:'HAS', wordnet:'female.n.02', verbnet:['User']]),
+     t(n/pp, 'glasses', [from:15, to:22, pos:'NNS', lemma:'glasses', sem:'CON', wordnet:'glasses.n.01'])),
+    t(., '.', [from:22, to:23, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

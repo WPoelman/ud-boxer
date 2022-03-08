@@ -1,0 +1,29 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/n, 'The', [from:0, to:3, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+   t(n, 'Steve~Miller~Band', [from:4, to:21, pos:'NNP', lemma:'steve~miller~band', sem:'ORG', wordnet:'musical_organization.n.01'])),
+  ba(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/np, 'released', [from:22, to:30, pos:'VBD', lemma:'release', sem:'EPS', wordnet:'release.v.04', verbnet:['Theme','Agent']]),
+    fa(np,
+     t(np/n, 'a', [from:31, to:32, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+     fa(n,
+      t(n/n, 'new', [from:33, to:36, pos:'JJ', lemma:'new', sem:'IST', wordnet:'new.a.01', verbnet:['Attribute']]),
+      t(n, 'album', [from:37, to:42, pos:'NN', lemma:'album', sem:'CON', wordnet:'album.n.01'])))),
+   fa((s\np)\(s\np),
+    t(((s\np)\(s\np))/np, 'in', [from:43, to:45, pos:'IN', lemma:'in', sem:'REL', wordnet:'O', verbnet:['Time']]),
+    lx(np, n,
+     ba(n,
+      t(n, 'June', [from:46, to:50, pos:'NNP', lemma:'june', sem:'MOY', wordnet:'O']),
+      rp(n\n,
+       fa(n\n,
+        t((n\n)/n, 'of', [from:51, to:53, pos:'IN', lemma:'of', sem:'EQU', wordnet:'O']),
+        t(n, '2010', [from:54, to:58, pos:'CD', lemma:'2010', sem:'YOC', wordnet:'O'])),
+       t(., '.', [from:58, to:59, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))))).
+

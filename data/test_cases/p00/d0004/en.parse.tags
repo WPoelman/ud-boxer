@@ -1,0 +1,30 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  ba(np,
+   fa(np,
+    t(np/n, 'A', [from:0, to:1, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+    fa(n,
+     t(n/n, 'brown', [from:2, to:7, pos:'JJ', lemma:'brown', sem:'COL', wordnet:'brown.a.01', verbnet:['Colour']]),
+     t(n, 'dog', [from:8, to:11, pos:'NN', lemma:'dog', sem:'CON', wordnet:'dog.n.01']))),
+   conj(np\np,
+    t(conj, 'and', [from:12, to:15, pos:'CC', lemma:'and', sem:'GRP', wordnet:'O']),
+    fa(np,
+     t(np/n, 'a', [from:16, to:17, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+     fa(n,
+      t(n/n, 'grey', [from:18, to:22, pos:'NN', lemma:'grey', sem:'COL', wordnet:'grey.a.01', verbnet:['Colour']]),
+      t(n, 'dog', [from:23, to:26, pos:'NN', lemma:'dog', sem:'CON', wordnet:'dog.n.01']))))),
+  ba(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/(s:ng\np), 'are', [from:27, to:30, pos:'VBP', lemma:'be', sem:'NOW', wordnet:'O']),
+    t(s:ng\np, 'fighting', [from:31, to:39, pos:'VBG', lemma:'fight', sem:'EXG', wordnet:'fight.v.01', verbnet:['Agent']])),
+   fa((s\np)\(s\np),
+    t(((s\np)\(s\np))/np, 'in', [from:40, to:42, pos:'IN', lemma:'in', sem:'REL', wordnet:'O', verbnet:['Location']]),
+    fa(np,
+     t(np/n, 'the', [from:43, to:46, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+     t(n, 'snow', [from:47, to:51, pos:'NN', lemma:'snow', sem:'CON', wordnet:'snow.n.02'])))))).
+

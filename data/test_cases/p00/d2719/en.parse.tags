@@ -1,0 +1,23 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Mary', [from:0, to:4, pos:'NNP', lemma:'mary', sem:'PER', wordnet:'female.n.02'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/(s:to\np), 'wants', [from:5, to:10, pos:'VBZ', lemma:'want', sem:'ENS', wordnet:'want.v.01', verbnet:['Theme','Pivot']]),
+   fa(s:to\np,
+    t((s:to\np)/(s:b\np), 'to', [from:11, to:13, pos:'TO', lemma:'to', sem:'NIL', wordnet:'O']),
+    fa(s:b\np,
+     fa((s:b\np)/(s:adj\np),
+      t(((s:b\np)/(s:adj\np))/np, 'paint', [from:14, to:19, pos:'VB', lemma:'paint', sem:'EXS', wordnet:'paint.v.02', verbnet:['Patient','Result','Agent']]),
+      fa(np,
+       t(np/n, 'her', [from:20, to:23, pos:'PRP$', lemma:'female', sem:'HAS', wordnet:'female.n.02', verbnet:['User']]),
+       t(n, 'car', [from:24, to:27, pos:'NN', lemma:'car', sem:'CON', wordnet:'car.n.01']))),
+     rp(s:adj\np,
+      t(s:adj\np, 'bright~blue', [from:28, to:39, pos:'NN', lemma:'bright~blue', sem:'COL', wordnet:'bright_blue.a.01', verbnet:['Colour']]),
+      t(., '.', [from:39, to:40, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))))).
+

@@ -1,0 +1,10 @@
+1	Mary	Mary	PROPN	NNP	Number=Sing	2	nsubj	_	start_char=0|end_char=4
+2	wants	want	VERB	VBZ	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	start_char=5|end_char=10
+3	to	to	PART	TO	_	4	mark	_	start_char=11|end_char=13
+4	paint	paint	VERB	VB	VerbForm=Inf	2	xcomp	_	start_char=14|end_char=19
+5	her	she	PRON	PRP$	Gender=Fem|Number=Sing|Person=3|Poss=Yes|PronType=Prs	6	nmod:poss	_	start_char=20|end_char=23
+6	car	car	NOUN	NN	Number=Sing	4	obj	_	start_char=24|end_char=27
+7	bright	bright	ADJ	JJ	Degree=Pos	4	xcomp	_	start_char=28|end_char=34
+8	blue	blue	ADJ	JJ	Degree=Pos	4	xcomp	_	start_char=35|end_char=39
+9	.	.	PUNCT	.	_	2	punct	_	start_char=39|end_char=40
+

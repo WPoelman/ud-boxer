@@ -1,0 +1,13 @@
+1	A	a	DET	DT	Definite=Ind|PronType=Art	3	det	_	_
+2	brown	brown	ADJ	JJ	Degree=Pos	3	amod	_	_
+3	dog	dog	NOUN	NN	Number=Sing	9	nsubj	_	_
+4	and	and	CCONJ	CC	_	7	cc	_	_
+5	a	a	DET	DT	Definite=Ind|PronType=Art	7	det	_	_
+6	grey	grey	ADJ	JJ	Degree=Pos	7	amod	_	_
+7	dog	dog	NOUN	NN	Number=Sing	3	conj	_	_
+8	are	be	AUX	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	9	aux	_	_
+9	fighting	fight	VERB	VBG	Tense=Pres|VerbForm=Part	0	root	_	_
+10	in	in	ADP	IN	_	12	case	_	_
+11	the	the	DET	DT	Definite=Def|PronType=Art	12	det	_	_
+12	snow	snow	NOUN	NN	Number=Sing	9	obl	_	_
+

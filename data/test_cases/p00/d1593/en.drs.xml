@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- I will not lie to her . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">I</tag>
+     <tag type="cat">np</tag>
+     <tag type="sym">speaker</tag>
+     <tag type="lemma">speaker</tag>
+     <tag type="from">0</tag>
+     <tag type="to">1</tag>
+     <tag type="pos">PRP</tag>
+     <tag type="sem">PRO</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">will</tag>
+     <tag type="cat">(s:dcl\np)/(s:b\np)</tag>
+     <tag type="sym">will</tag>
+     <tag type="lemma">will</tag>
+     <tag type="from">2</tag>
+     <tag type="to">6</tag>
+     <tag type="pos">MD</tag>
+     <tag type="sem">FUT</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">not</tag>
+     <tag type="cat">(s:dcl\np)\(s:dcl\np)</tag>
+     <tag type="sym">not</tag>
+     <tag type="lemma">not</tag>
+     <tag type="from">7</tag>
+     <tag type="to">10</tag>
+     <tag type="pos">RB</tag>
+     <tag type="sem">NOT</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="tok">lie</tag>
+     <tag type="cat">(s:b\np)/pp</tag>
+     <tag type="sym">lie</tag>
+     <tag type="lemma">lie</tag>
+     <tag type="from">11</tag>
+     <tag type="to">14</tag>
+     <tag type="pos">VB</tag>
+     <tag type="sem">EXS</tag>
+     <tag type="wordnet">lie.v.05</tag>
+     <tag type="verbnet" n="1">[Agent]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">to</tag>
+     <tag type="cat">pp/np</tag>
+     <tag type="sym">to</tag>
+     <tag type="lemma">to</tag>
+     <tag type="from">15</tag>
+     <tag type="to">17</tag>
+     <tag type="pos">TO</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Recipient]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">her</tag>
+     <tag type="cat">np</tag>
+     <tag type="sym">female</tag>
+     <tag type="lemma">female</tag>
+     <tag type="from">18</tag>
+     <tag type="to">21</tag>
+     <tag type="pos">PRP</tag>
+     <tag type="sem">PRO</tag>
+     <tag type="wordnet">female.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">21</tag>
+     <tag type="to">22</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b1">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="1"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="person" synset="person.n.01" from="0" to="1"></pred>
+   </cond>
+   <cond label="b1">
+    <comp symbol="EQU" arg1="x1" arg2="speaker" from="0" to="1"></comp>
+   </cond>
+   <cond label="b1">
+    <not from="7" to="10">
+     <drs label="b2">
+      <domain>
+       <dr label="b2" name="e1" from="11" to="14"></dr>
+       <dr label="b3" name="x2" from="18" to="21"></dr>
+       <dr label="b1" name="t1" from="2" to="6"></dr>
+      </domain>
+      <conds>
+       <cond label="b1">
+        <pred arg="t1" symbol="time" synset="time.n.08" from="2" to="6"></pred>
+       </cond>
+       <cond label="b1">
+        <comp symbol="TSU" arg1="t1" arg2="now" from="2" to="6"></comp>
+       </cond>
+       <cond label="b2">
+        <pred arg="e1" symbol="lie" synset="lie.v.05" from="11" to="14"></pred>
+       </cond>
+       <cond label="b2">
+        <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="2" to="6"></rel>
+       </cond>
+       <cond label="b2">
+        <rel arg1="e1" arg2="x2" symbol="Recipient" framenet="Statement@Addressee" from="15" to="17"></rel>
+       </cond>
+       <cond label="b2">
+        <rel arg1="e1" arg2="x1" symbol="Agent" framenet="Change_posture@Protagonist" from="11" to="14"></rel>
+       </cond>
+       <cond label="b3">
+        <pred arg="x2" symbol="female" synset="female.n.02" from="18" to="21"></pred>
+       </cond>
+      </conds>
+     </drs>
+    </not>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

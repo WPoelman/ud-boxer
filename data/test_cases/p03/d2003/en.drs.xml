@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- The Steve~Miller~Band released a new album in ø June of 2010 . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">The</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">the</tag>
+     <tag type="lemma">the</tag>
+     <tag type="from">0</tag>
+     <tag type="to">3</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Steve~Miller~Band</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">steve~miller~band</tag>
+     <tag type="lemma">steve~miller~band</tag>
+     <tag type="from">4</tag>
+     <tag type="to">21</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">ORG</tag>
+     <tag type="wordnet">musical_organization.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="tok">released</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">release</tag>
+     <tag type="lemma">release</tag>
+     <tag type="from">22</tag>
+     <tag type="to">30</tag>
+     <tag type="pos">VBD</tag>
+     <tag type="sem">EPS</tag>
+     <tag type="wordnet">release.v.04</tag>
+     <tag type="verbnet" n="2">[Theme,Agent]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">a</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">a</tag>
+     <tag type="lemma">a</tag>
+     <tag type="from">31</tag>
+     <tag type="to">32</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DIS</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">new</tag>
+     <tag type="cat">n/n</tag>
+     <tag type="sym">new</tag>
+     <tag type="lemma">new</tag>
+     <tag type="from">33</tag>
+     <tag type="to">36</tag>
+     <tag type="pos">JJ</tag>
+     <tag type="sem">IST</tag>
+     <tag type="wordnet">new.a.01</tag>
+     <tag type="verbnet" n="1">[Attribute]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">album</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">album</tag>
+     <tag type="lemma">album</tag>
+     <tag type="from">37</tag>
+     <tag type="to">42</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">album.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="tok">in</tag>
+     <tag type="cat">((s:dcl\np)\(s:dcl\np))/np</tag>
+     <tag type="sym">in</tag>
+     <tag type="lemma">in</tag>
+     <tag type="from">43</tag>
+     <tag type="to">45</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Time]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">46</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1009">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">June</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">june</tag>
+     <tag type="lemma">june</tag>
+     <tag type="from">46</tag>
+     <tag type="to">50</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">MOY</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1010">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">of</tag>
+     <tag type="cat">(n\n)/n</tag>
+     <tag type="sym">of</tag>
+     <tag type="lemma">of</tag>
+     <tag type="from">51</tag>
+     <tag type="to">53</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">EQU</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1011">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">2010</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">2010</tag>
+     <tag type="lemma">2010</tag>
+     <tag type="from">54</tag>
+     <tag type="to">58</tag>
+     <tag type="pos">CD</tag>
+     <tag type="sem">YOC</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1012">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">58</tag>
+     <tag type="to">59</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b2">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="3"></dr>
+   <dr label="b2" name="x2" from="31" to="32"></dr>
+   <dr label="b2" name="s1" from="33" to="36"></dr>
+   <dr label="b2" name="e1" from="22" to="30"></dr>
+   <dr label="b2" name="t1" from="0" to="0"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="musical_organization" synset="musical_organization.n.01" from="4" to="21"></pred>
+   </cond>
+   <cond label="b1">
+    <named arg="x1" symbol="steve~miller~band" from="4" to="21"></named>
+   </cond>
+   <cond label="b2">
+    <pred arg="e1" symbol="release" synset="release.v.04" from="22" to="30"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="0" to="0"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="x2" symbol="Theme" framenet="Cure@Affliction" from="22" to="30"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="x1" symbol="Agent" framenet="Cure@Healer" from="22" to="30"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="0" to="0"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="t1" arg2="06" symbol="MonthOfYear" framenet="MonthOfYear" from="46" to="50"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="t1" arg2="2010" symbol="YearOfCentury" framenet="YearOfCentury" from="54" to="58"></rel>
+   </cond>
+   <cond label="b2">
+    <comp symbol="TPR" arg1="t1" arg2="now" from="22" to="30"></comp>
+   </cond>
+   <cond label="b2">
+    <pred arg="s1" symbol="new" synset="new.a.01" from="33" to="36"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="s1" arg2="x2" symbol="AttributeOf" framenet="AttributeOf" from="33" to="36"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x2" symbol="album" synset="album.n.01" from="37" to="42"></pred>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>
