@@ -1,0 +1,5 @@
+pmb-4.0.0/data/en/gold/p30/d1528/en.drs.sbn
+pmb-4.0.0/data/en/gold/p19/d2255/en.drs.sbn
+pmb-4.0.0/data/en/gold/p10/d1823/en.drs.sbn
+pmb-4.0.0/data/en/gold/p44/d2362/en.drs.sbn
+pmb-4.0.0/data/en/silver/p59/d1792/en.drs.sbn
