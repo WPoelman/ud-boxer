@@ -28,6 +28,7 @@ class UDSpecBasic:
         DET = "det"  # determiner
         DET_NUMGOV = "det:numgov"  # pronominal quantifier governing the case of the noun
         DET_NUMMOD = "det:nummod"  # pronominal quantifier agreeing in case with the noun
+        DET_PREDET = "det:predet"  # relation between the head of NP and a word that precedes and modifies the meaning of the NP determiner. "all the boys" all < boys
         DET_POSS = "det:poss"  # possessive determiner
         DISCOURSE = "discourse"  # discourse element
         DISLOCATED = "dislocated"  # dislocated elements
@@ -46,6 +47,7 @@ class UDSpecBasic:
         LIST = "list"  # list
         MARK = "mark"  # marker
         NMOD = "nmod"  # nominal modifier
+        NMOD_NPMOD = "nmod:npmod"  # something syntactically a noun phrase is used as an adverbial modifier in a sentence (see obl:npmod)
         NMOD_POSS = "nmod:poss"  # possessive nominal modifier
         NMOD_TMOD = "nmod:tmod"  # temporal modifier
         NSUBJ = "nsubj"  # nominal subject
@@ -60,6 +62,7 @@ class UDSpecBasic:
         OBL_ARG = "obl:arg"  # oblique argument
         OBL_LMOD = "obl:lmod"  # locative modifier
         OBL_TMOD = "obl:tmod"  # temporal modifier
+        OBL_NPMOD = "obl:npmod"  # noun phrase used as an adverbial modifier "65 years < old"
         ORPHAN = "orphan"  # orphan
         PARATAXIS = "parataxis"  # parataxis
         PUNCT = "punct"  # punctuation
@@ -97,6 +100,7 @@ class UDSpecBasic:
             DET,
             DET_NUMGOV,
             DET_NUMMOD,
+            DET_PREDET,
             DET_POSS,
             DISCOURSE,
             DISLOCATED,
@@ -113,6 +117,7 @@ class UDSpecBasic:
             LIST,
             MARK,
             NMOD,
+            NMOD_NPMOD,
             NMOD_POSS,
             NMOD_TMOD,
             NSUBJ,
@@ -125,6 +130,7 @@ class UDSpecBasic:
             OBL_ARG,
             OBL_LMOD,
             OBL_TMOD,
+            OBL_NPMOD,
             ORPHAN,
             PARATAXIS,
             PUNCT,

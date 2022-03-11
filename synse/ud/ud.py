@@ -1,6 +1,6 @@
 from enum import Enum
 from os import PathLike
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
 from stanza.utils.conll import CoNLL
 
@@ -79,6 +79,7 @@ class UDGraph(BaseGraph):
                         root_id,
                         {
                             "token": "new-sentence",
+                            "deprel": None,
                             "type": UD_EDGE_TYPE.SENTENCE_CONNECT,
                         },
                     )
@@ -111,7 +112,7 @@ class UDGraph(BaseGraph):
                     "lemma": token.get("lemma"),
                     "deprel": dep_rel,
                     "upos": token.get("upos"),
-                    "xpos": token.get("xpos"),
+                    "xpos": pos,
                     "feats": token.get("feats"),
                     "connl_id": token.get("id"),
                     "type": UD_NODE_TYPE.ROOT,
@@ -144,3 +145,19 @@ class UDGraph(BaseGraph):
             UD_EDGE_TYPE.SENTENCE_CONNECT: {"style": "dotted"},
             UD_EDGE_TYPE.DEPENDENCY_RELATION: {},
         }
+
+
+class Collector:
+    """Helper to collect some information about the UD graph"""
+
+    def __init__(self) -> None:
+        self.dep_rels: Set[str] = set()
+        self.pos: Set[str] = set()
+
+    def collect(self, U: UDGraph):
+        # Quick and dirty way to check all used deprels and pos tags in the
+        # dataset.
+        self.dep_rels.update(
+            {a[2]["deprel"] for a in U.edges.data() if a[2]["deprel"]}
+        )
+        self.pos.update({a[1]["xpos"] for a in U.nodes.data() if a[1]["xpos"]})
