@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from stanza.utils.conll import CoNLL
 
 from synse.graph import BaseGraph
+from synse.ud.ud_spec import UDSpecBasic
 
 # Used to switch between stanza and trankit language identifiers
 UD_LANG_DICT = {
@@ -62,6 +63,7 @@ class UDGraph(BaseGraph):
                         "_id": root_id,
                         "token": "ROOT",
                         "lemma": None,
+                        "deprel": UDSpecBasic.DepRels.ROOT,
                         "upos": None,
                         "xpos": None,
                         "feats": None,
@@ -91,10 +93,23 @@ class UDGraph(BaseGraph):
                 ), f"Multiple ids found, cannot parse this currently."
 
                 tok_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["id"][0])
+                dep_rel = token.get("deprel")
+                pos = token.get("upos")
+
+                # TODO: detect UDSpec here once that is supported or make it an
+                # argument. (enhanced UD vs standard/basic UD)
+                assert (
+                    dep_rel in UDSpecBasic.DepRels.ALL_DEP_RELS
+                ), f"Unknown deprel found {dep_rel}"
+
+                assert (
+                    pos in UDSpecBasic.POS.ALL_POS
+                ), f"Unknown pos found {pos}"
                 tok_data = {
                     "_id": tok_id,
                     "token": token["text"],
                     "lemma": token.get("lemma"),
+                    "deprel": dep_rel,
                     "upos": token.get("upos"),
                     "xpos": token.get("xpos"),
                     "feats": token.get("feats"),
@@ -108,6 +123,7 @@ class UDGraph(BaseGraph):
                     head_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["head"])
                 edge_data = {
                     "token": token["deprel"],
+                    "deprel": token["deprel"],
                     "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
                 }
 

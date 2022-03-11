@@ -69,7 +69,7 @@ class BaseGraph(nx.DiGraph):
 
             label = [tok]
 
-            # TODO: figure out better way of doing this (method to override 
+            # TODO: figure out better way of doing this (method to override
             # that takes in node data and returns label?)
             if lemma := node_data.get("lemma"):
                 label.append(lemma)
@@ -104,27 +104,3 @@ class BaseGraph(nx.DiGraph):
         del p_graph
 
         return self
-
-
-class GraphTransformer:
-    @staticmethod
-    def transform(G: BaseGraph) -> BaseGraph:
-        raise NotImplemented
-
-
-class NodeRemover(GraphTransformer):
-    @staticmethod
-    def transform(G: BaseGraph) -> BaseGraph:
-        for node_id, data in G.nodes.items():
-            pass
-        return G
-
-
-class GraphModifier:
-    def __init__(self, transformations: List[GraphTransformer] = None) -> None:
-        self.transformations = transformations or []
-
-    def transform(self, G: BaseGraph) -> BaseGraph:
-        for transformation in self.transformations:
-            G = transformation.transform(G)
-        return G
