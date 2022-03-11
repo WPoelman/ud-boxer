@@ -51,6 +51,8 @@ class SBNGraph(BaseGraph):
 
         lines = split_comments(input_string)
 
+        assert lines, "SBN doc appears to be empty, cannot read from string"
+
         self.type_indices = {
             SBN_NODE_TYPE.SENSE: 0,
             SBN_NODE_TYPE.NAME_CONSTANT: 0,
