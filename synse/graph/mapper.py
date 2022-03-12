@@ -115,7 +115,6 @@ class MapExtractor:
         I = NodeRemover.transform(I)
         I = POSResolver.transform(I)
 
-
         matcher = DiGraphMatcher(I, S)
 
         # Isomorphic is stronger, but we might get more mappings using monomorphism.
