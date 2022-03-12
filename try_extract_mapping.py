@@ -1,3 +1,4 @@
+import json
 import time
 from argparse import ArgumentParser, Namespace
 from copy import deepcopy
@@ -6,6 +7,7 @@ from pathlib import Path
 from networkx.algorithms.isomorphism import DiGraphMatcher
 
 from synse.graph import BaseGraph
+from synse.graph.mapper import MapExtractor
 from synse.graph.rewrite import NodeRemover, POSResolver
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn.sbn import SBN_NODE_TYPE
@@ -69,7 +71,7 @@ def main():
     start = time.perf_counter()
     total, failed = 0, 0
 
-    # collector = Collector()
+    extractor = MapExtractor()
 
     for filepath in Path(args.starting_path).glob("**/*.sbn"):
         total += 1
@@ -81,34 +83,24 @@ def main():
             raise FileNotFoundError(f"No UD conll file for {filepath.parent}")
 
         try:
-            S = SBNGraph().from_path(filepath)
             U = UDGraph().from_path(ud_filepath)
+            S = SBNGraph().from_path(filepath)
         except:
+            # Ignore the empty sbn docs or whitespace ids, add SBNError to deal with this more gracefully?
             continue
 
-        if args.visualization:
-            Path(filepath.parent / "viz").mkdir(exist_ok=True)
-            U.to_png(
-                str(
-                    Path(
-                        filepath.parent / f"viz/{ud_filepath.stem}.png"
-                    ).resolve()
-                )
-            )
+        extractor.extract_mappings(U, S)
+    with open("test_mappings.json", "w") as f:
+        json.dump(
+            {
+                "edge-mappings": extractor.edge_mappings,
+                "node-mappings": extractor.node_mappings,
+            },
+            f,
+            indent=2,
+            ensure_ascii=False,
+        )
 
-            S.to_png(
-                str(
-                    Path(
-                        filepath.parent / f"viz/{filepath.stem}.png"
-                    ).resolve()
-                )
-            )
-
-    # with open('dep_rel_in_en_gold.txt', 'w') as f:
-    # f.write('\n'.join(sorted(list(collector.dep_rels))))
-    #
-    # with open('pos_in_en_gold.txt', 'w') as f:
-    # f.write('\n'.join(sorted(list(collector.pos))))
     end = round(time.perf_counter() - start, 2)
 
     print(

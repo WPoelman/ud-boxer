@@ -47,6 +47,7 @@ class UD_EDGE_TYPE(str, Enum):
 class UDGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
+        self.root_node_ids = []
 
     def from_path(self, conll_path: PathLike):
         """Construct the graph using the provided conll file"""
@@ -63,7 +64,7 @@ class UDGraph(BaseGraph):
                         "_id": root_id,
                         "token": "ROOT",
                         "lemma": None,
-                        "deprel": UDSpecBasic.DepRels.ROOT,
+                        "deprel": "explicit-root-box",
                         "upos": None,
                         "xpos": None,
                         "feats": None,
@@ -106,6 +107,20 @@ class UDGraph(BaseGraph):
                 assert (
                     pos in UDSpecBasic.POS.ALL_POS
                 ), f"Unknown pos found {pos}"
+
+                # Morphological features are optional (can be None) and are
+                # encoded as follows:
+                #   <feat_1_key>=<feat_1_val>|<feat_2_key>=<feat_2_val> ...
+                # So for instance: Mood=Ind|Tense=Past|VerbForm=Fin
+                # None of the features are required on a token level.
+                if feats := token.get("feats"):
+                    feats = {
+                        key: value
+                        for key, value in [
+                            item.split("=") for item in feats.split("|")
+                        ]  # TODO: maybe validate this using known UD spec?
+                    }
+
                 tok_data = {
                     "_id": tok_id,
                     "token": token["text"],
@@ -113,13 +128,14 @@ class UDGraph(BaseGraph):
                     "deprel": dep_rel,
                     "upos": token.get("upos"),
                     "xpos": pos,
-                    "feats": token.get("feats"),
+                    "feats": feats or dict(),
                     "connl_id": token.get("id"),
                     "type": UD_NODE_TYPE.ROOT,
                 }
 
                 if token["head"] == 0:
                     head_id = (sentence_idx, UD_NODE_TYPE.ROOT, token["head"])
+                    self.root_node_ids.append(tok_id)
                 else:
                     head_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["head"])
                 edge_data = {
@@ -135,6 +151,9 @@ class UDGraph(BaseGraph):
         self.add_edges_from(edges)
 
         return self
+
+    def root_node(self, sentence_idx: int = 0):
+        return self.nodes[self.root_node_ids[sentence_idx]]
 
     @property
     def type_style_mapping(self):

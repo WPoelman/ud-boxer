@@ -179,6 +179,15 @@ class UDSpecBasic:
             X,
         }
 
+    class Feats:
+        class Tense:
+            # https://universaldependencies.org/u/feat/Tense.html
+            FUT = "Fut"
+            IMP = "Imp"
+            PAST = "Past"
+            PQP = "Pqp"
+            PRES = "Pres"
+
 
 class UDSpecExtended:
     pass

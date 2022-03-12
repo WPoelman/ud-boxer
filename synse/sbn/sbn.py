@@ -231,6 +231,7 @@ class SBNGraph(BaseGraph):
             dict(
                 _id=str(edge_id),
                 type=type,
+                type_idx=edge_id[1],
                 token=token or str(edge_id),
                 **meta,
             ),
@@ -250,6 +251,7 @@ class SBNGraph(BaseGraph):
             dict(
                 _id=str(node_id),
                 type=type,
+                type_idx=node_id[1],
                 token=token or str(node_id),
                 **meta,
             ),
@@ -382,9 +384,6 @@ class SBNGraph(BaseGraph):
             # See: https://docs.python.org/3/library/string.html#format-specification-mini-language
             final_result.append(" ".join(tmp_line))
 
-        # TODO: maybe also include comments if they are present, but then again
-        # they are not officially part of the SBN spec. Might be handy for
-        # debugging and insight purposes.
         sbn_string = "\n".join(final_result)
         return sbn_string
 
