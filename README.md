@@ -19,6 +19,8 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
 - [x] Try out https://github.com/nlp-uoregon/trankit (supposedly better performance than stanza in some areas: https://trankit.readthedocs.io/en/latest/performance.html#universal-dependencies-v2-5)
 - [x] Read a UD parse into nx.Graph (from file (connl?)? in a program directly using sentence?)
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for case markings
+- [ ] convert UD pos to start of wordnet sense (`<lemma>.<sn_style_pos>`) sense number is for later / different component
+- [ ] attach box nodes in `I` UDGraph (at least starting box), figure out new box indicators in UD
 
 ## Examples to try
 * **p00/d0004**: `entity` that combines multiple subtypes
@@ -32,3 +34,4 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
 ## Plan
 * remove based on incoming edge deprel
 * create new intermediate graph (or node/edge) type that has a meta data about decision (= labels with both UD and SBN information)
+
