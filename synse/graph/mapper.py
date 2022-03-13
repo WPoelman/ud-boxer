@@ -28,7 +28,7 @@ from typing import Any, Dict
 from networkx.algorithms.isomorphism import DiGraphMatcher
 
 from synse.graph import BaseGraph
-from synse.graph.rewrite import BoxRemover, NodeRemover, POSResolver
+from synse.graph.rewrite import BoxRemover, EdgeConnector, NodeRemover, POSResolver
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn.sbn import SBN_NODE_TYPE
 from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
@@ -66,6 +66,7 @@ def node_match(ud_node, sbn_node):
 
 class MapExtractor:
     def __init__(self) -> None:
+        # TODO: make edge mapping type
         self.edge_mappings: Dict[str, Dict[str, Dict[str, int]]] = {
             "deprel2role": dict(),
             "deprel2token": dict(),
@@ -114,6 +115,7 @@ class MapExtractor:
         # if count == 0:
         I = NodeRemover.transform(I)
         I = POSResolver.transform(I)
+        # I = EdgeConnector.transform(I, self.edge_mappings)
 
         matcher = DiGraphMatcher(I, S)
 
@@ -169,8 +171,8 @@ class MapExtractor:
                         "Too many nodes and too many edges, remove / merge nodes"
                     )
 
-            # S.to_png("intermediate_step_sbn_1.png")
-            # I.to_png("intermediate_step_ud_1.png")
+        S.to_png("intermediate_step_sbn_1.png")
+        I.to_png("intermediate_step_ud_1.png")
         return I
 
     def store_mappings(self, I: UDGraph, S: SBNGraph, mapping: Dict[Any, Any]):

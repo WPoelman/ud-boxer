@@ -211,3 +211,20 @@ class BoxRemover(GraphTransformer):
         G.remove_nodes_from(nodes_to_remove)
 
         return G
+
+
+class EdgeConnector:
+    @staticmethod
+    def transform(G: UDGraph, mappings, **kwargs) -> BaseGraph:
+        # use the top 3 (or however many) most frequent candidates per found
+        # mapping check if the edge exists in the Graph if there are not enough
+        # edges (similar to the POS resolver)
+        # If an edge does not exist yet, connect it. Do this for all possible
+        # mappings and run the extraction again. This will (hopefully) result 
+        # in more isomorphic graphs, thus resulting in more mappings etc. etc.
+        # The recursion can stop at a certain depth or when no (or few) new 
+        # mappings are found.
+        #
+        # For nodes this is probably a lot more 'manual':
+        # (expanding name constants, time, combined entities etc,)
+        return G
