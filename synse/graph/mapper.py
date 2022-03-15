@@ -23,17 +23,26 @@ Possible approach:
 
 from collections import Counter, defaultdict
 from copy import deepcopy
-from typing import Any, Dict
+from dataclasses import dataclass
+from typing import Any, Dict, List
 
+import networkx as nx
 from networkx.algorithms.isomorphism import DiGraphMatcher
 
 from synse.graph import BaseGraph
-from synse.graph.rewrite import BoxRemover, EdgeConnector, NodeRemover, POSResolver
+from synse.graph.rewrite import (
+    BoxRemover,
+    EdgeConnector,
+    GraphTransformer,
+    NodeRemover,
+    POSResolver,
+)
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn.sbn import SBN_NODE_TYPE
 from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_SYSTEM, UDGraph
 from synse.ud.ud import UD_NODE_TYPE, Collector
+from synse.ud.ud_spec import UDSpecBasic
 
 
 # NOTE: Not used at the moment, currently just looking at structure.
@@ -62,6 +71,14 @@ def node_match(ud_node, sbn_node):
         return True
 
     return False
+
+
+@dataclass
+class GraphMapping:
+    # Probably make the edge mapping dependent on a triple using
+    # <Node type> -> edge mapping -> <Node type>
+    # This to make it more accurate?
+    pass
 
 
 class MapExtractor:
@@ -139,6 +156,7 @@ class MapExtractor:
             - S has more nodes than U -> expand nodes (names/compounds/time?)
             - S has more edges than U -> try stored mappings to add more edges (sbn roles)
         """
+        # TODO: clean up later
         if debug:
             if I_n_nodes == S_n_nodes:
                 if I_n_edges == S_n_edges:
@@ -176,6 +194,7 @@ class MapExtractor:
         return I
 
     def store_mappings(self, I: UDGraph, S: SBNGraph, mapping: Dict[Any, Any]):
+        # TODO: clean this up with defaultdict / dataclasses or something, for later.
         for ud_from_id, ud_to_id, edge_data in I.edges.data():
             # The mappings from the DiGraphMatcher only go over the node,
             # it could be possible to figure out the correct edges from the
@@ -192,7 +211,6 @@ class MapExtractor:
             sbn_token = sbn_edge.get("token")
             sbn_edge_type = sbn_edge.get("type")
 
-            # TODO: clean this up a bit with a defaultdict or something, for later.
             if deprel and sbn_edge_type == SBN_EDGE_TYPE.ROLE:
                 if deprel in self.edge_mappings["deprel2role"]:
                     self.edge_mappings["deprel2role"][deprel][sbn_token] = (
@@ -228,6 +246,8 @@ class MapExtractor:
             else:
                 print("No token or deprel (?)")
 
+        # TODO: The mapping from upos or xpos to the simple wordnet v n a r can
+        # be learned and stored here as well
         for ud_node_id, sbn_node_id in mapping.items():
             ud_node_data = I.nodes[ud_node_id]
             sbn_node_data = S.nodes[sbn_node_id]
@@ -258,7 +278,85 @@ class MapExtractor:
             else:
                 self.node_mappings[key][ud_node_token] = {sbn_node_token: 1}
 
-    def transform(self, G: BaseGraph) -> BaseGraph:
+
+class Converter:
+    def __init__(
+        self,
+        transformations: List[GraphTransformer],
+        mappings: Dict[str, Dict[str, Dict[str, Dict[str, int]]]]  # pain
+        # TODO: mappings: List[GraphMapping],
+    ) -> None:
+        # The order should be from specific to general, for later
+        self.transformations = transformations
+
+        # -- this hurts, needs reworking --
+        self.edge_mappings = {
+            k: {
+                k1: sorted(list(v1.items()), key=lambda i: i[1], reverse=True)
+                for k1, v1 in v.items()
+            }
+            for k, v in mappings["edge-mappings"].items()
+        }
+        self.node_mappings = {
+            k: {
+                k1: sorted(list(v1.items()), key=lambda i: i[1], reverse=True)
+                for k1, v1 in v.items()
+            }
+            for k, v in mappings["node-mappings"].items()
+        }
+
+    def __call__(self, U: UDGraph, *args: Any, **kwds: Any) -> SBNGraph:
+        return self.convert(U)
+
+    def convert(self, U: UDGraph) -> SBNGraph:
         # apply stored mappings to create SBN graph from UD graph
         # U -> S
-        pass
+        for transformation in self.transformations:
+            U = transformation.transform(U)
+
+        # loop over triples instead?
+        for edge_id, edge_data in U.edges.items():
+            deprel = edge_data.get("deprel")
+            token = edge_data.get("token")
+
+            if mapping := self.edge_mappings["deprel2role"].get(deprel):
+                U.edges[edge_id][
+                    "token"
+                ] = f'{U.edges[edge_id]["token"]} - {mapping[0][0]}'
+            elif mapping := self.edge_mappings["deprel2token"].get(deprel):
+                U.edges[edge_id][
+                    "token"
+                ] = f'{U.edges[edge_id]["token"]} - {mapping[0][0]}'
+            elif mapping := self.edge_mappings["token2token"].get(token):
+                U.edges[edge_id][
+                    "token"
+                ] = f'{U.edges[edge_id]["token"]} - {mapping[0][0]}'
+            else:
+                # No mapping found, add logging here
+                pass
+
+        for node_id, node_data in U.nodes.items():
+            # Should be done based on node type, deprel, upos / xpos or feats
+            node_token = node_data.get("token")
+            node_pos = node_data.get("upos")
+
+            if node_pos and node_pos != UDSpecBasic.POS.PROPN:
+                # Just to test, needs to more specific, learn xpos / upos mappings to
+                # wn pos. Disambiguation is outside the scope of this project!
+                target_token = f'{node_data["lemma"]}.n.01'
+            elif mapping := self.node_mappings["token2sense"].get(node_token):
+                target_token = mapping[0][0]
+            elif mapping := self.node_mappings["token2const"].get(node_token):
+                target_token = mapping[0][0]
+            elif mapping := self.node_mappings["token2nameconst"].get(
+                node_token
+            ):
+                target_token = mapping[0][0]
+            elif mapping := self.node_mappings["token2box"].get(node_token):
+                target_token = mapping[0][0]
+            else:
+                # No mapping found, add logging here
+                continue
+
+            U.nodes[node_id]["token"] += f" - {target_token}"
+        return U
