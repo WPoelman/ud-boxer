@@ -35,10 +35,12 @@ Example: `pmb-4.0.0/data/en/gold/p45/d1392`
 
 ---
 
-nmod:poss & subj is ambiguous on a node - edge level:
-pmb-4.0.0/data/en/gold/p04/d1646 -> User
-pmb-4.0.0/data/en/gold/p42/d2737 -> PartOf
-POS does not help here.
+nmod:poss & subj is ambiguous on a node - edge level, pos does not help here.
+
+Example: `pmb-4.0.0/data/en/gold/p04/d1646` -> User
+
+Example: `pmb-4.0.0/data/en/gold/p42/d2737` -> PartOf
+
 
 ---
 

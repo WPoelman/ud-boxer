@@ -77,7 +77,7 @@ def test_parse_reconstruct_name():
 
 @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
 def test_can_parse_full_file(example_string):
-    # TODO: expand further, no exceptions means it works (for now!)
+    # No exceptions means it works
     SBNGraph().from_string(example_string)
 
 
