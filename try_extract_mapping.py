@@ -10,7 +10,7 @@ from synse.graph import BaseGraph
 from synse.graph.mapper import MapExtractor
 from synse.graph.rewrite import NodeRemover, POSResolver
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
-from synse.sbn.sbn import SBN_NODE_TYPE
+from synse.sbn.sbn import SBN_NODE_TYPE, SBNError
 from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_SYSTEM, UDGraph
 from synse.ud.ud import UD_NODE_TYPE, Collector
@@ -83,11 +83,11 @@ def main():
             raise FileNotFoundError(f"No UD conll file for {filepath.parent}")
 
         try:
-            U = UDGraph().from_path(ud_filepath)
             S = SBNGraph().from_path(filepath)
-        except:
-            # Ignore the empty sbn docs or whitespace ids, add SBNError to deal with this more gracefully?
+        except SBNError:
+            # Ignore the empty sbn docs or whitespace ids
             continue
+        U = UDGraph().from_path(ud_filepath)
 
         extractor.extract_mappings(U, S)
     with open("test_mappings.json", "w") as f:
