@@ -39,7 +39,7 @@ def test_split_comments(line, expected):
 
 def test_parse_sense_simple_string():
     single_sense = "brown.a.01                             % A brown     [0-7]"
-    G = SBNGraph().from_string(single_sense, "test-doc-id")
+    G = SBNGraph().from_string(single_sense)
 
     box_id = (SBN_NODE_TYPE.BOX, 0)
     sense_id = (SBN_NODE_TYPE.SENSE, 0)
@@ -61,7 +61,7 @@ def test_parse_reconstruct_name():
         'musical_organization.n.01 Name "Steve Miller Band"'
         "                 % The Steve Miller Band [0-21]"
     )
-    G = SBNGraph().from_string(test_string, "test-doc-id")
+    G = SBNGraph().from_string(test_string)
 
     name_const_id = (SBN_NODE_TYPE.NAME_CONSTANT, 0)
 
@@ -88,18 +88,18 @@ def test_can_parse_full_file(example_string):
 
 @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
 def test_can_parse_and_reconstruct(tmp_path, example_string):
-    starting_graph = SBNGraph().from_string(example_string, "test-id")
+    starting_graph = SBNGraph().from_string(example_string)
     path = starting_graph.to_sbn(tmp_path / "test.sbn")
-    reconstructed_graph = SBNGraph().from_path(path, "test-id")
+    reconstructed_graph = SBNGraph().from_path(path)
 
     assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
 
 
 @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
 def test_can_parse_and_reconstruct_with_comments(tmp_path, example_string):
-    starting_graph = SBNGraph().from_string(example_string, "test-id")
+    starting_graph = SBNGraph().from_string(example_string)
     path = starting_graph.to_sbn(tmp_path / "test.sbn", add_comments=True)
-    reconstructed_graph = SBNGraph().from_path(path, "test-id")
+    reconstructed_graph = SBNGraph().from_path(path)
 
     assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
 

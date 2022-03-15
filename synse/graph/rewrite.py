@@ -220,9 +220,9 @@ class EdgeConnector:
         # mapping check if the edge exists in the Graph if there are not enough
         # edges (similar to the POS resolver)
         # If an edge does not exist yet, connect it. Do this for all possible
-        # mappings and run the extraction again. This will (hopefully) result 
+        # mappings and run the extraction again. This will (hopefully) result
         # in more isomorphic graphs, thus resulting in more mappings etc. etc.
-        # The recursion can stop at a certain depth or when no (or few) new 
+        # The recursion can stop at a certain depth or when no (or few) new
         # mappings are found.
         #
         # For nodes this is probably a lot more 'manual':

@@ -2,12 +2,15 @@ from enum import Enum
 from os import PathLike
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
-from uuid import uuid4
 
 import networkx as nx
 
 from synse.graph import BaseGraph
-from synse.sbn.sbn_spec import SBNSpec, get_doc_id, split_comments
+from synse.sbn.sbn_spec import SBNSpec, split_comments
+
+
+class SBNError(Exception):
+    pass
 
 
 class SBN_NODE_TYPE(str, Enum):
@@ -36,22 +39,18 @@ class SBNGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
 
-        # TODO: maybe move to BaseGraph
-        self.doc_id = None
-
-    def from_path(self, path: PathLike, doc_id: str = None):
+    def from_path(self, path: PathLike):
         """Construct a graph from the provided filepath."""
-        sbn_str = Path(path).read_text()
-        self.__try_to_set_doc_id(doc_id, path=path, sbn_str=sbn_str)
-        return self.from_string(sbn_str)
+        return self.from_string(Path(path).read_text())
 
-    def from_string(self, input_string: str, doc_id: str = None):
+    def from_string(self, input_string: str):
         """Construct a graph from a single SBN string."""
-        self.__try_to_set_doc_id(doc_id, sbn_str=input_string)
-
         lines = split_comments(input_string)
 
-        assert lines, "SBN doc appears to be empty, cannot read from string"
+        if not lines:
+            raise SBNError(
+                "SBN doc appears to be empty, cannot read from string"
+            )
 
         self.type_indices = {
             SBN_NODE_TYPE.SENSE: 0,
@@ -105,11 +104,11 @@ class SBNGraph(BaseGraph):
                 elif token in SBNSpec.NEW_BOX_INDICATORS:
                     # In the entire dataset there are no indices for box
                     # references other than -1. Maybe they are needed later and
-                    # the assert triggers if something different comes up.
-                    box_index = int(tokens.pop(0))
-                    assert (
-                        box_index == -1
-                    ), f"Unexpected box index found {box_index}"
+                    # the exception triggers if something different comes up.
+                    if box_index := int(tokens.pop(0)) != -1:
+                        raise SBNError(
+                            f"Unexpected box index found {box_index}"
+                        )
 
                     current_box_id = self._active_box_id
 
@@ -291,16 +290,17 @@ class SBNGraph(BaseGraph):
                 edge_data = self.edges.get(edge_id)
                 if edge_data["type"] == SBN_EDGE_TYPE.BOX_BOX_CONNECT:
                     if box_box_connect_to_insert:
-                        raise AssertionError(
+                        raise SBNError(
                             "Found box connected to multiple boxes, is that possible?"
                         )
                     else:
                         box_box_connect_to_insert = edge_data["token"]
 
                 if to_node_type == SBN_NODE_TYPE.SENSE:
-                    assert (
-                        to_node_id not in sense_idx_map
-                    ), "Ambiguous sense id found, should not be possible"
+                    if to_node_id in sense_idx_map:
+                        raise SBNError(
+                            "Ambiguous sense id found, should not be possible"
+                        )
 
                     sense_idx_map[to_node_id] = line_idx
                     temp_line_result = [to_node_id]
@@ -308,19 +308,23 @@ class SBNGraph(BaseGraph):
                         _, sense_to_id = sense_edge_id
 
                         sense_edge_data = self.edges.get(sense_edge_id)
-                        assert (
-                            sense_edge_data["type"] == SBN_EDGE_TYPE.ROLE
-                        ), f"Invalid sense edge connect found: {sense_edge_data['type']}"
+                        if sense_edge_data["type"] != SBN_EDGE_TYPE.ROLE:
+                            raise SBNError(
+                                f"Invalid sense edge connect found: {sense_edge_data['type']}"
+                            )
 
                         temp_line_result.append(sense_edge_data["token"])
 
                         sense_node_to_data = self.nodes.get(sense_to_id)
                         sense_node_to_type = sense_node_to_data["type"]
-                        assert sense_node_to_type in (
+                        if sense_node_to_type not in (
                             SBN_NODE_TYPE.CONSTANT,
                             SBN_NODE_TYPE.NAME_CONSTANT,
                             SBN_NODE_TYPE.SENSE,
-                        ), f"Invalid sense node connect found: {sense_node_to_type}"
+                        ):
+                            raise SBNError(
+                                f"Invalid sense node connect found: {sense_node_to_type}"
+                            )
 
                         if sense_node_to_type == SBN_NODE_TYPE.SENSE:
                             temp_line_result.append(sense_to_id)
@@ -367,12 +371,10 @@ class SBNGraph(BaseGraph):
                 # It is a sense which needs to be resolved to an index
                 elif token in sense_idx_map:
                     target = sense_idx_map[token] - current_sense_idx + 1
+                    # In the PMB dataset, an index of '0' is written as '+0',
+                    # so do that here as well.
                     tmp_line.append(
-                        # In PMB dataset, an index of '0' is written as '+0',
-                        # so do that here as well.
-                        f"+{target}"
-                        if target >= 0
-                        else str(target)
+                        f"+{target}" if target >= 0 else str(target)
                     )
                 # It is a regular token
                 else:
@@ -414,23 +416,6 @@ class SBNGraph(BaseGraph):
             SBN_EDGE_TYPE.BOX_CONNECT: {"style": "dotted", "label": ""},
             SBN_EDGE_TYPE.BOX_BOX_CONNECT: {},
         }
-
-    def __try_to_set_doc_id(
-        self, doc_id: str = None, path: PathLike = None, sbn_str: str = None
-    ):
-        # TODO: probably remove this and always use uuid or force the user to
-        # provide a valid id instead of the graph figuring it out.
-        if self.doc_id:
-            return
-
-        if doc_id:
-            self.doc_id = doc_id
-        elif path:
-            self.doc_id = get_doc_id(filepath=path)
-        elif sbn_str:
-            self.doc_id = get_doc_id(sbn_str=sbn_str)
-        else:
-            self.doc_id = f"no-id-received-{uuid4()}"
 
 
 def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:

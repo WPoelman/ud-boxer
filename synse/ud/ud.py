@@ -16,6 +16,10 @@ UD_LANG_DICT = {
 }
 
 
+class UDError(Exception):
+    pass
+
+
 class UD_SYSTEM(str, Enum):
     """Supported UD parsers"""
 
@@ -47,6 +51,8 @@ class UD_EDGE_TYPE(str, Enum):
 class UDGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
+        # TODO: detect UDSpec here once that is supported or make it an
+        # argument. (enhanced UD vs standard/basic UD)
         self.root_node_ids = []
 
     def from_path(self, conll_path: PathLike):
@@ -90,23 +96,19 @@ class UDGraph(BaseGraph):
                 # Ids are read in as tuples, but currently there are no parses
                 # with multiple or duplicate ids (not sure when that happens,
                 # with pre-annotated docs maybe?)
-                assert (
-                    len(token["id"]) == 1
-                ), f"Multiple ids found, cannot parse this currently."
+                if len(token["id"]) != 1:
+                    raise UDError(
+                        f"Multiple ids found, cannot parse this currently."
+                    )
 
                 tok_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["id"][0])
                 dep_rel = token.get("deprel")
                 pos = token.get("upos")
 
-                # TODO: detect UDSpec here once that is supported or make it an
-                # argument. (enhanced UD vs standard/basic UD)
-                assert (
-                    dep_rel in UDSpecBasic.DepRels.ALL_DEP_RELS
-                ), f"Unknown deprel found {dep_rel}"
-
-                assert (
-                    pos in UDSpecBasic.POS.ALL_POS
-                ), f"Unknown pos found {pos}"
+                if dep_rel not in UDSpecBasic.DepRels.ALL_DEP_RELS:
+                    raise UDError(f"Unknown deprel found {dep_rel}")
+                if pos not in UDSpecBasic.POS.ALL_POS:
+                    raise UDError(f"Unknown pos found {pos}")
 
                 # Morphological features are optional (can be None) and are
                 # encoded as follows:
