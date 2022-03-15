@@ -1,5 +1,7 @@
 from typing import List
 
+import networkx as nx
+
 from synse.graph import BaseGraph
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.ud import UD_EDGE_TYPE, UD_NODE_TYPE, UDGraph
@@ -30,6 +32,10 @@ class NodeRemover(GraphTransformer):
     DEP_RELS_TO_REMOVE = {
         UDSpecBasic.DepRels.DET,
         UDSpecBasic.DepRels.PUNCT,
+        UDSpecBasic.DepRels.AUX,
+        UDSpecBasic.DepRels.AUX_PASS,
+        UDSpecBasic.DepRels.CASE,
+        UDSpecBasic.DepRels.EXPL,
     }
 
     @staticmethod
@@ -48,6 +54,11 @@ class NodeRemover(GraphTransformer):
 
 # Misschien NameResolver (combine names consisting of > 1 tokens)
 class POSResolver(GraphTransformer):
+    MULTI_TOKEN_DEP_RELS = (
+        UDSpecBasic.DepRels.FLAT,
+        UDSpecBasic.DepRels.FLAT_NAME,
+    )
+
     @staticmethod
     def transform(G: UDGraph, **kwargs) -> BaseGraph:
 
@@ -55,17 +66,41 @@ class POSResolver(GraphTransformer):
         # can be applied later on (create edge abc, delete node x, etc)
         nodes_to_add, edges_to_add = [], []
         nodes_to_remove, edges_to_remove = set(), set()
+        idx = len(G) + 1
 
         for node_id, node_data in G.nodes.items():
+            if node_id in nodes_to_remove:
+                continue
+
+            # Split this up
+
             # Expand PROPN into 2 nodes with an edge
             if node_data.get("upos") == UDSpecBasic.POS.PROPN:
-                new_node_id = (SBN_NODE_TYPE.NAME_CONSTANT, 1)
+                # figure out something better here
+                new_node_id = (SBN_NODE_TYPE.NAME_CONSTANT, idx)
+                idx += 1
+
+                full_name = [node_data["token"]]
+                # These are multi word tokens, often names.
+                # We need to reconstruct them here into a single node.
+                descendants = nx.descendants(G, node_id)
+
+                for node_id_decs in descendants:
+                    if (
+                        G.nodes[node_id_decs].get("deprel")
+                        not in POSResolver.MULTI_TOKEN_DEP_RELS
+                    ):
+                        break
+                    nodes_to_remove.add(node_id_decs)
+                    full_name.append(G.nodes[node_id_decs]["token"])
+                    # also add edges to remove?
+
                 nodes_to_add.append(
                     (
                         new_node_id,
                         {
                             "type": UD_NODE_TYPE.TOKEN,
-                            "token": "POSSIBLE_NAME_CONSTANT",
+                            "token": " ".join(full_name),
                         },
                     )
                 )
@@ -75,17 +110,16 @@ class POSResolver(GraphTransformer):
                         new_node_id,
                         {
                             "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
-                            "token": "POSSIBLE_NAME_ROLE",
+                            "token": "Name",
                         },  # TODO: get roles from spec
                     )
                 )
             # Try to add the time node
             elif node_data.get("deprel") == UDSpecBasic.DepRels.ROOT:
                 if tense := node_data["feats"].get("Tense"):
-                    time_sense_id = (
-                        SBN_NODE_TYPE.SENSE,
-                        1000,
-                    )  # Figure something out here
+                    # Figure something out here
+                    time_sense_id = (SBN_NODE_TYPE.SENSE, idx)
+                    idx += 1
                     nodes_to_add.append(
                         (
                             time_sense_id,
@@ -115,7 +149,7 @@ class POSResolver(GraphTransformer):
                             time_const_id,
                             {
                                 "type": UD_NODE_TYPE.TOKEN,
-                                "token": "POSSIBLE_TIME_CONSTANT",  # TODO: different time stuff here (dates etc.)
+                                "token": "POSSIBLE_TIME_CONSTANT (now)",  # TODO: different time stuff here (dates etc.)
                             },
                         )
                     )
