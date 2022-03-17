@@ -1,8 +1,12 @@
+import logging
 import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
 from synse.sbn import SBNGraph, sbn_graphs_are_isomorphic
+from thesis.synse.sbn.sbn import SBNError
+
+logger = logging.getLogger(__name__)
 
 
 def get_args() -> Namespace:
@@ -14,13 +18,6 @@ def get_args() -> Namespace:
         default="data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold",
         help="Path to start recursively searching for sbn files.",
     )
-    parser.add_argument(
-        "-e",
-        "--error_file",
-        type=str,
-        default="../logs/sbn_errors.txt",
-        help="File to write errors to.",
-    )
     return parser.parse_args()
 
 
@@ -29,17 +26,13 @@ def main():
 
     start = time.perf_counter()
     total, failed = 0, 0
-    errors = []
 
     for filepath in Path(args.starting_path).glob("**/*.sbn"):
         total += 1
         try:
             A = SBNGraph().from_path(filepath)
-
-        except Exception as e:
-            error_msg = f"Unable to parse {filepath}\nReason: {e}"
-            errors.append(error_msg)
-            print(error_msg)
+        except SBNError as e:
+            logger.error(f"Unable to parse {filepath}\nReason: {e}")
             failed += 1
             continue
 
@@ -54,18 +47,14 @@ def main():
                     "Reconstructed graph and original are not the same"
                 )
 
-        except Exception as e:
-            error_msg = f"Unable to save {filepath}\nReason: {e}"
-            errors.append(error_msg)
-            print(error_msg)
+        except (SBNError, AssertionError) as e:
+            logger.error(f"Unable to save {filepath}\nReason: {e}")
             failed += 1
             continue
 
     end = round(time.perf_counter() - start, 2)
 
-    errors and Path(args.error_file).write_text("\n\n".join(errors))
-
-    print(
+    logger.info(
         f"""
 
     Total files:             {total:>{6}}

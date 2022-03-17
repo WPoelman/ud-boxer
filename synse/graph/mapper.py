@@ -21,6 +21,7 @@ Possible approach:
     while storing the counts of how many times a mapping occurred.
 """
 
+import logging
 from collections import Counter, defaultdict
 from copy import deepcopy
 from dataclasses import dataclass
@@ -44,6 +45,7 @@ from synse.ud import UD_SYSTEM, UDGraph
 from synse.ud.ud import UD_NODE_TYPE, Collector
 from synse.ud.ud_spec import UDSpecBasic
 
+logger = logging.getLogger(__name__)
 
 # NOTE: Not used at the moment, currently just looking at structure.
 def node_match(ud_node, sbn_node):
@@ -142,7 +144,7 @@ class MapExtractor:
             self.store_mappings(I, S, matcher.mapping)
         elif matcher.subgraph_is_monomorphic():
             # Maybe check alternatives if there are any:
-            # print(list(matcher.subgraph_monomorphisms_iter()))
+            # logging.info(list(matcher.subgraph_monomorphisms_iter()))
             self.store_mappings(I, S, matcher.mapping)
 
         I_n_nodes, S_n_nodes = len(I.nodes), len(S.nodes)
@@ -160,32 +162,32 @@ class MapExtractor:
         if debug:
             if I_n_nodes == S_n_nodes:
                 if I_n_edges == S_n_edges:
-                    print(
+                    logging.info(
                         "Same number of nodes and edges, try monomorphism, maybe use mappings if this does not work (i.e. the edges are incorrect)."
                     )
                 elif I_n_edges < S_n_edges:
-                    print(
+                    logging.info(
                         "Same number of nodes, but not enough edges, try stored mappings to add more"
                     )
                 else:
-                    print(
+                    logging.info(
                         "Same number of nodes, but more edges, is this even possible?"
                     )
             elif I_n_nodes < S_n_nodes:
-                print(
+                logging.info(
                     "Not enough nodes, try to remove some nodes from sbn (only boxes for now) or expand existing UD nodes"
                 )
             else:
                 if I_n_edges == S_n_edges:
-                    print(
+                    logging.info(
                         "Too many nodes and the same number of edges, is that even possible?"
                     )
                 elif I_n_edges < S_n_edges:
-                    print(
+                    logging.info(
                         "Too many nodes, but not enough edges, try to remove / merge nodes and (next is implicitly handled if we do it recursively) then try stored mappings to add more"
                     )
                 else:
-                    print(
+                    logging.info(
                         "Too many nodes and too many edges, remove / merge nodes"
                     )
 
@@ -244,7 +246,7 @@ class MapExtractor:
                         sbn_token: 1
                     }
             else:
-                print("No token or deprel (?)")
+                logging.info("No token or deprel (?)")
 
         # TODO: The mapping from upos or xpos to the simple wordnet v n a r can
         # be learned and stored here as well
@@ -265,7 +267,7 @@ class MapExtractor:
             elif sbn_node_type == SBN_NODE_TYPE.BOX:
                 key = "token2box"
             else:
-                print(f"Unknown sbn node type found: {sbn_node_type}")
+                logging.error(f"Unknown sbn node type found: {sbn_node_type}")
                 continue
 
             if ud_node_token in self.node_mappings[key]:

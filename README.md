@@ -18,10 +18,10 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
   * related question: is it possible that a constant looks like an index and *is a valid index* (in the range of possible indices for the current file)? Example with invalid index: `pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn` Maybe indicated by the role since such ambiguity should not be possible?
 - [x] Try out https://github.com/nlp-uoregon/trankit (supposedly better performance than stanza in some areas: https://trankit.readthedocs.io/en/latest/performance.html#universal-dependencies-v2-5)
 - [x] Read a UD parse into nx.Graph (from file (connl?)? in a program directly using sentence?)
+- [x] replace all prints with `logging`
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for case markings
 - [ ] convert UD pos to start of wordnet sense (`<lemma>.<sn_style_pos>`) sense number is for later / different component
 - [ ] attach box nodes in `I` UDGraph (at least starting box), figure out new box indicators in UD
-- [ ] replace all prints with `logging`
 
 ## Examples to try
 * **p00/d0004**: `entity` that combines multiple subtypes

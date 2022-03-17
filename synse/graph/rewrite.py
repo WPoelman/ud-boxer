@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 import networkx as nx
@@ -6,6 +7,8 @@ from synse.graph import BaseGraph
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.ud import UD_EDGE_TYPE, UD_NODE_TYPE, UDGraph
 from synse.ud.ud_spec import UDSpecBasic
+
+logger = logging.getLogger(__name__)
 
 TIME_MAPPING = {
     UDSpecBasic.Feats.Tense.FUT: "TSU",
@@ -218,7 +221,7 @@ class BoxRemover(GraphTransformer):
                 break
 
         if not possible_lemma_id:
-            print(
+            logger.info(
                 "No possible lemma match found, removing all box info, just in case"
             )
 

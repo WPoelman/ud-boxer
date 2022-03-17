@@ -1,3 +1,4 @@
+import logging
 import time
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
@@ -6,6 +7,8 @@ from tqdm import tqdm
 
 from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_LANG_DICT, UD_SYSTEM
+
+logger = logging.getLogger(__name__)
 
 
 def get_args() -> Namespace:
@@ -16,13 +19,6 @@ def get_args() -> Namespace:
         type=str,
         default="data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold",
         help="Path to start recursively searching for sbn files.",
-    )
-    parser.add_argument(
-        "-e",
-        "--error_file",
-        type=str,
-        default="../logs/errors_ud.txt",
-        help="File to write errors to.",
     )
     parser.add_argument(
         "-l",
@@ -49,7 +45,6 @@ def main():
 
     start = time.perf_counter()
     total, failed = 0, 0
-    errors = []
 
     if args.ud_system == UD_SYSTEM.STANZA:
         from stanza import Pipeline, download
@@ -77,17 +72,12 @@ def main():
             elif args.ud_system == UD_SYSTEM.TRANKIT:
                 out_file.write_text(trankit2conllu(result))
         except Exception as e:
-            error_msg = f"Unable to generate ud for {file}\nReason: {e}\n"
-            errors.append(error_msg)
-            print(error_msg)
-
+            logger.error(f"Unable to generate ud for {file}\nReason: {e}\n")
             failed += 1
 
     end = round(time.perf_counter() - start, 2)
 
-    errors and Path(args.error_file).write_text("\n\n".join(errors))
-
-    print(
+    logging.info(
         f"""
 
     Total files:            {total:>{6}}

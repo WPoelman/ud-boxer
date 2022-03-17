@@ -1,4 +1,5 @@
 import json
+import logging
 import time
 from argparse import ArgumentParser, Namespace
 from copy import deepcopy
@@ -15,6 +16,8 @@ from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_SYSTEM, UDGraph
 from synse.ud.ud import UD_NODE_TYPE, Collector
 
+logger = logging.getLogger(__name__)
+
 
 def get_args() -> Namespace:
     parser = ArgumentParser()
@@ -24,13 +27,6 @@ def get_args() -> Namespace:
         type=str,
         default="data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold",
         help="Path to start recursively searching for sbn and conll files.",
-    )
-    parser.add_argument(
-        "-e",
-        "--error_file",
-        type=str,
-        default="logs/errors_comparisons.txt",
-        help="File to write errors to.",
     )
     parser.add_argument(
         "-v",
@@ -103,7 +99,7 @@ def main():
 
     end = round(time.perf_counter() - start, 2)
 
-    print(
+    logger.info(
         f"""
 
     Total files:             {total:>{6}}
