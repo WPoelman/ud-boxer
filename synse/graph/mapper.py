@@ -21,10 +21,12 @@ Possible approach:
     while storing the counts of how many times a mapping occurred.
 """
 
+import json
 import logging
 from collections import Counter, defaultdict
 from copy import deepcopy
 from dataclasses import dataclass
+from os import PathLike
 from typing import Any, Dict, List
 
 import networkx as nx
@@ -191,8 +193,10 @@ class MapExtractor:
                         "Too many nodes and too many edges, remove / merge nodes"
                     )
 
-        S.to_png("intermediate_step_sbn_1.png")
-        I.to_png("intermediate_step_ud_1.png")
+            # TODO: make method that dumps intermediate steps (count in filename)
+            # method should take output folder as param
+            S.to_png("intermediate_step_sbn_1.png")
+            I.to_png("intermediate_step_ud_1.png")
         return I
 
     def store_mappings(self, I: UDGraph, S: SBNGraph, mapping: Dict[Any, Any]):
@@ -279,6 +283,18 @@ class MapExtractor:
                 )
             else:
                 self.node_mappings[key][ud_node_token] = {sbn_node_token: 1}
+
+    def dump_mappings(self, output_path: PathLike) -> None:
+        with open(output_path, "w") as f:
+            json.dump(
+                {
+                    "edge-mappings": self.edge_mappings,
+                    "node-mappings": self.node_mappings,
+                },
+                f,
+                indent=2,
+                ensure_ascii=False,
+            )
 
 
 class Converter:
