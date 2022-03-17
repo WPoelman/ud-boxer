@@ -40,7 +40,7 @@ class BaseGraph(nx.DiGraph):
 
     @staticmethod
     def _node_label(node_data) -> str:
-        raise NotImplementedError("Overwrite this to create an node label.")
+        raise NotImplementedError("Overwrite this to create a node label.")
 
     @staticmethod
     def _edge_label(edge_data) -> str:
