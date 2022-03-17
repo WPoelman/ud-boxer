@@ -157,6 +157,23 @@ class UDGraph(BaseGraph):
     def root_node(self, sentence_idx: int = 0):
         return self.nodes[self.root_node_ids[sentence_idx]]
 
+    @staticmethod
+    def _node_label(node_data) -> str:
+        label = [node_data["token"]]
+
+        if lemma := node_data.get("lemma"):
+            label.append(lemma)
+        if upos := node_data.get("upos"):
+            label.append(upos)
+        if xpos := node_data.get("xpos"):
+            label.append(xpos)
+
+        return "\n".join(label)
+
+    @staticmethod
+    def _edge_label(edge_data) -> str:
+        return edge_data["token"]
+
     @property
     def type_style_mapping(self):
         return {

@@ -404,6 +404,14 @@ class SBNGraph(BaseGraph):
     def _active_box_token(self) -> str:
         return f"B-{self.type_indices[SBN_NODE_TYPE.BOX]}"
 
+    @staticmethod
+    def _node_label(node_data) -> str:
+        return node_data["token"]
+
+    @staticmethod
+    def _edge_label(edge_data) -> str:
+        return edge_data["token"]
+
     @property
     def type_style_mapping(self):
         """Style per node type to use in dot export"""

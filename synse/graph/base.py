@@ -38,6 +38,14 @@ class BaseGraph(nx.DiGraph):
 
         return self
 
+    @staticmethod
+    def _node_label(node_data) -> str:
+        raise NotImplementedError("Overwrite this to create an node label.")
+
+    @staticmethod
+    def _edge_label(edge_data) -> str:
+        raise NotImplementedError("Overwrite this to create an edge label.")
+
     def to_png(self, save_path):
         """Creates a dot graph png and saves it at the provided path"""
         # This is possible, but it's a pain to select the proper labels and
@@ -51,6 +59,9 @@ class BaseGraph(nx.DiGraph):
             # pydot does not like a Path object
             save_path = str(save_path)
 
+        if not save_path.endswith(".png"):
+            save_path = f"{save_path}.png"
+
         token_count: Dict[str, int] = dict()
         node_dict = dict()
         for node_id, node_data in self.nodes.items():
@@ -58,7 +69,7 @@ class BaseGraph(nx.DiGraph):
             # example when a sense occurs > 1 times. Example:
             # pmb-4.0.0/data/en/bronze/p00/d0075
             # The tuple ids themselves are not great here.
-            tok = node_data["token"].replace(":", "-")
+            tok = node_data["token"]
             if tok in token_count:
                 token_count[tok] += 1
                 token_id = f"{tok}-{token_count[tok]}"
@@ -67,23 +78,12 @@ class BaseGraph(nx.DiGraph):
                 token_count[tok] = 0
             node_dict[node_id] = token_id
 
-            label = [tok]
-
-            # TODO: figure out better way of doing this (method to override
-            # that takes in node data and returns label?)
-            if lemma := node_data.get("lemma"):
-                label.append(lemma)
-            if upos := node_data.get("upos"):
-                label.append(upos)
-            if xpos := node_data.get("xpos"):
-                label.append(xpos)
-
             p_graph.add_node(
                 pydot.Node(
                     token_id,
                     **{
                         **self.type_style_mapping[node_data["type"]],
-                        "label": "\n".join(label),
+                        "label": self._node_label(node_data).replace(":", "-"),
                     },
                 )
             )
@@ -94,7 +94,7 @@ class BaseGraph(nx.DiGraph):
                     node_dict[from_id],
                     node_dict[to_id],
                     **{
-                        "label": edge_data["token"].replace(":", "-"),
+                        "label": self._edge_label(edge_data).replace(":", "-"),
                         **self.type_style_mapping[edge_data["type"]],
                     },
                 )
