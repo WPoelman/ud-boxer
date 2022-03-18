@@ -212,34 +212,38 @@ class POSResolver(GraphTransformer):
 class BoxRemover(GraphTransformer):
     @staticmethod
     def transform(G: SBNGraph, **kwargs) -> BaseGraph:
-        possible_lemma_id = None
-        for node_id, node_data in G.nodes.data():
-            if "wn_lemma" in node_data and node_data["wn_lemma"] == kwargs.get(
-                "ud_root_lemma"
-            ):
-                possible_lemma_id = node_id
-                break
+        # NOTE: remove all box nodes and edges, commented out parts kept the
+        # starting box and starting box edge connecting to the (possible) root.
+        # This was very inconsistent. For now try this.
 
-        if not possible_lemma_id:
-            logger.info(
-                "No possible lemma match found, removing all box info, just in case"
-            )
+        # possible_lemma_id = None
+        # for node_id, node_data in G.nodes.data():
+        #     if "wn_lemma" in node_data and node_data["wn_lemma"] == kwargs.get(
+        #         "ud_root_lemma"
+        #     ):
+        #         possible_lemma_id = node_id
+        #         break
+
+        # if not possible_lemma_id:
+        #     logger.info(
+        #         "No possible lemma match found, removing all box info, just in case"
+        #     )
 
         edges_to_remove = set()
         for edge_id, edge_data in G.edges.items():
-            from_id, to_id = edge_id
-            if to_id == possible_lemma_id or to_id == possible_lemma_id:
-                continue
+            # from_id, to_id = edge_id
+            # if to_id == possible_lemma_id or to_id == possible_lemma_id:
+            #     continue
 
             if edge_data["type"] == SBN_EDGE_TYPE.BOX_CONNECT:
                 edges_to_remove.add(edge_id)
 
         nodes_to_remove = set()
-        initial_box_id = (SBN_NODE_TYPE.BOX, 0)
+        # initial_box_id = (SBN_NODE_TYPE.BOX, 0)
         for node_id, node_data in G.nodes.items():
             # Don't remove the initial box node
-            if node_id == initial_box_id:
-                continue
+            # if node_id == initial_box_id:
+            #     continue
 
             if node_data["type"] == SBN_NODE_TYPE.BOX:
                 nodes_to_remove.add(node_id)

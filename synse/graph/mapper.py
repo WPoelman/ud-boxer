@@ -43,7 +43,7 @@ from synse.graph.rewrite import (
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn.sbn import SBN_NODE_TYPE
 from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
-from synse.ud import UD_SYSTEM, UDGraph
+from synse.ud import UD_EDGE_TYPE, UD_NODE_TYPE, UD_SYSTEM, UDGraph
 from synse.ud.ud import UD_NODE_TYPE, Collector
 from synse.ud.ud_spec import UDSpecBasic
 
@@ -111,9 +111,13 @@ class MapExtractor:
         I: UDGraph = None,
         depth: int = 5,
         count: int = 0,
-        debug: bool = False,
+        debug: bool = True,
     ):
-
+        # TODO: in plaats van recursief hier doorheen gaan, iteratief doen met:
+        #   while new_mappings != current_mappings
+        # En dan een set bijhouden van de mappings (even kijken naar de counts
+        # e.d. misschien dat die alleen op het einde geteld moeten worden, wanneer
+        # alle mappings eruit zijn)
         if count >= depth:
             return I
 
@@ -134,6 +138,9 @@ class MapExtractor:
         # 'box' relation mappings maybe?
         S = BoxRemover.transform(S, ud_root_lemma=I.root_node()["lemma"])
         # if count == 0:
+
+        # Use POS to assign constant types
+
         I = NodeRemover.transform(I)
         I = POSResolver.transform(I)
         # I = EdgeConnector.transform(I, self.edge_mappings)
@@ -143,11 +150,22 @@ class MapExtractor:
         # Isomorphic is stronger, but we might get more mappings using monomorphism.
         # At the moment the quality of both is not guaranteed.
         if matcher.subgraph_is_isomorphic():
+            # Once we know the structure is possibly correct, we can convert
+            # the UD types to the SBN types
+
+            G = SBNGraph().from_ud(I)
+            G.to_png("test")
+            G.to_sbn("test")
+            exit()
             self.store_mappings(I, S, matcher.mapping)
         elif matcher.subgraph_is_monomorphic():
+            G = SBNGraph().from_ud(I)
+            G.to_png("test")
+            G.to_sbn("test")
+            exit()
             # Maybe check alternatives if there are any:
             # logging.info(list(matcher.subgraph_monomorphisms_iter()))
-            self.store_mappings(I, S, matcher.mapping)
+            # self.store_mappings(I, S, matcher.mapping)
 
         I_n_nodes, S_n_nodes = len(I.nodes), len(S.nodes)
         I_n_edges, S_n_edges = len(I.edges), len(S.edges)

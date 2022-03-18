@@ -159,6 +159,7 @@ class UDGraph(BaseGraph):
 
     @staticmethod
     def _node_label(node_data) -> str:
+        return node_data["type"].value
         label = [node_data["token"]]
 
         if lemma := node_data.get("lemma"):
@@ -172,6 +173,8 @@ class UDGraph(BaseGraph):
 
     @staticmethod
     def _edge_label(edge_data) -> str:
+        return edge_data["type"].value
+
         return edge_data["token"]
 
     @property

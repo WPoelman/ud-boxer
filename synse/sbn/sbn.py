@@ -7,6 +7,7 @@ import networkx as nx
 
 from synse.graph import BaseGraph
 from synse.sbn.sbn_spec import SBNSpec, split_comments
+from synse.ud.ud import UD_NODE_TYPE, UDGraph
 
 
 class SBNError(Exception):
@@ -52,15 +53,7 @@ class SBNGraph(BaseGraph):
                 "SBN doc appears to be empty, cannot read from string"
             )
 
-        self.type_indices = {
-            SBN_NODE_TYPE.SENSE: 0,
-            SBN_NODE_TYPE.NAME_CONSTANT: 0,
-            SBN_NODE_TYPE.CONSTANT: 0,
-            SBN_NODE_TYPE.BOX: 0,
-            SBN_EDGE_TYPE.ROLE: 0,
-            SBN_EDGE_TYPE.BOX_CONNECT: 0,
-            SBN_EDGE_TYPE.BOX_BOX_CONNECT: 0,
-        }
+        self.__init_type_indices()
 
         starting_box = self.create_node(
             SBN_NODE_TYPE.BOX, self._active_box_token
@@ -213,6 +206,73 @@ class SBNGraph(BaseGraph):
 
         return self
 
+    def from_ud(self, U: UDGraph):
+        self.__init_type_indices()
+
+        starting_box = self.create_node(
+            SBN_NODE_TYPE.BOX, self._active_box_token
+        )
+        nodes, edges = [starting_box], []
+        ud_sbn_id_mapping = dict()
+
+        for node_id, node_data in U.nodes.data():
+            # distinguish names and other const types (?) or just use a single
+            # const type for all constants, then the following is already correct
+            if (
+                node_data["type"] == UD_NODE_TYPE.ROOT
+            ):  # TODO: move this out of here
+                continue
+            is_sense = U.out_degree(node_id) != 0
+            node_type = (
+                SBN_NODE_TYPE.SENSE if is_sense else SBN_NODE_TYPE.CONSTANT
+            )
+
+            node_data["type"] = node_type
+            if lemma := node_data.get("lemma"):
+                # TODO: part of speech mapping xpos -> wn
+                node_data["token"] = f"{lemma}.n.01"
+            new_node = self.create_node(
+                node_type, node_data["token"], node_data
+            )
+            ud_sbn_id_mapping[node_id] = new_node[0]
+
+            nodes.append(new_node)
+            if is_sense:
+                edges.append(
+                    self.create_edge(
+                        self._active_box_id,
+                        new_node[0],
+                        SBN_EDGE_TYPE.BOX_CONNECT,
+                    )
+                )
+
+        # assume the boxes are not present
+        for node_id, node_data in U.nodes.data():
+            if (
+                node_data["type"] == UD_NODE_TYPE.ROOT
+            ):  # TODO: move this out of here
+                continue
+            for edge_id in U.out_edges(node_id):
+                edge_data = U.edges.get(edge_id)
+                from_id, to_id = edge_id
+                edge_data["type"] = SBN_EDGE_TYPE.ROLE
+
+                # refactor so token gets picked from meta or from id
+                edges.append(
+                    self.create_edge(
+                        ud_sbn_id_mapping[from_id],
+                        ud_sbn_id_mapping[to_id],
+                        SBN_EDGE_TYPE.ROLE,
+                        edge_data["token"],
+                        edge_data,
+                    )
+                )
+        self.add_nodes_from(nodes)
+        self.add_edges_from(edges)
+        print(self.nodes.data())
+
+        return self
+
     def create_edge(
         self,
         from_node_id: SBN_ID,
@@ -227,13 +287,15 @@ class SBNGraph(BaseGraph):
         return (
             from_node_id,
             to_node_id,
-            dict(
-                _id=str(edge_id),
-                type=type,
-                type_idx=edge_id[1],
-                token=token or str(edge_id),
+            {
+                **dict(
+                    _id=str(edge_id),
+                    type=type,
+                    type_idx=edge_id[1],
+                    token=token or str(edge_id),
+                ),
                 **meta,
-            ),
+            },
         )
 
     def create_node(
@@ -247,21 +309,16 @@ class SBNGraph(BaseGraph):
         meta = meta or dict()
         return (
             node_id,
-            dict(
-                _id=str(node_id),
-                type=type,
-                type_idx=node_id[1],
-                token=token or str(node_id),
+            {
+                **dict(
+                    _id=str(node_id),
+                    type=type,
+                    type_idx=node_id[1],
+                    token=token or str(node_id),
+                ),
                 **meta,
-            ),
+            },
         )
-
-    def _id_for_type(
-        self, type: Union[SBN_NODE_TYPE, SBN_EDGE_TYPE]
-    ) -> SBN_ID:
-        _id = (type, self.type_indices[type])
-        self.type_indices[type] += 1
-        return _id
 
     def to_sbn(self, path: PathLike, add_comments: bool = False) -> PathLike:
         """Writes the SBNGraph to an file in sbn format"""
@@ -296,7 +353,11 @@ class SBNGraph(BaseGraph):
                     else:
                         box_box_connect_to_insert = edge_data["token"]
 
-                if to_node_type == SBN_NODE_TYPE.SENSE:
+                # if to_node_type == SBN_NODE_TYPE.SENSE:
+                if to_node_type in (
+                    SBN_NODE_TYPE.SENSE,
+                    SBN_NODE_TYPE.CONSTANT,
+                ):
                     if to_node_id in sense_idx_map:
                         raise SBNError(
                             "Ambiguous sense id found, should not be possible"
@@ -389,6 +450,24 @@ class SBNGraph(BaseGraph):
         sbn_string = "\n".join(final_result)
         return sbn_string
 
+    def __init_type_indices(self):
+        self.type_indices = {
+            SBN_NODE_TYPE.SENSE: 0,
+            SBN_NODE_TYPE.NAME_CONSTANT: 0,
+            SBN_NODE_TYPE.CONSTANT: 0,
+            SBN_NODE_TYPE.BOX: 0,
+            SBN_EDGE_TYPE.ROLE: 0,
+            SBN_EDGE_TYPE.BOX_CONNECT: 0,
+            SBN_EDGE_TYPE.BOX_BOX_CONNECT: 0,
+        }
+
+    def _id_for_type(
+        self, type: Union[SBN_NODE_TYPE, SBN_EDGE_TYPE]
+    ) -> SBN_ID:
+        _id = (type, self.type_indices[type])
+        self.type_indices[type] += 1
+        return _id
+
     @property
     def _active_sense_id(self) -> SBN_ID:
         return (
@@ -407,10 +486,12 @@ class SBNGraph(BaseGraph):
     @staticmethod
     def _node_label(node_data) -> str:
         return node_data["token"]
+        # return f'{node_data["type"].value}\n{node_data["token"]}'
 
     @staticmethod
     def _edge_label(edge_data) -> str:
         return edge_data["token"]
+        # return f'{edge_data["type"].value}\n{edge_data["token"]}'
 
     @property
     def type_style_mapping(self):

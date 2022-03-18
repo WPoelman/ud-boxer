@@ -135,14 +135,16 @@ def extract_mappings(args):
 
         try:
             S = SBNGraph().from_path(filepath)
-        except SBNError:
+        except SBNError as e:
             # Ignore the empty sbn docs or whitespace ids
+            logger.error(f"Cannot parse {filepath} reason: {e}")
             continue
 
         U = UDGraph().from_path(ud_filepath)
 
         extractor.extract_mappings(U, S)
 
+    return
     date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     extractor.dump_mappings(Path(args.output_path) / f"mappings-{date}.json")
 
@@ -178,14 +180,15 @@ def store_visualizations(args):
     path_glob = Path(args.starting_path).glob("**/*.sbn")
 
     for filepath in tqdm(path_glob, desc=desc_msg):
-        Path(filepath.parent / "viz").mkdir(exist_ok=True)
+        viz_dir = Path(filepath.parent / "viz_experiment")
+        viz_dir.mkdir(exist_ok=True)
 
         ud_filepath = Path(
             filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
         )
 
         SBNGraph().from_path(filepath).to_png(
-            str(Path(filepath.parent / f"viz/{filepath.stem}.png").resolve())
+            str(Path(viz_dir / f"{filepath.stem}.png").resolve())
         )
         if not ud_filepath.exists():
             logger.warning(
@@ -194,9 +197,7 @@ def store_visualizations(args):
             continue
 
         UDGraph().from_path(ud_filepath).to_png(
-            str(
-                Path(filepath.parent / f"viz/{ud_filepath.stem}.png").resolve()
-            )
+            str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
         )
 
 
