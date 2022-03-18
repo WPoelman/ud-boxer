@@ -132,7 +132,7 @@ class UDGraph(BaseGraph):
                     "xpos": pos,
                     "feats": feats or dict(),
                     "connl_id": token.get("id"),
-                    "type": UD_NODE_TYPE.ROOT,
+                    "type": tok_id[1],
                 }
 
                 if token["head"] == 0:
