@@ -17,6 +17,10 @@ from pathlib import Path
 from typing import List, Optional, Tuple
 
 
+class SBNError(Exception):
+    pass
+
+
 class SUPPORTED_LANGUAGES(str, Enum):
     """Supported languages and their codes, this is based on the PMB 4.0.0"""
 
@@ -53,7 +57,7 @@ class SBNSpec:
         "SOURCE",
     }
 
-    ROLES = {
+    DRS_OPERATORS = {
         # Manually added (not part of clf_signature.yaml)
         "TSU",  # What does this mean?
         "MOR",
@@ -61,11 +65,7 @@ class SBNSpec:
         "TOP",
         "ESU",
         "EPR",
-        "InstanceOf",  # what is the difference with "Instance"?
         # --- From here down copied from clf_signature.yaml ---
-        # Concept roles
-        "Proposition",
-        "Name",
         # temporal relations
         "EQU",  # equal
         "NEQ",  # not equla
@@ -85,6 +85,15 @@ class SBNSpec:
         "SY1",  # beside
         "SY2",  # between
         "SXY",  # around
+    }
+
+    ROLES = {
+        # Manually added (not part of clf_signature.yaml)
+        "InstanceOf",
+        # --- From here down copied from clf_signature.yaml ---
+        # Concept roles
+        "Proposition",
+        "Name",
         # Event roles
         "Agent",
         "Asset",
@@ -232,7 +241,7 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
         elif len(items) == 2:
             temp_lines.append((items[0], items[1]))
         else:
-            raise AssertionError(
+            raise SBNError(
                 "Unreachable, multiple comments per line are impossible"
             )
 

@@ -235,6 +235,7 @@ class MapExtractor:
             sbn_token = sbn_edge.get("token")
             sbn_edge_type = sbn_edge.get("type")
 
+            # TODO add SBN_EDGE_TYPE.DRS_OPERATOR
             if deprel and sbn_edge_type == SBN_EDGE_TYPE.ROLE:
                 if deprel in self.edge_mappings["deprel2role"]:
                     self.edge_mappings["deprel2role"][deprel][sbn_token] = (

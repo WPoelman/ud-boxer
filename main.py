@@ -9,14 +9,11 @@ from pathlib import Path
 from networkx.algorithms.isomorphism import DiGraphMatcher
 from tqdm import tqdm
 
-from synse.graph import BaseGraph
 from synse.graph.mapper import MapExtractor
-from synse.graph.rewrite import NodeRemover, POSResolver
-from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
-from synse.sbn.sbn import SBN_NODE_TYPE, SBNError, sbn_graphs_are_isomorphic
+from synse.sbn import SBNGraph
+from synse.sbn.sbn import SBNError, sbn_graphs_are_isomorphic
 from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_LANG_DICT, UD_SYSTEM, UDGraph
-from synse.ud.ud import UD_NODE_TYPE, Collector
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -167,11 +164,11 @@ def error_mine(args):
             if sbn_graphs_are_isomorphic(A, B):
                 save_path.unlink()
             else:
-                raise AssertionError(
+                raise SBNError(
                     f"Reconstructed graph and original are not the same: {filepath}"
                 )
 
-        except (SBNError, AssertionError) as e:
+        except SBNError as e:
             logger.error(f"Unable to save {filepath}\nReason: {e}")
 
 

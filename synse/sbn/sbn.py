@@ -6,12 +6,8 @@ from typing import Any, Dict, Optional, Tuple, Union
 import networkx as nx
 
 from synse.graph import BaseGraph
-from synse.sbn.sbn_spec import SBNSpec, split_comments
+from synse.sbn.sbn_spec import SBNError, SBNSpec, split_comments
 from synse.ud.ud import UD_NODE_TYPE, UDGraph
-
-
-class SBNError(Exception):
-    pass
 
 
 class SBN_NODE_TYPE(str, Enum):
@@ -27,6 +23,7 @@ class SBN_EDGE_TYPE(str, Enum):
     """Edge types"""
 
     ROLE = "role"
+    DRS_OPERATOR = "drs-operator"
     BOX_CONNECT = "box-connect"
     BOX_BOX_CONNECT = "box-box-connect"
 
@@ -118,8 +115,15 @@ class SBNGraph(BaseGraph):
 
                     nodes.append(new_box)
                     edges.append(box_edge)
-                elif token in SBNSpec.ROLES:
+                elif (is_role := token in SBNSpec.ROLES) or (
+                    token in SBNSpec.DRS_OPERATORS
+                ):
                     target = tokens.pop(0)
+                    edge_type = (
+                        SBN_EDGE_TYPE.ROLE
+                        if is_role
+                        else SBN_EDGE_TYPE.DRS_OPERATOR
+                    )
 
                     if index_match := SBNSpec.INDEX_PATTERN.match(target):
                         idx = int(index_match.group(0))
@@ -131,7 +135,7 @@ class SBNGraph(BaseGraph):
                             role_edge = self.create_edge(
                                 self._active_sense_id,
                                 to_id,
-                                SBN_EDGE_TYPE.ROLE,
+                                edge_type,
                                 token,
                             )
 
@@ -150,7 +154,7 @@ class SBNGraph(BaseGraph):
                             role_edge = self.create_edge(
                                 self._active_sense_id,
                                 const_node[0],
-                                SBN_EDGE_TYPE.ROLE,
+                                edge_type,
                                 token,
                             )
                             nodes.append(const_node)
@@ -197,7 +201,7 @@ class SBNGraph(BaseGraph):
                         nodes.append(const_node)
                         edges.append(role_edge)
                 else:
-                    raise ValueError(
+                    raise SBNError(
                         f"Invalid token found '{token}' in line: {sbn_line}"
                     )
 
@@ -369,7 +373,10 @@ class SBNGraph(BaseGraph):
                         _, sense_to_id = sense_edge_id
 
                         sense_edge_data = self.edges.get(sense_edge_id)
-                        if sense_edge_data["type"] != SBN_EDGE_TYPE.ROLE:
+                        if sense_edge_data["type"] not in (
+                            SBN_EDGE_TYPE.ROLE,
+                            SBN_EDGE_TYPE.DRS_OPERATOR,
+                        ):
                             raise SBNError(
                                 f"Invalid sense edge connect found: {sense_edge_data['type']}"
                             )
@@ -399,7 +406,7 @@ class SBNGraph(BaseGraph):
                 elif to_node_type == SBN_NODE_TYPE.BOX:
                     pass
                 else:
-                    raise ValueError(f"Invalid node id found: {to_node_id}")
+                    raise SBNError(f"Invalid node id found: {to_node_id}")
 
             if box_box_connect_to_insert:
                 result.append([box_box_connect_to_insert, "-1"])
@@ -457,6 +464,7 @@ class SBNGraph(BaseGraph):
             SBN_NODE_TYPE.CONSTANT: 0,
             SBN_NODE_TYPE.BOX: 0,
             SBN_EDGE_TYPE.ROLE: 0,
+            SBN_EDGE_TYPE.DRS_OPERATOR: 0,
             SBN_EDGE_TYPE.BOX_CONNECT: 0,
             SBN_EDGE_TYPE.BOX_BOX_CONNECT: 0,
         }
@@ -502,6 +510,7 @@ class SBNGraph(BaseGraph):
             SBN_NODE_TYPE.CONSTANT: {"shape": "none"},
             SBN_NODE_TYPE.BOX: {"shape": "box"},
             SBN_EDGE_TYPE.ROLE: {},
+            SBN_EDGE_TYPE.DRS_OPERATOR: {},
             SBN_EDGE_TYPE.BOX_CONNECT: {"style": "dotted", "label": ""},
             SBN_EDGE_TYPE.BOX_BOX_CONNECT: {},
         }
