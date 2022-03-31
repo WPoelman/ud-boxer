@@ -1,4 +1,5 @@
 import logging
+from collections import Counter
 from typing import List
 
 import networkx as nx
@@ -10,7 +11,7 @@ from synse.ud.ud_spec import UDSpecBasic
 
 logger = logging.getLogger(__name__)
 
-TIME_MAPPING = {
+TIME_EDGE_MAPPING = {
     UDSpecBasic.Feats.Tense.FUT: "TSU",
     UDSpecBasic.Feats.Tense.IMP: "TPR",  # Not in English?
     UDSpecBasic.Feats.Tense.PAST: "TPR",
@@ -45,9 +46,15 @@ class NodeRemover(GraphTransformer):
     def transform(G: BaseGraph, **kwargs) -> BaseGraph:
         node_ids_to_remove, edge_ids_to_remove = set(), set()
         for edge_id, edge_data in G.edges.items():
-            _, to_node_id = edge_id
             if edge_data.get("deprel") in NodeRemover.DEP_RELS_TO_REMOVE:
+                _, to_node_id = edge_id
                 node_ids_to_remove.add(to_node_id)
+                edge_ids_to_remove.add(edge_id)
+            # TODO: check if this explicit root is a good idea.
+            # Coordinate with removing boxes probably
+            elif edge_data.get("type") == UD_EDGE_TYPE.EXPLICIT_ROOT:
+                from_node_id, _ = edge_id
+                node_ids_to_remove.add(from_node_id)
                 edge_ids_to_remove.add(edge_id)
 
         G.remove_nodes_from(node_ids_to_remove)
@@ -55,8 +62,7 @@ class NodeRemover(GraphTransformer):
         return G
 
 
-# Misschien NameResolver (combine names consisting of > 1 tokens)
-class POSResolver(GraphTransformer):
+class NodeExpander(GraphTransformer):
     MULTI_TOKEN_DEP_RELS = (
         UDSpecBasic.DepRels.FLAT,
         UDSpecBasic.DepRels.FLAT_NAME,
@@ -64,9 +70,6 @@ class POSResolver(GraphTransformer):
 
     @staticmethod
     def transform(G: UDGraph, **kwargs) -> BaseGraph:
-
-        # TODO: create a mapping class / dict that stores transformations which
-        # can be applied later on (create edge abc, delete node x, etc)
         nodes_to_add, edges_to_add = [], []
         nodes_to_remove, edges_to_remove = set(), set()
         idx = len(G) + 1
@@ -75,10 +78,9 @@ class POSResolver(GraphTransformer):
             if node_id in nodes_to_remove:
                 continue
 
-            # Split this up
-
+            node_pos = node_data.get("upos")
             # Expand PROPN into 2 nodes with an edge
-            if node_data.get("upos") == UDSpecBasic.POS.PROPN:
+            if node_pos == UDSpecBasic.POS.PROPN:
                 # figure out something better here
                 new_node_id = (SBN_NODE_TYPE.NAME_CONSTANT, idx)
                 idx += 1
@@ -86,17 +88,13 @@ class POSResolver(GraphTransformer):
                 full_name = [node_data["token"]]
                 # These are multi word tokens, often names.
                 # We need to reconstruct them here into a single node.
-                descendants = nx.descendants(G, node_id)
+                for node_id_decs in nx.descendants(G, node_id):
+                    # if (G.nodes[node_id_decs].get("deprel") not in NodeExpander.MULTI_TOKEN_DEP_RELS):
+                    # break
 
-                for node_id_decs in descendants:
-                    if (
-                        G.nodes[node_id_decs].get("deprel")
-                        not in POSResolver.MULTI_TOKEN_DEP_RELS
-                    ):
-                        break
                     nodes_to_remove.add(node_id_decs)
+                    edges_to_remove.add((node_id, node_id_decs))
                     full_name.append(G.nodes[node_id_decs]["token"])
-                    # also add edges to remove?
 
                 nodes_to_add.append(
                     (
@@ -118,93 +116,134 @@ class POSResolver(GraphTransformer):
                     )
                 )
             # Try to add the time node
-            elif node_data.get("deprel") == UDSpecBasic.DepRels.ROOT:
+            # TODO: use NER or something else to see if an actual date or time
+            # is present in the graph. Also make sure not too time nodes get added.
+            if node_data.get("deprel") == UDSpecBasic.DepRels.ROOT:
+                # Take 'now' as the baseline time constant
+                time_relation = "now"
+
+                # Try the tense of the root first, maybe change later
                 if tense := node_data["feats"].get("Tense"):
-                    # Figure something out here
-                    time_sense_id = (SBN_NODE_TYPE.SENSE, idx)
-                    idx += 1
-                    nodes_to_add.append(
-                        (
-                            time_sense_id,
-                            {
-                                "type": UD_NODE_TYPE.TOKEN,
-                                "token": "POSSIBLE_TIME_SENSE",  # TODO: different time stuff here (dates etc.)
-                            },
-                        )
-                    )
-                    edges_to_add.append(
-                        (
-                            node_id,
-                            time_sense_id,
-                            {
-                                "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
-                                "token": "POSSIBLE_TIME_ROLE",  # TODO: get from spec
-                            },
-                        )
-                    )
+                    time_relation = TIME_EDGE_MAPPING[tense]
+                # Otherwise let the majority of tokens vote
+                else:
+                    all_tenses = [
+                        node_data.get("Tense")
+                        for _, node_data in G.nodes.items()
+                        if node_data.get("Tense")
+                    ]
+                    if len(all_tenses) > 0:
+                        most_freq, _ = Counter(all_tenses).most_common(1)[0]
+                        time_relation = TIME_EDGE_MAPPING[most_freq]
 
-                    time_const_id = (
-                        SBN_NODE_TYPE.SENSE,
-                        1001,
-                    )  # Figure something out here
-                    nodes_to_add.append(
-                        (
-                            time_const_id,
-                            {
-                                "type": UD_NODE_TYPE.TOKEN,
-                                "token": "POSSIBLE_TIME_CONSTANT (now)",  # TODO: different time stuff here (dates etc.)
-                            },
-                        )
+                time_sense_id = (SBN_NODE_TYPE.SENSE, idx)
+                idx += 1
+                nodes_to_add.append(
+                    (
+                        time_sense_id,
+                        {
+                            "type": UD_NODE_TYPE.TOKEN,
+                            "token": "time.n.08",  # default time sense
+                        },
                     )
-                    edges_to_add.append(
-                        (
-                            time_sense_id,
-                            time_const_id,
-                            {
-                                "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
-                                "token": f"POSSIBLE_TIME_EQUALITY_RELATION ({TIME_MAPPING[tense]}?)",
-                            },
-                        )
+                )
+                edges_to_add.append(
+                    (
+                        node_id,
+                        time_sense_id,
+                        {
+                            "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
+                            "token": "Time",  # TODO: get from spec?
+                        },
                     )
-            elif node_data.get("deprel") == UDSpecBasic.DepRels.NMOD_POSS:
-                # Find the subject of the sentence
-                subj_node = None
-                for test_node in G.nodes.data():
-                    _, test_node_data = test_node
-                    if test_node_data.get("deprel") in [
-                        UDSpecBasic.DepRels.NSUBJ,
-                        UDSpecBasic.DepRels.NSUBJ_PASS,
-                    ]:
-                        subj_node = test_node
+                )
 
-                if subj_node:
-                    subj_node_id, _ = subj_node
-
-                    nodes_to_remove.add(node_id)
-                    parent = next(G.predecessors(node_id))
-                    edges_to_remove.update(G.out_edges([parent]))
-                    # Not sure if possessive is always the user, might also be
-                    # something else, but that is for the next step once the graph
-                    # structure matches (and we have mappings).
-                    # Probably a NodeLabeler or EdgeLabeler that renames the
-                    # graph by itself? Or with specific rename mappings
-                    # (DiGraphMatcher monomorphism mappings?)
-                    edges_to_add.append(
-                        (
-                            parent,
-                            subj_node_id,
-                            {
-                                "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
-                                "token": "POSSIBLE_USER_RELATION",  # TODO: get from spec
-                            },
-                        )
+                # Figure something out here
+                time_const_id = (SBN_NODE_TYPE.SENSE, idx)
+                idx += 1
+                nodes_to_add.append(
+                    (
+                        time_const_id,
+                        {
+                            "type": UD_NODE_TYPE.TOKEN,
+                            "token": "now",  # TODO: different time stuff here (dates, NER? etc.)
+                        },
                     )
+                )
+                edges_to_add.append(
+                    (
+                        time_sense_id,
+                        time_const_id,
+                        {
+                            "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
+                            "token": time_relation,
+                        },
+                    )
+                )
 
         G.add_nodes_from(nodes_to_add)
         G.add_edges_from(edges_to_add)
 
         G.remove_nodes_from(nodes_to_remove)
         G.remove_edges_from(edges_to_remove)
+
+        return G
+
+
+# Misschien NameResolver (combine names consisting of > 1 tokens)
+class POSResolver(GraphTransformer):
+    @staticmethod
+    def transform(G: UDGraph, **kwargs) -> BaseGraph:
+
+        # # TODO: create a mapping class / dict that stores transformations which
+        # # can be applied later on (create edge abc, delete node x, etc)
+        # nodes_to_add, edges_to_add = [], []
+        # nodes_to_remove, edges_to_remove = set(), set()
+
+        # for node_id, node_data in G.nodes.items():
+        #     if node_id in nodes_to_remove:
+        #         continue
+
+        #     if node_data.get("deprel") == UDSpecBasic.DepRels.NMOD_POSS:
+        #         # Find the subject of the sentence
+        #         subj_node = None
+        #         for test_node in G.nodes.data():
+        #             _, test_node_data = test_node
+        #             if test_node_data.get("deprel") in [
+        #                 UDSpecBasic.DepRels.NSUBJ,
+        #                 UDSpecBasic.DepRels.NSUBJ_PASS,
+        #             ]:
+        #                 subj_node = test_node
+        #                 break
+
+        #         if subj_node:
+        #             subj_node_id, _ = subj_node
+
+        #             nodes_to_remove.add(node_id)
+        #             parent = next(G.predecessors(node_id))
+        #             edges_to_remove.update(G.out_edges([parent]))
+        #             # Not sure if possessive is always the user, might also be
+        #             # something else, but that is for the next step once the graph
+        #             # structure matches (and we have mappings).
+        #             # Probably a NodeLabeler or EdgeLabeler that renames the
+        #             # graph by itself? Or with specific rename mappings
+        #             # (DiGraphMatcher monomorphism mappings?)
+        #             edges_to_add.append(
+        #                 (
+        #                     parent,
+        #                     subj_node_id,
+        #                     {
+        #                         "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
+        #                         "token": "User",  # TODO: get from spec
+        #                     },
+        #                 )
+        #             )
+
+        # G.add_nodes_from(nodes_to_add)
+        # G.add_edges_from(edges_to_add)
+
+        # G.remove_nodes_from(nodes_to_remove)
+        # G.remove_edges_from(edges_to_remove)
 
         return G
 

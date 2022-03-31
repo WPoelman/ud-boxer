@@ -37,6 +37,7 @@ from synse.graph.rewrite import (
     BoxRemover,
     EdgeConnector,
     GraphTransformer,
+    NodeExpander,
     NodeRemover,
     POSResolver,
 )
@@ -108,9 +109,7 @@ class MapExtractor:
         self,
         U: UDGraph,
         S: SBNGraph,
-        I: UDGraph = None,
-        depth: int = 5,
-        count: int = 0,
+        max_tries: int = 10,
         debug: bool = True,
     ):
         # TODO: in plaats van recursief hier doorheen gaan, iteratief doen met:
@@ -118,11 +117,66 @@ class MapExtractor:
         # En dan een set bijhouden van de mappings (even kijken naar de counts
         # e.d. misschien dat die alleen op het einde geteld moeten worden, wanneer
         # alle mappings eruit zijn)
-        if count >= depth:
-            return I
+        I = deepcopy(U)
 
-        if not I:
-            I = deepcopy(U)
+        matcher = DiGraphMatcher(I, S)
+        if matcher.subgraph_is_isomorphic():
+            print("DIRECT MATCH EVEN WITH BOXES")
+            self.store_mappings(I, S, matcher.mapping)
+            return SBNGraph().from_ud(I)
+
+        S.to_png(
+            f"/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/intermediate_step_sbn_0.png"
+        )
+        S = BoxRemover.transform(S)
+        S.to_png(
+            f"/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/intermediate_step_sbn_1.png"
+        )
+
+        matcher = DiGraphMatcher(I, S)
+        if matcher.subgraph_is_isomorphic():
+            print("MATCH AFTER REMOVING BOXES")
+            self.store_mappings(I, S, matcher.mapping)
+            return SBNGraph().from_ud(I)
+
+        I.to_png(
+            f"/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/intermediate_step_ud_0.png"
+        )
+        I = NodeRemover.transform(I)
+        I.to_png(
+            f"/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/intermediate_step_ud_1.png"
+        )
+
+        matcher = DiGraphMatcher(I, S)
+        if matcher.subgraph_is_isomorphic():
+            print("MATCH AFTER REMOVING NODES")
+            self.store_mappings(I, S, matcher.mapping)
+            return SBNGraph().from_ud(I)
+
+        I = NodeExpander.transform(I)
+        I.to_png(
+            f"/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/intermediate_step_ud_2.png"
+        )
+
+        matcher = DiGraphMatcher(I, S)
+        if matcher.subgraph_is_isomorphic():
+            print("MATCH AFTER EXPANDING NODES")
+            self.store_mappings(I, S, matcher.mapping)
+            return SBNGraph().from_ud(I)
+
+        I = POSResolver.transform(I)
+        I.to_png(
+            f"/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/intermediate_step_ud_3.png"
+        )
+
+        matcher = DiGraphMatcher(I, S)
+        if matcher.subgraph_is_isomorphic():
+            print("MATCH AFTER RESOLVING POS TAGS")
+            self.store_mappings(I, S, matcher.mapping)
+            return SBNGraph().from_ud(I)
+
+        print("NO MATCH")
+        return I
 
         # First try to 'disable' the box nodes, leaving only the first box node
         # and box connect edge, to resemble the UD root
@@ -136,14 +190,6 @@ class MapExtractor:
         # Another approach, just for extracting the mappings, could be to apply both
         # transformations and extract possible mappings. This could catch those
         # 'box' relation mappings maybe?
-        S = BoxRemover.transform(S, ud_root_lemma=I.root_node()["lemma"])
-        # if count == 0:
-
-        # Use POS to assign constant types
-
-        I = NodeRemover.transform(I)
-        I = POSResolver.transform(I)
-        # I = EdgeConnector.transform(I, self.edge_mappings)
 
         matcher = DiGraphMatcher(I, S)
 
