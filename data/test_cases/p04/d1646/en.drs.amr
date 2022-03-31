@@ -1,0 +1,11 @@
+(b / B-0
+	:member (f / female.n.02
+		:Name (t / "Tracy"))
+	:member (l / lose.v.05
+		:Agent f
+		:Time (t2 / time.n.08
+			:TPR (n / now))
+		:Theme (g / glasses.n.01
+			:User f))
+	:member t2
+	:member g)

@@ -1,3 +1,4 @@
+from copy import deepcopy
 from enum import Enum
 from os import PathLike
 from pathlib import Path
@@ -456,6 +457,71 @@ class SBNGraph(BaseGraph):
 
         sbn_string = "\n".join(final_result)
         return sbn_string
+
+    def to_amr(self, path: PathLike, add_comments: bool = False) -> PathLike:
+        """Writes the SBNGraph to an file in AMR format"""
+        path = (
+            Path(path) if str(path).endswith(".amr") else Path(f"{path}.amr")
+        )
+
+        path.write_text(self.to_amr_string(add_comments))
+        return path
+
+    def to_amr_string(self, add_comments: bool = False) -> str:
+        """Creates a string in amr format from the SBNGraph"""
+        # Maybe use penman library to test validity
+        # import penman
+
+        # Make a copy just in case since strange side-effects such as token
+        # changes are no fun to debug.
+        G = deepcopy(self)
+        var_ids = []
+
+        for node in G.nodes:
+            abbr = G.nodes[node]["token"].replace('"', "").strip()[0].lower()
+
+            if abbr not in var_ids:
+                G.nodes[node]["var_id"] = abbr
+                var_ids.append(abbr)
+            else:
+                previous = [x for x in var_ids if x.startswith(abbr)]
+                G.nodes[node]["var_id"] = abbr + str(len(previous) + 1)
+                var_ids.append(abbr)
+
+        for edge in G.edges:
+            if G.edges[edge]["type"] == SBN_EDGE_TYPE.BOX_CONNECT:
+                G.edges[edge]["token"] = "member"
+
+        def __to_amr_str(
+            S: SBNGraph, current_node, visited, text_format, tabs
+        ):
+            node_data = S.nodes[current_node]
+            if current_node not in visited:
+                text_format += f'({node_data["var_id"]} / {node_data["token"]}'
+
+                if S.out_degree(current_node) == 0:
+                    text_format += ")"
+                    visited.add(current_node)
+                else:
+                    indents = tabs * "\t"
+                    for edge_id in S.edges(current_node):
+                        _, child_node = edge_id
+                        text_format += (
+                            f'\n{indents}:{S.edges[edge_id]["token"]} '
+                        )
+                        text_format = __to_amr_str(
+                            S, child_node, visited, text_format, tabs + 1
+                        )
+                    text_format += ")"
+                    visited.add(current_node)
+            else:
+                text_format += node_data["var_id"]
+            return text_format
+
+        # For now assume there always is the starting box to server as the "root"
+        # (not really since it's a DAG, but for AMR a starting point is needed)
+        starting_node = (SBN_NODE_TYPE.BOX, 0)
+        return __to_amr_str(G, starting_node, set(), "", 1)
 
     def __init_type_indices(self):
         self.type_indices = {

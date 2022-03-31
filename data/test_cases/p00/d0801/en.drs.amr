@@ -1,0 +1,19 @@
+(b / B-0
+	:member (p / person.n.01
+		:EQU (s / speaker))
+	:member (t / time.n.08
+		:EQU (n / now))
+	:member (c / call.v.03
+		:Agent p
+		:Time t)
+	:EXPLANATION (b2 / B-1
+		:member (p2 / person.n.01
+			:EQU (s2 / speaker))
+		:member (l / lose.v.05
+			:Agent p2
+			:Time (t2 / time.n.08
+				:TPR (n2 / now))
+			:Theme (c2 / credit_card.n.01
+				:User (s3 / speaker)))
+		:member t2
+		:member c2))

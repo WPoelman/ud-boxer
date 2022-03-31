@@ -1,0 +1,11 @@
+(b / B-0
+	:member (p / person.n.01
+		:EQU (s / speaker))
+	:NEGATION (b2 / B-1
+		:member (t / time.n.08
+			:TSU (n / now))
+		:member (l / lie.v.05
+			:Agent p
+			:Time t
+			:Recipient (f / female.n.02))
+		:member f))

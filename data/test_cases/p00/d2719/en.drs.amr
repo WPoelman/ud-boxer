@@ -1,0 +1,17 @@
+(b / B-0
+	:member (f / female.n.02
+		:Name (m / "Mary"))
+	:member (w / want.v.01
+		:Pivot f
+		:Time (t / time.n.08
+			:EQU (n / now))
+		:Theme (p / paint.v.02
+			:Agent f
+			:Patient (c / car.n.01
+				:User f)
+			:Result (b2 / bright_blue.a.01
+				:ColourOf c)))
+	:member t
+	:member p
+	:member c
+	:member b2)

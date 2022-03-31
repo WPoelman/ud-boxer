@@ -1,0 +1,17 @@
+(b / B-0
+	:member (p / person.n.01
+		:EQU (h / hearer))
+	:NEGATION (b2 / B-1
+		:member (e / entity.n.01)
+		:member (p2 / person.n.01
+			:EQU (h2 / hearer))
+		:member (l / like.v.02
+			:Stimulus e
+			:Experiencer p2
+			:Time (t / time.n.08
+				:EQU (n / now)))
+		:member t
+		:NEGATION (b3 / B-2
+			:member (e2 / eat.v.01
+				:Agent p
+				:Patient e))))

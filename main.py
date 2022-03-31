@@ -75,6 +75,11 @@ def get_args() -> Namespace:
         action="store_true",
         help="Store SBN and UD visualizations in the dataset example folders.",
     )
+    parser.add_argument(
+        "--store_amr",
+        action="store_true",
+        help="Store SBN to AMR conversion (NOTE: tests it for now, not actually stores).",
+    )
 
     return parser.parse_args()
 
@@ -198,6 +203,16 @@ def store_visualizations(args):
         )
 
 
+def store_amr(args):
+    desc_msg = "Testing AMR files"
+    path_glob = Path(args.starting_path).glob("**/*.sbn")
+
+    for filepath in tqdm(path_glob, desc=desc_msg):
+        SBNGraph().from_path(filepath).to_amr(
+            Path(filepath.parent / f"{filepath.stem}.amr").resolve()
+        )
+
+
 def main():
     args = get_args()
 
@@ -216,6 +231,9 @@ def main():
 
     if args.store_visualizations:
         store_visualizations(args)
+
+    if args.store_amr:
+        store_amr(args)
 
     logging.info(f"Took {round(time.perf_counter() - start, 2)} seconds")
 
