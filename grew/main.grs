@@ -1,0 +1,91 @@
+%%% LABELING RULES %%%
+% Add the token feature to all nodes
+rule add_token {
+    pattern { N [ lemma ]; }
+    without { N [ token ]; }
+    commands { N.token = N.lemma; }
+}
+
+%%% CONNECTING RULES %%%
+% Piet lost his glasses: glasses -[User]-> Piet
+rule connect_user {
+    pattern {
+        USER [ upos=PROPN|NOUN ]; 
+        * -[nsubj|nsubj:pass]-> USER;
+        REL: TARGET -[nmod:poss]-> INDICATOR;
+    }
+    commands {
+        % add_edge USER -[Owner]-> TARGET;
+        add_edge TARGET -[User]-> USER;
+        del_edge REL;
+        del_node INDICATOR;
+    }
+}
+
+% NOTE: voordat deze toegepast wordt, de compound named entities samenvoegen
+rule expand_name {
+    pattern { NAME [ upos=PROPN ]; }
+    without { NAME -[Name]-> *; }
+    commands {
+        % TODO assign proper label, maybe with combination of PROPN + Gender = Fem
+        NAME.token = "entity.n.01";
+        add_node NAME_CONST;
+        NAME_CONST.token = NAME.wordform;
+        add_edge NAME -[Name]-> NAME_CONST;
+    }
+}
+
+rule add_time {
+    pattern { N []; * -[root]-> N; }
+    without { N -[Time]-> *; }
+    commands {
+        add_node TIME_SENSE;
+        % use lexicon here or apply mappings after rewrite rules
+        TIME_SENSE.token = "time.n.08"; 
+        add_edge N -[Time]-> TIME_SENSE;
+
+        add_node TIME_CONST;
+        % use lexicon here or apply mappings after rewrite rules
+        TIME_CONST.token = "now"; 
+        add_edge TIME_SENSE -[TPR]-> TIME_CONST;
+    }
+}
+
+%%% CLEANING RULES %%%
+% Remove any punctuation that is connected to the root directly.
+% These are the sentence ending punctuation marks.
+rule remove_punct { 
+    pattern { 
+        * -[root]-> ROOT; 
+        E: ROOT -> N;
+        N [ upos=PUNCT ];
+    }
+    commands {
+        del_edge E;
+        del_node N;
+    }
+}
+
+rule remove_explicit_root {
+    pattern {
+        N [];
+        E: N -[root]-> T; 
+    }
+    commands {
+        del_edge E;
+        del_node N;
+    }
+}
+
+strat main {
+    Onf (
+        Seq (
+            add_token,
+            connect_user,
+            expand_name,
+            add_time,
+            remove_punct,
+            remove_explicit_root,
+        )
+    )
+}
