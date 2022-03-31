@@ -46,6 +46,7 @@ class UD_EDGE_TYPE(str, Enum):
     # NOTE: possibly use dependency relations as edge type directly
     SENTENCE_CONNECT = "sentence-connect"
     DEPENDENCY_RELATION = "dependency-relation"
+    EXPLICIT_ROOT = "explicit-root"
 
 
 class UDGraph(BaseGraph):
@@ -70,7 +71,7 @@ class UDGraph(BaseGraph):
                         "_id": root_id,
                         "token": "ROOT",
                         "lemma": None,
-                        "deprel": "explicit-root-box",
+                        "deprel": None,
                         "upos": None,
                         "xpos": None,
                         "feats": None,
@@ -137,13 +138,16 @@ class UDGraph(BaseGraph):
 
                 if token["head"] == 0:
                     head_id = (sentence_idx, UD_NODE_TYPE.ROOT, token["head"])
+                    edge_type = UD_EDGE_TYPE.EXPLICIT_ROOT
                     self.root_node_ids.append(tok_id)
                 else:
                     head_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["head"])
+                    edge_type = UD_EDGE_TYPE.DEPENDENCY_RELATION
+
                 edge_data = {
                     "token": token["deprel"],
                     "deprel": token["deprel"],
-                    "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
+                    "type": edge_type,
                 }
 
                 nodes.append((tok_id, tok_data))
@@ -159,7 +163,7 @@ class UDGraph(BaseGraph):
 
     @staticmethod
     def _node_label(node_data) -> str:
-        return node_data["type"].value
+        # return node_data["token"]
         label = [node_data["token"]]
 
         if lemma := node_data.get("lemma"):
@@ -173,8 +177,6 @@ class UDGraph(BaseGraph):
 
     @staticmethod
     def _edge_label(edge_data) -> str:
-        return edge_data["type"].value
-
         return edge_data["token"]
 
     @property
@@ -185,6 +187,7 @@ class UDGraph(BaseGraph):
             UD_NODE_TYPE.ROOT: {"shape": "box"},
             UD_EDGE_TYPE.SENTENCE_CONNECT: {"style": "dotted"},
             UD_EDGE_TYPE.DEPENDENCY_RELATION: {},
+            UD_EDGE_TYPE.EXPLICIT_ROOT: {},
         }
 
 
