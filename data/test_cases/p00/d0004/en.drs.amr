@@ -1,17 +1,17 @@
-(b / B-0
-	:member (b2 / brown.a.01)
-	:member (d / dog.n.01
-		:Colour b2)
-	:member (e / entity.n.01
-		:Sub d
-		:Sub (d2 / dog.n.01
-			:Colour (g / grey.a.01)))
-	:member g
-	:member d2
-	:member (t / time.n.08
-		:EQU (n / now))
-	:member (f / fight.v.01
-		:Agent e
-		:Time t
-		:Location (s / snow.n.02))
-	:member s)
+(b0 / B-0
+	:member (s0 / brown.a.01)
+	:member (s1 / dog.n.01
+		:Colour s0)
+	:member (s2 / entity.n.01
+		:Sub s1
+		:Sub (s4 / dog.n.01
+			:Colour (s3 / grey.a.01)))
+	:member s3
+	:member s4
+	:member (s5 / time.n.08
+		:EQU (c0 / now))
+	:member (s6 / fight.v.01
+		:Agent s2
+		:Time s5
+		:Location (s7 / snow.n.02))
+	:member s7)

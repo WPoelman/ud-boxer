@@ -529,6 +529,10 @@ class SBNGraph(BaseGraph):
         """Creates a string in amr format from the SBNGraph"""
         # Maybe use penman library to test validity
         # import penman
+        if not nx.is_directed_acyclic_graph(self):
+            raise SBNError(
+                "The SBNGraph in not a DAG, cannot convert to AMR currently."
+            )
 
         # Make a copy just in case since strange side-effects such as token
         # changes are no fun to debug.
@@ -554,23 +558,20 @@ class SBNGraph(BaseGraph):
             # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
             # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
 
-        def __to_amr_str(
-            S: SBNGraph, current_node, visited, text_format, tabs
-        ):
-            node_data = S.nodes[current_node]
-            if current_node not in visited:
+        def __to_amr_str(S: SBNGraph, current_n, visited, text_format, tabs):
+            node_data = S.nodes[current_n]
+            if current_n in visited:
+                text_format += node_data["var_id"]
+            else:
                 text_format += f'({node_data["var_id"]} / {node_data["token"]}'
 
-                if S.out_degree(current_node) == 0:
+                if S.out_degree(current_n) == 0:
                     text_format += ")"
-                    visited.add(current_node)
+                    visited.add(current_n)
                 else:
                     indents = tabs * "\t"
-                    for edge_id in S.edges(current_node):
+                    for edge_id in S.edges(current_n):
                         _, child_node = edge_id
-                        if child_node in visited:
-                            # We're in a cycle, figure out what to do
-                            break
                         text_format += (
                             f'\n{indents}:{S.edges[edge_id]["token"]} '
                         )
@@ -578,21 +579,12 @@ class SBNGraph(BaseGraph):
                             S, child_node, visited, text_format, tabs + 1
                         )
                     text_format += ")"
-                    visited.add(current_node)
-            else:
-                text_format += node_data["var_id"]
+                    visited.add(current_n)
             return text_format
 
         # For now assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)
         return __to_amr_str(G, starting_node, set(), "", 1)
-
-    # def from_amr(self, amr_str: str) -> SBNGraph:
-    #     """Create the SBNGraph from an AMR string"""
-    #     import penman
-    #     penman_graph = penman.decode(amr_str)
-
-    #     return self
 
     def __init_type_indices(self):
         self.type_indices = {

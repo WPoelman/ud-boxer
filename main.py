@@ -4,6 +4,7 @@ from argparse import ArgumentParser, Namespace
 from datetime import datetime
 from pathlib import Path
 
+import networkx as nx
 from tqdm import tqdm
 
 from synse.mapper import MapExtractor
@@ -211,9 +212,31 @@ def store_amr(args):
         # print(SBNGraph().from_path(filepath).to_amr_string())
         # except Exception as e:
         # print(f'Failed: {filepath}')
-        SBNGraph().from_path(filepath).to_amr(
-            Path(filepath.parent / f"{filepath.stem}.amr").resolve()
-        )
+        try:
+            SBNGraph().from_path(filepath).to_amr(
+                Path(filepath.parent / f"{filepath.stem}.amr").resolve()
+            )
+        except SBNError as e:
+            print(e)
+
+
+def collect_cyclic_graphs(args):
+    desc_msg = "Finding cyclic sbn graphs"
+    path_glob = Path(args.starting_path).glob("**/*.sbn")
+
+    cyclic_graphs = []
+    paths = []
+    for filepath in tqdm(path_glob, desc=desc_msg):
+        try:
+            S = SBNGraph().from_path(filepath)
+            cycles = nx.find_cycle(S)
+        except Exception as e:
+            continue
+        cyclic_graphs.append(" ".join([S.edges[e]["token"] for e in cycles]))
+        paths.append(str(filepath))
+
+    Path("cyclic_edges.txt").write_text("\n".join(cyclic_graphs))
+    Path("cyclic paths.txt").write_text("\n".join(paths))
 
 
 def main():
@@ -238,6 +261,8 @@ def main():
     if args.store_amr:
         store_amr(args)
 
+    if False:
+        collect_cyclic_graphs(args)
     logging.info(f"Took {round(time.perf_counter() - start, 2)} seconds")
 
 
