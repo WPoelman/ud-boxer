@@ -87,6 +87,16 @@ class SBNSpec:
         "SXY",  # around
     }
 
+    REVERSABLE_ROLES = {
+        "Instance",
+        "Attribute",
+        "Colour",
+        "Content",
+        "Made",
+        "Part",
+        "Sub",
+    }
+
     ROLES = {
         # Manually added (not part of clf_signature.yaml)
         "InstanceOf",

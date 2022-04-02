@@ -78,7 +78,7 @@ rule remove_explicit_root {
 }
 
 strat main {
-    Onf (
+    Iter (
         Seq (
             add_token,
             connect_user,

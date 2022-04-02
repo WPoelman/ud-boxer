@@ -1,18 +1,14 @@
-import json
 import logging
 import time
 from argparse import ArgumentParser, Namespace
-from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
 
-from networkx.algorithms.isomorphism import DiGraphMatcher
 from tqdm import tqdm
 
-from synse.graph.mapper import MapExtractor
-from synse.sbn import SBNGraph
-from synse.sbn.sbn import SBNError, sbn_graphs_are_isomorphic
-from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
+from synse.mapper import MapExtractor
+from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
+from synse.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_LANG_DICT, UD_SYSTEM, UDGraph
 
 logging.basicConfig(level=logging.INFO)
@@ -182,25 +178,28 @@ def store_visualizations(args):
     path_glob = Path(args.starting_path).glob("**/*.sbn")
 
     for filepath in tqdm(path_glob, desc=desc_msg):
-        viz_dir = Path(filepath.parent / "viz_experiment")
+        viz_dir = Path(filepath.parent / "viz")
         viz_dir.mkdir(exist_ok=True)
 
-        ud_filepath = Path(
-            filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
-        )
-
-        SBNGraph().from_path(filepath).to_png(
-            str(Path(viz_dir / f"{filepath.stem}.png").resolve())
-        )
-        if not ud_filepath.exists():
-            logger.warning(
-                f"Skipping {filepath} UD visualization, no ud parse available"
+        try:
+            SBNGraph().from_path(filepath).to_png(
+                str(Path(viz_dir / f"{filepath.stem}.png").resolve())
             )
-            continue
+            ud_filepath = Path(
+                filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
+            )
+            if not ud_filepath.exists():
+                logger.warning(
+                    f"Skipping {filepath} UD visualization, no ud parse available"
+                )
+                continue
 
-        UDGraph().from_path(ud_filepath).to_png(
-            str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
-        )
+            # UDGraph().from_path(ud_filepath).to_png(
+            #     str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
+            # )
+        except Exception as e:
+            print(f"Failed: {filepath}")
+            exit()
 
 
 def store_amr(args):
@@ -208,6 +207,10 @@ def store_amr(args):
     path_glob = Path(args.starting_path).glob("**/*.sbn")
 
     for filepath in tqdm(path_glob, desc=desc_msg):
+        # try:
+        # print(SBNGraph().from_path(filepath).to_amr_string())
+        # except Exception as e:
+        # print(f'Failed: {filepath}')
         SBNGraph().from_path(filepath).to_amr(
             Path(filepath.parent / f"{filepath.stem}.amr").resolve()
         )

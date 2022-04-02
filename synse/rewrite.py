@@ -4,10 +4,10 @@ from typing import List
 
 import networkx as nx
 
-from synse.graph import BaseGraph
+from synse.base import BaseGraph
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.ud import UD_EDGE_TYPE, UD_NODE_TYPE, UDGraph
-from synse.ud.ud_spec import UDSpecBasic
+from synse.ud_spec import UDSpecBasic
 
 logger = logging.getLogger(__name__)
 

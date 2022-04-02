@@ -1,3 +1,4 @@
+import json
 import shutil
 import sys
 from pathlib import Path
@@ -98,6 +99,8 @@ def main():
         "/home/wessel/Documents/documents/study/1_thesis/project/thesis/grew/main.grs"
     )
     result = grew.run(grs, ud_graph, "main")
+    print(json.dumps(result))
+    exit()
     for i, res in enumerate(result):
         shutil.copy(
             Path(grew.dot_to_png(res)),

@@ -2,17 +2,17 @@ from pathlib import Path
 
 import pytest
 
-from synse.sbn import (
-    SBN_EDGE_TYPE,
-    SBN_NODE_TYPE,
-    SBNGraph,
-    sbn_graphs_are_isomorphic,
-    split_comments,
-)
+from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph, sbn_graphs_are_isomorphic
+from synse.sbn_spec import split_comments
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
-NORMAL_EXAMPLE = Path(EXAMPLES_DIR / "normal_example.sbn").read_text()
-ALL_EXAMPLES = [example.read_text() for example in EXAMPLES_DIR.glob("*.sbn")]
+SBN_DIR = EXAMPLES_DIR / "sbn"
+AMR_DIR = EXAMPLES_DIR / "amr"
+
+NORMAL_EXAMPLE_SBN = Path(SBN_DIR / "normal_example.sbn").read_text()
+NORMAL_EXAMPLE_AMR = Path(AMR_DIR / "normal_example.amr").read_text()
+
+ALL_EXAMPLES = [example.read_text() for example in SBN_DIR.glob("*.sbn")]
 
 
 @pytest.mark.parametrize(
@@ -81,11 +81,6 @@ def test_can_parse_full_file(example_string):
     SBNGraph().from_string(example_string)
 
 
-# @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
-# def test_can_create_png(tmp_path, example_string):
-#     SBNGraph().from_string(example_string).to_png(tmp_path / "test.png")
-
-
 @pytest.mark.parametrize("example_string", ALL_EXAMPLES)
 def test_can_parse_and_reconstruct(tmp_path, example_string):
     starting_graph = SBNGraph().from_string(example_string)
@@ -104,18 +99,10 @@ def test_can_parse_and_reconstruct_with_comments(tmp_path, example_string):
     assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
 
 
-def test_parse_indices():
-    pass
-
-
-def test_add_new_box():
-    pass
-
-
 def test_json_export(tmp_path):
     tmp_file = tmp_path / "tmp.json"
 
-    G_string = SBNGraph().from_string(NORMAL_EXAMPLE)
+    G_string = SBNGraph().from_string(NORMAL_EXAMPLE_SBN)
     G_string.to_json(tmp_file)
 
     # Can export the file
@@ -133,3 +120,8 @@ def test_json_export(tmp_path):
     edges_json = sorted(list(G_json.edges.items()))
 
     assert edges_string == edges_json
+
+
+# def test_amr_export():
+#     amr_str = SBNGraph().from_string(NORMAL_EXAMPLE_SBN).to_amr_string()
+#     assert amr_str == NORMAL_EXAMPLE_AMR

@@ -8,9 +8,9 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 import networkx as nx
 
-from synse.graph import BaseGraph
-from synse.sbn.sbn_spec import SBNError, SBNSpec, split_comments
-from synse.ud.ud import UD_NODE_TYPE, UDGraph
+from synse.base import BaseGraph
+from synse.sbn_spec import SBNError, SBNSpec, split_comments
+from synse.ud import UD_NODE_TYPE, UDGraph
 
 
 class SBN_NODE_TYPE(str, Enum):
@@ -473,17 +473,20 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, grew_edges) in grew_graph.items():
-            is_leaf = len(grew_edges) == 0
+            # TODO: make sure in pre-processing 'type' and 'token' are added
+            node_tok = node_data.get("token", None) or node_data.get(
+                "lemma", None
+            )
+            is_sense = SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok)
             node = self.create_node(
-                SBN_NODE_TYPE.CONSTANT if is_leaf else SBN_NODE_TYPE.SENSE,
-                # TODO: make sure in pre-processing 'type' and 'token' are added
-                node_data.get("token", None) or node_data.get("lemma", None),
+                SBN_NODE_TYPE.SENSE if is_sense else SBN_NODE_TYPE.CONSTANT,
+                node_tok,
                 node_data,
             )
             nodes.append(node)
             id_mapping[grew_node_id] = node[0]
 
-            if not is_leaf:
+            if not is_sense:
                 box_edge = self.create_edge(
                     self._active_box_id,
                     self._active_sense_id,
@@ -530,22 +533,26 @@ class SBNGraph(BaseGraph):
         # Make a copy just in case since strange side-effects such as token
         # changes are no fun to debug.
         G = deepcopy(self)
-        var_ids = []
+        prefix_map = {
+            SBN_NODE_TYPE.BOX: ["b", 0],
+            SBN_NODE_TYPE.CONSTANT: ["c", 0],
+            SBN_NODE_TYPE.SENSE: ["s", 0],
+        }
 
-        for node in G.nodes:
-            abbr = G.nodes[node]["token"].replace('"', "").strip()[0].lower()
-
-            if abbr not in var_ids:
-                G.nodes[node]["var_id"] = abbr
-                var_ids.append(abbr)
-            else:
-                previous = [x for x in var_ids if x.startswith(abbr)]
-                G.nodes[node]["var_id"] = abbr + str(len(previous) + 1)
-                var_ids.append(abbr)
+        for node_id, node_data in G.nodes.items():
+            pre, count = prefix_map[node_data["type"]]
+            prefix_map[node_data["type"]][1] += 1  # type: ignore
+            G.nodes[node_id]["var_id"] = f"{pre}{count}"
 
         for edge in G.edges:
+            # Add a proper token to the box connectors
             if G.edges[edge]["type"] == SBN_EDGE_TYPE.BOX_CONNECT:
                 G.edges[edge]["token"] = "member"
+            # Since the graph is possibly in the 'wrong' direction, convert
+            # the non 'Of*' relations here.
+            # elif G.edges[edge]["type"] == SBN_EDGE_TYPE.ROLE:
+            # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
+            # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
 
         def __to_amr_str(
             S: SBNGraph, current_node, visited, text_format, tabs
@@ -561,6 +568,9 @@ class SBNGraph(BaseGraph):
                     indents = tabs * "\t"
                     for edge_id in S.edges(current_node):
                         _, child_node = edge_id
+                        if child_node in visited:
+                            # We're in a cycle, figure out what to do
+                            break
                         text_format += (
                             f'\n{indents}:{S.edges[edge_id]["token"]} '
                         )
@@ -573,10 +583,16 @@ class SBNGraph(BaseGraph):
                 text_format += node_data["var_id"]
             return text_format
 
-        # For now assume there always is the starting box to server as the "root"
-        # (not really since it's a DAG, but for AMR a starting point is needed)
+        # For now assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)
         return __to_amr_str(G, starting_node, set(), "", 1)
+
+    # def from_amr(self, amr_str: str) -> SBNGraph:
+    #     """Create the SBNGraph from an AMR string"""
+    #     import penman
+    #     penman_graph = penman.decode(amr_str)
+
+    #     return self
 
     def __init_type_indices(self):
         self.type_indices = {

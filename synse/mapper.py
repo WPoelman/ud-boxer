@@ -32,8 +32,8 @@ from typing import Any, Dict, List
 import networkx as nx
 from networkx.algorithms.isomorphism import DiGraphMatcher
 
-from synse.graph import BaseGraph
-from synse.graph.rewrite import (
+from synse.base import BaseGraph
+from synse.rewrite import (
     BoxRemover,
     EdgeConnector,
     GraphTransformer,
@@ -42,11 +42,8 @@ from synse.graph.rewrite import (
     POSResolver,
 )
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
-from synse.sbn.sbn import SBN_NODE_TYPE
-from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_EDGE_TYPE, UD_NODE_TYPE, UD_SYSTEM, UDGraph
-from synse.ud.ud import UD_NODE_TYPE, Collector
-from synse.ud.ud_spec import UDSpecBasic
+from synse.ud_spec import UDSpecBasic
 
 logger = logging.getLogger(__name__)
 

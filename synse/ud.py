@@ -4,8 +4,8 @@ from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
 from stanza.utils.conll import CoNLL
 
-from synse.graph import BaseGraph
-from synse.ud.ud_spec import UDSpecBasic
+from synse.base import BaseGraph
+from synse.ud_spec import UDSpecBasic
 
 # Used to switch between stanza and trankit language identifiers
 UD_LANG_DICT = {

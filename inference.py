@@ -2,11 +2,11 @@ import json
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from synse.graph.mapper import Converter
-from synse.graph.rewrite import BoxRemover, NodeRemover, POSResolver
-from synse.sbn.sbn import SBNGraph
-from synse.sbn.sbn_spec import SUPPORTED_LANGUAGES
-from synse.ud.ud import UDGraph
+from synse.mapper import Converter
+from synse.rewrite import BoxRemover, NodeRemover, POSResolver
+from synse.sbn import SBNGraph
+from synse.sbn_spec import SUPPORTED_LANGUAGES
+from synse.ud import UDGraph
 
 
 def get_args() -> Namespace:
@@ -43,7 +43,7 @@ def get_args() -> Namespace:
 def main():
     args = get_args()
     """
-    Inference can ben done on a UD parse. This will be read into a UDGraph,
+    Inference can be done on a UD parse. This will be read into a UDGraph,
     after this the stored transformations and mappings will be applied as
     much as possible and the result will be a .sbn file (possibly with
     a visualization).
@@ -55,12 +55,9 @@ def main():
     S = SBNGraph().from_path(f"{input_path.parent}/en.drs.sbn")
     U = UDGraph().from_path(input_path)
 
-    S.to_png("data/tmp_output/test_converter_reference.png")
-    U.to_png("data/tmp_output/test_converter_ud_parse.png")
-
-    with open(args.mappings_path) as f:
-        mappings = json.load(f)
-    converter = Converter([NodeRemover, BoxRemover, POSResolver], mappings)
+    # with open(args.mappings_path) as f:
+    #     mappings = json.load(f)
+    # converter = Converter([NodeRemover, BoxRemover, POSResolver], mappings)
 
     result = converter.convert(U)
 
