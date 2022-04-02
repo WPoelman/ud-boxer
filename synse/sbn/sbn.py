@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 from copy import deepcopy
 from enum import Enum
 from os import PathLike
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 import networkx as nx
 
@@ -38,11 +40,11 @@ class SBNGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
 
-    def from_path(self, path: PathLike):
+    def from_path(self, path: PathLike) -> SBNGraph:
         """Construct a graph from the provided filepath."""
         return self.from_string(Path(path).read_text())
 
-    def from_string(self, input_string: str):
+    def from_string(self, input_string: str) -> SBNGraph:
         """Construct a graph from a single SBN string."""
         lines = split_comments(input_string)
 
@@ -173,7 +175,7 @@ class SBNGraph(BaseGraph):
                         name = " ".join(name_parts)
 
                         name_node = self.create_node(
-                            SBN_NODE_TYPE.NAME_CONSTANT,
+                            SBN_NODE_TYPE.CONSTANT,
                             name,
                             {"comment": comment},
                         )
@@ -211,7 +213,7 @@ class SBNGraph(BaseGraph):
 
         return self
 
-    def from_ud(self, U: UDGraph):
+    def from_ud(self, U: UDGraph) -> SBNGraph:
         self.__init_type_indices()
 
         starting_box = self.create_node(
@@ -388,7 +390,6 @@ class SBNGraph(BaseGraph):
                         sense_node_to_type = sense_node_to_data["type"]
                         if sense_node_to_type not in (
                             SBN_NODE_TYPE.CONSTANT,
-                            SBN_NODE_TYPE.NAME_CONSTANT,
                             SBN_NODE_TYPE.SENSE,
                         ):
                             raise SBNError(
@@ -458,6 +459,60 @@ class SBNGraph(BaseGraph):
         sbn_string = "\n".join(final_result)
         return sbn_string
 
+    def from_grew(self, grew_graph: Dict[str, List[Any]]) -> SBNGraph:
+        """Create an SBNGraph from a grew output format graph."""
+        self.__init_type_indices()
+
+        starting_box = self.create_node(
+            SBN_NODE_TYPE.BOX, self._active_box_token
+        )
+
+        nodes, edges = [starting_box], []
+        id_mapping: Dict[str, SBN_ID] = dict()
+
+        # First collect all nodes and create a mapping from the grew ids to
+        # the current graph ids.
+        for grew_node_id, (node_data, grew_edges) in grew_graph.items():
+            is_leaf = len(grew_edges) == 0
+            node = self.create_node(
+                SBN_NODE_TYPE.CONSTANT if is_leaf else SBN_NODE_TYPE.SENSE,
+                # TODO: make sure in pre-processing 'type' and 'token' are added
+                node_data.get("token", None) or node_data.get("lemma", None),
+                node_data,
+            )
+            nodes.append(node)
+            id_mapping[grew_node_id] = node[0]
+
+            if not is_leaf:
+                box_edge = self.create_edge(
+                    self._active_box_id,
+                    self._active_sense_id,
+                    SBN_EDGE_TYPE.BOX_CONNECT,
+                )
+                edges.append(box_edge)
+
+        for grew_from_node_id, (_, grew_edges) in grew_graph.items():
+            for edge_name, grew_to_node_id in grew_edges:
+                # TODO: introduce new type (NOT_LABELED_YET) in case it's not a
+                # role or drs operator (so still a deprel)?
+                edge_type = (
+                    SBN_EDGE_TYPE.ROLE
+                    if edge_name in SBNSpec.ROLES
+                    else SBN_EDGE_TYPE.DRS_OPERATOR
+                )
+                edge = self.create_edge(
+                    id_mapping[grew_from_node_id],
+                    id_mapping[grew_to_node_id],
+                    edge_type,
+                    edge_name,
+                )
+                edges.append(edge)
+
+        self.add_nodes_from(nodes)
+        self.add_edges_from(edges)
+
+        return self
+
     def to_amr(self, path: PathLike, add_comments: bool = False) -> PathLike:
         """Writes the SBNGraph to an file in AMR format"""
         path = (
@@ -526,7 +581,6 @@ class SBNGraph(BaseGraph):
     def __init_type_indices(self):
         self.type_indices = {
             SBN_NODE_TYPE.SENSE: 0,
-            SBN_NODE_TYPE.NAME_CONSTANT: 0,
             SBN_NODE_TYPE.CONSTANT: 0,
             SBN_NODE_TYPE.BOX: 0,
             SBN_EDGE_TYPE.ROLE: 0,
@@ -572,7 +626,6 @@ class SBNGraph(BaseGraph):
         """Style per node type to use in dot export"""
         return {
             SBN_NODE_TYPE.SENSE: {},
-            SBN_NODE_TYPE.NAME_CONSTANT: {"shape": "none"},
             SBN_NODE_TYPE.CONSTANT: {"shape": "none"},
             SBN_NODE_TYPE.BOX: {"shape": "box"},
             SBN_EDGE_TYPE.ROLE: {},

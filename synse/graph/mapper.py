@@ -331,8 +331,6 @@ class MapExtractor:
                 key = "token2sense"
             elif sbn_node_type == SBN_NODE_TYPE.CONSTANT:
                 key = "token2const"
-            elif sbn_node_type == SBN_NODE_TYPE.NAME_CONSTANT:
-                key = "token2nameconst"
             elif sbn_node_type == SBN_NODE_TYPE.BOX:
                 key = "token2box"
             else:

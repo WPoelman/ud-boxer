@@ -63,7 +63,7 @@ def test_parse_reconstruct_name():
     )
     G = SBNGraph().from_string(test_string)
 
-    name_const_id = (SBN_NODE_TYPE.NAME_CONSTANT, 0)
+    name_const_id = (SBN_NODE_TYPE.CONSTANT, 0)
 
     assert name_const_id in G.nodes
 

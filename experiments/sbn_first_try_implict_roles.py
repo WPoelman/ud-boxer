@@ -131,7 +131,6 @@ class SBNGraph(BaseGraph):
 
         self.type_indices = {
             SBN_NODE_TYPE.SENSE: 0,
-            SBN_NODE_TYPE.NAME_CONSTANT: 0,
             SBN_NODE_TYPE.CONSTANT: 0,
             SBN_NODE_TYPE.BOX: 0,
             SBN_EDGE_TYPE.ROLE: 0,
@@ -262,7 +261,7 @@ class SBNGraph(BaseGraph):
                     target = to_do_stack.pop()
 
                     name_node = self.create_node(
-                        SBN_NODE_TYPE.NAME_CONSTANT, name, {"comment": comment}
+                        SBN_NODE_TYPE.CONSTANT, name, {"comment": comment}
                     )
                     role_edge = self.create_edge(
                         self._active_sense_id(),

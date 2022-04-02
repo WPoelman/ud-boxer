@@ -82,7 +82,7 @@ class NodeExpander(GraphTransformer):
             # Expand PROPN into 2 nodes with an edge
             if node_pos == UDSpecBasic.POS.PROPN:
                 # figure out something better here
-                new_node_id = (SBN_NODE_TYPE.NAME_CONSTANT, idx)
+                new_node_id = (SBN_NODE_TYPE.CONSTANT, idx)
                 idx += 1
 
                 full_name = [node_data["token"]]
