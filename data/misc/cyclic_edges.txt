@@ -1,0 +1,2606 @@
+Role Of EQU EQU
+Role Of EQU
+Role Of EQU
+Role User EQU
+Role Of EQU
+Role Of EQU
+TAB Theme
+Role Of EQU
+Role User
+Role Of EQU
+Role Of EQU
+Role Of EQU EQU
+Role Of EQU EQU
+Role Of EQU
+Attribute TIN Patient
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU EQU
+Role Of EQU
+Attribute TIN Theme
+Degree Co-Theme
+Attribute TIN Theme
+Role Of EQU
+Role Of EQU
+Role Of EQU
+Role Of EQU EQU
+Role Of EQU
+Role Of EQU
+Attribute TIN Agent
+Sub PartOf
+Time Time EQU
+Theme Theme Theme
+Proposition EQU
+Stimulus Agent
+Agent Topic Agent
+Proposition EQU
+Topic Agent
+Theme Theme
+Recipient AttributeOf Topic
+Degree Theme
+Proposition Time EQU
+Proposition EQU
+Co-Theme Theme
+NEQ Destination
+Causer Theme
+Duration User EQU
+Participant Agent
+Theme Agent
+Co-Theme User
+Topic Theme EQU
+Role Of
+Attribute TIN PartOf Agent
+EQU Creator
+Co-Theme PartOf EQU EQU
+Topic Time
+Theme Colour
+Proposition AttributeOf
+Role PartOf
+Topic Theme EQU
+Participant Agent
+Degree Theme
+Causer Agent
+Attribute Degree
+Theme Agent
+Location PartOf
+Proposition EQU
+Theme Theme NEQ Theme
+Degree Theme
+Co-Theme Role Creator EQU
+Theme Agent
+EPR
+Location Agent
+Location EQU
+Theme EQU
+Theme AttributeOf
+Participant Agent
+Proposition EQU
+ESU
+Theme User EQU
+Recipient Theme
+ESU Time
+Role Of
+Role Of EQU
+Proposition Theme
+Participant Proposition
+Agent EQU
+Proposition EQU
+AttributeOf Participant
+Role User
+PartOf Sub EQU
+Stimulus Theme
+AttributeOf EQU
+Role PartOf
+Creator Creator EQU
+Role PartOf EQU
+Theme PartOf
+Degree Theme
+ESU
+Time Path
+AttributeOf PartOf
+Theme Stimulus Theme
+ESU
+Theme PartOf EQU
+EQU User
+TIN Sub
+Source Theme EQU
+Proposition TIN
+Recipient Agent
+Value Time
+Source Destination
+Degree Theme
+PartOf Proposition Pivot
+Theme
+Degree Theme
+ESU
+Recipient AttributeOf
+Proposition Source Proposition Source
+Result AttributeOf EQU
+Location User EQU
+Location PartOf EQU
+AttributeOf Beneficiary
+EQU TIN Patient Role Of
+AttributeOf EQU
+Topic Time
+ESU
+Agent Theme Agent
+PartOf Patient
+Topic Causer
+Theme Sub Bearer
+Proposition Participant
+Theme Agent
+Topic Attribute
+Degree Theme
+Proposition EQU
+Theme Agent
+Topic Agent
+Topic Agent
+Sub PartOf
+Theme Recipient
+PartOf Role
+Theme Theme
+Proposition Creator
+Proposition Theme
+Co-Agent Co-Agent Location
+EQU Theme Role Of
+Topic AttributeOf
+Role User
+Proposition Participant
+Destination User
+Proposition EQU
+Proposition Time
+Topic Pivot
+Topic Agent
+Theme Theme
+Theme Destination
+Time Theme
+Theme Creator
+Topic Agent
+Time EQU
+PartOf Agent
+MadeOf Theme
+Participant Agent
+Topic Theme
+Destination Theme
+EQU Proposition
+Topic Destination
+Topic Stimulus
+Proposition EQU
+Topic Agent Agent Theme
+Theme Participant Theme
+Topic Theme
+Beneficiary Quantity EQU
+Topic Theme
+Value Quantity
+Topic User
+Destination Time EQU
+Proposition EQU
+Theme Theme
+Topic Agent
+Participant PartOf
+PartOf PartOf EQU
+Topic Agent
+Theme Co-Theme
+Topic Theme Participant
+Theme EQU AttributeOf
+Time Time
+Topic Attribute
+Theme Theme EQU
+Location SXP PartOf
+Proposition Agent
+Stimulus Proposition EQU
+Topic AttributeOf
+Attribute Location Location
+User Proposition
+Topic Theme
+PartOf User EQU
+Stimulus Theme
+Topic Location
+Topic AttributeOf
+Location PartOf User
+Stimulus Theme
+Agent Participant Part
+EPR
+Co-Agent NEQ EQU
+Proposition Topic
+Participant Proposition
+Location PartOf
+Theme Agent
+Proposition EQU
+Theme Owner EQU EQU
+Proposition Theme
+Theme Agent
+EPR
+Proposition ESU
+EQU Role Of
+Bearer Sub EQU
+Role Of
+Theme Topic
+Topic Agent
+Result Experiencer EQU
+Location EQU
+EQU Location SXY
+PartOf Agent
+Topic Agent
+Proposition Topic
+Theme Agent
+Stimulus AttributeOf
+Proposition EQU
+Causer Theme
+Attribute AttributeOf
+TIN
+Theme Theme
+PartOf EQU
+Role User
+Proposition Topic
+Location Theme
+Location User EQU AttributeOf
+Degree Theme
+Patient User EQU
+Beneficiary EQU
+Participant Proposition
+Participant Agent
+Proposition
+EQU EQU
+EQU Location SY1
+Beneficiary Time EQU
+ESU
+Topic AttributeOf
+Proposition EQU
+AttributeOf PartOf
+TAB Time
+Source Location
+Co-Theme Theme
+Role User
+Destination AttributeOf
+Topic Theme
+PartOf Source EQU
+SXN Time
+Time Theme
+PartOf Sub
+Role Of EQU
+Patient User EQU EQU
+Proposition Duration
+Topic Theme
+Location SXN
+Beneficiary Role Of
+EQU EQU
+Theme Creator EQU
+Topic Experiencer
+Proposition EQU
+Destination Theme
+Causer Theme
+PartOf Theme
+Co-Theme Theme
+Location Theme
+PartOf PartOf EQU
+Topic Theme
+Theme Theme
+Proposition EQU
+Proposition Experiencer
+Proposition EQU
+Location Theme
+Proposition EQU Participant
+Role Of
+SY2 Sub EQU
+Patient Owner
+Topic Stimulus
+Result AttributeOf
+Proposition EQU
+Proposition Participant
+Topic Theme
+EQU PartOf
+EPR
+Causer Agent
+Theme EQU
+Role Theme
+EQU Of
+PartOf EQU EQU
+Participant Sub EQU EQU
+MadeOf Theme
+Theme Agent
+Theme Owner EQU
+Location Source EQU EQU
+EQU EQU
+Theme EQU
+Topic Theme
+Topic Agent
+Proposition EQU
+Context AttributeOf
+Topic Theme EQU
+Role Of EQU
+User Theme
+Location PartOf EQU Location
+EQU Co-Agent Role Of
+Stimulus Agent
+Topic Theme Patient
+Proposition Participant
+Degree Theme
+Role Of
+Theme Time EQU
+Recipient Agent
+Topic Theme Location
+Role User
+Role Of EQU
+Proposition EQU
+Topic Theme EQU
+AttributeOf AttributeOf
+Proposition EQU
+Role Creator
+Time EQU
+Theme Theme
+Topic Agent Agent
+Stimulus Time EQU
+AttributeOf EQU
+Time AttributeOf
+Proposition TIN
+Topic Theme
+Co-Theme Theme PartOf EQU
+Causer Theme
+Role PartOf
+Attribute Agent
+EPR
+Role Of EQU
+Topic Experiencer
+Topic AttributeOf
+Topic Agent
+Proposition EQU
+Participant Proposition
+Proposition
+PartOf Owner EQU
+Location PartOf
+EPR
+Proposition EQU
+Role Of EQU
+PartOf Theme
+Proposition EQU
+Topic Agent EQU
+Theme Agent
+Location Agent
+Topic Patient
+Stimulus Experiencer
+EQU Location User
+EPR
+EPR
+Theme Agent
+Topic Theme
+Theme Experiencer
+Part EQU
+Time Sub EQU
+Topic Agent
+Role Of
+EPR
+Source Sub
+Theme Participant Context
+Location User
+Degree Theme
+Proposition EQU
+Role Of EQU
+Topic AttributeOf
+Patient Role Of EQU
+PartOf PartOf EQU
+Beneficiary User EQU
+Proposition Theme
+Role User
+Stimulus Agent
+EQU User
+PartOf Agent
+PartOf Theme
+Destination User EQU
+Topic Theme
+Theme Agent EQU
+Topic Agent
+Participant Theme
+EPR
+Topic Theme
+Stimulus Time
+EQU PartOf
+Topic Theme
+Topic Patient
+Topic Theme
+Theme Theme
+Proposition Agent
+Topic Theme
+Theme EQU
+Causer Theme
+Location Time
+Theme EQU TIN Degree
+EQU User
+Theme PartOf
+PartOf Source
+Attribute TIN Patient
+Stimulus Participant Participant
+Location PartOf
+Theme AttributeOf
+Topic Of EQU
+Proposition EQU
+Proposition EQU
+Instrument Instrument EQU
+SZN PartOf EQU
+Role User
+Causer Theme EQU
+Attribute PartOf EQU Patient
+Topic Time EQU
+Topic Theme
+Role Of
+EQU Causer Agent
+ESU
+Creator EQU
+Topic Theme
+EQU Co-Theme
+Proposition Participant
+ESU
+Theme Agent
+Topic Agent
+EQU User
+Proposition EQU
+TIN Time EQU
+Context Patient
+Role Of EQU
+PartOf PartOf EQU
+Proposition EQU
+Theme Agent
+Topic Agent
+User Theme
+Topic Agent
+Topic Theme
+Proposition
+Theme AttributeOf
+Part Theme
+Co-Theme Theme
+Location AttributeOf
+Theme Theme User EQU EQU
+Proposition EQU
+AttributeOf Theme
+NEQ Proposition
+Topic Agent
+Proposition Theme
+Topic Agent
+Goal User
+Theme User
+Topic Agent
+Agent EQU Attribute
+Theme Theme
+Location User
+Proposition EQU
+Time Theme
+Proposition Topic
+MadeOf AttributeOf
+Destination Creator EQU
+Co-Agent Agent
+Role Of EQU
+PartOf Time EQU
+Topic Degree Theme
+Sub PartOf
+SY2 Sub EQU
+Time EQU
+Proposition EQU
+Attribute Topic Attribute
+Topic
+Topic Theme
+Topic Experiencer
+Proposition Participant
+Topic Theme
+Topic Agent EQU
+Topic Theme
+Role Experiencer
+Proposition Participant
+Topic AttributeOf
+Theme Theme EQU
+ESU Sub
+Time ESU
+Proposition EQU
+Proposition Theme
+Proposition Agent
+Value Quantity
+Proposition
+ESU
+Degree Theme
+Topic Agent
+Attribute TIN Patient
+Participant Agent
+Patient PartOf EQU
+Context Patient
+TIN
+Role Of
+Theme EQU
+PartOf Time EQU
+ESU
+Topic Destination
+ESU
+Theme Context Proposition
+Proposition AttributeOf
+Destination User EQU
+Topic Theme
+Topic Agent
+Proposition EQU
+Theme Agent
+TIN
+Theme
+Location Time
+Degree Theme
+EQU PartOf
+EPR
+Topic Experiencer
+Sub Sub
+Sub Stimulus
+Theme User EQU
+Topic Agent
+Role Of
+Participant PartOf
+Agent Experiencer
+EQU Role Of
+Proposition EQU
+Destination Source
+Causer Agent
+EPR
+EPR
+Theme Creator
+Proposition EQU
+Agent Theme
+Stimulus Experiencer
+Theme User
+Theme Location
+Participant EQU
+Sub Experiencer EQU
+Theme Location
+Topic Agent
+Experiencer Stimulus Experiencer
+Location PartOf EQU
+Location Location
+Role Owner
+Sub Time EQU
+EQU PartOf
+Proposition Agent
+TIN EQU
+Recipient AttributeOf
+Value Quantity
+Proposition EQU
+Topic AttributeOf
+Theme Agent
+Topic Theme
+Time SXN
+Topic Patient
+PartOf Of EQU
+Attribute AttributeOf
+Time EQU
+Stimulus Agent
+Proposition Theme
+Proposition EQU
+Topic Recipient
+Theme Theme Theme EQU
+Topic
+ESU
+Proposition AttributeOf
+EQU Degree Attribute
+Topic Theme
+TAB Agent
+TIN
+Causer Theme
+Proposition Theme
+SubOf User EQU
+Topic Value
+TIN PartOf
+Topic Agent
+Topic Attribute
+Proposition EQU
+Location PartOf EQU
+TIN PartOf
+Time Theme
+Theme User EQU
+Topic AttributeOf
+Proposition Participant
+Role Of
+Role Of EQU
+Attribute Degree Theme
+Causer Theme
+PartOf User EQU
+Topic Theme
+Theme Theme
+Proposition Participant
+Causer Theme
+Proposition Participant
+Theme Agent
+Topic Agent
+Time Theme
+Proposition Agent Agent Agent Agent Agent
+Proposition Theme
+Time Theme
+Topic Agent
+Topic Agent
+Theme PartOf
+Topic Destination
+Proposition Theme
+Role Of EQU
+Theme Agent
+AttributeOf Instrument
+Proposition EQU
+EQU PartOf
+Degree Theme
+Stimulus Theme
+Location Theme
+PartOf AttributeOf PartOf AttributeOf
+Degree Theme
+Proposition Theme
+Topic Agent
+PartOf Role Of EQU
+Destination Destination Theme
+EPR
+Topic Time
+Participant TIN
+EPR
+Degree Theme
+Proposition Instrument
+Topic Theme
+Theme AttributeOf
+EQU Agent
+Time EQU
+EQU Participant Time EQU
+Theme Theme
+Theme Destination
+Proposition EQU
+Beneficiary Goal
+Start User
+Topic Topic
+PartOf AttributeOf
+Role PartOf Theme
+Proposition EQU
+Role Of EQU EQU
+Attribute Degree Theme
+Topic Theme
+Location PartOf EQU
+Attribute TIN Theme
+Theme Creator EQU
+Theme Location SZP Time EQU
+EQU Participant
+Proposition EQU
+Proposition EQU
+Sub PartOf
+Theme Theme
+Recipient EQU EPR
+Time Time
+Role User
+PartOf Agent
+ESU
+EQU Role Of
+PartOf Sub
+Role Attribute
+Topic Theme
+Proposition Participant
+Theme Agent
+Degree Theme EQU
+Destination SXP EQU
+ESU
+Agent Agent Agent
+Location SXN EQU
+Stimulus Theme
+Stimulus PartOf Role Of EQU
+Topic Agent Creator EQU
+Location PartOf EQU
+Sub PartOf
+Time TIN
+Causer Theme
+Location PartOf EQU
+Role Of
+ESU Agent
+Destination User EQU
+Causer Theme
+Role Of
+Topic Topic Agent
+PartOf Theme Destination
+Topic Patient
+ESU
+Topic Theme
+Topic Theme
+PartOf Proposition Theme
+PartOf PartOf EQU
+Degree Theme
+Location User EQU
+Topic Theme
+Product Product Stimulus Theme
+Role Of EQU
+Topic Agent
+Context EQU
+EQU User
+Theme EQU
+Attribute Theme
+Proposition Time
+Path Patient
+Proposition EQU
+EQU EQU Sub
+EPR Patient
+Attribute Degree Theme
+Participant Proposition EQU
+Theme Theme
+Topic Experiencer
+Proposition EQU
+PartOf User EQU Theme
+Proposition Participant
+Proposition Agent
+Location Time EQU
+AttributeOf EQU
+Degree Theme
+EQU PartOf
+Duration EQU
+Proposition EQU
+ESU
+Patient Location EQU
+Co-Theme Duration
+Agent Participant
+Proposition EQU
+Agent Participant
+Topic Patient
+Topic Time EQU
+Proposition Participant
+Topic Agent
+Topic Attribute
+Co-Theme Theme
+Beneficiary Result
+Proposition TIN
+Topic Time
+Topic Theme
+Topic Attribute
+Proposition
+Topic Agent EQU
+Participant Co-Theme
+Participant Agent
+Degree Theme
+Degree Theme
+Participant Participant
+Value AttributeOf
+Stimulus PartOf
+Topic Patient
+TIN
+Role Theme
+Topic Agent
+Theme Creator EQU EQU
+Topic AttributeOf
+Co-Theme Theme
+Product Agent
+Theme Of EQU
+Proposition EQU Agent
+Causer Theme
+EQU PartOf
+Stimulus Co-Agent
+Attribute Theme Attribute
+EQU Location User
+Proposition EQU
+Participant Agent TIN
+Topic Agent
+TIN
+Role Of Co-Theme
+Proposition EQU
+Causer Theme
+TIN Theme
+Participant Theme
+EPR
+Location EQU
+EPR
+Causer Theme
+EPR
+Topic Agent
+Role Experiencer
+PartOf EQU
+Location Sub Sub Consumer
+Proposition EQU
+Co-Agent Agent
+Time ESU
+Theme Agent
+Topic Theme
+Duration Time
+Proposition EQU
+Proposition
+Proposition EQU
+Topic Co-Agent
+Role Creator
+Recipient Theme
+EPR
+Proposition Participant
+Equal
+Role Of EQU
+Role Creator
+Proposition EQU
+EQU Role Of
+Theme Co-Agent
+Co-Theme EQU
+PartOf User
+Co-Theme Destination
+PartOf Time
+Location EQU
+Stimulus Agent
+Degree Theme
+TIN Time
+EQU EQU
+Theme Agent
+Patient User EQU
+Time Theme
+Topic Theme
+Location Location AttributeOf
+Topic AttributeOf
+AttributeOf Theme
+Co-Theme EQU
+Stimulus Agent
+EQU Time AttributeOf
+Topic Agent
+Co-Theme Time
+Proposition EQU
+PartOf Time
+Proposition Participant
+Proposition Theme
+Theme Attribute Agent Participant Participant
+ESU
+Stimulus Theme
+Creator EQU AttributeOf
+EQU User
+Role Of EQU
+Participant Theme
+Participant Proposition
+Instrument PartOf EQU
+Topic Value
+ESU
+Proposition EQU TIN
+Proposition EQU
+Proposition EQU
+EPR
+Topic Experiencer
+Attribute Attribute Theme
+Destination User EQU AttributeOf
+Degree Theme
+Topic Theme
+Proposition Topic
+Theme Agent
+EPR
+Patient PartOf EQU
+Theme Bearer Creator
+Role Of
+Role PartOf
+Proposition Participant
+Degree Theme
+Proposition EQU
+Theme Sub
+Proposition EQU
+Participant Theme
+Topic Theme
+Co-Agent PartOf EQU
+Topic Agent
+TIN
+Proposition EQU
+Theme Proposition EQU
+EPR
+Proposition Agent
+Topic Agent
+Theme Agent
+Location SXY
+Stimulus Theme
+Instrument Time
+Topic Location
+Topic Result
+Theme Theme
+EPR
+Time Location
+Proposition EQU
+Topic Recipient
+Topic Agent
+Agent Topic Agent Agent
+Proposition Agent
+Proposition EQU
+Topic Theme
+Proposition EQU
+Topic Theme
+Participant Stimulus Creator EQU
+Theme EQU
+EPR
+Topic Patient
+Theme AttributeOf
+Proposition EQU
+Proposition EQU
+TAB Theme
+Theme Agent Agent
+Theme EQU Participant
+Topic Theme
+EPR
+Destination Proposition EQU
+Topic Agent
+EQU Theme
+Topic Theme
+EQU Goal Role Of
+Role Of
+Theme Theme
+Proposition EQU
+Destination Theme
+Participant Source
+Participant Owner EQU
+PartOf AttributeOf
+ESU
+Topic Attribute
+Proposition TIN
+EQU PartOf
+EPR
+Co-Theme Context
+Proposition EQU
+EPR
+ESU
+Theme Agent
+Topic Time
+Topic Agent EQU
+TIN Time
+Destination Participant
+Role Of
+PartOf AttributeOf
+AttributeOf Instrument
+Co-Theme Proposition EQU
+Role Bearer
+Degree Theme
+Time ESU
+Proposition EQU
+Location Part Time EQU
+Sub Theme
+Proposition EQU
+Role Of
+Topic Patient
+Proposition EQU
+Proposition EQU
+Location Time
+Topic Theme
+Proposition EQU
+Location Theme
+Agent Agent EQU
+Theme Stimulus
+Topic Stimulus
+Attribute TIN Agent
+EPR
+Stimulus Theme
+Proposition Agent
+Topic Theme
+Theme User EQU
+Proposition Participant
+Proposition EQU
+Causer Theme
+ESU Duration Time
+Location Part Time EQU
+Location Theme
+Theme Agent
+Time Theme
+Attribute Attribute EQU
+Context Context Co-Theme
+Sub PartOf
+Proposition EQU
+Role User
+PartOf Role Of
+Location AttributeOf
+Proposition EQU
+Topic Agent
+Proposition Theme
+SXN PartOf EQU
+Proposition Theme
+Proposition Participant
+Topic Agent
+ESU
+Proposition EQU
+Recipient PartOf EQU
+Theme Creator
+Proposition EQU
+Topic Agent
+EQU Degree Theme
+Co-Theme Time
+Topic Experiencer
+Proposition AttributeOf
+Goal Role Of EQU
+EQU TIN Agent
+Topic Agent
+Theme Theme EQU EPR
+Experiencer Time
+Topic Stimulus
+Result Theme
+Stimulus Theme
+Proposition
+Topic Patient
+EPR
+Stimulus Experiencer
+Theme Theme
+Proposition AttributeOf
+SZN Theme Time
+Destination Value
+TAB Time
+Participant Proposition EQU
+ESU
+Causer Theme
+PartOf Agent EQU
+Of PartOf EQU
+ESU
+Topic Agent
+Topic AttributeOf
+Theme EQU
+Topic Theme
+TIN
+Location EQU
+NEQ PartOf EQU
+EPR
+EQU Role Of
+Role User
+Proposition EQU
+PartOf Theme
+Location Beneficiary
+Theme Theme
+ESU
+Theme Time
+AttributeOf EQU
+Result AttributeOf
+Theme Destination
+Theme Time
+Theme Agent
+Result Source
+ESU
+Location Agent
+Theme Patient
+Result Theme
+Proposition Instrument
+Topic Experiencer EQU
+Proposition EQU
+Topic Agent
+Location Theme
+Attribute TIN Theme
+Theme Time
+Participant Time EQU
+Location Theme
+Theme Time EQU
+Value Agent
+Topic Patient
+Role Of EQU EQU
+Source Attribute EQU
+Topic Theme
+Proposition EQU
+Causer Theme EQU
+Topic Proposition EQU
+Stimulus AttributeOf
+Topic Theme
+Causer Agent
+Topic Theme
+Instrument Content
+Theme Sub EQU
+Topic Theme
+EQU Location SZN PartOf
+Location Patient EQU
+Proposition EQU
+Role Of EQU
+Proposition Participant
+EPR
+Theme Time EQU
+Proposition Agent
+Proposition EQU
+Stimulus Agent
+PartOf EQU
+Role Of EQU
+EQU EQU
+Topic Theme
+ESU
+Destination User EQU
+Location Time EQU
+Role Of EQU EQU
+Proposition EQU
+Time AttributeOf EQU
+Proposition EQU
+SubOf User EQU
+Topic Agent
+Proposition EQU
+AttributeOf Instrument
+Proposition Theme
+Destination Agent
+Topic Source
+Participant Proposition
+Location NEQ EQU
+Topic Theme
+Topic Theme
+Patient PartOf EQU
+Proposition EQU
+Proposition Participant
+EPR
+PartOf PartOf Theme
+EPR
+Topic Theme
+EPR
+Topic AttributeOf
+Proposition EQU
+Topic Pivot
+Agent EQU
+Instrument Theme Theme
+Topic Agent
+Proposition Theme Stimulus
+ESU
+Topic Theme Sub
+Role Creator
+PartOf Theme
+Theme Agent
+Role Of EQU
+EQU Theme
+Proposition EQU
+Proposition EQU
+Part Sub EQU
+Topic Agent Agent Agent
+Theme
+EPR
+Patient User EQU
+Theme Theme
+Agent Time
+PartOf AttributeOf
+Proposition Theme
+Attribute TIN Patient Role Of
+ESU
+Location Time
+Location EQU
+Topic Theme
+Theme User EQU
+NEQ PartOf EQU
+Agent Participant
+Topic Agent
+Proposition Theme
+PartOf Time
+Proposition Agent
+Proposition Theme
+Proposition Location
+Location SXP User
+Location Proposition EQU
+Proposition EQU
+Time EQU
+Role User
+Role Of
+Topic Proposition Theme
+Patient User EQU
+Time TIN
+Role Of
+Topic Theme
+Topic Experiencer
+Theme Agent
+Topic Theme
+Sub PartOf
+Destination User EQU
+PartOf AttributeOf PartOf PartOf
+PartOf User EQU
+Topic Agent
+Attribute Time
+Proposition EQU Agent EQU
+ESU
+Proposition Topic
+Proposition EQU
+Topic Agent
+TAB Of
+Proposition EQU
+Stimulus Agent
+PartOf Time
+Location Participant
+EQU TIN Experiencer
+Theme Agent
+ESU
+Degree Theme EQU
+Quantity Theme
+Patient User Attribute TIN
+Sub Time
+Proposition EQU
+Topic AttributeOf
+TIN
+Topic Causer
+Topic AttributeOf
+EQU Theme
+Attribute TIN AttributeOf Role Of
+EPR
+Time AttributeOf
+Location User
+Role Of EQU
+Role Of EQU
+Degree Co-Theme
+Role Of EQU
+Topic Patient
+Proposition Agent
+Topic Agent
+Product Proposition Topic
+Topic Theme
+Beneficiary Agent
+Location Theme
+Stimulus Time
+Topic Theme
+PartOf User EQU
+Participant Agent
+Role Of EQU
+Participant Agent
+Role Of EQU
+Degree Theme
+Co-Theme EQU
+Proposition EQU
+Goal Agent
+Time Theme
+Of Role Time EQU
+Proposition EQU
+Proposition Time EQU
+Location Source
+Role Goal Of EQU
+Topic AttributeOf
+Proposition TIN
+Theme Theme Participant
+Recipient Theme
+Theme Source
+EPR
+Attribute Agent EQU
+Theme Theme Theme EQU
+Sub Theme
+EPR
+Co-Theme Role Of EQU
+Degree Theme
+Role Of EQU EQU
+Proposition EQU
+Role Of
+Topic Co-Theme
+Topic Agent
+Location Time EQU
+Proposition Instrument EQU
+Co-Theme Proposition Theme
+Time Agent
+Recipient Theme
+Proposition Topic
+Theme Theme
+Topic AttributeOf
+PartOf Owner EQU
+Proposition
+Topic Agent
+Proposition Theme
+Part Patient
+Role Of EQU
+Role Of EQU
+Theme Theme
+PartOf User EQU
+Sub Part Agent
+TIN EQU
+AttributeOf Of
+Topic Attribute
+Topic Patient
+Topic Theme
+Topic Agent
+Role Of EQU
+Theme Owner EQU
+Location Time Theme
+Theme AttributeOf
+Topic Theme
+Participant Theme
+Degree Theme
+Theme Theme
+Theme Patient
+Location Of EQU Time
+Destination AttributeOf
+TIN PartOf
+Co-Theme Of EQU EQU
+Participant Time
+Participant Start
+TIN
+EQU TIN Patient Role Of
+Stimulus Time EQU
+Location EQU
+Location EQU
+Topic Co-Theme
+Attribute Degree Theme
+Theme Agent
+Part Proposition AttributeOf
+Source PartOf
+Degree Theme
+Proposition EQU
+EPR
+EQU TIN Agent
+Proposition EQU
+Proposition EQU
+Agent PartOf Agent Agent Agent
+Location PartOf
+TIN Time
+Time EQU
+Theme Participant
+Proposition Participant
+Theme Creator EQU
+EPR
+Attribute TIN PartOf Theme
+Role Of EQU
+Proposition AttributeOf
+Degree Theme
+Time AttributeOf
+Theme Location
+Source Theme
+Theme Degree
+EQU Owner
+Location User EQU
+Role Of
+Topic Patient
+Theme Agent PartOf EQU
+Theme Time Theme
+Theme Creator EQU
+TIN
+Topic Theme
+Theme Proposition EQU
+Proposition EQU
+Role Owner
+Topic Agent
+Patient User
+Topic Theme
+Theme Recipient Theme
+Topic Time
+Creator EQU
+Result AttributeOf Patient
+Theme Agent
+EPR
+Theme Agent
+Topic Agent
+Topic Stimulus
+Topic Theme
+Topic Agent Location
+PartOf AttributeOf
+Topic Agent
+Experiencer PartOf EQU
+Topic Theme
+Degree Theme
+Participant Agent Participant
+Theme Time
+Time Theme
+Co-Agent User
+Proposition Participant
+Proposition EQU
+Time Theme
+Location Attribute
+Theme Time Participant
+Topic Attribute
+ESU
+PartOf Time
+Participant Theme
+EPR
+Proposition EQU
+Instrument Agent
+Co-Agent Result
+Proposition Patient
+ESU
+Theme Proposition EQU TIN
+EPR
+Topic Time EQU
+Topic Theme
+Theme Proposition Theme
+AttributeOf EQU
+Participant Theme Product
+Stimulus Agent
+Time TAB
+ESU
+Instrument User EQU
+EQU Co-Agent Role Of
+EQU Co-Agent Role Of
+EPR
+Theme Destination
+Destination Theme
+PartOf PartOf
+Role Of
+Topic Theme
+Theme Agent
+AttributeOf EQU
+Role Of
+Time EQU
+Proposition EQU
+Role User
+PartOf User EQU
+Proposition EQU
+Sub PartOf
+Co-Agent Role Of EQU
+STO User EQU
+EQU User Role Of EQU
+Theme Co-Agent Role Of EQU
+EPR
+Topic Theme
+Topic Agent
+NEQ Proposition Destination
+Theme Theme
+ESU
+Stimulus Experiencer
+Theme AttributeOf
+Agent Agent EQU
+Degree Theme
+Role Of User EQU
+Time EPR Sub EQU EQU
+TIN
+Topic Agent
+Proposition AttributeOf
+TIN
+Instrument Creator
+Destination Agent
+Proposition
+Theme Agent
+Degree Theme
+Topic Theme
+Proposition EQU
+Role User
+Topic AttributeOf
+Proposition EQU
+PartOf Agent
+Topic Agent
+Proposition EQU
+Role Of EQU
+EPR
+Location Agent
+Topic Time EQU
+Topic Theme
+Proposition EQU
+ESU
+Source Topic
+Time Theme
+Proposition EQU
+Agent Role Of EQU EQU
+Goal AttributeOf
+Of Sub Time
+Proposition Agent
+Location EQU
+PartOf Agent
+Topic AttributeOf
+Topic Agent
+Beneficiary Proposition AttributeOf
+Location Participant
+Start EQU
+Topic AttributeOf
+Theme PartOf
+Role Creator EQU
+EQU TIN Theme
+Stimulus Source
+Causer Agent
+Location Time
+Proposition Agent
+Proposition EQU
+Location PartOf
+Agent Recipient Agent
+Stimulus AttributeOf
+Theme Agent
+Source User EQU
+EPR
+Topic Theme
+EQU User
+EPR
+Proposition
+PartOf PartOf EQU
+Theme EQU
+EQU Location PartOf
+EQU EQU
+Time Theme
+EQU Instrument Role Of
+Proposition EQU
+Location User EQU Agent
+Proposition EQU
+Beneficiary Agent
+EQU AttributeOf
+Proposition AttributeOf
+Topic Theme
+Theme Participant
+EPR
+Proposition EQU
+PartOf Patient
+Proposition EQU
+Co-Theme Theme
+Time EQU
+Proposition EQU
+Theme Proposition
+EQU Causer Experiencer
+Destination User EQU
+Topic Agent
+EQU User
+Theme Beneficiary
+Stimulus Agent
+TIN
+Topic Co-Theme
+Proposition Theme
+ESU Time
+Destination EQU
+Proposition Agent
+EQU Location
+Participant Proposition
+Destination Agent
+PartOf Agent
+Result AttributeOf EQU
+Location SXY SXY Attribute
+Proposition TIN
+Proposition EQU
+PartOf Of EQU
+Topic Agent
+Creator Co-Theme Agent
+Topic Theme
+Topic Agent
+Role Of EQU
+Of AttributeOf
+PartOf Theme Sub PartOf Time EQU
+Proposition Theme
+Recipient AttributeOf
+Proposition EQU
+ESU Of EQU
+Topic AttributeOf
+Topic Theme
+Degree Theme
+Topic Theme
+Proposition TIN
+Topic Theme
+Topic Stimulus Patient
+Value EQU
+Result Experiencer
+Role Of EQU
+EQU AttributeOf
+ESU
+Topic Product
+Topic Agent
+Agent Participant Agent
+Destination Participant
+Agent Theme Agent
+Proposition TIN
+Topic Experiencer
+Co-Theme Experiencer
+Proposition Participant
+Degree Theme
+TIN Agent
+Theme Beneficiary
+Proposition Experiencer
+EPR
+Causer Theme
+EPR
+Attribute AttributeOf
+Topic Agent
+Time Theme
+Topic Theme
+Proposition AttributeOf EQU TIN
+Theme Patient
+Topic Stimulus
+Beneficiary Agent
+Theme Location
+Proposition
+Degree Theme
+Participant
+Topic Theme
+Proposition
+Topic Product
+Path Attribute
+Proposition
+Sub EQU
+Participant EQU
+Destination Sub
+EQU EQU User
+Time Theme
+Time Theme
+PartOf TIN
+Sub Time EQU
+Time Sub
+Theme TIN
+Time Theme
+PartOf Owner EQU
+Proposition EQU
+PartOf Time
+Co-Theme
+Causer Theme Creator EQU
+Proposition EQU
+Context Theme
+Degree Theme
+Topic Theme
+Stimulus Theme
+Proposition
+Theme Theme Creator EQU
+Time EQU
+PartOf Theme
+Proposition Location
+Time Theme
+Proposition EQU
+EQU Location
+Attribute Attribute EQU
+Stimulus Theme
+Recipient Theme Theme Participant Topic Topic Participant
+Topic Theme EQU
+Topic Agent
+EQU Owner
+EQU PartOf User
+Beneficiary Agent Agent
+Topic Theme
+PartOf Theme
+Destination
+Location Value Time EQU
+Topic Theme Co-Theme Sub
+EQU PartOf
+Time Creator
+Topic Patient
+Manner Theme
+Topic Theme
+Proposition EQU
+Co-Theme Theme
+EQU PartOf
+Topic Theme
+AttributeOf EQU
+EQU PartOf
+Co-Theme
+Proposition Theme
+Proposition Theme
+Proposition Result
+Co-Agent User EQU
+Topic Experiencer
+Theme AttributeOf
+Of AttributeOf
+PartOf Theme Sub PartOf Time EQU
+Co-Theme PartOf PartOf Time EQU
+Time Sub
+Topic Patient Sub
+EQU Agent
+Result Time EQU
+Time Theme
+Stimulus Theme Theme Theme Theme
+Proposition Participant
+Proposition EQU
+EPR
+Theme EQU
+Time Time EQU
+Topic Co-Theme
+Attribute TIN Patient
+Theme Agent EQU
+Attribute TIN AttributeOf
+Topic Experiencer EQU
+Time Time EQU
+Topic Theme
+Theme Agent
+Sub Theme Time EQU
+Recipient EQU EPR
+Proposition EQU
+Proposition Topic
+Theme User EQU
+Proposition EQU
+EQU PartOf User
+Theme Proposition Pivot
+Time Theme
+Proposition Proposition EQU
+Topic Agent
+Stimulus Experiencer EQU
+PartOf Time
+Proposition EQU
+Proposition
+Time Sub
+PartOf Creator EQU
+EPR
+Topic Theme
+Topic AttributeOf
+EQU Stimulus Experiencer
+EQU PartOf
+Theme Proposition EQU
+Proposition EQU
+Theme Agent
+EPR
+Agent Pivot
+EQU Time
+Participant Agent
+EPR
+Proposition EQU
+Proposition Theme
+Proposition Time
+EQU Time AttributeOf
+Proposition Participant
+Topic Agent
+Proposition EQU
+Role Theme
+Time Sub
+PartOf Co-Theme
+PartOf Sub Theme PartOf Time EQU
+Theme Degree
+Topic Theme EQU
+PartOf Theme
+Theme Goal
+Location Theme
+Proposition EQU
+Attribute Role Location
+Topic Agent
+Topic Finish
+Proposition Location
+Topic Patient
+Topic Theme
+EPR
+Time Theme
+Theme Location
+TIN PartOf
+PartOf Time
+SXN PartOf
+Topic Theme
+Finish EQU
+Time Theme
+Topic Theme
+Degree Theme
+EQU Creator
+Co-Theme PartOf Time EQU
+Sub Proposition
+Proposition EQU
+Degree Theme
+Topic Attribute
+Role SubOf
+Theme Proposition Theme
+EQU Creator
+Causer Theme EQU
+Theme
+Topic Theme
+Of AttributeOf
+Proposition EQU
+Topic Theme
+AttributeOf EQU
+EQU Sub
+Stimulus Agent Stimulus Agent Experiencer
+Topic Theme
+EQU Creator
+Topic Co-Theme
+Time Theme
+Theme Time EQU
+Proposition
+Time Theme
+Degree Theme
+PartOf User EQU
+Role Of
+Pivot Participant Pivot
+EQU PartOf
+Topic Agent
+Stimulus Time
+PartOf Time
+PartOf Theme
+Theme Owner
+Proposition Theme
+EQU Co-Agent Role Of
+Topic Co-Theme
+Part AttributeOf
+Instrument Agent
+Participant
+Stimulus Creator EQU
+Agent Agent Agent Agent EQU
+Time Theme
+Proposition EQU
+AttributeOf EQU
+Time Theme
+Proposition Theme
+PartOf Time
+PartOf
+PartOf Theme
+Time Theme
+ESU
+EPR
+Topic Theme
+Location AttributeOf
+Topic Agent
+Theme Theme EQU
+Recipient
+Theme Participant
+Role Of
+EQU PartOf User
+Proposition EQU
+Topic Time
+PartOf Theme
+Topic Theme
+Topic Experiencer
+Theme Time
+Attribute Sub Attribute
+Theme Time EQU
+Finish User EQU EQU
+Time Theme
+EQU Location User
+Recipient AttributeOf
+Theme
+Proposition Topic
+PartOf Sub
+Topic Agent
+Time Theme
+Goal User EQU
+User Theme
+Proposition Participant
+Theme Theme
+Location Sub EQU
+Topic Theme
+PartOf Theme
+Topic Patient
+Location Agent
+Proposition EQU
+PartOf Time
+Time Theme
+Participant EQU
+Degree Theme
+PartOf Time
+Time Theme
+Topic Agent
+TIN Time
+Participant Agent
+Topic Theme
+PartOf Location
+PartOf Theme
+Agent Theme
+Sub Theme
+PartOf Theme
+EQU Theme Creator
+Topic Theme
+Topic Theme
+Patient PartOf EQU
+Experiencer EQU
+Degree Theme
+Stimulus Experiencer
+Stimulus Agent
+EQU TIN AttributeOf
+PartOf Time
+Time Time EQU
+Creator Role Of Agent
+Topic Source Sub
+Sub Theme Time EQU
+EQU Causer Theme
+Topic Experiencer
+Proposition EQU
+Theme Quantity
+Destination User
+Theme
+Topic Result
+Topic Theme
+Time Theme
+PartOf Time
+Proposition Topic
+PartOf Time
+PartOf Theme
+SubOf PartOf
+Attribute Theme
+PartOf Theme
+EQU Participant Theme User
+Proposition EQU
+EPR EQU
+User EQU TIN Patient
+EQU User
+Proposition EQU
+Topic Agent
+Time Theme
+EQU Participant
+Finish EQU
+Degree Theme
+Degree Theme
+Proposition EQU
+Time Sub EQU
+Recipient Agent
+Location Value Time EQU
+ESU
+Proposition EQU
+Topic Agent
+Proposition Theme
+Topic Theme
+Co-Theme Role Of EQU
+PartOf Time
+Proposition Sub Sub
+ESU Sub
+Topic Theme
+Topic Theme
+Topic AttributeOf
+Theme
+Role Of
+Proposition EQU
+Time Theme
+Goal Role Of EQU
+Theme Agent
+Time Sub
+PartOf Time
+Time Theme
+EQU PartOf
+Time Theme
+Topic Theme
+Proposition Participant
+Proposition EQU
+Location Value Time EQU
+Time EQU
+Attribute Time
+EQU Owner
+ESU Sub
+Time Theme
+Time Theme
+Proposition
+Participant Sub EQU
+Proposition Causer
+ESU Sub
+Topic Time EQU
+PartOf Time
+Location Part EQU
+Proposition EQU
+Time Theme
+Proposition AttributeOf
+Time EQU
+Topic Theme
+Proposition EQU
+Time EQU
+EQU AttributeOf
+Proposition Time
+Proposition Theme
+Theme EQU
+ESU Sub
+Location EQU Time EQU
+Topic Agent EQU
+Theme Agent
+Time Theme
+SZN User EQU
+Unit Participant Participant
+Time Theme
+Theme Agent EQU
+Time Theme
+Topic AttributeOf
+Theme Agent
+Participant Time
+Location PartOf
+Proposition Theme
+Product PartOf EQU
+Manner User
+Recipient Agent
+Stimulus Attribute
+Proposition EQU
+ESU
+Participant Agent
+PartOf Theme
+Topic Theme
+Participant Agent
+PartOf EQU
+Theme Creator EQU
+Proposition EQU
+PartOf Theme
+Result AttributeOf
+Proposition EQU
+Theme Agent
+Beneficiary Beneficiary Beneficiary Agent
+Role Of
+Participant EQU
+Sub Role Of
+PartOf User EQU
+Stimulus Agent
+Participant Theme
+Proposition EQU
+Topic Agent
+Location User
+TIN Agent
+Location Theme
+Participant Sub
+PartOf Time
+EPR
+Topic Theme
+Topic AttributeOf
+Proposition EQU
+PartOf Sub Theme PartOf Time EQU
+Instrument Theme
+Causer Agent EQU
+Patient User EQU
+Theme Theme
+Attribute EQU
+Proposition EQU
+Proposition EQU
+Proposition Agent
+Participant Sub EQU EQU
+Topic Patient
+EQU User
+Value Pivot
+Topic
+Location EQU EQU
+Proposition AttributeOf
+EQU Owner
+Goal EQU
+Proposition EQU
+Time Quantity EQU
+ESU
+Degree Theme
+Time Theme
+Theme Quantity
+Time Theme
+Role Of
+PartOf Theme
+EPR
+AttributeOf EQU
+Topic Location SZN
+EQU Theme Role Of
+AttributeOf EQU
+Time Sub
+Topic AttributeOf
+Degree Theme
+EQU PartOf
+Location Context
+Location Part Time EQU
+Topic Experiencer
+Recipient Proposition Theme
+Proposition Theme
+Proposition Agent
+PartOf Theme
+PartOf Time
+Theme Sub Bearer EQU
+Participant Agent
+PartOf User
+PartOf Time
+Finish EQU
+PartOf Time EQU
+Topic Experiencer
+PartOf Time
+Attribute Sub
+Time Theme
+ESU
+Role Of
+Stimulus Agent
+Time Theme
+Role Of
+Time Theme
+EQU Theme
+EQU Causer Agent
+Theme Time
+Sub Topic
+Topic Agent Pivot
+Location EQU
+Time EQU
+Location EQU
+TIN Sub
+Topic Agent
+Topic Theme
+EQU Of
+PartOf Theme
+Theme Agent
+EQU PartOf
+EPR
+Proposition
+PartOf Time EQU
+Finish EQU
+PartOf Theme
+EQU Proposition
+EQU Co-Agent Role Of
+PartOf Theme
+Sub Of EQU
+Theme
+PartOf Time
+Recipient Role Of EQU
+Finish Attribute Finish Theme
+TIN
+Proposition EQU
+Location Recipient Agent Agent
+Stimulus Theme
+Attribute Theme Theme
+Proposition Theme
+Proposition
+Time Theme
+Stimulus Time EQU
+Sub Destination
+ESU
+Participant
+Proposition EQU
+EQU PartOf
+EQU Proposition AttributeOf
+Topic Theme EQU
+Sub Time
+Proposition Theme
+Co-Theme Agent
+Location Value Quantity EQU
+EQU Degree Theme
+PartOf Theme
+Sub AttributeOf
+EPR
+Proposition EQU
+Topic Agent Agent
+Stimulus Agent
+Topic Patient
+EQU Sub
+PartOf Theme
+Topic Agent
+Proposition EQU
+Proposition Theme
+Time Sub EQU
+EQU Destination Creator
+Co-Theme Proposition EQU
+TIN
+Topic Theme
+PartOf Time
+Topic Owner EQU
+AttributeOf Instrument
+Location Time Sub EQU
+Attribute TIN Patient Creator
+PartOf Theme
+Proposition AttributeOf
+EQU EQU
+Co-Theme Time
+Stimulus Theme
+Co-Agent EQU Time EQU
+Topic Theme
+Topic Agent
+Product Proposition EPR
+EQU Agent
+Topic Theme
+EQU PartOf
+Theme Agent
+Proposition EQU
+Time Theme
+Time Sub EQU
+Proposition Time
+PartOf Theme
+Time Time EQU
+Proposition EQU
+Theme PartOf EQU
+Causer Location
+Proposition
+Topic Theme
+Goal PartOf User EQU
+PartOf Theme
+Topic Agent
+Time Theme
+Time Theme
+Topic Patient
+AttributeOf Instrument
+ESU
+EPR
+Time Theme
+Topic Agent
+EQU Degree Theme
+Topic Patient EQU
+Theme
+Location Sub Recipient
+Theme Experiencer
+Proposition Agent
+Proposition PartOf
+TIN
+PartOf Theme
+Topic Proposition EQU
+Location Start
+Time EQU
+Sub Theme
+Proposition EQU
+Proposition EQU
+Theme Agent
+Time Theme
+PartOf User
+SubOf Destination
+Theme Topic
+Proposition EQU
+PartOf Theme
+Time Theme
+Degree Theme
+Proposition EQU
+Participant Theme
+TIN
+Topic Theme
+Degree Theme EQU
+Sub PartOf
+Time Theme
+Topic Agent
+PartOf Time EQU
+Stimulus Agent
+Co-Theme Theme
+Stimulus Agent
+Location Sub EQU
+Proposition Participant
+Proposition Theme
+Proposition TIN
+Theme Stimulus
+Theme Agent
+PartOf Theme
+Time Theme
+Finish EQU
+Location AttributeOf
+Result Degree Theme
+Topic Theme
+PartOf Time
+Beneficiary Sub User
+PartOf Theme Sub PartOf Time EQU
+Topic Agent
+EQU Source
+Participant User EQU
+EQU PartOf
+Time Theme
+PartOf Proposition EQU
+Time EQU
+EQU Theme
+Location EQU Participant EQU
+Proposition Agent
+Proposition Instrument Participant
+Topic Co-Agent EQU
+Proposition Participant
+Stimulus Agent
+Finish EQU
+Time Theme
+Participant Theme
+PartOf Time
+Location Sub EQU
+AttributeOf Instrument
+PartOf Time
+Attribute Role Of EQU
+Participant EQU
+Participant Participant
+Co-Theme EQU
+TIN
+Proposition
+Topic Attribute
+Topic Theme
+Topic Time
+Location PartOf
+Topic Theme
+Proposition EQU
+PartOf EQU
+Proposition Agent
+Proposition EQU
+Proposition Instrument
+Topic Agent
+Agent Topic
+Proposition Causer
+Role Context
+Topic Agent
+PartOf Theme
+Proposition Participant
+Co-Theme Location Time EQU
+Time Theme
+Sub EQU
+Topic Theme
+Proposition Participant
+EQU Destination PartOf
+Location Theme
+PartOf Theme
+Goal User
+Proposition EQU
+PartOf Time EQU
+Topic Theme
+Topic AttributeOf Agent
+Topic Patient
+Patient Role Of EQU
+Proposition Participant
+Topic Source
+PartOf Time
+Topic Theme
+PartOf
+EQU User
+PartOf Theme Sub PartOf Time EQU
+Attribute TIN Agent
+Proposition EQU
+Topic Stimulus EQU
+Location EQU
+Topic Theme
+Topic Theme
+Theme Agent
+EQU Degree Theme
+Time Sub EQU
+PartOf Time
+Topic AttributeOf
+Participant Agent
+Destination AttributeOf
+Proposition Theme
+Beneficiary Role Of
+Time Theme
+Theme Stimulus EQU
+Proposition EQU
+PartOf Time
+Topic Agent
+PartOf Time
+Topic AttributeOf
+Stimulus Agent
+EQU Time AttributeOf
+PartOf Agent
+Proposition EQU
+PartOf
+ESU
+Source User
+Co-Theme Theme
+Theme Theme
+Topic Agent
+Proposition Theme
+Proposition EQU
+EQU Creator
+Proposition EQU
+PartOf Time
+Topic Attribute
+Attribute EQU
+Time EQU EQU
+Theme Patient EQU
+Role PartOf
+EPR
+Proposition Pivot
+Proposition Agent
+Sub Theme Time EQU
+Topic Theme
+Location EQU
+PartOf Time
+Theme Agent
+Time Of
+Proposition EQU
+EQU Causer Agent
+Recipient Theme
+EQU PartOf
+Participant Stimulus
+ESU
+Topic Agent
+PartOf Theme
+Theme User EQU
+EQU Time
+PartOf User EQU
+EQU PartOf
+Time Theme
+Topic Agent
+PartOf Theme
+Result Time
+EQU Theme
+EPR
+Topic Theme
+Topic Theme
+PartOf
+Location Value Quantity EQU
+Location EQU EQU
+ESU
+PartOf
+Finish EQU
+Destination Theme
+Proposition Theme
+Topic Agent
+EQU Owner
+Participant Agent
+Co-Theme PartOf Time EQU
+EQU Destination Role Of
+ESU
+Location Part Time EQU
+PartOf Theme
+EQU User
+Time Theme
+PartOf Time
+PartOf Time
+Time Theme
+Proposition EQU
+Proposition Sub
+Attribute AttributeOf
+Topic Result
+Theme Patient Patient
+Topic Theme
+Beneficiary Agent
+PartOf Time
+Time Theme
+Theme EQU EQU
+EQU EQU
+EQU PartOf
+Topic Experiencer
+PartOf Time
+Proposition AttributeOf
+Proposition
+EPR
+Topic Agent
+Result PartOf
+Proposition EQU
+Degree Theme
+Topic Patient
+Topic Theme Agent
+Time Sub
+Location Sub EQU
+Co-Theme
+Time Theme
+Topic Theme
+Topic Attribute
+Recipient Agent Topic
+EQU TIN Source Bearer Role Of
+EQU Creator
+PartOf Sub EQU
+Degree Theme
+Attribute Theme
+NEQ Patient
+Degree Theme
+Topic AttributeOf
+Theme Sub Location
+NEQ Instrument Theme
+Location Theme
+Recipient Theme
+Source EQU
+Proposition EQU
+Creator Proposition Location
+Proposition Stimulus
+Location EQU
+Destination Theme
+Theme Topic
+Role Of
+PartOf Time
+Topic Theme
+Co-Theme Theme
+Stimulus Time
+Topic Patient
+Co-Theme Participant
+Topic
+PartOf Theme
+Topic Theme
+EPR
+Degree Theme
+Agent Agent EQU
+AttributeOf EQU
+Value Location
+Proposition AttributeOf
+Sub EQU
+EQU TIN Agent
+Time Source
+Sub Sub
+Proposition EQU
+Time Theme
+Topic Agent Theme
+SY2 Destination SY2
+Co-Theme Theme
+EQU Destination User
+Topic Theme
+EQU SXN EQU Agent
+Role Co-Theme
+Theme Agent
+Topic Stimulus
+Proposition EQU
+Topic Theme
+Co-Theme Co-Theme Theme
+Proposition Theme
+ESU
+EQU Co-Agent Role Of
+Theme Time EQU
+PartOf EQU
+Topic AttributeOf
+Attribute TIN Patient
+Time Source
+PartOf EQU
+EQU TIN Theme
+Theme User
+Topic Patient
+Proposition EQU Proposition EQU
+Theme Creator
+Source Stimulus
+Topic Theme
+Stimulus Creator EQU
+Proposition Recipient
+ESU Sub
+Theme Theme Time
+Instrument Time EQU
+AttributeOf Location
+Time Theme
+Time Theme
+PartOf Theme
+Proposition Theme
+Time Theme
+Location Part Quantity EQU
+Part Theme
+PartOf User EQU
+Causer Agent EQU
+Time Theme
+Topic Time
+Proposition EQU
+Attribute Degree Theme
+Participant
+AttributeOf Attribute
+Proposition
+PartOf Location
+Location Theme
+PartOf Time
+Time Patient
+PartOf PartOf EQU
+EQU Degree Theme
+EQU Location
+Topic Theme
+EQU Owner
+Sub Proposition
+Time Theme
+Recipient Agent
+Time Theme
+EQU User
+Topic Theme
+Location Co-Agent Creator EQU
+Finish EQU
+Quantity Theme
+Topic Theme
+Patient User EQU
+Source Agent
+PartOf Time
+EQU Bearer
+AttributeOf Theme
+EQU EQU
+AttributeOf Of
+Topic Patient
+Topic Agent
+EQU User
+PartOf Theme
+Proposition EQU Time
+Proposition EQU
+Topic Attribute
+Participant Agent
+PartOf Time EQU EQU
+Stimulus Creator EQU
+PartOf Time
+PartOf Theme
+Theme Theme EQU
+Time Theme
+ESU
+Source
+EQU Destination User
+Time Theme
+Proposition Agent
+Proposition EQU
+Topic Theme
+Result Attribute EQU
+Proposition Participant
+Location Sub EQU
+Time Theme
+EQU Stimulus Creator
+Proposition EQU
+TAB Agent
+Time Theme
+Time Theme
+PartOf Time
+Topic Experiencer
+PartOf Agent
+Product Product
+Location EQU EQU
+Time Theme
+Proposition EQU
+Topic Agent
+Topic Time
+Location EQU Time EQU
+EQU Theme Topic Location PartOf
+Attribute Degree Theme
+Beneficiary Role Of EQU
+Location Part Time EQU
+PartOf Time
+Finish EQU
+Location EQU
+Beneficiary EQU
+Topic AttributeOf
+Context Creator EQU
+Theme Agent
+Time Theme
+Time Theme
+Theme Theme
+EQU Co-Theme
+Topic Theme
+Quantity AttributeOf
+Proposition EQU
+Time Theme
+Topic AttributeOf
+Theme Agent
+Patient EQU
+Time PartOf
+EPR
+EQU Causer Agent
+ESU
+Location EQU EQU
+Source PartOf
+Degree Theme
+Theme Of EQU
+Theme User EQU
+PartOf Agent
+Time Theme
+EQU TIN Agent
+Source User EQU
+Topic Theme
+Topic Theme
+Theme Of EQU EQU
+Topic Attribute
+Proposition Pivot
+Time Theme
+Location PartOf EQU
+Finish EQU
+Location Theme
+Stimulus Theme
+PartOf Theme
+Theme Time EQU
+Co-Patient Time
+Theme Instrument
+Topic
+Proposition AttributeOf
+EQU Owner
+Role AttributeOf
+NEQ Theme
+PartOf Theme
+Proposition Experiencer
+Path Path Theme
+Stimulus Experiencer
+Theme PartOf EQU
+EQU Stimulus
+Location Agent
+ESU
+EQU ESU Agent
+ESU Time
+AttributeOf EQU
+Path EQU
+Agent Participant Location
+Time Theme
+ESU
+EPR
+Agent Theme
+Proposition
+PartOf Theme
+Time Time EQU
+Time TIN
+Location Part Time EQU
+EQU Agent
+Location EQU
+Location Sub EQU
+Sub Topic
+Topic Theme
+EQU Role Of
+Time Sub
+Participant Proposition
+PartOf Time
+Location Theme
+Topic Patient EQU
+PartOf EQU
