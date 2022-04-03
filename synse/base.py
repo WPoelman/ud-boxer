@@ -1,5 +1,6 @@
 import json
 from os import PathLike
+from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 import networkx as nx
@@ -53,14 +54,7 @@ class BaseGraph(nx.DiGraph):
         # P = nx.drawing.nx_pydot.to_pydot(self)
         import pydot
 
-        p_graph = pydot.Dot(save_path)
-
-        if type(save_path) != str:
-            # pydot does not like a Path object
-            save_path = str(save_path)
-
-        if not save_path.endswith(".png"):
-            save_path = f"{save_path}.png"
+        p_graph = pydot.Dot()
 
         token_count: Dict[str, int] = dict()
         node_dict = dict()
@@ -72,9 +66,9 @@ class BaseGraph(nx.DiGraph):
             tok = node_data["token"]
             if tok in token_count:
                 token_count[tok] += 1
-                token_id = f"{tok}-{token_count[tok]}"
+                token_id = f'"{tok}-{token_count[tok]}"'
             else:
-                token_id = tok
+                token_id = f'"{tok}"'
                 token_count[tok] = 0
             node_dict[node_id] = token_id
 
@@ -83,7 +77,7 @@ class BaseGraph(nx.DiGraph):
                     token_id,
                     **{
                         **self.type_style_mapping[node_data["type"]],
-                        "label": self._node_label(node_data).replace(":", "-"),
+                        "label": f'"{self._node_label(node_data).replace(":", "-")}"',
                     },
                 )
             )
@@ -94,11 +88,17 @@ class BaseGraph(nx.DiGraph):
                     node_dict[from_id],
                     node_dict[to_id],
                     **{
-                        "label": self._edge_label(edge_data).replace(":", "-"),
+                        "label": f'"{self._edge_label(edge_data).replace(":", "-")}"',
                         **self.type_style_mapping[edge_data["type"]],
                     },
                 )
             )
+
+        # pydot does not like a Path object
+        save_path = str(Path(save_path).resolve())
+        if not save_path.endswith(".png"):
+            save_path = f"{save_path}.png"
+
         p_graph.write(save_path, format="png")
 
         del p_graph

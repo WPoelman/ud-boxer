@@ -104,12 +104,12 @@ class UDGraph(BaseGraph):
 
                 tok_id = (sentence_idx, UD_NODE_TYPE.TOKEN, token["id"][0])
                 dep_rel = token.get("deprel")
-                pos = token.get("upos")
+                upos = token.get("upos")
 
                 if dep_rel not in UDSpecBasic.DepRels.ALL_DEP_RELS:
                     raise UDError(f"Unknown deprel found {dep_rel}")
-                if pos not in UDSpecBasic.POS.ALL_POS:
-                    raise UDError(f"Unknown pos found {pos}")
+                if upos not in UDSpecBasic.POS.ALL_POS:
+                    raise UDError(f"Unknown upos found {upos}")
 
                 # Morphological features are optional (can be None) and are
                 # encoded as follows:
@@ -129,8 +129,8 @@ class UDGraph(BaseGraph):
                     "token": token["text"],
                     "lemma": token.get("lemma"),
                     "deprel": dep_rel,
-                    "upos": token.get("upos"),
-                    "xpos": pos,
+                    "upos": upos,
+                    "xpos": token.get("xpos"),
                     "feats": feats or dict(),
                     "connl_id": token.get("id"),
                     "type": tok_id[1],

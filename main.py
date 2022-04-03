@@ -179,6 +179,10 @@ def store_visualizations(args):
     path_glob = Path(args.starting_path).glob("**/*.sbn")
 
     for filepath in tqdm(path_glob, desc=desc_msg):
+        if "predicted" in str(
+            filepath
+        ):  # TODO: figure out how to add this to glob
+            continue
         viz_dir = Path(filepath.parent / "viz")
         viz_dir.mkdir(exist_ok=True)
 
@@ -195,12 +199,11 @@ def store_visualizations(args):
                 )
                 continue
 
-            # UDGraph().from_path(ud_filepath).to_png(
-            #     str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
-            # )
+            UDGraph().from_path(ud_filepath).to_png(
+                str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
+            )
         except Exception as e:
             print(f"Failed: {filepath}")
-            exit()
 
 
 def store_amr(args):

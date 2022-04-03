@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import logging
 from copy import deepcopy
 from enum import Enum
@@ -12,6 +13,7 @@ import networkx as nx
 from synse.base import BaseGraph
 from synse.sbn_spec import SBNError, SBNSpec, split_comments
 from synse.ud import UD_NODE_TYPE, UDGraph
+from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
 
@@ -449,6 +451,9 @@ class SBNGraph(BaseGraph):
                     tmp_line.append(
                         f"+{target}" if target >= 0 else str(target)
                     )
+                # It is a sense id that has no references (sense on leaf node)
+                elif type(token) == tuple:
+                    tmp_line.append(self.nodes[token]["token"])
                 # It is a regular token
                 else:
                     tmp_line.append(token)
@@ -476,36 +481,90 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, grew_edges) in grew_graph.items():
-            # TODO: make sure in pre-processing 'type' and 'token' are added
-            node_tok = node_data.get("token", None) or node_data.get(
-                "lemma", None
-            )
-            is_sense = SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok)
-            node = self.create_node(
-                SBN_NODE_TYPE.SENSE if is_sense else SBN_NODE_TYPE.CONSTANT,
-                node_tok,
-                node_data,
-            )
+            # TODO: ensure the root gets cut off in pre processing or in
+            # rewriting, not here.
+            if node_data.get("form", None) == "__0__":
+                node_tok = "ROOT"
+            else:
+                # TODO: make sure in pre-processing 'type' and 'token' are added
+                node_tok = node_data.get("token", None)
+                if not node_tok:
+                    node_tok = node_data.get("lemma", None)
+                    if not node_tok:
+                        node_tok = node_data.get("form", "MISSING_TOKEN")
+
+            # The sense has been added in the grew rewriting step
+            if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
+                node_type = SBN_NODE_TYPE.SENSE
+            # Otherwise try to format the token as a sense. This assumes
+            # unwanted nodes (DET, PUNCT, AUX) are already removed.
+            elif "upos" in node_data:
+                # TODO: some POS tags indicate constants (NUM, PROPN, etc)
+                # Maybe fix that here as well.
+                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
+                lemma = node_data.get("lemma", node_tok)
+                node_tok = f"{lemma}.{wn_pos}.01"
+                node_type = SBN_NODE_TYPE.SENSE
+            # When the previous checks cannot determine if it's a sense or not,
+            # consider it to be a constant.
+            else:
+                node_type = SBN_NODE_TYPE.CONSTANT
+
+            node_data["token"] = node_tok
+
+            node = self.create_node(node_type, node_tok, node_data)
             nodes.append(node)
             id_mapping[grew_node_id] = node[0]
 
-            if not is_sense:
+        # TODO: move this to a better place + don't use older mappings
+        # just for testing purposes now.
+        with open(
+            "/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/edge_mappings.json"
+        ) as f:
+            # Sort options so the most frequent mapping is at the front
+            edge_mappings = {
+                k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
+                for k, v in json.load(f).items()
+            }
+
+        for grew_from_node_id, (_, grew_edges) in grew_graph.items():
+            if len(grew_edges) != 0:
                 box_edge = self.create_edge(
-                    self._active_box_id,
-                    self._active_sense_id,
+                    starting_box[0],
+                    id_mapping[grew_from_node_id],
                     SBN_EDGE_TYPE.BOX_CONNECT,
                 )
                 edges.append(box_edge)
 
-        for grew_from_node_id, (_, grew_edges) in grew_graph.items():
             for edge_name, grew_to_node_id in grew_edges:
-                # TODO: introduce new type (NOT_LABELED_YET) in case it's not a
-                # role or drs operator (so still a deprel)?
-                edge_type = (
-                    SBN_EDGE_TYPE.ROLE
-                    if edge_name in SBNSpec.ROLES
-                    else SBN_EDGE_TYPE.DRS_OPERATOR
-                )
+                edge_type = None
+
+                if edge_name in SBNSpec.ROLES:
+                    edge_type = SBN_EDGE_TYPE.ROLE
+                elif edge_name in SBNSpec.DRS_OPERATORS:
+                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+
+                # The type cannot be determined from the name, figure out what
+                # an appropriate edge label might be.
+                if not edge_type:
+                    if edge_name in edge_mappings:
+                        edge_name = edge_mappings[edge_name][0][0]
+                        # This type info should probably be included in the
+                        # mappings.
+                        if edge_name in SBNSpec.ROLES:
+                            edge_type = SBN_EDGE_TYPE.ROLE
+                        elif edge_name in SBNSpec.DRS_OPERATORS:
+                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+                        else:
+                            raise SBNError("Invalid mapping!")
+                    else:
+                        # This is pure guesswork, figure something better out
+                        # here, all edge mapping based on triples?
+                        # POS -> deprel -> POS? Default can be most frequent
+                        # role probably.
+                        edge_type = SBN_EDGE_TYPE.ROLE
+                        edge_name = "Agent"
+
                 edge = self.create_edge(
                     id_mapping[grew_from_node_id],
                     id_mapping[grew_to_node_id],
@@ -594,7 +653,7 @@ class SBNGraph(BaseGraph):
             if var_id in visited:
                 text_format += var_id
             else:
-                text_format += f'({var_id} / {node_data["token"]}'
+                text_format += f"({var_id} / \"{node_data['token']}\""
 
                 if S.out_degree(current_n) == 0:
                     text_format += ")"
@@ -603,9 +662,10 @@ class SBNGraph(BaseGraph):
                     indents = tabs * "\t"
                     for edge_id in S.edges(current_n):
                         _, child_node = edge_id
-                        text_format += (
-                            f'\n{indents}:{S.edges[edge_id]["token"]} '
-                        )
+                        # We run into problems when a deprel has a modifier
+                        # or specification, e.g. ":acl:relcl".
+                        relation = S.edges[edge_id]["token"].replace(":", "-")
+                        text_format += f"\n{indents}:{relation} "
                         text_format = __to_amr_str(
                             S, child_node, visited, text_format, tabs + 1
                         )

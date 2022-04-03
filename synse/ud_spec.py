@@ -189,5 +189,30 @@ class UDSpecBasic:
             PRES = "Pres"
 
 
+# Wordnet has the following pos tags: nouns, verbs, adjectives and adverbs.
+# These are indicated by n, v, a and r respectively. The default mapping is to
+# a noun! These mappings are by no means perfect, but serve as a starting
+# point and to allow further processing later on.
+UPOS_WN_POS_MAPPING = {
+    UDSpecBasic.POS.ADJ: "a",
+    UDSpecBasic.POS.ADP: "n",
+    UDSpecBasic.POS.ADV: "r",
+    UDSpecBasic.POS.AUX: "v",
+    UDSpecBasic.POS.CCONJ: "n",
+    UDSpecBasic.POS.DET: "n",
+    UDSpecBasic.POS.INTJ: "n",
+    UDSpecBasic.POS.NOUN: "n",
+    UDSpecBasic.POS.NUM: "n",
+    UDSpecBasic.POS.PART: "r",  # difficult one: https://universaldependencies.org/u/pos/PART.html
+    UDSpecBasic.POS.PRON: "n",
+    UDSpecBasic.POS.PROPN: "n",
+    UDSpecBasic.POS.PUNCT: "n",
+    UDSpecBasic.POS.SCONJ: "n",
+    UDSpecBasic.POS.SYM: "n",
+    UDSpecBasic.POS.VERB: "v",
+    UDSpecBasic.POS.X: "n",
+}
+
+
 class UDSpecExtended:
     pass
