@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from copy import deepcopy
 from enum import Enum
 from os import PathLike
@@ -11,6 +12,8 @@ import networkx as nx
 from synse.base import BaseGraph
 from synse.sbn_spec import SBNError, SBNSpec, split_comments
 from synse.ud import UD_NODE_TYPE, UDGraph
+
+logger = logging.getLogger(__name__)
 
 
 class SBN_NODE_TYPE(str, Enum):
@@ -529,14 +532,11 @@ class SBNGraph(BaseGraph):
         """Creates a string in amr format from the SBNGraph"""
         # Maybe use penman library to test validity
         # import penman
-        if not nx.is_directed_acyclic_graph(self):
-            raise SBNError(
-                "The SBNGraph in not a DAG, cannot convert to AMR currently."
-            )
 
         # Make a copy just in case since strange side-effects such as token
         # changes are no fun to debug.
         G = deepcopy(self)
+
         prefix_map = {
             SBN_NODE_TYPE.BOX: ["b", 0],
             SBN_NODE_TYPE.CONSTANT: ["c", 0],
@@ -558,16 +558,47 @@ class SBNGraph(BaseGraph):
             # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
             # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
 
+        # Fix the graph if it's cyclic. This is done by adding a copy of one of
+        # the target nodes in a cycle *with the same var_id*. The intermediate
+        # graph is not technically correct in that case, but since everything
+        # following this is based on the var_id and *not* the graph node ids,
+        # it will correct itself when generating the output. Make sure to not
+        # use the intermediate graph G in this method!
+        # NOTE: very inconsistent, need to fix
+        if not nx.is_directed_acyclic_graph(G):
+            raise SBNError(
+                "Cannot handle non-DAG graphs in AMR export currently"
+            )
+            max_id = len(G.nodes) + 1
+            for cycle in nx.simple_cycles(G):
+                if len(cycle) == 1:
+                    # A one node cycle
+                    from_id = cycle.pop(0)
+                    edge_id = (from_id, from_id)
+                else:
+                    from_id = cycle.pop(0)
+                    to_id = cycle.pop(0)
+                    edge_id = (from_id, to_id)
+
+                new_id = (SBN_NODE_TYPE.SENSE, max_id)
+                max_id += 1
+
+                G.add_node(new_id, **deepcopy(G.nodes[to_id]))
+                G.add_edge(from_id, new_id, **deepcopy(G.edges[edge_id]))
+                G.remove_edge(*edge_id)
+            # G.to_png('acyclic_adaptation.png')
+
         def __to_amr_str(S: SBNGraph, current_n, visited, text_format, tabs):
             node_data = S.nodes[current_n]
-            if current_n in visited:
-                text_format += node_data["var_id"]
+            var_id = node_data["var_id"]
+            if var_id in visited:
+                text_format += var_id
             else:
-                text_format += f'({node_data["var_id"]} / {node_data["token"]}'
+                text_format += f'({var_id} / {node_data["token"]}'
 
                 if S.out_degree(current_n) == 0:
                     text_format += ")"
-                    visited.add(current_n)
+                    visited.add(var_id)
                 else:
                     indents = tabs * "\t"
                     for edge_id in S.edges(current_n):
@@ -579,7 +610,7 @@ class SBNGraph(BaseGraph):
                             S, child_node, visited, text_format, tabs + 1
                         )
                     text_format += ")"
-                    visited.add(current_n)
+                    visited.add(var_id)
             return text_format
 
         # For now assume there always is the starting box to serve as the "root"
