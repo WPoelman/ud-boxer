@@ -220,8 +220,8 @@ def store_penman(args):
                 Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
                 args.lenient_penman,
             )
-        except SBNError:
-            pass
+        except SBNError as e:
+            logger.warning(e)
 
 
 def collect_cyclic_graphs(args):
@@ -258,7 +258,7 @@ def main():
     if args.store_penman:
         store_penman(args)
 
-    logging.info(f"Took {round(time.perf_counter() - start, 2)} seconds")
+    logger.info(f"Took {round(time.perf_counter() - start, 2)} seconds")
 
 
 if __name__ == "__main__":
