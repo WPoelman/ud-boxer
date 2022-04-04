@@ -1,1 +1,2 @@
 networkx[default]==2.6.3
+git+https://github.com/cfmrp/mtool.git#egg=mtool

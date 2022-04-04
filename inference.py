@@ -6,9 +6,8 @@ from pathlib import Path
 from tqdm import tqdm
 
 from synse.grew_rewrite import Grew
-from synse.sbn import SBNGraph
 from synse.sbn_spec import SUPPORTED_LANGUAGES, SBNError
-from synse.ud import UD_SYSTEM, UDGraph
+from synse.ud import UD_SYSTEM
 
 
 def get_args() -> Namespace:
@@ -47,9 +46,6 @@ def get_args() -> Namespace:
     return parser.parse_args()
 
 
-SMATCH_PATH = (
-    "/home/wessel/Documents/documents/study/1_thesis/libraries/mtool/main.py"
-)
 KEY_MAPPING = {
     "n": "input_graphs",
     "g": "gold_graphs_generated",
@@ -63,12 +59,14 @@ KEY_MAPPING = {
 
 def get_smatch_score(gold, test):
     try:
-        smatch_cmd = f"python {SMATCH_PATH}  --read amr --score smatch --gold {gold} {test}"
+        smatch_cmd = f"mtool --read amr --score smatch --gold {gold} {test}"
         response = subprocess.check_output(smatch_cmd, shell=True)
         decoded = json.loads(response)
         clean_dict = {KEY_MAPPING.get(k, k): v for k, v in decoded.items()}
     except subprocess.CalledProcessError:
-        raise SBNError(f"Could not call smatch with command '{smatch_cmd}'")
+        raise SBNError(
+            f"Could not call mtool smatch with command '{smatch_cmd}'"
+        )
 
     return clean_dict
 
@@ -109,7 +107,6 @@ def main():
                 scores = get_smatch_score(
                     filepath.parent / "en.drs.penman", penman_path
                 )
-                # print(scores)
                 if scores["f1"] > 0.5:
                     good_ones.append(str(filepath))
                 Path(predicted_dir / "scores.json").write_text(
