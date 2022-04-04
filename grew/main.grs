@@ -75,7 +75,7 @@ rule add_time {
 %%% COMBING RULES %%%
 % Maybe combine NOUN -[amod]-> ADJ into single token, example: good- bye
 % Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
-
+% nummod deprel kan vervangen worden door sense -[Quantity]-> number
 
 %%% CLEANING RULES %%%
 % Remove any punctuation that is connected to the root directly.
