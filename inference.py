@@ -1,16 +1,17 @@
 import json
-import subprocess
+import logging
 from argparse import ArgumentParser, Namespace
-from os import PathLike
 from pathlib import Path
-from typing import Dict, Union
 
-from tqdm import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.grew_rewrite import Grew
 from synse.helpers import pmb_generator, smatch_score
-from synse.sbn_spec import SUPPORTED_LANGUAGES, SBNError
+from synse.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_SYSTEM
+
+logging.basicConfig(level=logging.ERROR)
+logger = logging.getLogger(__name__)
 
 
 def get_args() -> Namespace:
@@ -98,4 +99,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    with logging_redirect_tqdm():
+        main()

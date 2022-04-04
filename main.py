@@ -4,15 +4,15 @@ from argparse import ArgumentParser, Namespace
 from datetime import datetime
 from pathlib import Path
 
-import networkx as nx
 from tqdm import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.helpers import pmb_generator
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
 from synse.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_LANG_DICT, UD_SYSTEM, UDGraph
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
 
 
@@ -212,12 +212,13 @@ def store_visualizations(args):
 
 
 def store_penman(args):
+    name = ".lenient.penman" if args.lenient_penman else ".penman"
     for filepath in pmb_generator(
-        args.starting_path, "**/*.sbn", desc_tqdm="Testing Penman files "
+        args.starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
     ):
         try:
             SBNGraph().from_path(filepath).to_penman(
-                Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
+                Path(filepath.parent / f"{filepath.stem}{name}").resolve(),
                 args.lenient_penman,
             )
         except SBNError as e:
@@ -262,4 +263,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    with logging_redirect_tqdm():
+        main()
