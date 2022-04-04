@@ -6,8 +6,6 @@ from pathlib import Path
 from tqdm import tqdm
 
 from synse.grew_rewrite import Grew
-from synse.mapper import Converter
-from synse.rewrite import BoxRemover, NodeRemover, POSResolver
 from synse.sbn import SBNGraph
 from synse.sbn_spec import SUPPORTED_LANGUAGES, SBNError
 from synse.ud import UD_SYSTEM, UDGraph

@@ -12,7 +12,6 @@ import networkx as nx
 
 from synse.base import BaseGraph
 from synse.sbn_spec import SBNError, SBNSpec, split_comments
-from synse.ud import UD_NODE_TYPE, UDGraph
 from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
@@ -44,6 +43,7 @@ SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
 class SBNGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
+        self.is_dag: bool = None
 
     def from_path(self, path: PathLike) -> SBNGraph:
         """Construct a graph from the provided filepath."""
@@ -216,72 +216,115 @@ class SBNGraph(BaseGraph):
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)
 
+        self._check_is_dag()
+
         return self
 
-    def from_ud(self, U: UDGraph) -> SBNGraph:
+    def from_grew(self, grew_graph: Dict[str, List[Any]]) -> SBNGraph:
+        """Create an SBNGraph from a grew output format graph."""
         self.__init_type_indices()
 
         starting_box = self.create_node(
             SBN_NODE_TYPE.BOX, self._active_box_token
         )
+
         nodes, edges = [starting_box], []
-        ud_sbn_id_mapping = dict()
+        id_mapping: Dict[str, SBN_ID] = dict()
 
-        for node_id, node_data in U.nodes.data():
-            # distinguish names and other const types (?) or just use a single
-            # const type for all constants, then the following is already correct
-            if (
-                node_data["type"] == UD_NODE_TYPE.ROOT
-            ):  # TODO: move this out of here
-                continue
-            is_sense = U.out_degree(node_id) != 0
-            node_type = (
-                SBN_NODE_TYPE.SENSE if is_sense else SBN_NODE_TYPE.CONSTANT
-            )
+        # First collect all nodes and create a mapping from the grew ids to
+        # the current graph ids.
+        for grew_node_id, (node_data, grew_edges) in grew_graph.items():
+            # TODO: make sure in pre-processing 'type' and 'token' are added
+            node_tok = node_data.get("token", None)
+            if not node_tok:
+                node_tok = node_data.get("lemma", None)
+                if not node_tok:
+                    node_tok = node_data.get("form", "MISSING_TOKEN")
 
-            node_data["type"] = node_type
-            if lemma := node_data.get("lemma"):
-                # TODO: part of speech mapping xpos -> wn
-                node_data["token"] = f"{lemma}.n.01"
-            new_node = self.create_node(
-                node_type, node_data["token"], node_data
-            )
-            ud_sbn_id_mapping[node_id] = new_node[0]
+            # The sense has been added in the grew rewriting step
+            if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
+                node_type = SBN_NODE_TYPE.SENSE
+            # Otherwise try to format the token as a sense. This assumes
+            # unwanted nodes (DET, PUNCT, AUX) are already removed.
+            elif "upos" in node_data:
+                # TODO: some POS tags indicate constants (NUM, PROPN, etc)
+                # Maybe fix that here as well.
+                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
+                lemma = node_data.get("lemma", node_tok)
+                node_tok = f"{lemma}.{wn_pos}.01"
+                node_type = SBN_NODE_TYPE.SENSE
+            # When the previous checks cannot determine if it's a sense or not,
+            # consider it to be a constant.
+            else:
+                node_type = SBN_NODE_TYPE.CONSTANT
 
-            nodes.append(new_node)
-            if is_sense:
-                edges.append(
-                    self.create_edge(
-                        self._active_box_id,
-                        new_node[0],
-                        SBN_EDGE_TYPE.BOX_CONNECT,
-                    )
+            node_data["token"] = node_tok
+
+            node = self.create_node(node_type, node_tok, node_data)
+            nodes.append(node)
+            id_mapping[grew_node_id] = node[0]
+
+        # TODO: move this to a better place + don't use older mappings
+        # just for testing purposes now.
+        with open(
+            "/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/edge_mappings.json"
+        ) as f:
+            # Sort options so the most frequent mapping is at the front
+            edge_mappings = {
+                k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
+                for k, v in json.load(f).items()
+            }
+
+        for grew_from_node_id, (_, grew_edges) in grew_graph.items():
+            if len(grew_edges) != 0:
+                box_edge = self.create_edge(
+                    starting_box[0],
+                    id_mapping[grew_from_node_id],
+                    SBN_EDGE_TYPE.BOX_CONNECT,
                 )
+                edges.append(box_edge)
 
-        # assume the boxes are not present
-        for node_id, node_data in U.nodes.data():
-            if (
-                node_data["type"] == UD_NODE_TYPE.ROOT
-            ):  # TODO: move this out of here
-                continue
-            for edge_id in U.out_edges(node_id):
-                edge_data = U.edges.get(edge_id)
-                from_id, to_id = edge_id
-                edge_data["type"] = SBN_EDGE_TYPE.ROLE
+            for edge_name, grew_to_node_id in grew_edges:
+                edge_type = None
 
-                # refactor so token gets picked from meta or from id
-                edges.append(
-                    self.create_edge(
-                        ud_sbn_id_mapping[from_id],
-                        ud_sbn_id_mapping[to_id],
-                        SBN_EDGE_TYPE.ROLE,
-                        edge_data["token"],
-                        edge_data,
-                    )
+                if edge_name in SBNSpec.ROLES:
+                    edge_type = SBN_EDGE_TYPE.ROLE
+                elif edge_name in SBNSpec.DRS_OPERATORS:
+                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+
+                # The type cannot be determined from the name, figure out what
+                # an appropriate edge label might be.
+                if not edge_type:
+                    if edge_name in edge_mappings:
+                        edge_name = edge_mappings[edge_name][0][0]
+                        # This type info should probably be included in the
+                        # mappings.
+                        if edge_name in SBNSpec.ROLES:
+                            edge_type = SBN_EDGE_TYPE.ROLE
+                        elif edge_name in SBNSpec.DRS_OPERATORS:
+                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+                        else:
+                            raise SBNError("Invalid mapping!")
+                    else:
+                        # This is pure guesswork, figure something better out
+                        # here, all edge mapping based on triples?
+                        # POS -> deprel -> POS? Default can be most frequent
+                        # role probably.
+                        edge_type = SBN_EDGE_TYPE.ROLE
+                        edge_name = "Agent"
+
+                edge = self.create_edge(
+                    id_mapping[grew_from_node_id],
+                    id_mapping[grew_to_node_id],
+                    edge_type,
+                    edge_name,
                 )
+                edges.append(edge)
+
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)
-        print(self.nodes.data())
+
+        self._check_is_dag()
 
         return self
 
@@ -467,117 +510,6 @@ class SBNGraph(BaseGraph):
         sbn_string = "\n".join(final_result)
         return sbn_string
 
-    def from_grew(self, grew_graph: Dict[str, List[Any]]) -> SBNGraph:
-        """Create an SBNGraph from a grew output format graph."""
-        self.__init_type_indices()
-
-        starting_box = self.create_node(
-            SBN_NODE_TYPE.BOX, self._active_box_token
-        )
-
-        nodes, edges = [starting_box], []
-        id_mapping: Dict[str, SBN_ID] = dict()
-
-        # First collect all nodes and create a mapping from the grew ids to
-        # the current graph ids.
-        for grew_node_id, (node_data, grew_edges) in grew_graph.items():
-            # TODO: ensure the root gets cut off in pre processing or in
-            # rewriting, not here.
-            if node_data.get("form", None) == "__0__":
-                node_tok = "ROOT"
-            else:
-                # TODO: make sure in pre-processing 'type' and 'token' are added
-                node_tok = node_data.get("token", None)
-                if not node_tok:
-                    node_tok = node_data.get("lemma", None)
-                    if not node_tok:
-                        node_tok = node_data.get("form", "MISSING_TOKEN")
-
-            # The sense has been added in the grew rewriting step
-            if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
-                node_type = SBN_NODE_TYPE.SENSE
-            # Otherwise try to format the token as a sense. This assumes
-            # unwanted nodes (DET, PUNCT, AUX) are already removed.
-            elif "upos" in node_data:
-                # TODO: some POS tags indicate constants (NUM, PROPN, etc)
-                # Maybe fix that here as well.
-                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                lemma = node_data.get("lemma", node_tok)
-                node_tok = f"{lemma}.{wn_pos}.01"
-                node_type = SBN_NODE_TYPE.SENSE
-            # When the previous checks cannot determine if it's a sense or not,
-            # consider it to be a constant.
-            else:
-                node_type = SBN_NODE_TYPE.CONSTANT
-
-            node_data["token"] = node_tok
-
-            node = self.create_node(node_type, node_tok, node_data)
-            nodes.append(node)
-            id_mapping[grew_node_id] = node[0]
-
-        # TODO: move this to a better place + don't use older mappings
-        # just for testing purposes now.
-        with open(
-            "/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/edge_mappings.json"
-        ) as f:
-            # Sort options so the most frequent mapping is at the front
-            edge_mappings = {
-                k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-                for k, v in json.load(f).items()
-            }
-
-        for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            if len(grew_edges) != 0:
-                box_edge = self.create_edge(
-                    starting_box[0],
-                    id_mapping[grew_from_node_id],
-                    SBN_EDGE_TYPE.BOX_CONNECT,
-                )
-                edges.append(box_edge)
-
-            for edge_name, grew_to_node_id in grew_edges:
-                edge_type = None
-
-                if edge_name in SBNSpec.ROLES:
-                    edge_type = SBN_EDGE_TYPE.ROLE
-                elif edge_name in SBNSpec.DRS_OPERATORS:
-                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-
-                # The type cannot be determined from the name, figure out what
-                # an appropriate edge label might be.
-                if not edge_type:
-                    if edge_name in edge_mappings:
-                        edge_name = edge_mappings[edge_name][0][0]
-                        # This type info should probably be included in the
-                        # mappings.
-                        if edge_name in SBNSpec.ROLES:
-                            edge_type = SBN_EDGE_TYPE.ROLE
-                        elif edge_name in SBNSpec.DRS_OPERATORS:
-                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                        else:
-                            raise SBNError("Invalid mapping!")
-                    else:
-                        # This is pure guesswork, figure something better out
-                        # here, all edge mapping based on triples?
-                        # POS -> deprel -> POS? Default can be most frequent
-                        # role probably.
-                        edge_type = SBN_EDGE_TYPE.ROLE
-                        edge_name = "Agent"
-
-                edge = self.create_edge(
-                    id_mapping[grew_from_node_id],
-                    id_mapping[grew_to_node_id],
-                    edge_type,
-                    edge_name,
-                )
-                edges.append(edge)
-
-        self.add_nodes_from(nodes)
-        self.add_edges_from(edges)
-
-        return self
-
     def to_amr(self, path: PathLike, add_comments: bool = False) -> PathLike:
         """Writes the SBNGraph to an file in AMR format"""
         path = (
@@ -591,6 +523,10 @@ class SBNGraph(BaseGraph):
         """Creates a string in amr format from the SBNGraph"""
         # Maybe use penman library to test validity
         # import penman
+        if not self.is_dag:
+            raise SBNError(
+                "Exporting a cyclic SBN graph to AMR is not possible"
+            )
 
         # Make a copy just in case since strange side-effects such as token
         # changes are no fun to debug.
@@ -616,36 +552,6 @@ class SBNGraph(BaseGraph):
             # elif G.edges[edge]["type"] == SBN_EDGE_TYPE.ROLE:
             # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
             # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
-
-        # Fix the graph if it's cyclic. This is done by adding a copy of one of
-        # the target nodes in a cycle *with the same var_id*. The intermediate
-        # graph is not technically correct in that case, but since everything
-        # following this is based on the var_id and *not* the graph node ids,
-        # it will correct itself when generating the output. Make sure to not
-        # use the intermediate graph G in this method!
-        # NOTE: very inconsistent, need to fix
-        if not nx.is_directed_acyclic_graph(G):
-            raise SBNError(
-                "Cannot handle non-DAG graphs in AMR export currently"
-            )
-            max_id = len(G.nodes) + 1
-            for cycle in nx.simple_cycles(G):
-                if len(cycle) == 1:
-                    # A one node cycle
-                    from_id = cycle.pop(0)
-                    edge_id = (from_id, from_id)
-                else:
-                    from_id = cycle.pop(0)
-                    to_id = cycle.pop(0)
-                    edge_id = (from_id, to_id)
-
-                new_id = (SBN_NODE_TYPE.SENSE, max_id)
-                max_id += 1
-
-                G.add_node(new_id, **deepcopy(G.nodes[to_id]))
-                G.add_edge(from_id, new_id, **deepcopy(G.edges[edge_id]))
-                G.remove_edge(*edge_id)
-            # G.to_png('acyclic_adaptation.png')
 
         def __to_amr_str(S: SBNGraph, current_n, visited, text_format, tabs):
             node_data = S.nodes[current_n]
@@ -695,6 +601,15 @@ class SBNGraph(BaseGraph):
         self.type_indices[type] += 1
         return _id
 
+    def _check_is_dag(self):
+        self.is_dag = nx.is_directed_acyclic_graph(self)
+        if not self.is_dag:
+            logger.warning(
+                "Initialized cyclic SBN graph, this will work for most tasks, "
+                "but can cause problems later on when exporting to AMR for "
+                "instance."
+            )
+
     @property
     def _active_sense_id(self) -> SBN_ID:
         return (
@@ -713,12 +628,10 @@ class SBNGraph(BaseGraph):
     @staticmethod
     def _node_label(node_data) -> str:
         return node_data["token"]
-        # return f'{node_data["type"].value}\n{node_data["token"]}'
 
     @staticmethod
     def _edge_label(edge_data) -> str:
         return edge_data["token"]
-        # return f'{edge_data["type"].value}\n{edge_data["token"]}'
 
     @property
     def type_style_mapping(self):
