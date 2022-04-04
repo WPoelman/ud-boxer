@@ -1,11 +1,14 @@
 import json
 import subprocess
 from argparse import ArgumentParser, Namespace
+from os import PathLike
 from pathlib import Path
+from typing import Dict, Union
 
 from tqdm import tqdm
 
 from synse.grew_rewrite import Grew
+from synse.helpers import pmb_generator, smatch_score
 from synse.sbn_spec import SUPPORTED_LANGUAGES, SBNError
 from synse.ud import UD_SYSTEM
 
@@ -46,31 +49,6 @@ def get_args() -> Namespace:
     return parser.parse_args()
 
 
-KEY_MAPPING = {
-    "n": "input_graphs",
-    "g": "gold_graphs_generated",
-    "s": "evaluation_graphs_generated",
-    "c": "correct_graphs",
-    "p": "precision",
-    "r": "recall",
-    "f": "f1",
-}
-
-
-def get_smatch_score(gold, test):
-    try:
-        smatch_cmd = f"mtool --read amr --score smatch --gold {gold} {test}"
-        response = subprocess.check_output(smatch_cmd, shell=True)
-        decoded = json.loads(response)
-        clean_dict = {KEY_MAPPING.get(k, k): v for k, v in decoded.items()}
-    except subprocess.CalledProcessError:
-        raise SBNError(
-            f"Could not call mtool smatch with command '{smatch_cmd}'"
-        )
-
-    return clean_dict
-
-
 def main():
     args = get_args()
     """
@@ -83,14 +61,14 @@ def main():
     & mappings to see what led to certain decisions.
     """
     grew = Grew()
-    desc_msg = "Running inference"
-    path_glob = Path(args.starting_path).glob("**/en.drs.penman")
-    good_ones = []
 
-    for filepath in tqdm(path_glob, desc=desc_msg):
-        ud_filepath = Path(
-            filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
-        )
+    good_ones = []
+    ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
+
+    for filepath in pmb_generator(
+        args.starting_path, "**/en.drs.penman", desc_tqdm="Running inference"
+    ):
+        ud_filepath = Path(filepath.parent / ud_file_format)
         if not ud_filepath.exists():
             continue
         try:
@@ -104,14 +82,15 @@ def main():
                 penman_path = res.to_penman(
                     Path(predicted_dir / f"{i}_output.penman")
                 )
-                scores = get_smatch_score(
+                scores = smatch_score(
                     filepath.parent / "en.drs.penman", penman_path
                 )
-                if scores["f1"] > 0.5:
-                    good_ones.append(str(filepath))
                 Path(predicted_dir / "scores.json").write_text(
                     json.dumps(scores, indent=2)
                 )
+
+                if scores["f1"] > 0.5:
+                    good_ones.append(str(filepath))
         except Exception as e:
             print(e)
             continue

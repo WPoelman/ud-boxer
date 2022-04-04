@@ -2,13 +2,12 @@ import logging
 import time
 from argparse import ArgumentParser, Namespace
 from datetime import datetime
-from os import PathLike
 from pathlib import Path
-from typing import Generator
 
 import networkx as nx
 from tqdm import tqdm
 
+from synse.helpers import pmb_generator
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
 from synse.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_LANG_DICT, UD_SYSTEM, UDGraph
@@ -90,22 +89,6 @@ def get_args() -> Namespace:
     return parser.parse_args()
 
 
-def pmb_generator(
-    starting_path: PathLike,
-    pattern: str,
-    # By default we don't want to regenerate predicted output
-    exclude: str = "predicted",
-    disable_tqdm: bool = False,
-    desc_tqdm: str = "",
-):
-    path_glob = Path(starting_path).glob(pattern)
-    return tqdm(
-        (p for p in path_glob if exclude not in str(p)),
-        disable=disable_tqdm,
-        desc=desc_tqdm,
-    )
-
-
 def store_ud_parses(args):
     if args.ud_system == UD_SYSTEM.STANZA:
         from stanza import Pipeline, download
@@ -121,14 +104,14 @@ def store_ud_parses(args):
 
         pipeline = Pipeline(UD_LANG_DICT[args.language])
 
-    file_format = f"{args.language}.ud.{args.ud_system}.conll"
+    ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
 
     for filepath in pmb_generator(
         args.starting_path, "**/*.raw", desc_tqdm="Storing UD parses "
     ):
         try:
             result = pipeline(filepath.read_text())
-            out_file = Path(filepath.parent / file_format)
+            out_file = Path(filepath.parent / ud_file_format)
 
             if args.ud_system == UD_SYSTEM.STANZA:
                 CoNLL.write_doc2conll(result, out_file)
@@ -232,10 +215,13 @@ def store_penman(args):
     for filepath in pmb_generator(
         args.starting_path, "**/*.sbn", desc_tqdm="Testing Penman files "
     ):
-        SBNGraph().from_path(filepath).to_penman(
-            Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
-            args.lenient_penman,
-        )
+        try:
+            SBNGraph().from_path(filepath).to_penman(
+                Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
+                args.lenient_penman,
+            )
+        except SBNError:
+            pass
 
 
 def collect_cyclic_graphs(args):
