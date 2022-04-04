@@ -1,15 +1,15 @@
 (b0 / "box"
 	:member (s0 / "person.n.01"
-		:EQU "hearer"))
+		:EQU (c0 / "hearer"))
 	:NEGATION (b1 / "box"
 		:member (s1 / "entity.n.01")
 		:member (s2 / "person.n.01"
-			:EQU "hearer"))
+			:EQU (c1 / "hearer"))
 		:member (s3 / "like.v.02"
 			:Stimulus s1
 			:Experiencer s2
 			:Time (s4 / "time.n.08"
-				:EQU "now")))
+				:EQU (c2 / "now")))
 		:member s4
 		:NEGATION (b2 / "box"
 			:member (s5 / "eat.v.01"

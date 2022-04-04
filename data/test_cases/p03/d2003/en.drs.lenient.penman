@@ -1,0 +1,29 @@
+(b0 / "box"
+	:member (s0 / "sense"
+		:lemma "musical_organization"
+		:pos "n"
+		:sense "01"
+		:Name (c0 / "Steve Miller Band"))
+	:member (s1 / "sense"
+		:lemma "release"
+		:pos "v"
+		:sense "04"
+		:Agent s0
+		:Theme (s3 / "sense"
+			:lemma "album"
+			:pos "n"
+			:sense "01")
+		:Time (s4 / "sense"
+			:lemma "time"
+			:pos "n"
+			:sense "08"
+			:MonthOfYear (c1 / "6")
+			:YearOfCentury (c2 / "2010")
+			:TPR (c3 / "now")))
+	:member (s2 / "sense"
+		:lemma "new"
+		:pos "a"
+		:sense "01"
+		:AttributeOf s3)
+	:member s3
+	:member s4)

@@ -1,0 +1,23 @@
+(b0 / "box"
+	:member (s0 / "sense"
+		:lemma "person"
+		:pos "n"
+		:sense "01"
+		:EQU (c0 / "speaker"))
+	:NEGATION (b1 / "box"
+		:member (s1 / "sense"
+			:lemma "time"
+			:pos "n"
+			:sense "08"
+			:TSU (c1 / "now"))
+		:member (s2 / "sense"
+			:lemma "lie"
+			:pos "v"
+			:sense "05"
+			:Agent s0
+			:Time s1
+			:Recipient (s3 / "sense"
+				:lemma "female"
+				:pos "n"
+				:sense "02"))
+		:member s3))

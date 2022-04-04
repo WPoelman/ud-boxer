@@ -547,8 +547,9 @@ class SBNGraph(BaseGraph):
                         :pos (s2 / "n")
                         :sense (s3 / "01")))
         """
-        # Maybe use penman library to test validity
-        # import penman
+        # Use penman library to test the validity of the generated structure.
+        import penman
+
         if not self.is_dag:
             raise SBNError(
                 "Exporting a cyclic SBN graph to Penman is not possible"
@@ -601,25 +602,21 @@ class SBNGraph(BaseGraph):
             ):
                 lemma, pos, sense = [self.quote(i) for i in components]
                 out_str += f'({var_id} / {self.quote("sense")}'
-                out_str += f"\n{indents}:lemma ({var_id}-l / {lemma})"
-                out_str += f"\n{indents}:pos ({var_id}-p / {pos})"
-                out_str += f"\n{indents}:sense ({var_id}-s / {sense})"
-            # TODO: All constants should not be allowed to have out nodes and
-            # could be written without variable (need more testing to make
-            # sure though).
-            elif is_leaf := node_tok in SBNSpec.CONSTANTS:
-                out_str += f"{self.quote(node_tok)}"
+                out_str += f"\n{indents}:lemma {lemma}"
+                out_str += f"\n{indents}:pos {pos}"
+                out_str += f"\n{indents}:sense {sense}"
+            # TODO: fix this, the generated parentheses are incorrect most of
+            # the time.
+            # elif node_tok in SBNSpec.CONSTANTS: 
+            #     out_str += f"{self.quote(node_tok)})"
+            #     if S.out_degree(current_n) > 0:
+            #         raise SBNError("A constant cannot have out edges.")
             else:
                 out_str += f"({var_id} / {self.quote(node_tok)}"
 
             if S.out_degree(current_n) == 0:
                 out_str += ")"
                 visited.add(var_id)
-            elif is_leaf:
-                raise SBNError(
-                    f"Constant '{node_tok}' has out edges, this should be "
-                    "impossible. The graph is invalid SBN."
-                )
             else:
                 for edge_id in S.edges(current_n):
                     _, child_node = edge_id
@@ -638,7 +635,15 @@ class SBNGraph(BaseGraph):
 
         # For now assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)
-        return __to_penman_str(G, starting_node, set(), "", 1)
+        final_result = __to_penman_str(G, starting_node, set(), "", 1)
+
+        try:
+            a = penman.decode(final_result)
+            assert len(a.edges()) == len(self.edges), "Wrong number of edges"
+        except (penman.DecodeError, AssertionError) as e:
+            raise SBNError(f"Generated Penman output is invalid: {e}")
+
+        return final_result
 
     def __init_type_indices(self):
         self.type_indices = {
