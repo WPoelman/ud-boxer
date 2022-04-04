@@ -510,38 +510,39 @@ class SBNGraph(BaseGraph):
         sbn_string = "\n".join(final_result)
         return sbn_string
 
-    def to_amr(self, path: PathLike, split_sense: bool = False) -> PathLike:
+    def to_penman(self, path: PathLike, split_sense: bool = False) -> PathLike:
         """
-        Writes the SBNGraph to an file in AMR format (note: it's not
-        actually valid AMR, just the Penman notation, just like AMR).
+        Writes the SBNGraph to an file in Penman (AMR-like) format.
 
-        See `to_amr_string` for an explanation of `split_sense`.
+        See `to_penman_string` for an explanation of `split_sense`.
         """
         path = (
-            Path(path) if str(path).endswith(".amr") else Path(f"{path}.amr")
+            Path(path)
+            if str(path).endswith(".penman")
+            else Path(f"{path}.penman")
         )
 
-        path.write_text(self.to_amr_string(split_sense))
+        path.write_text(self.to_penman_string(split_sense))
         return path
 
-    def to_amr_string(self, split_sense: bool = False) -> str:
+    def to_penman_string(self, split_sense: bool = False) -> str:
         """
-        Creates a string in amr format from the SBNGraph (note: it's not
-        actually valid AMR, just the Penman notation, just like AMR).
+        Creates a string in Penman (AMR-like) format from the SBNGraph.
 
         The `split_sense` flag indicates whether to treat senses as a single
         concept or as 3 separate items. When treating the sense as a whole,
         the evaluation indirectly also targets the task of word sense
         disambiguation, which might not be desirable. Splitting the sense in
         its components rewards correct predictions of the lemma, pos and sense
-        separately, thus being more lenient when scoring the AMR. Examples:
+        separately, thus being more lenient when scoring the output with
+        SMATCH for instance. Examples:
             Without split:
                 (b0 / "box"
                     :member (s0 / "person.n.01"))
 
             With split:
                 (b0 / "box"
-                    :member (s0 / "wordnet-sense"
+                    :member (s0 / "sense"
                         :lemma (s1 / "person")
                         :pos (s2 / "n")
                         :sense (s3 / "01")))
@@ -550,7 +551,7 @@ class SBNGraph(BaseGraph):
         # import penman
         if not self.is_dag:
             raise SBNError(
-                "Exporting a cyclic SBN graph to AMR is not possible"
+                "Exporting a cyclic SBN graph to Penman is not possible"
             )
 
         # Make a copy just in case since strange side-effects such as token
@@ -584,7 +585,7 @@ class SBNGraph(BaseGraph):
             # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
             # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
 
-        def __to_amr_str(S: SBNGraph, current_n, visited, out_str, tabs):
+        def __to_penman_str(S: SBNGraph, current_n, visited, out_str, tabs):
             node_data = S.nodes[current_n]
             var_id = node_data["var_id"]
             if var_id in visited:
@@ -596,13 +597,14 @@ class SBNGraph(BaseGraph):
                     and node_data["type"] == SBN_NODE_TYPE.SENSE
                     and (components := split_wn_sense(node_data["token"]))
                 ):
-                    lemma, pos, sense = components
-                    out_str += f'({var_id} / "sense"'
-                    out_str += f'\n{indents}:lemma ({var_id}-l / "{lemma}")'
-                    out_str += f'\n{indents}:pos ({var_id}-p / "{pos}")'
-                    out_str += f'\n{indents}:sense ({var_id}-s / "{sense}")'
+                    lemma, pos, sense = [self.quote(i) for i in components]
+                    out_str += f'({var_id} / {self.quote("sense")}'
+                    out_str += f"\n{indents}:lemma ({var_id}-l / {lemma})"
+                    out_str += f"\n{indents}:pos ({var_id}-p / {pos})"
+                    out_str += f"\n{indents}:sense ({var_id}-s / {sense})"
                 else:
-                    out_str += f"({var_id} / \"{node_data['token']}\""
+                    # Make sure to always quote the token in the same manner.
+                    out_str += f"({var_id} / {self.quote(node_data['token'])}"
 
                 if S.out_degree(current_n) == 0:
                     out_str += ")"
@@ -612,10 +614,11 @@ class SBNGraph(BaseGraph):
                         _, child_node = edge_id
                         # We run into problems when a deprel has a modifier
                         # or specification, e.g. ":acl:relcl".
-                        # TODO: can probably be removed in the future.
+                        # TODO: can probably be removed in the future, assuming
+                        # all deprels get resolved to a valid role/drs operator
                         relation = S.edges[edge_id]["token"].replace(":", "-")
                         out_str += f"\n{indents}:{relation} "
-                        out_str = __to_amr_str(
+                        out_str = __to_penman_str(
                             S, child_node, visited, out_str, tabs + 1
                         )
                     out_str += ")"
@@ -624,7 +627,7 @@ class SBNGraph(BaseGraph):
 
         # For now assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)
-        return __to_amr_str(G, starting_node, set(), "", 1)
+        return __to_penman_str(G, starting_node, set(), "", 1)
 
     def __init_type_indices(self):
         self.type_indices = {
@@ -649,9 +652,20 @@ class SBNGraph(BaseGraph):
         if not self.is_dag:
             logger.warning(
                 "Initialized cyclic SBN graph, this will work for most tasks, "
-                "but can cause problems later on when exporting to AMR for "
+                "but can cause problems later on when exporting to Penman for "
                 "instance."
             )
+
+    @staticmethod
+    def quote(in_str: str) -> str:
+        """Consistently quote a string with double quotes"""
+        if in_str.startswith('"') and in_str.endswith('"'):
+            return in_str
+
+        if in_str.startswith("'") and in_str.endswith("'"):
+            return f'"{in_str[1:-1]}"'
+
+        return f'"{in_str}"'
 
     @property
     def _active_sense_id(self) -> SBN_ID:

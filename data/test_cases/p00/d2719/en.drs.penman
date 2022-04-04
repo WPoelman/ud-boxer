@@ -1,6 +1,6 @@
 (b0 / "box"
 	:member (s0 / "female.n.02"
-		:Name (c0 / ""Mary""))
+		:Name (c0 / "Mary"))
 	:member (s1 / "want.v.01"
 		:Pivot s0
 		:Time (s2 / "time.n.08"

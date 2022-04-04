@@ -52,11 +52,11 @@ def get_args() -> Namespace:
         help="Path to save output files to.",
     )
     parser.add_argument(
-        "--lenient_amr",
+        "--lenient_penman",
         action="store_true",
         help="Indicates whether or not to split senses into their components "
-        "for more lenient amr scoring. When left default, scoring the "
-        "generated amr will indirectly also target the word sense "
+        "for more lenient Penman (AMR-like) scoring. When left default, scoring "
+        "the generated penmen output will indirectly also target the word sense "
         "disambiguation performance included in it.",
     )
 
@@ -82,9 +82,9 @@ def get_args() -> Namespace:
         help="Store SBN and UD visualizations in the dataset example folders.",
     )
     parser.add_argument(
-        "--store_amr",
+        "--store_penman",
         action="store_true",
-        help="Store SBN to AMR conversion (NOTE: tests it for now, not actually stores).",
+        help="Store SBN as Penman (AMR-like).",
     )
 
     return parser.parse_args()
@@ -228,13 +228,13 @@ def store_visualizations(args):
             print(f"Failed: {filepath}")
 
 
-def store_amr(args):
+def store_penman(args):
     for filepath in pmb_generator(
-        args.starting_path, "**/*.sbn", desc_tqdm="Testing AMR files "
+        args.starting_path, "**/*.sbn", desc_tqdm="Testing Penman files "
     ):
-        SBNGraph().from_path(filepath).to_amr(
-            Path(filepath.parent / f"{filepath.stem}.amr").resolve(),
-            args.lenient_amr,
+        SBNGraph().from_path(filepath).to_penman(
+            Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
+            args.lenient_penman,
         )
 
 
@@ -269,8 +269,8 @@ def main():
     if args.store_visualizations:
         store_visualizations(args)
 
-    if args.store_amr:
-        store_amr(args)
+    if args.store_penman:
+        store_penman(args)
 
     logging.info(f"Took {round(time.perf_counter() - start, 2)} seconds")
 

@@ -39,6 +39,10 @@ def get_args() -> Namespace:
         choices=UD_SYSTEM.all_values(),
         help="System pipeline to use for generating UD parses.",
     )
+    parser.add_argument(
+        "--lenient_pm",
+        help="System pipeline to use for generating UD parses.",
+    )
 
     return parser.parse_args()
 
@@ -57,9 +61,9 @@ KEY_MAPPING = {
 }
 
 
-def get_smatch_score(gold_amr, test_amr):
+def get_smatch_score(gold, test):
     try:
-        smatch_cmd = f"python {SMATCH_PATH}  --read amr --score smatch --gold {gold_amr} {test_amr}"
+        smatch_cmd = f"python {SMATCH_PATH}  --read amr --score smatch --gold {gold} {test}"
         response = subprocess.check_output(smatch_cmd, shell=True)
         decoded = json.loads(response)
         clean_dict = {KEY_MAPPING.get(k, k): v for k, v in decoded.items()}
@@ -82,7 +86,7 @@ def main():
     """
     grew = Grew()
     desc_msg = "Running inference"
-    path_glob = Path(args.starting_path).glob("**/en.drs.amr")
+    path_glob = Path(args.starting_path).glob("**/en.drs.penman")
     good_ones = []
 
     for filepath in tqdm(path_glob, desc=desc_msg):
@@ -99,9 +103,11 @@ def main():
             for i, res in enumerate(result):
                 res.to_png(Path(predicted_dir / f"{i}_output.png"))
                 res.to_sbn(Path(predicted_dir / f"{i}_output.sbn"))
-                amr_path = res.to_amr(Path(predicted_dir / f"{i}_output.amr"))
+                penman_path = res.to_penman(
+                    Path(predicted_dir / f"{i}_output.penman")
+                )
                 scores = get_smatch_score(
-                    filepath.parent / "en.drs.amr", amr_path
+                    filepath.parent / "en.drs.penman", penman_path
                 )
                 # print(scores)
                 if scores["f1"] > 0.5:

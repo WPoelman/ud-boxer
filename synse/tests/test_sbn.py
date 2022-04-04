@@ -7,10 +7,10 @@ from synse.sbn_spec import split_comments
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 SBN_DIR = EXAMPLES_DIR / "sbn"
-AMR_DIR = EXAMPLES_DIR / "amr"
+PM_DIR = EXAMPLES_DIR / "penman"
 
 NORMAL_EXAMPLE_SBN = Path(SBN_DIR / "normal_example.sbn").read_text()
-NORMAL_EXAMPLE_AMR = Path(AMR_DIR / "normal_example.amr").read_text()
+NORMAL_EXAMPLE_PM = Path(PM_DIR / "normal_example.penman").read_text()
 
 ALL_EXAMPLES = [example.read_text() for example in SBN_DIR.glob("*.sbn")]
 
@@ -120,8 +120,3 @@ def test_json_export(tmp_path):
     edges_json = sorted(list(G_json.edges.items()))
 
     assert edges_string == edges_json
-
-
-# def test_amr_export():
-#     amr_str = SBNGraph().from_string(NORMAL_EXAMPLE_SBN).to_amr_string()
-#     assert amr_str == NORMAL_EXAMPLE_AMR
