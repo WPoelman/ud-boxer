@@ -6,7 +6,7 @@ from typing import Dict, Generator
 
 from tqdm import tqdm
 
-from thesis.synse.sbn_spec import SBNError
+from synse.sbn_spec import SBNError
 
 
 def pmb_generator(

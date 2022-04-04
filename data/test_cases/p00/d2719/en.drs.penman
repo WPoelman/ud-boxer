@@ -4,7 +4,7 @@
 	:member (s1 / "want.v.01"
 		:Pivot s0
 		:Time (s2 / "time.n.08"
-			:EQU (c1 / "now"))
+			:EQU "now"))
 		:Theme (s3 / "paint.v.02"
 			:Agent s0
 			:Patient (s4 / "car.n.01"

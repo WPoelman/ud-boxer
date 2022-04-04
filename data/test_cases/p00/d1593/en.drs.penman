@@ -1,9 +1,9 @@
 (b0 / "box"
 	:member (s0 / "person.n.01"
-		:EQU (c0 / "speaker"))
+		:EQU "speaker"))
 	:NEGATION (b1 / "box"
 		:member (s1 / "time.n.08"
-			:TSU (c1 / "now"))
+			:TSU "now"))
 		:member (s2 / "lie.v.05"
 			:Agent s0
 			:Time s1

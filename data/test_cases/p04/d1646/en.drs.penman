@@ -4,7 +4,7 @@
 	:member (s1 / "lose.v.05"
 		:Agent s0
 		:Time (s2 / "time.n.08"
-			:TPR (c1 / "now"))
+			:TPR "now"))
 		:Theme (s3 / "glasses.n.01"
 			:User s0))
 	:member s2

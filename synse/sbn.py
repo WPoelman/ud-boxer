@@ -590,39 +590,50 @@ class SBNGraph(BaseGraph):
             var_id = node_data["var_id"]
             if var_id in visited:
                 out_str += var_id
-            else:
-                indents = tabs * "\t"
-                if (
-                    split_sense
-                    and node_data["type"] == SBN_NODE_TYPE.SENSE
-                    and (components := split_wn_sense(node_data["token"]))
-                ):
-                    lemma, pos, sense = [self.quote(i) for i in components]
-                    out_str += f'({var_id} / {self.quote("sense")}'
-                    out_str += f"\n{indents}:lemma ({var_id}-l / {lemma})"
-                    out_str += f"\n{indents}:pos ({var_id}-p / {pos})"
-                    out_str += f"\n{indents}:sense ({var_id}-s / {sense})"
-                else:
-                    # Make sure to always quote the token in the same manner.
-                    out_str += f"({var_id} / {self.quote(node_data['token'])}"
+                return out_str
 
-                if S.out_degree(current_n) == 0:
-                    out_str += ")"
-                    visited.add(var_id)
-                else:
-                    for edge_id in S.edges(current_n):
-                        _, child_node = edge_id
-                        # We run into problems when a deprel has a modifier
-                        # or specification, e.g. ":acl:relcl".
-                        # TODO: can probably be removed in the future, assuming
-                        # all deprels get resolved to a valid role/drs operator
-                        relation = S.edges[edge_id]["token"].replace(":", "-")
-                        out_str += f"\n{indents}:{relation} "
-                        out_str = __to_penman_str(
-                            S, child_node, visited, out_str, tabs + 1
-                        )
-                    out_str += ")"
-                    visited.add(var_id)
+            indents = tabs * "\t"
+            node_tok = node_data["token"]
+            if (
+                split_sense
+                and node_data["type"] == SBN_NODE_TYPE.SENSE
+                and (components := split_wn_sense(node_tok))
+            ):
+                lemma, pos, sense = [self.quote(i) for i in components]
+                out_str += f'({var_id} / {self.quote("sense")}'
+                out_str += f"\n{indents}:lemma ({var_id}-l / {lemma})"
+                out_str += f"\n{indents}:pos ({var_id}-p / {pos})"
+                out_str += f"\n{indents}:sense ({var_id}-s / {sense})"
+            # TODO: All constants should not be allowed to have out nodes and
+            # could be written without variable (need more testing to make
+            # sure though).
+            elif is_leaf := node_tok in SBNSpec.CONSTANTS:
+                out_str += f"{self.quote(node_tok)}"
+            else:
+                out_str += f"({var_id} / {self.quote(node_tok)}"
+
+            if S.out_degree(current_n) == 0:
+                out_str += ")"
+                visited.add(var_id)
+            elif is_leaf:
+                raise SBNError(
+                    f"Constant '{node_tok}' has out edges, this should be "
+                    "impossible. The graph is invalid SBN."
+                )
+            else:
+                for edge_id in S.edges(current_n):
+                    _, child_node = edge_id
+                    # We run into problems when a deprel has a modifier
+                    # or specification, e.g. ":acl:relcl".
+                    # TODO: can probably be removed in the future, assuming
+                    # all deprels get resolved to a valid role/drs operator
+                    relation = S.edges[edge_id]["token"].replace(":", "-")
+                    out_str += f"\n{indents}:{relation} "
+                    out_str = __to_penman_str(
+                        S, child_node, visited, out_str, tabs + 1
+                    )
+                out_str += ")"
+                visited.add(var_id)
             return out_str
 
         # For now assume there always is the starting box to serve as the "root"

@@ -7,7 +7,7 @@
 		:Time (s4 / "time.n.08"
 			:MonthOfYear (c1 / "6")
 			:YearOfCentury (c2 / "2010")
-			:TPR (c3 / "now")))
+			:TPR "now")))
 	:member (s2 / "new.a.01"
 		:AttributeOf s3)
 	:member s3

@@ -9,7 +9,7 @@
 	:member s3
 	:member s4
 	:member (s5 / "time.n.08"
-		:EQU (c0 / "now"))
+		:EQU "now"))
 	:member (s6 / "fight.v.01"
 		:Agent s2
 		:Time s5

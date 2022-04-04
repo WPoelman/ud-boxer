@@ -1,19 +1,19 @@
 (b0 / "box"
 	:member (s0 / "person.n.01"
-		:EQU (c0 / "speaker"))
+		:EQU "speaker"))
 	:member (s1 / "time.n.08"
-		:EQU (c1 / "now"))
+		:EQU "now"))
 	:member (s2 / "call.v.03"
 		:Agent s0
 		:Time s1)
 	:EXPLANATION (b1 / "box"
 		:member (s3 / "person.n.01"
-			:EQU (c2 / "speaker"))
+			:EQU "speaker"))
 		:member (s4 / "lose.v.05"
 			:Agent s3
 			:Time (s5 / "time.n.08"
-				:TPR (c3 / "now"))
+				:TPR "now"))
 			:Theme (s6 / "credit_card.n.01"
-				:User (c4 / "speaker")))
+				:User "speaker")))
 		:member s5
 		:member s6))
