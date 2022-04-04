@@ -258,6 +258,15 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     return temp_lines
 
 
+def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
+    """
+    Splits a wordnet sense into its components: lemma, pos, sense_number.
+    """
+    if match := SBNSpec.WORDNET_SENSE_PATTERN.match(sense_id):
+        return (match.group(1), match.group(2), match.group(3))
+    return None
+
+
 def get_doc_id(
     lang: str = None,
     p_id: str = None,

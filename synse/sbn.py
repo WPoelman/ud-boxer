@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 
 from synse.base import BaseGraph
-from synse.sbn_spec import SBNError, SBNSpec, split_comments
+from synse.sbn_spec import SBNError, SBNSpec, split_comments, split_wn_sense
 from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
@@ -510,22 +510,41 @@ class SBNGraph(BaseGraph):
         sbn_string = "\n".join(final_result)
         return sbn_string
 
-    def to_amr(self, path: PathLike, add_comments: bool = False) -> PathLike:
+    def to_amr(self, path: PathLike, split_sense: bool = False) -> PathLike:
         """
         Writes the SBNGraph to an file in AMR format (note: it's not
         actually valid AMR, just the Penman notation, just like AMR).
+
+        See `to_amr_string` for an explanation of `split_sense`.
         """
         path = (
             Path(path) if str(path).endswith(".amr") else Path(f"{path}.amr")
         )
 
-        path.write_text(self.to_amr_string(add_comments))
+        path.write_text(self.to_amr_string(split_sense))
         return path
 
-    def to_amr_string(self, add_comments: bool = False) -> str:
+    def to_amr_string(self, split_sense: bool = False) -> str:
         """
         Creates a string in amr format from the SBNGraph (note: it's not
         actually valid AMR, just the Penman notation, just like AMR).
+
+        The `split_sense` flag indicates whether to treat senses as a single
+        concept or as 3 separate items. When treating the sense as a whole,
+        the evaluation indirectly also targets the task of word sense
+        disambiguation, which might not be desirable. Splitting the sense in
+        its components rewards correct predictions of the lemma, pos and sense
+        separately, thus being more lenient when scoring the AMR. Examples:
+            Without split:
+                (b0 / "box"
+                    :member (s0 / "person.n.01"))
+
+            With split:
+                (b0 / "box"
+                    :member (s0 / "wordnet-sense"
+                        :lemma (s1 / "person")
+                        :pos (s2 / "n")
+                        :sense (s3 / "01")))
         """
         # Maybe use penman library to test validity
         # import penman
@@ -565,31 +584,43 @@ class SBNGraph(BaseGraph):
             # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
             # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
 
-        def __to_amr_str(S: SBNGraph, current_n, visited, text_format, tabs):
+        def __to_amr_str(S: SBNGraph, current_n, visited, out_str, tabs):
             node_data = S.nodes[current_n]
             var_id = node_data["var_id"]
             if var_id in visited:
-                text_format += var_id
+                out_str += var_id
             else:
-                text_format += f"({var_id} / \"{node_data['token']}\""
+                indents = tabs * "\t"
+                if (
+                    split_sense
+                    and node_data["type"] == SBN_NODE_TYPE.SENSE
+                    and (components := split_wn_sense(node_data["token"]))
+                ):
+                    lemma, pos, sense = components
+                    out_str += f'({var_id} / "sense"'
+                    out_str += f'\n{indents}:lemma ({var_id}-l / "{lemma}")'
+                    out_str += f'\n{indents}:pos ({var_id}-p / "{pos}")'
+                    out_str += f'\n{indents}:sense ({var_id}-s / "{sense}")'
+                else:
+                    out_str += f"({var_id} / \"{node_data['token']}\""
 
                 if S.out_degree(current_n) == 0:
-                    text_format += ")"
+                    out_str += ")"
                     visited.add(var_id)
                 else:
-                    indents = tabs * "\t"
                     for edge_id in S.edges(current_n):
                         _, child_node = edge_id
                         # We run into problems when a deprel has a modifier
                         # or specification, e.g. ":acl:relcl".
+                        # TODO: can probably be removed in the future.
                         relation = S.edges[edge_id]["token"].replace(":", "-")
-                        text_format += f"\n{indents}:{relation} "
-                        text_format = __to_amr_str(
-                            S, child_node, visited, text_format, tabs + 1
+                        out_str += f"\n{indents}:{relation} "
+                        out_str = __to_amr_str(
+                            S, child_node, visited, out_str, tabs + 1
                         )
-                    text_format += ")"
+                    out_str += ")"
                     visited.add(var_id)
-            return text_format
+            return out_str
 
         # For now assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)

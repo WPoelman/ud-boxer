@@ -51,6 +51,14 @@ def get_args() -> Namespace:
         default="data/output",
         help="Path to save output files to.",
     )
+    parser.add_argument(
+        "--lenient_amr",
+        action="store_true",
+        help="Indicates whether or not to split senses into their components "
+        "for more lenient amr scoring. When left default, scoring the "
+        "generated amr will indirectly also target the word sense "
+        "disambiguation performance included in it.",
+    )
 
     # Main options
     parser.add_argument(
@@ -225,7 +233,8 @@ def store_amr(args):
         args.starting_path, "**/*.sbn", desc_tqdm="Testing AMR files "
     ):
         SBNGraph().from_path(filepath).to_amr(
-            Path(filepath.parent / f"{filepath.stem}.amr").resolve()
+            Path(filepath.parent / f"{filepath.stem}.amr").resolve(),
+            args.lenient_amr,
         )
 
 
