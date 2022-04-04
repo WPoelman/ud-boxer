@@ -2,12 +2,13 @@ import logging
 import time
 from argparse import ArgumentParser, Namespace
 from datetime import datetime
+from os import PathLike
 from pathlib import Path
+from typing import Generator
 
 import networkx as nx
 from tqdm import tqdm
 
-from synse.mapper import MapExtractor
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
 from synse.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_LANG_DICT, UD_SYSTEM, UDGraph
@@ -81,6 +82,22 @@ def get_args() -> Namespace:
     return parser.parse_args()
 
 
+def pmb_generator(
+    starting_path: PathLike,
+    pattern: str,
+    # By default we don't want to regenerate predicted output
+    exclude: str = "predicted",
+    disable_tqdm: bool = False,
+    desc_tqdm: str = "",
+):
+    path_glob = Path(starting_path).glob(pattern)
+    return tqdm(
+        (p for p in path_glob if exclude not in str(p)),
+        disable=disable_tqdm,
+        desc=desc_tqdm,
+    )
+
+
 def store_ud_parses(args):
     if args.ud_system == UD_SYSTEM.STANZA:
         from stanza import Pipeline, download
@@ -98,10 +115,9 @@ def store_ud_parses(args):
 
     file_format = f"{args.language}.ud.{args.ud_system}.conll"
 
-    desc_msg = "Storing UD parses "
-    path_glob = Path(args.starting_path).glob("**/*.raw")
-
-    for filepath in tqdm(path_glob, desc=desc_msg):
+    for filepath in pmb_generator(
+        args.starting_path, "**/*.raw", desc_tqdm="Storing UD parses "
+    ):
         try:
             result = pipeline(filepath.read_text())
             out_file = Path(filepath.parent / file_format)
@@ -117,7 +133,11 @@ def store_ud_parses(args):
 
 
 def extract_mappings(args):
-    extractor = MapExtractor()
+    raise NotImplementedError(
+        "The mapping needs to be redone with the introduction of Grew, can't "
+        "use this currently"
+    )
+    # extractor = MapExtractor()
 
     desc_msg = "Extracting mappings"
     path_glob = Path(args.starting_path).glob("**/*.sbn")
@@ -141,7 +161,7 @@ def extract_mappings(args):
 
         U = UDGraph().from_path(ud_filepath)
 
-        extractor.extract_mappings(U, S)
+        # extractor.extract_mappings(U, S)
 
     return
     date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -149,10 +169,9 @@ def extract_mappings(args):
 
 
 def error_mine(args):
-    desc_msg = "Mining errors"
-    path_glob = Path(args.starting_path).glob("**/*.sbn")
-
-    for filepath in tqdm(path_glob, desc=desc_msg):
+    for filepath in pmb_generator(
+        args.starting_path, "**/*.sbn", desc_tqdm="Mining errors "
+    ):
         try:
             A = SBNGraph().from_path(filepath)
         except SBNError as e:
@@ -175,14 +194,9 @@ def error_mine(args):
 
 
 def store_visualizations(args):
-    desc_msg = "Creating visualizations"
-    path_glob = Path(args.starting_path).glob("**/*.sbn")
-
-    for filepath in tqdm(path_glob, desc=desc_msg):
-        if "predicted" in str(
-            filepath
-        ):  # TODO: figure out how to add this to glob
-            continue
+    for filepath in pmb_generator(
+        args.starting_path, "**/*.sbn", desc_tqdm="Creating visualizations "
+    ):
         viz_dir = Path(filepath.parent / "viz")
         viz_dir.mkdir(exist_ok=True)
 
@@ -207,38 +221,22 @@ def store_visualizations(args):
 
 
 def store_amr(args):
-    desc_msg = "Testing AMR files"
-    path_glob = Path(args.starting_path).glob("**/*.sbn")
-
-    for filepath in tqdm(path_glob, desc=desc_msg):
-        # try:
-        # print(SBNGraph().from_path(filepath).to_amr_string())
-        # except Exception as e:
-        # print(f'Failed: {filepath}')
-        try:
-            SBNGraph().from_path(filepath).to_amr(
-                Path(filepath.parent / f"{filepath.stem}.amr").resolve()
-            )
-        except SBNError as e:
-            print(e)
+    for filepath in pmb_generator(
+        args.starting_path, "**/*.sbn", desc_tqdm="Testing AMR files "
+    ):
+        SBNGraph().from_path(filepath).to_amr(
+            Path(filepath.parent / f"{filepath.stem}.amr").resolve()
+        )
 
 
 def collect_cyclic_graphs(args):
-    desc_msg = "Finding cyclic sbn graphs"
-    path_glob = Path(args.starting_path).glob("**/*.sbn")
-
-    cyclic_graphs = []
     paths = []
-    for filepath in tqdm(path_glob, desc=desc_msg):
-        try:
-            S = SBNGraph().from_path(filepath)
-            cycles = nx.find_cycle(S)
-        except Exception as e:
-            continue
-        cyclic_graphs.append(" ".join([S.edges[e]["token"] for e in cycles]))
-        paths.append(str(filepath))
-
-    Path("cyclic_edges.txt").write_text("\n".join(cyclic_graphs))
+    for filepath in pmb_generator(
+        args.starting_path, "**/*.sbn", desc_tqdm="Finding cyclic sbn graphs "
+    ):
+        S = SBNGraph().from_path(filepath)
+        if not S.is_dag:
+            paths.append(str(filepath))
     Path("cyclic paths.txt").write_text("\n".join(paths))
 
 
@@ -257,6 +255,7 @@ def main():
 
     if args.error_mine:
         error_mine(args)
+        collect_cyclic_graphs(args)
 
     if args.store_visualizations:
         store_visualizations(args)
@@ -264,8 +263,6 @@ def main():
     if args.store_amr:
         store_amr(args)
 
-    if False:
-        collect_cyclic_graphs(args)
     logging.info(f"Took {round(time.perf_counter() - start, 2)} seconds")
 
 

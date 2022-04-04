@@ -511,7 +511,10 @@ class SBNGraph(BaseGraph):
         return sbn_string
 
     def to_amr(self, path: PathLike, add_comments: bool = False) -> PathLike:
-        """Writes the SBNGraph to an file in AMR format"""
+        """
+        Writes the SBNGraph to an file in AMR format (note: it's not
+        actually valid AMR, just the Penman notation, just like AMR).
+        """
         path = (
             Path(path) if str(path).endswith(".amr") else Path(f"{path}.amr")
         )
@@ -520,7 +523,10 @@ class SBNGraph(BaseGraph):
         return path
 
     def to_amr_string(self, add_comments: bool = False) -> str:
-        """Creates a string in amr format from the SBNGraph"""
+        """
+        Creates a string in amr format from the SBNGraph (note: it's not
+        actually valid AMR, just the Penman notation, just like AMR).
+        """
         # Maybe use penman library to test validity
         # import penman
         if not self.is_dag:
@@ -542,6 +548,12 @@ class SBNGraph(BaseGraph):
             pre, count = prefix_map[node_data["type"]]
             prefix_map[node_data["type"]][1] += 1  # type: ignore
             G.nodes[node_id]["var_id"] = f"{pre}{count}"
+
+            # A box is always an instance of the same type (or concept), the
+            # specification of what that type does is shown by the
+            # box-box-connection, such as NEGATION or EXPLANATION.
+            if node_data["type"] == SBN_NODE_TYPE.BOX:
+                G.nodes[node_id]["token"] = "box"
 
         for edge in G.edges:
             # Add a proper token to the box connectors

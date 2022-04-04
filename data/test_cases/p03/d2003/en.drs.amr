@@ -1,14 +1,14 @@
-(b0 / B-0
-	:member (s0 / musical_organization.n.01
-		:Name (c0 / "Steve Miller Band"))
-	:member (s1 / release.v.04
+(b0 / "box"
+	:member (s0 / "musical_organization.n.01"
+		:Name (c0 / ""Steve Miller Band""))
+	:member (s1 / "release.v.04"
 		:Agent s0
-		:Theme (s3 / album.n.01)
-		:Time (s4 / time.n.08
-			:MonthOfYear (c1 / 6)
-			:YearOfCentury (c2 / 2010)
-			:TPR (c3 / now)))
-	:member (s2 / new.a.01
+		:Theme (s3 / "album.n.01")
+		:Time (s4 / "time.n.08"
+			:MonthOfYear (c1 / "6")
+			:YearOfCentury (c2 / "2010")
+			:TPR (c3 / "now")))
+	:member (s2 / "new.a.01"
 		:AttributeOf s3)
 	:member s3
 	:member s4)
