@@ -29,6 +29,7 @@ rule connect_user {
 }
 
 % NOTE: voordat deze toegepast wordt, de compound named entities samenvoegen
+% TODO: deze gaat soms oneindig door!
 rule expand_name {
     pattern { NAME [ upos=PROPN ]; }
     without { NAME -[Name]-> *; }
@@ -92,6 +93,7 @@ rule remove_root_punct {
     }
 }
 
+% TODO: gaat soms oneindig door?
 rule remove_unwanted_pos { 
     pattern { 
         % Not sure about PART here since that can also indicate negation or possession, which is semantically useful
@@ -116,16 +118,18 @@ rule remove_explicit_root {
 }
 
 strat main {
-    Iter (
-        Seq (
-            %Onf(add_token),
-            Iter(connect_user),
-            Iter(expand_name),
-            Iter(expand_speaker),
-            Iter(add_time),
-            Iter(remove_root_punct),
-            Iter(remove_explicit_root),
-            Iter(remove_unwanted_pos),
+    Pick(
+        Iter (
+            Seq (
+                %Onf(add_token),
+                Iter(connect_user),
+                Iter(expand_name),
+                Iter(expand_speaker),
+                Iter(add_time),
+                Iter(remove_root_punct),
+                Iter(remove_explicit_root),
+                Iter(remove_unwanted_pos),
+            )
         )
     )
 }
