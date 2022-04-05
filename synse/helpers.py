@@ -50,3 +50,8 @@ def smatch_score(gold: PathLike, test: PathLike) -> Dict[str, float]:
         )
 
     return clean_dict
+
+
+def rnd(n: float, ndigits: int = 3) -> float:
+    """Helper for consistent rounding"""
+    return round(n, ndigits)
