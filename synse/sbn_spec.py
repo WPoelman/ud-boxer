@@ -39,7 +39,7 @@ class SBNSpec:
     COMMENT_LINE = r"%%%"
     MIN_SENSE_IDX = 0
 
-    DOC_ID_PATTERN = re.compile(r"(p\d+)\/(d\d+)\/(en|de|it|nl)")
+    DOC_ID_PATTERN = re.compile(r"(p\d{2}/d\d{4})")
 
     NEW_BOX_INDICATORS = {
         "ALTERNATION",
@@ -268,28 +268,22 @@ def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
 
 
 def get_doc_id(
-    lang: str = None,
+    lang: str,
     p_id: str = None,
     d_id: str = None,
     filepath: PathLike = None,
-    sbn_str: str = None,
 ) -> Optional[str]:
     """
     Helper to extract a doc id from either the filepath of the sbn file or the
-    starting comment lines. A doc id has the format <lang>-<p>-<d>.
+    starting comment lines. A doc id has the format <lang>/<p>/<d>.
     """
     if lang and p_id and d_id:
-        return f"{lang}-{p_id}-{d_id}"
+        return f"{lang}/{p_id}/{d_id}"
 
     # Try filepath first since it's shorter
     if filepath:
         full_path = str(Path(filepath).resolve())
         if match := SBNSpec.DOC_ID_PATTERN.findall(full_path):
-            p_match, d_match, lang_match = match[0]
-            return f"{lang_match}-{p_match}-{d_match}"
+            return f"{lang}/{match[0]}"
 
-    if sbn_str and (id_match := SBNSpec.DOC_ID_PATTERN.findall(sbn_str)):
-        p_match, d_match, lang_match = id_match[0]
-        return f"{lang_match}-{p_match}-{d_match}"
-
-    return None
+    raise SBNError("Could not extract doc id!")

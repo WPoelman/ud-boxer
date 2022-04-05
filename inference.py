@@ -3,11 +3,12 @@ import logging
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
+import pandas as pd
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.grew_rewrite import Grew
 from synse.helpers import pmb_generator, smatch_score
-from synse.sbn_spec import SUPPORTED_LANGUAGES
+from synse.sbn_spec import SUPPORTED_LANGUAGES, get_doc_id
 from synse.ud import UD_SYSTEM
 
 logging.basicConfig(level=logging.ERROR)
@@ -43,8 +44,11 @@ def get_args() -> Namespace:
         help="System pipeline to use for generating UD parses.",
     )
     parser.add_argument(
-        "--lenient_pm",
-        help="System pipeline to use for generating UD parses.",
+        "-r",
+        "--results_file",
+        required=True,
+        type=str,
+        help="CSV file to write results and scores to.",
     )
 
     return parser.parse_args()
@@ -63,39 +67,80 @@ def main():
     """
     grew = Grew()
 
-    good_ones = []
+    results_records = []
     ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
+    # TODO: possibly do this in smatch_score by default
+    relevant_cols = ["precision", "recall", "f1"]
 
     for filepath in pmb_generator(
-        args.starting_path, "**/en.drs.penman", desc_tqdm="Running inference"
+        args.starting_path,
+        f"**/{args.language}.drs.penman",
+        desc_tqdm="Running inference",
     ):
         ud_filepath = Path(filepath.parent / ud_file_format)
+
         if not ud_filepath.exists():
             continue
         try:
             predicted_dir = Path(filepath.parent / "predicted")
             predicted_dir.mkdir(exist_ok=True)
+            raw_sent = (
+                Path(filepath.parent / f"{args.language}.raw")
+                .read_text()
+                .rstrip()
+            )
 
-            result = grew.run(ud_filepath)
-            for i, res in enumerate(result):
-                res.to_png(Path(predicted_dir / f"{i}_output.png"))
-                res.to_sbn(Path(predicted_dir / f"{i}_output.sbn"))
-                penman_path = res.to_penman(
-                    Path(predicted_dir / f"{i}_output.penman")
-                )
-                scores = smatch_score(
-                    filepath.parent / "en.drs.penman", penman_path
-                )
-                Path(predicted_dir / "scores.json").write_text(
-                    json.dumps(scores, indent=2)
-                )
+            res = grew.run(ud_filepath)[0]
+            # res.to_png(Path(predicted_dir / f"{i}_output.png"))
+            # res.to_sbn(Path(predicted_dir / f"{i}_output.sbn"))
 
-                if scores["f1"] > 0.5:
-                    good_ones.append(str(filepath))
+            penman_path = res.to_penman(Path(predicted_dir / f"output.penman"))
+            scores = smatch_score(
+                filepath.parent / f"{args.language}.drs.penman",
+                penman_path,
+            )
+            penman_lenient_path = res.to_penman(
+                Path(predicted_dir / f"output.lenient.penman"),
+                split_sense=True,
+            )
+            lenient_scores = smatch_score(
+                filepath.parent / f"{args.language}.drs.lenient.penman",
+                penman_lenient_path,
+            )
+
+            # TODO: clean this up
+            results_records.append(
+                {
+                    **{
+                        "pmb_id": get_doc_id(args.language, filepath=filepath),
+                        "raw_sent": raw_sent,
+                    },
+                    **{k: v for k, v in scores.items() if k in relevant_cols},
+                    **{
+                        f"{k}_lenient": v
+                        for k, v in lenient_scores.items()
+                        if k in relevant_cols
+                    },
+                }
+            )
+            # Path(predicted_dir / "scores.json").write_text(
+            # json.dumps(scores, indent=2)
+            # )
         except Exception as e:
             print(e)
             continue
-    print("\n".join(good_ones))
+
+    df = pd.DataFrame().from_records(results_records)
+    df.to_csv(args.results_file, index=False)
+
+    print(
+        f"""
+    
+    DOCS:                   {len(df)}
+    AVERAGE F1 (strict):    {df["f1"].mean()}
+    AVERAGE F1 (lenient):   {df["f1_lenient"].mean()}
+    """
+    )
 
 
 if __name__ == "__main__":
