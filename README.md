@@ -9,6 +9,8 @@ Source for my master's thesis system for Information Science.
 3. Install dependencies with `pip install -r requirements.txt`
 4. Run `fix_all.sh` to format and test the project
 
+** Add GREW install instructions **
+
 ## Data
 The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
 - This project uses the version 4.0.0 of the PMB dataset, which can be downloaded from here: https://pmb.let.rug.nl/data.php
@@ -19,9 +21,11 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
 - [x] Try out https://github.com/nlp-uoregon/trankit (supposedly better performance than stanza in some areas: https://trankit.readthedocs.io/en/latest/performance.html#universal-dependencies-v2-5)
 - [x] Read a UD parse into nx.Graph (from file (connl?)? in a program directly using sentence?)
 - [x] replace all prints with `logging`
+- [x] convert UD pos to start of wordnet sense (`<lemma>.<sn_style_pos>`) sense number is for later / different component
+- [x] attach box nodes in `I` UDGraph (at least starting box)
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for case markings
-- [ ] convert UD pos to start of wordnet sense (`<lemma>.<sn_style_pos>`) sense number is for later / different component
-- [ ] attach box nodes in `I` UDGraph (at least starting box), figure out new box indicators in UD
+- [ ] figure out new box indicators in UD
+- [ ] Make it so grew can deal with conll files that contain multiple sentences (generate `n` SBNGraphs and merge these based on node features? Adjust conll UD so it's always 1 sentence?)
 
 ## Examples to try
 * **p00/d0004**: `entity` that combines multiple subtypes
