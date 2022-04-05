@@ -129,6 +129,7 @@ def main():
 
     results_records = []
     ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
+    failed = 0
 
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=args.max_workers
@@ -149,6 +150,8 @@ def main():
         ):
             if result := res.result():
                 results_records.append(result)
+            else:
+                failed += 1
 
     df = pd.DataFrame().from_records(results_records)
     df.to_csv(args.results_file, index=False)
@@ -156,7 +159,10 @@ def main():
     print(
         f"""
     
-    DOCS:                 {len(df)}
+    PARSED DOCS:          {len(df)}
+    FAILED DOCS:          {failed}
+    TOTAL DOCS:           {len(df) + failed}
+
     AVERAGE F1 (strict):  {rnd(df["f1"].mean())} ({rnd(df["f1"].min())} - {rnd(df["f1"].max())})
     AVERAGE F1 (lenient): {rnd(df["f1_lenient"].mean())} ({rnd(df["f1_lenient"].min())} - {rnd(df["f1_lenient"].max())})
     """
