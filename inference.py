@@ -74,7 +74,7 @@ def generate_result(args, ud_filepath):
         Path(ud_filepath.parent / f"{args.language}.raw").read_text().rstrip()
     )
 
-    res = GREW.run(ud_filepath)[0]
+    res = GREW.run(ud_filepath)
     # res.to_png(Path(predicted_dir / f"{i}_output.png"))
     # res.to_sbn(Path(predicted_dir / f"{i}_output.sbn"))
 
