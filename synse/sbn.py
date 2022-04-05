@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 
 from synse.base import BaseGraph
+from synse.penman_model import pm_model
 from synse.sbn_spec import SBNError, SBNSpec, split_comments, split_wn_sense
 from synse.ud_spec import UPOS_WN_POS_MAPPING
 
@@ -607,7 +608,7 @@ class SBNGraph(BaseGraph):
                 out_str += f"\n{indents}:sense {sense}"
             # TODO: fix this, the generated parentheses are incorrect most of
             # the time.
-            # elif node_tok in SBNSpec.CONSTANTS: 
+            # elif node_tok in SBNSpec.CONSTANTS:
             #     out_str += f"{self.quote(node_tok)})"
             #     if S.out_degree(current_n) > 0:
             #         raise SBNError("A constant cannot have out edges.")
@@ -620,12 +621,7 @@ class SBNGraph(BaseGraph):
             else:
                 for edge_id in S.edges(current_n):
                     _, child_node = edge_id
-                    # We run into problems when a deprel has a modifier
-                    # or specification, e.g. ":acl:relcl".
-                    # TODO: can probably be removed in the future, assuming
-                    # all deprels get resolved to a valid role/drs operator
-                    relation = S.edges[edge_id]["token"].replace(":", "-")
-                    out_str += f"\n{indents}:{relation} "
+                    out_str += f"\n{indents}:{S.edges[edge_id]['token']} "
                     out_str = __to_penman_str(
                         S, child_node, visited, out_str, tabs + 1
                     )
@@ -638,8 +634,12 @@ class SBNGraph(BaseGraph):
         final_result = __to_penman_str(G, starting_node, set(), "", 1)
 
         try:
-            a = penman.decode(final_result)
-            assert len(a.edges()) == len(self.edges), "Wrong number of edges"
+            g = penman.decode(final_result)
+
+            if errors := pm_model.errors(g):
+                raise penman.DecodeError(str(errors))
+
+            assert len(g.edges()) == len(self.edges), "Wrong number of edges"
         except (penman.DecodeError, AssertionError) as e:
             raise SBNError(f"Generated Penman output is invalid: {e}")
 
