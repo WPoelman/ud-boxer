@@ -1,0 +1,135 @@
+%%% LABELING RULES %%%
+% Add the token feature to all nodes (TODO: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
+rule add_token {
+    pattern { N [ lemma ]; }
+    without { N [ token ]; }
+    commands { 
+        add_node TEMP_NODE;
+        append_feats N ==> TEMP_NODE;
+        N.token = TEMP_NODE.lemma; 
+        del_node TEMP_NODE;
+    }
+}
+
+%%% CONNECTING RULES %%%
+% Piet lost his glasses: glasses -[User]-> Piet
+rule connect_user {
+    pattern {
+        USER [ upos=PROPN|NOUN ]; 
+        * -[nsubj|nsubj:pass]-> USER;
+        REL: TARGET -[nmod:poss]-> INDICATOR;
+    }
+    without { TARGET -[User]-> USER; }
+    commands {
+        % add_edge USER -[Owner]-> TARGET;
+        add_edge TARGET -[User]-> USER;
+        del_edge REL;
+        del_node INDICATOR;
+    }
+}
+
+% NOTE: voordat deze toegepast wordt, de compound named entities samenvoegen
+% TODO: deze gaat soms oneindig door!
+rule expand_name {
+    pattern { NAME [ upos=PROPN ]; }
+    without { NAME -[Name]-> *; }
+    commands {
+        % TODO assign proper label, maybe with combination of PROPN + Gender = Fem
+        NAME.token = "entity.n.01";
+        add_node NAME_CONST;
+        NAME_CONST.token = NAME.wordform;
+        add_edge NAME -[Name]-> NAME_CONST;
+    }
+}
+
+% A speaker is split up into 'person-sense' -[EQU]-> 'speaker', possible use Person=1 or other feats to indicate speaker or hearer
+rule expand_speaker {
+    pattern {
+        SPEAKER [ upos=PRON ]; 
+         * -[nsubj|nsubj:pass]-> SPEAKER;
+    }
+    without { SPEAKER -[EQU]-> *; }
+    commands {
+        SPEAKER.token = "person.n.01";
+        add_node SPEAKER_CONST;
+        SPEAKER_CONST.token = "speaker";
+        add_edge SPEAKER -[EQU]-> SPEAKER_CONST;
+    }
+}
+
+rule add_time {
+    pattern { N []; * -[root]-> N; }
+    without { N -[Time]-> *; }
+    commands {
+        add_node TIME_SENSE;
+        % use lexicon here or apply mappings after rewrite rules
+        TIME_SENSE.token = "time.n.08"; 
+        add_edge N -[Time]-> TIME_SENSE;
+
+        add_node TIME_CONST;
+        % use lexicon here or apply mappings after rewrite rules
+        TIME_CONST.token = "now"; 
+        add_edge TIME_SENSE -[TPR]-> TIME_CONST;
+    }
+}
+
+%%% COMBING RULES %%%
+% Maybe combine NOUN -[amod]-> ADJ into single token, example: good- bye
+% Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
+% nummod deprel kan vervangen worden door sense -[Quantity]-> number
+
+%%% CLEANING RULES %%%
+% Remove any punctuation that is connected to the root directly.
+% These are the sentence ending punctuation marks.
+rule remove_root_punct { 
+    pattern { 
+        * -[root]-> ROOT; 
+        E: ROOT -> N;
+        N [ upos=PUNCT ];
+    }
+    commands {
+        del_edge E;
+        del_node N;
+    }
+}
+
+% TODO: gaat soms oneindig door?
+rule remove_unwanted_pos { 
+    pattern { 
+        % Not sure about PART here since that can also indicate negation or possession, which is semantically useful
+        % Same goes for CCONJ and SCONJ, for now they are removed, since they often also don't contribute anything
+        % and are basically never used as a node on their own.
+        N [ upos=PUNCT|DET|AUX|AUX_PASS|CASE|EXPL|ADP|PART|CCONJ|SCONJ ];
+    }
+    commands {
+        del_node N;
+    }
+}
+
+rule remove_explicit_root {
+    pattern {
+        N [];
+        E: N -[root]-> T; 
+    }
+    commands {
+        del_edge E;
+        del_node N;
+    }
+}
+
+strat main {
+    Pick(
+        Iter (
+            Seq (
+                %Onf(add_token),
+                Iter(connect_user),
+                Iter(expand_name),
+                Iter(expand_speaker),
+                Iter(add_time),
+                Iter(remove_root_punct),
+                Iter(remove_explicit_root),
+                Iter(remove_unwanted_pos),
+            )
+        )
+    )
+}
