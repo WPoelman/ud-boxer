@@ -20,13 +20,18 @@ class BaseGraph(nx.DiGraph):
 
     @property
     def type_style_mapping(self):
-        """Style per node abd/or edge type to use in dot export"""
+        """Style per node and/or edge type to use in dot export"""
         raise NotImplementedError("Cannot be called directly.")
 
     def to_json(self, path: PathLike):
         """Export the graph to json and save it at the provided path"""
         json_data = nx.readwrite.node_link_data(self)
-        with open(path, "w") as f:
+
+        path_str = str(Path(path).resolve())
+        if not path_str.endswith(".json"):
+            path_str = f"{path_str}.json"
+
+        with open(path_str, "w") as f:
             json.dump(json_data, f)
 
         return self
