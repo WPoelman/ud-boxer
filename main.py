@@ -66,6 +66,11 @@ def get_args() -> Namespace:
         help="Creates and stores ud parses in the pmb dataset folders.",
     )
     parser.add_argument(
+        "--search_dataset",
+        action="store_true",
+        help="Search the dataset for some stuff.",
+    )
+    parser.add_argument(
         "--extract_mappings",
         action="store_true",
         help="Extract and store mappings from U -> S.",
@@ -121,6 +126,24 @@ def store_ud_parses(args):
             logger.error(
                 f"Unable to generate ud for {filepath}\nReason: {e}\n"
             )
+
+
+def search_dataset(args):
+    """This function loops over the dataset to collect some info"""
+
+    for system in UD_SYSTEM.all_values():
+        results = []
+        for filepath in pmb_generator(
+            args.starting_path,
+            f"**/*.ud.{system}.conll",
+            desc_tqdm="Storing UD parses ",
+        ):
+            sentences = Path(filepath).read_text().rstrip().split("\n\n")
+            if len(sentences) > 1:
+                results.append(str(filepath))
+        Path(f"multi_sentence_conll_files_{system}.txt").write_text(
+            "\n".join(results)
+        )
 
 
 def extract_mappings(args):
@@ -233,7 +256,7 @@ def collect_cyclic_graphs(args):
         S = SBNGraph().from_path(filepath)
         if not S.is_dag:
             paths.append(str(filepath))
-    Path("cyclic paths.txt").write_text("\n".join(paths))
+    Path("cyclic_paths.txt").write_text("\n".join(paths))
 
 
 def main():
@@ -241,10 +264,11 @@ def main():
 
     start = time.perf_counter()
 
-    # Maybe combine some of these since most of them loop through the same
-    # files, but then again, currently the steps nice and separated.
     if args.store_ud_parses:
         store_ud_parses(args)
+
+    if args.search_dataset:
+        search_dataset(args)
 
     if args.extract_mappings:
         extract_mappings(args)
