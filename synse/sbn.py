@@ -283,7 +283,9 @@ class SBNGraph(BaseGraph):
             }
 
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            if len(grew_edges) != 0:
+            if (len(grew_edges) != 0) or (
+                id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE
+            ):
                 box_edge = self.create_edge(
                     starting_box[0],
                     id_mapping[grew_from_node_id],
@@ -492,10 +494,6 @@ class SBNGraph(BaseGraph):
                     tmp_line.append(
                         f"+{target}" if target >= 0 else str(target)
                     )
-                # It is a sense id that has no references (sense on leaf node)
-                elif type(token) == tuple:
-                    print(token)
-                    tmp_line.append(self.nodes[token]["token"])
                 # It is a regular token
                 else:
                     tmp_line.append(token)
