@@ -1,13 +1,28 @@
 %%% LABELING RULES %%%
 % Add the token feature to all nodes (TODO: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
-rule add_token {
-    pattern { N [ lemma ]; }
-    without { N [ token ]; }
+% NOT WORKING
+rule add_token_init {
+    pattern { N [ lemma, !token ]; }
+    without { N -[temp]-> *; }
     commands { 
         add_node TEMP_NODE;
-        append_feats N ==> TEMP_NODE;
-        N.token = TEMP_NODE.lemma; 
+        TEMP_NODE.token = N.lemma;
+        add_edge N -[temp]-> TEMP_NODE;
+    }
+}
+
+% NOT WORKING
+rule add_token_final {
+    pattern { 
+        TEMP_NODE [ token ]; 
+        N [ !token ]; 
+        R: N -[temp]-> TEMP_NODE;
+    }
+    without { N [ token ]; }
+    commands { 
+        N.token = TEMP_NODE.token;
         del_node TEMP_NODE;
+        del_edge R;
     }
 }
 
@@ -28,16 +43,14 @@ rule connect_user {
     }
 }
 
-% NOTE: voordat deze toegepast wordt, de compound named entities samenvoegen
-% TODO: deze gaat soms oneindig door!
 rule expand_name {
     pattern { NAME [ upos=PROPN ]; }
-    without { NAME -[Name]-> *; }
+    without { NAME -> *; }
     commands {
         % TODO assign proper label, maybe with combination of PROPN + Gender = Fem
         NAME.token = "entity.n.01";
         add_node NAME_CONST;
-        NAME_CONST.token = NAME.wordform;
+        NAME_CONST.token = NAME.lemma; % TODO: dit zou token moeten zijn
         add_edge NAME -[Name]-> NAME_CONST;
     }
 }
@@ -78,6 +91,38 @@ rule add_time {
 % Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
 % nummod deprel kan vervangen worden door sense -[Quantity]-> number
 
+% Combine multiple PROPN's that probably belong together. This is quite tricky since this is very
+% vunrable to UD parse error or oddities (see example).
+% Example: en/gold/p65/d1215
+rule combine_propn {
+    pattern { 
+        A [ upos=PROPN ]; 
+        B [ upos=PROPN ]; 
+        R: A -[flat|compound]-> B;
+    }
+    commands {
+        A.lemma = A.lemma + "_" + B.lemma; % This should be token
+        del_edge R;
+        del_node B;
+    }
+}
+
+% Combine multiple NOUNS that are probably compunds.
+% Example: en/gold/p50/d2408
+rule combine_nouns {
+    pattern {
+        A [upos=NOUN];
+        B [upos=NOUN];
+        % B < A; TODO: This does not seem to work, also << >> and > don't work, while they do work in the online grew match tool, maybe a conll thing?
+        R: A -[compound]-> B;
+    }
+    commands {
+        A.lemma = B.lemma + "_" + A.lemma; % This should be token
+        del_edge R;
+        del_node B;
+    }
+}
+
 %%% CLEANING RULES %%%
 % Remove any punctuation that is connected to the root directly.
 % These are the sentence ending punctuation marks.
@@ -93,7 +138,6 @@ rule remove_root_punct {
     }
 }
 
-% TODO: gaat soms oneindig door?
 rule remove_unwanted_pos { 
     pattern { 
         % Not sure about PART here since that can also indicate negation or possession, which is semantically useful
@@ -117,11 +161,38 @@ rule remove_explicit_root {
     }
 }
 
+
+%%% SPECIAL CASES %%%
+% This can happen if a rule connects nodes together and later removes some.
+% If for instance the Owner role gets added, this might introduce a cycle.
+% This is a trade-off, there is information loss, but at least the output is
+% expected be a valid DAG. Possibly deal with cases more specifically,
+% though it is quite rare that this happens.
+% NOTE: this does not scale, when there are hops between the connecting nodes,
+% this does not fix it. Probably need to deal with this on the networkx side.
+% Example: en/gold/p96/d1385 (caused by connect_user)
+rule detach_cycles { 
+    pattern { 
+        N [];
+        M [];
+        A: N -> M;
+        B: M -> N;
+    }
+    commands {
+        del_edge B
+    }
+}
+
 strat main {
     Pick(
         Iter (
             Seq (
-                %Onf(add_token),
+                %Iter(add_token_init),
+                %Iter(add_token_final),
+
+                Iter(combine_propn),
+                %Iter(combine_nouns),
+
                 Iter(connect_user),
                 Iter(expand_name),
                 Iter(expand_speaker),
@@ -129,6 +200,8 @@ strat main {
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
                 Iter(remove_unwanted_pos),
+
+                Iter(detach_cycles),
             )
         )
     )
