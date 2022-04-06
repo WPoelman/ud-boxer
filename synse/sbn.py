@@ -350,12 +350,10 @@ class SBNGraph(BaseGraph):
             from_node_id,
             to_node_id,
             {
-                **dict(
-                    _id=str(edge_id),
-                    type=type,
-                    type_idx=edge_id[1],
-                    token=token or str(edge_id),
-                ),
+                "_id": str(edge_id),
+                "type": type,
+                "type_idx": edge_id[1],
+                "token": token or str(edge_id),
                 **meta,
             },
         )
@@ -372,18 +370,16 @@ class SBNGraph(BaseGraph):
         return (
             node_id,
             {
-                **dict(
-                    _id=str(node_id),
-                    type=type,
-                    type_idx=node_id[1],
-                    token=token or str(node_id),
-                ),
+                "_id": str(node_id),
+                "type": type,
+                "type_idx": node_id[1],
+                "token": token or str(node_id),
                 **meta,
             },
         )
 
     def to_sbn(self, path: PathLike, add_comments: bool = False) -> PathLike:
-        """Writes the SBNGraph to an file in sbn format"""
+        """Writes the SBNGraph to a file in sbn format"""
         path = (
             Path(path) if str(path).endswith(".sbn") else Path(f"{path}.sbn")
         )
@@ -519,7 +515,7 @@ class SBNGraph(BaseGraph):
 
     def to_penman(self, path: PathLike, split_sense: bool = False) -> PathLike:
         """
-        Writes the SBNGraph to an file in Penman (AMR-like) format.
+        Writes the SBNGraph to a file in Penman (AMR-like) format.
 
         See `to_penman_string` for an explanation of `split_sense`.
         """
