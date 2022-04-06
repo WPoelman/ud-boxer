@@ -411,7 +411,6 @@ class SBNGraph(BaseGraph):
                     else:
                         box_box_connect_to_insert = edge_data["token"]
 
-                # if to_node_type == SBN_NODE_TYPE.SENSE:
                 if to_node_type in (
                     SBN_NODE_TYPE.SENSE,
                     SBN_NODE_TYPE.CONSTANT,
@@ -439,19 +438,15 @@ class SBNGraph(BaseGraph):
 
                         sense_node_to_data = self.nodes.get(sense_to_id)
                         sense_node_to_type = sense_node_to_data["type"]
-                        if sense_node_to_type not in (
-                            SBN_NODE_TYPE.CONSTANT,
-                            SBN_NODE_TYPE.SENSE,
-                        ):
-                            raise SBNError(
-                                f"Invalid sense node connect found: {sense_node_to_type}"
-                            )
-
                         if sense_node_to_type == SBN_NODE_TYPE.SENSE:
                             temp_line_result.append(sense_to_id)
-                        else:
+                        elif sense_node_to_type == SBN_NODE_TYPE.CONSTANT:
                             temp_line_result.append(
                                 sense_node_to_data["token"]
+                            )
+                        else:
+                            raise SBNError(
+                                f"Invalid sense node connect found: {sense_node_to_type}"
                             )
 
                     result.append(temp_line_result)
@@ -499,6 +494,7 @@ class SBNGraph(BaseGraph):
                     )
                 # It is a sense id that has no references (sense on leaf node)
                 elif type(token) == tuple:
+                    print(token)
                     tmp_line.append(self.nodes[token]["token"])
                 # It is a regular token
                 else:
