@@ -283,9 +283,15 @@ class SBNGraph(BaseGraph):
             }
 
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            if (len(grew_edges) != 0) or (
-                id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE
-            ):
+            # NOTE: if we also introduce boxes on the grew side, we need to
+            # figure out how to connect those here.
+            if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
+                raise SBNError(
+                    "Found box node in grew output graph, cannot deal "
+                    "with this currently."
+                )
+
+            if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
                 box_edge = self.create_edge(
                     starting_box[0],
                     id_mapping[grew_from_node_id],
