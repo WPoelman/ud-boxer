@@ -64,19 +64,43 @@ def get_args() -> Namespace:
         "with setting this too high since grew might error (segfault) if hit "
         "too hard by too many concurrent tasks.",
     )
+    parser.add_argument(
+        "--clear_previous",
+        action="store_true",
+        help="When visiting a directory, clear the previously predicted "
+        "output if it's there.",
+    )
+    parser.add_argument(
+        "--store_visualizations",
+        action="store_true",
+        help="Store png of prediction in 'predicted' directory.",
+    )
+    parser.add_argument(
+        "--store_sbn",
+        action="store_true",
+        help="Store SBN of prediction in 'predicted' directory.",
+    )
     return parser.parse_args()
 
 
 def generate_result(args, ud_filepath):
     predicted_dir = Path(ud_filepath.parent / "predicted")
     predicted_dir.mkdir(exist_ok=True)
+    if args.clear_previous:
+        for item in predicted_dir.iterdir():
+            if item.is_file():
+                item.unlink()
+
     raw_sent = (
         Path(ud_filepath.parent / f"{args.language}.raw").read_text().rstrip()
     )
 
     res = GREW.run(ud_filepath)
-    # res.to_png(Path(predicted_dir / f"{i}_output.png"))
-    # res.to_sbn(Path(predicted_dir / f"{i}_output.sbn"))
+    if args.store_visualizations:
+        res.to_png(Path(predicted_dir / f"output.png"))
+
+    if args.store_sbn:
+        res.to_sbn(Path(predicted_dir / f"output.sbn"))
 
     penman_path = res.to_penman(Path(predicted_dir / f"output.penman"))
     scores = smatch_score(
@@ -109,10 +133,10 @@ def generate_result(args, ud_filepath):
 
 def full_run(args, ud_filepath):
     try:
-        return generate_result(args, ud_filepath)
+        return generate_result(args, ud_filepath), str(ud_filepath)
     except Exception as e:
         logger.error(e)
-        return None
+        return None, str(ud_filepath)
 
 
 def main():
@@ -130,6 +154,7 @@ def main():
     results_records = []
     ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
     failed = 0
+    files_with_errors = []
 
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=args.max_workers
@@ -148,13 +173,18 @@ def main():
         for res in tqdm(
             concurrent.futures.as_completed(futures), desc="Running inference"
         ):
-            if result := res.result():
+            result, path = res.result()
+            if result:
                 results_records.append(result)
             else:
+                files_with_errors.append(path)
                 failed += 1
 
     df = pd.DataFrame().from_records(results_records)
     df.to_csv(args.results_file, index=False)
+
+    if files_with_errors:
+        Path("paths_with_errors.txt").write_text("\n".join(files_with_errors))
 
     print(
         f"""
