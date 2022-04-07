@@ -665,7 +665,7 @@ class SBNGraph(BaseGraph):
         self.type_indices[type] += 1
         return _id
 
-    def _check_is_dag(self):
+    def _check_is_dag(self) -> bool:
         self.is_dag = nx.is_directed_acyclic_graph(self)
         if not self.is_dag:
             logger.warning(
@@ -673,6 +673,7 @@ class SBNGraph(BaseGraph):
                 "but can cause problems later on when exporting to Penman for "
                 "instance."
             )
+        return self.is_dag
 
     @staticmethod
     def quote(in_str: str) -> str:

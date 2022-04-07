@@ -7,6 +7,7 @@ from typing import Any, Dict, List
 
 import grew
 from synse.sbn import PROTECTED_FIELDS, SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
+from synse.sbn_spec import SBNError
 
 DEFAULT_GRS_PATH = Path(
     Path(__file__).parent.parent / "grew/main.grs"
@@ -95,6 +96,12 @@ class Grew:
 
             A.add_nodes_from(nodes)
             A.add_edges_from(edges)
+
+        # This would be very strange, but just in case.
+        if A._check_is_dag():
+            raise SBNError(
+                "Merged SBNgraphs are cyclic, incorrect box connects?"
+            )
 
         return A
 
