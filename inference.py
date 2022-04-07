@@ -60,7 +60,7 @@ def get_args() -> Namespace:
         "--max_workers",
         default=16,
         help="Max concurrent workers used to run inference with. Be careful "
-        "with setting this too high since grew might error (segfault) if hit "
+        "with setting this too high since mtool might error (segfault) if hit "
         "too hard by too many concurrent tasks.",
     )
     parser.add_argument(
