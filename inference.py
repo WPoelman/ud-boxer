@@ -52,7 +52,6 @@ def get_args() -> Namespace:
     parser.add_argument(
         "-r",
         "--results_file",
-        required=True,
         type=str,
         help="CSV file to write results and scores to.",
     )
@@ -181,7 +180,8 @@ def main():
                 failed += 1
 
     df = pd.DataFrame().from_records(results_records)
-    df.to_csv(args.results_file, index=False)
+    if args.results_file:
+        df.to_csv(args.results_file, index=False)
 
     if files_with_errors:
         Path("paths_with_errors.txt").write_text("\n".join(files_with_errors))
