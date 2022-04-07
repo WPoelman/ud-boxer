@@ -1,25 +1,35 @@
+%%% Ideas %%%
+% Maybe combine NOUN -[amod]-> ADJ into single token, example: good- bye
+% Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
+% nummod deprel kan vervangen worden door sense -[Quantity]-> number?
+% SCONJ as EXPLANATION box? See en/gold/p00/d0801
+
 %%% LABELING RULES %%%
 % Add the token feature to all nodes (TODO: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
 % NOT WORKING
-rule add_token_init {
-    pattern { N [ lemma, !token ]; }
-    without { N -[temp]-> *; }
-    commands { 
-        add_node TEMP_NODE;
-        TEMP_NODE.token = N.lemma;
-        add_edge N -[temp]-> TEMP_NODE;
+rule add_token {
+    pattern {
+        N [ !token ];
+    }
+    without {
+        N [ token ];
+    }
+    commands {
+        N.token = "no";
     }
 }
 
 % NOT WORKING
 rule add_token_final {
-    pattern { 
-        TEMP_NODE [ token ]; 
-        N [ !token ]; 
+    pattern {
+        TEMP_NODE [ token ];
+        N [ !token ];
         R: N -[temp]-> TEMP_NODE;
     }
-    without { N [ token ]; }
-    commands { 
+    without {
+        N [ token ];
+    }
+    commands {
         N.token = TEMP_NODE.token;
         del_node TEMP_NODE;
         del_edge R;
@@ -27,14 +37,17 @@ rule add_token_final {
 }
 
 %%% CONNECTING RULES %%%
-% Piet lost his glasses: glasses -[User]-> Piet
+% Connect the Owner / User of something directly
+% Example: en/gold/p04/d1646
 rule connect_user {
     pattern {
-        USER [ upos=PROPN|NOUN ]; 
+        USER [ upos=PROPN|NOUN ];
         * -[nsubj|nsubj:pass]-> USER;
         REL: TARGET -[nmod:poss]-> INDICATOR;
     }
-    without { TARGET -[User]-> USER; }
+    without {
+        TARGET -[User]-> USER;
+    }
     commands {
         % add_edge USER -[Owner]-> TARGET;
         add_edge TARGET -[User]-> USER;
@@ -43,25 +56,37 @@ rule connect_user {
     }
 }
 
+%%% EXPANDING RULES %%%
+% Expand a name into an entity sense node, a name edge and the name constant.
+% TODO: assign proper label, maybe with combination of PROPN + Gender = Fem etc.
+% TODO: use token instead of lemma
+% Example: en/gold/p04/d1646
 rule expand_name {
-    pattern { NAME [ upos=PROPN ]; }
-    without { NAME -> *; }
+    pattern {
+        NAME [ upos=PROPN ];
+    }
+    without {
+        NAME -> *;
+    }
     commands {
-        % TODO assign proper label, maybe with combination of PROPN + Gender = Fem
         NAME.token = "entity.n.01";
         add_node NAME_CONST;
-        NAME_CONST.token = NAME.lemma; % TODO: dit zou token moeten zijn
+        NAME_CONST.token = "\"" + NAME.lemma + "\"";
         add_edge NAME -[Name]-> NAME_CONST;
     }
 }
 
-% A speaker is split up into 'person-sense' -[EQU]-> 'speaker', possible use Person=1 or other feats to indicate speaker or hearer
+% Add a speaker / hearer nodes split up into 'person-sense' -> 'speaker'.
+% TODO: possibly use Person=1 or other feats to indicate speaker or hearer.
+% Example: en/gold/p04/d1646
 rule expand_speaker {
     pattern {
-        SPEAKER [ upos=PRON ]; 
+        SPEAKER [ upos=PRON ];
          * -[nsubj|nsubj:pass]-> SPEAKER;
     }
-    without { SPEAKER -[EQU]-> *; }
+    without {
+        SPEAKER -[EQU]-> *;
+    }
     commands {
         SPEAKER.token = "person.n.01";
         add_node SPEAKER_CONST;
@@ -70,34 +95,36 @@ rule expand_speaker {
     }
 }
 
+% Add a time sense node.
+% TODO: use lexicon with Feats or mappings to figure out time relation TPR etc.
+% Example: en/gold/p04/d1646
 rule add_time {
-    pattern { N []; * -[root]-> N; }
-    without { N -[Time]-> *; }
+    pattern {
+        N [];
+        * -[root]-> N;
+    }
+    without {
+        N -[Time]-> *;
+    }
     commands {
         add_node TIME_SENSE;
-        % use lexicon here or apply mappings after rewrite rules
-        TIME_SENSE.token = "time.n.08"; 
+        TIME_SENSE.token = "time.n.08";
         add_edge N -[Time]-> TIME_SENSE;
 
         add_node TIME_CONST;
-        % use lexicon here or apply mappings after rewrite rules
-        TIME_CONST.token = "now"; 
+        TIME_CONST.token = "now";
         add_edge TIME_SENSE -[TPR]-> TIME_CONST;
     }
 }
 
 %%% COMBING RULES %%%
-% Maybe combine NOUN -[amod]-> ADJ into single token, example: good- bye
-% Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
-% nummod deprel kan vervangen worden door sense -[Quantity]-> number
-
 % Combine multiple PROPN's that probably belong together. This is quite tricky since this is very
 % vunrable to UD parse error or oddities (see example).
 % Example: en/gold/p65/d1215
 rule combine_propn {
-    pattern { 
-        A [ upos=PROPN ]; 
-        B [ upos=PROPN ]; 
+    pattern {
+        A [ upos=PROPN ];
+        B [ upos=PROPN ];
         R: A -[flat|compound]-> B;
     }
     commands {
@@ -107,13 +134,15 @@ rule combine_propn {
     }
 }
 
-% Combine multiple NOUNS that are probably compunds.
+% Combine multiple NOUNS that are probably compounds.
+% TODO: The ordering restriction does not seem to work, also << >> and > don't work, while they
+% do work in the online grew match tool, maybe a conll thing?
 % Example: en/gold/p50/d2408
 rule combine_nouns {
     pattern {
         A [upos=NOUN];
         B [upos=NOUN];
-        % B < A; TODO: This does not seem to work, also << >> and > don't work, while they do work in the online grew match tool, maybe a conll thing?
+        % B < A;
         R: A -[compound]-> B;
     }
     commands {
@@ -124,11 +153,11 @@ rule combine_nouns {
 }
 
 %%% CLEANING RULES %%%
-% Remove any punctuation that is connected to the root directly.
-% These are the sentence ending punctuation marks.
-rule remove_root_punct { 
-    pattern { 
-        * -[root]-> ROOT; 
+% Remove any punctuation that is connected to the root directly. These are the sentence ending punctuation marks.
+% Example: en/gold/p04/d1646
+rule remove_root_punct {
+    pattern {
+        * -[root]-> ROOT;
         E: ROOT -> N;
         N [ upos=PUNCT ];
     }
@@ -138,11 +167,14 @@ rule remove_root_punct {
     }
 }
 
-rule remove_unwanted_pos { 
-    pattern { 
-        % Not sure about PART here since that can also indicate negation or possession, which is semantically useful
-        % Same goes for CCONJ and SCONJ, for now they are removed, since they often also don't contribute anything
-        % and are basically never used as a node on their own.
+% Remove nodes that are possibly useless. Ideally this rule is applied *after* all other rules that might
+% use the nodes (such as combining node tokens etc.) in order to not lose information.
+% TODO: Not sure about PART here since that can also indicate negation or possession, which is semantically useful
+% Same goes for CCONJ and SCONJ, for now they are removed, since they often also don't contribute anything
+% and are basically never used as a node on their own.
+% Example: en/gold/p04/d1646
+rule remove_unwanted_pos {
+    pattern {
         N [ upos=PUNCT|DET|AUX|AUX_PASS|CASE|EXPL|ADP|PART|CCONJ|SCONJ ];
     }
     commands {
@@ -150,10 +182,12 @@ rule remove_unwanted_pos {
     }
 }
 
+% Remove the explicit ROOT node.
+% Example: en/gold/p04/d1646
 rule remove_explicit_root {
     pattern {
         N [];
-        E: N -[root]-> T; 
+        E: N -[root]-> T;
     }
     commands {
         del_edge E;
@@ -171,8 +205,8 @@ rule remove_explicit_root {
 % NOTE: this does not scale, when there are hops between the connecting nodes,
 % this does not fix it. Probably need to deal with this on the networkx side.
 % Example: en/gold/p96/d1385 (caused by connect_user)
-rule detach_cycles { 
-    pattern { 
+rule detach_cycles {
+    pattern {
         N [];
         M [];
         A: N -> M;
@@ -183,15 +217,16 @@ rule detach_cycles {
     }
 }
 
+% Main strat to apply all rules. Ordering is very important here.
 strat main {
     Pick(
         Iter (
             Seq (
                 %Iter(add_token_init),
-                %Iter(add_token_final),
+                %Iter(add_token),
 
                 Iter(combine_propn),
-                %Iter(combine_nouns),
+                Iter(combine_nouns),
 
                 Iter(connect_user),
                 Iter(expand_name),
