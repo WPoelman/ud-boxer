@@ -23,9 +23,10 @@ The data used comes from the Parallel Meaning Bank project (https://pmb.let.rug.
 - [x] replace all prints with `logging`
 - [x] convert UD pos to start of wordnet sense (`<lemma>.<sn_style_pos>`) sense number is for later / different component
 - [x] attach box nodes in `I` UDGraph (at least starting box)
+- [x] Make it so grew can deal with conll files that contain multiple sentences (generate `n` SBNGraphs and merge these based on node features? Adjust conll UD so it's always 1 sentence?)
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for case markings
 - [ ] figure out new box indicators in UD
-- [ ] Make it so grew can deal with conll files that contain multiple sentences (generate `n` SBNGraphs and merge these based on node features? Adjust conll UD so it's always 1 sentence?)
+- [ ] check consistency quoted output + casing of output grew -> sbn and original sbn
 
 ## Examples to try
 * **p00/d0004**: `entity` that combines multiple subtypes
