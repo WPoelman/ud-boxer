@@ -5,34 +5,18 @@
 % SCONJ as EXPLANATION box? See en/gold/p00/d0801
 
 %%% LABELING RULES %%%
-% Add the token feature to all nodes (TODO: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
-% NOT WORKING
+% Add the token feature to all nodes, this will be used to build up the string required for SBN.
+% This is done in order to not lose the UD information that rules might use.
+% Ideally, the token feature is only used in a write (or concat) only manner in the rules.
 rule add_token {
     pattern {
-        N [ !token ];
+        N [ lemma ];
     }
     without {
         N [ token ];
     }
     commands {
-        N.token = "no";
-    }
-}
-
-% NOT WORKING
-rule add_token_final {
-    pattern {
-        TEMP_NODE [ token ];
-        N [ !token ];
-        R: N -[temp]-> TEMP_NODE;
-    }
-    without {
-        N [ token ];
-    }
-    commands {
-        N.token = TEMP_NODE.token;
-        del_node TEMP_NODE;
-        del_edge R;
+        N.token = N.lemma;
     }
 }
 
@@ -59,7 +43,6 @@ rule connect_user {
 %%% EXPANDING RULES %%%
 % Expand a name into an entity sense node, a name edge and the name constant.
 % TODO: assign proper label, maybe with combination of PROPN + Gender = Fem etc.
-% TODO: use token instead of lemma
 % Example: en/gold/p04/d1646
 rule expand_name {
     pattern {
@@ -71,7 +54,7 @@ rule expand_name {
     commands {
         NAME.token = "entity.n.01";
         add_node NAME_CONST;
-        NAME_CONST.token = "\"" + NAME.lemma + "\"";
+        NAME_CONST.token = "\"" + NAME.textform + "\"";
         add_edge NAME -[Name]-> NAME_CONST;
     }
 }
@@ -128,7 +111,7 @@ rule combine_propn {
         R: A -[flat|compound]-> B;
     }
     commands {
-        A.lemma = A.lemma + "_" + B.lemma; % This should be token
+        A.token = A.token + "_" + B.token;
         del_edge R;
         del_node B;
     }
@@ -146,7 +129,7 @@ rule combine_nouns {
         R: A -[compound]-> B;
     }
     commands {
-        A.lemma = B.lemma + "_" + A.lemma; % This should be token
+        A.token = B.token + "_" + A.token;
         del_edge R;
         del_node B;
     }
@@ -222,8 +205,7 @@ strat main {
     Pick(
         Iter (
             Seq (
-                %Iter(add_token_init),
-                %Iter(add_token),
+                Onf(add_token),
 
                 Iter(combine_propn),
                 Iter(combine_nouns),

@@ -241,12 +241,11 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, grew_edges) in grew_graph.items():
-            # TODO: make sure in pre-processing 'type' and 'token' are added
-            node_tok = node_data.get("token", None)
-            if not node_tok:
-                node_tok = node_data.get("lemma", None)
-                if not node_tok:
-                    node_tok = node_data.get("form", "MISSING_TOKEN")
+            if not (node_tok := node_data.get("token", None)):
+                raise SBNError(
+                    f"All nodes need the 'token' feature.\n"
+                    "Node data: {node_data}"
+                )
 
             # The sense has been added in the grew rewriting step
             if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
