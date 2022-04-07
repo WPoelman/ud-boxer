@@ -98,7 +98,7 @@ class Grew:
             A.add_edges_from(edges)
 
         # This would be very strange, but just in case.
-        if A._check_is_dag():
+        if not A._check_is_dag():
             raise SBNError(
                 "Merged SBNgraphs are cyclic, incorrect box connects?"
             )
