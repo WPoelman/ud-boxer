@@ -231,7 +231,7 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     # Separate the actual SBN and the comments
     temp_lines: List[Tuple[str, Optional[str]]] = []
     for line in split_lines:
-        # discarded here.
+        # Full comment lines are discarded here.
         if line.startswith(SBNSpec.COMMENT_LINE):
             continue
 
@@ -267,23 +267,13 @@ def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
     return None
 
 
-def get_doc_id(
-    lang: str,
-    p_id: str = None,
-    d_id: str = None,
-    filepath: PathLike = None,
-) -> Optional[str]:
+def get_doc_id(lang: str, filepath: PathLike) -> Optional[str]:
     """
     Helper to extract a doc id from either the filepath of the sbn file or the
     starting comment lines. A doc id has the format <lang>/<p>/<d>.
     """
-    if lang and p_id and d_id:
-        return f"{lang}/{p_id}/{d_id}"
-
-    # Try filepath first since it's shorter
-    if filepath:
-        full_path = str(Path(filepath).resolve())
-        if match := SBNSpec.DOC_ID_PATTERN.findall(full_path):
-            return f"{lang}/{match[0]}"
+    full_path = str(Path(filepath).resolve())
+    if match := SBNSpec.DOC_ID_PATTERN.findall(full_path):
+        return f"{lang}/{match[0]}"
 
     raise SBNError("Could not extract doc id!")
