@@ -470,7 +470,7 @@ class SBNGraph(BaseGraph):
         # line strings for the final string
         final_result = []
         current_sense_idx = 0
-        for line_idx, line in enumerate(result):
+        for line in result:
             tmp_line = []
             comment_for_line = None
 
