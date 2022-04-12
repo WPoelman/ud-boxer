@@ -9,6 +9,7 @@ import grew
 from synse.sbn import PROTECTED_FIELDS, SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn_spec import SBNError
 
+# TODO: move this to config file
 DEFAULT_GRS_PATH = Path(
     Path(__file__).parent.parent / "grew/main.grs"
 ).resolve()
@@ -34,11 +35,13 @@ class Grew:
                     grew_graph = grew.graph(f.name)
                     results = grew.run(self.grs, grew_graph, strat)
                 graphs.append(SBNGraph().from_grew(results[0]))
-            return self.merge_graphs(graphs)
+            final_graph = self.merge_graphs(graphs)
         else:
             grew_graph = grew.graph(str(conll_path))
             result = grew.run(self.grs, grew_graph, strat)
-            return SBNGraph().from_grew(result[0])
+            final_graph = SBNGraph().from_grew(result[0])
+
+        return final_graph
 
     @staticmethod
     def merge_graphs(graphs: List[SBNGraph]) -> SBNGraph:

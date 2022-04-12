@@ -2,32 +2,26 @@
 	:member (s0 / "sense"
 		:lemma "female"
 		:pos "n"
-		:sense "02"
 		:Name (c0 / "Mary"))
 	:member (s1 / "sense"
 		:lemma "want"
 		:pos "v"
-		:sense "01"
 		:Pivot s0
 		:Time (s2 / "sense"
 			:lemma "time"
 			:pos "n"
-			:sense "08"
 			:EQU (c1 / "now"))
 		:Theme (s3 / "sense"
 			:lemma "paint"
 			:pos "v"
-			:sense "02"
 			:Agent s0
 			:Patient (s4 / "sense"
 				:lemma "car"
 				:pos "n"
-				:sense "01"
 				:User s0)
 			:Result (s5 / "sense"
 				:lemma "bright_blue"
 				:pos "a"
-				:sense "01"
 				:ColourOf s4)))
 	:member s2
 	:member s3

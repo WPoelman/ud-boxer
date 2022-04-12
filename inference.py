@@ -4,12 +4,14 @@ import logging
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
+import networkx as nx
 import pandas as pd
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.grew_rewrite import Grew
 from synse.helpers import pmb_generator, rnd, smatch_score
+from synse.sbn import SBNGraph
 from synse.sbn_spec import SUPPORTED_LANGUAGES, get_doc_id
 from synse.ud import UD_SYSTEM
 
@@ -83,16 +85,17 @@ def get_args() -> Namespace:
 
 
 def generate_result(args, ud_filepath):
-    predicted_dir = Path(ud_filepath.parent / "predicted")
+    current_dir = ud_filepath.parent
+
+    predicted_dir = Path(current_dir / "predicted")
     predicted_dir.mkdir(exist_ok=True)
+
     if args.clear_previous:
         for item in predicted_dir.iterdir():
             if item.is_file():
                 item.unlink()
 
-    raw_sent = (
-        Path(ud_filepath.parent / f"{args.language}.raw").read_text().rstrip()
-    )
+    raw_sent = Path(current_dir / f"{args.language}.raw").read_text().rstrip()
 
     res = GREW.run(ud_filepath)
     if args.store_visualizations:
@@ -103,7 +106,7 @@ def generate_result(args, ud_filepath):
 
     penman_path = res.to_penman(Path(predicted_dir / f"output.penman"))
     scores = smatch_score(
-        ud_filepath.parent / f"{args.language}.drs.penman",
+        current_dir / f"{args.language}.drs.penman",
         penman_path,
     )
     penman_lenient_path = res.to_penman(
@@ -111,13 +114,13 @@ def generate_result(args, ud_filepath):
         split_sense=True,
     )
     lenient_scores = smatch_score(
-        ud_filepath.parent / f"{args.language}.drs.lenient.penman",
+        current_dir / f"{args.language}.drs.lenient.penman",
         penman_lenient_path,
     )
 
     # TODO: clean this up
     result = {
-        "pmb_id": get_doc_id(args.language, filepath=ud_filepath),
+        "pmb_id": get_doc_id(args.language, ud_filepath),
         "raw_sent": raw_sent,
         **{k: v for k, v in scores.items() if k in RELEVANT_COLS},
         **{
@@ -126,6 +129,16 @@ def generate_result(args, ud_filepath):
             if k in RELEVANT_COLS
         },
     }
+
+    # if result["f1_lenient"] > 0.7:
+    #     G = SBNGraph().from_path(current_dir / f"{args.language}.drs.sbn")
+    #     matcher = nx.isomorphism.DiGraphMatcher(G, res)
+    #     print(matcher.is_isomorphic())
+    #     if mapping := matcher.mapping:
+    #         for i, k in mapping.items():
+    #             print(f'{G[i]["token"]} -[{G[i]}] -> ')
+    #         print(mapping)
+    #         exit()
 
     return result
 

@@ -17,6 +17,11 @@ from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
 
+# TODO: move this to args or config file
+EDGE_MAPPINGS_PATH = Path(
+    Path(__file__).parent.parent / "data/output/edge_mappings.json"
+).resolve()
+
 
 # TODO: change this out for StrEnum or just string literals since serialization
 # to json does not work (then it just becomes a string and comparison needs to
@@ -271,10 +276,9 @@ class SBNGraph(BaseGraph):
             id_mapping[grew_node_id] = node[0]
 
         # TODO: move this to a better place + don't use older mappings
-        # just for testing purposes now.
-        with open(
-            "/home/wessel/Documents/documents/study/1_thesis/project/thesis/data/output/edge_mappings.json"
-        ) as f:
+        # just for testing purposes now. Don't load this in each graph
+        # separately, maybe move to GREW class?
+        with open(EDGE_MAPPINGS_PATH) as f:
             # Sort options so the most frequent mapping is at the front
             edge_mappings = {
                 k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
@@ -606,7 +610,7 @@ class SBNGraph(BaseGraph):
                 out_str += f'({var_id} / {self.quote("sense")}'
                 out_str += f"\n{indents}:lemma {lemma}"
                 out_str += f"\n{indents}:pos {pos}"
-                out_str += f"\n{indents}:sense {sense}"
+                # out_str += f"\n{indents}:sense {sense}" # NOTE: as a test
             # TODO: fix this, the generated parentheses are incorrect most of
             # the time.
             # elif node_tok in SBNSpec.CONSTANTS:
