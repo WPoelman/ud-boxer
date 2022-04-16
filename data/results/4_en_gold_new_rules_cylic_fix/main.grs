@@ -1,5 +1,5 @@
 %%% LABELING RULES %%%
-% Add the token feature to all nodes (TODO: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
+% Add the token feature to all nodes (NOTE: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
 rule add_token_init {
     pattern { N [ lemma, !token ]; }
     without { N -[temp]-> *; }
@@ -45,10 +45,10 @@ rule expand_name {
     pattern { NAME [ upos=PROPN ]; }
     without { NAME -> *; }
     commands {
-        % TODO assign proper label, maybe with combination of PROPN + Gender = Fem
+        % NOTE assign proper label, maybe with combination of PROPN + Gender = Fem
         NAME.token = "entity.n.01";
         add_node NAME_CONST;
-        NAME_CONST.token = NAME.lemma; % TODO: dit zou token moeten zijn
+        NAME_CONST.token = NAME.lemma; % NOTE: dit zou token moeten zijn
         add_edge NAME -[Name]-> NAME_CONST;
     }
 }

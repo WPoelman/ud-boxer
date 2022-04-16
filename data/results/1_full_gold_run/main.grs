@@ -1,5 +1,5 @@
 %%% LABELING RULES %%%
-% Add the token feature to all nodes (TODO: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
+% Add the token feature to all nodes (NOTE: this does not work, probably need to copy N and use in in another rule or ask the developer of grew)
 rule add_token {
     pattern { N [ lemma ]; }
     without { N [ token ]; }
@@ -29,12 +29,12 @@ rule connect_user {
 }
 
 % NOTE: voordat deze toegepast wordt, de compound named entities samenvoegen
-% TODO: deze gaat soms oneindig door!
+% NOTE: deze gaat soms oneindig door!
 rule expand_name {
     pattern { NAME [ upos=PROPN ]; }
     without { NAME -[Name]-> *; }
     commands {
-        % TODO assign proper label, maybe with combination of PROPN + Gender = Fem
+        % NOTE assign proper label, maybe with combination of PROPN + Gender = Fem
         NAME.token = "entity.n.01";
         add_node NAME_CONST;
         NAME_CONST.token = NAME.wordform;
@@ -93,7 +93,7 @@ rule remove_root_punct {
     }
 }
 
-% TODO: gaat soms oneindig door?
+% NOTE: gaat soms oneindig door?
 rule remove_unwanted_pos { 
     pattern { 
         % Not sure about PART here since that can also indicate negation or possession, which is semantically useful
