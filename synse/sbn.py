@@ -266,8 +266,7 @@ class SBNGraph(BaseGraph):
                 # TODO: some POS tags indicate constants (NUM, PROPN, etc)
                 # Maybe fix that here as well.
                 wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                lemma = node_data.get("lemma", node_tok)
-                node_tok = f"{lemma}.{wn_pos}.01"
+                node_tok = f"{node_tok}.{wn_pos}.01"
                 node_type = SBN_NODE_TYPE.SENSE
             # When the previous checks cannot determine if it's a sense or not,
             # consider it to be a constant.
