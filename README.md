@@ -1,7 +1,7 @@
 # Thesis
 This system is a syntax-semantics interface between Universal Dependencies (UD) and Discourse Representation Structures (DRS), as used in the Parallel Meaning Bank (PMB) project.
 The primary DRS target format is the Simplified Box Notation (SBN).
-The following images show the basic idea for the sentence **Tracy lost her glasses.** :
+The following images show the basic idea for the sentence **Tracy lost her glasses.** with the UD parse on the left and the target SBN graph on the right:
 
 <table>
   <tr>
@@ -158,6 +158,14 @@ python pmb_inference.py -p <path-to-pmb-dataset> \
 This will go through the dataset with 32 workers, writing the results to `results.csv`, clearing previously predicted files if they exist, storing visualizations of the generated output as well the generated SBN itself.
 
 For more details and additional options, run `pmb_inference.py --help`.
+
+### Scoring
+If you want to evaluate existing AMR-like (Penman) parses without running the whole inference pipeline, you can use SMATCH via `mtool` (which is included in the requirements):
+
+```
+mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
+```
+
 ## Possible future improvements
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for certain case markings.
 

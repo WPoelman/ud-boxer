@@ -193,22 +193,6 @@ class UDGraph(BaseGraph):
         }
 
 
-class Collector:
-    """Helper to collect some information about the UD graph"""
-
-    def __init__(self) -> None:
-        self.dep_rels: Set[str] = set()
-        self.pos: Set[str] = set()
-
-    def collect(self, U: UDGraph):
-        # Quick and dirty way to check all used deprels and pos tags in the
-        # dataset.
-        self.dep_rels.update(
-            {a[2]["deprel"] for a in U.edges.data() if a[2]["deprel"]}
-        )
-        self.pos.update({a[1]["xpos"] for a in U.nodes.data() if a[1]["xpos"]})
-
-
 class UDParser:
     def __init__(
         self,
@@ -220,7 +204,7 @@ class UDParser:
             from stanza.utils.conll import CoNLL
 
             # No need for very heavy NER / sentiment etc models currently
-            processors = "tokenize,mwt,pos,lemma,depparse"
+            processors = "tokenize,pos,lemma,depparse"
             download(language, processors=processors)
             pipeline = Pipeline(lang=language, processors=processors)
 
@@ -242,11 +226,35 @@ class UDParser:
         self.write_output = write_output
 
     def parse(self, text: str, out_file: PathLike) -> Path:
+        """
+        Generate a UD parse from the input text and store it in conll format
+        at the provided path.
+        """
         out_file = Path(out_file)
         result = self.pipeline(text)
         self.write_output(result, out_file)
 
         return out_file
 
-    def parse_path(self, text_file: PathLike, out_file: PathLike) -> PathLike:
+    def parse_path(self, text_file: PathLike, out_file: PathLike) -> Path:
+        """
+        Generate a UD parse from input text file and store it in conll format
+        at the provided path.
+        """
         return self.parse(Path(text_file).read_text(), out_file)
+
+
+class Collector:
+    """Helper to collect some information about the UD graph"""
+
+    def __init__(self) -> None:
+        self.dep_rels: Set[str] = set()
+        self.pos: Set[str] = set()
+
+    def collect(self, U: UDGraph):
+        # Quick and dirty way to check all used deprels and pos tags in the
+        # dataset.
+        self.dep_rels.update(
+            {a[2]["deprel"] for a in U.edges.data() if a[2]["deprel"]}
+        )
+        self.pos.update({a[1]["xpos"] for a in U.nodes.data() if a[1]["xpos"]})
