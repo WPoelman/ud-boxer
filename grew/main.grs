@@ -117,6 +117,24 @@ rule combine_propn {
     }
 }
 
+% Combine phrasal verb particle components. These are often treated as a single sense.
+% Some common cases include: "cut off", "burn down", "hang up" etc.
+% Example: en/gold/p00/d1469
+rule combine_compound_prt {
+    pattern {
+        A [ ];
+        B [ ];
+        R: A -[compound:prt]-> B;
+    }
+    commands {
+        A.token = A.token + "_" + B.token;
+        % We know it's most likely a verb at this point.
+        A.upos = VERB;
+        del_edge R;
+        del_node B;
+    }
+}
+
 % Combine multiple NOUNS that are probably compounds.
 % TODO: The ordering restriction does not seem to work, also << >> and > don't work, while they
 % do work in the online grew match tool, maybe a conll thing?
@@ -209,6 +227,7 @@ strat main {
 
                 Iter(combine_propn),
                 Iter(combine_nouns),
+                Iter(combine_compound_prt),
 
                 Iter(connect_user),
                 Iter(expand_name),
