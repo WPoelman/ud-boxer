@@ -11,16 +11,12 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 
 from synse.base import BaseGraph
+from synse.config import Config
 from synse.penman_model import pm_model
 from synse.sbn_spec import SBNError, SBNSpec, split_comments, split_wn_sense
 from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
-
-# TODO: move this to args or config file
-EDGE_MAPPINGS_PATH = Path(
-    Path(__file__).parent.parent / "data/output/edge_mappings.json"
-).resolve()
 
 
 # TODO: change this out for StrEnum or just string literals since serialization
@@ -50,6 +46,15 @@ PROTECTED_FIELDS = ["_id", "type", "type_idx", "token"]
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
 SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
+
+# TODO: move this to a better place + don't use older mappings
+# just for testing purposes now. Maybe move to GREW class?
+with open(Config.EDGE_MAPPINGS_PATH) as f:
+    # Sort options so the most frequent mapping is at the front
+    EDGE_MAPPINGS = {
+        k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
+        for k, v in json.load(f).items()
+    }
 
 
 class SBNGraph(BaseGraph):
@@ -275,16 +280,6 @@ class SBNGraph(BaseGraph):
             nodes.append(node)
             id_mapping[grew_node_id] = node[0]
 
-        # TODO: move this to a better place + don't use older mappings
-        # just for testing purposes now. Don't load this in each graph
-        # separately, maybe move to GREW class?
-        with open(EDGE_MAPPINGS_PATH) as f:
-            # Sort options so the most frequent mapping is at the front
-            edge_mappings = {
-                k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-                for k, v in json.load(f).items()
-            }
-
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
             # NOTE: if we also introduce boxes on the grew side, we need to
             # figure out how to connect those here.
@@ -313,8 +308,8 @@ class SBNGraph(BaseGraph):
                 # The type cannot be determined from the name, figure out what
                 # an appropriate edge label might be.
                 if not edge_type:
-                    if edge_name in edge_mappings:
-                        edge_name = edge_mappings[edge_name][0][0]
+                    if edge_name in EDGE_MAPPINGS:
+                        edge_name = EDGE_MAPPINGS[edge_name][0][0]
                         # This type info should probably be included in the
                         # mappings.
                         if edge_name in SBNSpec.ROLES:
@@ -509,11 +504,20 @@ class SBNGraph(BaseGraph):
 
             if add_comments and comment_for_line:
                 tmp_line.append(f"{SBNSpec.COMMENT}{comment_for_line}")
-            # TODO: vertically align tokens just as in the dataset?
-            # See: https://docs.python.org/3/library/string.html#format-specification-mini-language
-            final_result.append(" ".join(tmp_line))
 
-        sbn_string = "\n".join(final_result)
+            # This is a bit of trickery to vertically align senses just as in
+            # the PMB dataset.
+            if len(tmp_line) == 1:
+                final_result.append((tmp_line[0], " "))
+            else:
+                final_result.append((tmp_line[0], " ".join(tmp_line[1:])))
+
+        # More formatting and alignment trickery.
+        max_sense_len = max(len(s) for s, _ in final_result) + 1
+        sbn_string = "\n".join(
+            f"{sense: <{max_sense_len}} {rest}" for sense, rest in final_result
+        )
+
         return sbn_string
 
     def to_penman(self, path: PathLike, split_sense: bool = False) -> PathLike:

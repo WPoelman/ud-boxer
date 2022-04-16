@@ -6,17 +6,13 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import grew
+from synse.config import Config
 from synse.sbn import PROTECTED_FIELDS, SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn_spec import SBNError
 
-# TODO: move this to config file
-DEFAULT_GRS_PATH = Path(
-    Path(__file__).parent.parent / "grew/main.grs"
-).resolve()
-
 
 class Grew:
-    def __init__(self, grs_path: PathLike = DEFAULT_GRS_PATH) -> None:
+    def __init__(self, grs_path: PathLike = Config.GRS_PATH) -> None:
         grew.init()
         self.grs = grew.grs(str(grs_path))
 

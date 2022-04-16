@@ -179,7 +179,7 @@ mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
 * **p04/d0778**: double negation
 * **p04/d1646**: connect owner
 
-# TODO:
+# TODO
 - [ ] check consistency quoted output + casing of output grew -> sbn and original sbn
 - [ ] add rules to deal with numbers
 - [ ] add proper edge mapping or triple classifier for edge labels
