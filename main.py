@@ -10,7 +10,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from synse.helpers import pmb_generator
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
 from synse.sbn_spec import SUPPORTED_LANGUAGES
-from synse.ud import UD_LANG_DICT, UD_SYSTEM, UDGraph
+from synse.ud import UD_SYSTEM, UDGraph, UDParser
 
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
@@ -19,7 +19,6 @@ logger = logging.getLogger(__name__)
 def get_args() -> Namespace:
     parser = ArgumentParser()
 
-    # Variables
     parser.add_argument(
         "-p",
         "--starting_path",
@@ -49,14 +48,6 @@ def get_args() -> Namespace:
         type=str,
         default="data/output",
         help="Path to save output files to.",
-    )
-    parser.add_argument(
-        "--lenient_penman",
-        action="store_true",
-        help="Indicates whether or not to split senses into their components "
-        "for more lenient Penman (AMR-like) scoring. When left default, scoring "
-        "the generated penmen output will indirectly also target the word sense "
-        "disambiguation performance included in it.",
     )
 
     # Main options
@@ -90,38 +81,27 @@ def get_args() -> Namespace:
         action="store_true",
         help="Store SBN as Penman (AMR-like).",
     )
+    parser.add_argument(
+        "--lenient_penman",
+        action="store_true",
+        help="Indicates whether or not to split senses into their components "
+        "for more lenient Penman (AMR-like) scoring. When left default, scoring "
+        "the generated penmen output will indirectly also target the word sense "
+        "disambiguation performance included in it.",
+    )
 
     return parser.parse_args()
 
 
 def store_ud_parses(args):
-    if args.ud_system == UD_SYSTEM.STANZA:
-        from stanza import Pipeline, download
-        from stanza.utils.conll import CoNLL
-
-        # No need for very heavy NER / sentiment etc models currently
-        processors = "tokenize,mwt,pos,lemma,depparse"
-        download(args.language, processors=processors)
-        pipeline = Pipeline(lang=args.language, processors=processors)
-
-    elif args.ud_system == UD_SYSTEM.TRANKIT:
-        from trankit import Pipeline, trankit2conllu
-
-        pipeline = Pipeline(UD_LANG_DICT[args.language])
-
+    parser = UDParser(system=args.system, language=args.language)
     ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
 
     for filepath in pmb_generator(
         args.starting_path, "**/*.raw", desc_tqdm="Storing UD parses "
     ):
         try:
-            result = pipeline(filepath.read_text())
-            out_file = Path(filepath.parent / ud_file_format)
-
-            if args.ud_system == UD_SYSTEM.STANZA:
-                CoNLL.write_doc2conll(result, out_file)
-            elif args.ud_system == UD_SYSTEM.TRANKIT:
-                out_file.write_text(trankit2conllu(result))
+            parser.parse_path(filepath, Path(filepath.parent / ud_file_format))
         except Exception as e:
             logger.error(
                 f"Unable to generate ud for {filepath}\nReason: {e}\n"

@@ -35,23 +35,29 @@ KEY_MAPPING = {
     "r": "recall",
     "f": "f1",
 }
+RELEVANT_ITEMS = ["p", "r", "f"]
 
 
 def smatch_score(gold: PathLike, test: PathLike) -> Dict[str, float]:
     """Use mtool to score two amr-like graphs using SMATCH"""
     try:
+        # NOTE: this is not ideal, but mtool is quite esoteric in how it reads
+        # in graphs, so it's quite hard to just plug two amr-like strings
+        # in it. Maybe we can run this as a deamon to speed it up a bit or
+        # put some time into creating a usable package to import for this use-
+        # case.
         smatch_cmd = f"mtool --read amr --score smatch --gold {gold} {test}"
         response = subprocess.check_output(smatch_cmd, shell=True)
         decoded = json.loads(response)
-        clean_dict = {KEY_MAPPING.get(k, k): v for k, v in decoded.items()}
     except subprocess.CalledProcessError as e:
         raise SBNError(
             f"Could not call mtool smatch with command '{smatch_cmd}'\n{e}"
         )
 
+    clean_dict = {
+        KEY_MAPPING.get(k, k): v
+        for k, v in decoded.items()
+        if k in RELEVANT_ITEMS
+    }
+
     return clean_dict
-
-
-def rnd(n: float, ndigits: int = 3) -> float:
-    """Helper for consistent rounding"""
-    return round(n, ndigits)

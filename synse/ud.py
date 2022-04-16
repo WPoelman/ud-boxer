@@ -1,14 +1,16 @@
 from enum import Enum
 from os import PathLike
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
 from stanza.utils.conll import CoNLL
 
 from synse.base import BaseGraph
+from synse.sbn_spec import SUPPORTED_LANGUAGES  # TODO: move to general config?
 from synse.ud_spec import UDSpecBasic
 
 # Used to switch between stanza and trankit language identifiers
-UD_LANG_DICT = {
+UD_LANG_DICT = {  # TODO: move to general config?
     "de": "german",
     "en": "english",
     "it": "italian",
@@ -205,3 +207,46 @@ class Collector:
             {a[2]["deprel"] for a in U.edges.data() if a[2]["deprel"]}
         )
         self.pos.update({a[1]["xpos"] for a in U.nodes.data() if a[1]["xpos"]})
+
+
+class UDParser:
+    def __init__(
+        self,
+        system: UD_SYSTEM = UD_SYSTEM.STANZA,
+        language: SUPPORTED_LANGUAGES = SUPPORTED_LANGUAGES.EN,
+    ) -> None:
+        if system == UD_SYSTEM.STANZA:
+            from stanza import Pipeline, download
+            from stanza.utils.conll import CoNLL
+
+            # No need for very heavy NER / sentiment etc models currently
+            processors = "tokenize,mwt,pos,lemma,depparse"
+            download(language, processors=processors)
+            pipeline = Pipeline(lang=language, processors=processors)
+
+            def write_output(result, out_file):
+                CoNLL.write_doc2conll(result, out_file)
+
+        elif system == UD_SYSTEM.TRANKIT:
+            from trankit import Pipeline, trankit2conllu
+
+            pipeline = Pipeline(UD_LANG_DICT[language])
+
+            def write_output(result, out_file):
+                out_file.write_text(trankit2conllu(result))
+
+        else:
+            raise UDError(f"Unsupported UD_SYSTEM: {system}")
+
+        self.pipeline = pipeline
+        self.write_output = write_output
+
+    def parse(self, text: str, out_file: PathLike) -> Path:
+        out_file = Path(out_file)
+        result = self.pipeline(text)
+        self.write_output(result, out_file)
+
+        return out_file
+
+    def parse_path(self, text_file: PathLike, out_file: PathLike) -> PathLike:
+        return self.parse(Path(text_file).read_text(), out_file)
