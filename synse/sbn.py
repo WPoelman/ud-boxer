@@ -266,7 +266,7 @@ class SBNGraph(BaseGraph):
                 # TODO: some POS tags indicate constants (NUM, PROPN, etc)
                 # Maybe fix that here as well.
                 wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                node_tok = f"{node_tok}.{wn_pos}.01"
+                node_tok = f"{node_tok.lower()}.{wn_pos}.01"
                 node_type = SBN_NODE_TYPE.SENSE
             # When the previous checks cannot determine if it's a sense or not,
             # consider it to be a constant.
@@ -514,7 +514,8 @@ class SBNGraph(BaseGraph):
         # More formatting and alignment trickery.
         max_sense_len = max(len(s) for s, _ in final_result) + 1
         sbn_string = "\n".join(
-            f"{sense: <{max_sense_len}} {rest}" for sense, rest in final_result
+            f"{sense: <{max_sense_len}}{rest}".rstrip(" ")
+            for sense, rest in final_result
         )
 
         return sbn_string
