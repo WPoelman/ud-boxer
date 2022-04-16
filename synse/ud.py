@@ -1,16 +1,16 @@
 from enum import Enum
 from os import PathLike
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple, Union
+from typing import List, Set
 
 from stanza.utils.conll import CoNLL
 
 from synse.base import BaseGraph
-from synse.sbn_spec import SUPPORTED_LANGUAGES  # TODO: move to general config?
+from synse.config import Config
 from synse.ud_spec import UDSpecBasic
 
 # Used to switch between stanza and trankit language identifiers
-UD_LANG_DICT = {  # TODO: move to general config?
+UD_LANG_DICT = {
     "de": "german",
     "en": "english",
     "it": "italian",
@@ -54,7 +54,7 @@ class UD_EDGE_TYPE(str, Enum):
 class UDGraph(BaseGraph):
     def __init__(self, incoming_graph_data=None, **attr):
         super().__init__(incoming_graph_data, **attr)
-        # TODO: detect UDSpec here once that is supported or make it an
+        # NOTE: detect UDSpec here once that is supported or make it an
         # argument. (enhanced UD vs standard/basic UD)
         self.root_node_ids = []
 
@@ -123,7 +123,7 @@ class UDGraph(BaseGraph):
                         key: value
                         for key, value in [
                             item.split("=") for item in feats.split("|")
-                        ]  # TODO: maybe validate this using known UD spec?
+                        ]
                     }
 
                 tok_data = {
@@ -197,7 +197,7 @@ class UDParser:
     def __init__(
         self,
         system: UD_SYSTEM = UD_SYSTEM.STANZA,
-        language: SUPPORTED_LANGUAGES = SUPPORTED_LANGUAGES.EN,
+        language: Config.SUPPORTED_LANGUAGES = Config.SUPPORTED_LANGUAGES.EN,
     ) -> None:
         if system == UD_SYSTEM.STANZA:
             from stanza import Pipeline, download

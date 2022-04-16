@@ -7,9 +7,9 @@ from pathlib import Path
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
+from synse.config import Config
 from synse.helpers import pmb_generator
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
-from synse.sbn_spec import SUPPORTED_LANGUAGES
 from synse.ud import UD_SYSTEM, UDGraph, UDParser
 
 logging.basicConfig(level=logging.WARNING)
@@ -29,8 +29,8 @@ def get_args() -> Namespace:
     parser.add_argument(
         "-l",
         "--language",
-        default=SUPPORTED_LANGUAGES.EN.value,
-        choices=SUPPORTED_LANGUAGES.all_values(),
+        default=Config.SUPPORTED_LANGUAGES.EN.value,
+        choices=Config.SUPPORTED_LANGUAGES.all_values(),
         type=str,
         help="Language to use for ud pipelines.",
     )

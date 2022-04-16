@@ -50,7 +50,7 @@ class NodeRemover(GraphTransformer):
                 _, to_node_id = edge_id
                 node_ids_to_remove.add(to_node_id)
                 edge_ids_to_remove.add(edge_id)
-            # TODO: check if this explicit root is a good idea.
+            # NOTE: check if this explicit root is a good idea.
             # Coordinate with removing boxes probably
             elif edge_data.get("type") == UD_EDGE_TYPE.EXPLICIT_ROOT:
                 from_node_id, _ = edge_id
@@ -112,11 +112,11 @@ class NodeExpander(GraphTransformer):
                         {
                             "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
                             "token": "Name",
-                        },  # TODO: get roles from spec
+                        },  # NOTE: get roles from spec
                     )
                 )
             # Try to add the time node
-            # TODO: use NER or something else to see if an actual date or time
+            # NOTE: use NER or something else to see if an actual date or time
             # is present in the graph. Also make sure not too time nodes get added.
             if node_data.get("deprel") == UDSpecBasic.DepRels.ROOT:
                 # Take 'now' as the baseline time constant
@@ -153,7 +153,7 @@ class NodeExpander(GraphTransformer):
                         time_sense_id,
                         {
                             "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
-                            "token": "Time",  # TODO: get from spec?
+                            "token": "Time",  # NOTE: get from spec?
                         },
                     )
                 )
@@ -166,7 +166,7 @@ class NodeExpander(GraphTransformer):
                         time_const_id,
                         {
                             "type": UD_NODE_TYPE.TOKEN,
-                            "token": "now",  # TODO: different time stuff here (dates, NER? etc.)
+                            "token": "now",  # NOTE: different time stuff here (dates, NER? etc.)
                         },
                     )
                 )
@@ -195,7 +195,7 @@ class POSResolver(GraphTransformer):
     @staticmethod
     def transform(G: UDGraph, **kwargs) -> BaseGraph:
 
-        # # TODO: create a mapping class / dict that stores transformations which
+        # # NOTE: create a mapping class / dict that stores transformations which
         # # can be applied later on (create edge abc, delete node x, etc)
         # nodes_to_add, edges_to_add = [], []
         # nodes_to_remove, edges_to_remove = set(), set()
@@ -234,7 +234,7 @@ class POSResolver(GraphTransformer):
         #                     subj_node_id,
         #                     {
         #                         "type": UD_EDGE_TYPE.DEPENDENCY_RELATION,
-        #                         "token": "User",  # TODO: get from spec
+        #                         "token": "User",  # NOTE: get from spec
         #                     },
         #                 )
         #             )

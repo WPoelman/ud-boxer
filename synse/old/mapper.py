@@ -85,7 +85,7 @@ class GraphMapping:
 
 class MapExtractor:
     def __init__(self) -> None:
-        # TODO: make edge mapping type
+        # NOTE: make edge mapping type
         self.edge_mappings: Dict[str, Dict[str, Dict[str, int]]] = {
             "deprel2role": dict(),
             "deprel2token": dict(),
@@ -109,7 +109,7 @@ class MapExtractor:
         max_tries: int = 10,
         debug: bool = True,
     ):
-        # TODO: in plaats van recursief hier doorheen gaan, iteratief doen met:
+        # NOTE: in plaats van recursief hier doorheen gaan, iteratief doen met:
         #   while new_mappings != current_mappings
         # En dan een set bijhouden van de mappings (even kijken naar de counts
         # e.d. misschien dat die alleen op het einde geteld moeten worden, wanneer
@@ -178,7 +178,7 @@ class MapExtractor:
         # First try to 'disable' the box nodes, leaving only the first box node
         # and box connect edge, to resemble the UD root
         #
-        # TODO: another way of doing is to connect the UD nodes to the
+        # NOTE: another way of doing is to connect the UD nodes to the
         # respective sentence they belong to. Might be better since then CONTINUATION etc.
         # are easier to catch.
         # Not a fan of two mutable graphs currently, ideally only I should be mutable
@@ -221,7 +221,7 @@ class MapExtractor:
             - S has more nodes than U -> expand nodes (names/compounds/time?)
             - S has more edges than U -> try stored mappings to add more edges (sbn roles)
         """
-        # TODO: clean up later
+        # NOTE: clean up later
         if debug:
             if I_n_nodes == S_n_nodes:
                 if I_n_edges == S_n_edges:
@@ -254,14 +254,14 @@ class MapExtractor:
                         "Too many nodes and too many edges, remove / merge nodes"
                     )
 
-            # TODO: make method that dumps intermediate steps (count in filename)
+            # NOTE: make method that dumps intermediate steps (count in filename)
             # method should take output folder as param
             S.to_png("intermediate_step_sbn_1.png")
             I.to_png("intermediate_step_ud_1.png")
         return I
 
     def store_mappings(self, I: UDGraph, S: SBNGraph, mapping: Dict[Any, Any]):
-        # TODO: clean this up with defaultdict / dataclasses or something, for later.
+        # NOTE: clean this up with defaultdict / dataclasses or something, for later.
         for ud_from_id, ud_to_id, edge_data in I.edges.data():
             # The mappings from the DiGraphMatcher only go over the node,
             # it could be possible to figure out the correct edges from the
@@ -278,7 +278,7 @@ class MapExtractor:
             sbn_token = sbn_edge.get("token")
             sbn_edge_type = sbn_edge.get("type")
 
-            # TODO add SBN_EDGE_TYPE.DRS_OPERATOR
+            # NOTE add SBN_EDGE_TYPE.DRS_OPERATOR
             if deprel and sbn_edge_type == SBN_EDGE_TYPE.ROLE:
                 if deprel in self.edge_mappings["deprel2role"]:
                     self.edge_mappings["deprel2role"][deprel][sbn_token] = (
@@ -314,7 +314,7 @@ class MapExtractor:
             else:
                 logging.info("No token or deprel (?)")
 
-        # TODO: The mapping from upos or xpos to the simple wordnet v n a r can
+        # NOTE: The mapping from upos or xpos to the simple wordnet v n a r can
         # be learned and stored here as well
         for ud_node_id, sbn_node_id in mapping.items():
             ud_node_data = I.nodes[ud_node_id]
@@ -362,7 +362,7 @@ class Converter:
         self,
         transformations: List[GraphTransformer],
         mappings: Dict[str, Dict[str, Dict[str, Dict[str, int]]]]  # pain
-        # TODO: mappings: List[GraphMapping],
+        # NOTE: mappings: List[GraphMapping],
     ) -> None:
         # The order should be from specific to general, for later
         self.transformations = transformations
