@@ -26,7 +26,7 @@ Run `fix_all.sh` to format and test the project
 
 ## Data
 The data comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
-## Notes
+### Notes
 - This project uses version 4.0.0 of the PMB dataset, which can be downloaded from here: https://pmb.let.rug.nl/data.php
 - There are some minor issues with this version of the dataset that will be fixed in future versions:
   * There are several sense ids that contain whitespace
@@ -35,7 +35,7 @@ The data comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
   * Some SBN files contain constants that cannot be distinguished from indices. For example: `en/silver/p15/d3131`
 - Most of the docs with these issues are listed in the `misc` folder.
 - The system warns or errors when it encounters these issues.
-## Structure
+### Structure
 The PMB has a specific file structure that is handy to understand when using the system.
 The `data/test_cases` directory has a similar layout and can be used to see what is happening.
 What the specific files mean will be explained in the usage section.
