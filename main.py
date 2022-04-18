@@ -94,7 +94,7 @@ def get_args() -> Namespace:
 
 
 def store_ud_parses(args):
-    parser = UDParser(system=args.system, language=args.language)
+    parser = UDParser(system=args.ud_system, language=args.language)
     ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
 
     for filepath in pmb_generator(
