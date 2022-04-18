@@ -1,0 +1,262 @@
+%%% Ideas %%%
+% Maybe combine NOUN -[amod]-> ADJ into single token, example: good- bye
+% Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
+% nummod deprel kan vervangen worden door sense -[Quantity]-> number?
+% SCONJ as EXPLANATION box? See en/gold/p00/d0801
+
+%%% LABELING RULES %%%
+% Add the token feature to all nodes, this will be used to build up the string required for SBN.
+% This is done in order to not lose the UD information that rules might use.
+% Ideally, the token feature is only used in a write (or concat) only manner in the rules.
+rule add_token {
+    pattern {
+        N [lemma];
+    }
+    without {
+        N [token];
+    }
+    commands {
+        N.token = N.lemma;
+    }
+}
+
+% Numbers are constants in sbn, this is not the cleanest option, but without a POS tag we ensure that the
+% number won't be converted to a sense. We cannot allow non-leaf nodes to be constants, this results in
+% invalid SBN.
+% Example: en/gold/p01/d2141/
+rule indicate_number {
+    pattern {
+        N [ upos=NUM ];
+    }
+    without {
+        N -> *;
+    }
+    commands {
+        del_feat N.upos;
+    }
+}
+
+%%% CONNECTING RULES %%%
+% Connect the Owner / User of something directly
+% Example: en/gold/p04/d1646
+rule connect_user {
+    pattern {
+        USER [upos=PROPN|NOUN];
+        * -[nsubj|nsubj:pass]-> USER;
+        REL: TARGET -[nmod:poss]-> INDICATOR;
+    }
+    without {
+        TARGET -[User]-> USER;
+    }
+    commands {
+        % add_edge USER -[Owner]-> TARGET;
+        add_edge TARGET -[User]-> USER;
+        del_edge REL;
+        del_node INDICATOR;
+    }
+}
+
+%%% EXPANDING RULES %%%
+% Expand a name into an entity sense node, a name edge and the name constant.
+% NOTE: assign proper label, maybe with combination of PROPN + Gender = Fem etc.
+% Example: en/gold/p04/d1646
+rule expand_name {
+    pattern {
+        NAME [upos=PROPN];
+    }
+    without {
+        NAME -> *;
+    }
+    commands {
+        NAME.token = "entity.n.01";
+        add_node NAME_CONST;
+        NAME_CONST.token = NAME.textform;
+        add_edge NAME -[Name]-> NAME_CONST;
+    }
+}
+
+% Add a speaker / hearer nodes split up into 'person-sense' -> 'speaker'.
+% NOTE: possibly use Person=1 or other feats to indicate speaker or hearer.
+% Example: en/gold/p04/d1646
+rule expand_speaker {
+    pattern {
+        SPEAKER [upos=PRON];
+         * -[nsubj|nsubj:pass]-> SPEAKER;
+    }
+    without {
+        SPEAKER -[EQU]-> *;
+    }
+    commands {
+        SPEAKER.token = "person.n.01";
+        add_node SPEAKER_CONST;
+        SPEAKER_CONST.token = "speaker";
+        add_edge SPEAKER -[EQU]-> SPEAKER_CONST;
+    }
+}
+
+% Add a time sense node.
+% NOTE: use lexicon with Feats or mappings to figure out time relation TPR etc.
+% Example: en/gold/p04/d1646
+rule add_time {
+    pattern {
+        N [];
+        * -[root]-> N;
+    }
+    without {
+        N -[Time]-> *;
+    }
+    commands {
+        add_node TIME_SENSE;
+        TIME_SENSE.token = "time.n.08";
+        add_edge N -[Time]-> TIME_SENSE;
+
+        add_node TIME_CONST;
+        TIME_CONST.token = "now";
+        add_edge TIME_SENSE -[TPR]-> TIME_CONST;
+    }
+}
+
+%%% COMBING RULES %%%
+% Combine multiple PROPN's that probably belong together. This is quite tricky since this is very
+% vunrable to UD parse error or oddities (see example).
+% Example: en/gold/p65/d1215
+rule combine_propn {
+    pattern {
+        A [upos=PROPN];
+        B [upos=PROPN];
+        R: A -[flat|compound]-> B;
+    }
+    commands {
+        A.token = A.token + "_" + B.token;
+        del_edge R;
+        del_node B;
+    }
+}
+
+% Combine phrasal verb particle components. These are often treated as a single sense.
+% Some common cases include: "cut off", "burn down", "hang up" etc.
+% Example: en/gold/p00/d1469
+rule combine_compound_prt {
+    pattern {
+        A [];
+        B [];
+        R: A -[compound:prt]-> B;
+    }
+    commands {
+        A.token = A.token + "_" + B.token;
+        % We know it's most likely a verb at this point.
+        A.upos = VERB;
+        del_edge R;
+        del_node B;
+    }
+}
+
+% Combine multiple NOUNS that are probably compounds.
+% NOTE: The ordering restriction does not seem to work, also << >> and > don't work, while they
+% do work in the online grew match tool, maybe a conll thing?
+% Example: en/gold/p50/d2408
+rule combine_nouns {
+    pattern {
+        A [upos=NOUN];
+        B [upos=NOUN];
+        % B < A;
+        R: A -[compound]-> B;
+    }
+    commands {
+        A.token = B.token + "_" + A.token;
+        del_edge R;
+        del_node B;
+    }
+}
+
+%%% CLEANING RULES %%%
+% Remove any punctuation that is connected to the root directly. These are the sentence ending punctuation marks.
+% Example: en/gold/p04/d1646
+rule remove_root_punct {
+    pattern {
+        * -[root]-> ROOT;
+        E: ROOT -> N;
+        N [upos=PUNCT];
+    }
+    commands {
+        del_edge E;
+        del_node N;
+    }
+}
+
+% Remove nodes that are possibly useless. Ideally this rule is applied *after* all other rules that might
+% use the nodes (such as combining node tokens etc.) in order to not lose information.
+% NOTE: Not sure about PART here since that can also indicate negation or possession, which is semantically useful
+% Same goes for CCONJ and SCONJ, for now they are removed, since they often also don't contribute anything
+% and are basically never used as a node on their own.
+% Example: en/gold/p04/d1646
+rule remove_unwanted_pos {
+    pattern {
+        N [upos=PUNCT|DET|AUX|AUX_PASS|CASE|EXPL|ADP|PART|CCONJ|SCONJ];
+    }
+    commands {
+        del_node N;
+    }
+}
+
+% Remove the explicit ROOT node.
+% Example: en/gold/p04/d1646
+rule remove_explicit_root {
+    pattern {
+        N [];
+        E: N -[root]-> T;
+    }
+    commands {
+        del_edge E;
+        del_node N;
+    }
+}
+
+
+%%% SPECIAL CASES %%%
+% This can happen if a rule connects nodes together and later removes some.
+% If for instance the Owner role gets added, this might introduce a cycle.
+% This is a trade-off, there is information loss, but at least the output is
+% expected be a valid DAG. Possibly deal with cases more specifically,
+% though it is quite rare that this happens.
+% NOTE: this does not scale, when there are hops between the connecting nodes,
+% this does not fix it. Probably need to deal with this on the networkx side.
+% Example: en/gold/p96/d1385 (caused by connect_user)
+rule detach_cycles {
+    pattern {
+        N [];
+        M [];
+        A: N -> M;
+        B: M -> N;
+    }
+    commands {
+        del_edge B
+    }
+}
+
+% Main strat to apply all rules. Ordering is very important here.
+strat main {
+    Pick(
+        Iter (
+            Seq (
+                Onf(add_token),
+
+                Iter(combine_propn),
+                Iter(combine_nouns),
+                Iter(combine_compound_prt),
+
+                Iter(connect_user),
+                Iter(expand_name),
+                Iter(expand_speaker),
+                Iter(add_time),
+                Iter(remove_root_punct),
+                Iter(remove_explicit_root),
+                Iter(remove_unwanted_pos),
+
+                Iter(indicate_number),
+
+                Iter(detach_cycles),
+            )
+        )
+    )
+}

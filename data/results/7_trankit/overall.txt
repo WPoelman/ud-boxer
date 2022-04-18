@@ -1,0 +1,6 @@
+PARSED DOCS:          10669
+FAILED DOCS:          7
+TOTAL DOCS:           10676
+
+AVERAGE F1 (strict):  0.68 (0.17 - 1.0)
+AVERAGE F1 (lenient): 0.77 (0.32 - 1.0)
