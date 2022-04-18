@@ -166,11 +166,12 @@ class SBNGraph(BaseGraph):
 
                             edges.append(role_edge)
                         else:
-                            # This is special case where a constant looks like an
-                            # idx. Example:
+                            # This is special case where a constant looks like
+                            # an idx. Example:
                             # pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
-                            # This is detected by checking if the provided index
-                            # points at an 'impossible' line (sense) in the file.
+                            # This is detected by checking if the provided
+                            # index points at an 'impossible' line (sense) in
+                            # the file.
                             const_node = self.create_node(
                                 SBN_NODE_TYPE.CONSTANT,
                                 target,
@@ -254,7 +255,7 @@ class SBNGraph(BaseGraph):
             if not (node_tok := node_data.get("token", None)):
                 raise SBNError(
                     f"All nodes need the 'token' feature.\n"
-                    "Node data: {node_data}"
+                    f"Node data: {node_data}"
                 )
 
             # The sense has been added in the grew rewriting step
@@ -303,20 +304,19 @@ class SBNGraph(BaseGraph):
                     edge_type = SBN_EDGE_TYPE.ROLE
                 elif edge_name in SBNSpec.DRS_OPERATORS:
                     edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-
                 # The type cannot be determined from the name, figure out what
                 # an appropriate edge label might be.
-                if not edge_type:
+                else:
                     if edge_name in EDGE_MAPPINGS:
                         edge_name = EDGE_MAPPINGS[edge_name][0][0]
-                        # This type info should probably be included in the
-                        # mappings.
+                        # TODO: This type info should probably be included in
+                        # the mappings.
                         if edge_name in SBNSpec.ROLES:
                             edge_type = SBN_EDGE_TYPE.ROLE
                         elif edge_name in SBNSpec.DRS_OPERATORS:
                             edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
                         else:
-                            raise SBNError("Invalid mapping!")
+                            raise SBNError(f"Invalid mapping {edge_name}!")
                     else:
                         # This is pure guesswork, figure something better out
                         # here, all edge mapping based on triples?
@@ -411,7 +411,8 @@ class SBNGraph(BaseGraph):
                 if edge_data["type"] == SBN_EDGE_TYPE.BOX_BOX_CONNECT:
                     if box_box_connect_to_insert:
                         raise SBNError(
-                            "Found box connected to multiple boxes, is that possible?"
+                            "Found box connected to multiple boxes, "
+                            "is that possible?"
                         )
                     else:
                         box_box_connect_to_insert = edge_data["token"]
@@ -436,7 +437,8 @@ class SBNGraph(BaseGraph):
                             SBN_EDGE_TYPE.DRS_OPERATOR,
                         ):
                             raise SBNError(
-                                f"Invalid sense edge connect found: {sense_edge_data['type']}"
+                                f"Invalid sense edge connect found: "
+                                f"{sense_edge_data['type']}"
                             )
 
                         temp_line_result.append(sense_edge_data["token"])
@@ -451,7 +453,8 @@ class SBNGraph(BaseGraph):
                             )
                         else:
                             raise SBNError(
-                                f"Invalid sense node connect found: {sense_node_to_type}"
+                                f"Invalid sense node connect found: "
+                                f"{sense_node_to_type}"
                             )
 
                     result.append(temp_line_result)
@@ -638,7 +641,7 @@ class SBNGraph(BaseGraph):
                 visited.add(var_id)
             return out_str
 
-        # For now assume there always is the starting box to serve as the "root"
+        # Assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)
         final_result = __to_penman_str(G, starting_node, set(), "", 1)
 
