@@ -9,7 +9,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.config import Config
 from synse.grew_rewrite import Grew
-from synse.helpers import pmb_generator, smatch_score
+from synse.helpers import PMB, smatch_score
 from synse.sbn_spec import get_doc_id
 
 logging.basicConfig(level=logging.ERROR)
@@ -43,6 +43,13 @@ def get_args() -> Namespace:
         type=str,
         choices=Config.UD_SYSTEM.all_values(),
         help="System pipeline to use for generating UD parses.",
+    )
+    parser.add_argument(
+        "--data_split",
+        default=Config.DATA_SPLIT.TRAIN.value,
+        choices=Config.DATA_SPLIT.all_values(),
+        type=str,
+        help="Data split to run inference on.",
     )
     parser.add_argument(
         "-r",
@@ -139,14 +146,16 @@ def main():
     failed = 0
     files_with_errors = []
 
+    pmb = PMB(args.data_split)
+
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=args.max_workers
     ) as executor:
         futures = []
-        for filepath in pmb_generator(
+        for filepath in pmb.generator(
             args.starting_path,
             f"**/{args.language}.drs.penman",
-            desc_tqdm="Submitting tasks",
+            desc_tqdm="Gathering data",
         ):
             ud_filepath = Path(filepath.parent / ud_file_format)
             if not ud_filepath.exists():
@@ -177,8 +186,8 @@ def main():
     FAILED DOCS:          {failed}
     TOTAL DOCS:           {len(df) + failed}
 
-    AVERAGE F1 (strict):  {df["f1"].mean():.2} ({df["f1"].min():.2} - {df["f1"].max():.2})
-    AVERAGE F1 (lenient): {df["f1_lenient"].mean():.2} ({df["f1_lenient"].min():.2} - {df["f1_lenient"].max():.2})
+    AVERAGE F1 (strict):  {df["f1"].mean():.3} ({df["f1"].min():.3} - {df["f1"].max():.3})
+    AVERAGE F1 (lenient): {df["f1_lenient"].mean():.3} ({df["f1_lenient"].min():.3} - {df["f1_lenient"].max():.3})
     """
     )
 

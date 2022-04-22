@@ -261,13 +261,21 @@ def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
     return None
 
 
-def get_doc_id(lang: str, filepath: PathLike) -> Optional[str]:
+def get_doc_id(lang: str, filepath: PathLike) -> str:
     """
-    Helper to extract a doc id from either the filepath of the sbn file or the
-    starting comment lines. A doc id has the format <lang>/<p>/<d>.
+    Helper to extract a doc id from the filepath of the sbn file.
+    A doc id has the format <lang>/<p>/<d>
     """
-    full_path = str(Path(filepath).resolve())
-    if match := SBNSpec.DOC_ID_PATTERN.findall(full_path):
-        return f"{lang}/{match[0]}"
+    return f"{lang}/{get_base_id(filepath)}"
+
+
+def get_base_id(filepath: PathLike) -> str:
+    """
+    Helper to extract a doc id from the filepath of the sbn file.
+    A base doc id has the format <p>/<d>
+    """
+    full_path = str(Path(filepath))
+    if match := SBNSpec.DOC_ID_PATTERN.search(full_path):
+        return match.group(1)
 
     raise SBNError("Could not extract doc id!")

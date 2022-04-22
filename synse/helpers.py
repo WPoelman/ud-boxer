@@ -6,13 +6,50 @@ from typing import Dict, Generator
 
 from tqdm import tqdm
 
-from synse.sbn_spec import SBNError
+from synse.config import Config
+from synse.sbn_spec import SBNError, get_base_id
 
 __all__ = [
     "UD_LANG_DICT",
     "pmb_generator",
     "smatch_score",
 ]
+
+
+class PMB:
+    def __init__(
+        self,
+        split: Config.DATA_SPLIT = Config.DATA_SPLIT.TRAIN,
+        id_path: PathLike = Config.SPLIT_DIR_PATH,
+    ):
+        self.ids = set(
+            Path(Path(id_path) / f"{split}.txt").read_text().split("\n")
+        )
+
+    def generator(
+        self,
+        starting_path: PathLike,
+        pattern: str,
+        exclude: str = "predicted",
+        disable_tqdm: bool = False,
+        desc_tqdm: str = "",
+    ) -> Generator[Path, None, None]:
+        # Is this ideal? No not at all since were looping over the entire
+        # dataset, even if we just need a couple of files from a split.
+        # The alternative is also not great since then we end up with a very
+        # fragmented PMB file structure. This is the most understandable and
+        # clear way to deal with this issue in my opinion. Suggestions welcome!
+        yield from (
+            path
+            for path in pmb_generator(
+                starting_path,
+                pattern,
+                exclude,
+                disable_tqdm,
+                desc_tqdm,
+            )
+            if get_base_id(path) in self.ids
+        )
 
 
 def pmb_generator(

@@ -7,13 +7,17 @@ __all__ = [
     "Config",
 ]
 
+PROJECT_ROOT = Path(__file__).parent.parent
+
 
 class Config:
-    GRS_PATH = Path(Path(__file__).parent.parent / "grew/main.grs").resolve()
+    GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
 
     EDGE_MAPPINGS_PATH = Path(
-        Path(__file__).parent.parent / "data/output/edge_mappings.json"
+        PROJECT_ROOT / "data/output/edge_mappings.json"
     ).resolve()
+
+    SPLIT_DIR_PATH = Path(PROJECT_ROOT / "data/splits").resolve()
 
     class SUPPORTED_LANGUAGES(BaseEnum):
         """Supported languages, this is based on the PMB 4.0.0"""
@@ -22,6 +26,14 @@ class Config:
         DE = "de"
         IT = "it"
         EN = "en"
+
+    class DATA_SPLIT(BaseEnum):
+        """Data splits based on the PMB 4.0.0"""
+
+        DEV = "dev"
+        EVAL = "eval"
+        TEST = "test"
+        TRAIN = "train"
 
     class UD_SYSTEM(BaseEnum):
         """Supported UD parsers"""
