@@ -6,7 +6,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.config import Config
 from synse.grew_rewrite import Grew
-from synse.ud import UD_SYSTEM, UDGraph, UDParser
+from synse.ud import UDGraph, UDParser
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -37,9 +37,9 @@ def get_args() -> Namespace:
     parser.add_argument(
         "-s",
         "--ud_system",
-        default=UD_SYSTEM.STANZA.value,
+        default=Config.UD_SYSTEM.STANZA.value,
         type=str,
-        choices=UD_SYSTEM.all_values(),
+        choices=Config.UD_SYSTEM.all_values(),
         help="System pipeline to use for generating UD parse.",
     )
     parser.add_argument(

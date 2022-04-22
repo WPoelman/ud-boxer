@@ -10,7 +10,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from synse.config import Config
 from synse.helpers import pmb_generator
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
-from synse.ud import UD_SYSTEM, UDGraph, UDParser
+from synse.ud import UDGraph, UDParser
 
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
@@ -37,9 +37,9 @@ def get_args() -> Namespace:
     parser.add_argument(
         "-s",
         "--ud_system",
-        default=UD_SYSTEM.STANZA.value,
+        default=Config.UD_SYSTEM.STANZA.value,
         type=str,
-        choices=UD_SYSTEM.all_values(),
+        choices=Config.UD_SYSTEM.all_values(),
         help="System pipeline to use for generating UD parses.",
     )
     parser.add_argument(
@@ -111,12 +111,12 @@ def store_ud_parses(args):
 def search_dataset(args):
     """This function loops over the dataset to collect some info"""
 
-    for system in UD_SYSTEM.all_values():
+    for system in Config.UD_SYSTEM.all_values():
         results = []
         for filepath in pmb_generator(
             args.starting_path,
             f"**/*.ud.{system}.conll",
-            desc_tqdm="Storing UD parses ",
+            desc_tqdm="Searching multi-sentence UD parses ",
         ):
             sentences = Path(filepath).read_text().rstrip().split("\n\n")
             if len(sentences) > 1:

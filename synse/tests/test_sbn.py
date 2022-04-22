@@ -97,26 +97,3 @@ def test_can_parse_and_reconstruct_with_comments(tmp_path, example_string):
     reconstructed_graph = SBNGraph().from_path(path)
 
     assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
-
-
-def test_json_export(tmp_path):
-    tmp_file = tmp_path / "tmp.json"
-
-    G_string = SBNGraph().from_string(NORMAL_EXAMPLE_SBN)
-    G_string.to_json(tmp_file)
-
-    # Can export the file
-    assert tmp_file.exists()
-
-    # Check if nodes and edges are identical after reconstructing the graph
-    G_json = SBNGraph().from_json(tmp_file)
-
-    nodes_string = sorted(list(G_string.nodes.items()))
-    nodes_json = sorted(list(G_json.nodes.items()))
-
-    assert nodes_string == nodes_json
-
-    edges_string = sorted(list(G_string.edges.items()))
-    edges_json = sorted(list(G_json.edges.items()))
-
-    assert edges_string == edges_json

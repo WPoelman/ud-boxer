@@ -1,51 +1,39 @@
-from enum import Enum
 from os import PathLike
 from pathlib import Path
-from typing import List, Set
+from typing import Set
 
 from stanza.utils.conll import CoNLL
 
-from synse.base import BaseGraph
+from synse.base import BaseEnum, BaseGraph
 from synse.config import Config
 from synse.ud_spec import UDSpecBasic
 
-# Used to switch between stanza and trankit language identifiers
-UD_LANG_DICT = {
-    "de": "german",
-    "en": "english",
-    "it": "italian",
-    "nl": "dutch",
-}
+__all__ = [
+    "UD_NODE_TYPE",
+    "UD_EDGE_TYPE",
+    "UD_SYSTEM",
+    "UDError",
+    "UDGraph",
+    "UDParser",
+    "Collector",
+]
 
 
 class UDError(Exception):
     pass
 
 
-class UD_SYSTEM(str, Enum):
-    """Supported UD parsers"""
-
-    STANZA = "stanza"
-    TRANKIT = "trankit"
-
-    @classmethod
-    def all_values(cls) -> List[str]:
-        return [c.value for c in cls]
-
-
-class UD_NODE_TYPE(str, Enum):
+class UD_NODE_TYPE(BaseEnum):
     """Node types"""
 
-    # NOTE: possibly use POS tags as node types directly
     SENTENCE = "sentence"
     TOKEN = "token"
     ROOT = "root"
 
 
-class UD_EDGE_TYPE(str, Enum):
+class UD_EDGE_TYPE(BaseEnum):
     """Edge types"""
 
-    # NOTE: possibly use dependency relations as edge type directly
     SENTENCE_CONNECT = "sentence-connect"
     DEPENDENCY_RELATION = "dependency-relation"
     EXPLICIT_ROOT = "explicit-root"
@@ -165,7 +153,6 @@ class UDGraph(BaseGraph):
 
     @staticmethod
     def _node_label(node_data) -> str:
-        # return node_data["token"]
         label = [node_data["token"]]
 
         if lemma := node_data.get("lemma"):
@@ -196,10 +183,10 @@ class UDGraph(BaseGraph):
 class UDParser:
     def __init__(
         self,
-        system: UD_SYSTEM = UD_SYSTEM.STANZA,
+        system: Config.UD_SYSTEM = Config.UD_SYSTEM.STANZA,
         language: Config.SUPPORTED_LANGUAGES = Config.SUPPORTED_LANGUAGES.EN,
     ) -> None:
-        if system == UD_SYSTEM.STANZA:
+        if system == Config.UD_SYSTEM.STANZA:
             from stanza import Pipeline, download
             from stanza.utils.conll import CoNLL
 
@@ -211,10 +198,10 @@ class UDParser:
             def write_output(result, out_file):
                 CoNLL.write_doc2conll(result, out_file)
 
-        elif system == UD_SYSTEM.TRANKIT:
+        elif system == Config.UD_SYSTEM.TRANKIT:
             from trankit import Pipeline, trankit2conllu
 
-            pipeline = Pipeline(UD_LANG_DICT[language])
+            pipeline = Pipeline(Config.UD_LANG_MAPPING[language])
 
             def write_output(result, out_file):
                 out_file.write_text(trankit2conllu(result))

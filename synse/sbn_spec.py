@@ -15,6 +15,14 @@ from os import PathLike
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+__all__ = [
+    "SBNError",
+    "SBNSpec",
+    "split_comments",
+    "split_wn_sense",
+    "get_doc_id",
+]
+
 
 class SBNError(Exception):
     pass

@@ -8,6 +8,12 @@ from tqdm import tqdm
 
 from synse.sbn_spec import SBNError
 
+__all__ = [
+    "UD_LANG_DICT",
+    "pmb_generator",
+    "smatch_score",
+]
+
 
 def pmb_generator(
     starting_path: PathLike,
@@ -26,7 +32,7 @@ def pmb_generator(
     )
 
 
-KEY_MAPPING = {
+_KEY_MAPPING = {
     "n": "input_graphs",
     "g": "gold_graphs_generated",
     "s": "evaluation_graphs_generated",
@@ -35,7 +41,7 @@ KEY_MAPPING = {
     "r": "recall",
     "f": "f1",
 }
-RELEVANT_ITEMS = ["p", "r", "f"]
+_RELEVANT_ITEMS = ["p", "r", "f"]
 
 
 def smatch_score(gold: PathLike, test: PathLike) -> Dict[str, float]:
@@ -55,9 +61,9 @@ def smatch_score(gold: PathLike, test: PathLike) -> Dict[str, float]:
         )
 
     clean_dict = {
-        KEY_MAPPING.get(k, k): v
+        _KEY_MAPPING.get(k, k): v
         for k, v in decoded.items()
-        if k in RELEVANT_ITEMS
+        if k in _RELEVANT_ITEMS
     }
 
     return clean_dict

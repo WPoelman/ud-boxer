@@ -10,6 +10,10 @@ from synse.config import Config
 from synse.sbn import PROTECTED_FIELDS, SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
 from synse.sbn_spec import SBNError
 
+__all__ = [
+    "Grew",
+]
+
 
 class Grew:
     def __init__(self, grs_path: PathLike = Config.GRS_PATH) -> None:

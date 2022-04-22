@@ -1,9 +1,26 @@
-import json
-from os import PathLike
+from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 import networkx as nx
+
+__all__ = [
+    "_ID",
+    "NODE",
+    "EDGE",
+    "BaseGraph",
+    "BaseEnum",
+]
+
+
+class BaseEnum(str, Enum):
+    @classmethod
+    def all_values(cls) -> List[str]:
+        return [i for i in cls]
+
+    def __str__(self):
+        return str(self.value)
+
 
 _ID = Tuple[str, int]
 NODE = Tuple[_ID, Dict[str, Any]]
@@ -22,27 +39,6 @@ class BaseGraph(nx.DiGraph):
     def type_style_mapping(self):
         """Style per node and/or edge type to use in dot export"""
         raise NotImplementedError("Cannot be called directly.")
-
-    def to_json(self, path: PathLike):
-        """Export the graph to json and save it at the provided path"""
-        json_data = nx.readwrite.node_link_data(self)
-
-        path_str = str(Path(path).resolve())
-        if not path_str.endswith(".json"):
-            path_str = f"{path_str}.json"
-
-        with open(path_str, "w") as f:
-            json.dump(json_data, f)
-
-        return self
-
-    def from_json(self, path: PathLike):
-        """Read json from the provided path and construct the graph"""
-        with open(path) as f:
-            json_data = json.load(f)
-        self = nx.readwrite.node_link_graph(json_data)
-
-        return self
 
     @staticmethod
     def _node_label(node_data) -> str:
@@ -71,9 +67,9 @@ class BaseGraph(nx.DiGraph):
             tok = node_data["token"]
             if tok in token_count:
                 token_count[tok] += 1
-                token_id = f'"{tok}-{token_count[tok]}"'
+                token_id = f"{tok}-{token_count[tok]}"
             else:
-                token_id = f'"{tok}"'
+                token_id = f"{tok}"
                 token_count[tok] = 0
             node_dict[node_id] = token_id
 
@@ -82,7 +78,7 @@ class BaseGraph(nx.DiGraph):
                     token_id,
                     **{
                         **self.type_style_mapping[node_data["type"]],
-                        "label": f'"{self._node_label(node_data).replace(":", "-")}"',
+                        "label": f'{self._node_label(node_data).replace(":", "-")}',
                     },
                 )
             )
@@ -93,7 +89,7 @@ class BaseGraph(nx.DiGraph):
                     node_dict[from_id],
                     node_dict[to_id],
                     **{
-                        "label": f'"{self._edge_label(edge_data).replace(":", "-")}"',
+                        "label": f'{self._edge_label(edge_data).replace(":", "-")}',
                         **self.type_style_mapping[edge_data["type"]],
                     },
                 )

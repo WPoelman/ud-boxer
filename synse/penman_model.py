@@ -10,6 +10,10 @@ from penman.types import Role
 
 from synse.sbn_spec import SBNSpec
 
+__all__ = [
+    "pm_model",
+]
+
 # TODO: figure out if inverting certain roles can be done with the reifications
 # or normalizations.
 

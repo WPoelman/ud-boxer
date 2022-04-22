@@ -1,3 +1,9 @@
+__all__ = [
+    "UDSpecBasic",
+    "UPOS_WN_POS_MAPPING",
+]
+
+
 class UDSpecBasic:
     class DepRels:
         ACL = "acl"  # clausal modifier of noun (adnominal clause)
@@ -215,4 +221,5 @@ UPOS_WN_POS_MAPPING = {
 
 
 class UDSpecExtended:
+    # NOTE: not supported yet
     pass

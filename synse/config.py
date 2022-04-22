@@ -1,6 +1,11 @@
-from enum import Enum
 from pathlib import Path
-from typing import List
+from typing import Dict
+
+from synse.base import BaseEnum
+
+__all__ = [
+    "Config",
+]
 
 
 class Config:
@@ -10,7 +15,7 @@ class Config:
         Path(__file__).parent.parent / "data/output/edge_mappings.json"
     ).resolve()
 
-    class SUPPORTED_LANGUAGES(str, Enum):
+    class SUPPORTED_LANGUAGES(BaseEnum):
         """Supported languages, this is based on the PMB 4.0.0"""
 
         NL = "nl"
@@ -18,6 +23,16 @@ class Config:
         IT = "it"
         EN = "en"
 
-        @classmethod
-        def all_values(cls) -> List[str]:
-            return [i.value for i in cls]
+    class UD_SYSTEM(BaseEnum):
+        """Supported UD parsers"""
+
+        STANZA = "stanza"
+        TRANKIT = "trankit"
+
+    # Used to switch between stanza and trankit language identifiers
+    UD_LANG_MAPPING = {
+        "de": "german",
+        "en": "english",
+        "it": "italian",
+        "nl": "dutch",
+    }

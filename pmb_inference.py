@@ -11,7 +11,6 @@ from synse.config import Config
 from synse.grew_rewrite import Grew
 from synse.helpers import pmb_generator, smatch_score
 from synse.sbn_spec import get_doc_id
-from synse.ud import UD_SYSTEM
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -40,9 +39,9 @@ def get_args() -> Namespace:
     parser.add_argument(
         "-s",
         "--ud_system",
-        default=UD_SYSTEM.STANZA.value,
+        default=Config.UD_SYSTEM.STANZA.value,
         type=str,
-        choices=UD_SYSTEM.all_values(),
+        choices=Config.UD_SYSTEM.all_values(),
         help="System pipeline to use for generating UD parses.",
     )
     parser.add_argument(

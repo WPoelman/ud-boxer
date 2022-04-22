@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 
 import networkx as nx
 
-from synse.base import BaseGraph
+from synse.base import BaseEnum, BaseGraph
 from synse.config import Config
 from synse.penman_model import pm_model
 from synse.sbn_spec import SBNError, SBNSpec, split_comments, split_wn_sense
@@ -19,10 +19,24 @@ from synse.ud_spec import UPOS_WN_POS_MAPPING
 logger = logging.getLogger(__name__)
 
 
-# TODO: change this out for StrEnum or just string literals since serialization
-# to json does not work (then it just becomes a string and comparison needs to
-# be done with SBN_NODE_TYPE.value)
-class SBN_NODE_TYPE(str, Enum):
+__all__ = [
+    "SBN_NODE_TYPE",
+    "SBN_EDGE_TYPE",
+    "SBNGraph",
+    "sbn_graphs_are_isomorphic",
+]
+
+# TODO: move this to a better place + don't use older mappings
+# just for testing purposes now. Maybe move to GREW class?
+with open(Config.EDGE_MAPPINGS_PATH) as f:
+    # Sort options so the most frequent mapping is at the front
+    EDGE_MAPPINGS = {
+        k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
+        for k, v in json.load(f).items()
+    }
+
+
+class SBN_NODE_TYPE(BaseEnum):
     """Node types"""
 
     SENSE = "wordnet-sense"
@@ -30,7 +44,7 @@ class SBN_NODE_TYPE(str, Enum):
     BOX = "box"
 
 
-class SBN_EDGE_TYPE(str, Enum):
+class SBN_EDGE_TYPE(BaseEnum):
     """Edge types"""
 
     ROLE = "role"
@@ -46,15 +60,6 @@ PROTECTED_FIELDS = ["_id", "type", "type_idx", "token"]
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
 SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
-
-# TODO: move this to a better place + don't use older mappings
-# just for testing purposes now. Maybe move to GREW class?
-with open(Config.EDGE_MAPPINGS_PATH) as f:
-    # Sort options so the most frequent mapping is at the front
-    EDGE_MAPPINGS = {
-        k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-        for k, v in json.load(f).items()
-    }
 
 
 class SBNGraph(BaseGraph):
