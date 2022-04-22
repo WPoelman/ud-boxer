@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import networkx as nx
+import penman
 
 from synse.base import BaseEnum, BaseGraph
 from synse.config import Config
@@ -543,31 +544,20 @@ class SBNGraph(BaseGraph):
         path.write_text(self.to_penman_string(split_sense))
         return path
 
-    def to_penman_string(self, split_sense: bool = False) -> str:
+    def to_penman_string(self, lenient: bool = False) -> str:
         """
         Creates a string in Penman (AMR-like) format from the SBNGraph.
 
-        The `split_sense` flag indicates whether to treat senses as a single
-        concept or as 3 separate items. When treating the sense as a whole,
-        the evaluation indirectly also targets the task of word sense
-        disambiguation, which might not be desirable. Splitting the sense in
-        its components rewards correct predictions of the lemma, pos and sense
-        separately, thus being more lenient when scoring the output with
-        SMATCH for instance. Examples:
-            Without split:
-                (b0 / "box"
-                    :member (s0 / "person.n.01"))
-
-            With split:
+        The `lenient` flag indicates whether to include the sense number.
+        If included, the evaluation indirectly also targets the task of word
+        sense disambiguation, which might not be desirable. Example:
+            Without sense:
                 (b0 / "box"
                     :member (s0 / "sense"
                         :lemma (s1 / "person")
                         :pos (s2 / "n")
-                        :sense (s3 / "01")))
+                        :sense (s3 / "01"))) # Would be excluded when lenient
         """
-        # Use penman library to test the validity of the generated structure.
-        import penman
-
         if not self.is_dag:
             raise SBNError(
                 "Exporting a cyclic SBN graph to Penman is not possible"
@@ -613,18 +603,19 @@ class SBNGraph(BaseGraph):
 
             indents = tabs * "\t"
             node_tok = node_data["token"]
-            if (
-                split_sense
-                and node_data["type"] == SBN_NODE_TYPE.SENSE
-                and (components := split_wn_sense(node_tok))
-            ):
+            if node_data["type"] == SBN_NODE_TYPE.SENSE:
+                if not (components := split_wn_sense(node_tok)):
+                    raise SBNError(f"Cannot split sense: {node_tok}")
+
                 lemma, pos, sense = [self.quote(i) for i in components]
+
                 out_str += f'({var_id} / {self.quote("sense")}'
                 out_str += f"\n{indents}:lemma {lemma}"
                 out_str += f"\n{indents}:pos {pos}"
-                # out_str += f"\n{indents}:sense {sense}" # NOTE: as a test
-            # TODO: fix this, the generated parentheses are incorrect most of
-            # the time.
+
+                if not lenient:
+                    out_str += f"\n{indents}:sense {sense}"
+            # TODO: fix this, the generated parentheses are not always correct
             # elif node_tok in SBNSpec.CONSTANTS:
             #     out_str += f"{self.quote(node_tok)})"
             #     if S.out_degree(current_n) > 0:
