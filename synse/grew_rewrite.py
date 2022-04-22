@@ -52,8 +52,7 @@ class Grew:
         operations in networkx. Even though there might be overlap in terms of
         ids (multiple box-0's), the result keeps all boxes and ensures all ids
         are correctly added to A. The strategy of connecting boxes is by using
-        the most common box indicator (currently), "CONTINUATION" (TODO: make
-        this configurable or dynamic based on graphs).
+        the most common box indicator (currently).
         """
         A = graphs.pop(0)
         for B in graphs:
@@ -73,7 +72,8 @@ class Grew:
                             active_box,
                             node[0],
                             SBN_EDGE_TYPE.BOX_BOX_CONNECT,
-                            "CONTINUATION",  # TODO: determine this dynamically
+                            # TODO: determine this dynamically?
+                            Config.DEFAULT_BOX_CONNECT,
                         )
                     )
                 else:

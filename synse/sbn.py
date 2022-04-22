@@ -329,7 +329,7 @@ class SBNGraph(BaseGraph):
                         # POS -> deprel -> POS? Default can be most frequent
                         # role probably.
                         edge_type = SBN_EDGE_TYPE.ROLE
-                        edge_name = "Agent"
+                        edge_name = Config.DEFAULT_ROLE
 
                 edge = self.create_edge(
                     id_mapping[grew_from_node_id],

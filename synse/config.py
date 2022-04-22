@@ -11,14 +11,16 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 
 class Config:
-    GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
+    """Class to house project-wide constants and config items"""
 
+    # -- Paths --
+    GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
     EDGE_MAPPINGS_PATH = Path(
         PROJECT_ROOT / "data/output/edge_mappings.json"
     ).resolve()
-
     SPLIT_DIR_PATH = Path(PROJECT_ROOT / "data/splits").resolve()
 
+    # -- Enums --
     class SUPPORTED_LANGUAGES(BaseEnum):
         """Supported languages, this is based on the PMB 4.0.0"""
 
@@ -48,3 +50,7 @@ class Config:
         "it": "italian",
         "nl": "dutch",
     }
+
+    # -- Defaults --
+    DEFAULT_BOX_CONNECT = "CONTINUATION"
+    DEFAULT_ROLE = "Agent"
