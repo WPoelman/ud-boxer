@@ -730,7 +730,7 @@ class SBNGraph(BaseGraph):
         return {
             SBN_NODE_TYPE.SENSE: {},
             SBN_NODE_TYPE.CONSTANT: {"shape": "none"},
-            SBN_NODE_TYPE.BOX: {"shape": "box"},
+            SBN_NODE_TYPE.BOX: {"shape": "box", "label": ""},
             SBN_EDGE_TYPE.ROLE: {},
             SBN_EDGE_TYPE.DRS_OPERATOR: {},
             SBN_EDGE_TYPE.BOX_CONNECT: {"style": "dotted", "label": ""},

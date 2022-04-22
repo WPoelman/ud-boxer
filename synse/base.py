@@ -77,8 +77,8 @@ class BaseGraph(nx.DiGraph):
                 pydot.Node(
                     token_id,
                     **{
-                        **self.type_style_mapping[node_data["type"]],
                         "label": f'{self._node_label(node_data).replace(":", "-")}',
+                        **self.type_style_mapping[node_data["type"]],
                     },
                 )
             )
