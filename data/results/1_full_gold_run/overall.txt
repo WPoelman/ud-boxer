@@ -1,3 +1,0 @@
-DOCS:                 10516
-AVERAGE F1 (strict):  0.647 (0.182 - 1.0)
-AVERAGE F1 (lenient): 0.742 (0.246 - 1.0)

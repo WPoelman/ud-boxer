@@ -1,7 +1,0 @@
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p30/d0706/en.ud.trankit.conll
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p52/d0756/en.ud.trankit.conll
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p90/d0064/en.ud.trankit.conll
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p99/d2196/en.ud.trankit.conll
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p59/d2732/en.ud.trankit.conll
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p18/d3146/en.ud.trankit.conll
-../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/en/gold/p10/d3030/en.ud.trankit.conll
