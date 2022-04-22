@@ -35,6 +35,19 @@ The data comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
   * Some SBN files contain constants that cannot be distinguished from indices. For example: `en/silver/p15/d3131`
 - Most of the docs with these issues are listed in the `misc` folder.
 - The system warns or errors when it encounters these issues.
+
+### Splits
+The data splits only contain ids for the English gold data.
+The splits are based on: https://github.com/RikVN/DRS_parsing/tree/master/data/pmb-4.0.0/gold.
+Note that not all docs are usable due to the above mentioned issues, so the actual counts are slightly lower.
+
+| Split   | # Docs   |
+|---------|----------|
+| train   | 7668     |
+| test    | 1048     |
+| dev     | 1169     |
+| eval    |  830     |
+
 ### Structure
 The PMB has a specific file structure that is handy to understand when using the system.
 The `data/test_cases` directory has a similar layout and can be used to see what is happening.
