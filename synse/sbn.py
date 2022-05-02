@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import logging
 from copy import deepcopy
-from enum import Enum
 from os import PathLike
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -13,6 +12,7 @@ import penman
 
 from synse.base import BaseEnum, BaseGraph
 from synse.config import Config
+from synse.grew_spec import GrewSpec
 from synse.penman_model import pm_model
 from synse.sbn_spec import SBNError, SBNSpec, split_comments, split_wn_sense
 from synse.ud_spec import UPOS_WN_POS_MAPPING
@@ -40,7 +40,7 @@ with open(Config.EDGE_MAPPINGS_PATH) as f:
 class SBN_NODE_TYPE(BaseEnum):
     """Node types"""
 
-    SENSE = "wordnet-sense"
+    SENSE = "sense"
     CONSTANT = "constant"
     BOX = "box"
 
@@ -258,42 +258,54 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, grew_edges) in grew_graph.items():
-            if not (node_tok := node_data.get("token", None)):
+            if not (
+                (node_type_raw := node_data.get("type", None))
+                and (node_tok := node_data.get("token", None))
+            ):
                 raise SBNError(
-                    f"All nodes need the 'token' feature.\n"
+                    f"All nodes need the 'type' and 'token' features.\n"
                     f"Node data: {node_data}"
                 )
 
-            # The sense has been added in the grew rewriting step
-            if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
-                node_type = SBN_NODE_TYPE.SENSE
-            # Otherwise try to format the token as a sense. This assumes
-            # unwanted nodes (DET, PUNCT, AUX) are already removed.
-            elif "upos" in node_data:
-                # TODO: some POS tags indicate constants (NUM, PROPN, etc)
-                # Maybe fix that here as well.
-                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                node_tok = f"{node_tok.lower()}.{wn_pos}.01"
-                node_type = SBN_NODE_TYPE.SENSE
-            # When the previous checks cannot determine if it's a sense or not,
-            # consider it to be a constant.
-            else:
-                node_type = SBN_NODE_TYPE.CONSTANT
+            # Try to get the correct type from the provided data
+            node_type = SBN_NODE_TYPE.from_str(node_type_raw)
 
-            node_data["token"] = node_tok
+            # Otherwise try to figure out what this is
+            if not node_type and node_type_raw == GrewSpec.UNDEFINED:
+                # The token was added, but forgot to add type.
+                if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
+                    node_type = SBN_NODE_TYPE.SENSE
+                # Try to format the token as a sense. This assumes unwanted
+                # nodes (DET, PUNCT, AUX) are already removed.
+                elif "upos" in node_data:
+                    # TODO: some POS tags indicate constants (NUM, PROPN, etc)
+                    # Maybe fix that here as well.
+                    wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
+                    node_tok = f"{node_tok.lower()}.{wn_pos}.01"
+                    node_type = SBN_NODE_TYPE.SENSE
+                    node_data["token"] = node_tok
+                # When the previous checks cannot determine if it's a sense or
+                # not, consider it to be a constant.
+                else:
+                    node_type = SBN_NODE_TYPE.CONSTANT
+            else:
+                raise SBNError(f"Unusable node type: {node_type}")
 
             node = self.create_node(node_type, node_tok, node_data)
-            nodes.append(node)
             id_mapping[grew_node_id] = node[0]
+            nodes.append(node)
 
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
             # NOTE: if we also introduce boxes on the grew side, we need to
             # figure out how to connect those here.
             if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
-                raise SBNError(
-                    "Found box node in grew output graph, cannot deal "
-                    "with this currently."
+                box_box_edge = self.create_edge(
+                    starting_box[0],
+                    id_mapping[grew_from_node_id],
+                    SBN_EDGE_TYPE.BOX_BOX_CONNECT,
+                    self.nodes[id_mapping[grew_from_node_id]]["token"],
                 )
+                edges.append(box_box_edge)
 
             if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
                 box_edge = self.create_edge(
@@ -310,6 +322,8 @@ class SBNGraph(BaseGraph):
                     edge_type = SBN_EDGE_TYPE.ROLE
                 elif edge_name in SBNSpec.DRS_OPERATORS:
                     edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+                elif edge_name in SBNSpec.NEW_BOX_INDICATORS:
+                    edge_type = SBN_EDGE_TYPE.BOX_CONNECT
                 # The type cannot be determined from the name, figure out what
                 # an appropriate edge label might be.
                 else:
