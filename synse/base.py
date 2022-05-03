@@ -21,13 +21,6 @@ class BaseEnum(str, Enum):
     def __str__(self):
         return str(self.value)
 
-    @classmethod
-    def from_str(cls, value: str, default=None):
-        try:
-            return cls(value)
-        except:
-            return default
-
 
 _ID = Tuple[str, int]
 NODE = Tuple[_ID, Dict[str, Any]]
@@ -106,8 +99,6 @@ class BaseGraph(nx.DiGraph):
         save_path = str(Path(save_path).resolve())
         if not save_path.endswith(".png"):
             save_path = f"{save_path}.png"
-
-        print(p_graph.to_string())
 
         p_graph.write(save_path, format="png")
 

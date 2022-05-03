@@ -20,19 +20,6 @@ rule add_token {
     }
 }
 
-% Add the default undefined type to all nodes and edges that don't have a type yet.
-rule add_default_type {
-    pattern {
-        N [];
-    }
-    without {
-        N [type];
-    }
-    commands {
-        N.type = undefined;
-    }   
-}
-
 % Numbers are constants in sbn, this is not the cleanest option, but without a POS tag we ensure that the
 % number won't be converted to a sense. We cannot allow non-leaf nodes to be constants, this results in
 % invalid SBN.
@@ -82,11 +69,10 @@ rule expand_name {
     }
     commands {
         NAME.token = "entity.n.01";
-        NAME.type = sense;
         
         add_node NAME_CONST;
         NAME_CONST.token = NAME.textform;
-        NAME_CONST.type = constant;
+
         add_edge NAME -[Name]-> NAME_CONST;
     }
 }
@@ -104,11 +90,10 @@ rule expand_speaker {
     }
     commands {
         SPEAKER.token = "person.n.01";
-        SPEAKER.type = sense;
 
         add_node SPEAKER_CONST;
         SPEAKER_CONST.token = "speaker";
-        SPEAKER_CONST.type = constant;
+
         add_edge SPEAKER -[EQU]-> SPEAKER_CONST;
     }
 }
@@ -127,12 +112,12 @@ rule add_time {
     commands {
         add_node TIME_SENSE;
         TIME_SENSE.token = "time.n.08";
-        TIME_SENSE.type = sense;
+
         add_edge N -[Time]-> TIME_SENSE;
 
         add_node TIME_CONST;
         TIME_CONST.token = "now";
-        TIME_CONST.type = constant;
+
         add_edge TIME_SENSE -[TPR]-> TIME_CONST;
     }
 }
@@ -256,20 +241,6 @@ rule detach_cycles {
 }
 
 %%% BOX RULES %%%
-%rule add_starting_box {
-%    pattern {
-%        N [  ];
-%    }
-%    without {
-%        * -[NEGATION]-> M;
-%    }
-%    commands {
-%        add_node NEGATION_BOX;
-%        NEGATION_BOX.token = "NEGATION";
-%        add_edge NEGATION_BOX -[NEGATION]-> M;
-%    }
-%}
-
 rule negation_nsubj {
     pattern {
         % We know there is negation.
@@ -285,7 +256,7 @@ rule negation_nsubj {
     commands {
         add_node NEGATION_BOX;
         NEGATION_BOX.token = "NEGATION";
-        NEGATION_BOX.type = "box";
+
         add_edge NEGATION_BOX -[NEGATION]-> M;
     }
 }
@@ -313,10 +284,7 @@ strat main {
 
                 Iter(detach_cycles),
 
-                % Iter(add_starting_box),
                 % Iter(add_negation_box_nsubj),
-
-                Iter(add_default_type),
             )
         )
     )
