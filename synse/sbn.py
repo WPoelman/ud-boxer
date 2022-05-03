@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import logging
 from copy import deepcopy
-from enum import Enum
 from os import PathLike
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -14,7 +13,13 @@ import penman
 from synse.base import BaseEnum, BaseGraph
 from synse.config import Config
 from synse.penman_model import pm_model
-from synse.sbn_spec import SBNError, SBNSpec, split_comments, split_wn_sense
+from synse.sbn_spec import (
+    SBNError,
+    SBNSpec,
+    split_comments,
+    split_single,
+    split_wn_sense,
+)
 from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
@@ -74,6 +79,15 @@ class SBNGraph(BaseGraph):
 
     def from_string(self, input_string: str) -> SBNGraph:
         """Construct a graph from a single SBN string."""
+        input_string = input_string.rstrip()
+
+        # Determine if we're dealing with an SBN file with newlines (from the
+        # PMB for instance) or without (from neural output). TODO: implement!
+        # if "\n" in input_string:
+        # lines = split_comments(input_string)
+        # else:
+        # lines = split_single(input_string)
+
         lines = split_comments(input_string)
 
         if not lines:
