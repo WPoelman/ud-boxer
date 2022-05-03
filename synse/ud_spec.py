@@ -186,6 +186,33 @@ class UDSpecBasic:
         }
 
     class Feats:
+        KEYS = {
+            "Abbr",
+            "Animacy",
+            "Aspect",
+            "Case",
+            "Clusivity",
+            "Definite",
+            "Degree",
+            "Evident",
+            "Foreign",
+            "Gender",
+            "Mood",
+            "NounClass",
+            "Number",
+            "NumType",
+            "Person",
+            "Polarity",
+            "Polite",
+            "Poss",
+            "PronType",
+            "Reflex",
+            "Tense",
+            "Typo",
+            "VerbForm",
+            "Voice",
+        }
+
         class Tense:
             # https://universaldependencies.org/u/feat/Tense.html
             FUT = "Fut"

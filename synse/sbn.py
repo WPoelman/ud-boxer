@@ -257,7 +257,7 @@ class SBNGraph(BaseGraph):
 
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
-        for grew_node_id, (node_data, grew_edges) in grew_graph.items():
+        for grew_node_id, (node_data, _) in grew_graph.items():
             if not (node_tok := node_data.get("token", None)):
                 raise SBNError(
                     f"All nodes need the 'token' feature.\n"
