@@ -554,9 +554,13 @@ class SBNGraph(BaseGraph):
             Without sense:
                 (b0 / "box"
                     :member (s0 / "sense"
-                        :lemma (s1 / "person")
-                        :pos (s2 / "n")
-                        :sense (s3 / "01"))) # Would be excluded when lenient
+                        :lemma "person"
+                        :pos "n"
+                        :sense "01")) # Would be excluded when lenient
+
+        FIXME: the DRS/SBN constants technically don't need a variable. As long
+        as this is consistent between the gold and generated data, it's not a
+        problem.
         """
         if not self.is_dag:
             raise SBNError(
@@ -615,26 +619,19 @@ class SBNGraph(BaseGraph):
 
                 if not lenient:
                     out_str += f"\n{indents}:sense {sense}"
-            # TODO: fix this, the generated parentheses are not always correct
-            # elif node_tok in SBNSpec.CONSTANTS:
-            #     out_str += f"{self.quote(node_tok)})"
-            #     if S.out_degree(current_n) > 0:
-            #         raise SBNError("A constant cannot have out edges.")
             else:
                 out_str += f"({var_id} / {self.quote(node_tok)}"
 
-            if S.out_degree(current_n) == 0:
-                out_str += ")"
-                visited.add(var_id)
-            else:
+            if S.out_degree(current_n) > 0:
                 for edge_id in S.edges(current_n):
                     _, child_node = edge_id
                     out_str += f"\n{indents}:{S.edges[edge_id]['token']} "
                     out_str = __to_penman_str(
                         S, child_node, visited, out_str, tabs + 1
                     )
-                out_str += ")"
-                visited.add(var_id)
+            out_str += ")"
+            visited.add(var_id)
+
             return out_str
 
         # Assume there always is the starting box to serve as the "root"
