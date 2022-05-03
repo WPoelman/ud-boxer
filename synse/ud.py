@@ -107,12 +107,13 @@ class UDGraph(BaseGraph):
                 # So for instance: Mood=Ind|Tense=Past|VerbForm=Fin
                 # None of the features are required on a token level.
                 if feats := token.get("feats"):
-                    feats = {
-                        key: value
-                        for key, value in [
-                            item.split("=") for item in feats.split("|")
-                        ]
-                    }
+                    feats = dict()
+                    for key, value in [
+                        item.split("=") for item in feats.split("|")
+                    ]:
+                        if key not in UDSpecBasic.Feats.KEYS:
+                            raise UDError(f"Unknown Feat key found: {key}")
+                        feats[key] = value
 
                 tok_data = {
                     "_id": tok_id,
