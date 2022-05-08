@@ -4,3 +4,11 @@ TOTAL DOCS:           1162
 
 AVERAGE F1 (strict):  0.762 (0.333 - 1.0)
 AVERAGE F1 (lenient): 0.773 (0.375 - 1.0)
+
+# With better time and sense handeling
+PARSED DOCS:          1159
+FAILED DOCS:          3
+TOTAL DOCS:           1162
+
+AVERAGE F1 (strict):  0.78 (0.333 - 1.0)
+AVERAGE F1 (lenient): 0.79 (0.378 - 1.0)
