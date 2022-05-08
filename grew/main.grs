@@ -69,7 +69,7 @@ rule expand_name {
     }
     commands {
         NAME.token = "entity.n.01";
-        
+
         add_node NAME_CONST;
         NAME_CONST.token = NAME.textform;
 
@@ -241,23 +241,21 @@ rule detach_cycles {
 }
 
 %%% BOX RULES %%%
-rule negation_nsubj {
+rule box_negation_nsubj {
     pattern {
         % We know there is negation.
-        N [ lemma=not ];
+        N [lemma=not];
         * -[advmod]-> N;
-        
-        M [];
-        * -[nsubj]-> M;
+
+        %M [];
+        %* -[nsubj]-> M;
     }
     without {
-        * -[NEGATION]-> M;
+        P [token=NEGATION];
     }
     commands {
         add_node NEGATION_BOX;
-        NEGATION_BOX.token = "NEGATION";
-
-        add_edge NEGATION_BOX -[NEGATION]-> M;
+        NEGATION_BOX.token = NEGATION;
     }
 }
 
@@ -276,6 +274,9 @@ strat main {
                 Iter(expand_name),
                 Iter(expand_speaker),
                 Iter(add_time),
+
+                % box_negation_nsubj,
+
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
                 Iter(remove_unwanted_pos),
@@ -283,8 +284,6 @@ strat main {
                 Iter(indicate_number),
 
                 Iter(detach_cycles),
-
-                % Iter(add_negation_box_nsubj),
             )
         )
     )
