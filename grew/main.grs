@@ -4,11 +4,16 @@
 % nummod deprel kan vervangen worden door sense -[Quantity]-> number?
 % SCONJ as EXPLANATION box? See en/gold/p00/d0801
 
+%%% NOTES %%%
+% Make sure to read https://grew.fr/doc/pattern/ and especially the part on edge clauses.
+% For both the nodes and edges the 'token' feature is used to store already known DRS components
+% or defaults that might help to resolve those later.
+
 %%% LABELING RULES %%%
 % Add the token feature to all nodes, this will be used to build up the string required for SBN.
 % This is done in order to not lose the UD information that rules might use.
 % Ideally, the token feature is only used in a write (or concat) only manner in the rules.
-rule add_token {
+rule add_token_nodes {
     pattern {
         N [lemma];
     }
@@ -20,13 +25,24 @@ rule add_token {
     }
 }
 
+% Add the token feature to all edges. This makes sure we're not losing the deprel information.
+rule add_token_edges {
+    pattern {
+      	E: N -[!token]-> M;
+    }
+    commands {
+        % The initial feature is '1' by default, which is the 'deprel'.
+        E.token = "NONE";
+    }
+}
+
 % Numbers are constants in sbn, this is not the cleanest option, but without a POS tag we ensure that the
 % number won't be converted to a sense. We cannot allow non-leaf nodes to be constants, this results in
 % invalid SBN.
 % Example: en/gold/p01/d2141/
 rule indicate_number {
     pattern {
-        N [ upos=NUM ];
+        N [upos=NUM];
     }
     without {
         N -> *;
@@ -42,15 +58,15 @@ rule indicate_number {
 rule connect_user {
     pattern {
         USER [upos=PROPN|NOUN];
-        * -[nsubj|nsubj:pass]-> USER;
-        REL: TARGET -[nmod:poss]-> INDICATOR;
+        * -[1=nsubj]-> USER;
+        REL: TARGET -[1=nmod, 2=poss]-> INDICATOR;
     }
     without {
-        TARGET -[User]-> USER;
+        TARGET -[token=User]-> USER;
     }
     commands {
-        % add_edge USER -[Owner]-> TARGET;
-        add_edge TARGET -[User]-> USER;
+        % add_edge USER -[token=Owner]-> TARGET;
+        add_edge TARGET -[token=User]-> USER;
         del_edge REL;
         del_node INDICATOR;
     }
@@ -73,7 +89,7 @@ rule expand_name {
         add_node NAME_CONST;
         NAME_CONST.token = NAME.textform;
 
-        add_edge NAME -[Name]-> NAME_CONST;
+        add_edge NAME -[token=Name]-> NAME_CONST;
     }
 }
 
@@ -83,10 +99,10 @@ rule expand_name {
 rule expand_speaker {
     pattern {
         SPEAKER [upos=PRON];
-         * -[nsubj|nsubj:pass]-> SPEAKER;
+         * -[1=nsubj]-> SPEAKER;
     }
     without {
-        SPEAKER -[EQU]-> *;
+        SPEAKER -[token=EQU]-> *;
     }
     commands {
         SPEAKER.token = "person.n.01";
@@ -94,7 +110,7 @@ rule expand_speaker {
         add_node SPEAKER_CONST;
         SPEAKER_CONST.token = "speaker";
 
-        add_edge SPEAKER -[EQU]-> SPEAKER_CONST;
+        add_edge SPEAKER -[token=EQU]-> SPEAKER_CONST;
     }
 }
 
@@ -103,21 +119,21 @@ rule expand_speaker {
 rule add_time {
     pattern {
         N [];
-        * -[root]-> N;
+        * -[1=root]-> N;
     }
     without {
-        N -[Time]-> *;
+        N -[token=Time]-> *;
     }
     commands {
         add_node TIME_SENSE;
         TIME_SENSE.token = "time.n.08";
 
-        add_edge N -[Time]-> TIME_SENSE;
+        add_edge N -[token=Time]-> TIME_SENSE;
 
         add_node TIME_CONST;
         TIME_CONST.token = "now";
 
-        add_edge TIME_SENSE -[TIMERELATION]-> TIME_CONST;
+        add_edge TIME_SENSE -[token=TIMERELATION]-> TIME_CONST;
     }
 }
 
@@ -129,7 +145,7 @@ rule combine_propn {
     pattern {
         A [upos=PROPN];
         B [upos=PROPN];
-        R: A -[flat|compound]-> B;
+        R: A -[1=flat|compound]-> B;
     }
     commands {
         A.token = A.token + "_" + B.token;
@@ -145,7 +161,7 @@ rule combine_compound_prt {
     pattern {
         A [];
         B [];
-        R: A -[compound:prt]-> B;
+        R: A -[1=compound, 2=prt]-> B;
     }
     commands {
         A.token = A.token + "_" + B.token;
@@ -165,7 +181,7 @@ rule combine_nouns {
         A [upos=NOUN];
         B [upos=NOUN];
         % B < A;
-        R: A -[compound]-> B;
+        R: A -[1=compound]-> B;
     }
     commands {
         A.token = B.token + "_" + A.token;
@@ -179,7 +195,7 @@ rule combine_nouns {
 % Example: en/gold/p04/d1646
 rule remove_root_punct {
     pattern {
-        * -[root]-> ROOT;
+        * -[1=root]-> ROOT;
         E: ROOT -> N;
         N [upos=PUNCT];
     }
@@ -209,7 +225,7 @@ rule remove_unwanted_pos {
 rule remove_explicit_root {
     pattern {
         N [];
-        E: N -[root]-> T;
+        E: N -[1=root]-> T;
     }
     commands {
         del_edge E;
@@ -229,8 +245,6 @@ rule remove_explicit_root {
 % Example: en/gold/p96/d1385 (caused by connect_user)
 rule detach_cycles {
     pattern {
-        N [];
-        M [];
         A: N -> M;
         B: M -> N;
     }
@@ -244,10 +258,10 @@ rule box_negation_nsubj {
     pattern {
         % We know there is negation.
         N [lemma=not];
-        * -[advmod]-> N;
+        * -[1=advmod]-> N;
 
         %M [];
-        %* -[nsubj]-> M;
+        %* -[1=nsubj]-> M;
     }
     without {
         P [token=NEGATION];
@@ -263,7 +277,8 @@ strat main {
     Pick(
         Iter (
             Seq (
-                Onf(add_token),
+                Onf(add_token_nodes),
+                Onf(add_token_edges),
 
                 Iter(combine_propn),
                 Iter(combine_nouns),

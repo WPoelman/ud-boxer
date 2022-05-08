@@ -160,10 +160,9 @@ def extract_mappings(args):
         doc_id = get_doc_id(args.language, ud_filepath)
 
         extractor.extract(S, T, doc_id)
-    extractor.export_csv("test_mappings.csv")
-    return
-    date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    extractor.dump_mappings(Path(args.output_path) / f"mappings-{date}.json")
+
+    date = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    extractor.export_csv(f"edge_mappings_{date}.csv")
 
 
 def error_mine(args):

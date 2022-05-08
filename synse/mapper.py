@@ -41,7 +41,6 @@ class MapExtractor:
         self.relevant_keys = {
             "token",
             "lemma",
-            "deprel",
             "upos",
             "xpos",
             *UDSpecBasic.Feats.KEYS,
@@ -89,6 +88,7 @@ class MapExtractor:
                             for k, v in T.nodes[target_to].items()
                             if k in self.relevant_keys
                         },
+                        "deprel": target_edge.get("meta_deprel"),
                         "label": source_edge["token"],
                         "doc_id": doc_id,
                     }

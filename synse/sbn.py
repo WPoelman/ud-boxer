@@ -56,6 +56,12 @@ SENSE_LOOKUP = {
 }
 
 
+# TODO: move to config? Probably a 'resolver.py' instead that deals with this
+# kind of stuff. This file is getting pretty big, especially 'from_grew'
+GREW_RESOLVE_TIME_EDGE = "TIMERELATION"
+GREW_RESOLVE_NONE_EDGE = "NONE"
+
+
 class SBN_NODE_TYPE(BaseEnum):
     """Node types"""
 
@@ -313,6 +319,8 @@ class SBNGraph(BaseGraph):
                     node_tok = sense
                 else:
                     node_tok = f"{lemma}.{wn_pos}.01"
+            # TODO: resolve speaker hearer constants with Person feat (1 = speaker, 2 = hearer)
+
             # When the previous checks cannot determine if it's a sense or not,
             # consider it to be a constant.
             else:
@@ -375,17 +383,46 @@ class SBNGraph(BaseGraph):
                 edges.append(box_edge)
 
             for edge_name, grew_to_node_id in grew_edges:
-                edge_type = None
+                edge_data = {
+                    key: value
+                    for key, value in [
+                        item.split("=") for item in edge_name.split(",")
+                    ]
+                }
+                if not (edge_token := edge_data.get("token", None)):
+                    raise SBNError(
+                        f"Received edge data without token from grew. "
+                        f"Data: {edge_data}"
+                    )
 
-                if edge_name in SBNSpec.ROLES:
-                    edge_type = SBN_EDGE_TYPE.ROLE
-                elif edge_name in SBNSpec.DRS_OPERATORS:
-                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                elif edge_name in SBNSpec.NEW_BOX_INDICATORS:
-                    edge_type = SBN_EDGE_TYPE.BOX_CONNECT
-                elif edge_name == "TIMERELATION":
-                    edge_type = SBN_EDGE_TYPE.ROLE
+                # Grew encodes deprels in a peculiar way, reconstruct it here.
+                deprel_comp = [
+                    edge_data[deprel_component]
+                    for deprel_component in ["1", "2"]
+                    if deprel_component in edge_data
+                ]
+                edge_data.pop("1", None)
+                edge_data.pop("2", None)
+                deprel = ":".join(deprel_comp) if deprel_comp else None
+                edge_data["deprel"] = deprel
 
+                # We don't know the edge label, try to resolve it.
+                if edge_token == GREW_RESOLVE_NONE_EDGE:
+                    if deprel in EDGE_MAPPINGS:
+                        edge_token = EDGE_MAPPINGS[deprel][0][0]
+                        # TODO: This type info should probably be included in
+                        # the mappings.
+                        if edge_token in SBNSpec.ROLES:
+                            edge_type = SBN_EDGE_TYPE.ROLE
+                        elif edge_token in SBNSpec.DRS_OPERATORS:
+                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+                        else:
+                            raise SBNError(f"Invalid mapping {edge_token}!")
+                    else:
+                        edge_type = SBN_EDGE_TYPE.ROLE
+                        edge_token = Config.DEFAULT_ROLE
+                elif edge_token == GREW_RESOLVE_TIME_EDGE:
+                    edge_type = SBN_EDGE_TYPE.ROLE
                     # Not the nicest solution, but we need to figure out the
                     # tense, which is a bit of a pain on the grew side.
                     tenses = [
@@ -395,41 +432,27 @@ class SBNGraph(BaseGraph):
                     ]
                     if len(tenses) > 0:
                         counts = Counter(tenses).most_common(1)
-                        if len(counts) == 1:
-                            edge_name = TIME_EDGE_MAPPING[counts[0][0]]
-                        else:
-                            # Alphabetical, so it's reproducible
-                            item = sorted([i[0] for i in counts])[-1]
-                            edge_name = TIME_EDGE_MAPPING[item]
+                        edge_token = TIME_EDGE_MAPPING[counts[0][0]]
                     else:
-                        edge_name = Config.DEFAULT_TIME_ROLE
-
-                # The type cannot be determined from the name, figure out what
-                # an appropriate edge label might be.
+                        edge_token = Config.DEFAULT_TIME_ROLE
+                elif edge_token in SBNSpec.ROLES:
+                    edge_type = SBN_EDGE_TYPE.ROLE
+                elif edge_token in SBNSpec.DRS_OPERATORS:
+                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+                elif edge_token in SBNSpec.NEW_BOX_INDICATORS:
+                    edge_type = SBN_EDGE_TYPE.BOX_CONNECT
                 else:
-                    if edge_name in EDGE_MAPPINGS:
-                        edge_name = EDGE_MAPPINGS[edge_name][0][0]
-                        # TODO: This type info should probably be included in
-                        # the mappings.
-                        if edge_name in SBNSpec.ROLES:
-                            edge_type = SBN_EDGE_TYPE.ROLE
-                        elif edge_name in SBNSpec.DRS_OPERATORS:
-                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                        else:
-                            raise SBNError(f"Invalid mapping {edge_name}!")
-                    else:
-                        # This is pure guesswork, figure something better out
-                        # here, all edge mapping based on triples?
-                        # POS -> deprel -> POS? Default can be most frequent
-                        # role probably.
-                        edge_type = SBN_EDGE_TYPE.ROLE
-                        edge_name = Config.DEFAULT_ROLE
+                    raise SBNError(
+                        f"Unknown edge token found: {edge_token}, "
+                        f"data {edge_data}"
+                    )
 
                 edge = self.create_edge(
                     id_mapping[grew_from_node_id],
                     id_mapping[grew_to_node_id],
                     edge_type,
-                    edge_name,
+                    edge_token,
+                    {f"meta_{k}": v for k, v in edge_data.items()},
                 )
                 edges.append(edge)
 
@@ -807,10 +830,12 @@ class SBNGraph(BaseGraph):
     @staticmethod
     def _node_label(node_data) -> str:
         return node_data["token"]
+        # return "\n".join(f"{k}={v}" for k, v in node_data.items())
 
     @staticmethod
     def _edge_label(edge_data) -> str:
         return edge_data["token"]
+        # return "\n".join(f"{k}={v}" for k, v in edge_data.items())
 
     @property
     def type_style_mapping(self):
