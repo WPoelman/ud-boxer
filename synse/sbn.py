@@ -73,20 +73,20 @@ class SBNGraph(BaseGraph):
         super().__init__(incoming_graph_data, **attr)
         self.is_dag: bool = None
 
-    def from_path(self, path: PathLike) -> SBNGraph:
+    def from_path(
+        self, path: PathLike, is_single_line: bool = False
+    ) -> SBNGraph:
         """Construct a graph from the provided filepath."""
-        return self.from_string(Path(path).read_text())
+        return self.from_string(Path(path).read_text(), is_single_line)
 
-    def from_string(self, input_string: str) -> SBNGraph:
+    def from_string(
+        self, input_string: str, is_single_line: bool = False
+    ) -> SBNGraph:
         """Construct a graph from a single SBN string."""
-        input_string = input_string.rstrip()
-
         # Determine if we're dealing with an SBN file with newlines (from the
-        # PMB for instance) or without (from neural output). TODO: implement!
-        # if "\n" in input_string:
-        # lines = split_comments(input_string)
-        # else:
-        # lines = split_single(input_string)
+        # PMB for instance) or without (from neural output).
+        if is_single_line:
+            input_string = split_single(input_string)
 
         lines = split_comments(input_string)
 
@@ -274,13 +274,15 @@ class SBNGraph(BaseGraph):
         for grew_node_id, (node_data, _) in grew_graph.items():
             if not (node_tok := node_data.get("token", None)):
                 raise SBNError(
-                    f"All nodes need the 'type' and 'token' features.\n"
+                    f"All nodes need the 'token' features.\n"
                     f"Node data: {node_data}"
                 )
 
             # The sense has been added in the grew rewriting step
             if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
                 node_type = SBN_NODE_TYPE.SENSE
+            elif node_tok in SBNSpec.NEW_BOX_INDICATORS:
+                node_type = SBN_NODE_TYPE.BOX
             # Otherwise try to format the token as a sense. This assumes
             # unwanted nodes (DET, PUNCT, AUX) are already removed.
             elif "upos" in node_data:
@@ -300,9 +302,39 @@ class SBNGraph(BaseGraph):
             id_mapping[grew_node_id] = node[0]
             nodes.append(node)
 
+        # Below are some experiments to connect multiple boxes. This introduces
+        # some strange results in some cases. This is very hard to deal with
+        # in an elegant manner, both on the grew or python side. For later?
+        # self.add_nodes_from(nodes)
+
+        # for grew_from_node_id, (_, grew_edges) in grew_graph.items():
+        #     # NOTE: this is quite hacky, we redirect the negation edge from
+        #     # whatever node it was pointing at to the previous box node. This
+        #     # is not a proper negation implementation yet, but just to get
+        #     # things started. I had some trouble trying to redirect multiple
+        #     # nodes to a newly introduced node on the GREW side. That would be
+        #     # ideal and then just build it back here, without trickery.
+        #     if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
+        #         box_box_edge = self.create_edge(
+        #             self._prev_box_id,
+        #             id_mapping[grew_from_node_id],
+        #             SBN_EDGE_TYPE.BOX_BOX_CONNECT,
+        #             self.nodes[id_mapping[grew_from_node_id]]["token"],
+        #         )
+        #         edges.append(box_box_edge)
+        #         continue  # <-- NOTICE THIS PLEASE, THE HACK IS TO SKIP THE OUT EDGES
+
+        #     if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
+        #         box_edge = self.create_edge(
+        #             self._active_box_id,
+        #             id_mapping[grew_from_node_id],
+        #             SBN_EDGE_TYPE.BOX_CONNECT,
+        #         )
+        #         edges.append(box_edge)
+
+        self.add_nodes_from(nodes)
+
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            # NOTE: if we also introduce boxes on the grew side, we need to
-            # figure out how to connect those here.
             if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
                 box_box_edge = self.create_edge(
                     starting_box[0],
@@ -358,7 +390,6 @@ class SBNGraph(BaseGraph):
                 )
                 edges.append(edge)
 
-        self.add_nodes_from(nodes)
         self.add_edges_from(edges)
 
         self._check_is_dag()
@@ -718,6 +749,13 @@ class SBNGraph(BaseGraph):
     @property
     def _active_box_id(self) -> SBN_ID:
         return (SBN_NODE_TYPE.BOX, self.type_indices[SBN_NODE_TYPE.BOX] - 1)
+
+    @property
+    def _prev_box_id(self) -> SBN_ID:
+        return (
+            SBN_NODE_TYPE.BOX,
+            max(self.type_indices[SBN_NODE_TYPE.BOX] - 2, 0),
+        )
 
     @property
     def _active_box_token(self) -> str:
