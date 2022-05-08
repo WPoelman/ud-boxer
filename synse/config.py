@@ -16,7 +16,14 @@ class Config:
     # -- Paths --
     GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
     EDGE_MAPPINGS_PATH = Path(
-        PROJECT_ROOT / "data/output/edge_mappings.json"
+        PROJECT_ROOT / "data/mappings/edge_mappings.json"
+    ).resolve()
+    LEMMA_SENSE_MAPPINGS_PATH = Path(
+        PROJECT_ROOT / "data/mappings/lemma_sense_lookup_en_gold_train.pickle"
+    ).resolve()
+    LEMMA_POS_SENSE_MAPPINGS_PATH = Path(
+        PROJECT_ROOT
+        / "data/mappings/lemma_pos_sense_lookup_en_gold_train.pickle"
     ).resolve()
     SPLIT_DIR_PATH = Path(PROJECT_ROOT / "data/splits").resolve()
 

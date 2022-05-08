@@ -68,7 +68,7 @@ rule expand_name {
         NAME -> *;
     }
     commands {
-        NAME.token = "entity.n.01";
+        % NAME.token = "entity.n.01"; see note above
 
         add_node NAME_CONST;
         NAME_CONST.token = NAME.textform;

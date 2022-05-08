@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+import pickle
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
@@ -34,12 +35,24 @@ __all__ = [
 
 # TODO: move this to a better place + don't use older mappings
 # just for testing purposes now. Maybe move to GREW class?
-with open(Config.EDGE_MAPPINGS_PATH) as f:
+with open(Config.EDGE_MAPPINGS_PATH) as edge_f:
     # Sort options so the most frequent mapping is at the front
     EDGE_MAPPINGS = {
         k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-        for k, v in json.load(f).items()
+        for k, v in json.load(edge_f).items()
     }
+
+# TODO: move this as well
+with open(Config.LEMMA_SENSE_MAPPINGS_PATH, "rb") as lemma_f:
+    LEMMA_SENSE_MAPPINGS = pickle.load(lemma_f)
+
+with open(Config.LEMMA_POS_SENSE_MAPPINGS_PATH, "rb") as lemma_pos_f:
+    LEMMA_POS_SENSE_MAPPINGS = pickle.load(lemma_pos_f)
+
+SENSE_LOOKUP = {
+    "lemma": LEMMA_SENSE_MAPPINGS,
+    "lemma_pos": LEMMA_POS_SENSE_MAPPINGS,
+}
 
 
 class SBN_NODE_TYPE(BaseEnum):
@@ -288,9 +301,17 @@ class SBNGraph(BaseGraph):
             elif "upos" in node_data:
                 # TODO: some POS tags indicate constants (NUM, PROPN, etc)
                 # Maybe fix that here as well.
-                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                node_tok = f"{node_tok.lower()}.{wn_pos}.01"
                 node_type = SBN_NODE_TYPE.SENSE
+                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
+                lemma = node_tok.lower()
+                lemma_pos = f"{lemma}.{wn_pos}"
+
+                if sense := SENSE_LOOKUP["lemma_pos"].get(lemma_pos, None):
+                    node_tok = sense
+                elif sense := SENSE_LOOKUP["lemma"].get(lemma, None):
+                    node_tok = sense
+                else:
+                    node_tok = f"{lemma}.{wn_pos}.01"
             # When the previous checks cannot determine if it's a sense or not,
             # consider it to be a constant.
             else:
