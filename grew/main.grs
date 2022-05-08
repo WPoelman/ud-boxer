@@ -69,8 +69,10 @@ rule expand_name {
     }
     commands {
         NAME.token = "entity.n.01";
+
         add_node NAME_CONST;
         NAME_CONST.token = NAME.textform;
+
         add_edge NAME -[Name]-> NAME_CONST;
     }
 }
@@ -88,8 +90,10 @@ rule expand_speaker {
     }
     commands {
         SPEAKER.token = "person.n.01";
+
         add_node SPEAKER_CONST;
         SPEAKER_CONST.token = "speaker";
+
         add_edge SPEAKER -[EQU]-> SPEAKER_CONST;
     }
 }
@@ -108,10 +112,12 @@ rule add_time {
     commands {
         add_node TIME_SENSE;
         TIME_SENSE.token = "time.n.08";
+
         add_edge N -[Time]-> TIME_SENSE;
 
         add_node TIME_CONST;
         TIME_CONST.token = "now";
+
         add_edge TIME_SENSE -[TPR]-> TIME_CONST;
     }
 }
@@ -234,6 +240,25 @@ rule detach_cycles {
     }
 }
 
+%%% BOX RULES %%%
+rule box_negation_nsubj {
+    pattern {
+        % We know there is negation.
+        N [lemma=not];
+        * -[advmod]-> N;
+
+        %M [];
+        %* -[nsubj]-> M;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
 % Main strat to apply all rules. Ordering is very important here.
 strat main {
     Pick(
@@ -249,6 +274,9 @@ strat main {
                 Iter(expand_name),
                 Iter(expand_speaker),
                 Iter(add_time),
+
+                % box_negation_nsubj,
+
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
                 Iter(remove_unwanted_pos),

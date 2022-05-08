@@ -252,18 +252,23 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     return temp_lines
 
 
-def split_single(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
+def split_single(sbn_string: str) -> str:
     """
     Helper to convert SBN that is in a single, flat string (no newlines) into
     separate lines.
     """
-    raise NotImplementedError(
-        "TODO: parsing single line sbn strings is not implemented yet"
-    )
+    tokens = sbn_string.split(" ")
+    final_tokens = []
 
-    temp_lines: List[Tuple[str, Optional[str]]] = []
+    for token in tokens:
+        if SBNSpec.WORDNET_SENSE_PATTERN.match(token) or (
+            token in SBNSpec.NEW_BOX_INDICATORS
+        ):
+            token = f"\n{token}"
+        final_tokens.append(token)
 
-    return temp_lines
+    final_string = " ".join(final_tokens).strip()
+    return final_string
 
 
 def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
