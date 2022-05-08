@@ -252,6 +252,25 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     return temp_lines
 
 
+def split_single(sbn_string: str) -> str:
+    """
+    Helper to convert SBN that is in a single, flat string (no newlines) into
+    separate lines.
+    """
+    tokens = sbn_string.split(" ")
+    final_tokens = []
+
+    for token in tokens:
+        if SBNSpec.WORDNET_SENSE_PATTERN.match(token) or (
+            token in SBNSpec.NEW_BOX_INDICATORS
+        ):
+            token = f"\n{token}"
+        final_tokens.append(token)
+
+    final_string = " ".join(final_tokens).strip()
+    return final_string
+
+
 def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
     """
     Splits a wordnet sense into its components: lemma, pos, sense_number.

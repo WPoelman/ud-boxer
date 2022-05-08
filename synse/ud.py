@@ -106,10 +106,10 @@ class UDGraph(BaseGraph):
                 #   <feat_1_key>=<feat_1_val>|<feat_2_key>=<feat_2_val> ...
                 # So for instance: Mood=Ind|Tense=Past|VerbForm=Fin
                 # None of the features are required on a token level.
-                if feats := token.get("feats"):
+                if feats_str := token.get("feats"):
                     feats = dict()
                     for key, value in [
-                        item.split("=") for item in feats.split("|")
+                        item.split("=") for item in feats_str.split("|")
                     ]:
                         if key not in UDSpecBasic.Feats.KEYS:
                             raise UDError(f"Unknown Feat key found: {key}")

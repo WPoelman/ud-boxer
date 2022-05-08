@@ -75,3 +75,7 @@ flats (and the other way around) or combine compounds at a later
 stage regardless of the flats?
 
 Example: `pmb-4.0.0/data/en/gold/p03/d2003` (in test cases)
+
+---
+
+You cannot differentiate compounds based on NOUN -[compound]-> NOUN, wether they need to become a single sense or an adjective-like role (example: en/gold/p05/d2113). The same goes for proper adjectives in most cases (colors get combined).
