@@ -246,6 +246,14 @@ UPOS_WN_POS_MAPPING = {
     UDSpecBasic.POS.X: "n",
 }
 
+TIME_EDGE_MAPPING = {
+    UDSpecBasic.Feats.Tense.FUT: "TSU",
+    UDSpecBasic.Feats.Tense.IMP: "TPR",  # Not in English?
+    UDSpecBasic.Feats.Tense.PAST: "TPR",
+    UDSpecBasic.Feats.Tense.PQP: "TPR",  # Not in English
+    UDSpecBasic.Feats.Tense.PRES: "EQU",  # or TIN (it's still happening)
+}
+
 
 class UDSpecExtended:
     # NOTE: not supported yet

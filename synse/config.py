@@ -61,3 +61,4 @@ class Config:
     # -- Defaults --
     DEFAULT_BOX_CONNECT = "CONTINUATION"
     DEFAULT_ROLE = "Agent"
+    DEFAULT_TIME_ROLE = "EQU"

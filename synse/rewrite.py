@@ -2,17 +2,8 @@ import logging
 
 from synse.base import BaseGraph
 from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
-from synse.ud_spec import UDSpecBasic
 
 logger = logging.getLogger(__name__)
-
-TIME_EDGE_MAPPING = {
-    UDSpecBasic.Feats.Tense.FUT: "TSU",
-    UDSpecBasic.Feats.Tense.IMP: "TPR",  # Not in English?
-    UDSpecBasic.Feats.Tense.PAST: "TPR",
-    UDSpecBasic.Feats.Tense.PQP: "TPR",  # Not in English
-    UDSpecBasic.Feats.Tense.PRES: "EQU",  # or TIN (it's still happening)
-}
 
 # Possible useful to extract Role mappings from:
 #   - https://universaldependencies.org/u/feat/Degree.html for equality

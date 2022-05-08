@@ -99,7 +99,6 @@ rule expand_speaker {
 }
 
 % Add a time sense node.
-% TODO: use lexicon with Feats or mappings to figure out time relation TPR etc.
 % Example: en/gold/p04/d1646
 rule add_time {
     pattern {
@@ -118,7 +117,7 @@ rule add_time {
         add_node TIME_CONST;
         TIME_CONST.token = "now";
 
-        add_edge TIME_SENSE -[TPR]-> TIME_CONST;
+        add_edge TIME_SENSE -[TIMERELATION]-> TIME_CONST;
     }
 }
 

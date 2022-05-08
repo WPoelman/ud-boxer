@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import logging
 import pickle
+from collections import Counter
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
@@ -21,7 +22,7 @@ from synse.sbn_spec import (
     split_single,
     split_wn_sense,
 )
-from synse.ud_spec import UPOS_WN_POS_MAPPING
+from synse.ud_spec import TIME_EDGE_MAPPING, UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
 
@@ -382,6 +383,27 @@ class SBNGraph(BaseGraph):
                     edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
                 elif edge_name in SBNSpec.NEW_BOX_INDICATORS:
                     edge_type = SBN_EDGE_TYPE.BOX_CONNECT
+                elif edge_name == "TIMERELATION":
+                    edge_type = SBN_EDGE_TYPE.ROLE
+
+                    # Not the nicest solution, but we need to figure out the
+                    # tense, which is a bit of a pain on the grew side.
+                    tenses = [
+                        n_data["Tense"]
+                        for _, n_data in self.nodes.items()
+                        if "Tense" in n_data
+                    ]
+                    if len(tenses) > 0:
+                        counts = Counter(tenses).most_common(1)
+                        if len(counts) == 1:
+                            edge_name = TIME_EDGE_MAPPING[counts[0][0]]
+                        else:
+                            # Alphabetical, so it's reproducible
+                            item = sorted([i[0] for i in counts])[-1]
+                            edge_name = TIME_EDGE_MAPPING[item]
+                    else:
+                        edge_name = Config.DEFAULT_TIME_ROLE
+
                 # The type cannot be determined from the name, figure out what
                 # an appropriate edge label might be.
                 else:
