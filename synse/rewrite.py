@@ -1,7 +1,8 @@
 import logging
 
 from synse.base import BaseGraph
-from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
+from synse.sbn import SBNGraph
+from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE
 
 logger = logging.getLogger(__name__)
 

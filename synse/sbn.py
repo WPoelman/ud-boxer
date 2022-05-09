@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-import json
 import logging
-import pickle
-from collections import Counter
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
@@ -12,20 +9,22 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 import penman
 
-from synse.base import BaseEnum, BaseGraph
-from synse.config import Config
+from synse.base import BaseGraph
+from synse.graph_resolver import GraphResolver
 from synse.penman_model import pm_model
 from synse.sbn_spec import (
+    SBN_EDGE_TYPE,
+    SBN_NODE_TYPE,
     SBNError,
     SBNSpec,
     split_comments,
     split_single,
     split_wn_sense,
 )
-from synse.ud_spec import TIME_EDGE_MAPPING, UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
 
+RESOLVER = GraphResolver()
 
 __all__ = [
     "SBN_NODE_TYPE",
@@ -34,54 +33,6 @@ __all__ = [
     "sbn_graphs_are_isomorphic",
 ]
 
-# TODO: move this to a better place + don't use older mappings
-# just for testing purposes now. Maybe move to GREW class?
-with open(Config.EDGE_MAPPINGS_PATH) as edge_f:
-    # Sort options so the most frequent mapping is at the front
-    EDGE_MAPPINGS = {
-        k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-        for k, v in json.load(edge_f).items()
-    }
-
-# TODO: move this as well
-with open(Config.LEMMA_SENSE_MAPPINGS_PATH, "rb") as lemma_f:
-    LEMMA_SENSE_MAPPINGS = pickle.load(lemma_f)
-
-with open(Config.LEMMA_POS_SENSE_MAPPINGS_PATH, "rb") as lemma_pos_f:
-    LEMMA_POS_SENSE_MAPPINGS = pickle.load(lemma_pos_f)
-
-SENSE_LOOKUP = {
-    "lemma": LEMMA_SENSE_MAPPINGS,
-    "lemma_pos": LEMMA_POS_SENSE_MAPPINGS,
-}
-
-
-# TODO: move to config? Probably a 'resolver.py' instead that deals with this
-# kind of stuff. This file is getting pretty big, especially 'from_grew'
-GREW_RESOLVE_TIME_EDGE = "TIMERELATION"
-GREW_RESOLVE_NONE_EDGE = "NONE"
-
-
-class SBN_NODE_TYPE(BaseEnum):
-    """Node types"""
-
-    SENSE = "sense"
-    CONSTANT = "constant"
-    BOX = "box"
-
-
-class SBN_EDGE_TYPE(BaseEnum):
-    """Edge types"""
-
-    ROLE = "role"
-    DRS_OPERATOR = "drs-operator"
-    BOX_CONNECT = "box-connect"
-    BOX_BOX_CONNECT = "box-box-connect"
-
-
-# These are the protected fields in the node and edge data that need special
-# care in certain places, such as when merging SBNGraphs.
-PROTECTED_FIELDS = ["_id", "type", "type_idx", "token"]
 
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
@@ -292,43 +243,8 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, _) in grew_graph.items():
-            if not (node_tok := node_data.get("token", None)):
-                raise SBNError(
-                    f"All nodes need the 'token' features.\n"
-                    f"Node data: {node_data}"
-                )
-
-            # The sense has been added in the grew rewriting step
-            if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
-                node_type = SBN_NODE_TYPE.SENSE
-            elif node_tok in SBNSpec.NEW_BOX_INDICATORS:
-                node_type = SBN_NODE_TYPE.BOX
-            # Otherwise try to format the token as a sense. This assumes
-            # unwanted nodes (DET, PUNCT, AUX) are already removed.
-            elif "upos" in node_data:
-                # TODO: some POS tags indicate constants (NUM, PROPN, etc)
-                # Maybe fix that here as well.
-                node_type = SBN_NODE_TYPE.SENSE
-                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                lemma = node_tok.lower()
-                lemma_pos = f"{lemma}.{wn_pos}"
-
-                if sense := SENSE_LOOKUP["lemma_pos"].get(lemma_pos, None):
-                    node_tok = sense
-                elif sense := SENSE_LOOKUP["lemma"].get(lemma, None):
-                    node_tok = sense
-                else:
-                    node_tok = f"{lemma}.{wn_pos}.01"
-            # TODO: resolve speaker hearer constants with Person feat (1 = speaker, 2 = hearer)
-
-            # When the previous checks cannot determine if it's a sense or not,
-            # consider it to be a constant.
-            else:
-                node_type = SBN_NODE_TYPE.CONSTANT
-
-            node_data["token"] = node_tok
-
-            node = self.create_node(node_type, node_tok, node_data)
+            node_componets = RESOLVER.node_token_type(node_data)
+            node = self.create_node(*node_componets)
             id_mapping[grew_node_id] = node[0]
             nodes.append(node)
 
@@ -365,95 +281,35 @@ class SBNGraph(BaseGraph):
         self.add_nodes_from(nodes)
 
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
+            from_id = id_mapping[grew_from_node_id]
+            from_type = from_id[0]
+
+            if from_type == SBN_NODE_TYPE.BOX:
                 box_box_edge = self.create_edge(
                     starting_box[0],
-                    id_mapping[grew_from_node_id],
+                    from_id,
                     SBN_EDGE_TYPE.BOX_BOX_CONNECT,
-                    self.nodes[id_mapping[grew_from_node_id]]["token"],
+                    self.nodes[from_id]["token"],
                 )
                 edges.append(box_box_edge)
-
-            if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
+            if from_type == SBN_NODE_TYPE.SENSE:
                 box_edge = self.create_edge(
                     starting_box[0],
-                    id_mapping[grew_from_node_id],
+                    from_id,
                     SBN_EDGE_TYPE.BOX_CONNECT,
                 )
                 edges.append(box_edge)
 
             for edge_name, grew_to_node_id in grew_edges:
-                edge_data = {
-                    key: value
-                    for key, value in [
-                        item.split("=") for item in edge_name.split(",")
-                    ]
-                }
-                if not (edge_token := edge_data.get("token", None)):
-                    raise SBNError(
-                        f"Received edge data without token from grew. "
-                        f"Data: {edge_data}"
-                    )
-
-                # Grew encodes deprels in a peculiar way, reconstruct it here.
-                deprel_comp = [
-                    edge_data[deprel_component]
-                    for deprel_component in ["1", "2"]
-                    if deprel_component in edge_data
-                ]
-                edge_data.pop("1", None)
-                edge_data.pop("2", None)
-                deprel = ":".join(deprel_comp) if deprel_comp else None
-                edge_data["deprel"] = deprel
-
-                # We don't know the edge label, try to resolve it.
-                if edge_token == GREW_RESOLVE_NONE_EDGE:
-                    if deprel in EDGE_MAPPINGS:
-                        edge_token = EDGE_MAPPINGS[deprel][0][0]
-                        # TODO: This type info should probably be included in
-                        # the mappings.
-                        if edge_token in SBNSpec.ROLES:
-                            edge_type = SBN_EDGE_TYPE.ROLE
-                        elif edge_token in SBNSpec.DRS_OPERATORS:
-                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                        else:
-                            raise SBNError(f"Invalid mapping {edge_token}!")
-                    else:
-                        edge_type = SBN_EDGE_TYPE.ROLE
-                        edge_token = Config.DEFAULT_ROLE
-                elif edge_token == GREW_RESOLVE_TIME_EDGE:
-                    edge_type = SBN_EDGE_TYPE.ROLE
-                    # Not the nicest solution, but we need to figure out the
-                    # tense, which is a bit of a pain on the grew side.
-                    tenses = [
-                        n_data["Tense"]
-                        for _, n_data in self.nodes.items()
-                        if "Tense" in n_data
-                    ]
-                    if len(tenses) > 0:
-                        counts = Counter(tenses).most_common(1)
-                        edge_token = TIME_EDGE_MAPPING[counts[0][0]]
-                    else:
-                        edge_token = Config.DEFAULT_TIME_ROLE
-                elif edge_token in SBNSpec.ROLES:
-                    edge_type = SBN_EDGE_TYPE.ROLE
-                elif edge_token in SBNSpec.DRS_OPERATORS:
-                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                elif edge_token in SBNSpec.NEW_BOX_INDICATORS:
-                    edge_type = SBN_EDGE_TYPE.BOX_CONNECT
-                else:
-                    raise SBNError(
-                        f"Unknown edge token found: {edge_token}, "
-                        f"data {edge_data}"
-                    )
-
-                edge = self.create_edge(
-                    id_mapping[grew_from_node_id],
-                    id_mapping[grew_to_node_id],
-                    edge_type,
-                    edge_token,
-                    {f"meta_{k}": v for k, v in edge_data.items()},
+                to_id = id_mapping[grew_to_node_id]
+                edge_components = RESOLVER.edge_token_type(
+                    edge_name,
+                    self.nodes,
+                    from_id,
+                    to_id,
                 )
+
+                edge = self.create_edge(from_id, to_id, *edge_components)
                 edges.append(edge)
 
         self.add_edges_from(edges)

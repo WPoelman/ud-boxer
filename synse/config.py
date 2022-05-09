@@ -26,6 +26,9 @@ class Config:
         / "data/mappings/lemma_pos_sense_lookup_en_gold_train.pickle"
     ).resolve()
     SPLIT_DIR_PATH = Path(PROJECT_ROOT / "data/splits").resolve()
+    EDGE_CLF_PATH = Path(
+        PROJECT_ROOT / "data/edge_classifier/edge_clf.joblib"
+    ).resolve()
 
     # -- Enums --
     class SUPPORTED_LANGUAGES(BaseEnum):
