@@ -8,7 +8,12 @@ import joblib
 
 from synse.config import Config
 from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError, SBNSpec
-from synse.ud_spec import GENDER_SENSE_MAPPING, TIME_EDGE_MAPPING, UPOS_WN_POS_MAPPING
+from synse.ud_spec import (
+    GENDER_SENSE_MAPPING,
+    TIME_EDGE_MAPPING,
+    UPOS_WN_POS_MAPPING,
+    UDSpecBasic,
+)
 
 
 class GraphResolver:
@@ -65,18 +70,23 @@ class GraphResolver:
                 node_token = Config.DEFAULT_GENDER
         # Otherwise try to format the token as a sense. This assumes
         # unwanted nodes (DET, PUNCT, AUX) are already removed.
-        elif "upos" in node_data:
+        elif upos := node_data.get("upos", None):
             # TODO: some POS tags indicate constants (NUM, PROPN, etc)
             # Maybe fix that here as well.
             node_type = SBN_NODE_TYPE.SENSE
-            wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-            lemma = token_to_resolve.lower()
+            wn_pos = UPOS_WN_POS_MAPPING[upos]
+            lemma = token_to_resolve
             lemma_pos = f"{lemma}.{wn_pos}"
 
             if sense := self.lemma_pos_sense_lookup.get(lemma_pos, None):
                 node_token = sense
             elif sense := self.lemma_sense_lookup.get(lemma, None):
                 node_token = sense
+            elif upos == UDSpecBasic.POS.PROPN:
+                # TODO: this would be the place to get info per node from a
+                # NER system or mark them for later processing with a NER
+                # system. Can also work for dates (NUM), countries, etc.
+                node_token = "female.n.02"  # most common in training data
             else:
                 node_token = f"{lemma}.{wn_pos}.01"
         # TODO: resolve speaker hearer constants with Person feat (1 = speaker, 2 = hearer)
