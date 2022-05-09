@@ -51,7 +51,8 @@ class GraphResolver:
     ) -> Tuple[SBN_NODE_TYPE, str, Dict[str, str]]:
         if not (token_to_resolve := node_data.get("token", None)):
             raise SBNError(
-                f"All nodes need the 'token' features. Node data: {node_data}"
+                f"All nodes need the 'token' features. Node data: {node_data} "
+                "(Likely a UD parsing error with wrong sentence boundaries)"
             )
 
         node_data = GraphResolver.filter_item_data(node_data)
@@ -117,7 +118,13 @@ class GraphResolver:
         elif token_to_resolve in SBNSpec.DRS_OPERATORS:
             edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
         elif token_to_resolve in SBNSpec.NEW_BOX_INDICATORS:
-            edge_type = SBN_EDGE_TYPE.BOX_CONNECT
+            if (
+                from_id[0] == SBN_NODE_TYPE.BOX
+                and to_id[0] == SBN_NODE_TYPE.BOX
+            ):
+                edge_type = SBN_EDGE_TYPE.BOX_BOX_CONNECT
+            else:
+                edge_type = SBN_EDGE_TYPE.BOX_CONNECT
         # TODO: move this to a post processing step since we need all nodes,
         # which is a bit annoying and illogical here.
         elif token_to_resolve == self.RESOLVE_TIME_EDGE:

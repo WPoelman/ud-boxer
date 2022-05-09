@@ -250,18 +250,23 @@ class SBNGraph(BaseGraph):
 
         self.add_nodes_from(nodes)
 
+        # With this we 'climb' back up the box nodes to find the correct place
+        # to connect the new box. This only considers the starting box as
+        # a starting point. Other box constructions are not supported currently
+        box_count = self.type_indices[SBN_NODE_TYPE.BOX]
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
             from_id = id_mapping[grew_from_node_id]
             from_type = from_id[0]
 
             if from_type == SBN_NODE_TYPE.BOX:
                 box_box_edge = self.create_edge(
-                    self._prev_box_id,
+                    self._prev_box_id(box_count),
                     from_id,
                     SBN_EDGE_TYPE.BOX_BOX_CONNECT,
                     self.nodes[from_id]["token"],
                 )
                 edges.append(box_box_edge)
+                box_count -= 1
                 continue  # <-- NOTICE THIS PLEASE, THIS SKIPS THE OUT EDGES
 
             if from_type == SBN_NODE_TYPE.SENSE:
@@ -644,11 +649,11 @@ class SBNGraph(BaseGraph):
     def _active_box_id(self) -> SBN_ID:
         return (SBN_NODE_TYPE.BOX, self.type_indices[SBN_NODE_TYPE.BOX] - 1)
 
-    @property
-    def _prev_box_id(self) -> SBN_ID:
+    def _prev_box_id(self, offset: int) -> SBN_ID:
+        n = self.type_indices[SBN_NODE_TYPE.BOX]
         return (
             SBN_NODE_TYPE.BOX,
-            max(self.type_indices[SBN_NODE_TYPE.BOX] - 2, 0),
+            max(0, min(n, n - offset)),  # Clamp so we always have a valid box
         )
 
     @property

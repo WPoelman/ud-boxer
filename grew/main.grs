@@ -282,21 +282,60 @@ rule detach_cycles {
 }
 
 %%% BOX RULES %%%
-rule box_negation_nsubj {
+rule box_negation_det {
     pattern {
         % We know there is negation.
-        N [lemma=not];
-        * -[1=advmod]-> N;
-
-        %P [];
-        %* -[1=nsubj]-> M;
+        N [lemma=no|not|never];
+        * -[1=advmod|det]-> N;
     }
     without {
         P [token=NEGATION];
     }
     commands {
+        del_node N;
+
         add_node NEGATION_BOX;
         NEGATION_BOX.token = NEGATION;
+    }
+}
+
+% TODO: nobody, none, no one
+% Example: en/gold/p03/d0823
+rule box_negation_nmod {
+    pattern {
+        N [lemma=none];
+        N -[1=nmod]-> *;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+% TODO: whatever as in everything
+rule box_quantifier {
+    pattern {
+        N [lemma=every|everyone|everybody|everything|always|all|whoever|whomever|both];
+    }
+    without {
+        P [token=NEGATION];
+        Q [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+
+        add_node NEGATION_BOX_2;
+        NEGATION_BOX_2.token = NEGATION;
+
+        add_edge NEGATION_BOX -[token=NEGATION]-> NEGATION_BOX_2;
     }
 }
 
@@ -315,13 +354,15 @@ strat main {
                 Iter(connect_user),
                 Iter(expand_name),
 
-                Iter(expand_first_person),
-                Iter(expand_second_person),
-                Iter(expand_third_person),
+                Onf(expand_first_person),
+                Onf(expand_second_person),
+                Onf(expand_third_person),
 
                 Iter(add_time),
 
-                Iter(box_negation_nsubj),
+                Iter(box_negation_det),
+                Iter(box_negation_nmod),
+                Onf(box_quantifier),
 
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
