@@ -8,7 +8,7 @@ import joblib
 
 from synse.config import Config
 from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError, SBNSpec
-from synse.ud_spec import TIME_EDGE_MAPPING, UPOS_WN_POS_MAPPING
+from synse.ud_spec import GENDER_SENSE_MAPPING, TIME_EDGE_MAPPING, UPOS_WN_POS_MAPPING
 
 
 class GraphResolver:
@@ -17,12 +17,12 @@ class GraphResolver:
     labels, connections and more.
     """
 
-    GREW_RESOLVE_TIME_EDGE = "TIMERELATION"
-    GREW_RESOLVE_NONE_EDGE = "NONE"
+    RESOLVE_TIME_EDGE = "TIMERELATION"
+    RESOLVE_NONE_EDGE = "NONE"
+    RESOLVE_GENDER_NODE = "GENDER"
 
-    # These are the protected fields in the node and edge d
-    # ata that need special
-    # care in certain places, such as when merging SBNGraphs.
+    # These are the protected fields in the node and edge data that need
+    # special care in certain places, such as when merging SBNGraphs.
     PROTECTED_FIELDS = ["_id", "type", "type_idx", "token"]
 
     def __init__(self) -> None:
@@ -53,10 +53,16 @@ class GraphResolver:
         node_token = copy(token_to_resolve)
 
         # The sense has been added in the grew rewriting step
-        if SBNSpec.WORDNET_SENSE_PATTERN.match(token_to_resolve):
-            node_type = SBN_NODE_TYPE.SENSE
-        elif token_to_resolve in SBNSpec.NEW_BOX_INDICATORS:
+        if token_to_resolve in SBNSpec.NEW_BOX_INDICATORS:
             node_type = SBN_NODE_TYPE.BOX
+        elif SBNSpec.WORDNET_SENSE_PATTERN.match(token_to_resolve):
+            node_type = SBN_NODE_TYPE.SENSE
+        elif token_to_resolve == self.RESOLVE_GENDER_NODE:
+            node_type = SBN_NODE_TYPE.SENSE
+            if gender := node_data.get("Gender", None):
+                node_token = GENDER_SENSE_MAPPING[gender]
+            else:
+                node_token = Config.DEFAULT_GENDER
         # Otherwise try to format the token as a sense. This assumes
         # unwanted nodes (DET, PUNCT, AUX) are already removed.
         elif "upos" in node_data:
@@ -104,7 +110,7 @@ class GraphResolver:
             edge_type = SBN_EDGE_TYPE.BOX_CONNECT
         # TODO: move this to a post processing step since we need all nodes,
         # which is a bit annoying and illogical here.
-        elif token_to_resolve == self.GREW_RESOLVE_TIME_EDGE:
+        elif token_to_resolve == self.RESOLVE_TIME_EDGE:
             edge_type = SBN_EDGE_TYPE.ROLE
             # Not the nicest solution, but we need to figure out the
             # tense, which is a bit of a pain on the grew side.
@@ -118,7 +124,7 @@ class GraphResolver:
                 edge_token = TIME_EDGE_MAPPING[counts[0][0]]
             else:
                 edge_token = Config.DEFAULT_TIME_ROLE
-        elif token_to_resolve == self.GREW_RESOLVE_NONE_EDGE:
+        elif token_to_resolve == self.RESOLVE_NONE_EDGE:
             use_mappings = True
             if use_mappings and deprel:
                 if deprel in self.edge_mappings:

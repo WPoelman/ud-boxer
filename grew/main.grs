@@ -94,23 +94,51 @@ rule expand_name {
 }
 
 % Add a speaker / hearer nodes split up into 'person-sense' -> 'speaker'.
-% TODO: possibly use Person=1 or other feats to indicate speaker or hearer.
 % Example: en/gold/p04/d1646
-rule expand_speaker {
+rule expand_first_person {
     pattern {
-        SPEAKER [upos=PRON];
-         * -[1=nsubj]-> SPEAKER;
+        SPEAKER [upos=PRON, Person=1];
+         % * -[1=nsubj]-> SPEAKER;
     }
     without {
-        SPEAKER -[token=EQU]-> *;
+        SPEAKER [token="GENDER"];
     }
     commands {
-        SPEAKER.token = "person.n.01";
+        SPEAKER.token = "GENDER";
 
         add_node SPEAKER_CONST;
         SPEAKER_CONST.token = "speaker";
 
         add_edge SPEAKER -[token=EQU]-> SPEAKER_CONST;
+    }
+}
+
+rule expand_second_person {
+    pattern {
+        HEARER [upos=PRON, Person=2];
+    }
+    without {
+        HEARER [token="GENDER"];
+    }
+    commands {
+        HEARER.token = "GENDER";
+
+        add_node HEARER_CONST;
+        HEARER_CONST.token = "hearer";
+
+        add_edge HEARER -[token=EQU]-> HEARER_CONST;
+    }
+}
+
+rule expand_third_person {
+    pattern {
+        PERSON [upos=PRON, Person=3];
+    }
+    without {
+        PERSON [token="GENDER"];
+    }
+    commands {
+        PERSON.token = "GENDER";
     }
 }
 
@@ -260,7 +288,7 @@ rule box_negation_nsubj {
         N [lemma=not];
         * -[1=advmod]-> N;
 
-        %M [];
+        %P [];
         %* -[1=nsubj]-> M;
     }
     without {
@@ -286,14 +314,18 @@ strat main {
 
                 Iter(connect_user),
                 Iter(expand_name),
-                Iter(expand_speaker),
+
+                Iter(expand_first_person),
+                Iter(expand_second_person),
+                Iter(expand_third_person),
+
                 Iter(add_time),
 
-                % box_negation_nsubj,
+                Iter(box_negation_nsubj),
 
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
-                Iter(remove_unwanted_pos),
+                Onf(remove_unwanted_pos),
 
                 Iter(indicate_number),
 

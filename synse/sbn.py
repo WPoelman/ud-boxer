@@ -248,36 +248,6 @@ class SBNGraph(BaseGraph):
             id_mapping[grew_node_id] = node[0]
             nodes.append(node)
 
-        # Below are some experiments to connect multiple boxes. This introduces
-        # some strange results in some cases. This is very hard to deal with
-        # in an elegant manner, both on the grew or python side. For later?
-        # self.add_nodes_from(nodes)
-
-        # for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-        #     # NOTE: this is quite hacky, we redirect the negation edge from
-        #     # whatever node it was pointing at to the previous box node. This
-        #     # is not a proper negation implementation yet, but just to get
-        #     # things started. I had some trouble trying to redirect multiple
-        #     # nodes to a newly introduced node on the GREW side. That would be
-        #     # ideal and then just build it back here, without trickery.
-        #     if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
-        #         box_box_edge = self.create_edge(
-        #             self._prev_box_id,
-        #             id_mapping[grew_from_node_id],
-        #             SBN_EDGE_TYPE.BOX_BOX_CONNECT,
-        #             self.nodes[id_mapping[grew_from_node_id]]["token"],
-        #         )
-        #         edges.append(box_box_edge)
-        #         continue  # <-- NOTICE THIS PLEASE, THE HACK IS TO SKIP THE OUT EDGES
-
-        #     if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
-        #         box_edge = self.create_edge(
-        #             self._active_box_id,
-        #             id_mapping[grew_from_node_id],
-        #             SBN_EDGE_TYPE.BOX_CONNECT,
-        #         )
-        #         edges.append(box_edge)
-
         self.add_nodes_from(nodes)
 
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
@@ -286,15 +256,17 @@ class SBNGraph(BaseGraph):
 
             if from_type == SBN_NODE_TYPE.BOX:
                 box_box_edge = self.create_edge(
-                    starting_box[0],
+                    self._prev_box_id,
                     from_id,
                     SBN_EDGE_TYPE.BOX_BOX_CONNECT,
                     self.nodes[from_id]["token"],
                 )
                 edges.append(box_box_edge)
+                continue  # <-- NOTICE THIS PLEASE, THIS SKIPS THE OUT EDGES
+
             if from_type == SBN_NODE_TYPE.SENSE:
                 box_edge = self.create_edge(
-                    starting_box[0],
+                    self._active_box_id,
                     from_id,
                     SBN_EDGE_TYPE.BOX_CONNECT,
                 )

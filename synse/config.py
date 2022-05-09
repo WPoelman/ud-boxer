@@ -65,3 +65,4 @@ class Config:
     DEFAULT_BOX_CONNECT = "CONTINUATION"
     DEFAULT_ROLE = "Agent"
     DEFAULT_TIME_ROLE = "EQU"
+    DEFAULT_GENDER = "person.n.01"
