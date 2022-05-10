@@ -88,7 +88,7 @@ class MapExtractor:
                             for k, v in T.nodes[target_to].items()
                             if k in self.relevant_keys
                         },
-                        "deprel": target_edge.get("meta_deprel"),
+                        "deprel": target_edge.get("deprel"),
                         "label": source_edge["token"],
                         "doc_id": doc_id,
                     }

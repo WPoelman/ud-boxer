@@ -32,11 +32,7 @@ class GraphResolver:
 
     def __init__(self) -> None:
         with open(Config.EDGE_MAPPINGS_PATH) as edge_f:
-            # Sort options so the most frequent mapping is at the front
-            self.edge_mappings = {
-                k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-                for k, v in json.load(edge_f).items()
-            }
+            self.edge_mappings = json.load(edge_f)
 
         with open(Config.LEMMA_SENSE_MAPPINGS_PATH, "rb") as lemma_f:
             self.lemma_sense_lookup = pickle.load(lemma_f)
@@ -142,25 +138,33 @@ class GraphResolver:
             else:
                 edge_token = Config.DEFAULT_TIME_ROLE
         elif token_to_resolve == self.RESOLVE_NONE_EDGE:
-            use_mappings = True
-            if use_mappings and deprel:
-                if deprel in self.edge_mappings:
-                    edge_token = self.edge_mappings[deprel][0][0]
-                else:
-                    main_component = deprel.split(":")[0]
-                    if main_component in self.edge_mappings:
-                        edge_token = self.edge_mappings[main_component][0][0]
-            else:
-                edge_token = self.predict_edge(
-                    deprel, nodes[from_id], nodes[to_id]
-                )
+            from_upos = nodes[from_id].get("upos", None)
+            to_upos = nodes[to_id].get("upos", None)
+            key_components = [from_upos, deprel, to_upos]
 
-            # TODO: This type info should probably be included in
-            # the mappings.
-            if edge_token in SBNSpec.ROLES:
-                edge_type = SBN_EDGE_TYPE.ROLE
-            elif edge_token in SBNSpec.DRS_OPERATORS:
-                edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+            if all(key_components):
+                key = "-".join(key_components)
+                if key in self.edge_mappings:
+                    edge_token = self.edge_mappings[key]
+
+                    # TODO: This type info should probably be included in
+                    # the mappings.
+                    if edge_token in SBNSpec.ROLES:
+                        edge_type = SBN_EDGE_TYPE.ROLE
+                    elif edge_token in SBNSpec.DRS_OPERATORS:
+                        edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
+
+            # if use_mappings and deprel:
+            #     if deprel in self.edge_mappings:
+            #         edge_token = self.edge_mappings[deprel][0][0]
+            #     else:
+            #         main_component = deprel.split(":")[0]
+            #         if main_component in self.edge_mappings:
+            #             edge_token = self.edge_mappings[main_component][0][0]
+            # else:
+            #     edge_token = self.predict_edge(
+            #         deprel, nodes[from_id], nodes[to_id]
+            #     )
 
         if not edge_type:
             # The default role and type
