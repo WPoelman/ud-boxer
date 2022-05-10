@@ -46,6 +46,7 @@ class Config:
         EVAL = "eval"
         TEST = "test"
         TRAIN = "train"
+        ALL = "all"
 
     class UD_SYSTEM(BaseEnum):
         """Supported UD parsers"""
