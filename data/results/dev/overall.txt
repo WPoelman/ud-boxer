@@ -37,3 +37,11 @@ TOTAL DOCS:           1162
 
 AVERAGE F1 (strict):  0.817 (0.333 - 1.0)
 AVERAGE F1 (lenient): 0.819 (0.378 - 1.0)
+
+# pos-deprel-pos mapping
+PARSED DOCS:          1159
+FAILED DOCS:          3
+TOTAL DOCS:           1162
+
+AVERAGE F1 (strict):  0.823 (0.333 - 1.0)
+AVERAGE F1 (lenient): 0.826 (0.378 - 1.0)
