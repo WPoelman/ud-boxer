@@ -573,8 +573,18 @@ class SBNGraph(BaseGraph):
 
             if S.out_degree(current_n) > 0:
                 for edge_id in S.edges(current_n):
+                    edge_name = S.edges[edge_id]["token"]
+                    if edge_name in SBNSpec.INVERTABLE_ROLES:
+                        # SMATCH can invert edges that end in '-of'.
+                        # This means that,
+                        #   A -[AttributeOf]-> B
+                        #   B -[Attribute]-> A
+                        # are treated the same, but they need to be in the
+                        # right notation for this to work.
+                        edge_name = edge_name.replace("Of", "-of")
+
                     _, child_node = edge_id
-                    out_str += f"\n{indents}:{S.edges[edge_id]['token']} "
+                    out_str += f"\n{indents}:{edge_name} "
                     out_str = __to_penman_str(
                         S, child_node, visited, out_str, tabs + 1
                     )

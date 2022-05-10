@@ -100,14 +100,13 @@ class SBNSpec:
         "SXY",  # around
     }
 
-    REVERSABLE_ROLES = {
-        "Instance",
-        "Attribute",
-        "Colour",
-        "Content",
-        "Made",
-        "Part",
-        "Sub",
+    INVERTABLE_ROLES = {
+        "InstanceOf",
+        "AttributeOf",
+        "ColourOf",
+        "ContentOf",
+        "PartOf",
+        "SubOf",
     }
 
     ROLES = {
