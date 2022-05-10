@@ -108,7 +108,6 @@ rule expand_name {
 rule expand_first_person {
     pattern {
         SPEAKER [upos=PRON, Person=1];
-         % * -[1=nsubj]-> SPEAKER;
     }
     without {
         SPEAKER [token="GENDER"];
