@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from synse.sbn import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph, sbn_graphs_are_isomorphic
-from synse.sbn_spec import split_comments
+from synse.sbn import SBNGraph, sbn_graphs_are_isomorphic
+from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, split_comments
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 SBN_DIR = EXAMPLES_DIR / "sbn"

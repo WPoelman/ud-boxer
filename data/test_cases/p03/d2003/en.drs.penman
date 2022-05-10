@@ -24,6 +24,6 @@
 		:lemma "new"
 		:pos "a"
 		:sense "01"
-		:AttributeOf s3)
+		:Attribute-of s3)
 	:member s3
 	:member s4)

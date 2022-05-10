@@ -123,6 +123,7 @@ def generate_result(args, ud_filepath):
     result_record = {
         "pmb_id": get_doc_id(args.language, ud_filepath),
         "raw_sent": raw_sent,
+        "sbn_str": res.to_sbn_string(),
         **scores,
         **{f"{k}_lenient": v for k, v in lenient_scores.items()},
     }

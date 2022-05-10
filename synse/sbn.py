@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import logging
 from copy import deepcopy
 from os import PathLike
@@ -10,20 +9,22 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 import penman
 
-from synse.base import BaseEnum, BaseGraph
-from synse.config import Config
+from synse.base import BaseGraph
+from synse.graph_resolver import GraphResolver
 from synse.penman_model import pm_model
 from synse.sbn_spec import (
+    SBN_EDGE_TYPE,
+    SBN_NODE_TYPE,
     SBNError,
     SBNSpec,
     split_comments,
     split_single,
     split_wn_sense,
 )
-from synse.ud_spec import UPOS_WN_POS_MAPPING
 
 logger = logging.getLogger(__name__)
 
+RESOLVER = GraphResolver()
 
 __all__ = [
     "SBN_NODE_TYPE",
@@ -32,36 +33,6 @@ __all__ = [
     "sbn_graphs_are_isomorphic",
 ]
 
-# TODO: move this to a better place + don't use older mappings
-# just for testing purposes now. Maybe move to GREW class?
-with open(Config.EDGE_MAPPINGS_PATH) as f:
-    # Sort options so the most frequent mapping is at the front
-    EDGE_MAPPINGS = {
-        k: sorted(list(v.items()), key=lambda i: i[1], reverse=True)
-        for k, v in json.load(f).items()
-    }
-
-
-class SBN_NODE_TYPE(BaseEnum):
-    """Node types"""
-
-    SENSE = "sense"
-    CONSTANT = "constant"
-    BOX = "box"
-
-
-class SBN_EDGE_TYPE(BaseEnum):
-    """Edge types"""
-
-    ROLE = "role"
-    DRS_OPERATOR = "drs-operator"
-    BOX_CONNECT = "box-connect"
-    BOX_BOX_CONNECT = "box-box-connect"
-
-
-# These are the protected fields in the node and edge data that need special
-# care in certain places, such as when merging SBNGraphs.
-PROTECTED_FIELDS = ["_id", "type", "type_idx", "token"]
 
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
@@ -272,122 +243,50 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, _) in grew_graph.items():
-            if not (node_tok := node_data.get("token", None)):
-                raise SBNError(
-                    f"All nodes need the 'token' features.\n"
-                    f"Node data: {node_data}"
-                )
-
-            # The sense has been added in the grew rewriting step
-            if SBNSpec.WORDNET_SENSE_PATTERN.match(node_tok):
-                node_type = SBN_NODE_TYPE.SENSE
-            elif node_tok in SBNSpec.NEW_BOX_INDICATORS:
-                node_type = SBN_NODE_TYPE.BOX
-            # Otherwise try to format the token as a sense. This assumes
-            # unwanted nodes (DET, PUNCT, AUX) are already removed.
-            elif "upos" in node_data:
-                # TODO: some POS tags indicate constants (NUM, PROPN, etc)
-                # Maybe fix that here as well.
-                wn_pos = UPOS_WN_POS_MAPPING[node_data["upos"]]
-                node_tok = f"{node_tok.lower()}.{wn_pos}.01"
-                node_type = SBN_NODE_TYPE.SENSE
-            # When the previous checks cannot determine if it's a sense or not,
-            # consider it to be a constant.
-            else:
-                node_type = SBN_NODE_TYPE.CONSTANT
-
-            node_data["token"] = node_tok
-
-            node = self.create_node(node_type, node_tok, node_data)
+            node_componets = RESOLVER.node_token_type(node_data)
+            node = self.create_node(*node_componets)
             id_mapping[grew_node_id] = node[0]
             nodes.append(node)
 
-        # Below are some experiments to connect multiple boxes. This introduces
-        # some strange results in some cases. This is very hard to deal with
-        # in an elegant manner, both on the grew or python side. For later?
-        # self.add_nodes_from(nodes)
-
-        # for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-        #     # NOTE: this is quite hacky, we redirect the negation edge from
-        #     # whatever node it was pointing at to the previous box node. This
-        #     # is not a proper negation implementation yet, but just to get
-        #     # things started. I had some trouble trying to redirect multiple
-        #     # nodes to a newly introduced node on the GREW side. That would be
-        #     # ideal and then just build it back here, without trickery.
-        #     if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
-        #         box_box_edge = self.create_edge(
-        #             self._prev_box_id,
-        #             id_mapping[grew_from_node_id],
-        #             SBN_EDGE_TYPE.BOX_BOX_CONNECT,
-        #             self.nodes[id_mapping[grew_from_node_id]]["token"],
-        #         )
-        #         edges.append(box_box_edge)
-        #         continue  # <-- NOTICE THIS PLEASE, THE HACK IS TO SKIP THE OUT EDGES
-
-        #     if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
-        #         box_edge = self.create_edge(
-        #             self._active_box_id,
-        #             id_mapping[grew_from_node_id],
-        #             SBN_EDGE_TYPE.BOX_CONNECT,
-        #         )
-        #         edges.append(box_edge)
-
         self.add_nodes_from(nodes)
 
+        # With this we 'climb' back up the box nodes to find the correct place
+        # to connect the new box. This only considers the starting box as
+        # a starting point. Other box constructions are not supported currently
+        box_count = self.type_indices[SBN_NODE_TYPE.BOX]
         for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.BOX:
+            from_id = id_mapping[grew_from_node_id]
+            from_type = from_id[0]
+
+            if from_type == SBN_NODE_TYPE.BOX:
                 box_box_edge = self.create_edge(
-                    starting_box[0],
-                    id_mapping[grew_from_node_id],
+                    self._prev_box_id(box_count),
+                    from_id,
                     SBN_EDGE_TYPE.BOX_BOX_CONNECT,
-                    self.nodes[id_mapping[grew_from_node_id]]["token"],
+                    self.nodes[from_id]["token"],
                 )
                 edges.append(box_box_edge)
+                box_count -= 1
+                continue  # <-- NOTICE THIS PLEASE, THIS SKIPS THE OUT EDGES
 
-            if id_mapping[grew_from_node_id][0] == SBN_NODE_TYPE.SENSE:
+            if from_type == SBN_NODE_TYPE.SENSE:
                 box_edge = self.create_edge(
-                    starting_box[0],
-                    id_mapping[grew_from_node_id],
+                    self._active_box_id,
+                    from_id,
                     SBN_EDGE_TYPE.BOX_CONNECT,
                 )
                 edges.append(box_edge)
 
             for edge_name, grew_to_node_id in grew_edges:
-                edge_type = None
-
-                if edge_name in SBNSpec.ROLES:
-                    edge_type = SBN_EDGE_TYPE.ROLE
-                elif edge_name in SBNSpec.DRS_OPERATORS:
-                    edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                elif edge_name in SBNSpec.NEW_BOX_INDICATORS:
-                    edge_type = SBN_EDGE_TYPE.BOX_CONNECT
-                # The type cannot be determined from the name, figure out what
-                # an appropriate edge label might be.
-                else:
-                    if edge_name in EDGE_MAPPINGS:
-                        edge_name = EDGE_MAPPINGS[edge_name][0][0]
-                        # TODO: This type info should probably be included in
-                        # the mappings.
-                        if edge_name in SBNSpec.ROLES:
-                            edge_type = SBN_EDGE_TYPE.ROLE
-                        elif edge_name in SBNSpec.DRS_OPERATORS:
-                            edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
-                        else:
-                            raise SBNError(f"Invalid mapping {edge_name}!")
-                    else:
-                        # This is pure guesswork, figure something better out
-                        # here, all edge mapping based on triples?
-                        # POS -> deprel -> POS? Default can be most frequent
-                        # role probably.
-                        edge_type = SBN_EDGE_TYPE.ROLE
-                        edge_name = Config.DEFAULT_ROLE
-
-                edge = self.create_edge(
-                    id_mapping[grew_from_node_id],
-                    id_mapping[grew_to_node_id],
-                    edge_type,
+                to_id = id_mapping[grew_to_node_id]
+                edge_components = RESOLVER.edge_token_type(
                     edge_name,
+                    self.nodes,
+                    from_id,
+                    to_id,
                 )
+
+                edge = self.create_edge(from_id, to_id, *edge_components)
                 edges.append(edge)
 
         self.add_edges_from(edges)
@@ -674,8 +573,18 @@ class SBNGraph(BaseGraph):
 
             if S.out_degree(current_n) > 0:
                 for edge_id in S.edges(current_n):
+                    edge_name = S.edges[edge_id]["token"]
+                    if edge_name in SBNSpec.INVERTABLE_ROLES:
+                        # SMATCH can invert edges that end in '-of'.
+                        # This means that,
+                        #   A -[AttributeOf]-> B
+                        #   B -[Attribute]-> A
+                        # are treated the same, but they need to be in the
+                        # right notation for this to work.
+                        edge_name = edge_name.replace("Of", "-of")
+
                     _, child_node = edge_id
-                    out_str += f"\n{indents}:{S.edges[edge_id]['token']} "
+                    out_str += f"\n{indents}:{edge_name} "
                     out_str = __to_penman_str(
                         S, child_node, visited, out_str, tabs + 1
                     )
@@ -750,11 +659,11 @@ class SBNGraph(BaseGraph):
     def _active_box_id(self) -> SBN_ID:
         return (SBN_NODE_TYPE.BOX, self.type_indices[SBN_NODE_TYPE.BOX] - 1)
 
-    @property
-    def _prev_box_id(self) -> SBN_ID:
+    def _prev_box_id(self, offset: int) -> SBN_ID:
+        n = self.type_indices[SBN_NODE_TYPE.BOX]
         return (
             SBN_NODE_TYPE.BOX,
-            max(self.type_indices[SBN_NODE_TYPE.BOX] - 2, 0),
+            max(0, min(n, n - offset)),  # Clamp so we always have a valid box
         )
 
     @property
@@ -764,10 +673,12 @@ class SBNGraph(BaseGraph):
     @staticmethod
     def _node_label(node_data) -> str:
         return node_data["token"]
+        # return "\n".join(f"{k}={v}" for k, v in node_data.items())
 
     @staticmethod
     def _edge_label(edge_data) -> str:
         return edge_data["token"]
+        # return "\n".join(f"{k}={v}" for k, v in edge_data.items())
 
     @property
     def type_style_mapping(self):

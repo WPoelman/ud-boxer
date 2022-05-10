@@ -22,9 +22,12 @@ class PMB:
         split: Config.DATA_SPLIT = Config.DATA_SPLIT.TRAIN,
         id_path: PathLike = Config.SPLIT_DIR_PATH,
     ):
-        self.ids = set(
-            Path(Path(id_path) / f"{split}.txt").read_text().split("\n")
-        )
+        if split == Config.DATA_SPLIT.ALL:
+            self.ids = set()
+        else:
+            self.ids = set(
+                Path(Path(id_path) / f"{split}.txt").read_text().split("\n")
+            )
 
     def generator(
         self,
@@ -39,6 +42,9 @@ class PMB:
         # The alternative is also not great since then we end up with a very
         # fragmented PMB file structure. This is the most understandable and
         # clear way to deal with this issue in my opinion. Suggestions welcome!
+        dont_filter = len(self.ids) == 0
+        test = lambda p: True if dont_filter else get_base_id(p) in self.ids
+
         yield from (
             path
             for path in pmb_generator(
@@ -48,7 +54,7 @@ class PMB:
                 disable_tqdm,
                 desc_tqdm,
             )
-            if get_base_id(path) in self.ids
+            if test(path)
         )
 
 

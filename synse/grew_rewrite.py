@@ -3,12 +3,13 @@
 import tempfile
 from os import PathLike
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import List
 
 import grew
 from synse.config import Config
-from synse.sbn import PROTECTED_FIELDS, SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNGraph
-from synse.sbn_spec import SBNError
+from synse.graph_resolver import GraphResolver
+from synse.sbn import SBNGraph
+from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError
 
 __all__ = [
     "Grew",
@@ -65,7 +66,7 @@ class Grew:
                     node = A.create_node(
                         node_data["type"],
                         A._active_box_token,
-                        Grew.filter_item_data(node_data),
+                        GraphResolver.filter_item_data(node_data),
                     )
                     edges.append(
                         A.create_edge(
@@ -80,7 +81,7 @@ class Grew:
                     node = A.create_node(
                         node_data["type"],
                         node_data["token"],
-                        Grew.filter_item_data(node_data),
+                        GraphResolver.filter_item_data(node_data),
                     )
 
                 nodes.append(node)
@@ -93,7 +94,7 @@ class Grew:
                         node_mapping[to_node],
                         edge_data["type"],
                         edge_data["token"],
-                        Grew.filter_item_data(edge_data),
+                        GraphResolver.filter_item_data(edge_data),
                     )
                 )
 
@@ -107,11 +108,3 @@ class Grew:
             )
 
         return A
-
-    @staticmethod
-    def filter_item_data(item: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Make sure protected fields from nodes or edges are not overwritten
-        by removing the fields from the dict.
-        """
-        return {k: v for k, v in item.items() if k not in PROTECTED_FIELDS}

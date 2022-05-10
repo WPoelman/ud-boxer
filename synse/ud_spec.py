@@ -221,6 +221,13 @@ class UDSpecBasic:
             PQP = "Pqp"
             PRES = "Pres"
 
+        class Gender:
+            # https://universaldependencies.org/u/feat/Gender.html
+            COM = "Com"
+            FEM = "Fem"
+            MASC = "Masc"
+            NEUT = "Neut"
+
 
 # Wordnet has the following pos tags: nouns, verbs, adjectives and adverbs.
 # These are indicated by n, v, a and r respectively. The default mapping is to
@@ -244,6 +251,21 @@ UPOS_WN_POS_MAPPING = {
     UDSpecBasic.POS.SYM: "n",
     UDSpecBasic.POS.VERB: "v",
     UDSpecBasic.POS.X: "n",
+}
+
+TIME_EDGE_MAPPING = {
+    UDSpecBasic.Feats.Tense.FUT: "TSU",
+    UDSpecBasic.Feats.Tense.IMP: "TPR",  # Not in English?
+    UDSpecBasic.Feats.Tense.PAST: "TPR",
+    UDSpecBasic.Feats.Tense.PQP: "TPR",  # Not in English
+    UDSpecBasic.Feats.Tense.PRES: "EQU",  # or TIN (it's still happening)
+}
+
+GENDER_SENSE_MAPPING = {
+    UDSpecBasic.Feats.Gender.COM: "person.n.01",
+    UDSpecBasic.Feats.Gender.FEM: "female.n.02",
+    UDSpecBasic.Feats.Gender.MASC: "male.n.02",
+    UDSpecBasic.Feats.Gender.NEUT: "person.n.01",
 }
 
 

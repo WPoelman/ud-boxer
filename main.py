@@ -4,12 +4,14 @@ from argparse import ArgumentParser, Namespace
 from datetime import datetime
 from pathlib import Path
 
-from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.config import Config
+from synse.grew_rewrite import Grew
 from synse.helpers import pmb_generator
+from synse.mapper import MapExtractor
 from synse.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
+from synse.sbn_spec import get_doc_id
 from synse.ud import UDGraph, UDParser
 
 logging.basicConfig(level=logging.WARNING)
@@ -127,16 +129,14 @@ def search_dataset(args):
 
 
 def extract_mappings(args):
-    raise NotImplementedError(
-        "The mapping needs to be redone with the introduction of Grew, can't "
-        "use this currently"
-    )
-    # extractor = MapExtractor()
+    extractor = MapExtractor()
+    grew = Grew()
 
-    desc_msg = "Extracting mappings"
-    path_glob = Path(args.starting_path).glob("**/*.sbn")
-
-    for filepath in tqdm(path_glob, desc=desc_msg):
+    for filepath in pmb_generator(
+        args.starting_path,
+        f"**/*.sbn",
+        desc_tqdm="Extracting mappings",
+    ):
         ud_filepath = Path(
             filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
         )
@@ -148,18 +148,21 @@ def extract_mappings(args):
 
         try:
             S = SBNGraph().from_path(filepath)
+            T = grew.run(ud_filepath)
         except SBNError as e:
             # Ignore the empty sbn docs or whitespace ids
             logger.error(f"Cannot parse {filepath} reason: {e}")
             continue
+        except Exception as e:
+            logger.error(f"Error parsing {filepath} reason: {e}")
+            continue
 
-        U = UDGraph().from_path(ud_filepath)
+        doc_id = get_doc_id(args.language, ud_filepath)
 
-        # extractor.extract_mappings(U, S)
+        extractor.extract(S, T, doc_id)
 
-    return
-    date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    extractor.dump_mappings(Path(args.output_path) / f"mappings-{date}.json")
+    date = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    extractor.export_csv(f"edge_mappings_{date}.csv")
 
 
 def error_mine(args):

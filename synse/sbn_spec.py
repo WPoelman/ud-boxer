@@ -15,6 +15,8 @@ from os import PathLike
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+from synse.base import BaseEnum
+
 __all__ = [
     "SBNError",
     "SBNSpec",
@@ -22,6 +24,23 @@ __all__ = [
     "split_wn_sense",
     "get_doc_id",
 ]
+
+
+class SBN_NODE_TYPE(BaseEnum):
+    """Node types"""
+
+    SENSE = "sense"
+    CONSTANT = "constant"
+    BOX = "box"
+
+
+class SBN_EDGE_TYPE(BaseEnum):
+    """Edge types"""
+
+    ROLE = "role"
+    DRS_OPERATOR = "drs-operator"
+    BOX_CONNECT = "box-connect"
+    BOX_BOX_CONNECT = "box-box-connect"
 
 
 class SBNError(Exception):
@@ -81,14 +100,13 @@ class SBNSpec:
         "SXY",  # around
     }
 
-    REVERSABLE_ROLES = {
-        "Instance",
-        "Attribute",
-        "Colour",
-        "Content",
-        "Made",
-        "Part",
-        "Sub",
+    INVERTABLE_ROLES = {
+        "InstanceOf",
+        "AttributeOf",
+        "ColourOf",
+        "ContentOf",
+        "PartOf",
+        "SubOf",
     }
 
     ROLES = {

@@ -4,19 +4,45 @@
 % nummod deprel kan vervangen worden door sense -[Quantity]-> number?
 % SCONJ as EXPLANATION box? See en/gold/p00/d0801
 
+%%% NOTES %%%
+% Make sure to read https://grew.fr/doc/pattern/ and especially the part on edge clauses.
+% For both the nodes and edges the 'token' feature is used to store already known DRS components
+% or defaults that might help to resolve those later.
+
 %%% LABELING RULES %%%
 % Add the token feature to all nodes, this will be used to build up the string required for SBN.
 % This is done in order to not lose the UD information that rules might use.
 % Ideally, the token feature is only used in a write (or concat) only manner in the rules.
-rule add_token {
+rule add_token_nodes {
     pattern {
-        N [lemma];
-    }
-    without {
-        N [token];
+        N [lemma, !token];
     }
     commands {
         N.token = N.lemma;
+    }
+}
+
+% Add the token feature to all edges. This makes sure we're not losing the deprel information.
+rule add_token_edges {
+    pattern {
+      	E: N -[!token]-> M;
+    }
+    commands {
+        % The initial feature is '1' by default, which is the 'deprel'.
+        E.token = "NONE";
+    }
+}
+
+rule label_adj {
+    pattern {
+        N [upos=NOUN];
+        E: N -[1=amod]-> M;
+    }
+    without {
+        E[token="Attribute"];
+    }
+    commands {
+        E.token = "Attribute";
     }
 }
 
@@ -26,7 +52,7 @@ rule add_token {
 % Example: en/gold/p01/d2141/
 rule indicate_number {
     pattern {
-        N [ upos=NUM ];
+        N [upos=NUM];
     }
     without {
         N -> *;
@@ -42,15 +68,15 @@ rule indicate_number {
 rule connect_user {
     pattern {
         USER [upos=PROPN|NOUN];
-        * -[nsubj|nsubj:pass]-> USER;
-        REL: TARGET -[nmod:poss]-> INDICATOR;
+        * -[1=nsubj]-> USER;
+        REL: TARGET -[1=nmod, 2=poss]-> INDICATOR;
     }
     without {
-        TARGET -[User]-> USER;
+        TARGET -[token=User]-> USER;
     }
     commands {
-        % add_edge USER -[Owner]-> TARGET;
-        add_edge TARGET -[User]-> USER;
+        % add_edge USER -[token=Owner]-> TARGET;
+        add_edge TARGET -[token=User]-> USER;
         del_edge REL;
         del_node INDICATOR;
     }
@@ -68,57 +94,83 @@ rule expand_name {
         NAME -> *;
     }
     commands {
-        NAME.token = "entity.n.01";
+        % NAME.token = "entity.n.01"; see note above
 
         add_node NAME_CONST;
         NAME_CONST.token = NAME.textform;
 
-        add_edge NAME -[Name]-> NAME_CONST;
+        add_edge NAME -[token=Name]-> NAME_CONST;
     }
 }
 
 % Add a speaker / hearer nodes split up into 'person-sense' -> 'speaker'.
-% TODO: possibly use Person=1 or other feats to indicate speaker or hearer.
 % Example: en/gold/p04/d1646
-rule expand_speaker {
+rule expand_first_person {
     pattern {
-        SPEAKER [upos=PRON];
-         * -[nsubj|nsubj:pass]-> SPEAKER;
+        SPEAKER [upos=PRON, Person=1];
     }
     without {
-        SPEAKER -[EQU]-> *;
+        SPEAKER [token="GENDER"];
     }
     commands {
-        SPEAKER.token = "person.n.01";
+        SPEAKER.token = "GENDER";
 
         add_node SPEAKER_CONST;
         SPEAKER_CONST.token = "speaker";
 
-        add_edge SPEAKER -[EQU]-> SPEAKER_CONST;
+        add_edge SPEAKER -[token=EQU]-> SPEAKER_CONST;
+    }
+}
+
+rule expand_second_person {
+    pattern {
+        HEARER [upos=PRON, Person=2];
+    }
+    without {
+        HEARER [token="GENDER"];
+    }
+    commands {
+        HEARER.token = "GENDER";
+
+        add_node HEARER_CONST;
+        HEARER_CONST.token = "hearer";
+
+        add_edge HEARER -[token=EQU]-> HEARER_CONST;
+    }
+}
+
+rule expand_third_person {
+    pattern {
+        PERSON [upos=PRON, Person=3];
+    }
+    without {
+        PERSON [token="GENDER"];
+    }
+    commands {
+        PERSON.token = "GENDER";
     }
 }
 
 % Add a time sense node.
-% TODO: use lexicon with Feats or mappings to figure out time relation TPR etc.
 % Example: en/gold/p04/d1646
 rule add_time {
     pattern {
         N [];
-        * -[root]-> N;
+        * -[1=root]-> N;
     }
     without {
-        N -[Time]-> *;
+        N -[token=Time]-> *;
     }
     commands {
         add_node TIME_SENSE;
         TIME_SENSE.token = "time.n.08";
 
-        add_edge N -[Time]-> TIME_SENSE;
+        add_edge N -[token=Time]-> TIME_SENSE;
 
         add_node TIME_CONST;
         TIME_CONST.token = "now";
 
-        add_edge TIME_SENSE -[TPR]-> TIME_CONST;
+        add_edge TIME_SENSE -[token=TIMERELATION]-> TIME_CONST;
     }
 }
 
@@ -130,7 +182,7 @@ rule combine_propn {
     pattern {
         A [upos=PROPN];
         B [upos=PROPN];
-        R: A -[flat|compound]-> B;
+        R: A -[1=flat|compound]-> B;
     }
     commands {
         A.token = A.token + "_" + B.token;
@@ -146,7 +198,7 @@ rule combine_compound_prt {
     pattern {
         A [];
         B [];
-        R: A -[compound:prt]-> B;
+        R: A -[1=compound, 2=prt]-> B;
     }
     commands {
         A.token = A.token + "_" + B.token;
@@ -166,7 +218,7 @@ rule combine_nouns {
         A [upos=NOUN];
         B [upos=NOUN];
         % B < A;
-        R: A -[compound]-> B;
+        R: A -[1=compound]-> B;
     }
     commands {
         A.token = B.token + "_" + A.token;
@@ -180,7 +232,7 @@ rule combine_nouns {
 % Example: en/gold/p04/d1646
 rule remove_root_punct {
     pattern {
-        * -[root]-> ROOT;
+        * -[1=root]-> ROOT;
         E: ROOT -> N;
         N [upos=PUNCT];
     }
@@ -210,7 +262,7 @@ rule remove_unwanted_pos {
 rule remove_explicit_root {
     pattern {
         N [];
-        E: N -[root]-> T;
+        E: N -[1=root]-> T;
     }
     commands {
         del_edge E;
@@ -230,8 +282,6 @@ rule remove_explicit_root {
 % Example: en/gold/p96/d1385 (caused by connect_user)
 rule detach_cycles {
     pattern {
-        N [];
-        M [];
         A: N -> M;
         B: M -> N;
     }
@@ -241,21 +291,60 @@ rule detach_cycles {
 }
 
 %%% BOX RULES %%%
-rule box_negation_nsubj {
+rule box_negation_det {
     pattern {
         % We know there is negation.
-        N [lemma=not];
-        * -[advmod]-> N;
-
-        %M [];
-        %* -[nsubj]-> M;
+        N [lemma=no|not|never];
+        * -[1=advmod|det]-> N;
     }
     without {
         P [token=NEGATION];
     }
     commands {
+        del_node N;
+
         add_node NEGATION_BOX;
         NEGATION_BOX.token = NEGATION;
+    }
+}
+
+% TODO: nobody, none, no one
+% Example: en/gold/p03/d0823
+rule box_negation_nmod {
+    pattern {
+        N [lemma=none];
+        N -[1=nmod]-> *;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+% TODO: whatever as in everything
+rule box_quantifier {
+    pattern {
+        N [lemma=every|everyone|everybody|everything|always|all|whoever|whomever|both];
+    }
+    without {
+        P [token=NEGATION];
+        Q [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+
+        add_node NEGATION_BOX_2;
+        NEGATION_BOX_2.token = NEGATION;
+
+        add_edge NEGATION_BOX -[token=NEGATION]-> NEGATION_BOX_2;
     }
 }
 
@@ -264,22 +353,31 @@ strat main {
     Pick(
         Iter (
             Seq (
-                Onf(add_token),
+                Onf(add_token_nodes),
+                Onf(add_token_edges),
 
                 Iter(combine_propn),
                 Iter(combine_nouns),
                 Iter(combine_compound_prt),
 
+                Iter(label_adj),
+
                 Iter(connect_user),
                 Iter(expand_name),
-                Iter(expand_speaker),
+
+                Onf(expand_first_person),
+                Onf(expand_second_person),
+                Onf(expand_third_person),
+
                 Iter(add_time),
 
-                % box_negation_nsubj,
+                Iter(box_negation_det),
+                Iter(box_negation_nmod),
+                Onf(box_quantifier),
 
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
-                Iter(remove_unwanted_pos),
+                Onf(remove_unwanted_pos),
 
                 Iter(indicate_number),
 

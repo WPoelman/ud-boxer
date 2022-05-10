@@ -19,6 +19,6 @@
 	:member (s2 / "sense"
 		:lemma "new"
 		:pos "a"
-		:AttributeOf s3)
+		:Attribute-of s3)
 	:member s3
 	:member s4)

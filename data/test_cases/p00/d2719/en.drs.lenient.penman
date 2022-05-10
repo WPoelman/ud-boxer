@@ -22,7 +22,7 @@
 			:Result (s5 / "sense"
 				:lemma "bright_blue"
 				:pos "a"
-				:ColourOf s4)))
+				:Colour-of s4)))
 	:member s2
 	:member s3
 	:member s4
