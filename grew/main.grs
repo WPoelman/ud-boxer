@@ -15,10 +15,7 @@
 % Ideally, the token feature is only used in a write (or concat) only manner in the rules.
 rule add_token_nodes {
     pattern {
-        N [lemma];
-    }
-    without {
-        N [token];
+        N [lemma, !token];
     }
     commands {
         N.token = N.lemma;
@@ -33,6 +30,19 @@ rule add_token_edges {
     commands {
         % The initial feature is '1' by default, which is the 'deprel'.
         E.token = "NONE";
+    }
+}
+
+rule label_adj {
+    pattern {
+        N [upos=NOUN];
+        E: N -[1=amod]-> M;
+    }
+    without {
+        E[token="Attribute"];
+    }
+    commands {
+        E.token = "Attribute";
     }
 }
 
@@ -350,6 +360,8 @@ strat main {
                 Iter(combine_propn),
                 Iter(combine_nouns),
                 Iter(combine_compound_prt),
+
+                Iter(label_adj),
 
                 Iter(connect_user),
                 Iter(expand_name),
