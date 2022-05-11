@@ -326,10 +326,9 @@ rule box_negation_nmod {
     }
 }
 
-% TODO: whatever as in everything
 rule box_quantifier {
     pattern {
-        N [lemma=every|everyone|everybody|everything|always|all|whoever|whomever|both];
+        N [lemma=every|everyone|everybody|everything|always|all|whoever|whomever|both|whatever];
     }
     without {
         P [token=NEGATION];
