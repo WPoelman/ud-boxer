@@ -26,7 +26,7 @@ def get_args() -> Namespace:
         "--starting_path",
         type=str,
         required=True,
-        help="Path to start recursively search for sbn / ud files.",
+        help="Path to start recursively searching for SBN & UD files.",
     )
     parser.add_argument(
         "-l",
@@ -34,7 +34,7 @@ def get_args() -> Namespace:
         default=Config.SUPPORTED_LANGUAGES.EN.value,
         choices=Config.SUPPORTED_LANGUAGES.all_values(),
         type=str,
-        help="Language to use for ud pipelines.",
+        help="Language to use for UD pipeline.",
     )
     parser.add_argument(
         "-s",
@@ -42,7 +42,7 @@ def get_args() -> Namespace:
         default=Config.UD_SYSTEM.STANZA.value,
         type=str,
         choices=Config.UD_SYSTEM.all_values(),
-        help="System pipeline to use for generating UD parses.",
+        help="UD system pipeline to use for generating parses.",
     )
     parser.add_argument(
         "-o",
@@ -56,7 +56,7 @@ def get_args() -> Namespace:
     parser.add_argument(
         "--store_ud_parses",
         action="store_true",
-        help="Creates and stores ud parses in the pmb dataset folders.",
+        help="Create and store UD parses in the PMB dataset folders.",
     )
     parser.add_argument(
         "--search_dataset",
@@ -71,25 +71,18 @@ def get_args() -> Namespace:
     parser.add_argument(
         "--error_mine",
         action="store_true",
-        help="See if sbn and ud parsing and storing work as expected.",
+        help="See if SBN and UD parsing and storing work as expected.",
     )
     parser.add_argument(
         "--store_visualizations",
         action="store_true",
-        help="Store SBN and UD visualizations in the dataset example folders.",
+        help="Store SBN and UD visualizations in the PMB dataset folders.",
     )
     parser.add_argument(
         "--store_penman",
         action="store_true",
-        help="Store SBN as Penman (AMR-like).",
-    )
-    parser.add_argument(
-        "--lenient_penman",
-        action="store_true",
-        help="Indicates whether or not to split senses into their components "
-        "for more lenient Penman (AMR-like) scoring. When left default, scoring "
-        "the generated penmen output will indirectly also target the word sense "
-        "disambiguation performance included in it.",
+        help="Store SBN in Penman notation (AMR-like). Stores both strict and "
+        "lenient versions.",
     )
 
     return parser.parse_args()
@@ -206,7 +199,7 @@ def store_visualizations(args):
             )
             if not ud_filepath.exists():
                 logger.warning(
-                    f"Skipping {filepath} UD visualization, no ud parse available"
+                    f"Skipping {filepath} UD visualization, no parse available"
                 )
                 continue
 
@@ -218,14 +211,17 @@ def store_visualizations(args):
 
 
 def store_penman(args):
-    name = ".lenient.penman" if args.lenient_penman else ".penman"
     for filepath in pmb_generator(
         args.starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
     ):
         try:
-            SBNGraph().from_path(filepath).to_penman(
-                Path(filepath.parent / f"{filepath.stem}{name}").resolve(),
-                args.lenient_penman,
+            G = SBNGraph().from_path(filepath)
+            G.to_penman(
+                Path(filepath.parent / f"{filepath.stem}.penman").resolve()
+            )
+            G.to_penman(
+                Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
+                lenient=True,
             )
         except SBNError as e:
             logger.warning(e)

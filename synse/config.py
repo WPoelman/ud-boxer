@@ -14,6 +14,7 @@ class Config:
     """Class to house project-wide constants and config items"""
 
     # -- Paths --
+    LOG_PATH = Path(PROJECT_ROOT / "data/logs").resolve()
     GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
     EDGE_MAPPINGS_PATH = Path(
         # PROJECT_ROOT / "data/mappings/edge_mappings.json"

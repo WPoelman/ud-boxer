@@ -32,7 +32,7 @@ def get_args() -> Namespace:
         default=Config.SUPPORTED_LANGUAGES.EN.value,
         choices=Config.SUPPORTED_LANGUAGES.all_values(),
         type=str,
-        help="Language to use for ud pipelines.",
+        help="Language to use for UD pipelines.",
     )
     parser.add_argument(
         "-s",
@@ -60,7 +60,7 @@ def get_args() -> Namespace:
     parser.add_argument(
         "--store_penman",
         action="store_true",
-        help="Store penman version of DRS of prediction in 'output_dir'.",
+        help="Store Penman notation of DRS of prediction in 'output_dir'.",
     )
     return parser.parse_args()
 
@@ -96,7 +96,7 @@ def main():
         res.to_penman(Path(output_dir / f"{args.language}.drs.penman"))
         res.to_penman(
             Path(output_dir / f"{args.language}.drs.lenient.penman"),
-            split_sense=True,
+            lenient=True,
         )
 
 

@@ -26,7 +26,7 @@ def get_args() -> Namespace:
         "--starting_path",
         type=str,
         required=True,
-        help="Path to start recursively search for sbn / ud files.",
+        help="Path to start recursively search for SBN & UD files.",
     )
     parser.add_argument(
         "-l",
@@ -34,7 +34,7 @@ def get_args() -> Namespace:
         default=Config.SUPPORTED_LANGUAGES.EN.value,
         choices=Config.SUPPORTED_LANGUAGES.all_values(),
         type=str,
-        help="Language to use for ud pipelines.",
+        help="Language to use for UD pipelines.",
     )
     parser.add_argument(
         "-s",
@@ -42,7 +42,7 @@ def get_args() -> Namespace:
         default=Config.UD_SYSTEM.STANZA.value,
         type=str,
         choices=Config.UD_SYSTEM.all_values(),
-        help="System pipeline to use for generating UD parses.",
+        help="UD system to use for generating parses.",
     )
     parser.add_argument(
         "--data_split",
@@ -101,19 +101,19 @@ def generate_result(args, ud_filepath):
 
     res = GREW.run(ud_filepath)
     if args.store_visualizations:
-        res.to_png(Path(predicted_dir / f"output.png"))
+        res.to_png(Path(predicted_dir / "output.png"))
 
     if args.store_sbn:
-        res.to_sbn(Path(predicted_dir / f"output.sbn"))
+        res.to_sbn(Path(predicted_dir / "output.sbn"))
 
-    penman_path = res.to_penman(Path(predicted_dir / f"output.penman"))
+    penman_path = res.to_penman(Path(predicted_dir / "output.penman"))
     scores = smatch_score(
         current_dir / f"{args.language}.drs.penman",
         penman_path,
     )
     penman_lenient_path = res.to_penman(
-        Path(predicted_dir / f"output.lenient.penman"),
-        split_sense=True,
+        Path(predicted_dir / "output.lenient.penman"),
+        lenient=True,
     )
     lenient_scores = smatch_score(
         current_dir / f"{args.language}.drs.lenient.penman",
@@ -132,11 +132,12 @@ def generate_result(args, ud_filepath):
 
 
 def full_run(args, ud_filepath):
+    path = str(ud_filepath)
     try:
-        return generate_result(args, ud_filepath), str(ud_filepath)
+        return generate_result(args, ud_filepath), path
     except Exception as e:
-        logger.error(e)
-        return None, str(ud_filepath)
+        logger.error(f"{path}: {e}")
+        return None, path
 
 
 def main():
@@ -178,7 +179,9 @@ def main():
         df.to_csv(args.results_file, index=False)
 
     if files_with_errors:
-        Path("paths_with_errors.txt").write_text("\n".join(files_with_errors))
+        Path(Config.LOG_PATH / "paths_with_errors.txt").write_text(
+            "\n".join(files_with_errors)
+        )
 
     print(
         f"""

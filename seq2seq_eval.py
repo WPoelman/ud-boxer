@@ -25,7 +25,7 @@ def get_args() -> Namespace:
         "--starting_path",
         type=str,
         required=True,
-        help="Path to start recursively search for sbn / ud files.",
+        help="Path to start recursively search for SBN files.",
     )
     parser.add_argument(
         "--input_file",
@@ -68,7 +68,7 @@ def generate_result(args, sbn_line, gold_path):
         scores = smatch_score(gold_path, G.to_penman(f.name))
         lenient_scores = smatch_score(
             current_dir / f"{args.language}.drs.lenient.penman",
-            G.to_penman(f.name, split_sense=True),
+            G.to_penman(f.name, lenient=True),
         )
 
     result_record = {
@@ -81,11 +81,12 @@ def generate_result(args, sbn_line, gold_path):
 
 
 def full_run(args, sbn_line, filepath):
+    path = str(filepath)
     try:
         return generate_result(args, sbn_line, filepath), None
     except Exception as e:
-        logger.error(e)
-        return None, str(e)
+        logger.error(f"{path}: {e}")
+        return None, path
 
 
 def main():
