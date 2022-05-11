@@ -5,8 +5,8 @@ include = '\.pyi?$'
 
 [tool.isort]
 profile = 'black'
-skip_glob = ['experiments/*']
+skip_glob = ['data/*']
 
 [tool.mypy]
 ignore_missing_imports = true
-exclude = ['experiments/*']
+exclude = ['data/*']

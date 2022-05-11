@@ -1,15 +1,15 @@
 digraph G {
-"B1" [shape=box];
-"B1" -> "quantity.n.01" [style="dotted"];
-"quantity.n.01" -> 2 [label=" ="];
-2 [shape=none];
-"B1" [shape=box];
-"B1" -> "committee.n.01" [style="dotted"];
-"B1" [shape=box];
-"B1" -> "member.n.01" [style="dotted"];
-"member.n.01" -> "quantity.n.01" [label=" Quantity"];
-"member.n.01" -> "committee.n.01" [label=" PartOf"];
-"B1" [shape=box];
-"B1" -> "come-in.v.01" [style="dotted"];
-"come-in.v.01" -> "member.n.01" [label=" Theme"];
+    "B1" [shape=box];
+    "B1" -> "quantity.n.01" [style="dotted"];
+    "quantity.n.01" -> 2 [label=" ="];
+    2 [shape=none];
+    "B1" [shape=box];
+    "B1" -> "committee.n.01" [style="dotted"];
+    "B1" [shape=box];
+    "B1" -> "member.n.01" [style="dotted"];
+    "member.n.01" -> "quantity.n.01" [label=" Quantity"];
+    "member.n.01" -> "committee.n.01" [label=" PartOf"];
+    "B1" [shape=box];
+    "B1" -> "come-in.v.01" [style="dotted"];
+    "come-in.v.01" -> "member.n.01" [label=" Theme"];
 }
