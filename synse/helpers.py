@@ -10,7 +10,7 @@ from synse.config import Config
 from synse.sbn_spec import SBNError, get_base_id
 
 __all__ = [
-    "UD_LANG_DICT",
+    "PMB",
     "pmb_generator",
     "smatch_score",
 ]

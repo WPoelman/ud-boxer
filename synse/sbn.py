@@ -11,6 +11,7 @@ import penman
 
 from synse.base import BaseGraph
 from synse.graph_resolver import GraphResolver
+from synse.misc import ensure_ext
 from synse.penman_model import pm_model
 from synse.sbn_spec import (
     SBN_EDGE_TYPE,
@@ -27,8 +28,7 @@ logger = logging.getLogger(__name__)
 RESOLVER = GraphResolver()
 
 __all__ = [
-    "SBN_NODE_TYPE",
-    "SBN_EDGE_TYPE",
+    "SBN_ID",
     "SBNGraph",
     "sbn_graphs_are_isomorphic",
 ]
@@ -338,14 +338,11 @@ class SBNGraph(BaseGraph):
             },
         )
 
-    def to_sbn(self, path: PathLike, add_comments: bool = False) -> PathLike:
+    def to_sbn(self, path: PathLike, add_comments: bool = False) -> Path:
         """Writes the SBNGraph to a file in sbn format"""
-        path = (
-            Path(path) if str(path).endswith(".sbn") else Path(f"{path}.sbn")
-        )
-
-        path.write_text(self.to_sbn_string(add_comments))
-        return path
+        final_path = ensure_ext(path, ".sbn")
+        final_path.write_text(self.to_sbn_string(add_comments))
+        return final_path
 
     def to_sbn_string(self, add_comments: bool = False) -> str:
         """Creates a string in sbn format from the SBNGraph"""
@@ -478,20 +475,15 @@ class SBNGraph(BaseGraph):
 
         return sbn_string
 
-    def to_penman(self, path: PathLike, split_sense: bool = False) -> PathLike:
+    def to_penman(self, path: PathLike, lenient: bool = False) -> PathLike:
         """
         Writes the SBNGraph to a file in Penman (AMR-like) format.
 
-        See `to_penman_string` for an explanation of `split_sense`.
+        See `to_penman_string` for an explanation of `lentient`.
         """
-        path = (
-            Path(path)
-            if str(path).endswith(".penman")
-            else Path(f"{path}.penman")
-        )
-
-        path.write_text(self.to_penman_string(split_sense))
-        return path
+        final_path = ensure_ext(path, ".penman")
+        final_path.write_text(self.to_penman_string(lenient))
+        return final_path
 
     def to_penman_string(self, lenient: bool = False) -> str:
         """
@@ -541,11 +533,6 @@ class SBNGraph(BaseGraph):
             # Add a proper token to the box connectors
             if G.edges[edge]["type"] == SBN_EDGE_TYPE.BOX_CONNECT:
                 G.edges[edge]["token"] = "member"
-            # Since the graph is possibly in the 'wrong' direction, convert
-            # the non 'Of*' relations here.
-            # elif G.edges[edge]["type"] == SBN_EDGE_TYPE.ROLE:
-            # if G.edges[edge]["token"] in SBNSpec.REVERSABLE_ROLES:
-            # G.edges[edge]["token"] = f'{G.edges[edge]["token"]}Of'
 
         def __to_penman_str(S: SBNGraph, current_n, visited, out_str, tabs):
             node_data = S.nodes[current_n]

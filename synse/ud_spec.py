@@ -1,6 +1,8 @@
 __all__ = [
     "UDSpecBasic",
     "UPOS_WN_POS_MAPPING",
+    "TIME_EDGE_MAPPING",
+    "GENDER_SENSE_MAPPING",
 ]
 
 

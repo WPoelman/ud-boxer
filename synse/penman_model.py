@@ -14,9 +14,6 @@ __all__ = [
     "pm_model",
 ]
 
-# TODO: figure out if inverting certain roles can be done with the reifications
-# or normalizations.
-
 #: The roles are the edge labels of reifications. The purpose of roles
 #: in a :class:`~penman.model.Model` is mainly to define the set of
 #: valid roles, but they map to arbitrary data which is not used by

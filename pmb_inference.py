@@ -10,6 +10,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from synse.config import Config
 from synse.grew_rewrite import Grew
 from synse.helpers import PMB, smatch_score
+from synse.misc import ensure_ext
 from synse.sbn_spec import get_doc_id
 
 logging.basicConfig(level=logging.ERROR)
@@ -176,7 +177,8 @@ def main():
 
     df = pd.DataFrame().from_records(results_records)
     if args.results_file:
-        df.to_csv(args.results_file, index=False)
+        final_path = ensure_ext(args.results_file, ".csv")
+        df.to_csv(final_path, index=False)
 
     if files_with_errors:
         Path(Config.LOG_PATH / "paths_with_errors.txt").write_text(

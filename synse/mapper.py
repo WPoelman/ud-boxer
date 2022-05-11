@@ -34,6 +34,10 @@ from synse.ud_spec import UDSpecBasic
 
 logger = logging.getLogger(__name__)
 
+__all__ = [
+    "MapExtractor",
+]
+
 
 class MapExtractor:
     def __init__(self) -> None:

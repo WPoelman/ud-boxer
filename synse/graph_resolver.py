@@ -15,6 +15,10 @@ from synse.ud_spec import (
     UDSpecBasic,
 )
 
+__all__ = [
+    "GraphResolver",
+]
+
 
 class GraphResolver:
     """
@@ -86,9 +90,6 @@ class GraphResolver:
                 node_token = "female.n.02"  # most common in training data
             else:
                 node_token = f"{lemma}.{wn_pos}.01"
-        # TODO: resolve speaker hearer constants with Person feat (1 = speaker, 2 = hearer)
-        # TODO: resolve gender of names -> male.n.02 / female.n.02 / default -> entity.n.01
-        # (indicate with special feature on grew side)
         else:
             # The default type is constant.
             node_type = SBN_NODE_TYPE.CONSTANT
@@ -121,8 +122,6 @@ class GraphResolver:
                 edge_type = SBN_EDGE_TYPE.BOX_BOX_CONNECT
             else:
                 edge_type = SBN_EDGE_TYPE.BOX_CONNECT
-        # TODO: move this to a post processing step since we need all nodes,
-        # which is a bit annoying and illogical here.
         elif token_to_resolve == self.RESOLVE_TIME_EDGE:
             edge_type = SBN_EDGE_TYPE.ROLE
             # Not the nicest solution, but we need to figure out the
@@ -154,6 +153,7 @@ class GraphResolver:
                     elif edge_token in SBNSpec.DRS_OPERATORS:
                         edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
 
+            # As a fallback?
             # if use_mappings and deprel:
             #     if deprel in self.edge_mappings:
             #         edge_token = self.edge_mappings[deprel][0][0]

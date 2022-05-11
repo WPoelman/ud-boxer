@@ -18,6 +18,8 @@ from typing import List, Optional, Tuple
 from synse.base import BaseEnum
 
 __all__ = [
+    "SBN_NODE_TYPE",
+    "SBN_EDGE_TYPE",
     "SBNError",
     "SBNSpec",
     "split_comments",

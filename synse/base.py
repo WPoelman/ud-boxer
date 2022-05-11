@@ -4,12 +4,14 @@ from typing import Any, Dict, List, Tuple
 
 import networkx as nx
 
+from synse.misc import ensure_ext
+
 __all__ = [
     "_ID",
     "NODE",
     "EDGE",
-    "BaseGraph",
     "BaseEnum",
+    "BaseGraph",
 ]
 
 
@@ -95,12 +97,10 @@ class BaseGraph(nx.DiGraph):
                 )
             )
 
-        # pydot does not like a Path object
-        save_path = str(Path(save_path).resolve())
-        if not save_path.endswith(".png"):
-            save_path = f"{save_path}.png"
+        final_path = ensure_ext(save_path, ".png")
 
-        p_graph.write(save_path, format="png")
+        # pydot does not like a Path object
+        p_graph.write(str(final_path.resolve()), format="png")
 
         del p_graph
 
