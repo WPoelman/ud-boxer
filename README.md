@@ -18,11 +18,11 @@ The following images show the basic idea for the sentence **Tracy lost her glass
    1. Follow the instructions on https://grew.fr/usage/install/
    2. Make sure `opam` is active by running `opam --version`
    3. If `opam` is not avaible, try activating it with `eval $(opam env)`
-4. Install dependencies with `pip install -r requirements.txt`
-   1. `requirements-ud.txt` contains alternative UD parsing systems (**Optional**)
-   2. `requirements-dev.txt` contains development libraries for testing, formatting etc. (**Optional**)
+4. Install dependencies with `pip install -r requirements/requirements.txt`
+   1. `requirements/requirements-ud.txt` contains alternative UD parsing systems (**Optional**)
+   2. `requirements/requirements-dev.txt` contains development libraries for testing, formatting etc. (**Optional**)
 
-Run `fix_all.sh` to format and test the project
+Run `fix_all.sh` to format and test the project.
 
 ## Data
 The data comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
@@ -120,9 +120,10 @@ python inference.py \
   --store_penman
 ```
 
-This store visualizations of the UD parse, the SBN graph as well as an AMR-like output of the SBN in Penman notation.
-One of these is with sense ids fully intact, the other a more 'lenient' version with the senses cut into pieces and without the sense number.
-The regular Penman output indirectly targets word sense disambiguation when scoring the output with SMATCH for instance, the lenient option does not do this and rewards correct lemmas and parts of speech.
+This stores an AMR-like output of the SBN in Penman notation as well as visualizations of the UD parse and the SBN graph.
+The `*.drs.penman` file includes everything, the `*.drs.lenient.penman` file does not include the sense number.
+The regular Penman output indirectly also targets word sense disambiguation when scoring the output (with SMATCH for instance). 
+The lenient option does not do this, but does reward correct lemmas and parts of speech for a given sense.
 
 For more details and additional options, run `inference.py --help`.
 
@@ -137,8 +138,7 @@ python main.py --starting_path <path-to-pmb-dataset> \
   --extract_mappings \
   --error_mine \
   --store_visualizations \
-  --store_penman \
-  --lenient_penman
+  --store_penman
 ```
 
 This will recursively go through all PMB docs, do all possible operations on the data and generates all required files to run inference with.
@@ -152,8 +152,8 @@ To store the results within the PMB dataset file structure and evaluate the gene
 python pmb_inference.py -p data/test_cases -r results.csv
 ```
 
-This will recursively go through the provided path, generate SBN with the conll files it finds and compares these with the `.penman` file in the same folder.
-It will store all results per sentence and write the evaluation scores to `results.csv` for later analysis.
+This will recursively go through the provided path, generate SBN graphs with the `conll` files it finds and compares these with the `.penman` file in the same folder.
+It will store the predicted `.penman` files in the dataset and write the evaluation scores to `results.csv` for later analysis.
 
 By default, the system will use 16 threads to go through the dataset and generate results.
 
@@ -183,7 +183,6 @@ mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
 ## Possible future improvements
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for certain case markings.
 
-
 ## Test cases
 * **p00/d0004**: `entity` that combines multiple subtypes
 * **p00/d0801**: multiple boxes
@@ -192,8 +191,3 @@ mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
 * **p03/d2003**: named entity 'components' combining in single item
 * **p04/d0778**: double negation
 * **p04/d1646**: connect owner
-
-# TODO
-- [ ] check consistency quoted output + casing of output grew -> sbn and original sbn
-- [ ] add rules to deal with numbers
-- [ ] add proper edge mapping or triple classifier for edge labels
