@@ -1,0 +1,58 @@
+%%% English specific rules %%%
+
+%%% BOX RULES %%%
+rule box_negation_det {
+    pattern {
+        % We know there is negation.
+        N [lemma=no|not|never];
+        * -[1=advmod|det]-> N;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+% TODO: nobody, none, no one, this is very specific currently, maybe make more general
+% Example: en/gold/p03/d0823
+rule box_negation_nmod {
+    pattern {
+        N [lemma=none];
+        N -[1=nmod]-> *;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_quantifier {
+    pattern {
+        N [lemma=every|everyone|everybody|everything|always|all|whoever|whomever|both|whatever];
+    }
+    without {
+        P [token=NEGATION];
+        Q [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+
+        add_node NEGATION_BOX_2;
+        NEGATION_BOX_2.token = NEGATION;
+
+        add_edge NEGATION_BOX -[token=NEGATION]-> NEGATION_BOX_2;
+    }
+}
