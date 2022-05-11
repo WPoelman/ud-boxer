@@ -207,7 +207,7 @@ def store_visualizations(args):
                 str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
             )
         except Exception as e:
-            print(f"Failed: {filepath}")
+            logger.error(f"Failed: {filepath}")
 
 
 def store_penman(args):
@@ -232,10 +232,13 @@ def collect_cyclic_graphs(args):
     for filepath in pmb_generator(
         args.starting_path, "**/*.sbn", desc_tqdm="Finding cyclic sbn graphs "
     ):
-        S = SBNGraph().from_path(filepath)
+        try:
+            S = SBNGraph().from_path(filepath)
+        except SBNError as e:
+            logger.error(str(e))
         if not S.is_dag:
             paths.append(str(filepath))
-    Path("cyclic_paths.txt").write_text("\n".join(paths))
+    Path(Config.LOG_PATH / "cyclic_paths.txt").write_text("\n".join(paths))
 
 
 def main():
