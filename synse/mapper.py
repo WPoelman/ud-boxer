@@ -71,10 +71,14 @@ class MapExtractor:
                 except KeyError:
                     continue
 
+                # Don't store a wrong mapping.
+                if target_edge["token"] != source_edge["token"]:
+                    continue
+
                 # The Grew step introduced an already exact mapping, meaning
                 # we also don't have any additional UD information
-                # if source_edge == target_edge:
-                #    continue
+                if source_edge == target_edge:
+                    continue
 
                 self.mapping_records.append(
                     {
