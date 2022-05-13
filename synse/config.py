@@ -6,30 +6,29 @@ __all__ = [
     "Config",
 ]
 
-PROJECT_ROOT = Path(__file__).parent.parent
-
 
 class Config:
     """Class to house project-wide constants and config items"""
 
     # -- Paths --
-    LOG_PATH = Path(PROJECT_ROOT / "data/logs").resolve()
+    PROJECT_ROOT = Path(__file__).parent.parent
+    DATA_DIR = PROJECT_ROOT / "data"
+
+    RESULT_DIR = Path(DATA_DIR / "results").resolve()
+    LOG_PATH = Path(DATA_DIR / "logs").resolve()
     GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
     EDGE_MAPPINGS_PATH = Path(
-        # PROJECT_ROOT / "data/mappings/edge_mappings.json"
-        PROJECT_ROOT
-        / "data/mappings/edge_mappings_train.json"
+        DATA_DIR / "mappings/edge_mappings_train.json"
     ).resolve()
     LEMMA_SENSE_MAPPINGS_PATH = Path(
-        PROJECT_ROOT / "data/mappings/lemma_sense_lookup_en_gold_train.pickle"
+        DATA_DIR / "mappings/lemma_sense_lookup_en_gold_train.pickle"
     ).resolve()
     LEMMA_POS_SENSE_MAPPINGS_PATH = Path(
-        PROJECT_ROOT
-        / "data/mappings/lemma_pos_sense_lookup_en_gold_train.pickle"
+        DATA_DIR / "mappings/lemma_pos_sense_lookup_en_gold_train.pickle"
     ).resolve()
-    SPLIT_DIR_PATH = Path(PROJECT_ROOT / "data/splits").resolve()
+    SPLIT_DIR_PATH = Path(DATA_DIR / "splits").resolve()
     EDGE_CLF_PATH = Path(
-        PROJECT_ROOT / "data/edge_classifier/edge_clf.joblib"
+        DATA_DIR / "edge_classifier/edge_clf.joblib"
     ).resolve()
 
     # -- Enums --

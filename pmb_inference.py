@@ -1,6 +1,7 @@
 import concurrent.futures
 import logging
 from argparse import ArgumentParser, Namespace
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -175,9 +176,11 @@ def main():
                 files_with_errors.append(path)
                 failed += 1
 
+    result_path = Path(Config.RESULT_DIR / args.data_split)
+
     df = pd.DataFrame().from_records(results_records)
     if args.results_file:
-        final_path = ensure_ext(args.results_file, ".csv")
+        final_path = result_path / ensure_ext(args.results_file, ".csv").name
         df.to_csv(final_path, index=False)
 
     if files_with_errors:
@@ -185,9 +188,10 @@ def main():
             "\n".join(files_with_errors)
         )
 
-    print(
-        f"""
-    
+    overall_result_msg = f"""
+    {datetime.now().strftime("%Y_%m_%d_%H_%M_%S")}
+
+    DATA SPLIT:           {args.data_split}
     PARSED DOCS:          {len(df)}
     FAILED DOCS:          {failed}
     TOTAL DOCS:           {len(df) + failed}
@@ -195,7 +199,11 @@ def main():
     AVERAGE F1 (strict):  {df["f1"].mean():.3} ({df["f1"].min():.3} - {df["f1"].max():.3})
     AVERAGE F1 (lenient): {df["f1_lenient"].mean():.3} ({df["f1_lenient"].min():.3} - {df["f1_lenient"].max():.3})
     """
-    )
+
+    with open(result_path / "overall.txt", "a") as f:
+        f.write(f"{overall_result_msg}\n\n")
+
+    print(overall_result_msg)
 
 
 if __name__ == "__main__":

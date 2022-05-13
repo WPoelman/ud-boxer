@@ -1,0 +1,12 @@
+
+    2022_05_13_15_56_54
+
+    DATA SPLIT:           eval
+    PARSED DOCS:          824
+    FAILED DOCS:          4
+    TOTAL DOCS:           828
+
+    AVERAGE F1 (strict):  0.816 (0.5 - 1.0)
+    AVERAGE F1 (lenient): 0.82 (0.5 - 1.0)
+    
+

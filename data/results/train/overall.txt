@@ -4,3 +4,16 @@ TOTAL DOCS:           7642
 
 AVERAGE F1 (strict):  0.761 (0.267 - 1.0)
 AVERAGE F1 (lenient): 0.772 (0.269 - 1.0)
+
+
+    2022_05_13_16_08_44
+
+    DATA SPLIT:           train
+    PARSED DOCS:          7638
+    FAILED DOCS:          4
+    TOTAL DOCS:           7642
+
+    AVERAGE F1 (strict):  0.823 (0.267 - 1.0)
+    AVERAGE F1 (lenient): 0.821 (0.308 - 1.0)
+    
+
