@@ -68,7 +68,7 @@ def generate_result(args, sbn_line, gold_path):
         scores = smatch_score(gold_path, G.to_penman(f.name))
         lenient_scores = smatch_score(
             current_dir / f"{args.language}.drs.lenient.penman",
-            G.to_penman(f.name, lenient=True),
+            G.to_penman(f.name, strict=False),
         )
 
     result_record = {

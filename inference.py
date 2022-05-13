@@ -96,7 +96,7 @@ def main():
         res.to_penman(Path(output_dir / f"{args.language}.drs.penman"))
         res.to_penman(
             Path(output_dir / f"{args.language}.drs.lenient.penman"),
-            lenient=True,
+            strict=False,
         )
 
 

@@ -220,8 +220,8 @@ def store_penman(args):
                 Path(filepath.parent / f"{filepath.stem}.penman").resolve()
             )
             G.to_penman(
-                Path(filepath.parent / f"{filepath.stem}.penman").resolve(),
-                lenient=True,
+                Path(filepath.parent / f"{filepath.stem}.lenient.penman").resolve(),
+                strict=False,
             )
         except SBNError as e:
             logger.warning(e)

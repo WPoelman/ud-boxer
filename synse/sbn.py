@@ -475,17 +475,17 @@ class SBNGraph(BaseGraph):
 
         return sbn_string
 
-    def to_penman(self, path: PathLike, lenient: bool = False) -> PathLike:
+    def to_penman(self, path: PathLike, strict: bool = True) -> PathLike:
         """
         Writes the SBNGraph to a file in Penman (AMR-like) format.
 
         See `to_penman_string` for an explanation of `lentient`.
         """
         final_path = ensure_ext(path, ".penman")
-        final_path.write_text(self.to_penman_string(lenient))
+        final_path.write_text(self.to_penman_string(strict))
         return final_path
 
-    def to_penman_string(self, lenient: bool = False) -> str:
+    def to_penman_string(self, strict: bool = True) -> str:
         """
         Creates a string in Penman (AMR-like) format from the SBNGraph.
 
@@ -553,7 +553,7 @@ class SBNGraph(BaseGraph):
                 out_str += f"\n{indents}:lemma {lemma}"
                 out_str += f"\n{indents}:pos {pos}"
 
-                if not lenient:
+                if strict:
                     out_str += f"\n{indents}:sense {sense}"
             else:
                 out_str += f"({var_id} / {self.quote(node_tok)}"
