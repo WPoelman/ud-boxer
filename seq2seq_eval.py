@@ -1,17 +1,17 @@
+import concurrent.futures
 import logging
 import tempfile
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
 import pandas as pd
+from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.config import Config
-from synse.grew_rewrite import Grew
 from synse.helpers import PMB, smatch_score
 from synse.sbn import SBNGraph
 from synse.sbn_spec import get_base_id, get_doc_id
-from synse.ud import UDGraph, UDParser
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -55,6 +55,14 @@ def get_args() -> Namespace:
         type=str,
         help="Data split to run inference on.",
     )
+    parser.add_argument(
+        "-w",
+        "--max_workers",
+        default=16,
+        help="Max concurrent workers used to run inference with. Be careful "
+        "with setting this too high since mtool might error (segfault) if hit "
+        "too hard by too many concurrent tasks.",
+    )
     return parser.parse_args()
 
 
@@ -86,7 +94,7 @@ def full_run(args, sbn_line, filepath):
         return generate_result(args, sbn_line, filepath), None
     except Exception as e:
         logger.error(f"{path}: {e}")
-        return None, path
+        return None, str(e)
 
 
 def main():
@@ -106,27 +114,40 @@ def main():
     pmb = PMB(args.data_split)
     result_records, error_records = [], []
     failed = 0
-    for filepath in pmb.generator(
-        args.starting_path,
-        f"**/{args.language}.drs.penman",
-        desc_tqdm="Gathering data",
-    ):
-        filepath = Path(filepath).resolve()
-        base_id = get_base_id(filepath)
-        sbn_line = dataset[base_id]
-        score, err = full_run(args, sbn_line, filepath)
+    with concurrent.futures.ThreadPoolExecutor(
+        max_workers=args.max_workers
+    ) as executor:
+        futures = []
+        for filepath in pmb.generator(
+            args.starting_path,
+            f"**/{args.language}.drs.penman",
+            desc_tqdm="Gathering data",
+        ):
+            filepath = Path(filepath).resolve()
+            base_id = get_base_id(filepath)
+            sbn_line = dataset[base_id]
 
-        if score:
-            result_records.append(score)
-        else:
-            error_records.append({"pmb_id": base_id, "error": err})
-            failed += 1
+            futures.append(executor.submit(full_run, args, sbn_line, filepath))
+
+        for res in tqdm(
+            concurrent.futures.as_completed(futures), desc="Running inference"
+        ):
+            score, err = res.result()
+            if score:
+                result_records.append(score)
+            else:
+                error_records.append({"pmb_id": base_id, "error": err})
+                failed += 1
 
     df = pd.DataFrame().from_records(result_records)
     df_err = pd.DataFrame().from_records(error_records)
 
-    df.to_csv(Path(args.output_dir) / "results.csv", index=False)
-    df_err.to_csv(Path(args.output_dir) / "errors.csv", index=False)
+    df.to_csv(
+        Path(args.output_dir) / f"{args.data_split}_results.csv", index=False
+    )
+    df_err.to_csv(
+        Path(args.output_dir) / f"{args.data_split}_errors.csv", index=False
+    )
 
     print(
         f"""

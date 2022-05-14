@@ -126,6 +126,7 @@ def generate_result(args, ud_filepath):
         "pmb_id": get_doc_id(args.language, ud_filepath),
         "raw_sent": raw_sent,
         "sbn_str": res.to_sbn_string(),
+        "error": None,
         **scores,
         **{f"{k}_lenient": v for k, v in lenient_scores.items()},
     }
@@ -134,12 +135,12 @@ def generate_result(args, ud_filepath):
 
 
 def full_run(args, ud_filepath):
-    path = str(ud_filepath)
     try:
-        return generate_result(args, ud_filepath), path
+        return generate_result(args, ud_filepath), None
     except Exception as e:
+        path = str(ud_filepath)
         logger.error(f"{path}: {e}")
-        return None, path
+        return None, str(e)
 
 
 def main():
@@ -169,11 +170,16 @@ def main():
         for res in tqdm(
             concurrent.futures.as_completed(futures), desc="Running inference"
         ):
-            result, path = res.result()
+            result, err = res.result()
             if result:
                 results_records.append(result)
             else:
-                files_with_errors.append(path)
+                results_records.append(
+                    {
+                        "pmb_id": get_doc_id(args.language, ud_filepath),
+                        "error": err,
+                    }
+                )
                 failed += 1
 
     result_path = Path(Config.RESULT_DIR / args.data_split)
@@ -187,6 +193,9 @@ def main():
         Path(Config.LOG_PATH / "paths_with_errors.txt").write_text(
             "\n".join(files_with_errors)
         )
+
+    df["f1"] = df["f1"].fillna(0)
+    df["f1_lenient"] = df["f1_lenient"].fillna(0)
 
     overall_result_msg = f"""
     {datetime.now().strftime("%Y_%m_%d_%H_%M_%S")}
