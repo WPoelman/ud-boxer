@@ -1,0 +1,24 @@
+
+    2022_05_15_11_38_20 (stanza)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          1159
+    FAILED DOCS:          3
+    TOTAL DOCS:           1162
+
+    AVERAGE F1 (strict):  0.821 (0.0 - 1.0)
+    AVERAGE F1 (lenient): 0.824 (0.0 - 1.0)
+    
+
+
+    2022_05_15_11_39_56 (trankit)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          1159
+    FAILED DOCS:          3
+    TOTAL DOCS:           1162
+
+    AVERAGE F1 (strict):  0.819 (0.0 - 1.0)
+    AVERAGE F1 (lenient): 0.822 (0.0 - 1.0)
+    
+

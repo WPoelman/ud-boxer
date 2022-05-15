@@ -1,0 +1,24 @@
+
+    2022_05_15_11_09_54 (gold only)
+
+    DATA SPLIT:           eval
+    PARSED DOCS:          796
+    FAILED DOCS:          32
+    TOTAL DOCS:           828
+
+    AVERAGE F1 (strict):  0.817 (0.0 - 1.0)
+    AVERAGE F1 (lenient): 0.824 (0.0 - 1.0)
+    
+
+
+    2022_05_15_11_18_54 (gold and silver)
+
+    DATA SPLIT:           eval
+    PARSED DOCS:          810
+    FAILED DOCS:          18
+    TOTAL DOCS:           828
+
+    AVERAGE F1 (strict):  0.918 (0.0 - 1.0)
+    AVERAGE F1 (lenient): 0.926 (0.0 - 1.0)
+    
+
