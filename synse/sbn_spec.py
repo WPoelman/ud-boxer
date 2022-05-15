@@ -229,10 +229,6 @@ class SBNSpec:
     # "Tom got an A on his exam": Value -> "A"
     VALUE_CONSTANT = r"^[A-Z]$"
 
-    # CONSTANTS_PATTERN = re.compile(
-    #     "|".join([YEAR_CONSTANT, QUANTITY_CONSTANT, VALUE_CONSTANT, CONSTANTS])
-    # )
-
 
 def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
     """

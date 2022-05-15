@@ -182,6 +182,9 @@ mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
 
 ## Possible future improvements
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for certain case markings.
+- [ ] Generated SBN does not adhere to the spec entirely, in particular when it comes to constants. The evaluation in Penman notation is not bothered by this since everything gets consistently quoted there:
+  - [ ] Names are not quoted properly with `"John Doe"`, now they are formatted as `John_Doe`. This requires keeping track of an additional flag/type indicating if something is a name. I am a bit hesitant to do this since we might introduce a NER component that will help with this a lot.
+  - [ ] Year constants are not quoted properly like `'2022'`, now they are formatted as `2022`, again something for a possible NER component since date parsing in general is not ideal currently.
 
 ## Test cases
 * **p00/d0004**: `entity` that combines multiple subtypes

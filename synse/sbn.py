@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 import penman
 
-from synse.base import BaseGraph
+from synse.base import BaseEnum, BaseGraph
 from synse.graph_resolver import GraphResolver
 from synse.misc import ensure_ext
 from synse.penman_model import pm_model
@@ -39,10 +39,29 @@ __all__ = [
 SBN_ID = Tuple[Union[SBN_NODE_TYPE, SBN_EDGE_TYPE], int]
 
 
+class SBNSource(BaseEnum):
+    # The SBNGraph is created from an SBN file that comes from the PMB directly
+    PMB = "PMB"
+    # The SBNGraph is created from GREW output
+    GREW = "GREW"
+    # The SBNGraph is created from a self generated SBN file
+    INFERENCE = "INFERENCE"
+    # The SBNGraph is created from a seq2seq generated SBN line
+    SEQ2SEQ = "SEQ2SEQ"
+    # We don't know the source or it is 'constructed' manually
+    UNKNOWN = "UNKNOWN"
+
+
 class SBNGraph(BaseGraph):
-    def __init__(self, incoming_graph_data=None, **attr):
+    def __init__(
+        self,
+        incoming_graph_data=None,
+        source: SBNSource = SBNSource.UNKNOWN,
+        **attr,
+    ):
         super().__init__(incoming_graph_data, **attr)
-        self.is_dag: bool = None
+        self.is_dag: bool = False
+        self.source: SBNSource = source
 
     def from_path(
         self, path: PathLike, is_single_line: bool = False
@@ -422,6 +441,13 @@ class SBNGraph(BaseGraph):
         # Resolve the indices and the correct sense tokens and create the sbn
         # line strings for the final string
         final_result = []
+        if add_comments:
+            final_result.append(
+                (
+                    f"{SBNSpec.COMMENT_LINE} SBN source: {self.source.value}",
+                    " ",
+                )
+            )
         current_sense_idx = 0
         for line in result:
             tmp_line = []
