@@ -2,6 +2,7 @@ import concurrent.futures
 import logging
 import tempfile
 from argparse import ArgumentParser, Namespace
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -9,8 +10,9 @@ from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from synse.config import Config
-from synse.helpers import PMB, smatch_score
-from synse.sbn import SBNGraph
+from synse.helpers import PMB, create_record, smatch_score
+from synse.misc import ensure_ext
+from synse.sbn import SBNGraph, SBNSource
 from synse.sbn_spec import get_base_id, get_doc_id
 
 logging.basicConfig(level=logging.ERROR)
@@ -33,14 +35,6 @@ def get_args() -> Namespace:
         help="Path to se2seq output file.",
     )
     parser.add_argument(
-        "-o",
-        "--output_dir",
-        required=True,
-        type=str,
-        help="Output directory to store results in, will be created if it "
-        "does not exist.",
-    )
-    parser.add_argument(
         "-l",
         "--language",
         default=Config.SUPPORTED_LANGUAGES.EN.value,
@@ -56,6 +50,19 @@ def get_args() -> Namespace:
         help="Data split to run inference on.",
     )
     parser.add_argument(
+        "--sbn_source",
+        default=SBNSource.SEQ2SEQ.value,
+        type=str,
+        choices=SBNSource.all_values(),
+        help="Add flag to SBNGraph and results where this file came from.",
+    )
+    parser.add_argument(
+        "-r",
+        "--results_file",
+        type=str,
+        help="CSV file to write results and scores to.",
+    )
+    parser.add_argument(
         "-w",
         "--max_workers",
         default=16,
@@ -69,8 +76,9 @@ def get_args() -> Namespace:
 def generate_result(args, sbn_line, gold_path):
     current_dir = gold_path.parent
 
-    raw_sent = Path(current_dir / f"{args.language}.raw").read_text().rstrip()
-    G = SBNGraph().from_string(sbn_line, is_single_line=True)
+    G = SBNGraph(source=args.sbn_source).from_string(
+        sbn_line, is_single_line=True
+    )
 
     with tempfile.NamedTemporaryFile("w") as f:
         scores = smatch_score(gold_path, G.to_penman(f.name))
@@ -79,29 +87,36 @@ def generate_result(args, sbn_line, gold_path):
             G.to_penman(f.name, strict=False),
         )
 
-    result_record = {
-        "pmb_id": get_doc_id(args.language, gold_path),
-        "raw_sent": raw_sent,
-        **scores,
-        **{f"{k}_lenient": v for k, v in lenient_scores.items()},
-    }
-    return result_record
+    return scores, lenient_scores, G.to_sbn_string()
 
 
 def full_run(args, sbn_line, filepath):
-    path = str(filepath)
+    raw_sent = (
+        Path(filepath.parent / f"{args.language}.raw").read_text().rstrip()
+    )
+
+    sbn, error = None, None
+    scores, lenient_scores = dict(), dict()
     try:
-        return generate_result(args, sbn_line, filepath), None
+        scores, lenient_scores, sbn = generate_result(args, sbn_line, filepath)
     except Exception as e:
-        logger.error(f"{path}: {e}")
-        return None, str(e)
+        error = str(e)
+        logger.error(error)
+
+    record = create_record(
+        pmb_id=get_doc_id(args.language, filepath),
+        raw_sent=raw_sent,
+        sbn_source=args.sbn_source,
+        sbn=sbn,
+        error=error,
+        scores=scores,
+        lenient_scores=lenient_scores,
+    )
+    return record
 
 
 def main():
     args = get_args()
-
-    output_dir = Path(args.output_dir).resolve()
-    output_dir.mkdir(exist_ok=True)
 
     dataset = {
         k: v
@@ -112,8 +127,7 @@ def main():
     }
 
     pmb = PMB(args.data_split)
-    result_records, error_records = [], []
-    failed = 0
+
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=args.max_workers
     ) as executor:
@@ -129,37 +143,44 @@ def main():
 
             futures.append(executor.submit(full_run, args, sbn_line, filepath))
 
-        for res in tqdm(
-            concurrent.futures.as_completed(futures), desc="Running inference"
-        ):
-            score, err = res.result()
-            if score:
-                result_records.append(score)
-            else:
-                error_records.append({"pmb_id": base_id, "error": err})
-                failed += 1
+        result_records = [
+            res.result()
+            for res in tqdm(
+                concurrent.futures.as_completed(futures),
+                desc="Running inference",
+            )
+        ]
+
+    result_path = Path(Config.SEQ2SEQ_DIR / args.data_split)
+    result_path.mkdir(exist_ok=True)
 
     df = pd.DataFrame().from_records(result_records)
-    df_err = pd.DataFrame().from_records(error_records)
+    if args.results_file:
+        final_path = result_path / ensure_ext(args.results_file, ".csv").name
+        df.to_csv(final_path, index=False)
 
-    df.to_csv(
-        Path(args.output_dir) / f"{args.data_split}_results.csv", index=False
-    )
-    df_err.to_csv(
-        Path(args.output_dir) / f"{args.data_split}_errors.csv", index=False
-    )
+    df["f1"] = df["f1"].fillna(0)
+    df["f1_lenient"] = df["f1_lenient"].fillna(0)
+    generation_data = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
 
-    print(
-        f"""
-    
-    PARSED DOCS:          {len(df)}
-    FAILED DOCS:          {failed}
-    TOTAL DOCS:           {len(df) + failed}
+    overall_result_msg = f"""
+    {generation_data}
+
+    ARGS: {args}
+
+    DATA SPLIT:           {args.data_split}
+    PARSED DOCS:          {len(df[df['error'].isnull()])}
+    FAILED DOCS:          {len(df[df['error'].notnull()])}
+    TOTAL DOCS:           {len(df)}
 
     AVERAGE F1 (strict):  {df["f1"].mean():.3} ({df["f1"].min():.3} - {df["f1"].max():.3})
     AVERAGE F1 (lenient): {df["f1_lenient"].mean():.3} ({df["f1_lenient"].min():.3} - {df["f1_lenient"].max():.3})
     """
-    )
+
+    with open(result_path / "overall.txt", "a") as f:
+        f.write(f"{overall_result_msg}\n\n")
+
+    print(overall_result_msg)
 
 
 if __name__ == "__main__":

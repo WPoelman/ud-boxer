@@ -14,7 +14,8 @@ class Config:
     PROJECT_ROOT = Path(__file__).parent.parent
     DATA_DIR = PROJECT_ROOT / "data"
 
-    RESULT_DIR = Path(DATA_DIR / "results").resolve()
+    RESULT_DIR = Path(DATA_DIR / "results/rewrite").resolve()
+    SEQ2SEQ_DIR = Path(DATA_DIR / "results/seq2seq").resolve()
     LOG_PATH = Path(DATA_DIR / "logs").resolve()
     GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
     EDGE_MAPPINGS_PATH = Path(

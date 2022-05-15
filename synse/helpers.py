@@ -2,11 +2,12 @@ import json
 import subprocess
 from os import PathLike
 from pathlib import Path
-from typing import Dict, Generator
+from typing import Any, Dict, Generator, Optional
 
 from tqdm import tqdm
 
 from synse.config import Config
+from synse.sbn import SBNSource
 from synse.sbn_spec import SBNError, get_base_id
 
 __all__ = [
@@ -110,3 +111,23 @@ def smatch_score(gold: PathLike, test: PathLike) -> Dict[str, float]:
     }
 
     return clean_dict
+
+
+def create_record(
+    pmb_id: str,
+    raw_sent: str,
+    sbn_source: SBNSource = SBNSource.UNKNOWN,
+    scores: Dict[str, Any] = dict(),
+    lenient_scores: Dict[str, Any] = dict(),
+    sbn: Optional[str] = None,
+    error: Optional[str] = None,
+):
+    return {
+        "pmb_id": pmb_id,
+        "source": sbn_source,
+        "raw_sent": raw_sent,
+        "sbn_str": sbn,
+        "error": error,
+        **scores,
+        **{f"{k}_lenient": v for k, v in lenient_scores.items()},
+    }
