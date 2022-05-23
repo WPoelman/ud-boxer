@@ -1,8 +1,9 @@
 from enum import Enum
-from pathlib import Path
+from os import PathLike
 from typing import Any, Dict, List, Tuple
 
 import networkx as nx
+import pydot
 
 from synse.misc import ensure_ext
 
@@ -50,13 +51,8 @@ class BaseGraph(nx.DiGraph):
     def _edge_label(edge_data) -> str:
         raise NotImplementedError("Overwrite this to create an edge label.")
 
-    def to_png(self, save_path):
-        """Creates a dot graph png and saves it at the provided path"""
-        # This is possible, but it's a pain to select the proper labels and
-        # format. It's easier to create it 'manually'.
-        # P = nx.drawing.nx_pydot.to_pydot(self)
-        import pydot
-
+    def to_pydot(self) -> pydot.Dot:
+        """Creates a pydot graph object from the graph"""
         p_graph = pydot.Dot()
 
         token_count: Dict[str, int] = dict()
@@ -96,12 +92,16 @@ class BaseGraph(nx.DiGraph):
                     },
                 )
             )
+        return p_graph
 
-        final_path = ensure_ext(save_path, ".png")
+    def to_dot_str(self) -> str:
+        """Creates a dot graph string from the graph"""
+        return self.to_pydot().to_string()
 
+    def to_png(self, save_path: PathLike):
+        """Creates a dot graph png and saves it at the provided path"""
         # pydot does not like a Path object
-        p_graph.write(str(final_path.resolve()), format="png")
-
-        del p_graph
+        final_path = str(ensure_ext(save_path, ".png").resolve())
+        self.to_pydot().write(final_path, format="png")
 
         return self
