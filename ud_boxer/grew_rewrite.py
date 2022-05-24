@@ -15,11 +15,20 @@ __all__ = [
     "Grew",
 ]
 
+# Placeholder to dynamically build a grs file for a specific language.
+LANGUAGE_PLACEHOLDER = "$$LANGUAGE$$"
+
 
 class Grew:
-    def __init__(self, grs_path: PathLike = Config.GRS_PATH) -> None:
+    def __init__(
+        self,
+        grs_path: PathLike = Config.GRS_PATH,
+        language: Config.SUPPORTED_LANGUAGES = Config.SUPPORTED_LANGUAGES.EN,
+    ) -> None:
         grew.init()
-        self.grs = grew.grs(str(grs_path))
+        self.current_grs_path = self._build_grs(grs_path, language)
+        # note that this is an index for internal grew use
+        self.grs: int = grew.grs(str(self.current_grs_path))
 
     def run(self, conll_path: PathLike, strat: str = "main") -> SBNGraph:
         # This is not ideal since we need to deserialize the file 2x, once
@@ -108,3 +117,21 @@ class Grew:
             )
 
         return A
+
+    @staticmethod
+    def _build_grs(
+        grs_path: PathLike, language: Config.SUPPORTED_LANGUAGES
+    ) -> Path:
+        """Build the grs string with the current language"""
+        # Not sure if this is the best way to do this, but it works.
+        # I tried returning the grs string, which is also possible, but then
+        # the separate language grs files cannot be found.
+        grs_str = Path(grs_path).read_text()
+        final_grs = grs_str.replace(LANGUAGE_PLACEHOLDER, language)
+        current_grs = Path(grs_path).parent / "working_do_not_remove.grs"
+        current_grs.write_text(final_grs)
+
+        return current_grs
+
+    def __del__(self):
+        self.current_grs_path.unlink()

@@ -9,7 +9,7 @@
 % For both the nodes and edges the 'token' feature is used to store already known DRS components
 % or defaults that might help to resolve those later.
 
-import "english.grs"
+import "$$LANGUAGE$$.grs"
 
 %%% LABELING RULES %%%
 % Add the token feature to all nodes, this will be used to build up the string required for SBN.
@@ -314,7 +314,7 @@ strat main {
 
                 Iter(add_time),
 
-                Iter(english),
+                Iter($$LANGUAGE$$),
 
                 Iter(remove_root_punct),
                 Iter(remove_explicit_root),
