@@ -6,9 +6,9 @@ from typing import Any, Dict, List, Tuple
 
 import joblib
 
-from synse.config import Config
-from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError, SBNSpec
-from synse.ud_spec import (
+from ud_boxer.config import Config
+from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError, SBNSpec
+from ud_boxer.ud_spec import (
     GENDER_SENSE_MAPPING,
     TIME_EDGE_MAPPING,
     UPOS_WN_POS_MAPPING,

@@ -9,12 +9,12 @@ from numpy import source
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from synse.config import Config
-from synse.grew_rewrite import Grew
-from synse.helpers import PMB, create_record, smatch_score
-from synse.misc import ensure_ext
-from synse.sbn import SBNSource
-from synse.sbn_spec import get_doc_id
+from ud_boxer.config import Config
+from ud_boxer.grew_rewrite import Grew
+from ud_boxer.helpers import PMB, create_record, smatch_score
+from ud_boxer.misc import ensure_ext
+from ud_boxer.sbn import SBNSource
+from ud_boxer.sbn_spec import get_doc_id
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)

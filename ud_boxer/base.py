@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Tuple
 import networkx as nx
 import pydot
 
-from synse.misc import ensure_ext
+from ud_boxer.misc import ensure_ext
 
 __all__ = [
     "_ID",

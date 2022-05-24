@@ -6,9 +6,9 @@ from typing import Any, Dict, Generator, Optional
 
 from tqdm import tqdm
 
-from synse.config import Config
-from synse.sbn import SBNSource
-from synse.sbn_spec import SBNError, get_base_id
+from ud_boxer.config import Config
+from ud_boxer.sbn import SBNSource
+from ud_boxer.sbn_spec import SBNError, get_base_id
 
 __all__ = [
     "PMB",

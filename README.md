@@ -1,4 +1,4 @@
-# Thesis
+# UD-Boxer
 This system is a syntax-semantics interface between Universal Dependencies (UD) and Discourse Representation Structures (DRS), as used in the Parallel Meaning Bank (PMB) project.
 The primary DRS target format is the Simplified Box Notation (SBN).
 The following images show the basic idea for the sentence **Tracy lost her glasses.** with the UD parse on the left and the target SBN graph on the right:

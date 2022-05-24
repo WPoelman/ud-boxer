@@ -28,9 +28,9 @@ from typing import Dict, List
 import pandas as pd
 from networkx.algorithms.isomorphism import DiGraphMatcher
 
-from synse.rewrite import BoxRemover
-from synse.sbn import SBNGraph
-from synse.ud_spec import UDSpecBasic
+from ud_boxer.rewrite import BoxRemover
+from ud_boxer.sbn import SBNGraph
+from ud_boxer.ud_spec import UDSpecBasic
 
 logger = logging.getLogger(__name__)
 

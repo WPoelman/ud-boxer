@@ -15,7 +15,7 @@ from os import PathLike
 from pathlib import Path
 from typing import List, Optional, Tuple
 
-from synse.base import BaseEnum
+from ud_boxer.base import BaseEnum
 
 __all__ = [
     "SBN_NODE_TYPE",

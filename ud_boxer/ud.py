@@ -4,9 +4,9 @@ from typing import Set
 
 from stanza.utils.conll import CoNLL
 
-from synse.base import BaseEnum, BaseGraph
-from synse.config import Config
-from synse.ud_spec import UDSpecBasic
+from ud_boxer.base import BaseEnum, BaseGraph
+from ud_boxer.config import Config
+from ud_boxer.ud_spec import UDSpecBasic
 
 __all__ = [
     "UD_NODE_TYPE",

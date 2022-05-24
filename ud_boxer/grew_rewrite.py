@@ -6,10 +6,10 @@ from pathlib import Path
 from typing import List
 
 import grew
-from synse.config import Config
-from synse.graph_resolver import GraphResolver
-from synse.sbn import SBNGraph
-from synse.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError
+from ud_boxer.config import Config
+from ud_boxer.graph_resolver import GraphResolver
+from ud_boxer.sbn import SBNGraph
+from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError
 
 __all__ = [
     "Grew",

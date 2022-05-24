@@ -4,9 +4,9 @@ from pathlib import Path
 
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from synse.config import Config
-from synse.grew_rewrite import Grew
-from synse.ud import UDGraph, UDParser
+from ud_boxer.config import Config
+from ud_boxer.grew_rewrite import Grew
+from ud_boxer.ud import UDGraph, UDParser
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)

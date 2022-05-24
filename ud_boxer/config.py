@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from synse.base import BaseEnum
+from ud_boxer.base import BaseEnum
 
 __all__ = [
     "Config",

@@ -9,11 +9,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import networkx as nx
 import penman
 
-from synse.base import BaseEnum, BaseGraph
-from synse.graph_resolver import GraphResolver
-from synse.misc import ensure_ext
-from synse.penman_model import pm_model
-from synse.sbn_spec import (
+from ud_boxer.base import BaseEnum, BaseGraph
+from ud_boxer.graph_resolver import GraphResolver
+from ud_boxer.misc import ensure_ext
+from ud_boxer.penman_model import pm_model
+from ud_boxer.sbn_spec import (
     SBN_EDGE_TYPE,
     SBN_NODE_TYPE,
     SBNError,
