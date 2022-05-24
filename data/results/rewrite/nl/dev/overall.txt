@@ -1,0 +1,14 @@
+
+    2022_05_24_20_52_15
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/nl/gold', language='nl', ud_system='stanza', data_split='dev', sbn_source='GREW', results_file=None, max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          437
+    FAILED DOCS:          0
+    TOTAL DOCS:           437
+
+    AVERAGE F1 (strict):  0.749 (0.364 - 0.957)
+    AVERAGE F1 (lenient): 0.748 (0.37 - 0.95)
+    
+

@@ -1,0 +1,28 @@
+
+    2022_05_24_20_51_34
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/it/gold', language='it', ud_system='stanza', data_split='dev', sbn_source='GREW', results_file=None, max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          530
+    FAILED DOCS:          10
+    TOTAL DOCS:           540
+
+    AVERAGE F1 (strict):  0.752 (0.0 - 0.957)
+    AVERAGE F1 (lenient): 0.75 (0.0 - 0.95)
+    
+
+
+    2022_05_24_20_55_21
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/it/gold', language='it', ud_system='stanza', data_split='dev', sbn_source='GREW', results_file='first_pass', max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          530
+    FAILED DOCS:          10
+    TOTAL DOCS:           540
+
+    AVERAGE F1 (strict):  0.752 (0.0 - 0.957)
+    AVERAGE F1 (lenient): 0.75 (0.0 - 0.95)
+    
+
