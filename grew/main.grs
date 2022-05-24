@@ -77,7 +77,6 @@ rule connect_user {
         TARGET -[token=User]-> USER;
     }
     commands {
-        % add_edge USER -[token=Owner]-> TARGET;
         add_edge TARGET -[token=User]-> USER;
         del_edge REL;
         del_node INDICATOR;
