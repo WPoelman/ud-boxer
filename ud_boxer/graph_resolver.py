@@ -1,10 +1,6 @@
-import json
-import pickle
 from collections import Counter
 from copy import copy
 from typing import Any, Dict, List, Tuple
-
-import joblib
 
 from ud_boxer.config import Config
 from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError, SBNSpec
@@ -34,17 +30,14 @@ class GraphResolver:
     # special care in certain places, such as when merging SBNGraphs.
     PROTECTED_FIELDS = ["_id", "type", "type_idx", "token"]
 
-    def __init__(self) -> None:
-        with open(Config.EDGE_MAPPINGS_PATH) as edge_f:
-            self.edge_mappings = json.load(edge_f)
-
-        with open(Config.LEMMA_SENSE_MAPPINGS_PATH, "rb") as lemma_f:
-            self.lemma_sense_lookup = pickle.load(lemma_f)
-
-        with open(Config.LEMMA_POS_SENSE_MAPPINGS_PATH, "rb") as lemma_pos_f:
-            self.lemma_pos_sense_lookup = pickle.load(lemma_pos_f)
-
-        self.edge_clf_pipeline = joblib.load(Config.EDGE_CLF_PATH)
+    def __init__(
+        self,
+        language: Config.SUPPORTED_LANGUAGES = Config.SUPPORTED_LANGUAGES.EN,
+    ) -> None:
+        self.edge_mappings = Config.get_edge_mappings(language)
+        self.lemma_sense_lookup = Config.get_lemma_sense(language)
+        self.lemma_pos_sense_lookup = Config.get_lemma_pos_sense(language)
+        self.edge_clf_pipeline = Config.get_edge_clf(language)
 
     def node_token_type(
         self, node_data: Dict[str, str]

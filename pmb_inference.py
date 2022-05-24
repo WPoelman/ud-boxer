@@ -5,7 +5,6 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from numpy import source
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
@@ -18,8 +17,6 @@ from ud_boxer.sbn_spec import get_doc_id
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
-
-GREW = Grew()
 
 
 def get_args() -> Namespace:
@@ -160,8 +157,12 @@ def full_run(args, ud_filepath):
 def main():
     args = get_args()
 
+    # I know, I know...
+    global GREW
+    GREW = Grew(language=args.language)
+
     ud_file_format = f"{args.language}.ud.{args.ud_system}.conll"
-    pmb = PMB(args.data_split)
+    pmb = PMB(args.data_split, args.language)
 
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=args.max_workers
@@ -185,8 +186,7 @@ def main():
             )
         ]
 
-    result_path = Path(Config.RESULT_DIR / args.data_split)
-    result_path.mkdir(exist_ok=True)
+    result_path = Config.get_result_dir(args.language, args.data_split)
 
     df = pd.DataFrame().from_records(result_records)
     if args.results_file:

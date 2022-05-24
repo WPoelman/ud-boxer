@@ -8,7 +8,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 
 from ud_boxer.config import Config
 from ud_boxer.grew_rewrite import Grew
-from ud_boxer.helpers import pmb_generator
+from ud_boxer.helpers import PMB, pmb_generator
 from ud_boxer.mapper import MapExtractor
 from ud_boxer.sbn import SBNError, SBNGraph, sbn_graphs_are_isomorphic
 from ud_boxer.sbn_spec import get_doc_id
@@ -105,7 +105,6 @@ def store_ud_parses(args):
 
 def search_dataset(args):
     """This function loops over the dataset to collect some info"""
-
     for system in Config.UD_SYSTEM.all_values():
         results = []
         for filepath in pmb_generator(
@@ -123,9 +122,10 @@ def search_dataset(args):
 
 def extract_mappings(args):
     extractor = MapExtractor()
-    grew = Grew()
+    grew = Grew(language=args.language)
+    pmb = PMB(Config.DATA_SPLIT.TRAIN, args.language)
 
-    for filepath in pmb_generator(
+    for filepath in pmb.generator(
         args.starting_path,
         f"**/*.sbn",
         desc_tqdm="Extracting mappings",
@@ -155,7 +155,9 @@ def extract_mappings(args):
         extractor.extract(S, T, doc_id)
 
     date = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-    extractor.export_csv(f"edge_mappings_{date}.csv")
+    extractor.export_csv(
+        Config.MAPPINGS_DIR / f"{args.language}_edge_mappings_{date}.csv"
+    )
 
 
 def error_mine(args):

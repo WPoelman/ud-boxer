@@ -21,14 +21,12 @@ class PMB:
     def __init__(
         self,
         split: Config.DATA_SPLIT = Config.DATA_SPLIT.TRAIN,
-        id_path: PathLike = Config.SPLIT_DIR_PATH,
+        language: Config.SUPPORTED_LANGUAGES = Config.SUPPORTED_LANGUAGES.EN,
     ):
         if split == Config.DATA_SPLIT.ALL:
             self.ids = set()
         else:
-            self.ids = set(
-                Path(Path(id_path) / f"{split}.txt").read_text().split("\n")
-            )
+            self.ids = set(Config.get_split_ids(language, split))
 
     def generator(
         self,

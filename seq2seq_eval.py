@@ -126,7 +126,7 @@ def main():
         ]
     }
 
-    pmb = PMB(args.data_split)
+    pmb = PMB(args.data_split, args.language)
 
     with concurrent.futures.ThreadPoolExecutor(
         max_workers=args.max_workers

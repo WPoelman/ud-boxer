@@ -11,8 +11,6 @@ from ud_boxer.ud import UDGraph, UDParser
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
-GREW = Grew()
-
 
 def get_args() -> Namespace:
     parser = ArgumentParser()
@@ -71,6 +69,8 @@ def main():
     if not args.sentence and not args.ud:
         raise ValueError("Please provide either a sentence or UD conll file.")
 
+    grew = Grew(language=args.language)
+
     output_dir = Path(args.output_dir).resolve()
     output_dir.mkdir(exist_ok=True)
 
@@ -83,7 +83,7 @@ def main():
     elif args.ud:
         ud_filepath = Path(args.ud).resolve()
 
-    res = GREW.run(ud_filepath)
+    res = grew.run(ud_filepath)
     res.to_sbn(Path(output_dir / f"{args.language}.drs.sbn"))
 
     if args.store_visualizations:
