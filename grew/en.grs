@@ -3,7 +3,6 @@
 %%% BOX RULES %%%
 rule box_negation_det {
     pattern {
-        % We know there is negation.
         N [lemma=no|not|never];
         * -[1=advmod|det]-> N;
     }
@@ -18,12 +17,27 @@ rule box_negation_det {
     }
 }
 
-% TODO: nobody, none, no one, this is very specific currently, maybe make more general
 % Example: en/gold/p03/d0823
 rule box_negation_nmod {
     pattern {
-        N [lemma=none];
-        N -[1=nmod]-> *;
+        N [lemma=none|nothing];
+        N -[1=nmod|obj]-> *;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_negation_pron {
+    pattern {
+        N [lemma=nobody];
+        * -[1=nsubj]-> N;
     }
     without {
         P [token=NEGATION];

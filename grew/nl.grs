@@ -1,0 +1,71 @@
+%%% Dutch specific rules %%%
+
+%%% BOX RULES %%%
+rule box_negation_det {
+    pattern {
+        N [lemma=niet|geen|nooit];
+        * -[1=advmod|det]-> N;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_negation_nmod {
+    pattern {
+        N [lemma=niets|niks|nada];
+        N -[1=nmod|obj]-> *;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_negation_pron {
+    pattern {
+        N [lemma=niemand];
+        * -[1=nsubj]-> N;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_quantifier {
+    pattern {
+        N [lemma=iedereen|elk|elke|alle|alles|altijd|iedere];
+    }
+    without {
+        P [token=NEGATION];
+        Q [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+
+        add_node NEGATION_BOX_2;
+        NEGATION_BOX_2.token = NEGATION;
+
+        add_edge NEGATION_BOX -[token=NEGATION]-> NEGATION_BOX_2;
+    }
+}

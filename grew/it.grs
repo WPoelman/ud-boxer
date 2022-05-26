@@ -1,0 +1,72 @@
+%%% Italian specific rules %%%
+
+%%% BOX RULES %%%
+rule box_negation_det {
+    pattern {
+        N [lemma=non|mai];
+        * -[1=advmod|det]-> N;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+% Example: en/gold/p03/d0823
+rule box_negation_nmod {
+    pattern {
+        N [lemma=nulla|niente|zero];
+        N -[1=nmod|obj]-> *;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_negation_pron {
+    pattern {
+        N [lemma=nessuno|niente];
+        * -[1=nsubj]-> N;
+    }
+    without {
+        P [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+    }
+}
+
+rule box_quantifier {
+    pattern {
+        N [lemma=tutto|tutti|entrambe|entrambi|ogni|ciascuno|qualsiasi];
+    }
+    without {
+        P [token=NEGATION];
+        Q [token=NEGATION];
+    }
+    commands {
+        del_node N;
+
+        add_node NEGATION_BOX;
+        NEGATION_BOX.token = NEGATION;
+
+        add_node NEGATION_BOX_2;
+        NEGATION_BOX_2.token = NEGATION;
+
+        add_edge NEGATION_BOX -[token=NEGATION]-> NEGATION_BOX_2;
+    }
+}
