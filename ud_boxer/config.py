@@ -51,7 +51,7 @@ class Config:
     DATA_DIR = PROJECT_ROOT / "data"
     MAPPINGS_DIR = DATA_DIR / "mappings"
     LOG_PATH = Path(DATA_DIR / "logs").resolve()
-    # NOTE: seq2seq is currently only for english, so keep it that way
+    # NOTE: seq2seq is currently only for english!
     SEQ2SEQ_DIR = Path(DATA_DIR / "results/seq2seq").resolve()
 
     @staticmethod
@@ -76,7 +76,7 @@ class Config:
     @staticmethod
     def get_lemma_sense(lang: SUPPORTED_LANGUAGES):
         path = Path(
-            Config.DATA_DIR / f"mappings/{lang}_lemma_sense_lookup_train.json"
+            Config.DATA_DIR / f"mappings/{lang}_lemma_sense_lookup_gold.json"
         ).resolve()
         return load_json(path)
 
@@ -84,7 +84,7 @@ class Config:
     def get_lemma_pos_sense(lang: SUPPORTED_LANGUAGES):
         path = Path(
             Config.DATA_DIR
-            / f"mappings/{lang}_lemma_pos_sense_lookup_train.json"
+            / f"mappings/{lang}_lemma_pos_sense_lookup_gold.json"
         ).resolve()
         return load_json(path)
 

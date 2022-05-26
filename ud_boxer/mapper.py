@@ -23,6 +23,7 @@ Possible approach:
 
 import logging
 from os import PathLike
+from pathlib import Path
 from typing import Dict, List
 
 import pandas as pd
@@ -41,68 +42,99 @@ __all__ = [
 
 class MapExtractor:
     def __init__(self) -> None:
-        self.mapping_records: List[Dict[str, str]] = []
-        self.relevant_keys = {
+        self.edge_mapping_records: List[Dict[str, str]] = []
+        self.node_mapping_records: List[Dict[str, str]] = []
+        self.relevant_edge_keys = {
             "token",
             "lemma",
             "upos",
             "xpos",
             *UDSpecBasic.Feats.KEYS,
         }
+        self.relevant_node_keys = {"token", "lemma", "upos", "xpos"}
 
-    def extract(self, S: SBNGraph, T: SBNGraph, doc_id: str):
+    def extract(self, G: SBNGraph, T: SBNGraph, doc_id: str):
         """
-        S: source gold graph
+        G: source gold graph
         T: target graph to test
         """
-        S = BoxRemover.transform(S)
+        G = BoxRemover.transform(G)
         T = BoxRemover.transform(T)
 
-        matcher = DiGraphMatcher(S, T)
+        matcher = DiGraphMatcher(G, T)
         if matcher.subgraph_is_isomorphic():
             mapping = matcher.mapping
 
-            for from_id, to_id, source_edge in S.edges.data():
+            for g_from_id, g_to_id, g_edge in G.edges.data():
                 # The mappings from the DiGraphMatcher only go over the node,
                 # it could be possible to figure out the correct edges from the
                 # (sub)graph match we're currently looking at, but in that case
                 # the id is incorrect resulting in a key error, which accomplishes
                 # the same :)
                 try:
-                    target_from = mapping[from_id]
-                    target_to = mapping[to_id]
+                    target_from = mapping[g_from_id]
+                    target_to = mapping[g_to_id]
                     target_edge = T.edges[target_from, target_to]
                 except KeyError:
                     continue
 
-                # Don't store a wrong mapping.
-                if target_edge["token"] != source_edge["token"]:
-                    continue
+                # altijd de nodes opslaan lemma -> sense etc.
+                # van target lemma of lemma pos naar gold sense
 
-                # The Grew step introduced an already exact mapping, meaning
-                # we also don't have any additional UD information
-                if source_edge == target_edge:
-                    continue
+                # Only store correct edge mappings
+                if target_edge["token"] == g_edge["token"]:
+                    # The Grew step introduced an already exact mapping, meaning
+                    # we also don't have any additional UD information
+                    if g_edge != target_edge:
+                        self.edge_mapping_records.append(
+                            {
+                                **{
+                                    f"from_node_{k}": v
+                                    for k, v in T.nodes[target_from].items()
+                                    if k in self.relevant_edge_keys
+                                },
+                                **{
+                                    f"to_node_{k}": v
+                                    for k, v in T.nodes[target_to].items()
+                                    if k in self.relevant_edge_keys
+                                },
+                                "deprel": target_edge.get("deprel"),
+                                "label": g_edge["token"],
+                                "doc_id": doc_id,
+                            }
+                        )
 
-                self.mapping_records.append(
+                self.node_mapping_records.append(
                     {
                         **{
-                            f"from_node_{k}": v
-                            for k, v in T.nodes[target_from].items()
-                            if k in self.relevant_keys
+                            f"gold_node_{k}": v
+                            for k, v in G.nodes[g_from_id].items()
+                            if k in self.relevant_node_keys
                         },
                         **{
-                            f"to_node_{k}": v
-                            for k, v in T.nodes[target_to].items()
-                            if k in self.relevant_keys
+                            f"ud_node_{k}": v
+                            for k, v in T.nodes[target_from].items()
+                            if k in self.relevant_node_keys
                         },
-                        "deprel": target_edge.get("deprel"),
-                        "label": source_edge["token"],
-                        "doc_id": doc_id,
+                        **{
+                            f"gold_node_{k}": v
+                            for k, v in G.nodes[g_to_id].items()
+                            if k in self.relevant_node_keys
+                        },
+                        **{
+                            f"ud_node_{k}": v
+                            for k, v in T.nodes[target_to].items()
+                            if k in self.relevant_node_keys
+                        },
                     }
                 )
 
     def export_csv(self, output_path: PathLike) -> None:
-        pd.DataFrame().from_records(
-            self.mapping_records
-        ).drop_duplicates().to_csv(output_path, index=False)
+        for item in ["node", "edge"]:
+            path = (
+                Path(output_path).parent
+                / f"{Path(output_path).stem}_{item}.csv"
+            )
+            pd.DataFrame().from_records(
+                getattr(self, f"{item}_mapping_records")
+            ).drop_duplicates().to_csv(path, index=False)
