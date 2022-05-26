@@ -51,17 +51,23 @@ class GraphResolver:
         node_data = GraphResolver.filter_item_data(node_data)
         node_token = copy(token_to_resolve)
 
-        # The sense has been added in the grew rewriting step
+        gender = (
+            self.parse_gender(node_data["Gender"])[0]
+            if "Gender" in node_data
+            else None
+        )
+
+        # A new box has been added in the grew step
         if token_to_resolve in SBNSpec.NEW_BOX_INDICATORS:
             node_type = SBN_NODE_TYPE.BOX
+        # The sense has been added in the grew rewriting step
         elif SBNSpec.WORDNET_SENSE_PATTERN.match(token_to_resolve):
             node_type = SBN_NODE_TYPE.SENSE
         elif token_to_resolve == self.RESOLVE_GENDER_NODE:
             node_type = SBN_NODE_TYPE.SENSE
-            if gender := node_data.get("Gender", None):
-                node_token = GENDER_SENSE_MAPPING[gender]
-            else:
-                node_token = Config.DEFAULT_GENDER
+            node_token = GENDER_SENSE_MAPPING.get(
+                gender, Config.DEFAULT_GENDER
+            )
         # Otherwise try to format the token as a sense. This assumes
         # unwanted nodes (DET, PUNCT, AUX) are already removed.
         elif upos := node_data.get("upos", None):
@@ -80,6 +86,13 @@ class GraphResolver:
                 # TODO: this would be the place to get info per node from a
                 # NER system or mark them for later processing with a NER
                 # system. Can also work for dates (NUM), countries, etc.
+
+                # Not resolving the gender here and always using "female.n.02"
+                # scores higher, but does not really make sense. This is
+                # more fair and logical, but scores slightly lower.
+                # node_token = GENDER_SENSE_MAPPING.get(
+                # gender, Config.DEFAULT_GENDER
+                # )
                 node_token = "female.n.02"  # most common in training data
             else:
                 node_token = f"{lemma}.{wn_pos}.01"
@@ -146,19 +159,6 @@ class GraphResolver:
                     elif edge_token in SBNSpec.DRS_OPERATORS:
                         edge_type = SBN_EDGE_TYPE.DRS_OPERATOR
 
-            # As a fallback?
-            # if use_mappings and deprel:
-            #     if deprel in self.edge_mappings:
-            #         edge_token = self.edge_mappings[deprel][0][0]
-            #     else:
-            #         main_component = deprel.split(":")[0]
-            #         if main_component in self.edge_mappings:
-            #             edge_token = self.edge_mappings[main_component][0][0]
-            # else:
-            #     edge_token = self.predict_edge(
-            #         deprel, nodes[from_id], nodes[to_id]
-            #     )
-
         if not edge_type:
             # The default role and type
             edge_type = SBN_EDGE_TYPE.ROLE
@@ -193,6 +193,14 @@ class GraphResolver:
         edge_data["deprel"] = deprel
 
         return edge_data
+
+    @staticmethod
+    def parse_gender(gender: str):
+        """
+        The 'Gender' feat can have multiple values. TODO: Maybe expand this to
+        parse feats in general.
+        """
+        return gender.split(",")
 
     @staticmethod
     def filter_item_data(item: Dict[str, Any]) -> Dict[str, Any]:
