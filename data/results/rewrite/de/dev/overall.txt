@@ -12,3 +12,17 @@
     AVERAGE F1 (lenient): 0.775 (0.421 - 0.95)
     
 
+
+    2022_05_26_12_52_11
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/de/gold', language='de', ud_system='stanza', data_split='dev', sbn_source='GREW', results_file=None, max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          558
+    FAILED DOCS:          0
+    TOTAL DOCS:           558
+
+    AVERAGE F1 (strict):  0.784 (0.409 - 0.957)
+    AVERAGE F1 (lenient): 0.781 (0.421 - 0.95)
+    
+
