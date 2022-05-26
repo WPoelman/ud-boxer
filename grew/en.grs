@@ -1,6 +1,7 @@
 %%% English specific rules %%%
 
 %%% BOX RULES %%%
+% Example: en/gold/p02/d1681
 rule box_negation_det {
     pattern {
         N [lemma=no|not|never];
@@ -34,6 +35,8 @@ rule box_negation_nmod {
     }
 }
 
+
+% Example: en/gold/p04/d0830
 rule box_negation_pron {
     pattern {
         N [lemma=nobody];
@@ -50,6 +53,7 @@ rule box_negation_pron {
     }
 }
 
+% Example: en/gold/p04/d2804
 rule box_quantifier {
     pattern {
         N [lemma=every|everyone|everybody|everything|always|all|whoever|whomever|both|whatever];

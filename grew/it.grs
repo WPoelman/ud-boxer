@@ -1,6 +1,7 @@
 %%% Italian specific rules %%%
 
 %%% BOX RULES %%%
+% Example: it/gold/p09/d1743
 rule box_negation_det {
     pattern {
         N [lemma=non|mai];
@@ -17,7 +18,7 @@ rule box_negation_det {
     }
 }
 
-% Example: en/gold/p03/d0823
+% Example: it/gold/p19/d2943
 rule box_negation_nmod {
     pattern {
         N [lemma=nulla|niente|zero];
@@ -34,6 +35,7 @@ rule box_negation_nmod {
     }
 }
 
+% Example: it/gold/p65/d1668
 rule box_negation_pron {
     pattern {
         N [lemma=nessuno|niente];
@@ -50,6 +52,7 @@ rule box_negation_pron {
     }
 }
 
+% Example: it/gold/p37/d2571
 rule box_quantifier {
     pattern {
         N [lemma=tutto|tutti|entrambe|entrambi|ogni|ciascuno|qualsiasi];

@@ -1,6 +1,7 @@
 %%% German specific rules %%%
 
 %%% BOX RULES %%%
+% Example: de/gold/p03/d2800
 rule box_negation_det {
     pattern {
         N [lemma=nicht|kein|keine|keines|nie];
@@ -17,10 +18,10 @@ rule box_negation_det {
     }
 }
 
-% Example: en/gold/p03/d0823
+% Example: de/gold/p05/d2383
 rule box_negation_nmod {
     pattern {
-        N [lemma=nichts|niemanden];
+        N [lemma=nichts|niemanden|keine];
         N -[1=nmod|obj]-> *;
     }
     without {
@@ -34,6 +35,7 @@ rule box_negation_nmod {
     }
 }
 
+% Example: de/gold/p06/d3500
 rule box_negation_pron {
     pattern {
         N [lemma=niemand|niemanden|keiner];
@@ -50,6 +52,7 @@ rule box_negation_pron {
     }
 }
 
+% Example: de/gold/p06/d1718
 rule box_quantifier {
     pattern {
         N [lemma=jeder|jedes|jederman|jegliche|alle|alles|stets|beide|immer];

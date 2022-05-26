@@ -35,6 +35,9 @@ rule add_token_edges {
     }
 }
 
+% This is not really needed since the mappings can also handle this. This is more of an example of a
+% direct labeling rule.
+% Example: en/gold/p05/d1993
 rule label_adj {
     pattern {
         N [upos=NOUN];
@@ -85,7 +88,6 @@ rule connect_user {
 
 %%% EXPANDING RULES %%%
 % Expand a name into an entity sense node, a name edge and the name constant.
-% TODO: assign proper label, maybe with combination of PROPN + Gender = Fem etc.
 % Example: en/gold/p04/d1646
 rule expand_name {
     pattern {
@@ -104,7 +106,7 @@ rule expand_name {
     }
 }
 
-% Add a speaker / hearer nodes split up into 'person-sense' -> 'speaker'.
+% Add a speaker nodes split up into 'person-sense' -> 'speaker'.
 % Example: en/gold/p04/d1646
 rule expand_first_person {
     pattern {
@@ -123,6 +125,8 @@ rule expand_first_person {
     }
 }
 
+% Add a speaker nodes split up into 'person-sense' -> 'hearer'.
+% Example: en/gold/p05/d2340
 rule expand_second_person {
     pattern {
         HEARER [upos=PRON, Person=2];
@@ -140,6 +144,8 @@ rule expand_second_person {
     }
 }
 
+% Indicate pronoun to resolve.
+% Example: en/gold/p05/d2340
 rule expand_third_person {
     pattern {
         PERSON [upos=PRON, Person=3];

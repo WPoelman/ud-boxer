@@ -1,6 +1,7 @@
 %%% Dutch specific rules %%%
 
 %%% BOX RULES %%%
+% Example: nl/gold/p06/d0785
 rule box_negation_det {
     pattern {
         N [lemma=niet|geen|nooit];
@@ -17,6 +18,7 @@ rule box_negation_det {
     }
 }
 
+% Example: nl/gold/p57/d2423
 rule box_negation_nmod {
     pattern {
         N [lemma=niets|niks|nada];
@@ -33,6 +35,7 @@ rule box_negation_nmod {
     }
 }
 
+% Example: nl/gold/p96/d0945
 rule box_negation_pron {
     pattern {
         N [lemma=niemand];
@@ -49,6 +52,7 @@ rule box_negation_pron {
     }
 }
 
+% Example: nl/gold/p36/d2853
 rule box_quantifier {
     pattern {
         N [lemma=iedereen|elk|elke|alle|alles|altijd|iedere];
