@@ -54,3 +54,45 @@
     AVERAGE F1 (lenient): 0.761 (0.372 - 0.95)
     
 
+
+    2022_05_26_13_08_58
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/nl/gold', language='nl', ud_system='trankit', data_split='test', sbn_source='GREW', results_file=None, max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           test
+    PARSED DOCS:          491
+    FAILED DOCS:          0
+    TOTAL DOCS:           491
+
+    AVERAGE F1 (strict):  0.758 (0.36 - 0.957)
+    AVERAGE F1 (lenient): 0.761 (0.372 - 0.95)
+    
+
+
+    2022_05_27_10_58_55
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/nl/gold', language='nl', ud_system='stanza', data_split='test', sbn_source='GREW', results_file='final_stanza', max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           test
+    PARSED DOCS:          491
+    FAILED DOCS:          0
+    TOTAL DOCS:           491
+
+    AVERAGE F1 (strict):  0.758 (0.437 - 0.966)
+    AVERAGE F1 (lenient): 0.76 (0.416 - 0.96)
+    
+
+
+    2022_05_27_10_59_28
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/nl/gold', language='nl', ud_system='trankit', data_split='test', sbn_source='GREW', results_file='final_trankit', max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           test
+    PARSED DOCS:          491
+    FAILED DOCS:          0
+    TOTAL DOCS:           491
+
+    AVERAGE F1 (strict):  0.758 (0.36 - 0.957)
+    AVERAGE F1 (lenient): 0.761 (0.372 - 0.95)
+    
+

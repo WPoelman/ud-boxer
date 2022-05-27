@@ -1,0 +1,2206 @@
+pmb_id,source,raw_sent,sbn_str,error,precision,recall,f1,precision_lenient,recall_lenient,f1_lenient
+nl/p12/d0922,GREW,Het had gesneeuwd.,"time.n.08    EQU now
+person.n.01
+sneuwen.v.01 Time -2 Agent -1",,0.6190476190476191,0.8666666666666667,0.7222222222222222,0.6111111111111112,0.8461538461538461,0.7096774193548387
+nl/p12/d2561,GREW,Hij spreekt geen Engels.,"NEGATION     -1
+time.n.08    EQU now
+person.n.01
+spreken.v.01 Time -2 Agent -1 Time +1
+female.n.02  Name Engels",,0.7096774193548387,0.7586206896551724,0.7333333333333333,0.7407407407407407,0.8,0.7692307692307692
+nl/p12/d0875,GREW,Ik ben verliefd op jou.,"time.n.08     EQU now
+person.n.01   EQU speaker
+verliefd.a.01 Time -2 AttributeOf -1 Time +1
+person.n.01   EQU hearer",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p12/d0799,GREW,Mogen we rolschaatsen in dit park?,"time.n.08         EQU now
+person.n.01       EQU speaker
+rolschaatsen.v.01 Time -2 Agent -1 Theme +1
+park.n.02",,0.5862068965517241,0.7391304347826086,0.6538461538461539,0.56,0.7,0.6222222222222222
+nl/p12/d0877,GREW,Ik werd door een oude vriend uitgenodigd.,"time.n.08       EQU now
+person.n.01     EQU speaker
+oud.a.01
+vriend.n.01     Attribute -1
+uitnodigen.v.01 Time -4 Experiencer -3 Agent -1",,0.7714285714285715,0.6585365853658537,0.7105263157894737,0.8,0.6857142857142857,0.7384615384615385
+nl/p12/d1922,GREW,Mary kocht een microscoop voor zichzelf.,"time.n.08       TPR now
+female.n.02     Name Mary
+kopen.v.01      Time -2 Agent -1 Theme +1 Time +2
+microscoop.n.01
+person.n.01",,0.7428571428571429,0.896551724137931,0.8125,0.7333333333333333,0.88,0.8
+nl/p12/d0949,GREW,U heeft een ara gekocht.,"time.n.08   EQU now
+person.n.01 EQU hearer
+ara.n.01
+kopen.v.01  Time -3 Agent -2 Theme -1",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p12/d0902,GREW,Ik heb de zakdoek gestreken.,"time.n.08    EQU now
+person.n.01  EQU speaker
+zakdoek.n.01
+streken.v.01 Time -3 Agent -2 Theme -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p12/d3548,GREW,Iedereen maakt fouten.,"NEGATION   -1
+NEGATION   -1
+time.n.08  EQU now
+maken.v.01 Time -1 Theme +1
+fout.n.01",,0.88,0.7096774193548387,0.7857142857142856,0.9090909090909091,0.7407407407407407,0.8163265306122449
+nl/p12/d3475,GREW,Het jonge meisje is aan het zingen.,"time.n.08   EQU now
+jong.a.01
+meisje.n.01 Attribute -1
+zijn.v.01   Time -3 Theme -1 Time +1
+zingen.v.01",,0.6666666666666666,0.7586206896551724,0.7096774193548386,0.6785714285714286,0.76,0.7169811320754718
+nl/p12/d0789,GREW,Iemand roept je.,"time.n.08   EQU now
+person.n.01
+roepen.v.01 Time -2 Agent -1 Time +1
+person.n.01 EQU hearer",,0.896551724137931,0.896551724137931,0.896551724137931,0.92,0.92,0.92
+nl/p12/d3094,GREW,Hij is acht.,"time.n.08   EQU now
+person.n.01
+acht.n.01   Time -2 Time -1",,0.7619047619047619,0.5161290322580645,0.6153846153846153,0.7777777777777778,0.5185185185185185,0.6222222222222222
+nl/p12/d0761,GREW,Romano Prodi wint de Italiaanse voorverkiezingen.,"time.n.08           EQU now
+female.n.02         Name Romano
+winnen.v.01         Time -2 Agent -1 Theme +2
+Italiaans.a.01
+voorverkiezing.n.01 Attribute -1",,0.7714285714285715,0.7297297297297297,0.75,0.7666666666666667,0.71875,0.7419354838709677
+nl/p12/d0837,GREW,Hij had zijn hemd binnenste buiten aan.,"time.n.08     TPR now
+person.n.01
+hebben.v.01   Time -2 Agent -1 Theme +2
+person.n.01
+hemd.n.01     Role -1
+binnenst.a.01",,0.6842105263157895,0.7647058823529411,0.7222222222222222,0.6875,0.7586206896551724,0.7213114754098361
+nl/p12/d0821,GREW,Hij is trots op zijn zoon.,"time.n.08   EQU now
+person.n.01
+trots.a.01  Time -2 AttributeOf -1 Stimulus +2
+person.n.01
+zoon.n.01   Role -1",,0.8181818181818182,0.7941176470588235,0.8059701492537314,0.8214285714285714,0.7931034482758621,0.8070175438596492
+nl/p12/d0929,GREW,"Ik nam een taxi, omdat het regende.","time.n.08    TPR now
+person.n.01  EQU speaker
+nemen.v.01   Time -2 Agent -1 Theme +1 Time +3
+taxi.n.01
+person.n.01
+regenen.v.01 Agent -1",,0.7804878048780488,0.7111111111111111,0.7441860465116279,0.8,0.717948717948718,0.7567567567567569
+nl/p12/d0869,GREW,Mijn ouders komen uit China.,"time.n.08   EQU now
+person.n.01 EQU speaker
+ouder.n.01  Role -1
+komen.v.01  Time -3 Theme -1 Location +1
+female.n.02 Name China",,0.8108108108108109,0.8108108108108109,0.8108108108108109,0.8125,0.8125,0.8125
+nl/p12/d0847,GREW,Ze is tevreden met de jurk.,"time.n.08     EQU now
+person.n.01
+tevreden.a.01 Time -2 AttributeOf -1 Stimulus +1
+jurk.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p65/d0811,GREW,Mijn vrouw lijdt aan een longontsteking.,"time.n.08           EQU now
+person.n.01         EQU speaker
+vrouw.n.01          Role -1
+lijden.v.01         Time -3 Theme -1 Theme +1
+longontsteking.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p65/d0846,GREW,Ze werd gediskwalificeerd van de race wegens twee valse starts.,"time.n.08            EQU now
+person.n.01
+diskwalificeren.v.01 Time -2 Experiencer -1 Theme +1 Theme +3
+race.n.02
+vals.a.01
+start.n.08           Agent twee Attribute -1",,0.7073170731707317,0.7073170731707317,0.7073170731707317,0.7428571428571429,0.7428571428571429,0.7428571428571429
+nl/p12/d0896,GREW,Ik heb de radio gerepareerd voor hem.,"time.n.08      EQU now
+person.n.01    EQU speaker
+radio.n.02
+repareren.v.01 Time -3 Agent -2 Theme -1 Time +1
+person.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p64/d0828,GREW,Hij ging vissen in de rivier.,"time.n.08   TPR now
+person.n.01
+gaan.v.01   Time -2 Agent -1 Time +1
+vissen.v.01 Theme +1
+rivier.n.01",,0.6363636363636364,0.7777777777777778,0.7000000000000001,0.6785714285714286,0.8260869565217391,0.7450980392156864
+nl/p65/d3279,GREW,Hij is niet dommer dan jij.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01
+dom.a.01    Time -2 AttributeOf -1 Agent +1
+person.n.01 EQU hearer",,0.8387096774193549,0.6842105263157895,0.7536231884057972,0.8518518518518519,0.696969696969697,0.7666666666666667
+nl/p64/d2012,GREW,De trein kwam aan in Londen.,"time.n.08      TPR now
+trein.n.01
+komen_aan.v.01 Time -2 Theme -1 Location +1
+female.n.02    Name Londen",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.84,0.84,0.8399999999999999
+nl/p65/d0714,GREW,Fastfood is zeer populair in Japan.,"time.n.08     EQU now
+fastfood.n.01
+zeer.r.01
+populair.a.01 Time -3 AttributeOf -2 Degree -1 Stimulus +1
+female.n.02   Name Japan",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p65/d0819,GREW,Ik heb keer op keer geprobeerd.,"time.n.08     EQU now
+person.n.01   EQU speaker
+keer.n.01     Agent +1
+keer.n.01
+proberen.v.01 Time -4 Agent -3 Theme -2",,0.6,0.9130434782608695,0.7241379310344828,0.6,0.9,0.7200000000000001
+nl/p64/d3167,GREW,Tom woont in het hart van de stad.,"time.n.08   EQU now
+female.n.02 Name Tom
+wonen.v.01  Time -2 Agent -1 Theme +1
+hart.n.01   EQU +1
+stad.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p64/d2903,GREW,Het is tien minuten voor elf.,"time.n.08   EQU now
+person.n.01
+zijn.v.01   Time -2 Agent -1 Agent +3
+tien.n.01   Agent +1
+minuut.n.01
+elf.n.01    Agent -2",,0.23076923076923078,0.8181818181818182,0.36000000000000004,0.24242424242424243,0.8,0.372093023255814
+nl/p65/d0878,GREW,Mevrouw Ogawa is zeer goed in tennis.,"time.n.08    EQU now
+mevrouw.n.01 Agent +1
+female.n.02  Name Ogawa
+zeer.r.01
+goed.a.01    Time -4 AttributeOf -3 Degree -1 Stimulus +1
+tennis.n.01",,0.8048780487804879,0.8048780487804879,0.8048780487804877,0.8285714285714286,0.8285714285714286,0.8285714285714286
+nl/p64/d1386,GREW,Waar is Adolf Hitler geboren?,"time.n.08    EQU now
+waar.r.01
+female.n.02  Name Adolf
+geboren.v.01 Time -3 Manner -2 Time -1",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.68,0.6296296296296297,0.6538461538461539
+nl/p64/d2196,GREW,Je moet om zes uur opstaan.,"time.n.08    EQU now
+person.n.01  EQU hearer
+zes.n.01     Agent +1
+uur.n.01
+opstaan.v.01 Time -4 Agent -3 Agent -2",,0.4857142857142857,0.68,0.5666666666666667,0.5,0.6818181818181818,0.576923076923077
+nl/p65/d0778,GREW,We zagen de vogel toen we Okinawa bezochten.,"time.n.08     TPR now
+person.n.01   EQU speaker
+zien.v.01     Time -2 Agent -1 Theme +1 Time +4
+vogel.n.01
+person.n.01   EQU speaker
+female.n.02   Name Okinawa
+bezoeken.v.01 Agent -2 Time -1",,0.8235294117647058,0.7241379310344828,0.7706422018348623,0.8409090909090909,0.74,0.7872340425531915
+nl/p64/d0762,GREW,Kieslowski is een filmregisseur.,"time.n.08          EQU now
+female.n.02        Name Kieslowski
+filmregisseur.n.01 Time -2 Theme -1",,0.8260869565217391,0.5428571428571428,0.6551724137931034,0.85,0.5666666666666667,0.68
+nl/p64/d2214,GREW,De lucht is bewolkt.,"time.n.08    EQU now
+lucht.n.01
+bewolkt.v.01 Time -2 Theme -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p64/d0712,GREW,Beverly werkte voor WEDCOR.,"time.n.08   TPR now
+female.n.02 Name Beverly
+werken.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name WEDCOR",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p64/d3519,GREW,Maria is linkshandig.,"time.n.08        EQU now
+female.n.02      Name Maria
+linkshandig.a.01 Time -2 AttributeOf -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+nl/p53/d2488,GREW,Maria zoutte het vlees.,"time.n.08   TPR now
+female.n.02 Name Maria
+zouten.v.01 Time -2 Agent -1 Theme +1
+vlees.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p53/d3342,GREW,Een bij zoemt.,"time.n.08   EQU now
+zoemen.v.01 Time -1",,0.4666666666666667,0.4117647058823529,0.43749999999999994,0.46153846153846156,0.4,0.42857142857142855
+nl/p53/d0942,GREW,Ik groeide op in dat huis.,"time.n.08       TPR now
+person.n.01     EQU speaker
+groeien_op.v.01 Time -2 Agent -1 Theme +1
+huis.n.01",,0.8620689655172413,0.7142857142857143,0.7812500000000001,0.84,0.7,0.7636363636363636
+nl/p53/d0857,GREW,Het sneeuwt.,"time.n.08     EQU now
+person.n.01
+sneeuwen.v.01 Time -2 Location -1",,0.6666666666666666,0.9333333333333333,0.7777777777777778,0.6666666666666666,0.9230769230769231,0.7741935483870968
+nl/p64/d0822,GREW,Ik betaalde hem vijf dollar.,"time.n.08    TPR now
+person.n.01  EQU speaker
+betalen.v.01 Time -2 Agent -1 Time +1 Theme +2
+person.n.01
+dollar.n.01  Agent vijf",,0.8108108108108109,0.6976744186046512,0.75,0.8125,0.7027027027027027,0.7536231884057971
+nl/p53/d3113,GREW,Misschien heb ik overdreven.,"time.n.08       EQU now
+misschien.r.01
+person.n.01     EQU speaker
+overdreven.v.01 Time -3 Manner -2 Agent -1",,0.6896551724137931,0.8,0.7407407407407408,0.68,0.7727272727272727,0.7234042553191491
+nl/p53/d2191,GREW,Ik ga de politie bellen!,"time.n.08    EQU now
+person.n.01  EQU speaker
+gaan.v.01    Time -2 Agent -1 Time +2
+politie.n.01
+bellen.v.01  Theme -1",,0.6857142857142857,0.8275862068965517,0.75,0.7,0.84,0.7636363636363636
+nl/p53/d0711,GREW,De Amerikaanse Burgeroorlog begon in 1861.,"time.n.08       TPR now
+Amerikaans.a.01 Agent +1
+female.n.02     Name Burgeroorlog
+beginnen.v.01   Time -3 Agent -2 Agent 1861",,0.5806451612903226,0.72,0.6428571428571428,0.6296296296296297,0.7727272727272727,0.6938775510204083
+nl/p53/d1386,GREW,"Welke prijs hebben Weinberg, Salam en Glashow gewonnen?","time.n.08   EQU now
+prijs.n.01
+female.n.02 Sub +1 Sub +2
+female.n.02 Name Salam
+female.n.02 Name Glashow
+winnen.v.01 Time -5 Theme -4 Agent -3",,0.8372093023255814,0.6792452830188679,0.7499999999999999,0.8378378378378378,0.6739130434782609,0.746987951807229
+nl/p53/d2818,GREW,De zee was erg glad.,"time.n.08 EQU now
+zee.n.01
+erg.a.01
+glad.a.01 Time -3 AttributeOf -2 Agent -1",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7391304347826086,0.7391304347826086,0.7391304347826085
+nl/p53/d0883,GREW,Zij is veel groter dan ik.,"time.n.08   EQU now
+person.n.01
+veel.r.01
+groot.a.01  Time -3 AttributeOf -2 Degree -1 Agent +1
+person.n.01 EQU speaker",,0.8571428571428571,0.6818181818181818,0.759493670886076,0.8666666666666667,0.6842105263157895,0.7647058823529413
+nl/p53/d0764,GREW,Charles de Gaulle overleed in 1970.,"time.n.08       TPR now
+female.n.02     Name Charles
+overlijden.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+nl/p34/d2998,GREW,We zijn gelukkig.,"time.n.08     EQU now
+person.n.01   EQU speaker
+gelukkig.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+nl/p34/d0781,GREW,Londen werd verscheidene keren gebombardeerd.,"time.n.08         EQU now
+female.n.02       Name Londen
+verscheidene.a.01
+keer.n.01         Attribute -1
+bombarderen.v.01  Time -4 Time -3 Theme -1",,0.6285714285714286,0.7096774193548387,0.6666666666666666,0.6333333333333333,0.7037037037037037,0.6666666666666667
+nl/p34/d2126,GREW,Zijn tanden zijn geel.,"time.n.08   EQU now
+person.n.01
+tand.n.01   Role -1
+geel.a.01   Time -3 AttributeOf -1",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.782608695652174,0.782608695652174,0.782608695652174
+nl/p34/d0824,GREW,We werken van negen tot vijf.,"time.n.08   EQU now
+person.n.01 EQU speaker
+werken.v.01 Time -2 Agent -1 Agent negen Agent vijf",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.7916666666666666,0.6551724137931034,0.7169811320754716
+nl/p34/d0888,GREW,Ik strijk mijn zakdoeken.,"time.n.08      EQU now
+person.n.01    EQU speaker
+strijken.v.01  Time -2 Agent -1 Theme +2
+person.n.01    EQU speaker
+zakdoeken.n.01 Role -1",,0.7297297297297297,0.8709677419354839,0.7941176470588235,0.71875,0.8518518518518519,0.7796610169491525
+nl/p34/d0711,GREW,De rockgroep Spock's Beard komt uit Japan.,"time.n.08      EQU now
+rockgroep.n.01 Agent +1
+female.n.02    Name Spock's
+komen.v.01     Time -3 Theme -2 Location +1
+female.n.02    Name Japan",,0.7837837837837838,0.7837837837837838,0.7837837837837838,0.8125,0.8125,0.8125
+nl/p34/d0821,GREW,Ik was gewend aan de hitte.,"time.n.08   EQU now
+person.n.01 EQU speaker
+gewend.a.01 Time -2 AttributeOf -1 Stimulus +1
+hitte.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+nl/p34/d2326,GREW,Haar auto is twee jaar oud.,"time.n.08   EQU now
+person.n.01
+auto.n.01   Role -1
+jaar.n.01   Agent twee
+oud.a.01    Time -4 AttributeOf -2 Stimulus -1",,0.6857142857142857,0.5853658536585366,0.6315789473684211,0.7,0.6,0.6461538461538462
+nl/p34/d0794,GREW,Een spons neemt water op.,"time.n.08     EQU now
+spons.n.01
+nemen_op.v.01 Time -2 Theme -1 Theme +1
+water.n.06",,0.48148148148148145,0.5652173913043478,0.52,0.4782608695652174,0.55,0.5116279069767442
+nl/p34/d0834,GREW,Hij heeft een zoon met de naam Johano.,"time.n.08   EQU now
+person.n.01
+hebben.v.01 Time -2 Agent -1 Theme +1
+zoon.n.01   EQU +1
+naam.n.01   Agent +1
+female.n.02 Name Johano",,0.7804878048780488,0.7804878048780488,0.7804878048780488,0.7428571428571429,0.7428571428571429,0.7428571428571429
+nl/p34/d2657,GREW,We hebben verloren.,"time.n.08      EQU now
+person.n.01    EQU speaker
+verliezen.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.9,0.9,0.9
+nl/p34/d0880,GREW,Ze is langer dan haar zus.,"time.n.08   EQU now
+person.n.01
+langer.a.01 Time -2 AttributeOf -1 Agent +2
+person.n.01
+zus.n.01    Role -1",,0.8181818181818182,0.6585365853658537,0.7297297297297297,0.8214285714285714,0.6571428571428571,0.73015873015873
+nl/p34/d0879,GREW,Het water is niet drinkbaar.,"NEGATION       -1
+time.n.08      EQU now
+water.n.06
+drinkbaar.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+nl/p62/d0943,GREW,Hij is bang voor de honden.,"time.n.08   EQU now
+person.n.01
+bang.v.01   Time -2 AttributeOf -1 Stimulus +1
+hond.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.782608695652174,0.782608695652174,0.782608695652174
+nl/p62/d1388,GREW,Hoeveel kinderen heeft Anthony Quinn?,"time.n.08   EQU now
+kind.n.01   Agent hoeveel
+hebben.v.01 Time -2 Theme -1 Agent +1
+female.n.02 Name Anthony",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7407407407407407,0.7407407407407407,0.7407407407407407
+nl/p34/d0764,GREW,De film 'Speed' werd geregisseerd door Jan de Bont.,"time.n.08       EQU now
+film.n.01       Agent +1
+female.n.02     Name Speed
+regisseren.v.01 Time -3 Theme -2 Agent +1
+female.n.02     Name Jan",,0.6486486486486487,0.7741935483870968,0.7058823529411764,0.65625,0.7777777777777778,0.711864406779661
+nl/p62/d0784,GREW,Betty heeft hem gedood.,"time.n.08   EQU now
+female.n.02 Name Betty
+person.n.01
+doden.v.01  Time -3 Agent -2 Time -1",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+nl/p62/d1632,GREW,Tom is allergisch voor pinda's.,"time.n.08       EQU now
+female.n.02     Name Tom
+allergisch.a.01 Time -2 AttributeOf -1 Stimulus +1
+pinda.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+nl/p62/d0847,GREW,Ze bezoekt nu Parijs.,"time.n.08     EQU now
+person.n.01
+bezoeken.v.01 Time -2 Agent -1 Manner +1 Time +2
+nu.r.01
+female.n.02   Name Parijs",,0.6571428571428571,0.7931034482758621,0.71875,0.7,0.84,0.7636363636363636
+nl/p62/d1385,GREW,Wie is bestuursvoorzitter van Fiat?,"time.n.08               EQU now
+person.n.01
+bestuursvoorzitter.n.01 Time -2 Theme -1 Time +1
+female.n.02             Name Fiat",,0.7931034482758621,0.5348837209302325,0.6388888888888888,0.84,0.5675675675675675,0.6774193548387097
+nl/p62/d2622,GREW,Melanie drinkt melk.,"time.n.08    EQU now
+melanie.n.01
+drinken.v.01 Time -2 Theme -1 Theme +1
+melk.n.01",,0.7777777777777778,0.7241379310344828,0.75,0.782608695652174,0.72,0.7499999999999999
+nl/p75/d0935,GREW,Ik ben gelukkig met mijn vriendin.,"time.n.08     EQU now
+person.n.01   EQU speaker
+gelukkig.a.01 Time -2 AttributeOf -1 Stimulus +2
+person.n.01   EQU speaker
+vriendin.n.01 Role -1",,0.8378378378378378,0.8378378378378378,0.8378378378378378,0.84375,0.84375,0.84375
+nl/p75/d0895,GREW,Welke taal spreken ze in de VS?,"time.n.08    EQU now
+taal.n.01
+spreken.v.01 Time -2 Theme -1 Agent +1 Location +2
+person.n.01
+female.n.02  Name VS",,0.8857142857142857,0.8378378378378378,0.8611111111111112,0.9,0.84375,0.870967741935484
+nl/p75/d1391,GREW,Bij welke partij hoorde Noriega?,"time.n.08   TPR now
+partij.n.01
+horen.v.01  Time -2 Agent -1 Agent +1
+female.n.02 Name Noriega",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.8,0.7407407407407407,0.7692307692307692
+nl/p75/d0921,GREW,Ik heb genoeg van hem.,"time.n.08          EQU now
+person.n.01        EQU speaker
+hebben_genoeg.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+nl/p75/d0716,GREW,Paus Johannes Paulus II werd geboren in Polen.,"time.n.08    EQU now
+paus.n.01    Agent +1
+female.n.02  Name Johannes
+geboren.v.01 Time -3 Theme -2 Location +1
+female.n.02  Name Polen",,0.7567567567567568,0.7567567567567568,0.7567567567567567,0.75,0.75,0.75
+nl/p75/d0818,GREW,Ik ben een bakker.,"time.n.08   EQU now
+person.n.01 EQU speaker
+bakker.n.01 Time -2 Theme -1",,0.8695652173913043,0.5714285714285714,0.689655172413793,0.9,0.6,0.7200000000000001
+nl/p75/d0912,GREW,Wie is die persoon?,"time.n.08    EQU now
+person.n.01  Time -1 Co-Theme +1
+persoon.n.01",,0.8571428571428571,0.6206896551724138,0.7200000000000001,0.8333333333333334,0.6,0.6976744186046512
+nl/p75/d0853,GREW,De wekker wekt me om zeven uur.,"time.n.08   EQU now
+wekker.n.01
+wekken.v.01 Time -2 Theme -1 Time +1 Agent +2
+person.n.01 EQU speaker
+zeven.n.01  Agent +1
+uur.n.01",,0.5609756097560976,0.7419354838709677,0.638888888888889,0.5714285714285714,0.7407407407407407,0.6451612903225806
+nl/p75/d0948,GREW,Er is een nieuw restaurant op Cherry Avenue.,"time.n.08       EQU now
+er.r.01
+zijn.v.01       Time -2 Manner -1 Theme +2
+nieuw.a.01
+restaurant.n.01 Attribute -1 Time +1
+female.n.02     Name Cherry",,0.6829268292682927,0.8,0.736842105263158,0.7142857142857143,0.8333333333333334,0.7692307692307692
+nl/p75/d0913,GREW,Jiro Akagawa heeft meer dan 480 romans geschreven.,"time.n.08      EQU now
+female.n.02    Name Jiro
+veel.n.01
+480.n.01       Agent -1
+romans.n.01    Quantity -1
+schrijven.v.01 Time -5 Agent -4 Theme -1",,0.7804878048780488,0.7441860465116279,0.761904761904762,0.7428571428571429,0.7027027027027027,0.7222222222222223
+nl/p75/d1389,GREW,"Wie regisseerde ""North by Northwest""?","time.n.08       TPR now
+person.n.01
+regisseren.v.01 Time -2 Agent -1 Time +1
+female.n.02     Name North",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.84,0.7777777777777778,0.8076923076923077
+nl/p75/d0910,GREW,Koningin Elizabeth overleed in 1603.,"time.n.08       TPR now
+koningin.n.01   Agent +1
+female.n.02     Name Elizabeth
+overlijden.v.01 Time -3 Theme -2 Agent 1603",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p75/d0914,GREW,"Mijn oom is mager, maar mijn tante is dik.","time.n.08  EQU now
+oom.n.01
+maag.a.01  Time -2 AttributeOf -1 Value +2
+tante.n.01 User -2
+dik.a.01   AttributeOf -1",,0.7647058823529411,0.4406779661016949,0.5591397849462365,0.7241379310344828,0.4117647058823529,0.525
+nl/p75/d2162,GREW,Het vliegtuig landde op het vliegveld in Narita.,"time.n.08      TPR now
+vliegtuig.n.01
+landen.v.01    Time -2 Theme -1 Theme +1
+vliegveld.n.01 Time +1
+female.n.02    Name Narita",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+nl/p75/d0806,GREW,Ik verwachtte je om 11 uur.,"time.n.08       TPR now
+person.n.01     EQU speaker
+verwachten.v.01 Time -2 Agent -1 Time +1 Agent +2
+person.n.01     EQU hearer
+11.n.01         Agent +1
+uur.n.01",,0.6511627906976745,0.8484848484848485,0.736842105263158,0.6756756756756757,0.8620689655172413,0.7575757575757576
+nl/p24/d0931,GREW,Ik kauwde de gom.,"time.n.08   TPR now
+person.n.01 EQU speaker
+kauwen.v.01 Time -2 Agent -1 Theme +1
+gom.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p24/d0955,GREW,Ik ben gek op jou.,"time.n.08   EQU now
+person.n.01 EQU speaker
+gek.a.01    Time -2 AttributeOf -1 Time +1
+person.n.01 EQU hearer",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p24/d0711,GREW,Minton werd geboren in Australië.,"time.n.08    EQU now
+female.n.02  Name Minton
+geboren.v.01 Time -2 Time -1 Location +1
+female.n.02  Name Australië",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p24/d1895,GREW,Kan je schaatsen?,"time.n.08      EQU now
+person.n.01    EQU hearer
+schaatsen.v.01 Time -2 Agent -1",,0.5217391304347826,0.7058823529411765,0.6,0.5,0.6666666666666666,0.5714285714285715
+nl/p24/d3251,GREW,De kat zit onder de tafel.,"time.n.08   EQU now
+kat.n.01
+zitten.v.01 Time -2 Theme -1 Theme +1
+tafel.n.01",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.8260869565217391,0.6785714285714286,0.7450980392156864
+nl/p24/d0850,GREW,Hij knuffelde haar.,"time.n.08      TPR now
+person.n.01
+knuffelen.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p24/d1961,GREW,Mijn stropdas is oranje.,"time.n.08     EQU now
+person.n.01   EQU speaker
+stropdas.n.01 Role -1
+oranje.a.01   Time -3 AttributeOf -1",,0.6551724137931034,0.8260869565217391,0.7307692307692308,0.64,0.8,0.7111111111111111
+nl/p24/d0892,GREW,De top van de speer was gedrenkt in een dodelijk vergif.,"time.n.08     EQU now
+top.n.01      EQU +1
+speer.n.01
+drenken.v.01  Time -3 Theme -2 Theme +2
+dodelijk.a.01
+vergif.n.01   Attribute -1",,0.7948717948717948,0.7948717948717948,0.7948717948717948,0.7575757575757576,0.7575757575757576,0.7575757575757576
+nl/p24/d0810,GREW,Nu sneeuwt het.,"time.n.08     EQU now
+nu.r.01
+sneeuwen.v.01 Time -2 Manner -1 Location +1
+person.n.01",,0.5185185185185185,0.9333333333333333,0.6666666666666667,0.5217391304347826,0.9230769230769231,0.6666666666666667
+nl/p24/d0887,GREW,De wekker loopt af.,"time.n.08     EQU now
+wekker.n.01
+lopen_af.v.01 Time -2 Theme -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p54/d2660,GREW,Tom scoorde een doelpunt.,"time.n.08     TPR now
+female.n.02   Name Tom
+scoren.v.01   Time -2 Agent -1 Theme +1
+doelpunt.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p54/d0930,GREW,Tom is de ketchup vergeten.,"time.n.08     EQU now
+female.n.02   Name Tom
+ketchup.n.01
+vergeten.v.01 Time -3 Agent -2 Theme -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p54/d2466,GREW,Millie eet een banaan.,"time.n.08   EQU now
+female.n.02 Name Millie
+emmen.v.01  Time -2 Agent -1 Theme +1
+banaan.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p54/d0716,GREW,O.J. Simpson werd beschuldigd van moord.,"time.n.08         EQU now
+female.n.02       Name O.
+beschuldigen.v.01 Time -2 Time -1 Theme +1
+moord.n.01",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.72,0.72,0.72
+nl/p54/d0863,GREW,Bent u getrouwd?,"time.n.08    EQU now
+person.n.01  EQU hearer
+trouwen.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+nl/p54/d0914,GREW,Je O's lijken op je A's.,"time.n.08   EQU now
+person.n.01 EQU hearer
+o's.n.01    Role -1
+lijken.v.01 Time -3 Theme -1 Theme +1
+a's.n.01    User -2",,0.6111111111111112,0.7096774193548387,0.6567164179104478,0.6451612903225806,0.7407407407407407,0.689655172413793
+nl/p54/d0953,GREW,Ze zei niets.,"time.n.08   TPR now
+person.n.01
+zeggen.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.7407407407407407,0.6896551724137931,0.7142857142857143,0.7391304347826086,0.68,0.7083333333333334
+nl/p54/d0840,GREW,Hij berekende de kosten.,"time.n.08      TPR now
+person.n.01
+berekenen.v.01 Time -2 Agent -1 Theme +1
+kosten.n.01",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+nl/p54/d0864,GREW,Betty is een seriemoordenares.,"time.n.08             EQU now
+betty.n.01
+seriemoordenares.n.01 Time -2 Theme -1",,0.8095238095238095,0.4857142857142857,0.6071428571428571,0.8333333333333334,0.5,0.625
+nl/p92/d3199,GREW,Ze noemen Robert „Bob”.,"time.n.08   EQU now
+person.n.01
+noemen.v.01 Time -2 Agent -1 Time +1 Time +2
+female.n.02 Name Robert
+female.n.02 Name Bob",,0.8108108108108109,0.8108108108108109,0.8108108108108109,0.8125,0.8125,0.8125
+nl/p54/d3130,GREW,Ik was aan het slapen.,"time.n.08   TPR now
+person.n.01 EQU speaker
+zijn.v.01   Time -2 Agent -1 Time +1
+slapen.v.01",,0.7586206896551724,0.9565217391304348,0.8461538461538461,0.76,0.95,0.8444444444444444
+nl/p54/d1499,GREW,Ik heb een beslissing getroffen.,"time.n.08       EQU now
+person.n.01     EQU speaker
+beslissing.n.01
+treffen.v.01    Time -3 Agent -2 Theme -1",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.88,0.88,0.88
+nl/p92/d0861,GREW,Meneer Spencer werkt in een winkel.,"time.n.08   EQU now
+meneer.n.01 Agent +1
+female.n.02 Name Spencer
+werken.v.01 Time -3 Theme -2 Theme +1
+winkel.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p92/d0711,GREW,Dickson werkte voor Edison.,"time.n.08   TPR now
+female.n.02 Name Dickson
+werken.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name Edison",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p92/d0875,GREW,Dit kostte minder dan vijftien dollar.,"time.n.08     TPR now
+person.n.01
+kosten.v.01   Time -2 Agent -1 Theme +3
+minder.n.01
+vijftien.n.01 Agent -1
+dollar.n.01   Quantity -1",,0.7948717948717948,0.6595744680851063,0.7209302325581396,0.7575757575757576,0.625,0.6849315068493151
+nl/p92/d2898,GREW,Wat is je voornaam?,"time.n.08     EQU now
+person.n.01   Time -1 Co-Theme +2
+person.n.01   EQU hearer
+voornaam.n.01 Role -1",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.76,0.7037037037037037,0.7307692307692308
+nl/p92/d0712,GREW,Nancy Ianiero werd gedood in Mexico.,"time.n.08   EQU now
+female.n.02 Name Nancy
+doden.v.01  Time -2 Time -1 Location +1
+female.n.02 Name Mexico",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p92/d2611,GREW,Dat is mijn hond.,"time.n.08   EQU now
+person.n.01
+person.n.01 EQU speaker
+hond.n.01   Time -3 Theme -2 Role -1",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.76,0.76,0.76
+nl/p92/d0902,GREW,Deze schoen is een maat groter.,"time.n.08   EQU now
+schoen.n.01
+maat.n.01
+groot.a.01  Time -3 AttributeOf -2 Stimulus -1",,0.8148148148148148,0.5238095238095238,0.6376811594202898,0.8260869565217391,0.5277777777777778,0.6440677966101694
+nl/p92/d0829,GREW,Wie heeft de boom geplant?,"time.n.08    EQU now
+person.n.01
+boom.n.01
+plannen.v.01 Time -3 Agent -2 Theme -1",,0.8888888888888888,0.8275862068965517,0.8571428571428572,0.8695652173913043,0.8,0.8333333333333333
+nl/p92/d0820,GREW,Mijn horloge was gestolen.,"time.n.08    EQU now
+person.n.01  EQU speaker
+horloge.n.01 Role -1
+stelen.v.01  Time -3 Theme -1",,0.6551724137931034,0.8260869565217391,0.7307692307692308,0.64,0.8,0.7111111111111111
+nl/p92/d0764,GREW,Verdens Gang is een Noorse krant.,"time.n.08   EQU now
+female.n.02 Name Verdens
+Noors.a.01
+krant.n.01  Time -3 Theme -2 Attribute -1",,0.6896551724137931,0.5405405405405406,0.6060606060606061,0.72,0.5625,0.631578947368421
+nl/p92/d0833,GREW,De romans die hij geschreven heeft zijn interessant.,"time.n.08        EQU now
+romans.n.01      Agent +3
+die.v.01
+person.n.01
+schrijven.v.01   Time -2 Agent -1
+interessant.a.01 Time -5 AttributeOf -4",,0.7692307692307693,0.7317073170731707,0.7499999999999999,0.7878787878787878,0.7428571428571429,0.7647058823529412
+nl/p83/d2406,GREW,We begrijpen het.,"time.n.08      EQU now
+person.n.01    EQU speaker
+begrijpen.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p83/d1570,GREW,De hitte van de zon verhardt klei.,"time.n.08      EQU now
+hitte.n.01     EQU +1
+zon.n.01
+verharden.v.01 Time -3 Theme -2 Value +1
+klei.a.01",,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7142857142857143,0.7142857142857143,0.7142857142857143
+nl/p92/d0923,GREW,Hij werd 10.000 dollar betaald.,"time.n.08    EQU now
+person.n.01
+dollar.n.01  Agent 10.000
+betalen.v.01 Time -3 Experiencer -2 Theme -1",,0.7241379310344828,0.6,0.65625,0.72,0.6,0.6545454545454547
+nl/p83/d0814,GREW,Mijn moeder is mooi.,"time.n.08   EQU now
+person.n.01 EQU speaker
+moeder.n.01 Role -1
+mooi.a.01   Time -3 AttributeOf -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p83/d0784,GREW,Meneer Brown heeft vier kinderen.,"time.n.08   EQU now
+meneer.n.01 Agent +1
+female.n.02 Name Brown
+hebben.v.01 Time -3 Theme -2 Theme +1
+kind.n.01   Agent vier",,0.7567567567567568,0.7567567567567568,0.7567567567567567,0.75,0.75,0.75
+nl/p83/d0760,GREW,MG Rover is gekocht door Airbus.,"time.n.08   EQU now
+female.n.02 Name MG
+kopen.v.01  Time -2 Time -1 Agent +1
+female.n.02 Name Airbus",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p83/d0836,GREW,Hij is groter dan zijn vader.,"time.n.08   EQU now
+person.n.01
+groot.a.01  Time -2 AttributeOf -1 Agent +2
+person.n.01
+vader.n.01  Role -1",,0.8181818181818182,0.6585365853658537,0.7297297297297297,0.8214285714285714,0.6571428571428571,0.73015873015873
+nl/p83/d1973,GREW,Ze is vriendelijk tegen hem.,"time.n.08        EQU now
+person.n.01
+vriendelijk.a.01 Time -2 AttributeOf -1 Time +1
+person.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p83/d2551,GREW,Ik leer Perzisch.,"time.n.08   EQU now
+person.n.01 EQU speaker
+leer.v.01   Time -2 Agent -1 Time +1
+female.n.02 Name Perzisch",,0.8064516129032258,0.8620689655172413,0.8333333333333334,0.8148148148148148,0.88,0.8461538461538461
+nl/p83/d0903,GREW,Tom schraapte zijn keel.,"time.n.08     TPR now
+female.n.02   Name Tom
+schrapen.v.01 Time -2 Agent -1 Theme +1
+keel.n.01     User -2",,0.8,0.8,0.8000000000000002,0.8076923076923077,0.8076923076923077,0.8076923076923077
+nl/p83/d2278,GREW,We hebben twee dochters.,"time.n.08    EQU now
+person.n.01  EQU speaker
+hebben.v.01  Time -2 Agent -1 Theme +1
+dochter.n.01 Agent twee",,0.8387096774193549,0.7027027027027027,0.7647058823529411,0.8148148148148148,0.6875,0.7457627118644067
+nl/p83/d2854,GREW,Er zit een aal in het water.,"time.n.08   EQU now
+er.r.01
+zitten.v.01 Time -2 Manner -1 Theme +1 Theme +2
+aal.n.01
+water.n.06",,0.6363636363636364,0.7777777777777778,0.7000000000000001,0.7142857142857143,0.8695652173913043,0.7843137254901961
+nl/p83/d0848,GREW,Zij is veel groter dan ik.,"time.n.08   EQU now
+person.n.01
+veel.r.01
+groot.a.01  Time -3 AttributeOf -2 Degree -1 Agent +1
+person.n.01 EQU speaker",,0.8571428571428571,0.6818181818181818,0.759493670886076,0.8666666666666667,0.6842105263157895,0.7647058823529413
+nl/p85/d1764,GREW,Ik ben groter dan je.,"time.n.08   EQU now
+person.n.01 EQU speaker
+groot.a.01  Time -2 AttributeOf -1 Agent +1
+person.n.01 EQU hearer",,0.9354838709677419,0.7631578947368421,0.8405797101449276,0.9259259259259259,0.7575757575757576,0.8333333333333334
+nl/p85/d1577,GREW,Zij is intelligent.,"time.n.08        EQU now
+person.n.01
+intelligent.a.01 Time -2 AttributeOf -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.9444444444444444,0.9444444444444444,0.9444444444444444
+nl/p85/d1815,GREW,Leo Tolstoj was een vegetariër.,"time.n.08       EQU now
+female.n.02     Name Leo
+vegetariër.n.01 Time -2 Theme -1",,0.782608695652174,0.5142857142857142,0.6206896551724138,0.75,0.5,0.6
+nl/p85/d0893,GREW,Een dokter onderzocht meneer Brown.,"time.n.08        TPR now
+dokter.n.01
+onderzoeken.v.01 Time -2 Theme -1 Theme +1
+meneer.n.01      Agent +1
+female.n.02      Name Brown",,0.7714285714285715,0.6585365853658537,0.7105263157894737,0.7666666666666667,0.6571428571428571,0.7076923076923077
+nl/p85/d2966,GREW,Jij bent groter dan ik.,"time.n.08   EQU now
+person.n.01 EQU hearer
+groot.a.01  Time -2 AttributeOf -1 Agent +1
+person.n.01 EQU speaker",,0.9354838709677419,0.7631578947368421,0.8405797101449276,0.9259259259259259,0.7575757575757576,0.8333333333333334
+nl/p85/d0825,GREW,De school begint om half negen.,"time.n.08     EQU now
+school.n.02
+beginnen.v.01 Time -2 Theme -1 Agent +1
+half.a.01     Agent negen",,0.6206896551724138,0.782608695652174,0.6923076923076923,0.68,0.85,0.7555555555555556
+nl/p85/d3375,GREW,We huurden een film.,"time.n.08   TPR now
+person.n.01 EQU speaker
+huren.v.01  Time -2 Agent -1 Theme +1
+film.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.92,0.92,0.92
+nl/p85/d0940,GREW,Tom is sterk.,"time.n.08   EQU now
+female.n.02 Name Tom
+sterk.a.01  Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+nl/p85/d0712,GREW,Manchester United versloeg Fulham.,"time.n.08     TPR now
+female.n.02   Name Manchester
+verslaan.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Fulham",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p85/d0766,GREW,Ik ga hem neerschieten.,"time.n.08         EQU now
+person.n.01       EQU speaker
+gaan.v.01         Time -2 Agent -1 Time +2
+person.n.01
+neerschieten.v.01 Time -1",,0.6857142857142857,0.8275862068965517,0.75,0.7,0.84,0.7636363636363636
+nl/p85/d0942,GREW,Ik at het.,"time.n.08   EQU now
+person.n.01 EQU speaker
+eten.v.01   Time -2 Agent -1 Time +1
+person.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p85/d0936,GREW,Ik ben gelukkig.,"time.n.08     EQU now
+person.n.01   EQU speaker
+gelukkig.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+nl/p85/d0889,GREW,Ik ben Antonio.,"time.n.08   EQU now
+person.n.01 EQU speaker
+female.n.02 Time -2 Theme -1",,0.5652173913043478,0.7647058823529411,0.65,0.55,0.7333333333333333,0.6285714285714286
+nl/p85/d0903,GREW,Tom kleedde zich om.,"time.n.08      TPR now
+female.n.02    Name Tom
+kleden_om.v.01 Time -2 Agent -1 Agent +1
+person.n.01",,0.6896551724137931,0.8695652173913043,0.7692307692307693,0.72,0.9,0.7999999999999999
+nl/p32/d0955,GREW,Mijn oom is boos.,"time.n.08   EQU now
+person.n.01 EQU speaker
+oom.n.01    Role -1
+boos.a.01   Time -3 AttributeOf -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p85/d0915,GREW,Hij dronk bier.,"time.n.08    TPR now
+person.n.01
+drinken.v.01 Time -2 Agent -1 Theme +1
+bier.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p32/d0913,GREW,Alle appels zijn rood.,"time.n.08  EQU now
+appel.n.01
+rood.a.01  Time -2 AttributeOf -1",,0.7619047619047619,0.64,0.6956521739130435,0.7222222222222222,0.5909090909090909,0.65
+nl/p32/d0930,GREW,Tom heeft een auto.,"time.n.08   EQU now
+female.n.02 Name Tom
+hebben.v.01 Time -2 Agent -1 Theme +1
+auto.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+nl/p32/d0931,GREW,Is dat niet schattig?,"NEGATION      -1
+time.n.08     EQU now
+person.n.01
+schattig.a.01 Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+nl/p32/d1935,GREW,De gevangene is ontsnapt!,"time.n.08       EQU now
+vangen.v.01
+ontsnappen.v.01 Time -2 Agent -1",,0.7619047619047619,0.5925925925925926,0.6666666666666666,0.7222222222222222,0.5652173913043478,0.6341463414634146
+nl/p32/d0760,GREW,FermiLab ontwikkelde Linux LTS.,"time.n.08        TPR now
+female.n.02      Name FermiLab
+ontwikkelen.v.01 Time -2 Agent -1 Theme +1
+linux.n.01       Agent +1
+female.n.02      Name LTS",,0.6216216216216216,0.7419354838709677,0.676470588235294,0.6875,0.8148148148148148,0.7457627118644067
+nl/p32/d3159,GREW,Maria is twee maanden zwanger.,"time.n.08    EQU now
+female.n.02  Name Maria
+maanden.n.01 Agent twee
+zwanger.a.01 Time -3 AttributeOf -2 Stimulus -1",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7777777777777778,0.65625,0.711864406779661
+nl/p32/d0906,GREW,Ik eet omdat ik honger heb.,"time.n.08   EQU now
+person.n.01 EQU speaker
+emmen.v.01  Time -2 Agent -1 Time +3
+person.n.01 EQU speaker
+honger.n.01
+hebben.v.01 Agent -2 Theme -1",,0.7441860465116279,0.6808510638297872,0.711111111111111,0.7297297297297297,0.6585365853658537,0.6923076923076923
+nl/p32/d0890,GREW,Ik heb het je dikwijls gezegd.,"time.n.08     EQU now
+person.n.01   EQU speaker
+person.n.01
+person.n.01   EQU hearer
+dikwijls.r.01
+zeggen.v.01   Time -5 Agent -4 Time -3 Time -2 Manner -1",,0.7906976744186046,0.7555555555555555,0.7727272727272727,0.7837837837837838,0.7435897435897436,0.7631578947368421
+nl/p32/d0944,GREW,Hij kan Frans spreken.,"time.n.08    EQU now
+person.n.01
+female.n.02  Name Frans
+spreken.v.01 Time -3 Agent -2 Time -1",,0.3793103448275862,0.5238095238095238,0.44,0.4,0.5555555555555556,0.46511627906976744
+nl/p32/d0835,GREW,Ik heb zijn hulp nodig.,"time.n.08   EQU now
+person.n.01 EQU speaker
+hebben.v.01 Time -2 Agent -1 Theme +2 Theme +3
+person.n.01
+hulp.n.01   Role -1
+nodig.a.01",,0.7073170731707317,0.8285714285714286,0.7631578947368421,0.7142857142857143,0.8333333333333334,0.7692307692307692
+nl/p32/d0886,GREW,Extremisten ontvoerden de vrouw van de president.,"time.n.08      TPR now
+extremist.n.01
+ontvoeren.v.01 Time -2 Theme -1 Theme +1
+vrouw.n.01     EQU +1
+president.n.03",,0.8787878787878788,0.5686274509803921,0.6904761904761905,0.8571428571428571,0.5581395348837209,0.676056338028169
+nl/p32/d0766,GREW,De Falklandoorlog vond plaats in 1982.,"time.n.08           TPR now
+falklandoorlog.n.01
+vinden_plaats.v.01  Time -2 Theme -1 Agent 1982",,0.8695652173913043,0.8,0.8333333333333333,0.85,0.7727272727272727,0.8095238095238095
+nl/p93/d2799,GREW,Het is vijf voor vier.,"time.n.08   EQU now
+person.n.01
+vijf.n.01   Time -2 Time -1 Agent vier",,0.391304347826087,0.8181818181818182,0.5294117647058824,0.4,0.8,0.5333333333333333
+nl/p93/d1391,GREW,Wie is de uitvinder van de radio?,"time.n.08      EQU now
+person.n.01
+uitvinder.n.01 Time -2 Theme -1 EQU +1
+radio.n.02",,0.8148148148148148,0.5365853658536586,0.6470588235294118,0.8695652173913043,0.5714285714285714,0.689655172413793
+nl/p93/d0926,GREW,Ben ik in Londen?,"time.n.08   EQU now
+zijn.v.01   Time -1 Agent +1 Location +2
+person.n.01 EQU speaker
+female.n.02 Name Londen",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p93/d0913,GREW,Ze heeft ongeveer 2000 boeken.,"time.n.08     EQU now
+person.n.01
+hebben.v.01   Time -2 Agent -1 Theme +2
+ongeveer.r.01
+boek.n.01     Attribute -1 Agent 2000",,0.7428571428571429,0.6341463414634146,0.6842105263157895,0.7333333333333333,0.6285714285714286,0.6769230769230768
+nl/p93/d1921,GREW,Iedereen behalve Tom glimlachte.,"NEGATION        -1
+NEGATION        -1
+time.n.08       TPR now
+female.n.02     Name Tom
+glimlachen.v.01 Time -2",,0.8846153846153846,0.696969696969697,0.7796610169491526,0.8695652173913043,0.6896551724137931,0.7692307692307693
+nl/p93/d0836,GREW,Hij nam een foto van de koala.,"time.n.08   TPR now
+person.n.01
+nemen.v.01  Time -2 Agent -1 Theme +1
+foto.n.01   EQU +1
+koala.n.01",,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8571428571428571,0.8571428571428571,0.8571428571428571
+nl/p93/d0848,GREW,Ze is trots op haar dochter.,"time.n.08    EQU now
+person.n.01
+trots.a.01   Time -2 AttributeOf -1 Stimulus +2
+person.n.01
+dochter.n.01 Role -1",,0.8181818181818182,0.7941176470588235,0.8059701492537314,0.8214285714285714,0.7931034482758621,0.8070175438596492
+nl/p93/d0887,GREW,Ik ga met u naar Hannover.,"time.n.08   EQU now
+person.n.01 EQU speaker
+gaan.v.01   Time -2 Agent -1 Time +1 Location +2
+person.n.01 EQU hearer
+female.n.02 Name Hannover",,0.8461538461538461,0.8461538461538461,0.8461538461538461,0.8529411764705882,0.8529411764705882,0.8529411764705882
+nl/p93/d0901,GREW,Wat is de wortel van 100?,"time.n.08   EQU now
+person.n.01 Time -1 Co-Theme +1
+wortel.n.01 Agent 100",,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.65,0.65,0.65
+nl/p93/d2849,GREW,De mensen in Brazilië waren trots op hem.,"time.n.08   EQU now
+mens.n.01   Time +1
+female.n.02 Name Brazilië
+trots.a.01  Time -3 AttributeOf -2 Time +1
+person.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p93/d1524,GREW,Ik staarde naar de man.,"time.n.08   EQU now
+person.n.01 EQU speaker
+staan.v.01  Time -2 Agent -1 Theme +1 Theme +2
+ard.a.01
+man.n.01",,0.7714285714285715,0.9310344827586207,0.8437500000000001,0.7666666666666667,0.92,0.8363636363636363
+nl/p93/d3548,GREW,De bibliotheek is tachtig jaar oud.,"time.n.08        EQU now
+bibliotheek.n.01
+jaar.n.01        Agent tachtig
+oud.a.01         Time -3 AttributeOf -2 Stimulus -1",,0.6896551724137931,0.5714285714285714,0.625,0.72,0.6,0.6545454545454547
+nl/p13/d0897,GREW,Zij is veel zwaarder dan hij.,"time.n.08   EQU now
+person.n.01
+veel.r.01
+zwaard.a.01 Time -3 AttributeOf -2 Degree -1 Agent +1
+person.n.01",,0.7575757575757576,0.5952380952380952,0.6666666666666667,0.8214285714285714,0.6388888888888888,0.7187499999999999
+nl/p93/d3306,GREW,Tom verbleef een week op Bali met zijn vriendin.,"time.n.08       TPR now
+female.n.02     Name Tom
+verblijven.v.01 Time -2 Agent -1 Theme +1 Location +2 Theme +3
+week.n.01
+female.n.02     Name Bali
+vriendin.n.01   User -4",,0.8181818181818182,0.72,0.7659574468085107,0.8157894736842105,0.7209302325581395,0.765432098765432
+nl/p13/d0913,GREW,Je bent een workaholic.,"time.n.08       EQU now
+person.n.01     EQU hearer
+workaholic.n.01 Time -2 Theme -1",,0.9130434782608695,0.6,0.7241379310344828,0.9,0.6,0.7200000000000001
+nl/p93/d0842,GREW,Hij gaat de stad nooit meer bezoeken.,"NEGATION      -1
+time.n.08     EQU now
+person.n.01
+gaan.v.01     Time -2 Agent -1 Time +3
+stad.n.01
+veel.r.01
+bezoeken.v.01 Theme -2",,0.55,0.7586206896551724,0.6376811594202898,0.5588235294117647,0.76,0.6440677966101696
+nl/p13/d0950,GREW,Die vent is helemaal kierewiet!,"time.n.08      EQU now
+vent.n.01
+helemaal.r.01
+kierewiet.a.01 Time -3 AttributeOf -2 Degree -1",,0.8888888888888888,0.8888888888888888,0.8888888888888888,0.8695652173913043,0.8695652173913043,0.8695652173913043
+nl/p43/d0948,GREW,Jullie spreken geen Engels.,"NEGATION     -1
+time.n.08    EQU now
+person.n.01  EQU hearer
+spreken.v.01 Time -2 Agent -1 Time +1
+female.n.02  Name Engels",,0.7575757575757576,0.8064516129032258,0.7812499999999999,0.7931034482758621,0.8518518518518519,0.8214285714285715
+nl/p13/d0894,GREW,Hij is niet zo slim als zijn broer.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01
+zo.r.01     Agent +3
+slim.a.01   Time -3 AttributeOf -2 Degree -1
+person.n.01
+broer.n.01  Role -1",,0.8048780487804879,0.673469387755102,0.7333333333333334,0.8,0.6666666666666666,0.7272727272727272
+nl/p13/d0712,GREW,Illinois grenst aan Missouri.,"time.n.08    EQU now
+female.n.02  Name Illinois
+grenzen.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name Missouri",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p13/d0713,GREW,Canada versloeg de VS.,"time.n.08     TPR now
+female.n.02   Name Canada
+verslaan.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name VS.",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p13/d0907,GREW,Hij kan fluit spelen.,"time.n.08   EQU now
+person.n.01
+fluit.a.01
+spelen.v.01 Time -3 Agent -2 Value -1",,0.37037037037037035,0.47619047619047616,0.4166666666666667,0.43478260869565216,0.5555555555555556,0.4878048780487805
+nl/p43/d2299,GREW,We schatten de schade op duizend dollar.,"time.n.08     TPR now
+person.n.01   EQU speaker
+schatten.v.01 Time -2 Agent -1 Theme +1 Theme +2
+schade.n.01
+dollar.n.01   Agent duizend",,0.8378378378378378,0.7209302325581395,0.7749999999999999,0.8125,0.7027027027027027,0.7536231884057971
+nl/p43/d0785,GREW,Wie heeft Hamlet geschreven?,"time.n.08      EQU now
+person.n.01
+female.n.02    Name Hamlet
+schrijven.v.01 Time -3 Agent -2 Time -1",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.84,0.7777777777777778,0.8076923076923077
+nl/p43/d1387,GREW,Uit welk land komt de makelaar Schneider?,"time.n.08     EQU now
+land.n.01
+komen.v.01    Time -2 Agent -1 Theme +1
+makelaar.n.01 Agent +1
+female.n.02   Name Schneider",,0.7428571428571429,0.7027027027027027,0.7222222222222223,0.7666666666666667,0.71875,0.7419354838709677
+nl/p43/d0899,GREW,Die kat is bruin.,"time.n.08  EQU now
+kat.n.01
+bruin.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p43/d0875,GREW,"Ik mag Tom, omdat hij eerlijk is.","time.n.08    EQU now
+person.n.01  EQU speaker
+mogen.v.01   Time -2 Agent -1 Time +1 Agent +3
+female.n.02  Name Tom
+person.n.01
+eerlijk.a.01 AttributeOf -1",,0.7441860465116279,0.5925925925925926,0.6597938144329897,0.7567567567567568,0.5957446808510638,0.6666666666666666
+nl/p43/d3370,GREW,Ik heb een kaart naar Tom gefaxt.,"time.n.08   EQU now
+person.n.01 EQU speaker
+kaart.n.01
+female.n.02 Name Tom
+faxten.v.01 Time -4 Agent -3 Theme -2 Location -1",,0.8378378378378378,0.8378378378378378,0.8378378378378378,0.8125,0.8125,0.8125
+nl/p43/d2498,GREW,Jullie zijn heel schattige jongens.,"time.n.08     EQU now
+person.n.01   EQU hearer
+heel.n.01
+schattig.a.01 Agent -1
+jongens.n.01  Time -4 Theme -3 Attribute -1",,0.8285714285714286,0.7073170731707317,0.7631578947368421,0.8,0.6857142857142857,0.7384615384615385
+nl/p43/d0938,GREW,Agnès keek naar de bruine boten.,"time.n.08   TPR now
+female.n.02 Name Agnès
+kijken.v.01 Time -2 Agent -1 Theme +2
+bruin.a.01
+boot.n.01   Attribute -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p63/d2934,GREW,Ik ben allergisch voor katten.,"time.n.08       EQU now
+person.n.01     EQU speaker
+allergisch.a.01 Time -2 AttributeOf -1 Stimulus +1
+kat.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p63/d0828,GREW,De rivier stroomt uit in de Pacifische oceaan.,"time.n.08        EQU now
+rivier.n.01
+stromen_uit.v.01 Time -2 Theme -1 Agent +1
+Pacifisch.a.01   Agent +1
+oceaan.n.01",,0.6666666666666666,0.7586206896551724,0.7096774193548386,0.6785714285714286,0.76,0.7169811320754718
+nl/p63/d0926,GREW,Mijn ouders spreken geen Nederlands.,"NEGATION     -1
+time.n.08    EQU now
+person.n.01  EQU speaker
+ouder.n.01   Role -1
+spreken.v.01 Time -3 Theme -1 Time +1
+female.n.02  Name Nederlands",,0.6923076923076923,0.7297297297297297,0.7105263157894737,0.7058823529411765,0.75,0.7272727272727272
+nl/p63/d1896,GREW,Hoeveel bloemen koop je?,"time.n.08   EQU now
+bloem.n.01  Agent hoeveel
+kopen.v.01  Time -2 Theme -1 Agent +1
+person.n.01 EQU hearer",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p63/d0862,GREW,Ik heb de boeken aan deze student gegeven.,"time.n.08    EQU now
+person.n.01  EQU speaker
+boek.n.01
+student.n.01
+geven.v.01   Time -4 Agent -3 Theme -2 Theme -1",,0.8571428571428571,0.7317073170731707,0.7894736842105263,0.8666666666666667,0.7428571428571429,0.8
+nl/p63/d0955,GREW,Marilyn Monroe overleed 33 jaar geleden.,"time.n.08       TPR now
+female.n.02     Name Marilyn
+overlijden.v.01 Time -2 Agent -1 Manner +2
+jaar.n.01       Agent 33
+geleden.r.01    Agent -1",,0.7297297297297297,0.6923076923076923,0.7105263157894737,0.71875,0.6764705882352942,0.696969696969697
+nl/p84/d1385,GREW,Hoeveel inwoners heeft Irak?,"time.n.08    EQU now
+inwoner.n.01 Agent hoeveel
+hebben.v.01  Time -2 Theme -1 Agent +1
+female.n.02  Name Irak",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7777777777777778,0.65625,0.711864406779661
+nl/p63/d0863,GREW,Er is melk in de koelkast.,"time.n.08     EQU now
+er.r.01
+zijn.v.01     Time -2 Manner -1 Theme +1 Theme +2
+melk.n.01
+koelkast.n.01",,0.6666666666666666,0.8148148148148148,0.7333333333333333,0.6785714285714286,0.8260869565217391,0.7450980392156864
+nl/p63/d2634,GREW,Dan ontmoette Linda in de kerk.,"time.n.08      TPR now
+dan.r.01
+ontmoeten.v.01 Time -2 Manner -1 Agent +1 Theme +2
+female.n.02    Name Linda
+kerk.n.01",,0.7142857142857143,0.6756756756756757,0.6944444444444444,0.7666666666666667,0.71875,0.7419354838709677
+nl/p63/d2262,GREW,Een dollar is gelijk aan honderd dollarcent.,"time.n.08       EQU now
+dollar.n.01
+gelijk.a.01     Time -2 AttributeOf -1 Stimulus +1
+dollarcent.n.01 Agent honderd",,0.7931034482758621,0.5348837209302325,0.6388888888888888,0.76,0.5135135135135135,0.6129032258064517
+nl/p63/d3175,GREW,Het was half acht.,"time.n.08   EQU now
+person.n.01
+half.a.01   Time -2 AttributeOf -1 Agent acht",,0.34782608695652173,0.7272727272727273,0.4705882352941176,0.35,0.7,0.4666666666666667
+nl/p84/d1389,GREW,Hoe stierf Charles Bukowski?,"time.n.08    TPR now
+hoe.r.01
+sterven.v.01 Time -2 Manner -1 Agent +1
+female.n.02  Name Charles",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.76,0.7037037037037037,0.7307692307692308
+nl/p84/d0784,GREW,Brian nam een paar rozen.,"time.n.08   TPR now
+female.n.02 Name Brian
+nemen.v.01  Time -2 Agent -1 Theme +2
+paar.n.01
+roos.n.01   EQU -1",,0.7142857142857143,0.8064516129032258,0.7575757575757576,0.7333333333333333,0.8148148148148148,0.7719298245614035
+nl/p84/d2746,GREW,Mijn horloge werd gestolen.,"time.n.08    EQU now
+person.n.01  EQU speaker
+horloge.n.01 Role -1
+stelen.v.01  Time -3 Theme -1",,0.6551724137931034,0.8260869565217391,0.7307692307692308,0.64,0.8,0.7111111111111111
+nl/p63/d2233,GREW,Ik hou van schaken.,"time.n.08    EQU now
+person.n.01  EQU speaker
+houden.v.01  Time -2 Agent -1 Agent +1
+schaken.v.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+nl/p63/d0850,GREW,De top van de Fuji was bedekt met sneeuw.,"time.n.08     EQU now
+top.n.01      Time +1
+female.n.02   Name Fuji
+bedekken.v.01 Time -3 Theme -2 Theme +1
+sneeuw.n.01",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.8,0.8,0.8000000000000002
+nl/p84/d1796,GREW,Het krioelt van de vissen in die rivier.,"time.n.08     EQU now
+person.n.01
+krioelen.v.01 Time -2 Location -1 Agent +1 Theme +2
+vis.n.01
+rivier.n.01",,0.7272727272727273,0.8888888888888888,0.7999999999999999,0.7142857142857143,0.8695652173913043,0.7843137254901961
+nl/p25/d0799,GREW,Deze muziek is populair bij jonge mensen.,"time.n.08     EQU now
+muziek.n.01
+populair.a.01 Time -2 AttributeOf -1 Stimulus +2
+jong.a.01
+mens.n.01     Attribute -1",,0.8181818181818182,0.7714285714285715,0.7941176470588236,0.7857142857142857,0.7333333333333333,0.7586206896551724
+nl/p84/d0879,GREW,Maciek overleed in december.,"time.n.08       TPR now
+female.n.02     Name Maciek
+overlijden.v.01 Time -2 Agent -1 Location +1
+female.n.02     Name december",,0.6451612903225806,0.8,0.7142857142857142,0.6296296296296297,0.7727272727272727,0.6938775510204083
+nl/p25/d2934,GREW,Het restaurant was niet vol.,"NEGATION        -1
+time.n.08       EQU now
+restaurant.n.01
+vol.a.01        Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+nl/p25/d3304,GREW,Ik heb mijn T-shirt gewassen.,"time.n.08    EQU now
+person.n.01  EQU speaker
+person.n.01  EQU speaker
+T-shirt.n.01 Role -1
+wassen.v.01  Time -4 Agent -3 Theme -1",,0.7027027027027027,0.8387096774193549,0.7647058823529411,0.71875,0.8518518518518519,0.7796610169491525
+nl/p25/d2748,GREW,Daniël bedankte de politiemensen.,"time.n.08        TPR now
+female.n.02      Name Daniël
+bedanken.v.01    Time -2 Agent -1 Theme +1
+politiemens.n.01",,0.896551724137931,0.7428571428571429,0.8125,0.88,0.7333333333333333,0.8
+nl/p25/d0940,GREW,Dat is niet belangrijk.,"NEGATION        -1
+time.n.08       EQU now
+person.n.01
+belangrijk.a.01 Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+nl/p25/d2372,GREW,Heb je geld nodig?,"time.n.08   EQU now
+hebben.v.01 Time -1 Agent +1 Theme +2 Theme +3
+person.n.01 EQU hearer
+geld.n.01
+nodig.a.01",,0.7142857142857143,0.8620689655172413,0.7812500000000001,0.7333333333333333,0.88,0.8
+nl/p25/d0775,GREW,Er ligt een pen op het bureau.,"time.n.08   EQU now
+er.r.01
+liggen.v.01 Time -2 Manner -1 Theme +1 Theme +2
+pen.n.01
+bureau.n.01",,0.696969696969697,0.8518518518518519,0.7666666666666667,0.7142857142857143,0.8695652173913043,0.7843137254901961
+nl/p25/d0761,GREW,Swift stierf in 1745.,"time.n.08    TPR now
+female.n.02  Name Swift
+sterven.v.01 Time -2 Agent -1 Agent 1745",,0.84,0.84,0.8399999999999999,0.8181818181818182,0.8181818181818182,0.8181818181818182
+nl/p25/d0713,GREW,Overstromingen verwoesten Europa.,"time.n.08         TPR now
+overstroming.n.01
+verwoesten.v.01   Time -2 Theme -1 Time +1
+female.n.02       Name Europa",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.76,0.76,0.76
+nl/p25/d3470,GREW,Ze heeft haar handtas verloren.,"time.n.08      EQU now
+person.n.01
+person.n.01
+handtas.n.01   Role -1
+verliezen.v.01 Time -4 Agent -3 Theme -1",,0.6363636363636364,0.75,0.6885245901639345,0.6785714285714286,0.7916666666666666,0.7307692307692307
+nl/p25/d0870,GREW,Frans is zijn moedertaal.,"time.n.08       EQU now
+female.n.02     Name Frans
+moedertaal.n.01 Time -2 Theme -1",,0.7391304347826086,0.5151515151515151,0.6071428571428571,0.75,0.5357142857142857,0.6250000000000001
+nl/p55/d0943,GREW,Die kerel is dubbelhartig.,"time.n.08         EQU now
+kerel.n.01
+dubbelhartig.a.01 Time -2 AttributeOf -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p25/d3281,GREW,Mijn vrouw keek verbaasd.,"time.n.08     TPR now
+person.n.01   EQU speaker
+vrouw.n.01    Role -1
+kijken.v.01   Time -3 Theme -1 Time +1
+verbazen.v.01",,0.7714285714285715,0.75,0.7605633802816902,0.7666666666666667,0.7419354838709677,0.7540983606557377
+nl/p25/d0760,GREW,Edison heeft de kinetoscoop uitgevonden.,"time.n.08        EQU now
+female.n.02      Name Edison
+kinetoscoop.n.01
+uitvinden.v.01   Time -3 Agent -2 Theme -1",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.8,0.8,0.8000000000000002
+nl/p25/d0813,GREW,Onze ploeg heeft onze tegenstander met 5-4 verslagen.,"time.n.08         EQU now
+person.n.01       EQU speaker
+ploeg.n.01        Role -1
+tegenstander.n.01 User -1
+verslag.v.01      Time -4 Theme -2 Theme -1 Agent 5-4",,0.6842105263157895,0.6666666666666666,0.6753246753246753,0.6666666666666666,0.6470588235294118,0.6567164179104478
+nl/p55/d1726,GREW,U bent langer dan ik.,"time.n.08   EQU now
+person.n.01 EQU hearer
+langer.a.01 Time -2 AttributeOf -1 Agent +1
+person.n.01 EQU speaker",,0.9354838709677419,0.7631578947368421,0.8405797101449276,0.9259259259259259,0.7575757575757576,0.8333333333333334
+nl/p55/d0813,GREW,We stonden aan de rand van een klif.,"time.n.08   TPR now
+person.n.01 EQU speaker
+staan.v.01  Time -2 Agent -1 Theme +1
+rand.n.01   EQU +1
+klif.n.01",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+nl/p55/d0931,GREW,Tom heeft geen kredietkaart.,"NEGATION          -1
+time.n.08         EQU now
+female.n.02       Name Tom
+hebben.v.01       Time -2 Agent -1 Theme +1
+kredietkaart.n.01",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p55/d1888,GREW,Ik ben verschillende keren in Italië geweest.,"time.n.08         EQU now
+person.n.01       EQU speaker
+verschillend.a.01
+keer.n.01         Attribute -1
+female.n.02       Name Italië
+zijn.v.01         Time -5 Agent -4 Theme -2 Location -1",,0.6976744186046512,0.7692307692307693,0.7317073170731708,0.7027027027027027,0.7647058823529411,0.7323943661971832
+nl/p55/d0775,GREW,De rekening bedroeg 100 dollar.,"time.n.08     TPR now
+rekening.n.01
+bedragen.v.01 Time -2 Theme -1 Theme +1
+dollar.n.01   Agent 100",,0.7931034482758621,0.6571428571428571,0.71875,0.84,0.7,0.7636363636363636
+nl/p55/d0872,GREW,Iedereen die hem kende bewonderde hem.,"NEGATION        -1
+NEGATION        -1
+time.n.08       TPR now
+die.v.01
+person.n.01
+kennen.v.01     Agent -2 Time -1
+bewonderen.v.01 Time -4 Time +1
+person.n.01",,0.6666666666666666,0.5283018867924528,0.5894736842105263,0.6944444444444444,0.5434782608695652,0.6097560975609756
+nl/p55/d1389,GREW,In welke Londense wijk staat het British Museum?,"time.n.08    EQU now
+Londens.a.01
+wijk.n.01    Attribute -1
+staan.v.01   Time -3 Agent -1 Agent +1
+female.n.02  Name British",,0.6857142857142857,0.6153846153846154,0.6486486486486486,0.7,0.6176470588235294,0.65625
+nl/p55/d0766,GREW,"Het wachtwoord is ""Muiriël"".","time.n.08       EQU now
+wachtwoord.n.01
+female.n.02     Time -2 Theme -1",,0.8571428571428571,0.6206896551724138,0.7200000000000001,0.8333333333333334,0.6,0.6976744186046512
+nl/p55/d0891,GREW,Ik ontmoette een wolf in een droom.,"time.n.08      TPR now
+person.n.01    EQU speaker
+ontmoeten.v.01 Time -2 Agent -1 Theme +1 Theme +2
+wolf.n.01
+droom.n.01",,0.8857142857142857,0.8857142857142857,0.8857142857142857,0.8666666666666667,0.8666666666666667,0.8666666666666667
+nl/p55/d0764,GREW,Charles de Gaulle overleed in 1970.,"time.n.08       TPR now
+female.n.02     Name Charles
+overlijden.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+nl/p55/d1776,GREW,Ik ben verliefd op Toms vrouw.,"time.n.08     EQU now
+person.n.01   EQU speaker
+verliefd.a.01 Time -2 AttributeOf -1 Stimulus +2
+female.n.02   Name Toms
+vrouw.n.01    Time -1",,0.8378378378378378,0.7209302325581395,0.7749999999999999,0.8125,0.7027027027027027,0.7536231884057971
+nl/p52/d2006,GREW,Hij kocht een dozijn eieren.,"time.n.08   TPR now
+person.n.01
+kopen.v.01  Time -2 Agent -1 Theme +1
+dozijn.n.01 EQU +1
+ei.n.01",,0.6666666666666666,0.7586206896551724,0.7096774193548386,0.7142857142857143,0.8,0.7547169811320756
+nl/p55/d0790,GREW,Het kostte minder dan vijftig dollar.,"time.n.08    TPR now
+person.n.01
+kosten.v.01  Time -2 Agent -1 Theme +3
+minder.n.01
+vijftig.n.01 Agent -1
+dollar.n.01  Quantity -1",,0.7692307692307693,0.6382978723404256,0.6976744186046512,0.7575757575757576,0.625,0.6849315068493151
+nl/p52/d1389,GREW,Wie is de Hongaarse premier?,"time.n.08     EQU now
+person.n.01
+Hongaars.a.01
+premier.n.01  Time -3 Theme -2 Attribute -1",,0.7777777777777778,0.4883720930232558,0.6000000000000001,0.782608695652174,0.4864864864864865,0.6000000000000001
+nl/p52/d3045,GREW,Ik heb een brief geschreven.,"time.n.08      EQU now
+person.n.01    EQU speaker
+brief.n.01
+schrijven.v.01 Time -3 Agent -2 Theme -1",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+nl/p05/d0895,GREW,Haar favoriete band is Warpaint.,"time.n.08     EQU now
+person.n.01
+favoriet.a.01
+band.n.05     Role -2 Attribute -1
+female.n.02   Time -4 Theme -1",,0.7575757575757576,0.6097560975609756,0.6756756756756757,0.7857142857142857,0.6285714285714286,0.6984126984126985
+nl/p05/d0814,GREW,We hebben de kolen opgemaakt.,"time.n.08    EQU now
+person.n.01  EQU speaker
+kolen.n.01
+opmaken.v.01 Time -3 Agent -2 Theme -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p05/d3375,GREW,Het vlees is rauw.,"time.n.08  EQU now
+vlees.n.01
+rauw.a.01  Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p05/d1726,GREW,Iedereen sprong.,"NEGATION      -1
+NEGATION      -1
+time.n.08     TPR now
+springen.v.01 Time -1",,0.9473684210526315,0.72,0.8181818181818181,0.9411764705882353,0.7272727272727273,0.8205128205128205
+nl/p05/d0846,GREW,Ik ken haar helemaal niet.,"NEGATION      -1
+time.n.08     EQU now
+person.n.01   EQU speaker
+kunnen.v.01   Time -2 Agent -1 Time +1
+person.n.01
+helemaal.r.01",,0.6666666666666666,0.7741935483870968,0.7164179104477612,0.7096774193548387,0.8148148148148148,0.7586206896551724
+nl/p52/d0808,GREW,"Mijn broer is twee jaar ouder dan ik, maar hij is drie centimeter kleiner.","time.n.08       EQU now
+person.n.01     EQU speaker
+broer.n.01      Role -1
+jaar.n.01       Agent twee
+ouder.a.01      Time -4 AttributeOf -2 Stimulus -1 Agent +1 Value +4
+person.n.01     EQU speaker
+person.n.01
+centimeter.n.01 Agent drie
+klein.a.01      AttributeOf -2 Stimulus -1",,0.7076923076923077,0.45544554455445546,0.5542168674698795,0.6785714285714286,0.4367816091954023,0.5314685314685316
+nl/p05/d0781,GREW,Momenteel werk ik in Tokio.,"time.n.08      EQU now
+momenteel.a.01
+werken.v.01    Time -2 Value -1 Agent +1 Location +2
+person.n.01    EQU speaker
+female.n.02    Name Tokio",,0.7297297297297297,0.8709677419354839,0.7941176470588235,0.78125,0.9259259259259259,0.847457627118644
+nl/p05/d1390,GREW,Welke tennisspeelster werd op 30 april 1993 met een mes in de rug gestoken?,"time.n.08            EQU now
+tennisspeelster.n.01
+30.n.01              Agent +1 Agent 1993
+female.n.02          Name april
+mes.n.01
+rug.n.01
+steken.v.01          Time -6 Theme -5 Agent -4 Theme -2 Theme -1",,0.6122448979591837,0.6382978723404256,0.625,0.5952380952380952,0.6097560975609756,0.6024096385542169
+nl/p05/d0838,GREW,Hij sneed het vlees met een mes.,"time.n.08    TPR now
+person.n.01
+snijden.v.01 Time -2 Agent -1 Theme +1 Theme +2
+vlees.n.01
+mes.n.01",,0.7878787878787878,0.7878787878787878,0.7878787878787878,0.7857142857142857,0.7857142857142857,0.7857142857142857
+nl/p05/d3467,GREW,Ik kan jullie niet helpen.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01 EQU speaker
+person.n.01 EQU hearer
+helpen.v.01 Time -3 Agent -2 Time -1",,0.6363636363636364,0.7777777777777778,0.7000000000000001,0.6206896551724138,0.75,0.679245283018868
+nl/p05/d2458,GREW,Zijn mobiele telefoon staat uit.,"time.n.08      EQU now
+person.n.01
+mobiel.a.01
+telefoon.n.01  Role -2 Attribute -1
+staan_uit.v.01 Time -4 Theme -1",,0.7575757575757576,0.7352941176470589,0.746268656716418,0.75,0.7241379310344828,0.736842105263158
+nl/p05/d0859,GREW,Ze haatte haar echtgenoot.,"time.n.08       TPR now
+person.n.01
+haten.v.01      Time -2 Agent -1 Theme +2
+person.n.01
+echtgenoot.n.01 Role -1",,0.7878787878787878,0.7647058823529411,0.7761194029850745,0.7857142857142857,0.7586206896551724,0.7719298245614034
+nl/p05/d0780,GREW,Ik kan mijn rechter arm niet optillen.,"NEGATION      -1
+time.n.08     EQU now
+person.n.01   EQU speaker
+person.n.01   EQU speaker
+rechter.a.01
+arm.n.01      Role -2 Attribute -1
+optillen.v.01 Time -5 Agent -4 Theme -1",,0.5777777777777777,0.7878787878787878,0.6666666666666666,0.5641025641025641,0.7586206896551724,0.6470588235294118
+nl/p05/d1392,GREW,Met wie is Miguel Indurain getrouwd?,"time.n.08    EQU now
+person.n.01
+female.n.02  Name Miguel
+trouwen.v.01 Time -3 Agent -2 Agent -1",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.76,0.7037037037037037,0.7307692307692308
+nl/p05/d0789,GREW,Met wie was je aan het praten?,"time.n.08   TPR now
+person.n.01
+zijn.v.01   Time -2 Agent +1 Time +2
+person.n.01 EQU hearer
+praten.v.01 Agent -3",,0.7714285714285715,0.8709677419354839,0.8181818181818182,0.7666666666666667,0.8518518518518519,0.8070175438596491
+nl/p05/d3075,GREW,Tom stapte op zijn fiets en reed weg.,"time.n.08    TPR now
+female.n.02  Name Tom
+stappen.v.01 Time -2 Agent -1 Theme +1 Time +2
+fiets.n.01   User -2
+rijden.v.01  Manner +1
+weg.r.01",,0.6428571428571429,0.574468085106383,0.6067415730337079,0.6666666666666666,0.5853658536585366,0.6233766233766234
+nl/p05/d3216,GREW,Zij is zeer mooi.,"time.n.08   EQU now
+person.n.01
+zeer.r.01
+mooi.a.01   Time -3 AttributeOf -2 Degree -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+nl/p05/d0830,GREW,Niemand heeft het probleem opgelost.,"NEGATION      -1
+time.n.08     EQU now
+probleem.n.01
+oplossen.v.01 Time -2 Theme -1",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.85,0.68,0.7555555555555556
+nl/p05/d0806,GREW,Je horloge ligt op het bureau.,"time.n.08    EQU now
+person.n.01  EQU hearer
+horloge.n.01 Role -1
+liggen.v.01  Time -3 Theme -1 Theme +1
+bureau.n.01",,0.6857142857142857,0.8275862068965517,0.75,0.6666666666666666,0.8,0.7272727272727272
+nl/p05/d0820,GREW,De rode rok is nieuw.,"time.n.08  EQU now
+rood.a.01
+rok.n.01   Attribute -1
+nieuw.a.01 Time -3 AttributeOf -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p05/d3451,GREW,Ik heb mijn portefeuille verloren.,"time.n.08         EQU now
+person.n.01       EQU speaker
+person.n.01       EQU speaker
+portefeuille.n.01 Role -1
+verliezen.v.01    Time -4 Agent -3 Theme -1",,0.7027027027027027,0.8387096774193549,0.7647058823529411,0.71875,0.8518518518518519,0.7796610169491525
+nl/p05/d2432,GREW,Onze heteluchtballon steeg op naar de hemel.,"time.n.08            TPR now
+person.n.01          EQU speaker
+heteluchtballon.n.01 Role -1
+stijgen_op.v.01      Time -3 Theme -1 Theme +1
+hemel.n.01",,0.6857142857142857,0.8275862068965517,0.75,0.6666666666666666,0.8,0.7272727272727272
+nl/p05/d0904,GREW,Ik eet een appel.,"time.n.08   EQU now
+person.n.01 EQU speaker
+emmen.v.01  Time -2 Agent -1 Theme +1
+appel.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p05/d2795,GREW,Dick speelde piano en Lucy zong.,"time.n.08   TPR now
+female.n.02 Name Dick
+spelen.v.01 Time -2 Agent -1 Theme +1 Time +3
+piano.n.01
+female.n.02 Name Lucy
+zingen.v.01 Agent -1",,0.813953488372093,0.660377358490566,0.7291666666666667,0.8378378378378378,0.6739130434782609,0.746987951807229
+nl/p05/d0848,GREW,Zij plukte bloemen.,"time.n.08    TPR now
+person.n.01
+plukken.v.01 Time -2 Agent -1 Theme +1
+bloem.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8695652173913043,0.8695652173913043,0.8695652173913043
+nl/p05/d2956,GREW,De lucht die we inademen bestaat uit zuurstof en stikstof.,"time.n.08     EQU now
+lucht.n.01    Agent +3
+die.v.01
+person.n.01   EQU speaker
+inademen.v.01 Time -2 Agent -1
+bestaan.v.01  Time -5 Theme -4 Theme +1
+zuurstof.n.01 Sub +1
+stikstof.n.01",,0.7547169811320755,0.7692307692307693,0.7619047619047619,0.7333333333333333,0.75,0.7415730337078651
+nl/p05/d0915,GREW,Mijn vriendin is erg jaloers.,"time.n.08     EQU now
+person.n.01   EQU speaker
+vriendin.n.01 Role -1
+erg.a.01
+jaloers.a.01  Time -4 AttributeOf -2 Agent -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7333333333333333,0.7333333333333333,0.7333333333333333
+nl/p05/d0919,GREW,"De koe loeit, de haan kraait, het varken knort, de eend kwaakt en de kat miauwt.","time.n.08    EQU now
+koe.n.01
+loeien.v.01  Time -2 Theme -1 Time +2 Time +4 Time +6 Time +8
+haan.n.01
+kraaien.v.01 Theme -1
+varken.n.01
+knorten.v.01 Theme -1
+eend.n.01
+kwaken.v.01  Theme -1
+kat.n.01
+miauwen.v.01 Theme -1",,0.5942028985507246,0.3867924528301887,0.4685714285714286,0.5344827586206896,0.34065934065934067,0.4161073825503356
+nl/p05/d0822,GREW,"Ik woon in een stad, maar mijn ouders wonen op het platteland.","time.n.08       EQU now
+person.n.01     EQU speaker
+wonen.v.01      Time -2 Agent -1 Theme +1 Time +4
+stad.n.01
+person.n.01     EQU speaker
+ouder.n.01      Role -1
+wonen.v.01      Theme -1 Theme +1
+platteland.n.01",,0.7090909090909091,0.6,0.65,0.6808510638297872,0.5714285714285714,0.6213592233009708
+nl/p72/d1933,GREW,De journalist werd door terroristen ontvoerd.,"time.n.08       EQU now
+journalist.n.01
+terrorist.n.01
+ontvoeren.v.01  Time -3 Theme -2 Agent -1",,0.8518518518518519,0.5897435897435898,0.6969696969696971,0.8260869565217391,0.5757575757575758,0.6785714285714286
+nl/p05/d0867,GREW,Ik was mij.,"time.n.08     TPR now
+person.n.01   EQU speaker
+zijn_mij.v.01 Time -2 Agent -1",,0.8695652173913043,0.8,0.8333333333333333,0.9,0.8181818181818182,0.8571428571428572
+nl/p72/d0843,GREW,Hij overtrad de wet.,"time.n.08       TPR now
+person.n.01
+overtreden.v.01 Time -2 Agent -1 Theme +1
+wet.a.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p72/d1449,GREW,Mijn hond kijkt ook tv.,"time.n.08   EQU now
+person.n.01 EQU speaker
+hond.n.01   Role -1
+kijken.v.01 Time -3 Theme -1 Manner +1 Theme +2
+ook.r.01
+tv.n.01",,0.5853658536585366,0.8275862068965517,0.6857142857142856,0.6,0.84,0.7000000000000001
+nl/p72/d2634,GREW,Hij kneep me!,"time.n.08    TPR now
+person.n.01
+knijpen.v.01 Time -2 Agent -1 Time +1
+person.n.01  EQU speaker",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p72/d0945,GREW,De vogel vliegt.,"time.n.08    EQU now
+vogel.n.01
+vliegen.v.01 Time -2 Theme -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p72/d0940,GREW,Hij was gemarteld en gemoord.,"time.n.08     EQU now
+person.n.01
+martelen.v.01 Time -2 Agent -1 Time +1
+moorden.v.01",,0.6666666666666666,0.4864864864864865,0.5625,0.6956521739130435,0.5,0.5818181818181818
+nl/p02/d0897,GREW,Ze beledigde hem.,"time.n.08      TPR now
+person.n.01
+beledigen.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p72/d0800,GREW,Zal ik uw jas dragen?,"time.n.08   EQU now
+person.n.01 EQU speaker
+person.n.01 EQU hearer
+jas.n.01    Role -1
+dragen.v.01 Time -4 Agent -3 Theme -1",,0.7297297297297297,0.8709677419354839,0.7941176470588235,0.71875,0.8518518518518519,0.7796610169491525
+nl/p72/d0841,GREW,Hij is lui.,"time.n.08   EQU now
+person.n.01
+lui.a.01    Time -2 AttributeOf -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p02/d0926,GREW,Meneer White's tuin is groot.,"time.n.08   EQU now
+meneer.n.01 Agent +1
+female.n.02 Name White's
+tuin.n.01   EQU -2
+groot.a.01  Time -4 AttributeOf -1",,0.7714285714285715,0.7297297297297297,0.75,0.7666666666666667,0.71875,0.7419354838709677
+nl/p72/d0760,GREW,Lukoil verdiende in 2004 een miljard dollar.,"time.n.08      TPR now
+female.n.02    Name Lukoil
+verdienen.v.01 Time -2 Agent -1 Agent 2004 Theme +1
+miljard.n.01   EQU +1
+dollar.n.01",,0.8108108108108109,0.7692307692307693,0.7894736842105263,0.84375,0.7941176470588235,0.8181818181818182
+nl/p72/d0916,GREW,Misschien was hij ziek.,"time.n.08      EQU now
+misschien.r.01
+person.n.01
+ziek.a.01      Time -3 Degree -2 AttributeOf -1",,0.5925925925925926,0.6956521739130435,0.6399999999999999,0.6086956521739131,0.7,0.6511627906976744
+nl/p02/d1388,GREW,Welk bedrijf is door Nicholas Brady opgericht?,"time.n.08      EQU now
+bedrijf.n.01
+female.n.02    Name Nicholas
+oprichten.v.01 Time -3 Theme -2 Agent -1",,0.8620689655172413,0.8064516129032258,0.8333333333333334,0.84,0.7777777777777778,0.8076923076923077
+nl/p02/d0781,GREW,Ons vliegtuig vloog boven de wolken.,"time.n.08      TPR now
+person.n.01    EQU speaker
+vliegtuig.n.01 Role -1
+vliegen.v.01   Time -3 Theme -1 Theme +1
+wolk.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p02/d0932,GREW,Ik heb zojuist uw brief ontvangen.,"time.n.08      EQU now
+person.n.01    EQU speaker
+zojuist.r.01
+person.n.01    EQU hearer
+brief.n.01     Role -1
+ontvangen.v.01 Time -5 Agent -4 Manner -3 Theme -1",,0.7209302325581395,0.8378378378378378,0.7749999999999999,0.7297297297297297,0.84375,0.7826086956521738
+nl/p02/d0716,GREW,Charles de Gaulle overleed in 1970.,"time.n.08       TPR now
+female.n.02     Name Charles
+overlijden.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+nl/p02/d2690,GREW,Tom grillt vlees.,"time.n.08    EQU now
+female.n.02  Name Tom
+grillen.v.01 Time -2 Agent -1 Theme +1
+vlees.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p02/d2236,GREW,Misschien heeft Tom Mary gekust.,"time.n.08      EQU now
+misschien.r.01
+female.n.02    Name Tom
+kussen.v.01    Time -3 Manner -2 Agent -1",,0.7241379310344828,0.6363636363636364,0.6774193548387097,0.72,0.6206896551724138,0.6666666666666666
+nl/p02/d0761,GREW,Paus Pius VI stierf in Frankrijk.,"time.n.08    TPR now
+paus.n.01    Agent +1
+female.n.02  Name Pius
+sterven.v.01 Time -3 Theme -2 Location +1
+female.n.02  Name Frankrijk",,0.8378378378378378,0.7948717948717948,0.8157894736842105,0.8125,0.7647058823529411,0.787878787878788
+nl/p02/d1557,GREW,Ik kijk naar kunstschaatsen.,"time.n.08         EQU now
+person.n.01       EQU speaker
+kijken.v.01       Time -2 Agent -1 Theme +1
+kunstschaats.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.92,0.92,0.92
+nl/p02/d2208,GREW,Ik heb de wijn gedronken.,"time.n.08    EQU now
+person.n.01  EQU speaker
+wijn.n.01
+drinken.v.01 Time -3 Agent -2 Theme -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p02/d0713,GREW,Raman Raghav vermoordde negen mensen.,"time.n.08       TPR now
+female.n.02     Name Raman
+vermoorden.v.01 Time -2 Agent -1 Theme +1
+mens.n.01       Agent negen",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7407407407407407,0.7407407407407407,0.7407407407407407
+nl/p02/d0917,GREW,Mary werd ontvoerd door piraten.,"time.n.08      EQU now
+female.n.02    Name Mary
+ontvoeren.v.01 Time -2 Time -1 Agent +1
+piraat.n.01",,0.8620689655172413,0.7142857142857143,0.7812500000000001,0.84,0.7,0.7636363636363636
+nl/p04/d0888,GREW,Morgen ga ik naar Parijs.,"time.n.08   EQU now
+morgen.r.01
+gaan.v.01   Time -2 Manner -1 Agent +1 Location +2
+person.n.01 EQU speaker
+female.n.02 Name Parijs",,0.7567567567567568,0.5490196078431373,0.6363636363636364,0.75,0.5454545454545454,0.631578947368421
+nl/p02/d1743,GREW,Tom zingt mooi.,"time.n.08   EQU now
+female.n.02 Name Tom
+zingen.v.01 Time -2 Agent -1 Value +1
+mooi.a.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+nl/p02/d0712,GREW,Kraft heeft Celestial Seasonings verkocht.,"time.n.08     EQU now
+female.n.02   Name Kraft
+female.n.02   Name Celestial
+verkopen.v.01 Time -3 Agent -2 Time -1",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p02/d2511,GREW,De grote witte hond kijkt naar die kat.,"time.n.08   EQU now
+groot.a.01
+wit.a.01
+hond.n.01   Attribute -2 Attribute -1
+kijken.v.01 Time -4 Theme -1 Theme +1
+kat.n.01",,0.8205128205128205,0.7804878048780488,0.8,0.7878787878787878,0.7428571428571429,0.7647058823529412
+nl/p02/d0785,GREW,Bill is twee jaar ouder dan ik.,"time.n.08   EQU now
+female.n.02 Name Bill
+jaar.n.01   Agent twee
+ouder.a.01  Time -3 AttributeOf -2 Stimulus -1 Agent +1
+person.n.01 EQU speaker",,0.8205128205128205,0.6153846153846154,0.7032967032967034,0.7941176470588235,0.6,0.6835443037974683
+nl/p02/d2967,GREW,Ik hou van chocoladeijs!,"time.n.08      EQU now
+person.n.01    EQU speaker
+houden.v.01    Time -2 Agent -1 Theme +2
+chocolade.n.01
+ijs.n.01       EQU -1",,0.6857142857142857,0.8275862068965517,0.75,0.7,0.84,0.7636363636363636
+nl/p04/d0897,GREW,Ze houdt van hem.,"time.n.08   EQU now
+person.n.01
+houden.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.782608695652174,0.782608695652174,0.782608695652174
+nl/p04/d0851,GREW,Mijn vader verfde de brievenbus rood.,"time.n.08       TPR now
+person.n.01     EQU speaker
+vader.n.01      Role -1
+verven.v.01     Time -3 Theme -1 Theme +1 Theme +2
+brievenbus.n.01
+rood.a.01",,0.7560975609756098,0.7380952380952381,0.746987951807229,0.7428571428571429,0.7222222222222222,0.732394366197183
+nl/p04/d0857,GREW,Hoi.,"time.n.08   EQU now
+female.n.02 Time -1",,0.4666666666666667,0.4666666666666667,0.4666666666666667,0.5384615384615384,0.5384615384615384,0.5384615384615384
+nl/p04/d1724,GREW,Ik ben bezig.,"time.n.08   EQU now
+person.n.01 EQU speaker
+bezig.a.01  Time -2 AttributeOf -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+nl/p04/d2513,GREW,Mijn naam is Emily.,"time.n.08   EQU now
+person.n.01 EQU speaker
+naam.n.01   Role -1
+female.n.02 Time -3 Theme -1",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.76,0.7037037037037037,0.7307692307692308
+nl/p04/d0843,GREW,Hij is oud.,"time.n.08   EQU now
+person.n.01
+oud.a.01    Time -2 AttributeOf -1",,0.8571428571428571,0.782608695652174,0.8181818181818182,0.8888888888888888,0.8,0.8421052631578948
+nl/p04/d0830,GREW,Niemand kan dit probleem oplossen.,"NEGATION      -1
+time.n.08     EQU now
+probleem.n.01
+oplossen.v.01 Time -2 Theme -1",,0.5652173913043478,0.5652173913043478,0.5652173913043478,0.6,0.6,0.6
+nl/p04/d0909,GREW,Ik ging naar Bali in de zomer.,"time.n.08   TPR now
+person.n.01 EQU speaker
+gaan.v.01   Time -2 Agent -1 Location +1 Theme +2
+female.n.02 Name Bali
+zomer.n.01",,0.8108108108108109,0.8108108108108109,0.8108108108108109,0.8125,0.8125,0.8125
+nl/p04/d0787,GREW,Tom is een vriend van mij.,"time.n.08   EQU now
+female.n.02 Name Tom
+vriend.n.01 Time -2 Theme -1 Agent +1
+person.n.01 EQU speaker",,0.8387096774193549,0.6046511627906976,0.7027027027027026,0.8518518518518519,0.6216216216216216,0.7187499999999999
+nl/p04/d0960,GREW,Dit is mijn fiets.,"time.n.08   EQU now
+person.n.01
+person.n.01 EQU speaker
+fiets.n.01  Time -3 Theme -2 Role -1",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.76,0.76,0.76
+nl/p73/d0760,GREW,Louis Riel vermoordde Scott.,"time.n.08       TPR now
+female.n.02     Name Louis
+vermoorden.v.01 Time -2 Agent -1 Time +1
+female.n.02     Name Scott",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p04/d2056,GREW,Tom fluistert iets tegen Mary.,"time.n.08       EQU now
+female.n.02     Name Tom
+fluisteren.v.01 Time -2 Agent -1 Time +1 Location +2
+person.n.01
+female.n.02     Name Mary",,0.8648648648648649,0.8648648648648649,0.8648648648648649,0.84375,0.84375,0.84375
+nl/p73/d0956,GREW,De rivier komt uit in de Pacifische oceaan.,"time.n.08      EQU now
+rivier.n.01
+komen_uit.v.01 Time -2 Theme -1 Agent +1
+Pacifisch.a.01 Agent +1
+female.n.02    Name oceaan",,0.6285714285714286,0.7586206896551724,0.6875,0.6666666666666666,0.8,0.7272727272727272
+nl/p73/d0792,GREW,Dat kind wierp een steen naar de hond.,"time.n.08   TPR now
+kind.n.01
+wieren.v.01 Time -2 Theme -1 Theme +1 Theme +2
+steen.n.01
+hond.n.01",,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.7857142857142857,0.7857142857142857,0.7857142857142857
+nl/p73/d1515,GREW,Ik heb het dak lichtblauw geverfd.,"time.n.08       EQU now
+person.n.01     EQU speaker
+dak.n.01
+lichtblauw.a.01
+verven.v.01     Time -4 Agent -3 Theme -2 Theme -1",,0.8,0.7777777777777778,0.7887323943661971,0.8,0.7741935483870968,0.7868852459016393
+nl/p73/d2380,GREW,Tom streek zijn kleren.,"time.n.08   TPR now
+female.n.02 Name Tom
+streek.v.01 Time -2 Agent -1 Theme +1
+kleren.n.01 User -2",,0.8666666666666667,0.8666666666666667,0.8666666666666667,0.8461538461538461,0.8461538461538461,0.8461538461538461
+nl/p73/d0791,GREW,De stad ligt aan de voet van de berg.,"time.n.08   EQU now
+stad.n.01
+liggen.v.01 Time -2 Theme -1 Theme +1
+voet.n.01   EQU +1
+berg.n.01",,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7857142857142857,0.7857142857142857,0.7857142857142857
+nl/p73/d0796,GREW,Dit is een miljoen yen waard.,"time.n.08    EQU now
+person.n.01
+miljoen.n.01 EQU +1
+yen.n.02
+waard.a.01   Time -4 AttributeOf -3 Time -2",,0.7575757575757576,0.7142857142857143,0.7352941176470589,0.7857142857142857,0.7333333333333333,0.7586206896551724
+nl/p94/d1905,GREW,Wie heeft radium ontdekt?,"time.n.08      EQU now
+person.n.01
+radium.n.01
+ontdekken.v.01 Time -3 Agent -2 Theme -1",,0.9259259259259259,0.8620689655172413,0.8928571428571429,0.9130434782608695,0.84,0.8749999999999999
+nl/p73/d2412,GREW,Die emmer lekt.,"time.n.08         EQU now
+person.n.01
+emmerplekken.v.01 Time -2 Agent -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p94/d0899,GREW,Vijf plus twee is zeven.,"time.n.08  EQU now
+vijf.n.01  Agent +1 Agent twee
+plus.n.02
+zeven.n.01 Time -3 Agent -2",,0.3448275862068966,0.5263157894736842,0.4166666666666667,0.32,0.47058823529411764,0.38095238095238104
+nl/p94/d0851,GREW,Bijen vliegen van bloem tot bloem.,"time.n.08    EQU now
+bijen.n.01
+vliegen.v.01 Time -2 Theme -1 Theme +1 Theme +2
+bloem.n.01
+bloem.n.01",,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.7857142857142857,0.7857142857142857,0.7857142857142857
+nl/p94/d0711,GREW,Koning Henry II verbood het steekspel.,"time.n.08      TPR now
+koning.n.01    Agent +1
+female.n.02    Name Henry
+verbieden.v.01 Time -3 Theme -2 Theme +1
+steekspel.n.01",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p94/d0934,GREW,Ik ben aan het dutten.,"time.n.08   EQU now
+person.n.01 EQU speaker
+zijn.v.01   Time -2 Agent -1 Time +1
+dutten.v.01",,0.7586206896551724,0.9565217391304348,0.8461538461538461,0.76,0.95,0.8444444444444444
+nl/p94/d0956,GREW,Ze speelt iedere dag tennis.,"time.n.08   EQU now
+person.n.01
+spelen.v.01 Time -2 Agent -1 Theme +1 Theme +2
+dag.n.01
+tennis.n.01",,0.7878787878787878,0.7027027027027027,0.7428571428571429,0.7857142857142857,0.6875,0.7333333333333334
+nl/p94/d3533,GREW,Dat radiootje is niet groter dan een lucifersdoosje.,"NEGATION            -1
+time.n.08           EQU now
+radiootje.n.01
+groot.a.01          Time -2 AttributeOf -1 Agent +1
+lucifersdoosje.n.01",,0.7931034482758621,0.6388888888888888,0.7076923076923076,0.8,0.6451612903225806,0.7142857142857142
+nl/p94/d0759,GREW,Berlinguer volgde Natta op.,"time.n.08      TPR now
+female.n.02    Name Berlinguer
+volgen_op.v.01 Time -2 Agent -1 Time +1
+female.n.02    Name Natta",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p94/d0817,GREW,Ik heb met de actrice zelf gesproken.,"time.n.08    EQU now
+person.n.01  EQU speaker
+actrice.n.01 Attribute +1
+zelf.r.01
+spreken.v.01 Time -4 Agent -3 Theme -2",,0.7714285714285715,0.6585365853658537,0.7105263157894737,0.7666666666666667,0.6571428571428571,0.7076923076923077
+nl/p94/d0872,GREW,Hij klopte op de gesloten deur.,"time.n.08    TPR now
+person.n.01
+kloppen.v.01 Time -2 Agent -1 Theme +2
+sluiten.v.01
+deur.n.01    Attribute -1",,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7857142857142857,0.7857142857142857,0.7857142857142857
+nl/p94/d0906,GREW,Hij werd aangevallen door een haai.,"time.n.08      EQU now
+person.n.01
+aanvallen.v.01 Time -2 Experiencer -1 Agent +1
+haai.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.782608695652174,0.782608695652174,0.782608695652174
+nl/p95/d0791,GREW,De oorlog duurde twee jaar.,"time.n.08   TPR now
+oorlog.n.01
+duren.v.01  Time -2 Theme -1 Theme +1
+jaar.n.01   Agent twee",,0.7931034482758621,0.6571428571428571,0.71875,0.76,0.6333333333333333,0.6909090909090909
+nl/p94/d1965,GREW,Ze is getrouwd met een muzikant.,"time.n.08     EQU now
+person.n.01
+trouwen.v.01  Time -2 Agent -1 Theme +1
+muzikant.n.01",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.782608695652174,0.6428571428571429,0.7058823529411765
+nl/p95/d1390,GREW,Wat was de voornaam van de vader van Gottfried Reinhardt?,"time.n.08     EQU now
+person.n.01   Time -1 Co-Theme +1
+voornaam.n.01 EQU +1
+vader.n.01    Time +1
+female.n.02   Name Gottfried",,0.7428571428571429,0.5306122448979592,0.6190476190476191,0.7,0.5,0.5833333333333334
+nl/p94/d0760,GREW,Nelson Beavers werkte voor Eurofins.,"time.n.08   TPR now
+female.n.02 Name Nelson
+werken.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name Eurofins",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p95/d0797,GREW,Dit antwoord maakte hem woedend.,"time.n.08     TPR now
+antwoord.n.01
+maken.v.01    Time -2 Theme -1 Time +1 Theme +2
+person.n.01
+woedend.a.01",,0.7272727272727273,0.7058823529411765,0.7164179104477613,0.75,0.7241379310344828,0.736842105263158
+nl/p35/d0875,GREW,Iedereen lachte hem uit.,"NEGATION        -1
+NEGATION        -1
+time.n.08       TPR now
+lachen_uit.v.01 Time -1 Time +1
+person.n.01",,0.88,0.7096774193548387,0.7857142857142856,0.8636363636363636,0.7037037037037037,0.7755102040816326
+nl/p95/d0872,GREW,Hij klopte op de deur.,"time.n.08    TPR now
+person.n.01
+kloppen.v.01 Time -2 Agent -1 Theme +1
+deur.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p95/d0712,GREW,Apple Inc. is gevestigd in San Jose.,"time.n.08     EQU now
+female.n.02   Name Apple
+vestigen.v.01 Time -2 Time -1 Location +1
+female.n.02   Name San",,0.7096774193548387,0.7096774193548387,0.7096774193548389,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p35/d3280,GREW,Ik ben nu niet gewapend.,"NEGATION     -1
+time.n.08    EQU now
+person.n.01  EQU speaker
+nu.r.01
+wapenen.v.01 Time -3 Agent -2 Manner -1",,0.6774193548387096,0.84,0.75,0.6666666666666666,0.8181818181818182,0.7346938775510203
+nl/p95/d0953,GREW,Tom morste de melk.,"time.n.08   TPR now
+female.n.02 Name Tom
+morsen.v.01 Time -2 Agent -1 Theme +1
+melk.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p35/d0948,GREW,"Ik spreek Engels, Frans en Spaans.","time.n.08    EQU now
+person.n.01  EQU speaker
+spreken.v.01 Time -2 Agent -1 Time +1
+female.n.02  Sub +1 Sub +2
+female.n.02  Name Frans
+female.n.02  Name Spaans",,0.7111111111111111,0.6808510638297872,0.6956521739130436,0.7692307692307693,0.75,0.7594936708860761
+nl/p35/d2693,GREW,Niemand houdt van oorlog.,"NEGATION    -1
+time.n.08   EQU now
+houden.v.01 Time -1 Theme +1
+oorlog.n.01",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.85,0.68,0.7555555555555556
+nl/p03/d2101,GREW,Het meer is heel diep.,"time.n.08 EQU now
+veel.n.01
+heel.n.01
+diep.a.01 Time -3 AttributeOf -2 Agent -1",,0.7777777777777778,0.7241379310344828,0.75,0.782608695652174,0.72,0.7499999999999999
+nl/p95/d2508,GREW,Tom gaf Mary een banaan.,"time.n.08   TPR now
+female.n.02 Name Tom
+geven.v.01  Time -2 Agent -1 Agent +1 Theme +2
+female.n.02 Name Mary
+banaan.n.01",,0.8648648648648649,0.8648648648648649,0.8648648648648649,0.875,0.875,0.875
+nl/p03/d0849,GREW,Ze vergat de brief te posten.,"time.n.08     EQU now
+person.n.01
+vergeten.v.01 Time -2 Agent -1 Time +2
+brief.n.01
+post.n.03     Theme -1",,0.696969696969697,0.6764705882352942,0.6865671641791046,0.75,0.7241379310344828,0.736842105263158
+nl/p35/d0841,GREW,Hij heeft meer dan vijf woordenboeken.,"time.n.08        EQU now
+person.n.01
+hebben.v.01      Time -2 Agent -1 Theme +3
+veel.n.01
+vijf.n.01        Agent -1
+woordenboek.n.01 Quantity -1",,0.7948717948717948,0.7560975609756098,0.7749999999999999,0.7878787878787878,0.7428571428571429,0.7647058823529412
+nl/p35/d0856,GREW,Niemand is perfect.,"NEGATION     -1
+time.n.08    EQU now
+perfect.a.01 Time -1",,1.0,0.7391304347826086,0.85,1.0,0.75,0.8571428571428571
+nl/p35/d0915,GREW,De kip heeft vier eieren gelegd.,"time.n.08   EQU now
+kip.n.01
+ei.n.01     Agent vier
+leggen.v.01 Time -3 Theme -2 Theme -1",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.68,0.68,0.68
+nl/p03/d0900,GREW,Ze lijdt aan een besmettelijke ziekte.,"time.n.08         EQU now
+person.n.01
+lijden.v.01       Time -2 Agent -1 Theme +2
+besmettelijk.a.01
+ziekte.n.01       Attribute -1",,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7857142857142857,0.7857142857142857,0.7857142857142857
+nl/p03/d0805,GREW,Je mag mijn pen niet gebruiken.,"NEGATION       -1
+time.n.08      EQU now
+person.n.01    EQU hearer
+person.n.01    EQU speaker
+pen.n.01       Role -1
+gebruiken.v.01 Time -4 Agent -3 Theme -1",,0.5384615384615384,0.7777777777777778,0.6363636363636364,0.5294117647058824,0.75,0.6206896551724139
+nl/p03/d0815,GREW,Het dak van mijn huis is rood.,"time.n.08 EQU now
+dak.n.01
+huis.n.01 User -1
+rood.a.01 Time -3 AttributeOf -2",,0.8148148148148148,0.7586206896551724,0.7857142857142857,0.782608695652174,0.72,0.7499999999999999
+nl/p03/d0877,GREW,Ze draagt een zonnebril.,"time.n.08      EQU now
+person.n.01
+dragen.v.01    Time -2 Agent -1 Theme +1
+zonnebril.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8695652173913043,0.8695652173913043,0.8695652173913043
+nl/p03/d1650,GREW,Ik ben zeker dat hij zal slagen.,"time.n.08   EQU now
+person.n.01 EQU speaker
+zeker.a.01  Time -2 AttributeOf -1 Agent +2
+person.n.01
+slagen.v.01 Agent -1",,0.7714285714285715,0.6,0.675,0.7666666666666667,0.5897435897435898,0.6666666666666667
+nl/p03/d0955,GREW,Je bent erg sexy.,"time.n.08   EQU now
+person.n.01 EQU hearer
+erg.a.01
+sexy.a.01   Time -3 AttributeOf -2 Agent -1",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p03/d0873,GREW,Ik heb pijn aan mijn achterste.,"time.n.08   EQU now
+person.n.01 EQU speaker
+hebben.v.01 Time -2 Agent -1 Theme +1
+pijn.n.01   Theme +2
+person.n.01 EQU speaker
+achter.a.01 Agent -1",,0.5813953488372093,0.8064516129032258,0.6756756756756758,0.5945945945945946,0.8148148148148148,0.6875
+nl/p03/d0946,GREW,Er zijn ook Franse touristen.,"time.n.08    EQU now
+er.r.01
+zijn.v.01    Time -2 Manner -1 Manner +1 Theme +3
+ook.r.01
+Frans.a.01
+tourist.n.01 Attribute -1",,0.5897435897435898,0.6571428571428571,0.6216216216216216,0.6060606060606061,0.6666666666666666,0.6349206349206349
+nl/p03/d0925,GREW,Tom knoeide de melk.,"time.n.08    TPR now
+female.n.02  Name Tom
+knoeien.v.01 Time -2 Agent -1 Theme +1
+melk.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p03/d3002,GREW,Tom is geen slechte trainer.,"NEGATION     -1
+time.n.08    EQU now
+female.n.02  Name Tom
+slecht.a.01
+trainer.n.01 Time -3 Theme -2 Attribute -1",,0.8064516129032258,0.5813953488372093,0.6756756756756758,0.7777777777777778,0.5675675675675675,0.65625
+nl/p03/d2382,GREW,Ik hou van de oceaan.,"time.n.08   EQU now
+person.n.01 EQU speaker
+houden.v.01 Time -2 Agent -1 Theme +1
+oceaan.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p03/d0872,GREW,"Mr.
+Smith kwam.","time.n.08   TPR now
+female.n.02 Name Mr.
+komen.v.01  Time -2 Agent -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.8,0.64,0.7111111111111111
+nl/p03/d0787,GREW,Tom is groter dan zijn moeder.,"time.n.08   EQU now
+female.n.02 Name Tom
+groot.a.01  Time -2 AttributeOf -1 Agent +1
+moeder.n.01 User -2",,0.8333333333333334,0.5813953488372093,0.684931506849315,0.8076923076923077,0.5675675675675675,0.6666666666666666
+nl/p03/d0837,GREW,Hij heeft 1000 yen betaald voor dit boek.,"time.n.08    EQU now
+person.n.01
+yen.n.02     Agent 1000
+betalen.v.01 Time -3 Agent -2 Theme -1 Theme +1
+boek.n.01",,0.8,0.6829268292682927,0.736842105263158,0.8,0.6857142857142857,0.7384615384615385
+nl/p03/d0716,GREW,Charles de Gaulle overleed in 1970.,"time.n.08       TPR now
+female.n.02     Name Charles
+overlijden.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+nl/p03/d0761,GREW,Pretoria ligt in Ivoorkust.,"time.n.08   EQU now
+female.n.02 Name Pretoria
+liggen.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name Ivoorkust",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p03/d2059,GREW,Ik ben geen dertig jaar oud.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01 EQU speaker
+jaar.n.01   Agent dertig
+oud.a.01    Time -3 AttributeOf -2 Stimulus -1",,0.7575757575757576,0.6410256410256411,0.6944444444444444,0.7241379310344828,0.6176470588235294,0.6666666666666667
+nl/p03/d3041,GREW,Deze kaas heeft een scherpe smaak.,"time.n.08   EQU now
+kaas.n.01
+hebben.v.01 Time -2 Theme -1 Theme +2
+scherp.a.01
+smaak.n.01  Attribute -1",,0.7878787878787878,0.7878787878787878,0.7878787878787878,0.8214285714285714,0.8214285714285714,0.8214285714285714
+nl/p03/d0884,GREW,Hij brouwde bier.,"time.n.08    TPR now
+person.n.01
+brouwen.v.01 Time -2 Agent -1 Theme +1
+bier.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p03/d2553,GREW,Ik zal de borden nog eens afwassen.,"time.n.08     EQU now
+person.n.01   EQU speaker
+bord.n.01
+nog.r.01
+eens.r.01
+afwassen.v.01 Time -5 Agent -4 Theme -3 Manner -2 Manner -1",,0.5853658536585366,0.8275862068965517,0.6857142857142856,0.6,0.84,0.7000000000000001
+nl/p03/d0936,GREW,Betty heeft hem gedood.,"time.n.08   EQU now
+female.n.02 Name Betty
+person.n.01
+doden.v.01  Time -3 Agent -2 Time -1",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+nl/p03/d0766,GREW,Alfred Nobel vond in 1866 het dynamiet uit.,"time.n.08       TPR now
+female.n.02     Name Alfred
+vinden_uit.v.01 Time -2 Agent -1 Agent 1866 Theme +1
+dynamiet.n.01",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p03/d2401,GREW,Het is vijf voor vier.,"time.n.08   EQU now
+person.n.01
+vijf.n.01   Time -2 Time -1 Agent vier",,0.391304347826087,0.8181818181818182,0.5294117647058824,0.4,0.8,0.5333333333333333
+nl/p14/d0716,GREW,Vladislav Listjev is in Moskou vermoord.,"time.n.08       EQU now
+female.n.02     Name Vladislav
+female.n.02     Name Moskou
+vermoorden.v.01 Time -3 Time -2 Location -1",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p03/d0903,GREW,Ik ben geboren in Rusland.,"time.n.08    EQU now
+person.n.01  EQU speaker
+geboren.v.01 Time -2 Experiencer -1 Location +1
+female.n.02  Name Rusland",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p03/d0823,GREW,Ik ken niemand van hen.,"time.n.08   EQU now
+person.n.01 EQU speaker
+kunnen.v.01 Time -2 Agent -1 Time +1
+person.n.01 Agent +1
+person.n.01",,0.7714285714285715,0.7297297297297297,0.75,0.7666666666666667,0.71875,0.7419354838709677
+nl/p03/d0880,GREW,Hij leert Chinees.,"time.n.08   EQU now
+person.n.01
+leren.v.01  Time -2 Agent -1 Time +1
+female.n.02 Name Chinees",,0.7241379310344828,0.7777777777777778,0.75,0.76,0.8260869565217391,0.7916666666666667
+nl/p14/d0876,GREW,Ik heb dat telefoonummer opgeschreven.,"time.n.08          EQU now
+person.n.01        EQU speaker
+telefoonummer.n.01
+opschrijven.v.01   Time -3 Agent -2 Theme -1",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p14/d2443,GREW,Ze waren erg aardig voor me.,"time.n.08   EQU now
+person.n.01
+erg.a.01
+aardig.a.01 Time -3 AttributeOf -2 Agent -1 Time +1
+person.n.01 EQU speaker",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8,0.8,0.8000000000000002
+nl/p14/d0713,GREW,Italië versloeg Kazachstan.,"time.n.08     TPR now
+female.n.02   Name Italië
+verslaan.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Kazachstan",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p14/d0849,GREW,Ze ruimde de tafel af.,"time.n.08      TPR now
+person.n.01
+ruimen_af.v.01 Time -2 Agent -1 Theme +1
+tafel.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p14/d0898,GREW,Tokyo is groter als Rome,"time.n.08   EQU now
+female.n.02 Name Tokyo
+groot.a.01  Time -2 AttributeOf -1 Agent +1
+female.n.02 Name Rome",,0.8064516129032258,0.6578947368421053,0.7246376811594202,0.8518518518518519,0.696969696969697,0.7666666666666667
+nl/p14/d0953,GREW,Tom heeft geen creditcard.,"NEGATION        -1
+time.n.08       EQU now
+female.n.02     Name Tom
+hebben.v.01     Time -2 Agent -1 Theme +1
+creditcard.n.01",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p14/d1740,GREW,Niemand houdt van oorlog.,"NEGATION    -1
+time.n.08   EQU now
+houden.v.01 Time -1 Theme +1
+oorlog.n.01",,0.8695652173913043,0.6896551724137931,0.7692307692307693,0.85,0.68,0.7555555555555556
+nl/p14/d2301,GREW,Karel de Grote werd door de paus gekroond.,"time.n.08   EQU now
+female.n.02 Name Karel
+paus.n.01
+kronen.v.01 Time -3 Time -2 Agent -1",,0.7931034482758621,0.6571428571428571,0.71875,0.76,0.6333333333333333,0.6909090909090909
+nl/p42/d2163,GREW,Emily eet chips.,"time.n.08   EQU now
+female.n.02 Name Emily
+emmen.v.01  Time -2 Agent -1 Theme +1
+chip.n.04",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p42/d0828,GREW,Het sneeuwde van maandag tot vrijdag.,"time.n.08     TPR now
+person.n.01
+sneeuwen.v.01 Time -2 Location -1 Location +1 Location +2
+female.n.02   Name maandag
+female.n.02   Name vrijdag",,0.5405405405405406,0.6451612903225806,0.588235294117647,0.5625,0.6666666666666666,0.6101694915254238
+nl/p42/d0838,GREW,Hij was totaal niet tevreden.,"NEGATION      -1
+time.n.08     EQU now
+person.n.01
+totaal.a.01
+tevreden.a.01 Time -3 AttributeOf -2",,0.6428571428571429,0.782608695652174,0.7058823529411765,0.6666666666666666,0.8,0.7272727272727272
+nl/p42/d2306,GREW,Er zijn eilanden in de zee.,"time.n.08   EQU now
+er.r.01
+zijn.v.01   Time -2 Manner -1 Theme +1 Theme +2
+eiland.n.01
+zee.n.01",,0.6666666666666666,0.8148148148148148,0.7333333333333333,0.6785714285714286,0.8260869565217391,0.7450980392156864
+nl/p42/d0783,GREW,De Mississippirivier mondt uit in de Golf van Mexico.,"time.n.08       EQU now
+female.n.02     Name Mississippirivier
+monden_uit.v.01 Time -2 Agent -1 Location +1
+female.n.02     Name Golf",,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.7407407407407407,0.7407407407407407,0.7407407407407407
+nl/p42/d2000,GREW,Het hemd moet worden gestreken.,"time.n.08    EQU now
+hemd.n.01
+streken.v.01 Time -2 Theme -1",,0.7619047619047619,0.6956521739130435,0.7272727272727272,0.7222222222222222,0.65,0.6842105263157895
+nl/p42/d0712,GREW,André Henri Constant van Hasselt werd opgeleid in Maastricht.,"time.n.08     EQU now
+female.n.02   Name André
+opleiden.v.01 Time -2 Time -1 Location +1
+female.n.02   Name Maastricht",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p42/d2885,GREW,Dromen katten?,"time.n.08   EQU now
+dromen.v.01 Time -1 Theme +1
+kat.n.01",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p42/d2986,GREW,Waar is Tom bang voor?,"time.n.08   EQU now
+waar.r.01
+female.n.02 Name Tom
+bang.v.01   Time -3 Agent -2 AttributeOf -1",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.72,0.6666666666666666,0.6923076923076923
+nl/p42/d0945,GREW,Ik zal de appel eten.,"time.n.08   EQU now
+person.n.01 EQU speaker
+appel.n.01
+eten.v.01   Time -3 Agent -2 Theme -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p42/d1926,GREW,Ze speelde een wals op de piano.,"time.n.08   TPR now
+person.n.01
+spelen.v.01 Time -2 Agent -1 Theme +1 Theme +2
+wals.n.01
+piano.n.01",,0.7878787878787878,0.7878787878787878,0.7878787878787878,0.8571428571428571,0.8571428571428571,0.8571428571428571
+nl/p42/d0760,GREW,Hooper kocht een huis in Portland.,"time.n.08   TPR now
+hooper.n.01
+kopen.v.01  Time -2 Theme -1 Theme +1 Location +2
+huis.n.01
+female.n.02 Name Portland",,0.8,0.7567567567567568,0.7777777777777778,0.8333333333333334,0.78125,0.8064516129032259
+nl/p42/d2218,GREW,Tom mopperde.,"time.n.08     TPR now
+female.n.02   Name Tom
+mopperen.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+nl/p42/d0879,GREW,Er zijn 43 prefecturen in Japan.,"time.n.08       EQU now
+er.r.01
+zijn.v.01       Time -2 Manner -1 Theme +1 Location +2
+prefectuur.n.01 Agent 43
+female.n.02     Name Japan",,0.7027027027027027,0.8387096774193549,0.7647058823529411,0.71875,0.8518518518518519,0.7796610169491525
+nl/p74/d1391,GREW,Waar overleed Irving Mitchell?,"time.n.08       TPR now
+waar.r.01
+overlijden.v.01 Time -2 Manner -1 Agent +1
+female.n.02     Name Irving",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.72,0.6666666666666666,0.6923076923076923
+nl/p74/d0760,GREW,Mabel Normand speelde in The Extra Girl.,"time.n.08   TPR now
+mabel.n.01  Agent +1
+female.n.02 Name Normand
+spelen.v.01 Time -3 Theme -2 Location +1
+female.n.02 Name The",,0.6216216216216216,0.7419354838709677,0.676470588235294,0.65625,0.7777777777777778,0.711864406779661
+nl/p74/d0893,GREW,De egel is een klein dier.,"time.n.08  EQU now
+egel.n.01
+klein.a.01
+dier.n.01  Time -3 Theme -2 Attribute -1",,0.5555555555555556,0.5172413793103449,0.5357142857142857,0.5217391304347826,0.48,0.4999999999999999
+nl/p74/d1455,GREW,Hij heeft geboerd.,"time.n.08   EQU now
+person.n.01
+boeren.v.01 Time -2 Agent -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p74/d0858,GREW,Hij veegde het zweet van zijn gezicht af.,"time.n.08     TPR now
+person.n.01
+vegen_af.v.01 Time -2 Agent -1 Theme +1 Theme +3
+zweet.n.01
+person.n.01
+gezicht.n.01  Role -1",,0.6923076923076923,0.7941176470588235,0.7397260273972601,0.696969696969697,0.7931034482758621,0.7419354838709677
+nl/p22/d0783,GREW,Maria verstaat Chinees.,"time.n.08     EQU now
+female.n.02   Name Maria
+verstaan.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Chinees",,0.7419354838709677,0.7931034482758621,0.7666666666666667,0.7777777777777778,0.84,0.8076923076923077
+nl/p74/d2498,GREW,Mijn broer werkt in een benzinestation.,"time.n.08           EQU now
+person.n.01         EQU speaker
+broer.n.01          Role -1
+werken.v.01         Time -3 Theme -1 Theme +1
+benzinestation.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p74/d3273,GREW,Millie is geen water aan het drinken.,"NEGATION     -1
+time.n.08    EQU now
+millie.n.01
+zijn.v.01    Time -2 Theme -1 Time +2
+water.n.06
+drinken.v.01 Theme -1",,0.6571428571428571,0.7419354838709677,0.6969696969696969,0.6666666666666666,0.7407407407407407,0.7017543859649122
+nl/p22/d0805,GREW,Je bent gek.,"time.n.08   EQU now
+person.n.01 EQU hearer
+gek.a.01    Time -2 AttributeOf -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+nl/p74/d1561,GREW,Tom gooide de sleutels naar Mary.,"time.n.08    TPR now
+female.n.02  Name Tom
+gooien.v.01  Time -2 Agent -1 Theme +1 Location +2
+sleutel.n.01
+female.n.02  Name Mary",,0.8918918918918919,0.8918918918918919,0.8918918918918919,0.875,0.875,0.875
+nl/p22/d2444,GREW,Een vogel is aan het zingen in de boom.,"time.n.08   EQU now
+vogel.n.01
+zijn.v.01   Time -2 Theme -1 Time +1
+zingen.v.01 Theme +1
+boom.n.01",,0.6363636363636364,0.7777777777777778,0.7000000000000001,0.6428571428571429,0.782608695652174,0.7058823529411765
+nl/p22/d0932,GREW,Wie heeft de bijbel geschreven?,"time.n.08      EQU now
+person.n.01
+bijbel.n.01
+schrijven.v.01 Time -3 Agent -2 Theme -1",,0.8518518518518519,0.7419354838709677,0.7931034482758621,0.8260869565217391,0.7037037037037037,0.76
+nl/p22/d0814,GREW,We verkozen hem tot burgemeester.,"time.n.08         EQU now
+person.n.01       EQU speaker
+verkiezen.v.01    Time -2 Agent -1 Time +1 Theme +2
+person.n.01
+burgemeester.n.01",,0.8571428571428571,0.7317073170731707,0.7894736842105263,0.8666666666666667,0.7428571428571429,0.8
+nl/p22/d0815,GREW,Mijn broer werkt bij een bank.,"time.n.08   EQU now
+person.n.01 EQU speaker
+broer.n.01  Role -1
+werken.v.01 Time -3 Theme -1 Theme +1
+bank.n.02",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+nl/p22/d0928,GREW,Het konijn eet de wortel.,"time.n.08   EQU now
+konijn.n.01
+emmen.v.01  Time -2 Theme -1 Theme +1
+wortel.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.782608695652174,0.782608695652174,0.782608695652174
+nl/p22/d1390,GREW,Wie is de leider van de Algerijnse Gewapende Islamitische Groep?,"time.n.08        EQU now
+person.n.01
+leider.n.01      Time -2 Theme -1 Attribute +1
+Algerijns.a.01   Agent +1 Agent +2 Agent +3
+gewapend.a.01
+islamitisch.a.01
+groep.n.01",,0.6666666666666666,0.5882352941176471,0.625,0.6578947368421053,0.5681818181818182,0.6097560975609756
+nl/p22/d0939,GREW,Laten we feesten.,"time.n.08   EQU now
+laten.v.01  Time -1 Agent +1 Time +2
+person.n.01 EQU speaker
+feest.v.01",,0.7241379310344828,0.9130434782608695,0.8076923076923076,0.72,0.9,0.7999999999999999
+nl/p22/d0712,GREW,Maler woonde in Yucatán.,"time.n.08   TPR now
+maler.n.01
+wonen.v.01  Time -2 Theme -1 Location +1
+female.n.02 Name Yucatán",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.88,0.8148148148148148,0.8461538461538461
+nl/p22/d1871,GREW,Hij is drie dagen geleden vertrokken.,"time.n.08       EQU now
+person.n.01
+dag.n.01        Agent drie
+geleden.r.01    Agent -1
+vertrekken.v.01 Time -4 Agent -3 Manner -1",,0.6285714285714286,0.5945945945945946,0.611111111111111,0.6333333333333333,0.59375,0.6129032258064516
+nl/p22/d2422,GREW,Mary heeft een telegram ontvangen van Tom.,"time.n.08      EQU now
+female.n.02    Name Mary
+telegram.n.01  Time +2
+ontvangen.v.01 Time -3 Agent -2 Theme -1
+female.n.02    Name Tom",,0.8918918918918919,0.8918918918918919,0.8918918918918919,0.875,0.875,0.875
+nl/p22/d0818,GREW,Ik kocht het voor ongeveer twaalf dollar.,"time.n.08     TPR now
+person.n.01   EQU speaker
+kopen.v.01    Time -2 Agent -1 Time +1 Theme +3
+person.n.01
+ongeveer.r.01
+dollar.n.01   Attribute -1 Agent twaalf",,0.7906976744186046,0.6181818181818182,0.693877551020408,0.7567567567567568,0.5957446808510638,0.6666666666666666
+nl/p22/d0813,GREW,We hebben dertien knuppels.,"time.n.08    EQU now
+person.n.01  EQU speaker
+hebben.v.01  Time -2 Agent -1 Theme +1
+knuppel.n.01 Agent dertien",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+nl/p22/d1868,GREW,Hebt u een schoentrekker?,"time.n.08          EQU now
+hebben.v.01        Time -1 Agent +1 Theme +2
+person.n.01        EQU hearer
+schoentrekker.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+nl/p22/d0766,GREW,Lopez nam documenten van GM mee naar VW.,"time.n.08      TPR now
+female.n.02    Name Lopez
+nemen_mee.v.01 Time -2 Agent -1 Theme +1 Location +3
+document.n.01  Time +1
+female.n.02    Name GM
+female.n.02    Name VW",,0.8,0.8,0.8000000000000002,0.8461538461538461,0.8461538461538461,0.8461538461538461
+nl/p22/d0944,GREW,De politieman achtervolgde de inbreker.,"time.n.08         TPR now
+politieman.n.01
+achtervolgen.v.01 Time -2 Theme -1 Theme +1
+inbreker.n.01",,0.8518518518518519,0.5897435897435898,0.6969696969696971,0.8260869565217391,0.5757575757575758,0.6785714285714286
+nl/p22/d0841,GREW,Hij noemde zijn hond Popeye.,"time.n.08   TPR now
+person.n.01
+noemen.v.01 Time -2 Agent -1 Theme +2 Time +3
+person.n.01
+hond.n.01   Role -1
+female.n.02 Name Popeye",,0.6829268292682927,0.7777777777777778,0.7272727272727273,0.6857142857142857,0.7741935483870968,0.7272727272727272
+nl/p22/d0919,GREW,Ze zijn geel.,"time.n.08   EQU now
+person.n.01
+geel.a.01   Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p33/d0765,GREW,De Titanic zonk in 1912.,"time.n.08   TPR now
+female.n.02 Name Titanic
+zinken.v.01 Time -2 Agent -1 Agent 1912",,0.76,0.76,0.76,0.8181818181818182,0.8181818181818182,0.8181818181818182
+nl/p33/d0838,GREW,Hij is allergisch voor stof.,"time.n.08       EQU now
+person.n.01
+allergisch.a.01 Time -2 AttributeOf -1 Stimulus +1
+stof.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+nl/p45/d0783,GREW,Mayuko kwam de kamer binnen.,"time.n.08         TPR now
+female.n.02       Name Mayuko
+komen_binnen.v.01 Time -2 Agent -1 Theme +1
+kamer.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p33/d0899,GREW,Tom schepte op over zijn nieuwe telefoon.,"time.n.08        TPR now
+female.n.02      Name Tom
+scheppen_op.v.01 Time -2 Agent -1 Theme +2
+nieuw.a.01
+telefoon.n.01    User -3 Attribute -1",,0.8611111111111112,0.8611111111111112,0.8611111111111112,0.8709677419354839,0.8709677419354839,0.8709677419354839
+nl/p33/d0877,GREW,Indonesië bestaat uit vele eilanden en twee schiereilanden.,"time.n.08         EQU now
+female.n.02       Name Indonesië
+bestaan.v.01      Time -2 Agent -1 Theme +2
+veel.r.01
+eiland.n.01       Attribute -1 Sub +1
+schiereiland.n.01 Agent twee",,0.7209302325581395,0.6888888888888889,0.7045454545454545,0.7027027027027027,0.6666666666666666,0.6842105263157895
+nl/p33/d3224,GREW,Ik ben allergisch voor katten.,"time.n.08       EQU now
+person.n.01     EQU speaker
+allergisch.a.01 Time -2 AttributeOf -1 Stimulus +1
+kat.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+nl/p33/d0764,GREW,De film 'Speed' werd geregisseerd door Jan de Bont.,"time.n.08       EQU now
+film.n.01       Agent +1
+female.n.02     Name Speed
+regisseren.v.01 Time -3 Theme -2 Agent +1
+female.n.02     Name Jan",,0.6486486486486487,0.7741935483870968,0.7058823529411764,0.65625,0.7777777777777778,0.711864406779661
+nl/p33/d2557,GREW,Mijn tandvlees bloedt wanneer ik ook mijn tanden flos.,"time.n.08      EQU now
+person.n.01    EQU speaker
+tandvlees.n.01 Role -1
+bloeden.v.01   Time -3 Theme -1 Time +4
+person.n.01    EQU speaker
+ook.r.01
+tand.n.01      User -4
+flissen.v.01   Agent -3 Manner -2 Theme -1",,0.5892857142857143,0.6,0.5945945945945946,0.5833333333333334,0.5833333333333334,0.5833333333333334
+nl/p33/d2714,GREW,Ik rijd iedere dag naar Tokio.,"time.n.08   EQU now
+person.n.01 EQU speaker
+rijden.v.01 Time -2 Agent -1 Theme +1 Location +2
+dag.n.01
+female.n.02 Name Tokio",,0.7297297297297297,0.6585365853658537,0.6923076923076923,0.75,0.6666666666666666,0.7058823529411765
+nl/p45/d0760,GREW,Hughes was getrouwd met Gracia.,"time.n.08    EQU now
+female.n.02  Name Hughes
+trouwen.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name Gracia",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p45/d0942,GREW,Ik ga naar school met Tom.,"time.n.08   EQU now
+person.n.01 EQU speaker
+gaan.v.01   Time -2 Agent -1 Theme +1 Location +2
+school.n.02
+female.n.02 Name Tom",,0.8648648648648649,0.8648648648648649,0.8648648648648649,0.84375,0.84375,0.84375
+nl/p45/d3117,GREW,Hij is verslaafd.,"time.n.08      EQU now
+person.n.01
+verslaven.v.01 Time -2 Agent -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p45/d0906,GREW,Mijn huis staat op een heuvel.,"time.n.08   EQU now
+person.n.01 EQU speaker
+huis.n.01   Role -1
+staan.v.01  Time -3 Theme -1 Theme +1
+heuvel.n.01",,0.6571428571428571,0.7931034482758621,0.71875,0.6666666666666666,0.8,0.7272727272727272
+nl/p45/d0895,GREW,De kunstenaar tekende met Chinese inkt.,"time.n.08       TPR now
+kunstenaar.n.01
+tekenen.v.01    Time -2 Theme -1 Theme +2
+Chinees.a.01
+inkt..n.01      Attribute -1",,0.7272727272727273,0.5853658536585366,0.6486486486486487,0.7142857142857143,0.5714285714285714,0.634920634920635
+nl/p45/d2454,GREW,Mijn vader is een beetje ouderwets.,"time.n.08      EQU now
+person.n.01    EQU speaker
+vader.n.01     Role -1
+beetje.n.01
+ouderwets.a.01 Time -4 AttributeOf -2 Stimulus -1",,0.7714285714285715,0.7297297297297297,0.75,0.7666666666666667,0.71875,0.7419354838709677
+nl/p45/d0938,GREW,Hij is groot en slank.,"time.n.08   EQU now
+person.n.01
+groot.a.01  Time -2 AttributeOf -1 Value +1
+slank.a.01",,0.7407407407407407,0.5128205128205128,0.6060606060606061,0.7391304347826086,0.5,0.5964912280701754
+nl/p23/d2922,GREW,Mijn auto is uitgerust met een cd-speler.,"time.n.08      EQU now
+person.n.01    EQU speaker
+auto.n.01      Role -1
+uitrusten.v.01 Time -3 Theme -1 Theme +1
+cd-speler.n.01",,0.6857142857142857,0.8275862068965517,0.75,0.6666666666666666,0.8,0.7272727272727272
+nl/p45/d0886,GREW,Grote delen van de oceaan zijn vervuild.,"time.n.08      EQU now
+groot.a.01
+deel.n.01      Attribute -1 EQU +1
+oceaan.n.01
+vervuilen.v.01 Time -4 Theme -2",,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.75,0.75,0.75
+nl/p45/d0822,GREW,Ik mag hem omdat hij eerlijk is.,"time.n.08    EQU now
+person.n.01  EQU speaker
+mogen.v.01   Time -2 Agent -1 Time +1 Agent +3
+person.n.01
+person.n.01
+eerlijk.a.01 AttributeOf -1",,0.6829268292682927,0.5384615384615384,0.6021505376344086,0.7428571428571429,0.5777777777777777,0.65
+nl/p23/d1637,GREW,Ik ben getrouwd met Lori.,"time.n.08    EQU now
+person.n.01  EQU speaker
+trouwen.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name Lori",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p45/d0867,GREW,De thee kost twee euro.,"time.n.08   EQU now
+thee.n.01
+kosten.v.01 Time -2 Theme -1 Theme +1
+euro.n.01   Agent twee",,0.8275862068965517,0.6857142857142857,0.75,0.8,0.6666666666666666,0.7272727272727272
+nl/p23/d0840,GREW,Hij is nu de straat over aan het steken.,"time.n.08        EQU now
+person.n.01
+zijn.v.01        Time -2 Agent -1 Manner +1 Time +3
+nu.r.01
+straat.n.01
+steken_over.v.01 Theme -1",,0.5384615384615384,0.7777777777777778,0.6363636363636364,0.5454545454545454,0.782608695652174,0.6428571428571429
+nl/p23/d0851,GREW,De wind waait uit het oosten.,"time.n.08   EQU now
+wind.n.01
+waaien.v.01 Time -2 Theme -1 Theme +1
+oosten.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8695652173913043,0.8695652173913043,0.8695652173913043
+nl/p23/d0808,GREW,Rosa Montero is een heel bijzondere vrouw.,"time.n.08      EQU now
+female.n.02    Name Rosa
+heel.n.01
+bijzonder.a.01 Agent -1
+vrouw.n.01     Time -4 Theme -3 Attribute -1",,0.8,0.6829268292682927,0.736842105263158,0.7666666666666667,0.6571428571428571,0.7076923076923077
+nl/p23/d1387,GREW,Wie won de Ronde van Frankrijk?,"time.n.08   TPR now
+person.n.01
+winnen.v.01 Time -2 Agent -1 Time +1
+female.n.02 Name Ronde",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.84,0.7777777777777778,0.8076923076923077
+nl/p23/d0711,GREW,Sandra Goudie werd verslagen door Max Purnell.,"time.n.08    EQU now
+female.n.02  Name Sandra
+verslag.v.01 Time -2 Time -1 Agent +1
+female.n.02  Name Max",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p15/d0895,GREW,Ik ben groter dan hij.,"time.n.08   EQU now
+person.n.01 EQU speaker
+groot.a.01  Time -2 AttributeOf -1 Agent +1
+person.n.01",,0.8620689655172413,0.6944444444444444,0.7692307692307692,0.88,0.7096774193548387,0.7857142857142856
+nl/p23/d1847,GREW,Mijn vader is in Vietnam gestorven.,"time.n.08    EQU now
+person.n.01  EQU speaker
+vader.n.01   Role -1
+female.n.02  Name Vietnam
+sterven.v.01 Time -4 Theme -2 Location -1",,0.8108108108108109,0.8108108108108109,0.8108108108108109,0.78125,0.78125,0.78125
+nl/p15/d1983,GREW,Tom zat op een boomstam.,"time.n.08     TPR now
+female.n.02   Name Tom
+zitten.v.01   Time -2 Agent -1 Theme +1
+boomstam.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+nl/p15/d3217,GREW,Het is vijf voor zes.,"time.n.08   EQU now
+person.n.01
+vijf.n.01   Time -2 Time -1 Agent zes",,0.391304347826087,0.8181818181818182,0.5294117647058824,0.4,0.8,0.5333333333333333
+nl/p15/d0771,GREW,Ben je niet moe?,"NEGATION    -1
+time.n.08   EQU now
+person.n.01 EQU hearer
+moe.a.01    Time -2 AttributeOf -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+nl/p15/d0851,GREW,De kamer was propvol mensen.,"time.n.08    EQU now
+kamer.n.01
+propvol.a.01 Time -2 AttributeOf -1 Stimulus +1
+mens.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.782608695652174,0.782608695652174,0.782608695652174
+nl/p15/d0925,GREW,Tom en Mary spelen tikkertje.,"time.n.08      EQU now
+female.n.02    Sub +1
+female.n.02    Name Mary
+spelen.v.01    Time -3 Agent -2 Theme +1
+tikkertje.n.01",,0.8571428571428571,0.6976744186046512,0.7692307692307693,0.9,0.7297297297297297,0.8059701492537312
+nl/p15/d0956,GREW,De deur is dicht.,"time.n.08  EQU now
+deur.n.01
+dicht.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p15/d0801,GREW,Mevrouw Klein geeft elke vrijdag een test.,"NEGATION     -1
+NEGATION     -1
+time.n.08    EQU now
+mevrouw.n.01 Agent +1
+female.n.02  Name Klein
+geven.v.01   Time -3 Theme -2 Location +1 Theme +2
+female.n.02  Name vrijdag
+test.n.02",,0.7021276595744681,0.7021276595744681,0.7021276595744681,0.7560975609756098,0.7560975609756098,0.7560975609756099
+nl/p15/d0797,GREW,Is dit uw boek?,"time.n.08   EQU now
+person.n.01
+person.n.01 EQU hearer
+boek.n.01   Time -3 Theme -2 Role -1",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.76,0.76,0.76
+nl/p15/d0761,GREW,Saad Hariri werd verkozen tot minister-president van Libanon.,"time.n.08               EQU now
+female.n.02             Name Saad
+verkiezen.v.01          Time -2 Time -1 Theme +1
+minister-president.n.01 Time +1
+female.n.02             Name Libanon",,0.7567567567567568,0.7567567567567568,0.7567567567567567,0.71875,0.71875,0.71875
+nl/p15/d0858,GREW,Ik heb twee nichtjes.,"time.n.08   EQU now
+person.n.01 EQU speaker
+hebben.v.01 Time -2 Agent -1 Theme +1
+nicht.n.01  Agent twee",,0.8387096774193549,0.7027027027027027,0.7647058823529411,0.8148148148148148,0.6875,0.7457627118644067
+nl/p15/d3504,GREW,Je bent een schurk.,"time.n.08   EQU now
+person.n.01 EQU hearer
+schurk.n.01 Time -2 Theme -1",,0.9130434782608695,0.6,0.7241379310344828,0.9,0.6,0.7200000000000001
+nl/p15/d0788,GREW,Waar is het toilet?,"time.n.08   EQU now
+waar.r.01
+zijn.v.01   Time -2 Manner -1 Theme +1
+toilet.n.02",,0.7407407407407407,0.6896551724137931,0.7142857142857143,0.782608695652174,0.72,0.7499999999999999
+nl/p15/d0906,GREW,Tom was heel boos op Mary.,"time.n.08   EQU now
+female.n.02 Name Tom
+heel.n.01
+boos.a.01   Time -3 AttributeOf -2 Agent -1 Stimulus +1
+female.n.02 Name Mary",,0.8108108108108109,0.8108108108108109,0.8108108108108109,0.78125,0.78125,0.78125
+nl/p15/d2517,GREW,Tom was heel behulpzaam.,"time.n.08       EQU now
+female.n.02     Name Tom
+heel.n.01
+behulpzaam.a.01 Time -3 AttributeOf -2 Agent -1",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.76,0.76,0.76
+nl/p15/d3378,GREW,Het was geen grap.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01
+grap.n.01   Time -2 Theme -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.75,0.6,0.6666666666666665
+nl/p15/d0816,GREW,Mijn zuster is beroemd.,"time.n.08    EQU now
+person.n.01  EQU speaker
+zuster.n.01  Role -1
+beroemd.a.01 Time -3 AttributeOf -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+nl/p15/d0880,GREW,Ik wil Korea bezoeken.,"time.n.08     EQU now
+person.n.01   EQU speaker
+willen.v.01   Time -2 Agent -1 Time +2
+female.n.02   Name Korea
+bezoeken.v.01 Time -1",,0.8378378378378378,0.8157894736842105,0.8266666666666665,0.8125,0.7878787878787878,0.8
+nl/p44/d0927,GREW,Hou je van heet eten?,"time.n.08   EQU now
+houden.v.01 Time -1 Agent +1 Agent +3
+person.n.01 EQU hearer
+heten.a.01
+eten.v.01   Agent -1",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7666666666666667,0.7666666666666667,0.7666666666666667
+nl/p15/d2508,GREW,Het vlees is bevroren.,"time.n.08      EQU now
+vlees.n.01
+bevriezen.v.01 Time -2 Theme -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p44/d1565,GREW,Hij was erg bang toen hij deze grote slang zag.,"time.n.08   TPR now
+person.n.01
+erg.a.01
+bang.v.01   Time -3 AttributeOf -2 Agent -1 Time +4
+person.n.01
+groot.a.01
+slang.n.01  Attribute -1
+zien.v.01   Agent -3 Theme -1",,0.6470588235294118,0.673469387755102,0.66,0.627906976744186,0.6428571428571429,0.6352941176470588
+nl/p15/d0820,GREW,Ik ben getrouwd.,"time.n.08    EQU now
+person.n.01  EQU speaker
+trouwen.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+nl/p15/d0794,GREW,Ik ben helemaal niet moe.,"NEGATION      -1
+time.n.08     EQU now
+person.n.01   EQU speaker
+helemaal.r.01
+moe.a.01      Time -3 AttributeOf -2",,0.7333333333333333,0.88,0.8,0.7307692307692307,0.8636363636363636,0.7916666666666666
+nl/p15/d0874,GREW,Zijn vriendin is Japans.,"time.n.08     EQU now
+person.n.01
+vriendin.n.01 Role -1
+female.n.02   Time -3 Theme -1",,0.8148148148148148,0.5365853658536586,0.6470588235294118,0.782608695652174,0.5142857142857142,0.6206896551724138
+nl/p44/d2762,GREW,Zij huurde een privé-detective.,"time.n.08            TPR now
+person.n.01
+huren.v.01           Time -2 Agent -1 Theme +1
+privé-detective.n.01",,0.8518518518518519,0.696969696969697,0.7666666666666667,0.8695652173913043,0.7142857142857143,0.7843137254901961
+nl/p44/d3322,GREW,Ik ben 19 jaar.,"time.n.08   EQU now
+person.n.01 EQU speaker
+jaar.n.01   Time -2 Theme -1 Agent 19",,0.88,0.5945945945945946,0.7096774193548386,0.8636363636363636,0.59375,0.7037037037037037
+nl/p44/d1998,GREW,Het eekhoorntje at uit haar hand.,"time.n.08        TPR now
+eekhoorntje.n.01
+eten.v.01        Time -2 Theme -1 Theme +1
+hand.n.01        User -2",,0.8214285714285714,0.696969696969697,0.7540983606557378,0.7916666666666666,0.6785714285714286,0.7307692307692307
+nl/p44/d2971,GREW,Tom vouwt zijn kleren op.,"time.n.08      EQU now
+female.n.02    Name Tom
+vouwen_op.v.01 Time -2 Agent -1 Theme +1
+kleren.n.01    User -2",,0.8666666666666667,0.8666666666666667,0.8666666666666667,0.8461538461538461,0.8461538461538461,0.8461538461538461
+nl/p44/d1939,GREW,Ze is zwanger.,"time.n.08    EQU now
+person.n.01
+zwanger.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8888888888888888,0.8888888888888888,0.8888888888888888
+nl/p82/d0783,GREW,Mike noemde zijn hond Spike.,"time.n.08   TPR now
+female.n.02 Name Mike
+noemen.v.01 Time -2 Agent -1 Theme +1 Time +2
+hond.n.01   User -2
+female.n.02 Name Spike",,0.7894736842105263,0.7894736842105263,0.7894736842105263,0.7878787878787878,0.7878787878787878,0.7878787878787878
+nl/p44/d2494,GREW,We hebben de schade op duizend dollar geschat.,"time.n.08     EQU now
+person.n.01   EQU speaker
+schade.n.01
+dollar.n.01   Agent duizend
+schatten.v.01 Time -4 Agent -3 Theme -2 Theme -1",,0.8378378378378378,0.7209302325581395,0.7749999999999999,0.8125,0.7027027027027027,0.7536231884057971
+nl/p44/d1534,GREW,Ik zag een nijlpaard in de zoo,"time.n.08      TPR now
+person.n.01    EQU speaker
+zien.v.01      Time -2 Agent -1 Theme +1 Theme +2
+nijlpaard.n.01
+zoo.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8333333333333334,0.8333333333333334,0.8333333333333334
+nl/p44/d0868,GREW,Ik heb twee hamburgers besteld.,"time.n.08      EQU now
+person.n.01    EQU speaker
+hamburger.n.01 Agent twee
+bestellen.v.01 Time -3 Agent -2 Theme -1",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+nl/p82/d3414,GREW,Tom gaf Mary de zaklamp.,"time.n.08    TPR now
+female.n.02  Name Tom
+geven.v.01   Time -2 Agent -1 Agent +1 Theme +2
+female.n.02  Name Mary
+zaklamp.n.01",,0.8918918918918919,0.8918918918918919,0.8918918918918919,0.875,0.875,0.875
+nl/p82/d3508,GREW,Wie is dit mooie meisje?,"time.n.08   EQU now
+person.n.01 Time -1 Co-Theme +2
+mooi.a.01
+meisje.n.01 Attribute -1",,0.8518518518518519,0.6571428571428571,0.7419354838709677,0.8260869565217391,0.6333333333333333,0.7169811320754716
+nl/p82/d3399,GREW,De stad is vol toeristen.,"time.n.08    EQU now
+stad.n.01
+zijn.v.01    Time -2 Theme -1 Theme +1
+toerist.n.01",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.782608695652174,0.6428571428571429,0.7058823529411765
+nl/p82/d2767,GREW,Dat is een mooi verhaal.,"time.n.08    EQU now
+person.n.01
+mooi.a.01
+verhaal.n.01 Time -3 Theme -2 Attribute -1",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.782608695652174,0.6428571428571429,0.7058823529411765
+nl/p82/d0928,GREW,Dat is een goedkope uitvlucht.,"time.n.08      EQU now
+person.n.01
+goedkoop.a.01
+uitvlucht.n.01 Time -3 Theme -2 Attribute -1",,0.7777777777777778,0.6363636363636364,0.7000000000000001,0.782608695652174,0.6428571428571429,0.7058823529411765
+nl/p82/d0716,GREW,Johann Wolfgang von Goethe werd geboren in Duitsland.,"time.n.08    EQU now
+female.n.02  Name Johann
+geboren.v.01 Time -2 Time -1 Location +1
+female.n.02  Name Duitsland",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7777777777777778,0.7777777777777778,0.7777777777777778
+nl/p82/d0946,GREW,De twee honden vochten voor het been.,"time.n.08         TPR now
+hond.n.01         Agent twee
+vechten_voor.v.01 Time -2 Theme -1
+been.n.01",,0.8214285714285714,0.7931034482758621,0.8070175438596492,0.7916666666666666,0.76,0.7755102040816326
+nl/p82/d1816,GREW,De jager vilde het hert.,"time.n.08   TPR now
+jager.n.01
+villen.v.01 Time -2 Theme -1 Theme +1
+hert.n.01",,0.7777777777777778,0.6363636363636364,0.7000000000000001,0.782608695652174,0.6428571428571429,0.7058823529411765
+nl/p82/d0836,GREW,Hij schonk melk in zijn tea en roerde het.,"time.n.08     TPR now
+person.n.01
+schinken.v.01 Time -2 Agent -1 Theme +1 Theme +3 Time +4
+melk.n.01
+person.n.01
+tea.n.01      Role -1
+roeren.v.01   Time +1
+person.n.01",,0.7058823529411765,0.6206896551724138,0.6605504587155964,0.6976744186046512,0.6,0.6451612903225806
+nl/p82/d1991,GREW,De chirurg heeft het verkeerde been afgezet.,"time.n.08     EQU now
+chirurg.n.01
+verkeerd.a.01
+been.n.01     Attribute -1
+afzetten.v.01 Time -4 Theme -3 Theme -1",,0.7878787878787878,0.6666666666666666,0.7222222222222221,0.7857142857142857,0.6666666666666666,0.721311475409836
+nl/p82/d1795,GREW,Ze is twee jaar jonger dan hij.,"time.n.08   EQU now
+person.n.01
+jaar.n.01   Agent twee
+jonger.a.01 Time -3 AttributeOf -2 Stimulus -1 Agent +1
+person.n.01",,0.7142857142857143,0.5208333333333334,0.6024096385542168,0.7333333333333333,0.5365853658536586,0.6197183098591549
+nl/p82/d2388,GREW,De wijn was uitstekend.,"time.n.08       EQU now
+wijn.n.01
+uitstekend.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334

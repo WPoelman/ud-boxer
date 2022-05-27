@@ -1,0 +1,1801 @@
+pmb_id,source,raw_sent,sbn_str,error,precision,recall,f1,precision_lenient,recall_lenient,f1_lenient
+it/p12/d3429,GREW,Tom suona anche la chitarra.,"time.n.08     EQU now
+female.n.02   Name Tom
+suonare.v.01  Time -2 Agent -1 Theme +2
+anche.r.01
+chitarra.n.01 Degree -1",,0.7142857142857143,0.8620689655172413,0.7812500000000001,0.7333333333333333,0.88,0.8
+it/p12/d2068,GREW,La nave sta scaricando le casse.,"time.n.08      EQU now
+nave.n.01
+scaricare.v.01 Time -2 Theme -1 Theme +1
+cassa.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p12/d0877,GREW,Sono stato invitato da una vecchia amica.,"time.n.08     TPR now
+invitare.v.01 Time -1 Agent +2
+vecchio.a.01
+amico.n.01    Attribute -1",,0.7777777777777778,0.5121951219512195,0.6176470588235294,0.8260869565217391,0.5428571428571428,0.6551724137931034
+it/p12/d1605,GREW,Tom è allergico ai gatti.,"time.n.08      EQU now
+female.n.02    Name Tom
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+gatto.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p12/d0761,GREW,Romano Prodi vince le primarie italiane.,"time.n.08     EQU now
+female.n.02   Name Romano
+vincere.v.01  Time -2 Agent -1 Theme +1
+primario.n.01 Attribute +1
+italiano.a.01",,0.7714285714285715,0.7297297297297297,0.75,0.7666666666666667,0.71875,0.7419354838709677
+it/p12/d1720,GREW,"Lei non è giovane, vero?","NEGATION     -1
+time.n.08    EQU now
+person.n.01
+giovane.a.01 Time -2 AttributeOf -1 Time +1
+vero.a.01",,0.6551724137931034,0.8260869565217391,0.7307692307692308,0.68,0.85,0.7555555555555556
+it/p12/d2367,GREW,Tom è matto.,"time.n.08   EQU now
+female.n.02 Name Tom
+matto.n.01  Time -2 Theme -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.8,0.8,0.8000000000000002
+it/p12/d1730,GREW,Io non mi odio.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01 EQU speaker
+person.n.01 EQU speaker
+odiare.v.01 Time -3 Agent -2 Time -1",,0.696969696969697,0.8518518518518519,0.7666666666666667,0.6896551724137931,0.8333333333333334,0.7547169811320755
+it/p64/d3225,GREW,La mucca muggisce.,"time.n.08     EQU now
+mucca.n.01
+muggisco.a.01 Time -2 AttributeOf -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.7777777777777778,0.7777777777777778,0.7777777777777778
+it/p12/d2370,GREW,Walt è un ex soldato.,"time.n.08    EQU now
+female.n.02  Name Walt
+ex.a.01
+soldato.n.01 Time -3 Theme -2 Attribute -1",,0.7931034482758621,0.5348837209302325,0.6388888888888888,0.76,0.5135135135135135,0.6129032258064517
+it/p12/d2192,GREW,Il gallo canta.,"time.n.08    EQU now
+gallo.n.01
+cantare.v.01 Time -2 Theme -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p12/d2804,GREW,Tom è partito tre giorni fa.,"time.n.08    TPR now
+female.n.02  Name Tom
+partire.v.01 Time -2 Agent -1 Theme +1
+giorno.n.01  Agent tre Degree +1
+fa.r.01",,0.7027027027027027,0.6666666666666666,0.6842105263157895,0.6875,0.6470588235294118,0.6666666666666667
+it/p12/d2821,GREW,Tom mangiò delle lasagne vegane.,"time.n.08     TPR now
+female.n.02   Name Tom
+mangiare.v.01 Time -2 Agent -1 Theme +1
+lasagna.n.01  Attribute +1
+vegano.a.01",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p12/d2470,GREW,Paul è più vigoroso di Marc.,"time.n.08     EQU now
+female.n.02   Name Paul
+più.r.01
+vigoroso.a.01 Time -3 AttributeOf -2 Degree -1 Stimulus +1
+female.n.02   Name Marc",,0.8648648648648649,0.8421052631578947,0.8533333333333334,0.84375,0.8181818181818182,0.8307692307692308
+it/p12/d2624,GREW,Tom è inutile.,"time.n.08    EQU now
+female.n.02  Name Tom
+inutile.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p12/d1428,GREW,Io sono allergico al polline.,"time.n.08      EQU now
+person.n.01    EQU speaker
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+polline.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p64/d1917,GREW,Tom ha rubato trecento dollari a Mary.,"time.n.08    TPR now
+female.n.02  Name Tom
+rubare.v.01  Time -2 Agent -1 Theme +1 Location +2
+dollaro.n.01 Agent trecento
+female.n.02  Name Mary",,0.8205128205128205,0.7111111111111111,0.7619047619047619,0.8235294117647058,0.717948717948718,0.767123287671233
+it/p64/d0762,GREW,Kieslowski è un regista.,"time.n.08    EQU now
+female.n.02  Name Kieslowski
+regista.n.01 Time -2 Theme -1",,0.8260869565217391,0.5428571428571428,0.6551724137931034,0.85,0.5666666666666667,0.68
+it/p64/d2139,GREW,Non è morto nessuno.,"NEGATION    -1
+time.n.08   TPR now
+non.r.01
+morire.v.01 Time -2 Manner -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8,0.8,0.8000000000000002
+it/p64/d2547,GREW,Io sono allergico agli antibiotici.,"time.n.08        EQU now
+person.n.01      EQU speaker
+allergico.a.01   Time -2 AttributeOf -1 Stimulus +1
+antibiotico.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p64/d0712,GREW,Beverly lavorava per WEDCOR.,"time.n.08     TPR now
+female.n.02   Name Beverly
+lavorare.v.01 Time -2 Agent -1 Location +1
+female.n.02   Name WEDCOR",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p53/d3394,GREW,Tom è un pessimo conducente.,"time.n.08       EQU now
+female.n.02     Name Tom
+pessimo.a.01
+conducente.n.01 Time -3 Theme -2 Attribute -1",,0.7586206896551724,0.5365853658536586,0.6285714285714286,0.8,0.5714285714285714,0.6666666666666666
+it/p64/d3246,GREW,La biblioteca è al quarto piano.,"time.n.08       EQU now
+biblioteca.n.01
+quarto.a.01
+piano.n.01      Time -3 Theme -2 Attribute -1",,0.6666666666666666,0.6206896551724138,0.6428571428571429,0.7391304347826086,0.68,0.7083333333333334
+it/p64/d2214,GREW,Il cielo è coperto.,"time.n.08  EQU now
+cielo.n.01",,0.9285714285714286,0.6190476190476191,0.742857142857143,0.9166666666666666,0.6111111111111112,0.7333333333333334
+it/p64/d1386,GREW,Dove nacque Adolf Hitler?,"time.n.08    TPR now
+dove.r.01
+nascere.v.01 Time -2 Manner -1 Agent +1
+female.n.02  Name Adolf",,0.7241379310344828,0.6774193548387096,0.7,0.72,0.6666666666666666,0.6923076923076923
+it/p53/d2869,GREW,Tom sta masticando uno stuzzicadenti.,"time.n.08          EQU now
+female.n.02        Name Tom
+masticare.v.01     Time -2 Agent -1 Agent +1
+stuzzicadente.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p64/d2039,GREW,Il Manchester United vinse la partita quattro a due.,"time.n.08    TPR now
+female.n.02  Name Manchester
+vincere.v.01 Time -2 Agent -1 Theme +1
+partita.n.01 Quantity +1
+quattro.n.01 Agent due",,0.7027027027027027,0.7027027027027027,0.7027027027027027,0.75,0.75,0.75
+it/p64/d3519,GREW,Mary è mancina.,"time.n.08    EQU now
+female.n.02  Name Mary
+mancina.n.01 Time -2 Theme -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p64/d3390,GREW,Stanno sbocciando le foglie verdi.,"time.n.08      EQU now
+sbocciare.v.01 Time -1 Theme +1
+foglia.n.01    Attribute +1
+verde.a.01",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p64/d2381,GREW,Io ero rilassato.,"time.n.08      EQU now
+person.n.01    EQU speaker
+rilassato.a.01 Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p53/d2540,GREW,Melanie ha ucciso un ragno con la sua mano.,"time.n.08     TPR now
+female.n.02   Name Melanie
+uccidere.v.01 Time -2 Agent -1 Theme +1 Theme +2
+ragno.n.01
+mano.n.01",,0.8571428571428571,0.8333333333333334,0.8450704225352113,0.8333333333333334,0.8064516129032258,0.819672131147541
+it/p53/d1441,GREW,Tom è volato a Boston.,"time.n.08   TPR now
+female.n.02 Name Tom
+volare.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name Boston",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p53/d3342,GREW,Un'ape ronza.,"time.n.08  EQU now
+ronzo.a.01 Time -1",,0.4,0.35294117647058826,0.37500000000000006,0.38461538461538464,0.3333333333333333,0.3571428571428571
+it/p53/d2767,GREW,Jim sta innaffiando il giardino.,"time.n.08       EQU now
+female.n.02     Name Jim
+innaffiare.v.01 Time -2 Agent -1 Theme +1
+giardino.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p53/d2805,GREW,Chomsky è un linguista strutturalista.,"time.n.08           EQU now
+female.n.02         Name Chomsky
+linguista.n.01      Time -2 Theme -1 Attribute +1
+strutturalista.a.01",,0.7586206896551724,0.5365853658536586,0.6285714285714286,0.8,0.5714285714285714,0.6666666666666666
+it/p53/d2793,GREW,Mia sorella adora la musica.,"time.n.08    EQU now
+sorella.n.01
+musica.n.01",,0.8947368421052632,0.4857142857142857,0.6296296296296297,0.875,0.4666666666666667,0.608695652173913
+it/p53/d3432,GREW,Mary mi annoia.,"time.n.08     EQU now
+female.n.02   Name Mary
+person.n.01   EQU speaker
+annoiare.v.01 Time -3 Agent -2 Time -1",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p53/d2818,GREW,Il mare era molto calmo.,"time.n.08  EQU now
+mare.n.01
+molto.r.01
+calmo.a.01 Time -3 AttributeOf -2 Degree -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p34/d2521,GREW,Mia moglie è una brava cuoca.,"time.n.08   EQU now
+moglie.n.01
+bravo.a.01
+cuoca.n.01  Time -3 Theme -2 Attribute -1",,0.8148148148148148,0.46808510638297873,0.5945945945945945,0.782608695652174,0.45,0.5714285714285714
+it/p53/d3110,GREW,Nessuno di noi ti aiuterà.,"NEGATION     -1
+time.n.08    TSU now
+person.n.01  EQU speaker
+person.n.01  EQU hearer
+aiutare.v.01 Time -3 Time -1",,0.9375,0.7692307692307693,0.8450704225352113,0.9285714285714286,0.7647058823529411,0.8387096774193549
+it/p53/d0764,GREW,Charles de Gaulle morì nel 1970.,"time.n.08   TPR now
+female.n.02 Name Charles
+morire.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+it/p34/d1918,GREW,"Tom parla cinque lingue, incluso il russo.","time.n.08      EQU now
+female.n.02    Name Tom
+parlare.v.01   Time -2 Agent -1 Theme +1
+lingua.n.01    Agent cinque Time +1
+includere.v.01 Theme +1
+russo.n.01",,0.6511627906976745,0.7567567567567568,0.7000000000000001,0.6756756756756757,0.78125,0.7246376811594203
+it/p34/d0781,GREW,Londra è stata bombardata diverse volte.,"time.n.08       TPR now
+female.n.02     Name Londra
+bombardare.v.01 Time -2 Time -1 Theme +1
+volta.n.01",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.8,0.7407407407407407,0.7692307692307692
+it/p34/d2525,GREW,Nessun sistema è perfetto.,"time.n.08     EQU now
+sistema.n.01
+perfetto.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.782608695652174,0.8181818181818182,0.8333333333333334,0.75,0.7894736842105262
+it/p53/d2394,GREW,La camera non è stata pulita da Rosa.,"NEGATION    -1
+time.n.08   TPR now
+camera.n.01
+pulito.v.01 Time -2 Theme -1 Agent +1
+female.n.02 Name Rosa",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p34/d0711,GREW,Il gruppo rock Spock's Beard viene dal Giappone.,"time.n.08        EQU now
+rock_gruppo.n.01 Time +1
+female.n.02      Name Spock
+venire.v.01      Time -3 Theme -2 Location +1
+female.n.02      Name Giappone",,0.7837837837837838,0.7837837837837838,0.7837837837837838,0.8125,0.8125,0.8125
+it/p53/d3106,GREW,Io guardai un documentario.,"time.n.08         TPR now
+person.n.01       EQU speaker
+guardare.v.01     Time -2 Agent -1 Theme +1
+documentario.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p34/d2650,GREW,Qualcuno è stato ucciso?,"time.n.08     TPR now
+qualcuno.n.01
+uccidere.v.01 Time -2 Experiencer -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p34/d1392,GREW,Che cos'è Bausch & Lomb?,"time.n.08   EQU now
+cos'.n.01   Time -1 Co-Theme +1
+female.n.02 Agent +1
+&.n.01",,0.7777777777777778,0.6774193548387096,0.7241379310344828,0.782608695652174,0.6666666666666666,0.72
+it/p34/d3525,GREW,Il mercante ha corrotto il politico.,"time.n.08     TPR now
+mercante.n.01
+corrotto.v.01 Time -2 Theme -1 Theme +1
+politico.n.01",,0.8148148148148148,0.5641025641025641,0.6666666666666667,0.782608695652174,0.5454545454545454,0.6428571428571429
+it/p34/d2063,GREW,Io stavo comprando qualche libro in libreria.,"time.n.08     EQU now
+person.n.01   EQU speaker
+comprare.v.01 Time -2 Agent -1 Theme +1
+libro.n.01    EQU +1
+libreria.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p34/d2877,GREW,Mi è piaciuta la tua storia.,"time.n.08    TPR now
+person.n.01  EQU speaker
+piacere.v.01 Time -2 Time -1 Theme +1
+storia.n.01",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.84,0.7777777777777778,0.8076923076923077
+it/p34/d1588,GREW,Tom starnutì.,"time.n.08       TPR now
+female.n.02     Name Tom
+starnutire.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p34/d2534,GREW,La gente di Madrid è pazza.,"time.n.08   EQU now
+gente.n.01  Time +1
+female.n.02 Name Madrid
+pazzo.a.01  Time -3 AttributeOf -2",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.84,0.84,0.8399999999999999
+it/p34/d2345,GREW,Tom l'ha autografata.,"time.n.08        TPR now
+female.n.02      Name Tom
+person.n.01
+autografare.v.01 Time -3 Agent -2 Time -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p34/d3246,GREW,Anche io parlo francese.,"time.n.08     EQU now
+anche.r.01
+person.n.01   EQU speaker Agent -1
+parlare.v.01  Time -3 Agent -1 Theme +1
+francese.a.01",,0.7142857142857143,0.8620689655172413,0.7812500000000001,0.7333333333333333,0.88,0.8
+it/p34/d1396,GREW,Quale squadra scelse Brett Favre?,"time.n.08      TPR now
+squadra.n.01
+scegliere.v.01 Time -2 Theme -1 Agent +1
+female.n.02    Name Brett",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.84,0.7777777777777778,0.8076923076923077
+it/p34/d2398,GREW,Questo è un tavolo di legno.,"time.n.08   EQU now
+questo.n.01
+tavolo.n.01 Time -2 Theme -1 EQU +1
+legno.n.01",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.782608695652174,0.6428571428571429,0.7058823529411765
+it/p34/d3518,GREW,Io ho fumato.,"time.n.08   TPR now
+person.n.01 EQU speaker
+fumare.v.01 Time -2 Agent -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+it/p34/d0794,GREW,Una spugna assorbe l'acqua.,"time.n.08      EQU now
+spugna.n.01
+assorbire.v.01 Time -2 Theme -1 Theme +1
+acqua.n.01",,0.48148148148148145,0.5652173913043478,0.52,0.43478260869565216,0.5,0.46511627906976744
+it/p34/d3553,GREW,Lei sbriciolò un biscotto.,"time.n.08        TPR now
+person.n.01
+sbriciolare.v.01 Time -2 Agent -1 Theme +1
+biscotto.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p34/d0879,GREW,L'acqua non è potabile.,"NEGATION      -1
+time.n.08     EQU now
+acqua.n.01
+potabile.a.01 Time -2 AttributeOf -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.85,0.85,0.85
+it/p34/d1939,GREW,Non provocare quella vespa.,"NEGATION       -1
+time.n.08      EQU now
+provocare.v.01 Time -1 Theme +1
+vespa.n.01",,0.782608695652174,0.5806451612903226,0.6666666666666667,0.85,0.6296296296296297,0.723404255319149
+it/p34/d3219,GREW,Il ragazzo mangiò la mela.,"time.n.08     TPR now
+ragazzo.n.01
+mangiare.v.01 Time -2 Theme -1 Theme +1
+mela.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.782608695652174,0.782608695652174,0.782608695652174
+it/p34/d0764,GREW,Il film 'Speed' è stato diretto da Jan De Bont.,"time.n.08     TPR now
+film.n.01     Time +1
+female.n.02   Name Speed
+dirigere.v.01 Time -3 Theme -2 Agent +1
+female.n.02   Name Jan",,0.6756756756756757,0.8064516129032258,0.7352941176470588,0.6875,0.8148148148148148,0.7457627118644067
+it/p62/d1388,GREW,Quanti figli ha Anthony Quinn?,"time.n.08   EQU now
+figlio.n.01
+avere.v.01  Time -2 Theme -1 Agent +1
+female.n.02 Name Anthony",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.8,0.7407407407407407,0.7692307692307692
+it/p62/d2858,GREW,Tom ridacchiò.,"time.n.08   EQU now
+female.n.02 Time -1",,0.8,0.5217391304347826,0.6315789473684211,0.7692307692307693,0.5,0.6060606060606061
+it/p62/d2532,GREW,Loro sono stanchi.,"time.n.08   EQU now
+person.n.01
+stanco.a.01 Time -2 AttributeOf -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p62/d1632,GREW,Tom è allergico alle arachidi.,"time.n.08      EQU now
+female.n.02    Name Tom
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+arachido.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p62/d2811,GREW,Emily mangiò una mela.,"time.n.08     TPR now
+female.n.02   Name Emily
+mangiare.v.01 Time -2 Agent -1 Theme +1
+mela.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p62/d2524,GREW,Lei sposò uno statunitense.,"time.n.08         TPR now
+person.n.01
+sposare.v.01      Time -2 Agent -1 Theme +1
+statunitense.n.01",,0.8148148148148148,0.6285714285714286,0.7096774193548386,0.8260869565217391,0.6333333333333333,0.7169811320754716
+it/p62/d3327,GREW,Il gatto scappò.,"time.n.08     TPR now
+gatto.n.01
+scappare.v.01 Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p62/d3415,GREW,Tom è turbato.,"time.n.08    EQU now
+female.n.02  Name Tom
+turbare.v.01 Time -2 Agent -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8,0.8,0.8000000000000002
+it/p62/d2006,GREW,"In altre parole, lui è pigro.","time.n.08   EQU now
+altro.a.01
+parola.n.01 Attribute -1
+male.n.02
+pigro.a.01  Time -4 Stimulus -2 AttributeOf -1",,0.5757575757575758,0.9047619047619048,0.7037037037037038,0.6071428571428571,0.9444444444444444,0.7391304347826088
+it/p62/d3416,GREW,Io non ho mai giocato a golf.,"NEGATION     -1
+time.n.08    TPR now
+person.n.01  EQU speaker
+non.r.01
+giocare.v.01 Time -3 Agent -2 Manner -1 Theme +1
+golf.n.01",,0.7837837837837838,0.9354838709677419,0.8529411764705881,0.78125,0.9259259259259259,0.847457627118644
+it/p62/d1385,GREW,Chi è il presidente della FIAT?,"time.n.08       EQU now
+chi.n.01        Time -1 Co-Theme +1
+presidente.n.01 Time +1
+female.n.02     Name FIAT",,0.7586206896551724,0.5116279069767442,0.6111111111111112,0.8,0.5405405405405406,0.6451612903225806
+it/p24/d1869,GREW,Anche io venni sconfitto.,"time.n.08        TPR now
+anche.r.01
+person.n.01      EQU speaker Agent -1
+sconfiggere.v.01 Time -3 Agent -1",,0.7241379310344828,0.9130434782608695,0.8076923076923076,0.72,0.9,0.7999999999999999
+it/p24/d2077,GREW,Tom è veramente carino.,"time.n.08      EQU now
+female.n.02    Name Tom
+veramente.r.01
+carino.a.01    Time -3 AttributeOf -2 Degree -1",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p24/d2178,GREW,Tom non è molto bello.,"NEGATION    -1
+time.n.08   EQU now
+female.n.02 Name Tom
+molto.r.01
+bello.a.01  Time -3 AttributeOf -2 Degree -1",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p62/d2314,GREW,Tom era esterrefatto.,"time.n.08    TPR now
+female.n.02  Name Tom
+rrefare.v.01 Time -2 Agent -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8,0.8,0.8000000000000002
+it/p62/d2448,GREW,Tom sta giocando a Tennis con Mary.,"time.n.08    EQU now
+female.n.02  Name Tom
+giocare.v.01 Time -2 Agent -1 Location +1 Location +2
+female.n.02  Name Tennis
+female.n.02  Name Mary",,0.7948717948717948,0.8378378378378378,0.8157894736842105,0.7941176470588235,0.84375,0.8181818181818182
+it/p24/d2900,GREW,Tom è stato rapito.,"time.n.08   TPR now
+female.n.02 Name Tom
+rapire.v.01 Time -2 Time -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p24/d2402,GREW,Qualcuno ha parlato con Tom?,"time.n.08     TPR now
+qualcuno.n.01
+parlare.v.01  Time -2 Agent -1 Location +1
+female.n.02   Name Tom",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p24/d2799,GREW,Tom è allergico alle ragazze.,"time.n.08      EQU now
+female.n.02    Name Tom
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+ragazza.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p24/d2943,GREW,Tom era scortese.,"time.n.08     EQU now
+female.n.02   Name Tom
+scortese.a.01 Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p24/d3251,GREW,Il gatto è sotto il tavolo.,"time.n.08   EQU now
+gatto.n.01
+tavolo.n.01 Time -2 Theme -1",,0.8095238095238095,0.5151515151515151,0.6296296296296297,0.8333333333333334,0.5357142857142857,0.6521739130434783
+it/p24/d1484,GREW,Tom è imbarazzato.,"time.n.08        EQU now
+female.n.02      Name Tom
+imbarazzare.v.01 Time -2 Agent -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8,0.8,0.8000000000000002
+it/p24/d2699,GREW,Tom è esigente.,"time.n.08     EQU now
+female.n.02   Name Tom
+esigente.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p24/d2787,GREW,Tom non è molto intelligente.,"NEGATION          -1
+time.n.08         EQU now
+female.n.02       Name Tom
+molto.r.01
+intelligente.a.01 Time -3 AttributeOf -2 Degree -1",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p24/d2767,GREW,Tom ha un pickup.,"time.n.08   EQU now
+female.n.02 Name Tom
+avere.v.01  Time -2 Agent -1 Theme +1
+pickup.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p24/d1595,GREW,Le sue unghie sono rosse.,"time.n.08   EQU now
+unghia.n.01
+rosso.a.01  Time -2 AttributeOf -1",,0.8571428571428571,0.6666666666666666,0.75,0.8333333333333334,0.6521739130434783,0.7317073170731708
+it/p24/d2692,GREW,Io ho preso tre chili.,"time.n.08     TPR now
+person.n.01   EQU speaker
+prendere.v.01 Time -2 Agent -1 Theme +1
+chilo.n.01    Agent tre",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7777777777777778,0.65625,0.711864406779661
+it/p24/d3458,GREW,Lui vive in Marocco.,"time.n.08   EQU now
+male.n.02
+vivere.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name Marocco",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p24/d3377,GREW,Io mangerò del pesce.,"time.n.08      TSU now
+person.n.01    EQU speaker
+mangerare.v.01 Time -2 Agent -1 Theme +1
+pesce.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p24/d0884,GREW,Quello non mi sorprende.,"NEGATION         -1
+time.n.08        EQU now
+quello.n.01
+person.n.01      EQU speaker
+sorprendere.v.01 Time -3 Agent -2 Time -1",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p24/d2573,GREW,Tom è disonesto.,"time.n.08      EQU now
+female.n.02    Name Tom
+disonesto.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p24/d2838,GREW,Tom è ubriaco.,"time.n.08    EQU now
+female.n.02  Name Tom
+ubriaco.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p24/d1476,GREW,Tom sta pagando una multa.,"time.n.08   EQU now
+female.n.02 Name Tom
+pagare.v.01 Time -2 Agent -1 Theme +1
+multa.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p54/d2968,GREW,Klava invidiava Lyusya.,"time.n.08      TPR now
+female.n.02    Time -1 Co-Theme +1
+invidiare.v.01 Agent +1
+female.n.02    Name Lyusya",,0.8620689655172413,0.8064516129032258,0.8333333333333334,0.84,0.7777777777777778,0.8076923076923077
+it/p24/d1602,GREW,Loro non sono felici.,"NEGATION    -1
+time.n.08   EQU now
+person.n.01
+felice.a.01 Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p54/d1622,GREW,Formare un gabinetto è difficile.,"time.n.08      EQU now
+formare.v.01   Theme +1
+gabinetto.n.01
+difficile.a.01 Time -3 Agent -2",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.782608695652174,0.782608695652174,0.782608695652174
+it/p54/d2709,GREW,Naoko nuota.,"time.n.08    EQU now
+naoko.r.01
+nuotare.v.01 Time -2 Manner -1",,0.7619047619047619,0.6956521739130435,0.7272727272727272,0.7777777777777778,0.7,0.7368421052631577
+it/p24/d2228,GREW,Tom è disorganizzato.,"time.n.08           EQU now
+female.n.02         Name Tom
+disorganizzare.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p54/d1782,GREW,Alice sorrise.,"time.n.08      TPR now
+female.n.02    Name Alice
+sorridere.v.01 Time -2 Agent -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+it/p54/d2660,GREW,Tom segnò un goal.,"time.n.08    TPR now
+female.n.02  Name Tom
+segnare.v.01 Time -2 Agent -1 Theme +1
+goal.n.04",,0.9310344827586207,0.9310344827586207,0.9310344827586207,0.92,0.92,0.92
+it/p54/d1766,GREW,Il pinguino fu espulso dal gruppo.,"time.n.08      TPR now
+pinguino.n.01
+espellere.v.01 Time -2 Theme -1 Theme +1
+gruppo.n.01",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p24/d2639,GREW,Il sospetto confessò.,"time.n.08       TPR now
+sospetto.n.01
+confessare.v.01 Time -2 Theme -1",,0.8571428571428571,0.6666666666666666,0.75,0.8333333333333334,0.6521739130434783,0.7317073170731708
+it/p54/d2318,GREW,Tom mi sta intercettando.,"time.n.08         EQU now
+female.n.02       Name Tom
+person.n.01       EQU speaker
+intercettare.v.01 Time -3 Agent -2 Time -1",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p54/d0716,GREW,O.J. Simpson fu accusato di omicidio.,"time.n.08     TPR now
+female.n.02   Name O.J.
+accusare.v.01 Time -2 Time -1 Theme +1
+omicidio.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.76,0.76,0.76
+it/p54/d3358,GREW,L'hard disk è stato completamente distrutto.,"time.n.08          TPR now
+hard disk.n.01
+completamente.r.01
+distruggere.v.01   Time -3 Theme -2 Manner -1",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.782608695652174,0.782608695652174,0.782608695652174
+it/p54/d2510,GREW,Tom non è un candidato.,"NEGATION       -1
+time.n.08      EQU now
+female.n.02    Name Tom
+candidato.n.01 Time -2 Theme -1",,0.84,0.5675675675675675,0.6774193548387097,0.8181818181818182,0.5625,0.6666666666666666
+it/p54/d2466,GREW,Millie sta mangiando una banana.,"time.n.08     EQU now
+female.n.02   Name Millie
+mangiare.v.01 Time -2 Agent -1 Theme +1
+banana.n.02",,0.9310344827586207,0.9310344827586207,0.9310344827586207,0.92,0.92,0.92
+it/p54/d2531,GREW,Il ventilatore non funziona.,"NEGATION         -1
+time.n.08        EQU now
+ventilatore.n.01
+funzionare.v.01  Time -2 Theme -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.85,0.85,0.85
+it/p54/d1396,GREW,Come morì Joseph Smith?,"time.n.08   TPR now
+come.v.02
+morire.v.01 Time -2 Manner -1 Agent +1
+female.n.02 Name Joseph",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.76,0.7037037037037037,0.7307692307692308
+it/p54/d0864,GREW,Betty è una serial killer.,"time.n.08          EQU now
+female.n.02        Name Betty
+killer_serial.n.01 Time -2 Theme -1",,0.9130434782608695,0.6,0.7241379310344828,0.9,0.6,0.7200000000000001
+it/p54/d2957,GREW,I sandwich erano terribili.,"time.n.08      EQU now
+sandwich.n.01
+terribile.a.01 Time -2 AttributeOf -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p54/d1871,GREW,Questo romanzo mi annoia.,"time.n.08     EQU now
+romanzo.n.01
+person.n.01   EQU speaker
+annoiare.v.01 Time -3 Theme -2 Time -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p54/d3130,GREW,Stavo dormendo.,"time.n.08    EQU now
+dormire.v.01 Time -1",,0.8666666666666667,0.5652173913043478,0.6842105263157895,0.8461538461538461,0.55,0.6666666666666667
+it/p92/d2921,GREW,Sto esagerando.,"time.n.08      EQU now
+esagerare.v.01 Time -1",,0.9333333333333333,0.6086956521739131,0.7368421052631579,0.9230769230769231,0.6,0.7272727272727274
+it/p92/d2261,GREW,Tom ha chiamato Mary.,"time.n.08     TPR now
+female.n.02   Name Tom
+chiamare.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Mary",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p54/d2017,GREW,Testare il QI di Koko non è facile.,"NEGATION     -1
+time.n.08    EQU now
+testare.v.01 Time +1
+female.n.02  Location +1
+female.n.02  Name Koko
+facile.a.01  Time -4 Agent -3",,0.6486486486486487,0.6486486486486487,0.6486486486486487,0.6875,0.6875,0.6875
+it/p92/d0711,GREW,Dickson lavorava per Edison.,"time.n.08     TPR now
+female.n.02   Name Dickson
+lavorare.v.01 Time -2 Agent -1 Location +1
+female.n.02   Name Edison",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p92/d1392,GREW,Come morì Cleopatra?,"time.n.08   TPR now
+come.v.02
+morire.v.01 Time -2 Manner -1 Agent +1
+female.n.02 Name Cleopatra",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.84,0.7777777777777778,0.8076923076923077
+it/p92/d1846,GREW,Ho comprato un portatile per Tom.,"time.n.08      TPR now
+comprare.v.01  Time -1 Theme +1
+portatile.n.01 Time +1
+female.n.02    Name Tom",,0.8620689655172413,0.6756756756756757,0.7575757575757576,0.84,0.65625,0.736842105263158
+it/p92/d2192,GREW,I bambini cantarono delle canzoni.,"time.n.08    EQU now
+bambino.n.01
+cantare.v.01 Time -2 Theme -1 Theme +1
+canzone.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.782608695652174,0.782608695652174,0.782608695652174
+it/p54/d2512,GREW,Le spie avvelenarono il conte.,"time.n.08       TPR now
+spia.n.01
+avvelenare.v.01 Time -2 Theme -1 Theme +1
+conte.n.01",,0.7777777777777778,0.5384615384615384,0.6363636363636364,0.782608695652174,0.5454545454545454,0.6428571428571429
+it/p92/d2159,GREW,Tom vuole dei popcorn.,"time.n.08    EQU now
+female.n.02  Name Tom
+volere.v.01  Time -2 Agent -1 Theme +1
+popcorn.n.02",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p92/d0712,GREW,Nancy Ianiero fu uccisa in Mexico.,"time.n.08     TPR now
+female.n.02   Name Nancy
+uccidere.v.01 Time -2 Time -1 Location +1
+female.n.02   Name Mexico",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p92/d0803,GREW,L'America abbonda di petrolio.,"time.n.08      EQU now
+female.n.02    Name America
+abbondere.v.01 Time -2 Agent -1 Theme +1
+petrolio.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p92/d2422,GREW,Tom non sta balbettando.,"NEGATION        -1
+time.n.08       EQU now
+female.n.02     Name Tom
+balbettare.v.01 Time -2 Agent -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+it/p92/d0764,GREW,Verdens Gang è un quotidiano norvegese.,"time.n.08       EQU now
+female.n.02     Name Verdens
+quotidiano.n.01 Time -2 Theme -1 Attribute +1
+norvegese.a.01",,0.6896551724137931,0.5405405405405406,0.6060606060606061,0.72,0.5625,0.631578947368421
+it/p92/d2363,GREW,Sei analfabeta?,"time.n.08       EQU now
+analfabeta.a.01 Time -1",,0.9333333333333333,0.6086956521739131,0.7368421052631579,0.9230769230769231,0.6,0.7272727272727274
+it/p92/d2961,GREW,Lucy lo disse a Mary.,"time.n.08   TPR now
+female.n.02 Name Lucy
+male.n.02
+dire.v.01   Time -3 Agent -2 Time -1 Location +1
+female.n.02 Name Mary",,0.8378378378378378,0.8378378378378378,0.8378378378378378,0.875,0.875,0.875
+it/p83/d2123,GREW,Tu stai borbottando.,"time.n.08       EQU now
+person.n.01     EQU hearer
+borbottare.v.01 Time -2 Agent -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+it/p83/d2327,GREW,Tom non ha chiamato Mary.,"NEGATION      -1
+time.n.08     TPR now
+female.n.02   Name Tom
+chiamare.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Mary",,0.8484848484848485,0.6829268292682927,0.7567567567567567,0.8620689655172413,0.6944444444444444,0.7692307692307692
+it/p83/d2561,GREW,Tom non gioca a golf.,"NEGATION     -1
+time.n.08    EQU now
+female.n.02  Name Tom
+giocare.v.01 Time -2 Agent -1 Theme +1
+golf.n.01",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p83/d0814,GREW,Mia madre è bella.,"time.n.08  EQU now
+madre.n.01
+bello.a.01 Time -2 AttributeOf -1",,0.9047619047619048,0.6551724137931034,0.7599999999999999,0.8888888888888888,0.64,0.7441860465116279
+it/p32/d3162,GREW,Il jet è atterrato a Tokyo.,"time.n.08      TPR now
+jet.n.01
+atterrare.v.01 Time -2 Theme -1 Location +1
+female.n.02    Name Tokyo",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.92,0.92,0.92
+it/p83/d2732,GREW,Qualcuno la sta aspettando?,"time.n.08      EQU now
+qualcuno.n.01
+female.n.02
+aspettare.v.01 Time -3 Agent -2 Time -1",,0.7777777777777778,0.7241379310344828,0.75,0.782608695652174,0.72,0.7499999999999999
+it/p32/d2542,GREW,Chi ha scoreggiato?,"time.n.08        TPR now
+chi.n.01
+scoreggiare.v.01 Time -2 Agent -1",,0.9047619047619048,0.8260869565217391,0.8636363636363636,0.8888888888888888,0.8,0.8421052631578948
+it/p83/d1583,GREW,Tom è imprendibile.,"time.n.08         EQU now
+female.n.02       Name Tom
+imprendibile.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p83/d2406,GREW,Noi capiamo.,"time.n.08   EQU now
+person.n.01 EQU speaker
+capare.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p32/d2867,GREW,Tom spense la TV.,"time.n.08     TPR now
+female.n.02   Name Tom
+spensere.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name TV",,0.8064516129032258,0.8620689655172413,0.8333333333333334,0.7777777777777778,0.84,0.8076923076923077
+it/p32/d2828,GREW,Io non sto infrangendo la legge.,"NEGATION        -1
+time.n.08       EQU now
+person.n.01     EQU speaker
+infrangere.v.01 Time -2 Agent -1 Theme +1
+legge.n.01",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p32/d2518,GREW,Il libro costa 4 dollari.,"time.n.08    EQU now
+libro.n.01
+costare.v.01 Time -2 Theme -1 Theme +1
+dollaro.n.01 Agent 4",,0.7931034482758621,0.6571428571428571,0.71875,0.8,0.6666666666666666,0.7272727272727272
+it/p32/d1530,GREW,Sono morti.,"time.n.08   TPR now
+morire.v.01 Time -1",,0.8,0.5714285714285714,0.6666666666666666,0.7692307692307693,0.5555555555555556,0.6451612903225806
+it/p32/d3159,GREW,Mary è incinta di due mesi.,"time.n.08   EQU now
+female.n.02 Name Mary
+cinta.n.01  Time -2 Theme -1 Agent +1
+mese.n.01   Agent due",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7777777777777778,0.65625,0.711864406779661
+it/p32/d0760,GREW,FermiLab ha creato Linux LTS.,"time.n.08   TPR now
+female.n.02 Name FermiLab
+creare.v.01 Time -2 Agent -1 Time +1
+female.n.02 Name Linux",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p32/d1935,GREW,Il prigioniero è fuggito!,"time.n.08        TPR now
+prigioniero.n.01
+fuggire.v.01     Time -2 Theme -1",,0.9047619047619048,0.7037037037037037,0.7916666666666667,0.8888888888888888,0.6956521739130435,0.7804878048780488
+it/p32/d2835,GREW,Il lupo ulula.,"time.n.08  EQU now
+lupo.n.01  Time -1 Attribute +1
+ululo.a.01",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7222222222222222,0.7222222222222222,0.7222222222222222
+it/p93/d3441,GREW,Gli investigatori stanno ancora indagando.,"time.n.08          EQU now
+investigatore.n.01
+ancora.r.01
+indagare.v.01      Time -3 Theme -2 Manner -1",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7391304347826086,0.7391304347826086,0.7391304347826085
+it/p32/d2195,GREW,Mio nonno era un mugnaio.,"time.n.08    EQU now
+nonno.n.01
+mugnaio.n.01 Time -2 Theme -1",,0.7619047619047619,0.3902439024390244,0.5161290322580646,0.7777777777777778,0.4,0.5283018867924528
+it/p32/d2929,GREW,Tom lo fissò con un martello.,"time.n.08     TPR now
+female.n.02   Name Tom
+male.n.02
+fissare.v.01  Time -3 Agent -2 Time -1 Theme +1
+martello.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8,0.8,0.8000000000000002
+it/p32/d1472,GREW,Tom non è per niente felice.,"NEGATION    -1
+time.n.08   EQU now
+female.n.02 Name Tom
+niente.r.01
+felice.a.01 Time -3 AttributeOf -2 Degree -1",,0.6774193548387096,0.84,0.75,0.6666666666666666,0.8181818181818182,0.7346938775510203
+it/p32/d0930,GREW,Tom ha una macchina.,"time.n.08     EQU now
+female.n.02   Name Tom
+avere.v.01    Time -2 Agent -1 Theme +1
+macchina.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p32/d3329,GREW,Questo non è sale.,"NEGATION    -1
+time.n.08   EQU now
+questo.n.01
+salire.a.01 Time -2 AttributeOf -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.8,0.64,0.7111111111111111
+it/p93/d2377,GREW,Tom piangeva.,"time.n.08     TPR now
+female.n.02   Name Tom
+piangere.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p93/d0762,GREW,Anna Politkovskaya è stata uccisa.,"time.n.08     TPR now
+female.n.02   Name Anna
+uccidere.v.01 Time -2 Time -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p93/d1915,GREW,Il termometro segna 10 C°.,"time.n.08       EQU now
+termometro.n.01
+segnare.v.01    Time -2 Theme -1 Theme +1
+c°.n.01         Agent 10",,0.7931034482758621,0.6571428571428571,0.71875,0.8,0.6666666666666666,0.7272727272727272
+it/p93/d1391,GREW,Chi ha inventato la radio?,"time.n.08      TPR now
+chi.n.01
+inventare.v.01 Time -2 Agent -1 Theme +1
+radio.n.02",,0.8518518518518519,0.7931034482758621,0.8214285714285715,0.8695652173913043,0.8,0.8333333333333333
+it/p93/d2744,GREW,Tom ha inserito la password.,"time.n.08     TPR now
+female.n.02   Name Tom
+inserire.v.01 Time -2 Agent -1 Theme +1
+password.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.92,0.92,0.92
+it/p93/d2411,GREW,Lui annegò nel fiume.,"time.n.08     TPR now
+male.n.02
+annegare.v.01 Time -2 Agent -1 Theme +1
+fiume.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p93/d2676,GREW,L'allarme anti-incendio suonò.,"time.n.08     TPR now
+allarme.n.01  EQU +2
+anti.a.01
+incendio.n.01 Attribute -1
+suonare.v.01  Time -4 Theme -3",,0.5454545454545454,0.8571428571428571,0.6666666666666665,0.5714285714285714,0.8888888888888888,0.6956521739130435
+it/p13/d3488,GREW,La T-shirt costa dieci euro.,"time.n.08    EQU now
+female.n.02  Name T-shirt
+costare.v.01 Time -2 Agent -1 Theme +1
+euro.n.01    Agent dieci",,0.7419354838709677,0.6571428571428571,0.6969696969696969,0.7037037037037037,0.6333333333333333,0.6666666666666667
+it/p13/d2643,GREW,Quattro più diciotto fa ventidue.,"time.n.08     EQU now
+quattro.n.01  Time -1 Agent +2 Agent ventidue
+più.r.01
+diciotto.n.01 APX -1",,0.2413793103448276,0.3684210526315789,0.2916666666666667,0.28,0.4117647058823529,0.3333333333333333
+it/p13/d3153,GREW,"Dan vive a Boston, in Massachusetts.","time.n.08   EQU now
+female.n.02 Name Dan
+vivere.v.01 Time -2 Agent -1 Location +1
+female.n.02 Location +1
+female.n.02 Name Massachusetts",,0.7837837837837838,0.7435897435897436,0.7631578947368421,0.8125,0.7647058823529411,0.787878787878788
+it/p13/d2501,GREW,Tom è un tiratore competente.,"time.n.08       EQU now
+female.n.02     Name Tom
+tiratore.n.01   Time -2 Theme -1 Attribute +1
+competente.a.01",,0.8275862068965517,0.5853658536585366,0.6857142857142856,0.8,0.5714285714285714,0.6666666666666666
+it/p13/d0712,GREW,L'Illinois confina con il Missouri.,"time.n.08      EQU now
+female.n.02    Name Illinois
+confinare.v.01 Time -2 Agent -1 Location +1
+female.n.02    Name Missouri",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p13/d3557,GREW,Il vento sta ululando.,"time.n.08    EQU now
+vento.n.01
+ululare.v.01 Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p13/d2987,GREW,La prostituzione è legale in Germania.,"time.n.08          EQU now
+prostituzione.n.01
+legale.a.01        Time -2 AttributeOf -1 Stimulus +1
+female.n.02        Name Germania",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p13/d1462,GREW,Lui ha sposato una ragazza ricca.,"time.n.08    TPR now
+male.n.02
+sposare.v.01 Time -2 Agent -1 Theme +1
+ragazza.n.01 Attribute +1
+ricco.a.01",,0.8787878787878788,0.8787878787878788,0.8787878787878788,0.8571428571428571,0.8571428571428571,0.8571428571428571
+it/p13/d1559,GREW,Tom esagera.,"time.n.08      EQU now
+female.n.02    Time -1 Agent +1
+esagerare.a.01",,0.7619047619047619,0.6956521739130435,0.7272727272727272,0.7777777777777778,0.7,0.7368421052631577
+it/p13/d2713,GREW,Lei vagava per la campagna.,"time.n.08     TPR now
+person.n.01
+vagare.v.01   Time -2 Agent -1 Theme +1
+campagna.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p13/d0713,GREW,Il Canada batté gli USA.,"time.n.08    TPR now
+female.n.02  Name Canada
+battare.v.01 Time -2 Agent -1 Time +1
+female.n.02  Name USA",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p13/d1529,GREW,Mary vive al Cairo.,"time.n.08   EQU now
+female.n.02 Name Mary
+vivere.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name al Cairo",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p13/d1659,GREW,A me piacciono i cavalli.,"time.n.08    EQU now
+person.n.01  EQU speaker
+piacere.v.01 Time -2 Time -1 Theme +1
+cavallo.n.01",,0.7586206896551724,0.6666666666666666,0.7096774193548386,0.76,0.6551724137931034,0.7037037037037037
+it/p13/d1997,GREW,La pecora bela.,"time.n.08   EQU now
+pecora.n.01 Time -1 Attribute +1
+belo.a.01",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7222222222222222,0.7222222222222222,0.7222222222222222
+it/p13/d2551,GREW,Tom è un eccellente fisico.,"time.n.08       EQU now
+female.n.02     Name Tom
+eccellente.a.01
+fisico.n.01     Time -3 Theme -2 Attribute -1",,0.8275862068965517,0.5853658536585366,0.6857142857142856,0.8,0.5714285714285714,0.6666666666666666
+it/p13/d1527,GREW,Tom spense la TV.,"time.n.08     TPR now
+female.n.02   Name Tom
+spensere.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name TV",,0.8064516129032258,0.8620689655172413,0.8333333333333334,0.7777777777777778,0.84,0.8076923076923077
+it/p13/d3554,GREW,La porta è socchiusa.,"time.n.08        TPR now
+porta.n.01
+socchiudere.v.01 Time -2 Theme -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7222222222222222,0.7222222222222222,0.7222222222222222
+it/p13/d0824,GREW,Anche io sto bene.,"time.n.08   EQU now
+anche.r.01
+person.n.01 EQU speaker Agent -1
+stare.v.01  Time -3 Agent -1 Manner +1
+bene.r.01",,0.6571428571428571,0.7931034482758621,0.71875,0.6333333333333333,0.76,0.6909090909090909
+it/p13/d1773,GREW,Le mosche stanno ronzando.,"time.n.08    EQU now
+mosco.n.01
+ronzare.v.01 Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p13/d1964,GREW,Tom detesta Mary.,"time.n.08      TPR now
+female.n.02    Time -1 Agent +1
+detestare.v.01 Time +1
+female.n.02    Name Mary",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.76,0.7037037037037037,0.7307692307692308
+it/p43/d3424,GREW,Io ho contattato Tom.,"time.n.08       TPR now
+person.n.01     EQU speaker
+contattare.v.01 Time -2 Agent -1 Time +1
+female.n.02     Name Tom",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p43/d2852,GREW,Lei è allergica ai gatti.,"time.n.08      EQU now
+person.n.01
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+gatto.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p43/d2182,GREW,Chuck è insolente.,"time.n.08      EQU now
+female.n.02    Name Chuck
+insolente.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p43/d2025,GREW,Quest'area è estremamente isolata.,"time.n.08         EQU now
+area.n.01
+estremamente.r.01
+isolato.a.01      Time -3 AttributeOf -2 Degree -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.9130434782608695,0.9130434782608695,0.9130434782608695
+it/p13/d1384,GREW,Chi ha accoltellato monica Seles?,"time.n.08         TPR now
+chi.n.01
+accoltellare.v.01 Time -2 Agent -1 Theme +1
+monica.n.01       Time +1
+female.n.02       Name Seles",,0.7142857142857143,0.8064516129032258,0.7575757575757576,0.7,0.7777777777777778,0.7368421052631577
+it/p43/d3001,GREW,Ken sentì Tom.,"time.n.08    TPR now
+female.n.02  Name Ken
+sentire.v.01 Time -2 Agent -1 Time +1
+female.n.02  Name Tom",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p43/d2115,GREW,Tom è stato licenziato.,"time.n.08       TPR now
+female.n.02     Name Tom
+licenziare.v.01 Time -2 Time -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.85,0.85,0.85
+it/p43/d3026,GREW,Tom fece una ruota.,"time.n.08   TPR now
+female.n.02 Name Tom
+fare.v.01   Time -2 Agent -1 Theme +1
+ruota.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.88,0.88,0.88
+it/p43/d0761,GREW,La Linea Kakhovskaya fu costruita nel 1995.,"time.n.08      TPR now
+linea.n.01     Time +1
+female.n.02    Name Kakhovskaya
+costruire.v.01 Time -3 Theme -2 Agent 1995",,0.6129032258064516,0.76,0.6785714285714285,0.6296296296296297,0.7727272727272727,0.6938775510204083
+it/p43/d2409,GREW,Lei lo adora.,"time.n.08    EQU now
+person.n.01
+male.n.02
+adorare.v.01 Time -3 Agent -2 Time -1",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p43/d2532,GREW,Tom è allergico alla soia.,"time.n.08      EQU now
+female.n.02    Name Tom
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+soia.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.84,0.84,0.8399999999999999
+it/p43/d2556,GREW,Tom segnò tre punti.,"time.n.08    TPR now
+female.n.02  Name Tom
+segnare.v.01 Time -2 Agent -1 Theme +1
+punto.n.01   Agent tre",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p43/d1997,GREW,Tom non è infelice.,"NEGATION      -1
+time.n.08     EQU now
+female.n.02   Name Tom
+infelice.a.01 Time -2 AttributeOf -1",,0.84,0.84,0.8399999999999999,0.8181818181818182,0.8181818181818182,0.8181818181818182
+it/p43/d1814,GREW,Tom ridacchiò.,"time.n.08   EQU now
+female.n.02 Time -1",,0.8,0.5217391304347826,0.6315789473684211,0.7692307692307693,0.5,0.6060606060606061
+it/p43/d2503,GREW,Mia madre assaggiò il latte.,"time.n.08       TPR now
+madre.n.01
+assaggiare.v.01 Time -2 Theme -1 Theme +1
+latte.n.01",,0.8148148148148148,0.6285714285714286,0.7096774193548386,0.8260869565217391,0.6333333333333333,0.7169811320754716
+it/p43/d2842,GREW,Tom assaggiò lo stufato.,"time.n.08       TPR now
+female.n.02     Name Tom
+assaggiare.v.01 Time -2 Agent -1 Theme +1
+stufato.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.88,0.88,0.88
+it/p63/d2262,GREW,Un dollaro equivale a cento centesimi.,"time.n.08            EQU now
+dollaro.n.01
+equivalere.v.01      Time -2 Theme -1 Theme +1
+centoccentesimo.n.01",,0.6296296296296297,0.4857142857142857,0.5483870967741936,0.6521739130434783,0.5,0.5660377358490566
+it/p63/d2098,GREW,Mio figlio soffre di osteoporosi.,"time.n.08        EQU now
+figlio.n.01
+soffrire.v.01    Time -2 Theme -1 Theme +1
+osteoporosi.n.01",,0.7777777777777778,0.6,0.6774193548387097,0.782608695652174,0.6,0.6792452830188679
+it/p63/d3213,GREW,Tom odiava Mary.,"time.n.08   TPR now
+female.n.02 Name Tom
+odiare.v.01 Time -2 Agent -1 Time +1
+female.n.02 Name Mary",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p63/d3025,GREW,George ha sposato mia sorella.,"time.n.08    TPR now
+female.n.02  Name George
+sposare.v.01 Time -2 Agent -1 Theme +1
+sorella.n.01",,0.8620689655172413,0.6756756756756757,0.7575757575757576,0.84,0.65625,0.736842105263158
+it/p63/d0862,GREW,Io diedi i libri a questo studente.,"time.n.08     TPR now
+person.n.01   EQU speaker
+dire.v.01     Time -2 Agent -1 Theme +1 Theme +2
+libro.n.01
+studente.n.01",,0.8571428571428571,0.7317073170731707,0.7894736842105263,0.8666666666666667,0.7428571428571429,0.8
+it/p63/d2634,GREW,Dan incontrò Linda in chiesa.,"time.n.08       TPR now
+female.n.02     Name Dan
+incontrare.v.01 Time -2 Agent -1 Time +1 Theme +2
+female.n.02     Name Linda
+chiesa.n.01",,0.8108108108108109,0.8108108108108109,0.8108108108108109,0.84375,0.84375,0.84375
+it/p43/d2322,GREW,Robin Hood derubava i ricchi.,"time.n.08     TPR now
+female.n.02   Name Robin
+derubare.v.01 Time -2 Agent -1 Theme +1
+ricco.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.8,0.8,0.8000000000000002
+it/p63/d2294,GREW,Questo continuerà.,"time.n.08       TSU now
+questo.n.01
+continuare.v.01 Time -2 Agent -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p63/d2704,GREW,Mio padre sta andando in Cina.,"time.n.08   EQU now
+padre.n.01
+andare.v.01 Time -2 Theme -1 Location +1
+female.n.02 Name Cina",,0.8620689655172413,0.6756756756756757,0.7575757575757576,0.84,0.65625,0.736842105263158
+it/p84/d2741,GREW,Tutti quelli che venirono sulla strada furono sorpresi.,"NEGATION         -1
+NEGATION         -1
+time.n.08        TPR now
+quello.n.01      Agent +2
+che.n.01
+venire.v.01      Agent -1 Theme +1
+strada.n.01
+sorprendere.v.01 Time -5 Experiencer -4",,0.6511627906976745,0.6086956521739131,0.6292134831460675,0.6486486486486487,0.6,0.6233766233766234
+it/p84/d1638,GREW,Laura sta seguendo il telegiornale.,"time.n.08         EQU now
+female.n.02       Name Laura
+seguire.v.01      Time -2 Agent -1 Theme +1
+telegiornale.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.92,0.92,0.92
+it/p63/d1851,GREW,Tom sta urlando.,"time.n.08   EQU now
+female.n.02 Name Tom
+urlare.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p84/d2005,GREW,Tom ha sorriso.,"time.n.08    TPR now
+female.n.02  Name Tom
+sorriso.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p84/d2232,GREW,Grant ha attaccato Vicksburg diverse volte.,"time.n.08      TPR now
+female.n.02    Name Grant
+attaccare.v.01 Time -2 Agent -1 Time +1 Theme +2
+female.n.02    Name Vicksburg
+volta.n.01",,0.8108108108108109,0.7692307692307693,0.7894736842105263,0.8125,0.7647058823529411,0.787878787878788
+it/p84/d1389,GREW,Come morì Charles Bukowski?,"time.n.08   TPR now
+come.v.02
+morire.v.01 Time -2 Manner -1 Agent +1
+female.n.02 Name Charles",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.76,0.7037037037037037,0.7307692307692308
+it/p84/d1589,GREW,Tom è stato catturato.,"time.n.08      TPR now
+female.n.02    Name Tom
+catturare.v.01 Time -2 Time -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.85,0.85,0.85
+it/p84/d3515,GREW,Il dolore era atroce.,"time.n.08   EQU now
+dolore.n.01
+atroco.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p84/d3376,GREW,Gli asini stavano trasportando dei pacchi pesanti.,"time.n.08        EQU now
+asino.n.01
+trasportare.v.01 Time -2 Theme -1 Theme +1
+pacco.n.01       Attribute +1
+pesante.a.01",,0.7575757575757576,0.7142857142857143,0.7352941176470589,0.7857142857142857,0.7333333333333333,0.7586206896551724
+it/p52/d2976,GREW,Io non parlo lo svedese.,"NEGATION     -1
+time.n.08    EQU now
+person.n.01  EQU speaker
+parlare.v.01 Time -2 Agent -1 Theme +1
+svedese.n.01",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p52/d1768,GREW,Il signor Wang è cinese.,"time.n.08   EQU now
+female.n.02 Name signor
+cinese.a.01 Time -2 AttributeOf -1",,0.7391304347826086,0.4594594594594595,0.5666666666666667,0.75,0.46875,0.5769230769230769
+it/p84/d3109,GREW,Kelly apparirà in televisione.,"time.n.08        TSU now
+female.n.02      Name Kelly
+apparire.v.01    Time -2 Agent -1 Theme +1
+televisione.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p52/d3450,GREW,Tom non è divertito.,"NEGATION       -1
+time.n.08      TPR now
+female.n.02    Name Tom
+divertire.v.01 Time -2 Agent -1",,0.76,0.76,0.76,0.7272727272727273,0.7272727272727273,0.7272727272727273
+it/p52/d1396,GREW,Come morì Harry Chaplin?,"time.n.08   TPR now
+come.v.02
+morire.v.01 Time -2 Manner -1 Agent +1
+female.n.02 Name Harry",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.76,0.7037037037037037,0.7307692307692308
+it/p52/d2223,GREW,Le madri cuciono.,"time.n.08   EQU now
+madre.n.01
+cucire.v.01 Time -2 Theme -1",,0.8571428571428571,0.6666666666666666,0.75,0.8333333333333334,0.6521739130434783,0.7317073170731708
+it/p52/d2366,GREW,La mia auto è tedesca.,"time.n.08    EQU now
+auto.n.01
+tedesco.a.01 Time -2 AttributeOf -1",,0.7619047619047619,0.5161290322580645,0.6153846153846153,0.7777777777777778,0.5185185185185185,0.6222222222222222
+it/p52/d3490,GREW,La polizia sta interrogando Tom ora.,"time.n.08        EQU now
+polizia.n.01
+interrogare.v.01 Time -2 Theme -1 Time +1 Manner +2
+female.n.02      Name Tom
+ora.r.01",,0.6571428571428571,0.7931034482758621,0.71875,0.6666666666666666,0.8,0.7272727272727272
+it/p52/d2428,GREW,L'esibizione iniziò alle otto.,"time.n.08       TPR now
+esibizione.n.01
+iniziare.v.01   Time -2 Theme -1 Agent otto",,0.782608695652174,0.782608695652174,0.782608695652174,0.8,0.8,0.8000000000000002
+it/p52/d0887,GREW,Mi piace scrivere delle poesie.,"time.n.08     EQU now
+person.n.01   EQU speaker
+piacere.v.01  Time -2 Time -1 Agent +1
+scrivere.v.01 Theme +1
+poesia.n.01",,0.8,0.7777777777777778,0.7887323943661971,0.8,0.7741935483870968,0.7868852459016393
+it/p52/d1677,GREW,Questo bar è accogliente.,"time.n.08        EQU now
+bar.n.02
+accogliente.a.01 Time -2 AttributeOf -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p52/d1971,GREW,Noi vendiamo dell'aranciata.,"time.n.08      EQU now
+person.n.01    EQU speaker
+vendere.v.01   Time -2 Agent -1 Theme +1
+aranciata.n.01",,0.9310344827586207,0.9310344827586207,0.9310344827586207,0.92,0.92,0.92
+it/p72/d1868,GREW,Tom applaudì.,"time.n.08       TPR now
+female.n.02     Name Tom
+applaudire.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.9,0.9,0.9
+it/p72/d1516,GREW,"Le manca esperienza, no?","time.n.08       EQU now
+female.n.02
+mancare.v.01    Time -2 Time -1 Theme +1 Agent +2
+esperienza.n.01
+no.n.01",,0.7272727272727273,0.8888888888888888,0.7999999999999999,0.7142857142857143,0.8695652173913043,0.7843137254901961
+it/p72/d2995,GREW,Tom ha fotografato questi edifici per la mostra.,"time.n.08        TPR now
+female.n.02      Name Tom
+fotografare.v.01 Time -2 Agent -1 Theme +1 Theme +2
+edificio.n.01
+mostra.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p72/d2036,GREW,Io vi scorterò.,"time.n.08       TSU now
+person.n.01     EQU speaker
+person.n.01     EQU hearer
+scorterare.v.01 Time -3 Agent -2 Time -1",,0.9354838709677419,0.9354838709677419,0.9354838709677419,0.9259259259259259,0.9259259259259259,0.9259259259259259
+it/p72/d2965,GREW,"Lei non ha figli, vero?","NEGATION    -1
+time.n.08   EQU now
+person.n.01
+avere.v.01  Time -2 Agent -1 Theme +1 Agent +2
+figlio.n.01
+vero.a.01",,0.6285714285714286,0.7586206896551724,0.6875,0.6666666666666666,0.8,0.7272727272727272
+it/p72/d2159,GREW,Io uccisi il ratto con un bastone.,"time.n.08     TPR now
+person.n.01   EQU speaker
+uccidere.v.01 Time -2 Agent -1 Theme +1 Theme +2
+ratto.n.01
+bastone.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p02/d1809,GREW,Un ciliegio cresce in un giardino.,"time.n.08     EQU now
+ciliegio.n.01
+crescere.v.01 Time -2 Theme -1 Theme +1
+giardino.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.782608695652174,0.782608695652174,0.782608695652174
+it/p72/d0841,GREW,È pigro.,"time.n.08  EQU now
+pigro.a.01 Time -1",,0.8666666666666667,0.6190476190476191,0.7222222222222222,0.9230769230769231,0.6666666666666666,0.7741935483870968
+it/p72/d0945,GREW,L'uccello vola.,"time.n.08    EQU now
+uccello.n.01
+volare.v.01  Time -2 Theme -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p72/d1709,GREW,Tom sta sciando.,"time.n.08   EQU now
+female.n.02 Name Tom
+sciare.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p72/d2704,GREW,Questo animale è molto intelligente.,"time.n.08         EQU now
+animale.n.01
+molto.r.01
+intelligente.a.01 Time -3 AttributeOf -2 Degree -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+it/p72/d2331,GREW,La nave sta affondando.,"time.n.08      EQU now
+nave.n.01
+affondare.v.01 Time -2 Theme -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p02/d2916,GREW,Il cane di Ken è bianco.,"time.n.08   EQU now
+cane.n.01   Time +1
+female.n.02 Name Ken
+bianco.a.01 Time -3 AttributeOf -2",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.8,0.8,0.8000000000000002
+it/p02/d2775,GREW,La nostra squadra ha battuto i Lions 3 a 0.,"time.n.08    TPR now
+squadra.n.01
+battere.v.01 Time -2 Theme -1 Time +1 Agent 3 Agent 0
+female.n.02  Name Lions",,0.696969696969697,0.5897435897435898,0.638888888888889,0.7241379310344828,0.6176470588235294,0.6666666666666667
+it/p02/d1850,GREW,Noi stiamo lavorando per lei.,"time.n.08     EQU now
+person.n.01   EQU speaker
+lavorare.v.01 Time -2 Agent -1 Time +1
+person.n.01",,0.896551724137931,0.8387096774193549,0.8666666666666666,0.92,0.8518518518518519,0.8846153846153846
+it/p02/d2730,GREW,Questo è più importante!,"time.n.08       EQU now
+questo.n.01
+più.r.01
+importante.a.01 Time -3 AttributeOf -2 Degree -1",,0.8888888888888888,0.8571428571428571,0.8727272727272727,0.8695652173913043,0.8333333333333334,0.851063829787234
+it/p02/d1382,GREW,"Chi dipinse i ""Girasoli""?","time.n.08      TPR now
+chi.n.01
+dipingere.v.01 Time -2 Agent -1 Time +1
+female.n.02    Name Girasoli",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.84,0.7777777777777778,0.8076923076923077
+it/p02/d3468,GREW,Lei mi mostrò il suo album.,"time.n.08     TPR now
+person.n.01
+person.n.01   EQU speaker
+mostrare.v.01 Time -3 Agent -2 Time -1 Theme +1
+album.n.01",,0.8285714285714286,0.7073170731707317,0.7631578947368421,0.9,0.7714285714285715,0.8307692307692307
+it/p02/d3279,GREW,Sadako Sasaki morì il 25 ottobre 1955.,"time.n.08    TPR now
+female.n.02  Name Sadako
+morire.v.01  Time -2 Agent -1 Agent +1
+25.n.01      Agent +1 Agent 1955
+ottobre.n.01",,0.5675675675675675,0.7241379310344828,0.6363636363636365,0.5625,0.6923076923076923,0.6206896551724138
+it/p02/d3114,GREW,Siamo impressionati.,"time.n.08          TPR now
+impressionato.a.01 Time -1",,0.8666666666666667,0.5652173913043478,0.6842105263157895,0.8461538461538461,0.55,0.6666666666666667
+it/p02/d1421,GREW,Tom sta spiegando la lezione.,"time.n.08     EQU now
+female.n.02   Name Tom
+spiegare.v.01 Time -2 Agent -1 Theme +1
+lezione.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.84,0.84,0.8399999999999999
+it/p02/d0716,GREW,Charles de Gaulle morì nel 1970.,"time.n.08   TPR now
+female.n.02 Name Charles
+morire.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+it/p02/d3454,GREW,Tom sta aspettando Mary.,"time.n.08      EQU now
+female.n.02    Name Tom
+aspettare.v.01 Time -2 Agent -1 Time +1
+female.n.02    Name Mary",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p02/d2383,GREW,Venne costruita una ferrovia in questa città.,"time.n.08      TPR now
+costruire.v.01 Time -1 Theme +1 Theme +2
+ferrovia.n.01
+città.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.782608695652174,0.782608695652174,0.782608695652174
+it/p02/d0712,GREW,Kraft vendette la Celestial Seasonings.,"time.n.08     EQU now
+female.n.02   Name Kraft
+vendetta.v.01 Time -2 Location -1 Time +1
+female.n.02   Name Celestial",,0.7096774193548387,0.7096774193548387,0.7096774193548389,0.7407407407407407,0.7407407407407407,0.7407407407407407
+it/p02/d2943,GREW,Io odio il suo cappello.,"time.n.08     EQU now
+person.n.01   EQU speaker
+odiare.v.01   Time -2 Agent -1 Theme +1
+cappello.n.01",,0.8620689655172413,0.7142857142857143,0.7812500000000001,0.84,0.7,0.7636363636363636
+it/p02/d2533,GREW,Tom è estremamente motivato.,"time.n.08         EQU now
+female.n.02       Name Tom
+estremamente.r.01
+motivato.a.01     Time -3 AttributeOf -2 Degree -1",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p02/d2479,GREW,Tom ha abbracciato Mary.,"time.n.08        TPR now
+female.n.02      Name Tom
+abbracciare.v.01 Time -2 Agent -1 Time +1
+female.n.02      Name Mary",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p02/d1713,GREW,Tom mi ha fuorviata.,"time.n.08      TPR now
+female.n.02    Name Tom
+person.n.01    EQU speaker
+fuorviare.v.01 Time -3 Agent -2 Time -1",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p02/d1435,GREW,Loro piantarono dei meli.,"time.n.08     TPR now
+person.n.01
+piantare.v.01 Time -2 Agent -1 Theme +1
+mele.n.01",,0.8888888888888888,0.8888888888888888,0.8888888888888888,0.9130434782608695,0.9130434782608695,0.9130434782608695
+it/p02/d2393,GREW,Era legittimo.,"time.n.08      EQU now
+legittimo.a.01 Time -1",,0.8,0.5714285714285714,0.6666666666666666,0.8461538461538461,0.6111111111111112,0.7096774193548387
+it/p02/d0713,GREW,9 persone furono assassinate da Raman Raghav.,"time.n.08        TPR now
+persona.n.01     Agent 9
+assassinare.v.01 Time -2 Theme -1 Agent +1
+female.n.02      Name Raman",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.7777777777777778,0.7777777777777778,0.7777777777777778
+it/p02/d1823,GREW,Il cavallo non è bianco.,"NEGATION     -1
+time.n.08    EQU now
+cavallo.n.01
+bianco.a.01  Time -2 AttributeOf -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8,0.8,0.8000000000000002
+it/p02/d2050,GREW,È assurda.,"time.n.08    EQU now
+assurdo.a.01 Time -1",,0.9333333333333333,0.6666666666666666,0.7777777777777778,0.9230769230769231,0.6666666666666666,0.7741935483870968
+it/p02/d2428,GREW,Tom sapeva la risposta.,"time.n.08     TPR now
+female.n.02   Name Tom
+sapere.v.01   Time -2 Agent -1 Theme +1
+risposta.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+it/p02/d1561,GREW,Questo è piuttosto noioso.,"time.n.08      EQU now
+questo.n.01
+piuttosto.r.01
+noioso.a.01    Time -3 AttributeOf -2 Degree -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+it/p02/d2133,GREW,Tom non parlerà con nessuno.,"NEGATION     -1
+time.n.08    TSU now
+female.n.02  Name Tom
+parlare.v.01 Time -2 Agent -1 Time +1
+nessuno.n.01",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p02/d1743,GREW,Tom canta splendidamente.,"time.n.08           EQU now
+female.n.02         Name Tom
+cantare.v.01        Time -2 Agent -1 Manner +1
+splendidamente.r.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p02/d3379,GREW,Avevate suonato.,"time.n.08    TPR now
+suonare.v.01 Time -1",,0.8666666666666667,0.5652173913043478,0.6842105263157895,0.9230769230769231,0.6,0.7272727272727274
+it/p04/d3414,GREW,Il gatto corse via.,"time.n.08  TPR now
+gatto.n.01
+corso.v.01 Time -2 Theme -1 Manner +1
+via.r.01",,0.7037037037037037,0.9047619047619048,0.7916666666666667,0.6956521739130435,0.8888888888888888,0.7804878048780488
+it/p02/d2217,GREW,Lui parla cinque lingue.,"time.n.08    EQU now
+male.n.02
+parlare.v.01 Time -2 Agent -1 Theme +1
+lingua.n.01  Agent cinque",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.84,0.84,0.8399999999999999
+it/p02/d2207,GREW,Tom non è famoso.,"NEGATION    -1
+time.n.08   EQU now
+female.n.02 Name Tom
+famoso.a.01 Time -2 AttributeOf -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+it/p04/d3017,GREW,Il bambino sta mangiando la carne.,"time.n.08     EQU now
+bambino.n.01
+mangiare.v.01 Time -2 Theme -1 Theme +1
+carne.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.782608695652174,0.782608695652174,0.782608695652174
+it/p02/d3090,GREW,L'aeroplano decollò.,"time.n.08      TPR now
+aeroplano.n.01
+decollare.v.01 Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p04/d1593,GREW,Sta mangiando.,"time.n.08     EQU now
+mangiare.v.01 Time -1",,0.8666666666666667,0.6190476190476191,0.7222222222222222,0.9230769230769231,0.6666666666666666,0.7741935483870968
+it/p04/d2330,GREW,Lui è fuori ora.,"time.n.08  EQU now
+male.n.02
+fuori.r.01 AttributeOf -1
+ora.r.01   Time -3 Value -1",,0.7037037037037037,0.9047619047619048,0.7916666666666667,0.6956521739130435,0.8888888888888888,0.7804878048780488
+it/p04/d0843,GREW,Lui è vecchio.,"time.n.08    EQU now
+male.n.02
+vecchio.a.01 Time -2 AttributeOf -1",,0.9523809523809523,0.8695652173913043,0.909090909090909,0.9444444444444444,0.85,0.8947368421052632
+it/p04/d1724,GREW,Sono occupata.,"time.n.08     EQU now
+occupato.a.01 Time -1",,0.9333333333333333,0.6086956521739131,0.7368421052631579,0.9230769230769231,0.6,0.7272727272727274
+it/p04/d2252,GREW,Sono morta.,"time.n.08   TPR now
+morire.v.01 Time -1",,0.7333333333333333,0.4782608695652174,0.5789473684210527,0.7692307692307693,0.5,0.6060606060606061
+it/p04/d2793,GREW,Tom non è disonesto.,"NEGATION       -1
+time.n.08      EQU now
+female.n.02    Name Tom
+disonesto.a.01 Time -2 AttributeOf -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+it/p04/d2829,GREW,Sto andando al cinema.,"time.n.08   EQU now
+andare.v.01 Time -1 Theme +1
+cinema.n.02",,0.9047619047619048,0.6551724137931034,0.7599999999999999,0.8888888888888888,0.64,0.7441860465116279
+it/p04/d2078,GREW,Tom ha pagato un hot dog per Mary.,"time.n.08   TPR now
+female.n.02 Name Tom
+pagare.v.01 Time -2 Agent -1 Theme +2 Location +3
+hot.a.01
+dog.n.01    Attribute -1
+female.n.02 Name Mary",,0.7441860465116279,0.8648648648648649,0.8,0.7567567567567568,0.875,0.8115942028985507
+it/p04/d1571,GREW,Ha freddo.,"time.n.08   EQU now
+avere.v.01  Time -1 Theme +1
+freddo.n.01",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7777777777777778,0.7777777777777778,0.7777777777777778
+it/p04/d0830,GREW,Nessuno può risolvere questo problema.,"NEGATION       -1
+time.n.08      EQU now
+risolvere.v.01 Time -1 Theme +1
+problema.n.01",,0.5652173913043478,0.5652173913043478,0.5652173913043478,0.6,0.6,0.6
+it/p04/d1927,GREW,Loro sono arrivati sul volo 201.,"time.n.08     TPR now
+person.n.01
+arrivare.v.01 Time -2 Agent -1 Theme +1
+volo.n.01     Agent 201.",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.76,0.76,0.76
+it/p04/d2524,GREW,Io non parlo il turco.,"NEGATION     -1
+time.n.08    EQU now
+person.n.01  EQU speaker
+parlare.v.01 Time -2 Agent -1 Agent +1
+turco.n.01",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p04/d1590,GREW,Tom applaudì.,"time.n.08       TPR now
+female.n.02     Name Tom
+applaudire.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p04/d2386,GREW,Io ho preso un raffreddore terribile.,"time.n.08        TPR now
+person.n.01      EQU speaker
+prendere.v.01    Time -2 Agent -1 Theme +1
+raffreddore.n.01 Attribute +1
+terribile.a.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8666666666666667,0.8666666666666667,0.8666666666666667
+it/p04/d3109,GREW,Nessuno lo sa.,"NEGATION    -1
+time.n.08   EQU now
+male.n.02
+sapere.v.01 Time -2 Time -1",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.85,0.68,0.7555555555555556
+it/p04/d1952,GREW,Tom balbettò.,"time.n.08       TPR now
+female.n.02     Name Tom
+balbettare.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p04/d1499,GREW,Tom è testardo.,"time.n.08     EQU now
+female.n.02   Name Tom
+testardo.a.01 Time -2 AttributeOf -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p04/d2212,GREW,Sarà duro.,"time.n.08 EQU now
+duro.a.01 Time -1",,0.8666666666666667,0.6190476190476191,0.7222222222222222,0.8461538461538461,0.6111111111111112,0.7096774193548387
+it/p04/d2803,GREW,Questa conferenza ha attirato 150 diplomatici.,"time.n.08        TPR now
+conferenza.n.01
+attirare.v.01    Time -2 Theme -1 Theme +1
+diplomatico.n.01 Agent 150",,0.8275862068965517,0.6857142857142857,0.75,0.8,0.6666666666666666,0.7272727272727272
+it/p04/d1680,GREW,Tom non sta dormendo.,"NEGATION     -1
+time.n.08    EQU now
+female.n.02  Name Tom
+dormire.v.01 Time -2 Agent -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+it/p04/d3302,GREW,Tom è stato eletto presidente.,"time.n.08       TPR now
+female.n.02     Name Tom
+eleggere.v.01   Time -2 Time -1 Agent +1
+presidente.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.8,0.8,0.8000000000000002
+it/p04/d1834,GREW,Il suo dito sanguina.,"time.n.08       EQU now
+dito.n.01
+sanguinare.v.01 Time -2 Theme -1",,0.8571428571428571,0.6666666666666666,0.75,0.8333333333333334,0.6521739130434783,0.7317073170731708
+it/p73/d1579,GREW,Lui è uno sciattone.,"time.n.08      EQU now
+male.n.02
+sciattone.n.01 Time -2 Theme -1",,0.9047619047619048,0.5757575757575758,0.7037037037037038,0.8888888888888888,0.5714285714285714,0.6956521739130435
+it/p04/d1630,GREW,Tu e lui siete entrambi molto gentili.,"NEGATION     -1
+NEGATION     -1
+time.n.08    EQU now
+person.n.01  EQU hearer Co-Theme +1
+male.n.02
+molto.r.01
+gentile.a.01 Time -4 AttributeOf -3 Degree -1",,0.8461538461538461,0.6226415094339622,0.7173913043478259,0.8235294117647058,0.6086956521739131,0.7
+it/p04/d3409,GREW,Questa maglietta costa dieci dollari.,"time.n.08      EQU now
+maglietta.n.01
+costare.v.01   Time -2 Theme -1 Theme +1
+dollaro.n.01   Agent dieci",,0.7931034482758621,0.6571428571428571,0.71875,0.76,0.6333333333333333,0.6909090909090909
+it/p73/d0792,GREW,Quel bambino ha tirato una pietra al cane.,"time.n.08    TPR now
+bambino.n.01
+tirare.v.01  Time -2 Theme -1 Theme +1 Theme +2
+pietra.n.01
+cane.n.01",,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.7857142857142857,0.7857142857142857,0.7857142857142857
+it/p73/d1582,GREW,Queste macchine non stanno funzionando ora.,"NEGATION        -1
+time.n.08       EQU now
+macchina.n.01
+funzionare.v.01 Time -2 Theme -1 Manner +1
+ora.r.01",,0.6551724137931034,0.8260869565217391,0.7307692307692308,0.68,0.85,0.7555555555555556
+it/p73/d0761,GREW,Zhao fu arrestato nel 1989.,"time.n.08      TPR now
+female.n.02    Name Zhao
+arrestare.v.01 Time -2 Time -1 Agent 1989",,0.84,0.84,0.8399999999999999,0.8181818181818182,0.8181818181818182,0.8181818181818182
+it/p73/d0760,GREW,Louis Riel assassinò Scott.,"time.n.08        TPR now
+female.n.02      Name Louis
+assassinare.v.01 Time -2 Agent -1 Time +1
+female.n.02      Name Scott",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p73/d2984,GREW,Lincoln morì nel 1865.,"time.n.08   TPR now
+female.n.02 Name Lincoln
+morire.v.01 Time -2 Agent -1 Agent 1865",,0.84,0.84,0.8399999999999999,0.8181818181818182,0.8181818181818182,0.8181818181818182
+it/p73/d2380,GREW,Tom ha stirato i suoi vestiti.,"time.n.08    TPR now
+female.n.02  Name Tom
+stirare.v.01 Time -2 Agent -1 Theme +1
+vestito.n.01",,0.8620689655172413,0.8333333333333334,0.847457627118644,0.84,0.8076923076923077,0.8235294117647058
+it/p73/d2412,GREW,Questo secchio perde.,"time.n.08    EQU now
+secchio.n.01
+perdere.v.01 Time -2 Theme -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p94/d0906,GREW,Lui venne attaccato da uno squalo.,"time.n.08      TPR now
+male.n.02
+attaccare.v.01 Time -2 Experiencer -1 Agent +1
+squalo.n.01",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+it/p73/d1611,GREW,Tom sta gonfiando un palloncino.,"time.n.08       EQU now
+female.n.02     Time -1 Agent +1
+gonfiare.v.01   Theme +1
+palloncino.n.01",,0.7037037037037037,0.6551724137931034,0.6785714285714286,0.7391304347826086,0.68,0.7083333333333334
+it/p94/d2717,GREW,Mary sfotteva Tom.,"time.n.08     TPR now
+female.n.02   Name Mary
+sfottere.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Tom",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p94/d3046,GREW,Tom non è cattivo.,"NEGATION     -1
+time.n.08    EQU now
+female.n.02  Name Tom
+cattivo.a.01 Time -2 AttributeOf -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+it/p94/d0759,GREW,Berlinguer subentrò a Natta.,"time.n.08       TPR now
+female.n.02     Name Berlinguer
+subentrare.v.01 Time -2 Agent -1 Location +1
+female.n.02     Name Natta",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p94/d2752,GREW,Io sto fotografando la donna.,"time.n.08        EQU now
+person.n.01      EQU speaker
+fotografare.v.01 Time -2 Agent -1 Theme +1
+donna.n.01",,0.9310344827586207,0.9310344827586207,0.9310344827586207,0.92,0.92,0.92
+it/p94/d1905,GREW,Chi ha scoperto il radio?,"time.n.08     TPR now
+chi.n.01
+scoprire.v.01 Time -2 Agent -1 Theme +1
+radio.n.02",,0.8518518518518519,0.7931034482758621,0.8214285714285715,0.8695652173913043,0.8,0.8333333333333333
+it/p94/d2689,GREW,Io ho ventisette anni.,"time.n.08   EQU now
+person.n.01 EQU speaker
+avere.v.01  Time -2 Agent -1 Theme +1
+anno.n.01   Agent ventisette",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7407407407407407,0.625,0.6779661016949152
+it/p03/d2374,GREW,Tom sta soffrendo di cancro.,"time.n.08     EQU now
+female.n.02   Name Tom
+soffrire.v.01 Time -2 Agent -1 Theme +1
+cancro.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+it/p94/d3255,GREW,Tom è imbarazzato a comprare dei preservativi.,"time.n.08         TPR now
+female.n.02       Name Tom
+imbarazzare.v.01  Time -2 Time -1 Time +1
+comprare.v.01     Theme +1
+preservativo.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7333333333333333,0.7333333333333333,0.7333333333333333
+it/p94/d2222,GREW,Qualcuno urlò.,"time.n.08     TPR now
+qualcuno.n.01
+urlare.v.01   Time -2 Agent -1",,0.9047619047619048,0.9047619047619048,0.9047619047619048,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p94/d0760,GREW,Nelson Beavers ha lavorato per Eurofins.,"time.n.08     TPR now
+female.n.02   Name Nelson
+lavorare.v.01 Time -2 Agent -1 Location +1
+female.n.02   Name Eurofins",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p94/d2197,GREW,Un diamante vale molto denaro!,"time.n.08     EQU now
+diamante.n.01
+valere.v.01   Time -2 Theme -1 Theme +1
+denaro.n.01",,0.7037037037037037,0.5757575757575758,0.6333333333333334,0.6956521739130435,0.5517241379310345,0.6153846153846154
+it/p94/d2309,GREW,Lei non sta infrangendo la legge.,"NEGATION        -1
+time.n.08       EQU now
+person.n.01
+infrangere.v.01 Time -2 Agent -1 Theme +1
+legge.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.84,0.84,0.8399999999999999
+it/p03/d1600,GREW,Il suo discorso mi annoiò.,"time.n.08     TPR now
+discorso.n.01
+person.n.01   EQU speaker
+annoiare.v.01 Time -3 Theme -2 Time -1",,0.8620689655172413,0.7142857142857143,0.7812500000000001,0.84,0.7,0.7636363636363636
+it/p03/d2101,GREW,Il lago è molto profondo.,"time.n.08     EQU now
+lago.n.01
+molto.r.01
+profondo.a.01 Time -3 AttributeOf -2 Degree -1",,0.8518518518518519,0.7931034482758621,0.8214285714285715,0.8695652173913043,0.8,0.8333333333333333
+it/p03/d2742,GREW,Tredici case sono state distrutte.,"time.n.08      TPR now
+casa.n.01      Agent tredici
+distrutto.v.01 Time -2 Theme -1",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.75,0.75,0.75
+it/p03/d0900,GREW,Lei soffre di una malattia contagiosa.,"time.n.08       EQU now
+person.n.01
+soffrire.v.01   Time -2 Agent -1 Theme +1
+malattia.n.01   Attribute +1
+contagioso.a.01",,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7857142857142857,0.7857142857142857,0.7857142857142857
+it/p03/d2661,GREW,Dan ha preparato un pranzo rapido per Linda.,"time.n.08      TPR now
+female.n.02    Name Dan
+preparare.v.01 Time -2 Agent -1 Theme +1 Location +3
+pranzo.n.01    Attribute +1
+rapido.a.01
+female.n.02    Name Linda",,0.8372093023255814,0.8372093023255814,0.8372093023255814,0.8378378378378378,0.8378378378378378,0.8378378378378378
+it/p03/d1775,GREW,Io voglio un muffin inglese.,"time.n.08    EQU now
+person.n.01  EQU speaker
+volere.v.01  Time -2 Agent -1 Theme +1
+muffin.n.01  Attribute +1
+inglese.a.01",,0.8285714285714286,0.7837837837837838,0.8055555555555555,0.8333333333333334,0.78125,0.8064516129032259
+it/p03/d1867,GREW,Il gatto sta miagolando.,"time.n.08      EQU now
+gatto.n.01
+miagolare.v.01 Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p03/d2418,GREW,Ero già stanca.,"time.n.08   EQU now
+essere.n.01 Time -1 Attribute +2
+già.r.01
+stanco.a.01 Degree -1",,0.5925925925925926,0.6956521739130435,0.6399999999999999,0.5652173913043478,0.65,0.6046511627906976
+it/p03/d1397,GREW,Come morì Harry Houdini?,"time.n.08   TPR now
+come.v.02
+morire.v.01 Time -2 Manner -1 Agent +1
+female.n.02 Name Harry",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.76,0.7037037037037037,0.7307692307692308
+it/p03/d2642,GREW,Tom è alto.,"time.n.08   EQU now
+female.n.02 Name Tom
+alto.a.01   Time -2 AttributeOf -1",,0.9130434782608695,0.84,0.8749999999999999,0.9,0.8181818181818182,0.8571428571428572
+it/p03/d2764,GREW,La lampadina scoppiò.,"time.n.08      TPR now
+lampadina.n.01
+scoppiare.v.01 Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p03/d1870,GREW,La sirena di mezzogiorno sta suonando.,"time.n.08        EQU now
+sirena.n.01      EQU +1
+mezzogiorno.n.01
+suonare.v.01     Time -3 Theme -2",,0.6296296296296297,0.7083333333333334,0.6666666666666667,0.6956521739130435,0.7619047619047619,0.7272727272727272
+it/p03/d3552,GREW,Sarà spaventosa.,"time.n.08       EQU now
+spaventoso.a.01 Time -1",,0.8666666666666667,0.6190476190476191,0.7222222222222222,0.8461538461538461,0.6111111111111112,0.7096774193548387
+it/p03/d0925,GREW,Tom rovesciò il latte.,"time.n.08       TPR now
+female.n.02     Name Tom
+rovesciare.v.01 Time -2 Agent -1 Theme +1
+latte.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p03/d0946,GREW,Ci sono anche turisti francesi.,"time.n.08     EQU now
+ci.n.01
+essere.v.01   Time -2 Location -1 Theme +2
+anche.r.01
+turista.n.01  Degree -1 Attribute +1
+francese.a.01",,0.6153846153846154,0.6857142857142857,0.6486486486486486,0.6363636363636364,0.7,0.6666666666666666
+it/p03/d2003,GREW,La Steve Miller Band ha pubblicato un nuovo album nel giugno del 2010.,"time.n.08       TPR now
+female.n.02     EQU +1
+Band.n.01
+pubblicare.v.01 Time -3 Agent -2 Theme +2 Theme +3
+nuovo.a.01
+album.n.01      Attribute -1
+giugno.n.01     Agent 2010",,0.6170212765957447,0.7435897435897436,0.6744186046511628,0.65,0.7647058823529411,0.7027027027027027
+it/p03/d0716,GREW,Charles de Gaulle morì nel 1970.,"time.n.08   TPR now
+female.n.02 Name Charles
+morire.v.01 Time -2 Agent -1 Agent 1970",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+it/p03/d2679,GREW,Sto mirando a quell'anatra.,"time.n.08   EQU now
+mirare.v.01 Time -1 Theme +1
+anatra.n.01",,0.9047619047619048,0.6551724137931034,0.7599999999999999,0.8888888888888888,0.64,0.7441860465116279
+it/p03/d0872,GREW,Il signor Smith è venuto.,"time.n.08   TPR now
+female.n.02 Name signor
+venire.v.01 Time -2 Agent -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.8,0.64,0.7111111111111111
+it/p03/d3442,GREW,Tom è allergico a qualcosa?,"time.n.08      EQU now
+female.n.02    Name Tom
+allergico.a.01 Time -2 AttributeOf -1 Time +1
+qualcosa.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.8,0.8,0.8000000000000002
+it/p03/d0837,GREW,Lui pagò 1000 yen per questo libro.,"time.n.08   TPR now
+male.n.02
+pagare.v.01 Time -2 Agent -1 Theme +1 Theme +2
+yen.n.02    Agent 1000
+libro.n.01",,0.8857142857142857,0.7560975609756098,0.8157894736842105,0.8666666666666667,0.7428571428571429,0.8
+it/p03/d1985,GREW,Quel tipo è un bullo.,"time.n.08  EQU now
+tipo.n.01
+bullo.n.01 Time -2 Theme -1",,0.8571428571428571,0.5454545454545454,0.6666666666666665,0.8333333333333334,0.5357142857142857,0.6521739130434783
+it/p03/d3337,GREW,Noi abbiamo aspettato.,"time.n.08      TPR now
+person.n.01    EQU speaker
+aspettare.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p03/d2705,GREW,È corretto.,"time.n.08     EQU now
+corretto.a.01 Time -1",,0.9333333333333333,0.6666666666666666,0.7777777777777778,0.9230769230769231,0.6666666666666666,0.7741935483870968
+it/p03/d0787,GREW,Tom è più alto di sua madre.,"time.n.08   EQU now
+female.n.02 Name Tom
+più.r.01
+alto.a.01   Time -3 AttributeOf -2 Degree -1 Stimulus +1
+madre.n.01",,0.8571428571428571,0.6976744186046512,0.7692307692307693,0.8333333333333334,0.6756756756756757,0.746268656716418
+it/p03/d3283,GREW,È realistico.,"time.n.08       EQU now
+realistico.a.01 Time -1",,0.9333333333333333,0.6086956521739131,0.7368421052631579,0.9230769230769231,0.6,0.7272727272727274
+it/p03/d1881,GREW,Io sono allergico al glutine.,"time.n.08      EQU now
+person.n.01    EQU speaker
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+glutina.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p03/d0884,GREW,Lui fermentava birra.,"time.n.08       TPR now
+male.n.02
+fermentare.v.01 Time -2 Agent -1 Agent +1
+birra.r.01",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p03/d2676,GREW,Mary ama il suo pony.,"time.n.08   EQU now
+female.n.02 Name Mary
+amare.v.01  Time -2 Agent -1 Theme +1
+pony.n.01",,0.8620689655172413,0.8333333333333334,0.847457627118644,0.88,0.8461538461538461,0.8627450980392156
+it/p03/d2483,GREW,Io voglio mangiare del gelato.,"time.n.08     EQU now
+person.n.01   EQU speaker
+mangiare.v.01 Time -2 Agent -1 Theme +1
+gelato.n.01",,0.8620689655172413,0.6944444444444444,0.7692307692307692,0.84,0.6774193548387096,0.75
+it/p03/d2557,GREW,Fu firmato un trattato.,"time.n.08     TPR now
+firmare.v.01  Time -1 Theme +1
+trattato.n.01",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p03/d1592,GREW,Qualcuno ha rubato l'auto di Tom.,"time.n.08     TPR now
+qualcuno.n.01
+rubare.v.01   Time -2 Agent -1 Theme +1
+auto.n.01     Time +1
+female.n.02   Name Tom",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p03/d2290,GREW,Lei lo perdonò.,"time.n.08      TPR now
+person.n.01
+male.n.02
+perdonare.v.01 Time -3 Agent -2 Time -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+it/p03/d1550,GREW,Tom nuotò nel fiume.,"time.n.08    TPR now
+female.n.02  Name Tom
+nuotare.v.01 Time -2 Agent -1 Theme +1
+fiume.n.01",,0.8275862068965517,0.8275862068965517,0.8275862068965517,0.8,0.8,0.8000000000000002
+it/p03/d1893,GREW,Mi piacciono i puzzle.,"time.n.08    EQU now
+person.n.01  EQU speaker
+piacere.v.01 Time -2 Time -1 Theme +1
+puzzle.n.02",,0.7931034482758621,0.696969696969697,0.7419354838709677,0.8,0.6896551724137931,0.7407407407407408
+it/p03/d1926,GREW,Io sto cucendo la mia camicia.,"time.n.08    EQU now
+person.n.01  EQU speaker
+cucere.v.01  Time -2 Agent -1 Theme +1
+camicia.n.01",,0.896551724137931,0.8387096774193549,0.8666666666666666,0.88,0.8148148148148148,0.8461538461538461
+it/p03/d0766,GREW,Alfred Nobel inventò la dinamite nel 1866.,"time.n.08      TPR now
+female.n.02    Name Alfred
+inventare.v.01 Time -2 Agent -1 Theme +1 Agent 1866
+dinamite.n.01",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.7777777777777778,0.7777777777777778,0.7777777777777778
+it/p14/d1711,GREW,Lui non sta correndo.,"NEGATION     -1
+time.n.08    EQU now
+male.n.02
+correre.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p03/d2554,GREW,Pua ha cantato.,"time.n.08    TPR now
+female.n.02  Name Pua
+cantare.v.01 Time -2 Agent -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+it/p14/d0716,GREW,Vladislav Listyev fu ucciso a Mosca.,"time.n.08     TPR now
+female.n.02   Name Vladislav
+uccidere.v.01 Time -2 Time -1 Location +1
+female.n.02   Name Mosca",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p14/d0898,GREW,Tokyo è più grande di Roma.,"time.n.08   EQU now
+female.n.02 Name Tokyo
+più.r.01
+grande.a.01 Time -3 AttributeOf -2 Degree -1 Stimulus +1
+female.n.02 Name Roma",,0.8108108108108109,0.7894736842105263,0.8,0.84375,0.8181818181818182,0.8307692307692308
+it/p14/d2023,GREW,Io sono sovrappeso.,"time.n.08       EQU now
+person.n.01     EQU speaker
+sovrappeso.a.01 Time -2 AttributeOf -1",,0.9565217391304348,0.9565217391304348,0.9565217391304348,0.95,0.95,0.9500000000000001
+it/p14/d2118,GREW,Il ragazzo era stanco.,"time.n.08    EQU now
+ragazzo.n.01
+stanco.a.01  Time -2 AttributeOf -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.7777777777777778,0.7777777777777778,0.7777777777777778
+it/p14/d2976,GREW,Tom comprò una pistola.,"time.n.08     TPR now
+female.n.02   Name Tom
+comprare.v.01 Time -2 Agent -1 Theme +1
+pistola.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p14/d2122,GREW,Tom è impegnato.,"time.n.08      TPR now
+female.n.02    Name Tom
+impegnare.v.01 Time -2 Agent -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.75,0.75,0.75
+it/p14/d2982,GREW,Lo videro tutti.,"NEGATION    -1
+NEGATION    -1
+time.n.08   TPR now
+male.n.02
+vedere.v.01 Time -2 Time -1",,0.84,0.6774193548387096,0.75,0.8636363636363636,0.7037037037037037,0.7755102040816326
+it/p14/d2318,GREW,Marie è cresciuta.,"time.n.08     TPR now
+female.n.02   Name Marie
+crescere.v.01 Time -2 Agent -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.9,0.9,0.9
+it/p14/d2673,GREW,Il messaggio era falso.,"time.n.08      EQU now
+messaggio.n.01
+falso.a.01     Time -2 AttributeOf -1",,0.8095238095238095,0.6296296296296297,0.7083333333333334,0.7777777777777778,0.6086956521739131,0.6829268292682927
+it/p14/d1901,GREW,Nessuno ascolta.,"NEGATION       -1
+time.n.08      EQU now
+ascoltare.v.01 Time -1",,0.9411764705882353,0.6956521739130435,0.7999999999999999,0.9333333333333333,0.7,0.8
+it/p14/d2890,GREW,I nostri genitori mi adoravano.,"time.n.08     TPR now
+genitore.n.01
+person.n.01   EQU speaker
+adorare.v.01  Time -3 Theme -2 Time -1",,0.8620689655172413,0.5813953488372093,0.6944444444444445,0.84,0.5675675675675675,0.6774193548387097
+it/p14/d0713,GREW,L'Italia batté il Kazakhstan.,"time.n.08    TPR now
+female.n.02  Name Italia
+battare.v.01 Time -2 Agent -1 Time +1
+female.n.02  Name Kazakhstan",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p14/d1977,GREW,Nessuno dei libri è istruttivo.,"NEGATION        -1
+time.n.08       EQU now
+libro.n.01
+istruttivo.a.01 Time -2",,0.9090909090909091,0.6896551724137931,0.7843137254901961,0.8947368421052632,0.68,0.7727272727272727
+it/p42/d1889,GREW,Il cane stava scavando una buca.,"time.n.08    EQU now
+cane.n.01
+scavare.v.01 Time -2 Theme -1 Theme +1
+buca.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7391304347826086,0.7391304347826086,0.7391304347826085
+it/p14/d2644,GREW,Kim sorrise dolcemente.,"time.n.08       TPR now
+female.n.02     Name Kim
+sorridere.v.01  Time -2 Agent -1 Manner +1
+dolcemente.r.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.92,0.92,0.92
+it/p14/d3473,GREW,L'infermiere ha preso la sua temperatura con il termometro.,"time.n.08        TPR now
+infermiere.n.01
+prendere.v.01    Time -2 Theme -1 Theme +1 Theme +2
+temperatura.n.01
+termometro.n.01",,0.7878787878787878,0.5777777777777777,0.6666666666666666,0.7857142857142857,0.5789473684210527,0.6666666666666667
+it/p42/d3126,GREW,La Seconda Guerra Mondiale scoppiò nel 1939.,"time.n.08      TPR now
+secondo.a.01
+guerra.n.01    Attribute -1 Attribute +1
+mondiale.a.01
+scoppiare.v.01 Time -4 Theme -2 Agent 1939",,0.5714285714285714,0.8,0.6666666666666666,0.5666666666666667,0.7727272727272727,0.6538461538461539
+it/p14/d2823,GREW,Questo libro costa su per giù 20 euro.,"time.n.08    EQU now
+libro.n.01
+costare.v.01 Time -2 Theme -1 Manner +1 Theme +3
+su.r.01      Agent +1
+giù.r.01
+euro.n.01    Agent 20",,0.7317073170731707,0.6382978723404256,0.6818181818181819,0.7142857142857143,0.625,0.6666666666666666
+it/p42/d2544,GREW,Sono già bagnato!,"time.n.08    TPR now
+già.r.01
+bagnato.v.01 Time -2 Manner -1",,0.7142857142857143,0.6521739130434783,0.6818181818181819,0.6666666666666666,0.6,0.631578947368421
+it/p42/d0765,GREW,Wolfgang Amadeus Mozart nacque a Salisburgo.,"time.n.08    TPR now
+female.n.02  Name Wolfgang
+nascere.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name Salisburgo",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p14/d1740,GREW,Nessuno ama la guerra.,"NEGATION    -1
+time.n.08   EQU now
+amare.v.01  Time -1 Theme +1
+guerra.n.01",,0.8695652173913043,0.6896551724137931,0.7692307692307693,0.85,0.68,0.7555555555555556
+it/p42/d2390,GREW,Tom è stato pugnalato tredici volte.,"time.n.08      TPR now
+female.n.02    Name Tom
+pugnalare.v.01 Time -2 Time -1 Theme +1
+volta.n.01     Agent tredici",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7407407407407407,0.7407407407407407,0.7407407407407407
+it/p42/d2000,GREW,La camicia deve essere stirata.,"time.n.08    TPR now
+camicia.n.01
+stirare.v.01 Time -2 Theme -1",,0.7142857142857143,0.6521739130434783,0.6818181818181819,0.6666666666666666,0.6,0.631578947368421
+it/p42/d2218,GREW,Tom borbottò.,"time.n.08       TPR now
+female.n.02     Name Tom
+borbottare.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p42/d2027,GREW,Tom non è fastidioso.,"NEGATION        -1
+time.n.08       EQU now
+female.n.02     Name Tom
+fastidioso.a.01 Time -2 AttributeOf -1",,0.88,0.88,0.88,0.8636363636363636,0.8636363636363636,0.8636363636363636
+it/p42/d0760,GREW,Hooper comprò una casa a Portland.,"time.n.08     TPR now
+female.n.02   Name Hooper
+comprare.v.01 Time -2 Agent -1 Theme +1 Location +2
+casa.n.01
+female.n.02   Name Portland",,0.8648648648648649,0.8648648648648649,0.8648648648648649,0.875,0.875,0.875
+it/p42/d2328,GREW,Tom affronta un enigma.,"time.n.08       EQU now
+female.n.02     Name Tom
+affrontare.v.01 Time -2 Agent -1 Theme +1
+enigma.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p42/d0712,GREW,André Henri Constant van Hasselt è stato educato a Maastricht.,"time.n.08    TPR now
+female.n.02  Name André
+educare.v.01 Time -2 Time -1 Location +1
+female.n.02  Name Maastricht",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p42/d0945,GREW,Io mangerò la mela.,"time.n.08      TSU now
+person.n.01    EQU speaker
+mangerare.v.01 Time -2 Agent -1 Theme +1
+mela.n.01",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p42/d2740,GREW,Io ho dato una mela a Tom.,"time.n.08   TPR now
+person.n.01 EQU speaker
+dare.v.01   Time -2 Agent -1 Theme +1 Location +2
+mela.n.01
+female.n.02 Name Tom",,0.8648648648648649,0.8648648648648649,0.8648648648648649,0.875,0.875,0.875
+it/p42/d2430,GREW,Lei lo pugnalò.,"time.n.08      TPR now
+person.n.01
+male.n.02
+pugnalare.v.01 Time -3 Agent -2 Time -1",,0.8518518518518519,0.8518518518518519,0.8518518518518519,0.8695652173913043,0.8695652173913043,0.8695652173913043
+it/p42/d1727,GREW,Tom suona il flauto.,"time.n.08    EQU now
+female.n.02  Name Tom
+suonare.v.01 Time -2 Agent -1 Theme +1
+flauto.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p74/d2866,GREW,Lui ha arato il campo.,"time.n.08  TPR now
+male.n.02
+arare.v.01 Time -2 Agent -1 Theme +1
+campo.n.01",,0.8888888888888888,0.8888888888888888,0.8888888888888888,0.8695652173913043,0.8695652173913043,0.8695652173913043
+it/p74/d3242,GREW,Il pipistrello stridisce.,"time.n.08        EQU now
+pipistrello.n.01
+stridire.v.01    Time -2 Theme -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p74/d1400,GREW,Tom era infelice.,"time.n.08     EQU now
+female.n.02   Name Tom
+infelice.a.01 Time -2 AttributeOf -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8,0.8,0.8000000000000002
+it/p74/d2975,GREW,Lui tirò la palla.,"time.n.08   TPR now
+male.n.02
+tirare.v.01 Time -2 Agent -1 Theme +1
+palla.n.01",,0.9259259259259259,0.9259259259259259,0.9259259259259259,0.9130434782608695,0.9130434782608695,0.9130434782608695
+it/p74/d2410,GREW,Mi piace giocare a golf.,"time.n.08    EQU now
+person.n.01  EQU speaker
+piacere.v.01 Time -2 Time -1 Agent +1
+giocare.v.01 Theme +1
+golf.n.01",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8666666666666667,0.8666666666666667,0.8666666666666667
+it/p74/d1790,GREW,Quei jet erano più veloci dei fulmini.,"time.n.08    EQU now
+jet.n.01
+più.r.01
+veloce.a.01  Time -3 AttributeOf -2 Degree -1 Stimulus +1
+fulmine.n.01",,0.8484848484848485,0.8235294117647058,0.8358208955223881,0.8214285714285714,0.7931034482758621,0.8070175438596492
+it/p74/d0760,GREW,Mabel Normand recitò in The Extra Girl.,"time.n.08     TPR now
+female.n.02   Name Mabel
+recitare.v.01 Time -2 Agent -1 Agent +1
+The.n.01      Agent +1 Agent +2
+extra.a.01
+female.n.02   Name Girl",,0.5581395348837209,0.7741935483870968,0.6486486486486487,0.5945945945945946,0.8148148148148148,0.6875
+it/p74/d1471,GREW,Brian comprò un rossetto per Kate.,"time.n.08     TPR now
+female.n.02   Name Brian
+comprare.v.01 Time -2 Agent -1 Theme +1
+rossetto.n.01 Time +1
+female.n.02   Name Kate",,0.8918918918918919,0.8918918918918919,0.8918918918918919,0.875,0.875,0.875
+it/p74/d2862,GREW,Lei punse il palloncino.,"time.n.08       TPR now
+person.n.01
+pungere.v.01    Time -2 Agent -1 Theme +1
+palloncino.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p74/d1820,GREW,Lui ha un cazzo enorme.,"time.n.08   EQU now
+male.n.02
+avere.v.01  Time -2 Agent -1 Theme +1
+cazzo.n.01  Attribute +1
+enorme.a.01",,0.8484848484848485,0.8484848484848485,0.8484848484848486,0.8571428571428571,0.8571428571428571,0.8571428571428571
+it/p22/d2715,GREW,Sto congelando.,"time.n.08      EQU now
+congelare.v.01 Time -1",,0.8666666666666667,0.5652173913043478,0.6842105263157895,0.9230769230769231,0.6,0.7272727272727274
+it/p22/d0805,GREW,Sei pazza.,"time.n.08  EQU now
+pazzo.a.01 Time -1",,0.9333333333333333,0.6086956521739131,0.7368421052631579,0.9230769230769231,0.6,0.7272727272727274
+it/p22/d3450,GREW,Tom continuava a suonare il clacson.,"time.n.08       TPR now
+female.n.02     Name Tom
+continuare.v.01 Time -2 Agent -1 Time +1
+suonare.v.01    Theme +1
+clacson.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.8,0.8,0.8000000000000002
+it/p22/d1492,GREW,Lei versò il latte in una tazza.,"time.n.08    TPR now
+person.n.01
+versare.v.01 Time -2 Agent -1 Theme +1 Theme +2
+latte.n.01
+tazza.n.01",,0.8181818181818182,0.6923076923076923,0.7500000000000001,0.8214285714285714,0.696969696969697,0.7540983606557378
+it/p22/d0761,GREW,La Southwest Airlines opera a  New Orleans.,"time.n.08    EQU now
+female.n.02  Name Southwest
+operare.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name New",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p22/d1401,GREW,La guerra durò quasi dieci anni.,"time.n.08   TPR now
+guerra.n.01
+durare.v.01 Time -2 Theme -1 Theme +3
+quasi.r.01
+dieci.n.01  APX -1
+anno.n.01   Quantity -1",,0.7692307692307693,0.6382978723404256,0.6976744186046512,0.7575757575757576,0.625,0.6849315068493151
+it/p22/d1967,GREW,Tom ha accelerato.,"time.n.08       TPR now
+female.n.02     Name Tom
+accelerare.v.01 Time -2 Agent -1",,0.9130434782608695,0.9130434782608695,0.9130434782608695,0.9,0.9,0.9
+it/p22/d1390,GREW,Chi è il capo del Gruppo Islamico Armato algerino?,"time.n.08     EQU now
+chi.n.01      Time -1 Co-Theme +1
+capo.n.01     Time +1
+female.n.02   EQU +1
+algerino.a.01",,0.7272727272727273,0.47058823529411764,0.5714285714285714,0.7142857142857143,0.45454545454545453,0.5555555555555556
+it/p22/d2695,GREW,Le rondini stanno volando nel cielo.,"time.n.08    EQU now
+rondine.n.01
+volare.v.01  Time -2 Theme -1 Theme +1
+cielo.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8260869565217391,0.8260869565217391,0.8260869565217391
+it/p22/d0932,GREW,Chi ha scritto la Bibbia?,"time.n.08     TPR now
+chi.n.01
+scrivere.v.01 Time -2 Agent -1 Time +1
+female.n.02   Name Bibbia",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.84,0.7777777777777778,0.8076923076923077
+it/p22/d0712,GREW,Maler viveva nello Yucatán.,"time.n.08   TPR now
+female.n.02 Name Maler
+vivere.v.01 Time -2 Agent -1 Location +1
+female.n.02 Name Yucatán",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p22/d3376,GREW,Ho raccolto una margherita per lei.,"time.n.08        TPR now
+raccogliere.v.01 Time -1 Theme +1 Time +2
+margherita.n.01
+person.n.01",,0.8518518518518519,0.6571428571428571,0.7419354838709677,0.8695652173913043,0.6666666666666666,0.7547169811320754
+it/p22/d2563,GREW,Tom è indignato.,"time.n.08      TPR now
+female.n.02    Name Tom
+indignare.v.01 Time -2 Agent -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.75,0.75,0.75
+it/p22/d0919,GREW,Sono gialle,"time.n.08   EQU now
+giallo.a.01 Time -1",,0.9333333333333333,0.6666666666666666,0.7777777777777778,0.9230769230769231,0.6666666666666666,0.7741935483870968
+it/p33/d1425,GREW,La merda puzza.,"time.n.08  EQU now
+merda.n.01 Time -1 Attribute +1
+puzzo.a.01",,0.6190476190476191,0.52,0.5652173913043478,0.6111111111111112,0.5,0.55
+it/p33/d2427,GREW,Nessuno di loro è presente.,"NEGATION      -1
+time.n.08     EQU now
+person.n.01
+presente.a.01 Time -2",,0.9090909090909091,0.6896551724137931,0.7843137254901961,0.9473684210526315,0.72,0.8181818181818181
+it/p33/d0768,GREW,Nessuno è venuto.,"NEGATION    -1
+time.n.08   TPR now
+venire.v.01 Time -1",,0.8823529411764706,0.6521739130434783,0.75,0.9333333333333333,0.7,0.8
+it/p33/d1992,GREW,L'orso mangiò una mela.,"time.n.08     TPR now
+orso.n.01
+mangiare.v.01 Time -2 Theme -1 Theme +1
+mela.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.782608695652174,0.782608695652174,0.782608695652174
+it/p33/d0765,GREW,Il Titanic affondò nel 1912.,"time.n.08      TPR now
+female.n.02    Name Titanic
+affondare.v.01 Time -2 Agent -1 Agent 1912",,0.76,0.76,0.76,0.8181818181818182,0.8181818181818182,0.8181818181818182
+it/p33/d3195,GREW,Tom è ancora celibe.,"time.n.08   EQU now
+female.n.02 Name Tom
+ancora.r.01
+celibe.a.01 Time -3 AttributeOf -2 Degree -1",,0.6896551724137931,0.8695652173913043,0.7692307692307693,0.72,0.9,0.7999999999999999
+it/p23/d1869,GREW,Gemono tutti.,"NEGATION    -1
+NEGATION    -1
+time.n.08   EQU now
+gemere.v.01 Time -1",,0.9473684210526315,0.72,0.8181818181818181,0.9411764705882353,0.7272727272727273,0.8205128205128205
+it/p33/d0764,GREW,Il film 'Speed' è stato diretto da Jan De Bont.,"time.n.08     TPR now
+film.n.01     Time +1
+female.n.02   Name Speed
+dirigere.v.01 Time -3 Theme -2 Agent +1
+female.n.02   Name Jan",,0.6756756756756757,0.8064516129032258,0.7352941176470588,0.6875,0.8148148148148148,0.7457627118644067
+it/p23/d0851,GREW,Il vento sta soffiando da est.,"time.n.08     EQU now
+vento.n.01
+soffiare.v.01 Time -2 Theme -1 Manner +1
+est.r.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.782608695652174,0.782608695652174,0.782608695652174
+it/p23/d2962,GREW,Justin Bieber è più famoso di Katie Holmes.,"time.n.08   EQU now
+female.n.02 Name Justin
+più.r.01
+famoso.a.01 Time -3 AttributeOf -2 Degree -1 Stimulus +1
+female.n.02 Name Katie",,0.8378378378378378,0.8157894736842105,0.8266666666666665,0.8125,0.7878787878787878,0.8
+it/p33/d3224,GREW,Io sono allergica ai gatti.,"time.n.08      EQU now
+person.n.01    EQU speaker
+allergico.a.01 Time -2 AttributeOf -1 Stimulus +1
+gatto.n.01",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.88,0.88,0.88
+it/p23/d0711,GREW,Sandra Goudie fu sconfitta da Max Purnell.,"time.n.08        TPR now
+female.n.02      Name Sandra
+sconfiggere.v.01 Time -2 Time -1 Agent +1
+female.n.02      Name Max",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p23/d1567,GREW,Tom è devastato.,"time.n.08      EQU now
+female.n.02    Name Tom
+devastato.a.01 Time -2 AttributeOf -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.8,0.8,0.8000000000000002
+it/p23/d1395,GREW,Quanto pesava Marilyn Monroe?,"time.n.08   TPR now
+quanto.n.01
+pesare.v.01 Time -2 Time -1 Agent +1
+female.n.02 Name Marilyn",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.8,0.7407407407407407,0.7692307692307692
+it/p23/d1730,GREW,Lui sta giocando a Monopoli.,"time.n.08    EQU now
+male.n.02
+giocare.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name Monopoli",,0.7931034482758621,0.8518518518518519,0.8214285714285715,0.8,0.8695652173913043,0.8333333333333333
+it/p23/d1387,GREW,"Chi ha vinto il ""Tour de France""?","time.n.08    TPR now
+chi.n.01
+vincere.v.01 Time -2 Agent -1 Time +1
+female.n.02  Location +1
+female.n.02  Name France",,0.6571428571428571,0.7419354838709677,0.6969696969696969,0.6666666666666666,0.7407407407407407,0.7017543859649122
+it/p23/d1947,GREW,Abbiamo nuotato nel lago.,"time.n.08    TPR now
+nuotare.v.01 Time -1 Theme +1
+lago.n.01",,0.9047619047619048,0.6551724137931034,0.7599999999999999,0.8888888888888888,0.64,0.7441860465116279
+it/p23/d2401,GREW,Non provochi quella vespa.,"NEGATION       -1
+time.n.08      EQU now
+provocare.v.01 Time -1 Theme +1
+vespa.n.01",,0.5652173913043478,0.5652173913043478,0.5652173913043478,0.65,0.65,0.65
+it/p44/d0927,GREW,A te piace il cibo piccante?,"time.n.08     EQU now
+person.n.01   EQU hearer
+piacere.v.01  Time -2 Time -1 Theme +1
+cibo.n.01     Attribute +1
+piccante.a.01",,0.8,0.8,0.8000000000000002,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p23/d1962,GREW,Tutti rispettano Erkin.,"NEGATION        -1
+NEGATION        -1
+time.n.08       EQU now
+rispettare.v.01 Time -1 Time +1
+female.n.02     Name Erkin",,0.8888888888888888,0.7272727272727273,0.7999999999999999,0.875,0.7241379310344828,0.7924528301886793
+it/p44/d3494,GREW,Charlie Chaplin è un attore.,"time.n.08   EQU now
+female.n.02 Name Charlie
+attore.n.01 Time -2 Theme -1",,0.782608695652174,0.5142857142857142,0.6206896551724138,0.8,0.5333333333333333,0.64
+it/p23/d3069,GREW,Marrakesh è più calda di Parigi.,"time.n.08   EQU now
+female.n.02 Name Marrakesh
+più.r.01
+caldo.a.01  Time -3 AttributeOf -2 Degree -1 Stimulus +1
+female.n.02 Name Parigi",,0.8108108108108109,0.7894736842105263,0.8,0.84375,0.8181818181818182,0.8307692307692308
+it/p44/d2158,GREW,La polizia ha arrestato il ladro.,"time.n.08      TPR now
+polizia.n.01
+arrestare.v.01 Time -2 Theme -1 Theme +1
+ladro.n.01",,0.8148148148148148,0.6666666666666666,0.7333333333333333,0.782608695652174,0.6428571428571429,0.7058823529411765
+it/p44/d2390,GREW,Tom parla con tutti.,"NEGATION     -1
+NEGATION     -1
+time.n.08    EQU now
+female.n.02  Name Tom
+parlare.v.01 Time -2 Agent -1",,0.8518518518518519,0.5897435897435898,0.6969696969696971,0.8333333333333334,0.5882352941176471,0.6896551724137931
+it/p44/d1392,GREW,Come morì George Washington?,"time.n.08   TPR now
+come.v.02
+morire.v.01 Time -2 Manner -1 Agent +1
+female.n.02 Name George",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.76,0.7037037037037037,0.7307692307692308
+it/p44/d3078,GREW,Questa pietra pesa cinque tonnellate.,"time.n.08       EQU now
+pietra.n.01
+pesare.v.01     Time -2 Theme -1 Theme +1
+tonnellata.n.01 Agent cinque",,0.7931034482758621,0.6571428571428571,0.71875,0.76,0.6333333333333333,0.6909090909090909
+it/p44/d1559,GREW,Mi scuso con tutti.,"NEGATION    -1
+NEGATION    -1
+time.n.08   EQU now
+person.n.01 EQU speaker
+scuso.v.01  Time -2 Location -1",,0.8518518518518519,0.5897435897435898,0.6969696969696971,0.8333333333333334,0.5882352941176471,0.6896551724137931
+it/p44/d1464,GREW,Tom comprese.,"time.n.08        TPR now
+female.n.02      Name Tom
+comprendere.v.01 Time -2 Agent -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.85,0.85,0.85
+it/p44/d1979,GREW,Peter sta comprando un gatto maschio.,"time.n.08     EQU now
+female.n.02   Name Peter
+comprare.v.01 Time -2 Agent -1 Theme +1
+gatto.n.01    Attribute +1
+maschio.a.01",,0.8857142857142857,0.8857142857142857,0.8857142857142857,0.8666666666666667,0.8666666666666667,0.8666666666666667
+it/p44/d2221,GREW,Tom non indossava cappelli.,"NEGATION       -1
+time.n.08      TPR now
+female.n.02    Name Tom
+indossare.v.01 Time -2 Agent -1 Theme +1
+cappello.n.01",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8518518518518519,0.8518518518518519,0.8518518518518519
+it/p44/d1592,GREW,Avranno tutti fame.,"NEGATION   -1
+NEGATION   -1
+time.n.08  TSU now
+avere.v.01 Time -1 Theme +1
+fame.n.01",,0.8,0.8,0.8000000000000002,0.7727272727272727,0.7727272727272727,0.7727272727272727
+it/p44/d0868,GREW,Ho ordinato due hamburger.,"time.n.08      TPR now
+ordinare.v.01  Time -1 Theme +1
+hamburger.n.01 Agent due",,0.8260869565217391,0.6129032258064516,0.7037037037037037,0.85,0.6296296296296297,0.723404255319149
+it/p44/d3365,GREW,La mia matita è rossa.,"time.n.08   EQU now
+matita.n.01
+rosso.a.01  Time -2 AttributeOf -1",,0.8571428571428571,0.782608695652174,0.8181818181818182,0.8333333333333334,0.75,0.7894736842105262
+it/p82/d3242,GREW,Noi dobbiamo tenere un diario ogni giorno.,"NEGATION    -1
+NEGATION    -1
+time.n.08   EQU now
+person.n.01 EQU speaker
+tenere.v.01 Time -2 Agent -1 Theme +1 Theme +2
+Diario.n.01
+giorno.n.01",,0.5897435897435898,0.696969696969697,0.638888888888889,0.6176470588235294,0.7241379310344828,0.6666666666666667
+it/p44/d1558,GREW,Lui parla cinese.,"time.n.08    EQU now
+male.n.02
+parlare.v.01 Time -2 Agent -1 Theme +1
+cinese.n.01",,0.8888888888888888,0.8888888888888888,0.8888888888888888,0.9130434782608695,0.9130434782608695,0.9130434782608695
+it/p82/d3517,GREW,Tom inseguì Mary.,"time.n.08      TPR now
+female.n.02    Name Tom
+inseguire.v.01 Time -2 Agent -1 Time +1
+female.n.02    Name Mary",,0.8709677419354839,0.8709677419354839,0.8709677419354839,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p82/d2688,GREW,Tom contattò Mary.,"time.n.08       TPR now
+female.n.02     Name Tom
+contattare.v.01 Time -2 Agent -1 Time +1
+female.n.02     Name Mary",,0.9032258064516129,0.9032258064516129,0.9032258064516129,0.8888888888888888,0.8888888888888888,0.8888888888888888
+it/p82/d1779,GREW,Questo caffè viene dall'Eritrea.,"time.n.08   EQU now
+caffè.n.01
+venire.v.01 Time -2 Theme -1 Location +1
+female.n.02 Name Eritrea",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.84,0.84,0.8399999999999999
+it/p82/d3317,GREW,Io voglio un hot dog.,"time.n.08   EQU now
+person.n.01 EQU speaker
+volere.v.01 Time -2 Agent -1 Theme +2
+hot.a.01
+dog.n.01    Attribute -1",,0.7142857142857143,0.8620689655172413,0.7812500000000001,0.7333333333333333,0.88,0.8
+it/p82/d3009,GREW,Tom ha ruttato.,"time.n.08       TPR now
+female.n.02     Name Tom
+ha-ruttare.v.01 Time -2 Time -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p82/d2129,GREW,Tom ha abbracciato il suo cane.,"time.n.08        TPR now
+female.n.02      Name Tom
+abbracciare.v.01 Time -2 Agent -1 Theme +1
+cane.n.01",,0.8620689655172413,0.8333333333333334,0.847457627118644,0.84,0.8076923076923077,0.8235294117647058
+it/p82/d0716,GREW,Johann Wolfgang von Goethe nacque in Germania.,"time.n.08    TPR now
+female.n.02  Name Johann
+nascere.v.01 Time -2 Agent -1 Location +1
+female.n.02  Name Germania",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8148148148148148,0.8148148148148148,0.8148148148148148
+it/p82/d2388,GREW,Il vino era eccellente.,"time.n.08       EQU now
+vino.n.01
+eccellente.a.01 Time -2 AttributeOf -1",,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8333333333333334,0.8333333333333334,0.8333333333333334
+it/p82/d3447,GREW,Tom è perplesso.,"time.n.08      EQU now
+female.n.02    Name Tom
+perplesso.a.01 Time -2 AttributeOf -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.85,0.85,0.85
+it/p82/d1510,GREW,Tom è piuttosto egoista.,"time.n.08      EQU now
+female.n.02    Name Tom
+piuttosto.r.01
+egoista.a.01   Time -3 AttributeOf -2 Degree -1",,0.896551724137931,0.896551724137931,0.896551724137931,0.88,0.88,0.88
+it/p82/d1886,GREW,Tom abita a Boston.,"time.n.08   EQU now
+female.n.02 Name Tom
+female.n.02 Name Boston",,0.8695652173913043,0.6451612903225806,0.7407407407407407,0.9,0.6666666666666666,0.7659574468085106
+it/p82/d1991,GREW,Il chirurgo amputò la gamba sbagliata.,"time.n.08      TPR now
+chirurgo.n.01
+amputare.v.01  Time -2 Theme -1 Theme +1
+gamba.n.01     Attribute +1
+sbagliato.a.01",,0.8181818181818182,0.6923076923076923,0.7500000000000001,0.8214285714285714,0.696969696969697,0.7540983606557378

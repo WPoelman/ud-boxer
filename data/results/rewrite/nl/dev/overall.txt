@@ -166,3 +166,31 @@
     AVERAGE F1 (lenient): 0.76 (0.381 - 0.95)
     
 
+
+    2022_05_27_10_57_50
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/nl/gold', language='nl', ud_system='stanza', data_split='dev', sbn_source='GREW', results_file='final_stanza', max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          437
+    FAILED DOCS:          0
+    TOTAL DOCS:           437
+
+    AVERAGE F1 (strict):  0.757 (0.364 - 0.957)
+    AVERAGE F1 (lenient): 0.758 (0.41 - 0.95)
+    
+
+
+    2022_05_27_10_58_21
+
+    ARGS: Namespace(starting_path='../../data/pmb_dataset/pmb-extracted/pmb-4.0.0/data/nl/gold', language='nl', ud_system='trankit', data_split='dev', sbn_source='GREW', results_file='final_trankit', max_workers=16, clear_previous=False, store_visualizations=False, store_sbn=False)
+
+    DATA SPLIT:           dev
+    PARSED DOCS:          437
+    FAILED DOCS:          0
+    TOTAL DOCS:           437
+
+    AVERAGE F1 (strict):  0.758 (0.364 - 0.957)
+    AVERAGE F1 (lenient): 0.76 (0.381 - 0.95)
+    
+
