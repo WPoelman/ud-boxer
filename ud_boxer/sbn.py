@@ -130,9 +130,9 @@ class SBNGraph(BaseGraph):
                     # In the entire dataset there are no indices for box
                     # references other than -1. Maybe they are needed later and
                     # the exception triggers if something different comes up.
-                    if box_index := int(tokens.pop(0)) != -1:
+                    if (box_index := int(tokens.pop(0))) != -1:
                         raise SBNError(
-                            f"Unexpected box index found {box_index}"
+                            f"Unexpected box index found '{box_index}'"
                         )
 
                     current_box_id = self._active_box_id
