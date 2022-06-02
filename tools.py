@@ -3,7 +3,6 @@ from argparse import ArgumentParser, Namespace
 
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from ud_boxer.misc import ensure_ext
 from ud_boxer.sbn import SBNGraph
 
 logging.basicConfig(level=logging.WARNING)
