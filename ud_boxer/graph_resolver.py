@@ -37,7 +37,9 @@ class GraphResolver:
         self.edge_mappings = Config.get_edge_mappings(language)
         self.lemma_sense_lookup = Config.get_lemma_sense(language)
         self.lemma_pos_sense_lookup = Config.get_lemma_pos_sense(language)
-        self.edge_clf_pipeline = Config.get_edge_clf(language)
+        # TODO: use flag if we want to use this
+        # self.edge_clf_pipeline = Config.get_edge_clf(language)
+        self.edge_clf_pipeline = None
 
     def node_token_type(
         self, node_data: Dict[str, str]
@@ -167,6 +169,9 @@ class GraphResolver:
         return edge_type, edge_token, edge_data
 
     def predict_edge(self, deprel, from_node_data, to_node_data) -> str:
+        if not self.edge_clf_pipeline:
+            raise SBNError("Edge clf is not enabled")
+
         feature_vec = self.encode(deprel, from_node_data, to_node_data)
         label = self.edge_clf_pipeline.predict([feature_vec])[0]
         return label

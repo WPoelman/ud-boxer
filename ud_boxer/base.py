@@ -3,7 +3,6 @@ from os import PathLike
 from typing import Any, Dict, List, Tuple
 
 import networkx as nx
-import pydot
 
 from ud_boxer.misc import ensure_ext
 
@@ -51,8 +50,10 @@ class BaseGraph(nx.DiGraph):
     def _edge_label(edge_data) -> str:
         raise NotImplementedError("Overwrite this to create an edge label.")
 
-    def to_pydot(self) -> pydot.Dot:
+    def to_pydot(self):
         """Creates a pydot graph object from the graph"""
+        import pydot
+
         p_graph = pydot.Dot()
 
         token_count: Dict[str, int] = dict()

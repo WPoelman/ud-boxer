@@ -1,7 +1,5 @@
 from pathlib import Path
 
-import joblib
-
 from ud_boxer.base import BaseEnum
 from ud_boxer.misc import load_json
 
@@ -90,6 +88,8 @@ class Config:
 
     @staticmethod
     def get_edge_clf(lang: SUPPORTED_LANGUAGES):
+        import joblib
+
         path = Path(
             Config.DATA_DIR / f"edge_classifier/{lang}_edge_clf.joblib"
         ).resolve()
