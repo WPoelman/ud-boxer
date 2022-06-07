@@ -232,17 +232,31 @@ def store_penman(args):
 
 
 def collect_cyclic_graphs(args):
-    paths = []
-    for filepath in pmb_generator(
-        args.starting_path, "**/*.sbn", desc_tqdm="Finding cyclic sbn graphs "
-    ):
-        try:
-            S = SBNGraph().from_path(filepath)
-        except SBNError as e:
-            logger.error(str(e))
-        if not S.is_dag:
-            paths.append(str(filepath))
-    Path(Config.LOG_PATH / "cyclic_paths.txt").write_text("\n".join(paths))
+    pass
+    # paths = []
+    # multi = 0
+    # for filepath in pmb_generator(
+    #     args.starting_path, "**/*.sbn", desc_tqdm="Finding cyclic sbn graphs "
+    # ):
+    #     c = (
+    #         Path(filepath.parent / f"{args.language}.tok.iob")
+    #         .read_text()
+    #         .count("S")
+    #     )
+    #     if c > 1:
+    #         multi += 1
+    # try:
+    #     S = SBNGraph().from_path(filepath)
+    # except SBNError as e:
+    #     logger.error(e)
+    #     paths.append(f'{filepath}: {e}')
+
+    # print(f"\n\nMULTI SENT DOCS: {multi}")
+    # Path(Config.LOG_PATH / f"{args.language}_indices.txt").write_text("\n".join(paths))
+
+    #     if not S.is_dag:
+    #         paths.append(str(filepath))
+    # Path(Config.LOG_PATH / f"{args.language}_cyclic_paths.txt").write_text("\n".join(paths))
 
 
 def main():
