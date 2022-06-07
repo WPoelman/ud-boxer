@@ -176,8 +176,8 @@ class SBNGraph(BaseGraph):
 
                             edges.append(role_edge)
                         else:
-                            # This is special case where a constant looks like
-                            # an idx. Example:
+                            # A special case where a constant looks like an idx
+                            # Example:
                             # pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
                             # This is detected by checking if the provided
                             # index points at an 'impossible' line (sense) in
