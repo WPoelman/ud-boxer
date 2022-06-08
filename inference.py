@@ -60,6 +60,12 @@ def get_args() -> Namespace:
         action="store_true",
         help="Store Penman notation of DRS of prediction in 'output_dir'.",
     )
+    parser.add_argument(
+        "--store_dot",
+        action="store_true",
+        help="Store graphviz dot strings used for the visualization in "
+        "'output_dir'.",
+    )
     return parser.parse_args()
 
 
@@ -84,18 +90,28 @@ def main():
         ud_filepath = Path(args.ud).resolve()
 
     res = grew.run(ud_filepath)
-    res.to_sbn(Path(output_dir / f"{args.language}.drs.sbn"))
+    res.to_sbn(output_dir / f"{args.language}.drs.sbn")
+
+    ud_graph = UDGraph().from_path(ud_filepath)
 
     if args.store_visualizations:
-        UDGraph().from_path(ud_filepath).to_png(
+        ud_graph.to_png(
             output_dir / f"{args.language}.ud.{args.ud_system}.png"
         )
-        res.to_png(Path(output_dir / f"{args.language}.drs.png"))
+        res.to_png(output_dir / f"{args.language}.drs.png")
+
+    if args.store_dot:
+        Path(output_dir / f"{args.language}.drs.dot").write_text(
+            res.to_dot_str()
+        )
+        Path(
+            output_dir / f"{args.language}.ud.{args.ud_system}.dot"
+        ).write_text(ud_graph.to_dot_str())
 
     if args.store_penman:
-        res.to_penman(Path(output_dir / f"{args.language}.drs.penman"))
+        res.to_penman(output_dir / f"{args.language}.drs.penman")
         res.to_penman(
-            Path(output_dir / f"{args.language}.drs.lenient.penman"),
+            output_dir / f"{args.language}.drs.lenient.penman",
             strict=False,
         )
 
