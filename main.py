@@ -96,7 +96,7 @@ def store_ud_parses(args):
         args.starting_path, "**/*.raw", desc_tqdm="Storing UD parses "
     ):
         try:
-            parser.parse_path(filepath, Path(filepath.parent / ud_file_format))
+            parser.parse_path(filepath, filepath.parent / ud_file_format)
         except Exception as e:
             logger.error(
                 f"Unable to generate ud for {filepath}\nReason: {e}\n"
@@ -130,9 +130,10 @@ def extract_mappings(args):
         f"**/*.sbn",
         desc_tqdm="Extracting mappings",
     ):
-        ud_filepath = Path(
+        ud_filepath = (
             filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
         )
+
         if not ud_filepath.exists():
             logger.error(
                 f"Cannot extract mappings, no UD conll file for {filepath.parent}"
@@ -171,7 +172,7 @@ def error_mine(args):
             continue
 
         try:
-            save_path = Path(f"{filepath.parent}/en.test.sbn")
+            save_path = filepath.parent / "en.test.sbn"
             A.to_sbn(save_path)
             B = SBNGraph().from_path(save_path)
             if sbn_graphs_are_isomorphic(A, B):
@@ -194,9 +195,9 @@ def store_visualizations(args):
 
         try:
             SBNGraph().from_path(filepath).to_png(
-                str(Path(viz_dir / f"{filepath.stem}.png").resolve())
+                viz_dir / f"{filepath.stem}.png"
             )
-            ud_filepath = Path(
+            ud_filepath = (
                 filepath.parent / f"{args.language}.ud.{args.ud_system}.conll"
             )
             if not ud_filepath.exists():
@@ -206,7 +207,7 @@ def store_visualizations(args):
                 continue
 
             UDGraph().from_path(ud_filepath).to_png(
-                str(Path(viz_dir / f"{ud_filepath.stem}.png").resolve())
+                viz_dir / f"{ud_filepath.stem}.png"
             )
         except Exception as e:
             logger.error(f"Failed: {filepath}")
@@ -218,13 +219,9 @@ def store_penman(args):
     ):
         try:
             G = SBNGraph().from_path(filepath)
+            G.to_penman(filepath.parent / f"{filepath.stem}.penman")
             G.to_penman(
-                Path(filepath.parent / f"{filepath.stem}.penman").resolve()
-            )
-            G.to_penman(
-                Path(
-                    filepath.parent / f"{filepath.stem}.lenient.penman"
-                ).resolve(),
+                filepath.parent / f"{filepath.stem}.lenient.penman",
                 strict=False,
             )
         except SBNError as e:
