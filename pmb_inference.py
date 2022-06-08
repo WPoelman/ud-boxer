@@ -96,29 +96,29 @@ def get_args() -> Namespace:
 def generate_result(args, ud_filepath):
     current_dir = ud_filepath.parent
 
-    predicted_dir = Path(current_dir / "predicted")
-    predicted_dir.mkdir(exist_ok=True)
+    pred_dir = current_dir / "predicted"
+    pred_dir.mkdir(exist_ok=True)
 
     if args.clear_previous:
-        for item in predicted_dir.iterdir():
+        for item in pred_dir.iterdir():
             if item.is_file():
                 item.unlink()
 
     G = GREW.run(ud_filepath)
     G.source = args.sbn_source  # Setter?
     if args.store_visualizations:
-        G.to_png(Path(predicted_dir / "output.png"))
+        G.to_png(pred_dir / "output.png")
 
     if args.store_sbn:
-        G.to_sbn(Path(predicted_dir / "output.sbn"))
+        G.to_sbn(pred_dir / "output.sbn")
 
-    penman_path = G.to_penman(Path(predicted_dir / "output.penman"))
+    penman_path = G.to_penman(pred_dir / "output.penman")
     scores = smatch_score(
         current_dir / f"{args.language}.drs.penman",
         penman_path,
     )
     penman_lenient_path = G.to_penman(
-        Path(predicted_dir / "output.lenient.penman"),
+        pred_dir / "output.lenient.penman",
         strict=False,
     )
     lenient_scores = smatch_score(
@@ -173,7 +173,7 @@ def main():
             f"**/{args.language}.drs.penman",
             desc_tqdm="Gathering data",
         ):
-            ud_filepath = Path(filepath.parent / ud_file_format)
+            ud_filepath = filepath.parent / ud_file_format
             if not ud_filepath.exists():
                 continue
             futures.append(executor.submit(full_run, args, ud_filepath))

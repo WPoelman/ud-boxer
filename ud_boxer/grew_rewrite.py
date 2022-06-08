@@ -126,12 +126,14 @@ class Grew:
         # Not sure if this is the best way to do this, but it works.
         # I tried returning the grs string, which is also possible, but then
         # the separate language grs files cannot be found.
-        grs_str = Path(grs_path).read_text()
+        grs_path = Path(grs_path)
+        grs_str = grs_path.read_text()
         final_grs = grs_str.replace(LANGUAGE_PLACEHOLDER, language)
-        current_grs = Path(grs_path).parent / "working_do_not_remove.grs"
+        current_grs = grs_path.parent / "working_do_not_remove.grs"
         current_grs.write_text(final_grs)
 
         return current_grs
 
     def __del__(self):
+        """Clean up the grs file when we're done"""
         self.current_grs_path.unlink()

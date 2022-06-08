@@ -151,7 +151,7 @@ def main():
             )
         ]
 
-    result_path = Path(Config.SEQ2SEQ_DIR / args.data_split)
+    result_path = Config.SEQ2SEQ_DIR / args.data_split
     result_path.mkdir(exist_ok=True)
 
     df = pd.DataFrame().from_records(result_records)

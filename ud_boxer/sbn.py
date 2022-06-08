@@ -505,7 +505,7 @@ class SBNGraph(BaseGraph):
         """
         Writes the SBNGraph to a file in Penman (AMR-like) format.
 
-        See `to_penman_string` for an explanation of `lentient`.
+        See `to_penman_string` for an explanation of `strict`.
         """
         final_path = ensure_ext(path, ".penman")
         final_path.write_text(self.to_penman_string(strict))
@@ -515,7 +515,7 @@ class SBNGraph(BaseGraph):
         """
         Creates a string in Penman (AMR-like) format from the SBNGraph.
 
-        The `lenient` flag indicates whether to include the sense number.
+        The `strict` flag indicates whether to include the sense number.
         If included, the evaluation indirectly also targets the task of word
         sense disambiguation, which might not be desirable. Example:
             Without sense:
@@ -523,7 +523,7 @@ class SBNGraph(BaseGraph):
                     :member (s0 / "sense"
                         :lemma "person"
                         :pos "n"
-                        :sense "01")) # Would be excluded when lenient
+                        :sense "01")) # Would be excluded when not strict
 
         FIXME: the DRS/SBN constants technically don't need a variable. As long
         as this is consistent between the gold and generated data, it's not a
