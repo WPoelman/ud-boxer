@@ -102,7 +102,7 @@ class SBNSpec:
         "SXY",  # around
     }
 
-    INVERTABLE_ROLES = {
+    INVERTIBLE_ROLES = {
         "InstanceOf",
         "AttributeOf",
         "ColourOf",

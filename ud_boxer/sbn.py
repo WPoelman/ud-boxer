@@ -272,8 +272,8 @@ class SBNGraph(BaseGraph):
         # First collect all nodes and create a mapping from the grew ids to
         # the current graph ids.
         for grew_node_id, (node_data, _) in grew_graph.items():
-            node_componets = RESOLVER.node_token_type(node_data)
-            node = self.create_node(*node_componets)
+            node_components = RESOLVER.node_token_type(node_data)
+            node = self.create_node(*node_components)
             id_mapping[grew_node_id] = node[0]
             nodes.append(node)
 
@@ -597,7 +597,7 @@ class SBNGraph(BaseGraph):
             if S.out_degree(current_n) > 0:
                 for edge_id in S.edges(current_n):
                     edge_name = S.edges[edge_id]["token"]
-                    if edge_name in SBNSpec.INVERTABLE_ROLES:
+                    if edge_name in SBNSpec.INVERTIBLE_ROLES:
                         # SMATCH can invert edges that end in '-of'.
                         # This means that,
                         #   A -[AttributeOf]-> B
