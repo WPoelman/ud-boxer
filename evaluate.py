@@ -36,7 +36,7 @@ def get_args() -> Namespace:
 def main():
     args = get_args()
 
-    G = SBNGraph().from_path(args.gold_sbn, is_single_line=args.is_single_line)
+    G = SBNGraph().from_path(args.gold_sbn)
     P = SBNGraph().from_path(args.predicted_sbn, is_single_line=args.is_single_line)
 
     with tempfile.NamedTemporaryFile("w") as gold_f, tempfile.NamedTemporaryFile("w") as pred_f:
