@@ -130,6 +130,11 @@ class SBNGraph(BaseGraph):
                     # In the entire dataset there are no indices for box
                     # references other than -1. Maybe they are needed later and
                     # the exception triggers if something different comes up.
+                    if not tokens:
+                        raise SBNError(
+                            f"Missing box index in line: {sbn_line}"
+                        )
+
                     if (box_index := int(tokens.pop(0))) != -1:
                         raise SBNError(
                             f"Unexpected box index found '{box_index}'"
@@ -153,6 +158,11 @@ class SBNGraph(BaseGraph):
                 elif (is_role := token in SBNSpec.ROLES) or (
                     token in SBNSpec.DRS_OPERATORS
                 ):
+                    if not tokens:
+                        raise SBNError(
+                            f"Missing target for '{token}' in line {sbn_line}"
+                        )
+
                     target = tokens.pop(0)
                     edge_type = (
                         SBN_EDGE_TYPE.ROLE

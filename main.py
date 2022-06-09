@@ -210,7 +210,7 @@ def store_visualizations(args):
                 viz_dir / f"{ud_filepath.stem}.png"
             )
         except Exception as e:
-            logger.error(f"Failed: {filepath}")
+            logger.error(f"Failed: {filepath}: {e}")
 
 
 def store_penman(args):
