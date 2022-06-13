@@ -97,6 +97,10 @@ class GraphResolver:
                 )
                 # node_token = "female.n.02"  # most common in training data
             else:
+                # TODO: it would be nice to detect if a given sense is actually
+                # present in WordNet. If not, we could try to split it and look
+                # up possible compounds or just fall back to entity.n.01 or
+                # something like that.
                 node_token = f"{lemma}.{wn_pos}.01"
         else:
             # The default type is constant.
