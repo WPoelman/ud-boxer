@@ -99,10 +99,29 @@ class BaseGraph(nx.DiGraph):
         """Creates a dot graph string from the graph"""
         return self.to_pydot().to_string()
 
+    def to(self, format: str, save_path: PathLike):
+        """
+        Creates a dot graph visualization and saves it in the provided format
+        at the provided path.
+        Available formats (NOTE: taken from pydot, not all tested):
+            'canon', 'cmap', 'cmapx',
+            'cmapx_np', 'dia', 'dot',
+            'fig', 'gd', 'gd2', 'gif',
+            'hpgl', 'imap', 'imap_np', 'ismap',
+            'jpe', 'jpeg', 'jpg', 'mif',
+            'mp', 'pcl', 'pdf', 'pic', 'plain',
+            'plain-ext', 'png', 'ps', 'ps2',
+            'svg', 'svgz', 'vml', 'vmlz',
+            'vrml', 'vtx', 'wbmp', 'xdot', 'xlib'
+        """
+        final_path = str(ensure_ext(save_path, f".{format}").resolve())
+        self.to_pydot().write(final_path, format=format)
+        return self
+
+    def to_pdf(self, save_path: PathLike):
+        """Creates a dot graph pdf and saves it at the provided path"""
+        return self.to("pdf", save_path)
+
     def to_png(self, save_path: PathLike):
         """Creates a dot graph png and saves it at the provided path"""
-        # pydot does not like a Path object
-        final_path = str(ensure_ext(save_path, ".png").resolve())
-        self.to_pydot().write(final_path, format="png")
-
-        return self
+        return self.to("png", save_path)
