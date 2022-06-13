@@ -92,10 +92,10 @@ class GraphResolver:
                 # Not resolving the gender here and always using "female.n.02"
                 # scores higher, but does not really make sense. This is
                 # more fair and logical, but scores slightly lower.
-                # node_token = GENDER_SENSE_MAPPING.get(
-                # gender, Config.DEFAULT_GENDER
-                # )
-                node_token = "female.n.02"  # most common in training data
+                node_token = GENDER_SENSE_MAPPING.get(
+                    gender, Config.DEFAULT_GENDER
+                )
+                # node_token = "female.n.02"  # most common in training data
             else:
                 node_token = f"{lemma}.{wn_pos}.01"
         else:

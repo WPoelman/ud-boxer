@@ -160,8 +160,6 @@ class UDGraph(BaseGraph):
             label.append(lemma)
         if upos := node_data.get("upos"):
             label.append(upos)
-        if xpos := node_data.get("xpos"):
-            label.append(xpos)
 
         return "\n".join(label)
 
