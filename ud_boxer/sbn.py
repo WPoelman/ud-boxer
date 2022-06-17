@@ -61,6 +61,7 @@ class SBNGraph(BaseGraph):
     ):
         super().__init__(incoming_graph_data, **attr)
         self.is_dag: bool = False
+        self.is_possibly_ill_formed: bool = False
         self.source: SBNSource = source
 
     def from_path(
@@ -192,6 +193,12 @@ class SBNGraph(BaseGraph):
                             # This is detected by checking if the provided
                             # index points at an 'impossible' line (sense) in
                             # the file.
+
+                            # NOTE: we have seen that the neural parser does
+                            # this very (too) frequently, resulting in arguably
+                            # ill-formed graphs.
+                            self.is_possibly_ill_formed = True
+
                             const_node = self.create_node(
                                 SBN_NODE_TYPE.CONSTANT,
                                 target,
@@ -511,29 +518,38 @@ class SBNGraph(BaseGraph):
 
         return sbn_string
 
-    def to_penman(self, path: PathLike, strict: bool = True) -> PathLike:
+    def to_penman(
+        self, path: PathLike, evaluate_sense: bool = True, strict: bool = True
+    ) -> PathLike:
         """
         Writes the SBNGraph to a file in Penman (AMR-like) format.
 
         See `to_penman_string` for an explanation of `strict`.
         """
         final_path = ensure_ext(path, ".penman")
-        final_path.write_text(self.to_penman_string(strict))
+        final_path.write_text(self.to_penman_string(evaluate_sense, strict))
         return final_path
 
-    def to_penman_string(self, strict: bool = True) -> str:
+    def to_penman_string(
+        self, evaluate_sense: bool = True, strict: bool = True
+    ) -> str:
         """
         Creates a string in Penman (AMR-like) format from the SBNGraph.
 
-        The `strict` flag indicates whether to include the sense number.
+        The 'evaluate_sense; flag indicates if the sense number is included.
         If included, the evaluation indirectly also targets the task of word
         sense disambiguation, which might not be desirable. Example:
-            Without sense:
-                (b0 / "box"
-                    :member (s0 / "sense"
-                        :lemma "person"
-                        :pos "n"
-                        :sense "01")) # Would be excluded when not strict
+
+            (b0 / "box"
+                :member (s0 / "sense"
+                    :lemma "person"
+                    :pos "n"
+                    :sense "01")) # Would be excluded when False
+
+        The 'strict' option indicates how to handle possibly ill-formed graphs.
+        Especially when indices point at impossible senses. Cyclic graphs are
+        also ill-formed, but these are not even allowed to be exported to
+        Penman.
 
         FIXME: the DRS/SBN constants technically don't need a variable. As long
         as this is consistent between the gold and generated data, it's not a
@@ -541,7 +557,13 @@ class SBNGraph(BaseGraph):
         """
         if not self.is_dag:
             raise SBNError(
-                "Exporting a cyclic SBN graph to Penman is not possible"
+                "Exporting a cyclic SBN graph to Penman is not possible."
+            )
+
+        if strict and self.is_possibly_ill_formed:
+            raise SBNError(
+                "Strict evaluation mode, possibly ill-formed graph not "
+                "exported."
             )
 
         # Make a copy just in case since strange side-effects such as token
@@ -589,7 +611,7 @@ class SBNGraph(BaseGraph):
                 out_str += f"\n{indents}:lemma {lemma}"
                 out_str += f"\n{indents}:pos {pos}"
 
-                if strict:
+                if evaluate_sense:
                     out_str += f"\n{indents}:sense {sense}"
             else:
                 out_str += f"({var_id} / {self.quote(node_tok)}"

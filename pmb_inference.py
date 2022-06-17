@@ -119,7 +119,7 @@ def generate_result(args, ud_filepath):
     )
     penman_lenient_path = G.to_penman(
         pred_dir / "output.lenient.penman",
-        strict=False,
+        evaluate_sense=False,
     )
     lenient_scores = smatch_score(
         current_dir / f"{args.language}.drs.lenient.penman",

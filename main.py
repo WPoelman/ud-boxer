@@ -222,7 +222,7 @@ def store_penman(args):
             G.to_penman(filepath.parent / f"{filepath.stem}.penman")
             G.to_penman(
                 filepath.parent / f"{filepath.stem}.lenient.penman",
-                strict=False,
+                evaluate_sense=False,
             )
         except SBNError as e:
             logger.warning(e)
