@@ -20,8 +20,8 @@ __all__ = [
 class PMB:
     def __init__(
         self,
-        split: Config.DATA_SPLIT = Config.DATA_SPLIT.TRAIN,
-        language: Config.SUPPORTED_LANGUAGES = Config.SUPPORTED_LANGUAGES.EN,
+        split: Config.DATA_SPLIT,
+        language: Config.SUPPORTED_LANGUAGES,
     ):
         if split == Config.DATA_SPLIT.ALL:
             self.ids = set()
