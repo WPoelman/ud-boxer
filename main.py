@@ -186,6 +186,25 @@ def error_mine(args):
             logger.error(f"Unable to save {filepath}\nReason: {e}")
 
 
+def find_possibly_ill_formed(args):
+    paths = []
+    for filepath in pmb_generator(
+        args.starting_path,
+        "**/*.sbn",
+        desc_tqdm="Looking for possibly wrong indices ",
+    ):
+        try:
+            A = SBNGraph().from_path(filepath)
+        except SBNError as e:
+            logger.error(f"Unable to parse sbn: {filepath}\nReason: {e}")
+            continue
+        if A.is_possibly_ill_formed:
+            paths.append(str(filepath))
+    Path(Config.LOG_PATH / "possibly_wrong_indices.txt").write_text(
+        "\n".join(paths)
+    )
+
+
 def store_visualizations(args):
     for filepath in pmb_generator(
         args.starting_path, "**/*.sbn", desc_tqdm="Creating visualizations "
@@ -271,8 +290,9 @@ def main():
         extract_mappings(args)
 
     if args.error_mine:
-        error_mine(args)
-        collect_cyclic_graphs(args)
+        # error_mine(args)
+        # collect_cyclic_graphs(args)
+        find_possibly_ill_formed(args)
 
     if args.store_visualizations:
         store_visualizations(args)
