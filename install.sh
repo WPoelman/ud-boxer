@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# Show intermediate command and exit on failure
+# Show intermediate commands and exit on failure
 set -ex
 
 # Python requirements
@@ -21,5 +21,5 @@ eval $(opam env --switch=4.13.1)
 opam remote add grew "http://opam.grew.fr"
 opam install grew grewpy
 
-# Refresh Ocaml to pick initialize GREW
+# Refresh Ocaml to initialize GREW
 eval $(opam env)
