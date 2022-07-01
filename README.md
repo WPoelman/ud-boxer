@@ -11,6 +11,9 @@ The following images show the basic idea for the sentence **Tracy lost her glass
 </table>
 
 ## Installation
+A script with the required steps is included: `install.sh`.
+Note however that this is to illustrate the steps needed, you probably need to edit it in order to work for your system.
+
 1. Create and activate a virtual environment (Python 3.9.7 was used in development) (**Optional**)
 2. Install `graphviz` to generate visualizations. (**Optional**)
    1. On Debian-based systems: `apt install graphviz libgraphviz-dev pkg-config`
@@ -22,7 +25,7 @@ The following images show the basic idea for the sentence **Tracy lost her glass
    1. `requirements/requirements-ud.txt` contains alternative UD parsing systems (**Optional**)
    2. `requirements/requirements-dev.txt` contains development libraries for testing, formatting etc. (**Optional**)
 
-Run `fix_all.sh` to format and test the project.
+Run `fix_all.sh` to format and test the project (dev requirements needed).
 
 ## Data
 The data comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
@@ -96,7 +99,7 @@ What the specific files mean will be explained in the usage section.
 To transform a single sentence to DRS in SBN format, run:
 
 ```
-python inference.py --sentence "Tracy lost her glasses." --output_dir ./result 
+python inference.py --sentence "Tracy lost her glasses." --output_dir ./result
 ```
 
 This stores a `conll` file of the UD parse and the generated `sbn` file in `./result`.
@@ -113,7 +116,7 @@ python inference.py --ud <path-to-conll-file> --output_dir ./result
 There are a number of additional tools and options included apart from the main graph transformations:
 
 ```
-python inference.py \ 
+python inference.py \
   --sentence "Tracy lost her glasses." \
   --output_dir ./result \
   --store_visualizations \
@@ -122,7 +125,7 @@ python inference.py \
 
 This stores an AMR-like output of the SBN in Penman notation as well as visualizations of the UD parse and the SBN graph.
 The `*.drs.penman` file includes everything, the `*.drs.lenient.penman` file does not include the sense number.
-The regular Penman output indirectly also targets word sense disambiguation when scoring the output (with SMATCH for instance). 
+The regular Penman output indirectly also targets word sense disambiguation when scoring the output (with SMATCH for instance).
 The lenient option does not do this, but does reward correct lemmas and parts of speech for a given sense.
 
 For more details and additional options, run `inference.py --help`.
@@ -179,6 +182,8 @@ If you want to evaluate existing AMR-like (Penman) parses without running the wh
 ```
 mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
 ```
+
+An example script on how to use this with SBN files is also included: `example_scripts/evaluate.py`.
 
 ## Possible future improvements
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for certain case markings.
