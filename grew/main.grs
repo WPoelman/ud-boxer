@@ -182,7 +182,7 @@ rule add_time {
 }
 
 %%% COMBING RULES %%%
-% Combine multiple PROPN's that probably belong together. This is quite tricky since this is very
+% Combine multiple PROPNs that probably belong together. This is quite tricky since this is very
 % vunrable to UD parse error or oddities (see example).
 % Example: en/gold/p65/d1215
 rule combine_propn {
