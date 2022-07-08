@@ -5,7 +5,7 @@ There are some know issues with SBN that are being looked at:
       distinguished from a regular index currently. So with the sentence
       "The temperature was -1 degrees yesterday", -1 will be interpreted as an
       index and not a constant.
-    - There are some sense id's that contain whitespace. This gives problems
+    - There are some synset id's that contain whitespace. This gives problems
       for the tokenization. All examples can be found in 
       'data/misc/whitespace_in_ids.txt' of this repo.
 """
@@ -23,7 +23,7 @@ __all__ = [
     "SBNError",
     "SBNSpec",
     "split_comments",
-    "split_wn_sense",
+    "split_synset_id",
     "get_doc_id",
 ]
 
@@ -31,7 +31,7 @@ __all__ = [
 class SBN_NODE_TYPE(BaseEnum):
     """Node types"""
 
-    SENSE = "sense"
+    SYNSET = "synset"
     CONSTANT = "constant"
     BOX = "box"
 
@@ -52,7 +52,7 @@ class SBNError(Exception):
 class SBNSpec:
     COMMENT = r" % "
     COMMENT_LINE = r"%%%"
-    MIN_SENSE_IDX = 0
+    MIN_SYNSET_IDX = 0
 
     DOC_ID_PATTERN = re.compile(r"(p\d{2}/d\d{4})")
 
@@ -197,14 +197,14 @@ class SBNSpec:
 
     # The lemma match might seem loose, however there can be a lot of different
     # characters in there: 'r/2.n.01', 'ø.a.01', 'josé_maria_aznar.n.01'
-    WORDNET_SENSE_PATTERN = re.compile(r"(.+)\.(n|v|a|r)\.(\d+)")
+    SYNSET_PATTERN = re.compile(r"(.+)\.(n|v|a|r)\.(\d+)")
     INDEX_PATTERN = re.compile(r"((-|\+)\d)")
     NAME_CONSTANT_PATTERN = re.compile(r"\"(.+)\"|\"(.+)")
 
     # NOTE: Now roles are properly handled instead of indirectly, but these
     # constant patterns might still be handy.
 
-    # Special constants at the 'ending' nodes
+    # Special constants at the 'ending' (leaf) nodes
     CONSTANTS = {
         "speaker",
         "hearer",
@@ -277,7 +277,7 @@ def split_single(sbn_string: str) -> str:
     final_tokens = []
 
     for token in tokens:
-        if SBNSpec.WORDNET_SENSE_PATTERN.match(token) or (
+        if SBNSpec.SYNSET_PATTERN.match(token) or (
             token in SBNSpec.NEW_BOX_INDICATORS
         ):
             token = f"\n{token}"
@@ -287,11 +287,11 @@ def split_single(sbn_string: str) -> str:
     return final_string
 
 
-def split_wn_sense(sense_id: str) -> Optional[Tuple[str, str, str]]:
+def split_synset_id(syn_id: str) -> Optional[Tuple[str, str, str]]:
     """
-    Splits a wordnet sense into its components: lemma, pos, sense_number.
+    Splits a WordNet synset into its components: lemma, pos, sense_number.
     """
-    if match := SBNSpec.WORDNET_SENSE_PATTERN.match(sense_id):
+    if match := SBNSpec.SYNSET_PATTERN.match(syn_id):
         return (match.group(1), match.group(2), match.group(3))
     return None
 

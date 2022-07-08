@@ -20,7 +20,7 @@ from ud_boxer.sbn_spec import (
     SBNSpec,
     split_comments,
     split_single,
-    split_wn_sense,
+    split_synset_id,
 )
 
 logger = logging.getLogger(__name__)
@@ -107,25 +107,25 @@ class SBNGraph(BaseGraph):
                 # No need to check all tokens for this since only the first
                 # might be a sense id.
                 if tok_count == 0 and (
-                    sense_match := SBNSpec.WORDNET_SENSE_PATTERN.match(token)
+                    synset_match := SBNSpec.SYNSET_PATTERN.match(token)
                 ):
-                    sense_node = self.create_node(
-                        SBN_NODE_TYPE.SENSE,
+                    synset_node = self.create_node(
+                        SBN_NODE_TYPE.SYNSET,
                         token,
                         {
-                            "wn_lemma": sense_match.group(1),
-                            "wn_pos": sense_match.group(2),
-                            "wn_id": sense_match.group(3),
+                            "wn_lemma": synset_match.group(1),
+                            "wn_pos": synset_match.group(2),
+                            "wn_id": synset_match.group(3),
                             "comment": comment,
                         },
                     )
                     box_edge = self.create_edge(
                         self._active_box_id,
-                        self._active_sense_id,
+                        self._active_synset_id,
                         SBN_EDGE_TYPE.BOX_CONNECT,
                     )
 
-                    nodes.append(sense_node)
+                    nodes.append(synset_node)
                     edges.append(box_edge)
                 elif token in SBNSpec.NEW_BOX_INDICATORS:
                     # In the entire dataset there are no indices for box
@@ -173,13 +173,13 @@ class SBNGraph(BaseGraph):
 
                     if index_match := SBNSpec.INDEX_PATTERN.match(target):
                         idx = int(index_match.group(0))
-                        active_id = self._active_sense_id
+                        active_id = self._active_synset_id
                         target_idx = active_id[1] + idx
                         to_id = (active_id[0], target_idx)
 
-                        if SBNSpec.MIN_SENSE_IDX <= target_idx <= max_wn_idx:
+                        if SBNSpec.MIN_SYNSET_IDX <= target_idx <= max_wn_idx:
                             role_edge = self.create_edge(
-                                self._active_sense_id,
+                                self._active_synset_id,
                                 to_id,
                                 edge_type,
                                 token,
@@ -191,7 +191,7 @@ class SBNGraph(BaseGraph):
                             # Example:
                             # pmb-4.0.0/data/en/silver/p15/d3131/en.drs.sbn
                             # This is detected by checking if the provided
-                            # index points at an 'impossible' line (sense) in
+                            # index points at an 'impossible' line (synset) in
                             # the file.
 
                             # NOTE: we have seen that the neural parser does
@@ -205,7 +205,7 @@ class SBNGraph(BaseGraph):
                                 {"comment": comment},
                             )
                             role_edge = self.create_edge(
-                                self._active_sense_id,
+                                self._active_synset_id,
                                 const_node[0],
                                 edge_type,
                                 token,
@@ -230,7 +230,7 @@ class SBNGraph(BaseGraph):
                             {"comment": comment},
                         )
                         role_edge = self.create_edge(
-                            self._active_sense_id,
+                            self._active_synset_id,
                             name_node[0],
                             SBN_EDGE_TYPE.ROLE,
                             token,
@@ -245,7 +245,7 @@ class SBNGraph(BaseGraph):
                             {"comment": comment},
                         )
                         role_edge = self.create_edge(
-                            self._active_sense_id,
+                            self._active_synset_id,
                             const_node[0],
                             SBN_EDGE_TYPE.ROLE,
                             token,
@@ -305,7 +305,7 @@ class SBNGraph(BaseGraph):
                 box_count -= 1
                 continue  # <-- NOTICE THIS PLEASE, THIS SKIPS THE OUT EDGES
 
-            if from_type == SBN_NODE_TYPE.SENSE:
+            if from_type == SBN_NODE_TYPE.SYNSET:
                 box_edge = self.create_edge(
                     self._active_box_id,
                     from_id,
@@ -383,7 +383,7 @@ class SBNGraph(BaseGraph):
     def to_sbn_string(self, add_comments: bool = False) -> str:
         """Creates a string in sbn format from the SBNGraph"""
         result = []
-        sense_idx_map: Dict[SBN_ID, int] = dict()
+        synset_idx_map: Dict[SBN_ID, int] = dict()
         line_idx = 0
 
         box_nodes = [
@@ -406,43 +406,41 @@ class SBNGraph(BaseGraph):
                         box_box_connect_to_insert = edge_data["token"]
 
                 if to_node_type in (
-                    SBN_NODE_TYPE.SENSE,
+                    SBN_NODE_TYPE.SYNSET,
                     SBN_NODE_TYPE.CONSTANT,
                 ):
-                    if to_node_id in sense_idx_map:
+                    if to_node_id in synset_idx_map:
                         raise SBNError(
-                            "Ambiguous sense id found, should not be possible"
+                            "Ambiguous synset id found, should not be possible"
                         )
 
-                    sense_idx_map[to_node_id] = line_idx
+                    synset_idx_map[to_node_id] = line_idx
                     temp_line_result = [to_node_id]
-                    for sense_edge_id in self.out_edges(to_node_id):
-                        _, sense_to_id = sense_edge_id
+                    for syn_edge_id in self.out_edges(to_node_id):
+                        _, syn_to_id = syn_edge_id
 
-                        sense_edge_data = self.edges.get(sense_edge_id)
-                        if sense_edge_data["type"] not in (
+                        syn_edge_data = self.edges.get(syn_edge_id)
+                        if syn_edge_data["type"] not in (
                             SBN_EDGE_TYPE.ROLE,
                             SBN_EDGE_TYPE.DRS_OPERATOR,
                         ):
                             raise SBNError(
-                                f"Invalid sense edge connect found: "
-                                f"{sense_edge_data['type']}"
+                                f"Invalid synset edge connect found: "
+                                f"{syn_edge_data['type']}"
                             )
 
-                        temp_line_result.append(sense_edge_data["token"])
+                        temp_line_result.append(syn_edge_data["token"])
 
-                        sense_node_to_data = self.nodes.get(sense_to_id)
-                        sense_node_to_type = sense_node_to_data["type"]
-                        if sense_node_to_type == SBN_NODE_TYPE.SENSE:
-                            temp_line_result.append(sense_to_id)
-                        elif sense_node_to_type == SBN_NODE_TYPE.CONSTANT:
-                            temp_line_result.append(
-                                sense_node_to_data["token"]
-                            )
+                        syn_node_to_data = self.nodes.get(syn_to_id)
+                        syn_node_to_type = syn_node_to_data["type"]
+                        if syn_node_to_type == SBN_NODE_TYPE.SYNSET:
+                            temp_line_result.append(syn_to_id)
+                        elif syn_node_to_type == SBN_NODE_TYPE.CONSTANT:
+                            temp_line_result.append(syn_node_to_data["token"])
                         else:
                             raise SBNError(
-                                f"Invalid sense node connect found: "
-                                f"{sense_node_to_type}"
+                                f"Invalid synset node connect found: "
+                                f"{syn_node_to_type}"
                             )
 
                     result.append(temp_line_result)
@@ -455,7 +453,7 @@ class SBNGraph(BaseGraph):
             if box_box_connect_to_insert:
                 result.append([box_box_connect_to_insert, "-1"])
 
-        # Resolve the indices and the correct sense tokens and create the sbn
+        # Resolve the indices and the correct synset tokens and create the sbn
         # line strings for the final string
         final_result = []
         if add_comments:
@@ -465,7 +463,7 @@ class SBNGraph(BaseGraph):
                     " ",
                 )
             )
-        current_sense_idx = 0
+        current_syn_idx = 0
         for line in result:
             tmp_line = []
             comment_for_line = None
@@ -474,8 +472,8 @@ class SBNGraph(BaseGraph):
                 # There can never be an index at the first token of a line, so
                 # always start at the second token.
                 if token_idx == 0:
-                    # It is a sense id that needs to be converted to a token
-                    if token in sense_idx_map:
+                    # It is a synset id that needs to be converted to a token
+                    if token in synset_idx_map:
                         node_data = self.nodes.get(token)
                         tmp_line.append(node_data["token"])
                         comment_for_line = comment_for_line or (
@@ -483,13 +481,13 @@ class SBNGraph(BaseGraph):
                             if "comment" in node_data
                             else None
                         )
-                        current_sense_idx += 1
+                        current_syn_idx += 1
                     # It is a regular token
                     else:
                         tmp_line.append(token)
-                # It is a sense which needs to be resolved to an index
-                elif token in sense_idx_map:
-                    target = sense_idx_map[token] - current_sense_idx + 1
+                # It is a synset which needs to be resolved to an index
+                elif token in synset_idx_map:
+                    target = synset_idx_map[token] - current_syn_idx + 1
                     # In the PMB dataset, an index of '0' is written as '+0',
                     # so do that here as well.
                     tmp_line.append(
@@ -502,7 +500,7 @@ class SBNGraph(BaseGraph):
             if add_comments and comment_for_line:
                 tmp_line.append(f"{SBNSpec.COMMENT}{comment_for_line}")
 
-            # This is a bit of trickery to vertically align senses just as in
+            # This is a bit of trickery to vertically align synsets just as in
             # the PMB dataset.
             if len(tmp_line) == 1:
                 final_result.append((tmp_line[0], " "))
@@ -510,10 +508,10 @@ class SBNGraph(BaseGraph):
                 final_result.append((tmp_line[0], " ".join(tmp_line[1:])))
 
         # More formatting and alignment trickery.
-        max_sense_len = max(len(s) for s, _ in final_result) + 1
+        max_syn_len = max(len(s) for s, _ in final_result) + 1
         sbn_string = "\n".join(
-            f"{sense: <{max_sense_len}}{rest}".rstrip(" ")
-            for sense, rest in final_result
+            f"{synset: <{max_syn_len}}{rest}".rstrip(" ")
+            for synset, rest in final_result
         )
 
         return sbn_string
@@ -541,13 +539,13 @@ class SBNGraph(BaseGraph):
         sense disambiguation, which might not be desirable. Example:
 
             (b0 / "box"
-                :member (s0 / "sense"
+                :member (s0 / "synset"
                     :lemma "person"
                     :pos "n"
                     :sense "01")) # Would be excluded when False
 
         The 'strict' option indicates how to handle possibly ill-formed graphs.
-        Especially when indices point at impossible senses. Cyclic graphs are
+        Especially when indices point at impossible synsets. Cyclic graphs are
         also ill-formed, but these are not even allowed to be exported to
         Penman.
 
@@ -573,7 +571,7 @@ class SBNGraph(BaseGraph):
         prefix_map = {
             SBN_NODE_TYPE.BOX: ["b", 0],
             SBN_NODE_TYPE.CONSTANT: ["c", 0],
-            SBN_NODE_TYPE.SENSE: ["s", 0],
+            SBN_NODE_TYPE.SYNSET: ["s", 0],
         }
 
         for node_id, node_data in G.nodes.items():
@@ -601,13 +599,13 @@ class SBNGraph(BaseGraph):
 
             indents = tabs * "\t"
             node_tok = node_data["token"]
-            if node_data["type"] == SBN_NODE_TYPE.SENSE:
-                if not (components := split_wn_sense(node_tok)):
-                    raise SBNError(f"Cannot split sense: {node_tok}")
+            if node_data["type"] == SBN_NODE_TYPE.SYNSET:
+                if not (components := split_synset_id(node_tok)):
+                    raise SBNError(f"Cannot split synset id: {node_tok}")
 
                 lemma, pos, sense = [self.quote(i) for i in components]
 
-                out_str += f'({var_id} / {self.quote("sense")}'
+                out_str += f'({var_id} / {self.quote("synset")}'
                 out_str += f"\n{indents}:lemma {lemma}"
                 out_str += f"\n{indents}:pos {pos}"
 
@@ -656,7 +654,7 @@ class SBNGraph(BaseGraph):
 
     def __init_type_indices(self):
         self.type_indices = {
-            SBN_NODE_TYPE.SENSE: 0,
+            SBN_NODE_TYPE.SYNSET: 0,
             SBN_NODE_TYPE.CONSTANT: 0,
             SBN_NODE_TYPE.BOX: 0,
             SBN_EDGE_TYPE.ROLE: 0,
@@ -694,10 +692,10 @@ class SBNGraph(BaseGraph):
         return f'"{in_str}"'
 
     @property
-    def _active_sense_id(self) -> SBN_ID:
+    def _active_synset_id(self) -> SBN_ID:
         return (
-            SBN_NODE_TYPE.SENSE,
-            self.type_indices[SBN_NODE_TYPE.SENSE] - 1,
+            SBN_NODE_TYPE.SYNSET,
+            self.type_indices[SBN_NODE_TYPE.SYNSET] - 1,
         )
 
     @property
@@ -729,7 +727,7 @@ class SBNGraph(BaseGraph):
     def type_style_mapping(self):
         """Style per node type to use in dot export"""
         return {
-            SBN_NODE_TYPE.SENSE: {},
+            SBN_NODE_TYPE.SYNSET: {},
             SBN_NODE_TYPE.CONSTANT: {"shape": "none"},
             SBN_NODE_TYPE.BOX: {"shape": "box", "label": ""},
             SBN_EDGE_TYPE.ROLE: {},

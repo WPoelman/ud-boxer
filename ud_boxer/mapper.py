@@ -78,8 +78,8 @@ class MapExtractor:
                 except KeyError:
                     continue
 
-                # altijd de nodes opslaan lemma -> sense etc.
-                # van target lemma of lemma pos naar gold sense
+                # altijd de nodes opslaan lemma -> synset etc.
+                # van target lemma of lemma pos naar gold synsets
 
                 # Only store correct edge mappings
                 if target_edge["token"] == g_edge["token"]:

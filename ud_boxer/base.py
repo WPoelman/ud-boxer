@@ -60,7 +60,7 @@ class BaseGraph(nx.DiGraph):
         node_dict = dict()
         for node_id, node_data in self.nodes.items():
             # Need to do some trickery so no duplicate nodes get added, for
-            # example when a sense occurs > 1 times. Example:
+            # example when a synset occurs > 1 times. Example:
             # pmb-4.0.0/data/en/bronze/p00/d0075
             # The tuple ids themselves are not great here.
             tok = node_data["token"]

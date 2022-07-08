@@ -2,7 +2,7 @@ __all__ = [
     "UDSpecBasic",
     "UPOS_WN_POS_MAPPING",
     "TIME_EDGE_MAPPING",
-    "GENDER_SENSE_MAPPING",
+    "GENDER_SYNSET_MAPPING",
 ]
 
 
@@ -263,7 +263,7 @@ TIME_EDGE_MAPPING = {
     UDSpecBasic.Feats.Tense.PRES: "EQU",  # or TIN (it's still happening)
 }
 
-GENDER_SENSE_MAPPING = {
+GENDER_SYNSET_MAPPING = {
     UDSpecBasic.Feats.Gender.COM: "person.n.01",
     UDSpecBasic.Feats.Gender.FEM: "female.n.02",
     UDSpecBasic.Feats.Gender.MASC: "male.n.02",

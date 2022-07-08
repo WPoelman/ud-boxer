@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Tuple
 from ud_boxer.config import Config
 from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, SBNError, SBNSpec
 from ud_boxer.ud_spec import (
-    GENDER_SENSE_MAPPING,
+    GENDER_SYNSET_MAPPING,
     TIME_EDGE_MAPPING,
     UPOS_WN_POS_MAPPING,
     UDSpecBasic,
@@ -62,28 +62,28 @@ class GraphResolver:
         # A new box has been added in the grew step
         if token_to_resolve in SBNSpec.NEW_BOX_INDICATORS:
             node_type = SBN_NODE_TYPE.BOX
-        # The sense has been added in the grew rewriting step
-        elif SBNSpec.WORDNET_SENSE_PATTERN.match(token_to_resolve):
-            node_type = SBN_NODE_TYPE.SENSE
+        # The synset has been added in the grew rewriting step
+        elif SBNSpec.SYNSET_PATTERN.match(token_to_resolve):
+            node_type = SBN_NODE_TYPE.SYNSET
         elif token_to_resolve == self.RESOLVE_GENDER_NODE:
-            node_type = SBN_NODE_TYPE.SENSE
-            node_token = GENDER_SENSE_MAPPING.get(
+            node_type = SBN_NODE_TYPE.SYNSET
+            node_token = GENDER_SYNSET_MAPPING.get(
                 gender, Config.DEFAULT_GENDER
             )
-        # Otherwise try to format the token as a sense. This assumes
+        # Otherwise try to format the token as a synset. This assumes
         # unwanted nodes (DET, PUNCT, AUX) are already removed.
         elif upos := node_data.get("upos", None):
             # TODO: some POS tags indicate constants (NUM, PROPN, etc)
             # Maybe fix that here as well.
-            node_type = SBN_NODE_TYPE.SENSE
+            node_type = SBN_NODE_TYPE.SYNSET
             wn_pos = UPOS_WN_POS_MAPPING[upos]
             lemma = token_to_resolve
             lemma_pos = f"{lemma}.{wn_pos}"
 
-            if sense := self.lemma_pos_sense_lookup.get(lemma_pos, None):
-                node_token = sense
-            elif sense := self.lemma_sense_lookup.get(lemma, None):
-                node_token = sense
+            if synset := self.lemma_pos_sense_lookup.get(lemma_pos, None):
+                node_token = synset
+            elif synset := self.lemma_sense_lookup.get(lemma, None):
+                node_token = synset
             elif upos == UDSpecBasic.POS.PROPN:
                 # TODO: this would be the place to get info per node from a
                 # NER system or mark them for later processing with a NER
@@ -92,12 +92,12 @@ class GraphResolver:
                 # Not resolving the gender here and always using "female.n.02"
                 # scores higher, but does not really make sense. This is
                 # more fair and logical, but scores slightly lower.
-                node_token = GENDER_SENSE_MAPPING.get(
+                node_token = GENDER_SYNSET_MAPPING.get(
                     gender, Config.DEFAULT_GENDER
                 )
                 # node_token = "female.n.02"  # most common in training data
             else:
-                # TODO: it would be nice to detect if a given sense is actually
+                # TODO: it would be nice to detect if a given synset is actually
                 # present in WordNet. If not, we could try to split it and look
                 # up possible compounds or just fall back to entity.n.01 or
                 # something like that.
@@ -206,8 +206,9 @@ class GraphResolver:
     @staticmethod
     def parse_gender(gender: str):
         """
-        The 'Gender' feat can have multiple values. TODO: Maybe expand this to
-        parse feats in general.
+        The 'Gender' feat can have multiple values.
+
+        TODO: Maybe expand this to parse feats in general.
         """
         return gender.split(",")
 

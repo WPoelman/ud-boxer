@@ -37,19 +37,21 @@ def test_split_comments(line, expected):
     assert split_comments(line) == expected
 
 
-def test_parse_sense_simple_string():
-    single_sense = "brown.a.01                             % A brown     [0-7]"
-    G = SBNGraph().from_string(single_sense)
+def test_parse_synset_simple_string():
+    single_synset = (
+        "brown.a.01                             % A brown     [0-7]"
+    )
+    G = SBNGraph().from_string(single_synset)
 
     box_id = (SBN_NODE_TYPE.BOX, 0)
-    sense_id = (SBN_NODE_TYPE.SENSE, 0)
+    synset_id = (SBN_NODE_TYPE.SYNSET, 0)
 
-    # Should have the implict first box and the sense
+    # Should have the implict first box and the synset
     assert box_id in G.nodes
-    assert sense_id in G.nodes
+    assert synset_id in G.nodes
 
-    # Sense and initial box should be connected
-    edge_connection = (box_id, sense_id)
+    # synset and initial box should be connected
+    edge_connection = (box_id, synset_id)
     assert edge_connection in G.edges
 
     edge_data = G.get_edge_data(*edge_connection)
@@ -67,8 +69,8 @@ def test_parse_reconstruct_name():
 
     assert name_const_id in G.nodes
 
-    assert len(G.nodes) == 3  # box, sense, name
-    # box->box-connect->sense, sense->role->name
+    assert len(G.nodes) == 3  # box, synset, name
+    # box->box-connect->synset, synset->role->name
     assert len(G.edges) == 2
 
     node_data = G.nodes.get(name_const_id)

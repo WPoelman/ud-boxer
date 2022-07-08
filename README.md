@@ -32,7 +32,7 @@ The data comes from the Parallel Meaning Bank project (https://pmb.let.rug.nl/).
 ### Notes
 - This project uses version 4.0.0 of the PMB dataset, which can be downloaded from here: https://pmb.let.rug.nl/data.php
 - There are some minor issues with this version of the dataset that will be fixed in future versions:
-  * There are several sense ids that contain whitespace
+  * There are several synset ids that contain whitespace
   * There are some empty `*.sbn` documents
   * There are several cyclic SBN graphs (they should all be Directed Acyclic Graphs (DAGs))
   * Some SBN files contain constants that cannot be distinguished from indices. For example: `en/silver/p15/d3131`
@@ -126,7 +126,7 @@ python inference.py \
 This stores an AMR-like output of the SBN in Penman notation as well as visualizations of the UD parse and the SBN graph.
 The `*.drs.penman` file includes everything, the `*.drs.lenient.penman` file does not include the sense number.
 The regular Penman output indirectly also targets word sense disambiguation when scoring the output (with SMATCH for instance).
-The lenient option does not do this, but does reward correct lemmas and parts of speech for a given sense.
+The lenient option does not do this, but does reward correct lemmas and parts of speech for a given synset.
 
 For more details and additional options, run `inference.py --help`.
 
@@ -144,7 +144,7 @@ python main.py --starting_path <path-to-pmb-dataset> \
   --store_penman
 ```
 
-This will recursively go through all PMB docs, do all possible operations on the data and generates all required files to run inference with.
+This will recursively go through all PMB docs, do all possible operations on the data and generate all required files to run inference.
 
 For more details and additional options, run `main.py --help`.
 

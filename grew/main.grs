@@ -1,7 +1,7 @@
 %%% Ideas %%%
 % Maybe combine NOUN -[amod]-> ADJ into single token, example: good- bye
 % Maybe combine A -[xcomp]-> ADJ1 and A -[xcomp]-> ADJ2 (or more) into single token, example: bright blue
-% nummod deprel kan vervangen worden door sense -[Quantity]-> number?
+% nummod deprel kan vervangen worden door synset -[Quantity]-> number?
 % SCONJ as EXPLANATION box? See en/gold/p00/d0801
 
 %%% NOTES %%%
@@ -52,7 +52,7 @@ rule label_adj {
 }
 
 % Numbers are constants in sbn, this is not the cleanest option, but without a POS tag we ensure that the
-% number won't be converted to a sense. We cannot allow non-leaf nodes to be constants, this results in
+% number won't be converted to a synset. We cannot allow non-leaf nodes to be constants, this results in
 % invalid SBN.
 % Example: en/gold/p01/d2141/
 rule indicate_number {
@@ -87,7 +87,7 @@ rule connect_user {
 }
 
 %%% EXPANDING RULES %%%
-% Expand a name into an entity sense node, a name edge and the name constant.
+% Expand a name into an entity synset node, a name edge and the name constant.
 % Example: en/gold/p04/d1646
 rule expand_name {
     pattern {
@@ -106,7 +106,7 @@ rule expand_name {
     }
 }
 
-% Add a speaker nodes split up into 'person-sense' -> 'speaker'.
+% Add a speaker nodes split up into 'person-synset' -> 'speaker'.
 % Example: en/gold/p04/d1646
 rule expand_first_person {
     pattern {
@@ -125,7 +125,7 @@ rule expand_first_person {
     }
 }
 
-% Add a speaker nodes split up into 'person-sense' -> 'hearer'.
+% Add a speaker nodes split up into 'person-synset' -> 'hearer'.
 % Example: en/gold/p05/d2340
 rule expand_second_person {
     pattern {
@@ -158,7 +158,7 @@ rule expand_third_person {
     }
 }
 
-% Add a time sense node.
+% Add a time synset node.
 % Example: en/gold/p04/d1646
 rule add_time {
     pattern {
@@ -169,15 +169,15 @@ rule add_time {
         N -[token=Time]-> *;
     }
     commands {
-        add_node TIME_SENSE;
-        TIME_SENSE.token = "time.n.08";
+        add_node TIME_SYNSET;
+        TIME_SYNSET.token = "time.n.08";
 
-        add_edge N -[token=Time]-> TIME_SENSE;
+        add_edge N -[token=Time]-> TIME_SYNSET;
 
         add_node TIME_CONST;
         TIME_CONST.token = "now";
 
-        add_edge TIME_SENSE -[token=TIMERELATION]-> TIME_CONST;
+        add_edge TIME_SYNSET -[token=TIMERELATION]-> TIME_CONST;
     }
 }
 
@@ -198,7 +198,7 @@ rule combine_propn {
     }
 }
 
-% Combine phrasal verb particle components. These are often treated as a single sense.
+% Combine phrasal verb particle components. These are often treated as a single synset.
 % Some common cases include: "cut off", "burn down", "hang up" etc.
 % Example: en/gold/p00/d1469
 rule combine_compound_prt {
