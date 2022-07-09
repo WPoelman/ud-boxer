@@ -5,8 +5,8 @@ The following images show the basic idea for the sentence **Tracy lost her glass
 
 <table>
   <tr>
-    <td><img src="img/../data/img/example_ud.png" alt="ud example" style="height: 300px;"/></td>
-    <td><img src="img/../data/img/example_sbn.png" alt="sbn example" style="height: 300px;"/></td>
+    <td><img src="data/img/example_ud.png" alt="ud example" style="height: 300px;"/></td>
+    <td><img src="data/img/example_sbn.png" alt="sbn example" style="height: 300px;"/></td>
   </tr>
 </table>
 
