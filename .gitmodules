@@ -1,0 +1,3 @@
+[submodule "ud-boxer-notebooks"]
+	path = ud-boxer-notebooks
+	url = git@github.com:WPoelman/ud-boxer-notebooks.git
