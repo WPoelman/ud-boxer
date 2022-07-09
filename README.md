@@ -185,6 +185,16 @@ mtool --read amr --score smatch --gold <path-to-gold> <path-to-test>
 
 An example script on how to use this with SBN files is also included: `example_scripts/evaluate.py`.
 
+## Notebooks
+A number of notebooks have been used in the development and analysis of `ud-boxer`.
+These also include some experiments and miscellaneous parts.
+In order to not clog up this repository, these have been moved to their own repository.
+This repo can be accessed as a git submodule in the current repo, as well has directly: https://github.com/WPoelman/ud-boxer-notebooks.
+
+Note that you probably need to move the notebooks to the `ud-boxer` project root if they need access to `ud-boxer` components.
+Another option is to change your Python path.
+We will add the option to install `ud-boxer` as a package at a later moment.
+
 ## Possible future improvements
 - [ ] Support enhanced UD annotations (need CoreNLP binding: https://stanfordnlp.github.io/CoreNLP/depparse.html or keep an eye on this: https://github.com/stanfordnlp/stanza/issues/359) these are essential for certain case markings.
 - [ ] Generated SBN does not adhere to the spec entirely, in particular when it comes to constants. The evaluation in Penman notation is not bothered by this since everything gets consistently quoted there:
