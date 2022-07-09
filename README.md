@@ -10,6 +10,9 @@ The following images show the basic idea for the sentence **Tracy lost her glass
   </tr>
 </table>
 
+Note that the `thesis-hand-in-branch` is the branch that corresponds to the exact state of the system described my thesis.
+Additional development will be done on other branches and the main branch and not merged to that branch!
+
 ## Installation
 A script with the required steps is included: `install.sh`.
 Note however that this is to illustrate the steps needed, you probably need to edit it in order to work for your system.
