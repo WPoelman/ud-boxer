@@ -11,7 +11,8 @@ The following images show the basic idea for the sentence **Tracy lost her glass
 </table>
 
 Note that the `thesis-hand-in-branch` is the branch that corresponds to the exact state of the system described my thesis.
-Additional development will be done on other branches and the main branch and not merged to that branch!
+Additional development will be done on other branches.
+These changes will not be merged to the hand in branch!
 
 ## Installation
 A script with the required steps is included: `install.sh`.
