@@ -257,7 +257,7 @@ rule remove_root_punct {
 % Example: en/gold/p04/d1646
 rule remove_unwanted_pos {
     pattern {
-        N [upos=PUNCT|DET|AUX|AUX_PASS|CASE|EXPL|ADP|PART|CCONJ|SCONJ];
+        N [upos=PUNCT|DET|AUX|ADP|PART|CCONJ|SCONJ];
     }
     commands {
         del_node N;
