@@ -1,0 +1,491 @@
+p23/d0711,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p55/d0943,person.n.01 Role +1 time.n.08 EQU now
+p05/d0904,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d0940,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p22/d0841,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p63/d0850,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p83/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p05/d0915,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p12/d0896,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p25/d2934,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p45/d0783,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p65/d3279,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p32/d3159,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p63/d1896,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d3322,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0877,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p42/d0783,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p33/d0764,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p94/d0872,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p34/d2326,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1
+p15/d2508,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p94/d0711,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0716,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p04/d0960,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p25/d0799,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p54/d0914,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p74/d1391,male.n.02 Name User -1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p14/d0849,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p04/d0787,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d2382,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p85/d1815,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p05/d0780,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p35/d0841,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p15/d2517,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p05/d0848,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p02/d0761,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p15/d0761,male.n.02 Name "Tom" live.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p14/d2301,male.n.02 Name User -1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -2 Theme -1
+p32/d0886,male.n.02 Name User -1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p53/d2818,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p62/d1388,person.n.01 Role +1 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p05/d0820,entity.n.01 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p45/d0906,person.n.01 Role +1 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p14/d0716,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p82/d0783,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p65/d0878,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d1565,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p14/d2443,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p45/d3117,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d1935,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p32/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p85/d0825,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p83/d2406,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p04/d0888,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p14/d0713,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p45/d2454,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d1933,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p74/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d0888,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p82/d3508,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p92/d0820,person.n.01 Role +1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p03/d0925,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p22/d2422,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p13/d0894,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p73/d0792,male.n.02 Name User -1 Time +1 Theme +2 time.n.08 TPR now
+p93/d1921,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p93/d0926,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p05/d0814,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p24/d0892,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p34/d0824,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p84/d1389,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d0879,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p04/d0909,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p13/d0907,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p25/d3281,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p14/d0953,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p02/d2690,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p82/d1991,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p42/d0879,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d2998,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d0794,male.n.02 Name User -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d2126,person.n.01 Role +1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p45/d0867,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p22/d1871,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p22/d0928,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p64/d2012,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p52/d2006,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p84/d1796,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p12/d2561,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p55/d0764,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p32/d0930,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p92/d0829,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0936,male.n.02 Name "Tom" time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p42/d0945,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p44/d0927,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p15/d0771,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p83/d0848,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p52/d3045,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p83/d2278,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p84/d2746,person.n.01 Role +1 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p83/d2551,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p25/d0761,male.n.02 Name User -1 Time +1 Theme +2 time.n.08 EQU now
+p05/d2795,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p73/d0791,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p85/d0889,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p15/d0895,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p53/d0764,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d0781,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p93/d1524,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p75/d1391,male.n.02 Name User -1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p75/d2162,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p72/d1449,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p22/d0712,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p54/d0863,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p24/d0711,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p25/d3470,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p35/d0915,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p84/d0879,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p32/d0913,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p15/d0880,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0761,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d1726,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p93/d0887,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d0711,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p12/d3548,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p44/d1998,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p82/d3399,entity.n.01 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p14/d0876,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p53/d2488,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p32/d0835,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p54/d0864,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p74/d0893,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p62/d0943,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p15/d0816,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p83/d1570,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p75/d0716,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p32/d0890,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p53/d3113,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p73/d1515,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p12/d0847,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p35/d2693,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p45/d0822,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p75/d0895,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p15/d0906,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p25/d0775,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p72/d0800,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p62/d2622,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p42/d2218,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p82/d0946,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p13/d0712,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p25/d0870,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p15/d0820,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p15/d0874,person.n.01 Role +1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p74/d3273,male.n.02 Name "Tom" time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 EQU now
+p75/d1389,person.n.01 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p45/d0942,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p83/d0836,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p03/d0946,person.n.01 Role +1 time.n.08 EQU now
+p45/d0938,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p45/d0895,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p83/d0903,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p74/d0858,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p92/d0712,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p83/d0784,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p83/d0814,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p92/d0875,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p73/d2380,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d2513,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p02/d0926,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p92/d0861,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0955,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p55/d0891,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d0859,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p33/d3224,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p02/d1388,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p83/d2854,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p54/d1499,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p64/d0822,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p02/d2236,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p63/d0828,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p34/d0764,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p54/d0930,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p43/d2299,person.n.01 Role +1 be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0823,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p63/d3175,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p53/d0857,time.n.08 EQU now time.n.08 EQU now
+p42/d2885,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d0955,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p94/d0934,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p25/d2748,male.n.02 Name User -1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p24/d3251,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p43/d0899,time.n.08 EQU now time.n.08 EQU now
+p55/d1888,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p54/d2466,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p25/d0813,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p35/d0948,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p02/d1743,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p65/d0778,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d3375,time.n.08 EQU now time.n.08 EQU now
+p43/d3370,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p75/d0921,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d1724,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p02/d0897,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p55/d0931,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p55/d0766,person.n.01 Role +1 time.n.08 EQU now
+p53/d2191,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d0828,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p93/d0901,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p14/d0898,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p55/d1776,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p22/d0932,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d0857,time.n.08 EQU speaker time.n.08 EQU now
+p43/d0875,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0929,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p63/d0863,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p73/d2412,person.n.01 Role +1 time.n.08 EQU now
+p44/d2762,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p95/d0712,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d0945,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p93/d0913,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p63/d0862,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p62/d0847,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p22/d0814,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p15/d0788,male.n.02 Name ? time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p93/d0836,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d2432,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p35/d0856,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p23/d2922,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p35/d0875,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p05/d0806,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p54/d0716,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p25/d3304,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p85/d0940,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d0821,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p15/d0851,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p93/d3548,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p82/d1816,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p43/d0938,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p35/d3280,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p85/d0903,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p52/d1389,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0884,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p03/d2101,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d0818,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p74/d2498,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p85/d0942,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p94/d1905,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p92/d0711,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0949,person.n.01 Role +1 be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p94/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p64/d1386,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d2971,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p55/d0872,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p53/d0883,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d3002,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p63/d0926,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p13/d0713,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d0799,person.n.01 Role +1 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p22/d1868,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0766,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p54/d0840,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p75/d0913,person.n.01 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p92/d0764,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p62/d1385,person.n.01 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p94/d0906,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p93/d0848,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p34/d0880,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p75/d0806,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0761,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p93/d1391,person.n.01 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p95/d0953,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p94/d0817,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p22/d0939,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p72/d0916,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p23/d0840,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p24/d0850,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p32/d0931,time.n.08 EQU speaker time.n.08 EQU now
+p34/d0781,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p82/d0928,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0902,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p63/d2934,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p12/d0922,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p74/d1455,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d0944,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p42/d2000,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p94/d3533,entity.n.01 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p13/d0950,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p15/d3217,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p92/d0923,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p02/d0785,male.n.02 Name "Tom" time.n.08 TPR now happy.a.01 AttributeOf -2 Time -1
+p15/d0956,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p15/d3504,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p22/d0919,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p12/d0789,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p85/d0936,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p85/d0915,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p23/d1637,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p75/d0853,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p83/d1973,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p94/d0956,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0837,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p62/d1632,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p42/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d3041,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p15/d0925,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p85/d0712,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p63/d0955,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p54/d3130,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p12/d0837,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p53/d0711,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d2458,person.n.01 Role +1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p15/d1983,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d0712,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p85/d0893,male.n.02 Name User -1 Time +1 Theme +2 time.n.08 TPR now
+p93/d2849,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p23/d1847,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p22/d0815,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p25/d0713,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p04/d0851,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p64/d3519,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p92/d0902,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p55/d0790,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p95/d1390,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p74/d1561,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d0895,male.n.02 Name User -1 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p94/d0759,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0873,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p64/d2196,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p05/d0846,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p12/d0821,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p03/d2401,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d0810,time.n.08 EQU speaker time.n.08 EQU now
+p85/d2966,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p22/d0944,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p15/d0797,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p95/d0872,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p42/d1926,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0877,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p94/d0851,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p43/d0948,person.n.01 Role +1 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p24/d0887,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p02/d0917,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p15/d0794,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p33/d2557,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p64/d0712,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p05/d0822,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p24/d0931,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d2306,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p13/d0913,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p05/d3467,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p64/d0828,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p64/d2903,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p05/d0830,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p03/d0815,entity.n.01 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p24/d1895,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p65/d0819,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p33/d0838,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d0849,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p45/d0760,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p55/d0813,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p95/d0791,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p82/d0836,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p62/d0784,male.n.02 Name "Tom" time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p85/d3375,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d0830,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p32/d0906,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0869,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p75/d0914,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p85/d0766,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p63/d2233,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p23/d1387,person.n.01 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p23/d0808,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p05/d3451,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p73/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d0760,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p14/d1740,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p03/d2553,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p93/d0842,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p53/d1386,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p43/d1387,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p45/d0886,male.n.02 Name User -1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 TPR now
+p63/d2634,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p02/d0713,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d0867,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p92/d2898,male.n.02 Name ? time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p02/d2208,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p55/d1726,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p22/d0783,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p65/d0811,person.n.01 Role +1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1
+p25/d0940,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d2657,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d2660,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d3075,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p75/d0818,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p52/d0808,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0900,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p22/d0766,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p05/d0838,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p82/d1795,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0903,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p25/d0760,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p73/d0796,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p75/d0912,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p15/d0801,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p55/d1389,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p75/d0935,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p95/d0797,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p75/d0910,male.n.02 Name User -1 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p02/d1557,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p94/d0899,male.n.02 Name User -1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1
+p12/d1922,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p93/d2799,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p44/d2494,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p64/d0762,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d2986,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p33/d0899,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p65/d0846,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d2956,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p54/d0953,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p22/d1390,person.n.01 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p93/d3306,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p33/d2714,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p34/d0834,male.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p44/d1534,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p72/d2634,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p82/d2388,person.n.01 Role +1 time.n.08 EQU now
+p33/d0765,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p94/d1965,person.n.01 NEGATION -1 time.n.08 TPR now closed.a.01 AttributeOf -2 Time -1
+p53/d3342,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p82/d3414,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p02/d0716,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p02/d2511,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d3216,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p23/d0851,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p15/d0858,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p03/d0787,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p53/d0942,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0872,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 time.n.08 EQU now
+p03/d2059,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p55/d0775,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p32/d0766,entity.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p72/d0841,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p33/d0877,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p03/d0880,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p25/d2372,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p85/d1764,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p24/d1961,person.n.01 EQU speaker time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p13/d0897,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p22/d0805,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p12/d3094,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p44/d1939,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p64/d3167,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p44/d0868,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p43/d2498,male.n.02 Name "Tom" time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1 Time +1 time.n.08 EQU now
+p63/d2262,male.n.02 Name User -1 Time +1 Theme +2 time.n.08 TPR now
+p73/d0956,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d1392,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p84/d1385,person.n.01 Role +1 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p15/d3378,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p05/d1390,male.n.02 Name "Tom" live.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Starbucks"
+p22/d2444,male.n.02 Name User -1 Time +1 Theme +2 time.n.08 TPR now
+p02/d2967,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p03/d0805,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p02/d0932,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d0919,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p04/d0897,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p92/d3199,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p04/d2056,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p95/d2508,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d0875,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p92/d0833,entity.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p75/d0948,male.n.02 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 TPR now
+p82/d0716,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p64/d2214,male.n.02 time.n.08 EQU now happy.a.01 AttributeOf -2 Time -1
+p02/d0781,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p05/d0789,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d0843,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p02/d0712,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p24/d0955,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p84/d0784,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now
+p92/d2611,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d0785,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p82/d2767,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p42/d2163,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d0843,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p65/d0714,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d0838,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p85/d1577,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d0813,person.n.01 EQU speaker be.v.02 Theme -1 Time +1 time.n.08 EQU now
+p12/d3475,entity.n.01 time.n.08 EQU now closed.a.01 AttributeOf -2 Time -1
+p03/d1650,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Theme +2 time.n.08 EQU now

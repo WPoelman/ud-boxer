@@ -1,0 +1,461 @@
+p24/d2787,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now very.r.01 enthusiastic.a.01 AttributeOf -3 Time -2 Degree -1
+p33/d3224,person.n.01 EQU speaker time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 mold.n.05
+p04/d2524,person.n.01 EQU speaker NEGATION -1 speak.v.03 Agent -1 Time +1 Theme +2 time.n.08 EQU now plan.n.01
+p54/d3130,time.n.08 TPR now person.n.01 EQU hearer play.v.01 Time -2 Agent -1
+p74/d1820,male.n.02 have.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now great.a.02 AttributeOf +1 man.n.01
+p42/d0712,reason.n.01 EQU ? time.n.08 EQU now go.v.01 Theme -2 Time -1 Agent +1 male.n.02 Name "Jan De Bont"
+p82/d1510,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p84/d2232,male.n.02 Name "Lin Piao" write.v.01 Agent -1 Time +1 Location +2 time.n.08 TPR now book.n.01 Quantity 24
+p44/d1392,manner.n.01 EQU ? die.v.01 Manner -1 Time +1 Agent +2 time.n.08 TPR now male.n.02 Name "Alfred Nobel"
+p54/d1396,manner.n.01 EQU ? be.v.03 Co-Theme -1 Time +1 Agent +2 time.n.08 TPR now male.n.02 Name "Virginia Woolf"
+p62/d1388,person.n.01 Quantity ? be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now male.n.02 Name "Uttar Pradesh"
+p44/d1979,female.n.02 Name "Jane" time.n.08 EQU now eat.v.01 Agent -2 Time -1 Theme +1 dress.n.01
+p12/d2192,dog.n.01 bark.v.04 Agent -1 Time +1 time.n.08 TPR now
+p03/d2418,time.n.08 TPR now female.n.02 stubborn.a.01 Time -2 AttributeOf -1
+p13/d2551,male.n.02 Name "Tom" be.v.01 Theme -1 Time +1 Co-Theme +3 time.n.08 EQU now person.n.01 Role +1 private_detective.n.01
+p64/d2214,dog.n.01 bark.v.04 Agent -1 Time +1 time.n.08 TPR now
+p12/d2821,male.n.02 Name "Tom" attach.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now oil_company.n.01
+p03/d2661,male.n.02 Name "Mario" buy.v.01 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now ink.n.01 desk.n.01
+p24/d3458,male.n.02 live.v.01 Theme -1 Time +1 Location +2 time.n.08 EQU now city.n.01 Name "Tokyo"
+p73/d2412,dog.n.01 stink.v.02 Theme -1 Time +1 time.n.08 EQU now
+p32/d2518,book.n.02 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 EQU now measure.n.02 Quantity 3000 Unit +1 yen.n.02
+p12/d2804,male.n.02 Name "Tom" arrive.v.01 Theme -1 Time +1 Value +2 time.n.08 TPR now measure.n.02 Quantity 3 Unit +1 year.n.01
+p33/d1992,blow.v.05 Time +1 Theme +2 time.n.08 TPR now man.n.01
+p42/d2390,male.n.02 Name "Tom" time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p94/d1905,person.n.01 Name ? make.v.06 Agent -1 Time +1 Theme +2 time.n.08 TPR now book.n.01
+p42/d2027,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p72/d1709,male.n.02 Name "Tom" time.n.08 EQU now swim.v.01 Theme -2 Time -1
+p04/d2252,time.n.08 EQU now person.n.01 EQU speaker old.a.01 Time -2 AttributeOf -1
+p12/d2370,male.n.02 Name "Brad Pitt" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 singer.n.01
+p04/d2212,time.n.08 EQU now entity.n.01 free.a.03 Time -2 AttributeOf -1
+p82/d3242,person.n.01 EQU speaker POSSIBILITY -1 speak.v.03 Agent -1 Theme +1 language.n.01 Quantity +
+p72/d1516,NEGATION -1 person.n.01 NEGATION -1 POSSIBILITY -1 swim.v.01 Theme -1
+p42/d2430,female.n.02 adore.v.01 Experiencer -1 Time +1 time.n.08 TSU now
+p64/d2381,person.n.01 EQU speaker time.n.08 TPR now unarmed.a.01 AttributeOf -2 Time -1
+p83/d2732,person.n.01 time.n.08 EQU now lie.v.05 Agent -2 Time -1
+p24/d2573,male.n.02 Name "Tom" time.n.08 EQU now awake.a.01 AttributeOf -2 Time -1
+p23/d1962,NEGATION -1 person.n.01 NEGATION -1 male.n.02 Agent -1 Time +1 time.n.08 TPR now
+p03/d1926,person.n.01 EQU speaker time.n.08 EQU now eat.v.01 Agent -2 Time -1 Co-Agent +1 dress.n.01
+p23/d0851,wind.n.01 time.n.08 EQU now sleep.v.01 Agent -2 Time -1 Theme +1 trunk.n.02
+p32/d2835,turkey.n.01 gobble.v.01 Agent -1 Time +1 time.n.08 TPR now
+p54/d3358,girl.n.01 time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p13/d3554,door.n.01 time.n.08 EQU now red.a.01 ColourOf -2 Time -1
+p93/d2411,male.n.02 live.v.01 Theme -1 Time +1 Location +2 time.n.08 TPR now measure.n.02
+p34/d0781,male.n.02 Name "El-Nashar" time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p13/d1964,male.n.02 Name "Tom" slug.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Mary"
+p34/d1918,male.n.02 Name "Tom" have.v.01 Pivot -1 Time +1 Theme +2 Theme +3 time.n.08 EQU now english.n.01 english.n.01
+p92/d0711,male.n.02 Name "Michael Jackson" die.v.01 Patient -1 Time +1 Patient +2 time.n.08 EQU now male.n.02 Name "Chabrol"
+p84/d1389,manner.n.01 EQU ? die.v.01 Manner -1 Time +1 Agent +2 time.n.08 TPR now male.n.02 Name "Eva Peron"
+p03/d2679,time.n.08 EQU now person.n.01 EQU speaker play.v.01 Time -2 Agent -1 Theme +1 german.n.02
+p13/d0712,hurricane.n.01 quack.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now book.n.01 Name "Chabrol"
+p02/d2133,male.n.02 Name "Tom" NEGATION -1 be.v.01 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p22/d1401,war.n.01 last.v.01 Theme -1 Time +1 Value +2 time.n.08 TPR now measure.n.02 Quantity 3 Unit +1 yen.n.02
+p52/d2976,person.n.01 EQU speaker NEGATION -1 speak.v.03 Agent -1 Time +1 Theme +2 time.n.08 EQU now english.n.01
+p04/d3109,NEGATION -1 person.n.01 male.n.02 call.v.03 Agent -2 Patient -1 Time +1 time.n.08 TPR now
+p62/d3327,dog.n.01 meow.v.01 Agent -1 Time +1 time.n.08 TPR now
+p94/d2222,person.n.01 laugh.v.01 Agent -1 Time +1 time.n.08 TPR now
+p03/d0716,male.n.02 Name "Charles de Gaulle" die.v.01 Patient -1 Time +1 time.n.08 YearOfCentury 1967 TPR now
+p12/d1605,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 mold.n.05
+p42/d0945,person.n.01 EQU speaker eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now apple.n.01
+p13/d1659,person.n.01 EQU speaker like.v.03 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now woman.n.01
+p24/d2838,male.n.02 Name "Tom" time.n.08 EQU now deaf.a.01 AttributeOf -2 Time -1
+p03/d0766,male.n.02 Name "Charles de Gaulle" die.v.01 Patient -1 Time +1 Location +2 time.n.08 TPR now country.n.02 Name "Truckee River Trail"
+p44/d1464,male.n.02 Name "Tom" sing.v.02 Agent -1 Time +1 time.n.08 EQU now
+p92/d0712,male.n.02 Name "John" female.n.02 Name "Jane" time.n.08 TPR now murder.v.01 Patient -2 Time -1
+p24/d2699,male.n.02 Name "Tom" time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p04/d3302,male.n.02 Name "Tom" time.n.08 TPR now arrest.v.01 Patient -2 Time -1 Agent +1 male.n.02 Name "Tom"
+p72/d2331,door.n.01 time.n.08 EQU now sink.v.04 Patient -2 Time -1
+p32/d3159,female.n.02 Name "Mary" time.n.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Quantity 3
+p32/d1935,person.n.01 Role +1 innkeeper.n.01 grin.v.01 Agent -2 Time +1 time.n.08 TPR now
+p13/d0824,person.n.01 EQU speaker time.n.08 EQU now well.a.01 AttributeOf -2 Time -1
+p82/d2688,male.n.02 Name "Tom" kiss.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Mary"
+p72/d0945,duck.n.01 quack.v.01 Agent -1 Time +1 time.n.08 EQU now
+p04/d3414,dog.n.01 hug.v.01 Agent -1 Time +1 time.n.08 TPR now
+p94/d3046,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p54/d2017,NEGATION NEGATION -1 time.n.08 EQU now dead.a.01 AttributeOf -2 Time -1
+p64/d0762,male.n.02 Name "Brad Pitt" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 workaholic.n.01
+p42/d0760,male.n.02 EQU speaker buy.v.01 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now book.n.01 Source +1 country.n.02 Name "Cina"
+p24/d1595,female.n.02 sweater.n.01 User -1 time.n.08 EQU now broken.a.01 AttributeOf -3 Time -1
+p64/d3519,female.n.02 Name "Mary" giggle.v.01 Agent -1 Time +1 time.n.08 TPR now
+p52/d1396,manner.n.01 EQU ? be.v.08 Co-Theme -1 Time +1 Agent +2 time.n.08 TPR now male.n.02 Name "Alfred Nobel"
+p82/d3317,person.n.01 EQU speaker eat.v.01 Agent -1 Time +1 Theme +2 time.n.08 EQU now milk.n.01
+p43/d2503,person.n.01 Role +1 wife.n.01 Of speaker suffer.v.02 Experiencer -2 Time +1 Stimulus +2 time.n.08 TPR now person.n.01
+p44/d3365,meat.n.01 User speaker time.n.08 EQU now broken.a.01 AttributeOf -2 Time -1
+p93/d1915,school.n.05 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 EQU now measure.n.02
+p12/d0877,person.n.01 time.n.08 TPR now arrest.v.01 Patient -2 Time -1 Agent +1 person.n.01 Role +1 friend.n.01
+p74/d2862,female.n.02 adore.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now dog.n.01
+p73/d2380,male.n.02 Name "Tom" eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now person.n.01 Role +1 friend.n.01
+p23/d1869,NEGATION -1 person.n.01 NEGATION -1 laugh.v.01 Agent -1 Time +1 time.n.08 TPR now
+p24/d2639,person.n.01 Role +1 innkeeper.n.01 grin.v.01 Agent -2 Time +1 time.n.08 TPR now
+p44/d2390,male.n.02 Name "Tom" want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now person.n.01
+p03/d2764,pigeon.n.01 stink.v.02 Theme -1 Time +1 time.n.08 TPR now
+p52/d2428,war.n.01 last.v.01 Theme -1 Time +1 time.n.08 ClockTime 11:15 TPR now
+p02/d1809,NEGATION -1 turtle.n.02 NEGATION -1 mammal.n.01 terra_incognita.n.01 EQU -2 EQU -1
+p02/d1713,male.n.02 Name "Tom" person.n.01 EQU speaker abandon.v.05 Agent -2 Patient -1 Time +1 time.n.08 TPR now
+p12/d2068,dog.n.01 time.n.08 EQU now chew.v.01 Agent -2 Time -1 Patient +1 bone.n.01
+p14/d2318,female.n.02 Name "Emily" time.n.08 EQU now thirsty.a.02 Experiencer -2 Time -1
+p22/d2715,time.n.08 EQU now person.n.01 EQU speaker play.v.01 Time -2 Agent -1
+p04/d2803,book.n.02 begin.v.06 Theme -1 Time +1 Duration +2 Location +4 time.n.08 TPR now measure.n.02 Quantity 20 Unit +1 yen.n.02
+p34/d2534,door.n.01 PartOf +1 person.n.01 EQU speaker time.n.08 EQU now alive.a.01 AttributeOf -3 Time -1
+p82/d1886,male.n.02 Name "Tom" dance.v.02 Theme -1 Time +1 Location +2 time.n.08 TPR now city.n.01 Name "Argentina"
+p82/d1779,entity.n.01 be.v.02 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p13/d0713,girl.n.01 eat.v.01 Agent -1 Time +1 time.n.08 TPR now
+p13/d2713,female.n.02 wear.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now tree.n.01
+p24/d1484,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p03/d2705,time.n.08 EQU now female.n.02 stubborn.a.01 Time -2 AttributeOf -1
+p53/d2818,blood.n.01 time.n.08 TPR now very.r.01 ColourOf -2 Time -1
+p83/d2123,person.n.01 time.n.08 EQU now lie.v.05 Agent -2 Time -1
+p42/d3126,war.n.01 Name "Prima Guerra Mondiale" break_out.v.01 Theme -1 Time +1 time.n.08 YearOfCentury 1914 TPR now
+p34/d2521,person.n.01 Role +1 wife.n.01 Of speaker be.v.08 Theme -2 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 private_detective.n.01
+p73/d1611,male.n.02 Name "Tom" time.n.08 EQU now wear.v.01 Agent -2 Time -1 Patient +1 bone.n.01
+p04/d1952,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p23/d2962,male.n.02 Name "Carl Smith" male.n.02 Name "Giovanni Paolo II" Title -1 die.v.01 Patient -1 Agent +1 male.n.02 Name "Polonia"
+p13/d1527,male.n.02 Name "Tom" wiggle.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now hole.n.01
+p23/d3069,male.n.02 Name "Mary" time.n.08 EQU now more.r.01 Theme -2 Time -1 Co-Theme +1 female.n.02 Name "Mary"
+p92/d2192,person.n.01 Role +1 mother.n.01 cut.v.01 Agent -2 Time +1 Patient +2 time.n.08 TPR now book.n.01
+p42/d2328,male.n.02 Name "Tom" have.v.12 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now osteoporosis.n.01
+p24/d2402,person.n.01 steal.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Tom"
+p53/d2869,male.n.02 Name "Tom" time.n.08 EQU now wear.v.01 Agent -2 Time -1 Theme +1 truck.n.01
+p03/d2003,country.n.02 Name "General Motors" lay_off.v.02 Agent -1 Time +1 Theme +2 Location +3 time.n.08 TPR now troop.n.05 Quantity 730 country.n.02 Name "Truckee River Trail"
+p83/d2406,person.n.01 EQU speaker understand.v.01 Experiencer -1 Time +1 time.n.08 EQU now
+p32/d2195,person.n.01 Role +1 wife.n.01 Of speaker be.v.08 Theme -2 Time +1 Co-Theme +2 time.n.08 TPR now person.n.01
+p12/d2367,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p73/d1582,ice.n.02 NEGATION -1 time.n.08 EQU now drunk.a.01 AttributeOf -2 Time -1
+p62/d2314,male.n.02 Name "Tom" time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p43/d1814,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p03/d1870,girl.n.01 male.n.02 Name "america" Title -1 time.n.08 EQU now alive.a.01 AttributeOf -3 Time -1
+p04/d1927,person.n.01 leave.v.01 Theme -1 Time +1 Location +2 time.n.08 TPR now country.n.02 Name "Grecia"
+p02/d3454,male.n.02 Name "Tom" time.n.08 EQU now wear.v.01 Agent -2 Time -1 Agent +1 female.n.02 Name "Mary"
+p24/d1602,person.n.01 NEGATION -1 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p53/d2394,girl.n.01 NEGATION -1 time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p02/d1850,person.n.01 EQU speaker time.n.08 EQU now work.v.02 Agent -2 Time -1 Co-Agent +1 person.n.01 EQU speaker
+p32/d3162,queen.n.02 time.n.08 EQU now located.a.01 Theme -2 Time -1 Location +1 country.n.02 Name "Giappone"
+p33/d1425,frog.n.01 croak.v.02 Agent -1 Time +1 time.n.08 EQU now
+p82/d3009,male.n.02 Name "Tom" yawn.v.01 Agent -1 Time +1 time.n.08 TPR now
+p14/d2673,girl.n.01 time.n.08 TPR now unlocked.a.01 AttributeOf -2 Time -1
+p24/d0884,person.n.01 EQU speaker NEGATION -1 person.n.01 EQU speaker understand.v.01 Experiencer -2 Stimulus -1 Time +1 time.n.08 EQU now
+p43/d3424,person.n.01 EQU speaker marry.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Tom"
+p23/d1947,person.n.01 EQU speaker buy.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now tree.n.01
+p34/d3518,person.n.01 EQU speaker wake_up.v.01 Agent -1 Time +1 time.n.08 TPR now
+p24/d3377,person.n.01 EQU speaker be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now lightning_rod.n.02
+p64/d3225,pigeon.n.01 coo.v.02 Agent -1 Time +1 time.n.08 EQU now
+p43/d1997,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p03/d2554,female.n.02 Name "Sita" understand.v.01 Experiencer -1 Time +1 time.n.08 TPR now
+p64/d1386,location.n.01 Name ? be.v.03 Location -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Michelangelo Antonioni"
+p92/d1846,person.n.01 EQU speaker buy.v.01 Agent -1 Time +1 Theme +2 Theme +3 time.n.08 TPR now book.n.01 Owner +1 female.n.02 Name "Mary"
+p43/d2115,male.n.02 Name "Tom" time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p63/d2262,ticket.n.01 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 EQU now measure.n.02 Quantity 3000 Unit +1 yen.n.02
+p53/d3110,NEGATION -1 person.n.01 SubOf +1 person.n.01 EQU speaker NEGATION -1 person.n.01 love.v.01 Experiencer -2 Stimulus -1 Time +1 time.n.08 TSU now
+p63/d3213,male.n.02 Name "Tom" hate.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now female.n.02 Name "Mary"
+p52/d0887,person.n.01 EQU speaker want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now woman.n.01
+p43/d3001,male.n.02 Name "Ken" love.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now male.n.02 Name "Tom"
+p12/d2470,male.n.02 Name "Jane" time.n.08 EQU now more.r.01 Theme -2 Co-Theme +2 young.a.01 AttributeOf -3 Time -2 Degree -1 person.n.01 EQU speaker
+p04/d1590,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p02/d2533,male.n.02 Name "Tom" time.n.08 EQU now very.r.01 unhappy.a.01 Experiencer -3 Time -2 Degree -1
+p03/d1985,NEGATION -1 whale.n.02 NEGATION -1 mammal.n.01 terra_incognita.n.01 EQU -2 EQU -1
+p93/d1391,person.n.01 Name ? make.v.06 Agent -1 Time +1 Patient +2 time.n.08 TPR now street.n.01
+p14/d2982,NEGATION -1 person.n.01 NEGATION -1 laugh.v.01 Agent -1 Time +1 time.n.08 TPR now
+p13/d1773,public_square.n.01 time.n.08 EQU now bark.v.04 Agent -2 Time -1
+p22/d2563,male.n.02 Name "Tom" time.n.08 EQU now awake.a.01 AttributeOf -2 Time -1
+p43/d2322,male.n.02 Name "Robin Hood" walk.v.01 Theme -1 Time +1 time.n.08 TPR now
+p34/d0794,NEGATION -1 dolphin.n.02 NEGATION -1 mammal.n.01 terra_incognita.n.01 EQU -2 EQU -1
+p64/d3246,book.n.02 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 TPR now measure.n.02
+p04/d1571,person.n.01 fail.v.01 Agent -1 Time +1 time.n.08 TPR now
+p52/d2223,duck.n.01 quack.v.01 Agent -1 Time +1 time.n.08 EQU now
+p34/d2398,entity.n.01 cost.v.01 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now beautiful.a.01 AttributeOf +1 man.n.01
+p62/d3415,male.n.02 Name "Tom" time.n.08 EQU now up.a.02 AttributeOf -2 Time -1
+p92/d2261,male.n.02 Name "Tom" give.v.03 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Mary"
+p83/d2327,male.n.02 Name "Tom" NEGATION -1 trust.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Tom"
+p04/d1499,male.n.02 Name "Tom" time.n.08 EQU now deaf.a.01 AttributeOf -2 Time -1
+p33/d0768,NEGATION -1 person.n.01 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p92/d2159,male.n.02 Name "Tom" have.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now osteoporosis.n.01
+p03/d1881,person.n.01 EQU speaker time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 dust.n.01
+p02/d1435,person.n.01 eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now cat.n.01
+p03/d0787,male.n.02 Name "Tom" time.n.08 EQU now more.r.01 Theme -2 Co-Theme +2 young.a.01 AttributeOf -3 Time -2 Degree -1 person.n.01 EQU speaker
+p44/d0927,person.n.01 EQU speaker like.v.03 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now osteoporosis.n.01
+p82/d2129,male.n.02 Name "Tom" eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now shirt.n.01 Owner -3
+p04/d3017,dog.n.01 time.n.08 EQU now eat.v.01 Agent -2 Time -1 Patient +1 bone.n.01
+p02/d2217,male.n.02 be.v.02 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p12/d1720,female.n.02 NEGATION -1 time.n.08 EQU now dead.a.01 AttributeOf -2 Time -1
+p03/d1592,person.n.01 steal.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Tony"
+p32/d3329,entity.n.01 NEGATION -1 time.n.08 EQU now dead.a.01 AttributeOf -2 Time -1
+p82/d3517,male.n.02 Name "Tom" kiss.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Mary"
+p32/d2828,person.n.01 EQU speaker NEGATION -1 POSSIBILITY -1 speak.v.03 Agent -1 Theme +1 chopstick.n.01
+p62/d1632,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 mold.n.05
+p03/d0884,male.n.02 hate.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now
+p02/d2775,person.n.01 Role +1 mother.n.01 Of speaker cook.v.03 Agent -2 Time +1 Patient +2 time.n.08 TPR now measure.n.02 Quantity 20
+p34/d1396,organisation.n.02 Name ? coach.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Caterina la Grande"
+p03/d1550,male.n.02 Name "Tom" attach.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now lightbulb.n.01
+p54/d1782,male.n.02 Name "Sita" smile.v.01 Agent -1 Time +1 time.n.08 EQU now
+p43/d2182,male.n.02 Name "Emily" time.n.08 EQU now thirsty.a.02 Experiencer -2 Time -1
+p44/d3494,male.n.02 Name "Brad Pitt" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 singer.n.01
+p03/d3442,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 woman.n.01
+p13/d3488,cost.v.01 Theme +1 measure.n.02 Quantity 2 Unit +1 yen.n.02
+p12/d2624,male.n.02 Name "Tom" time.n.08 EQU now tipsy.a.01 AttributeOf -2 Time -1
+p42/d1889,dog.n.01 time.n.08 TPR now equip.v.01 Patient -2 Time -1
+p03/d3337,person.n.01 EQU speaker understand.v.01 Experiencer -1 Time +1 time.n.08 TPR now
+p32/d1472,male.n.02 Name "Tom" NEGATION -1 POSSIBILITY -1 speak.v.03 Agent -1 Time +1 time.n.08 TSU now
+p32/d0930,male.n.02 Name "Tom" have.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now tree.n.01
+p43/d2556,male.n.02 Name "Tom" be.v.01 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p03/d2290,female.n.02 adore.v.01 Experiencer -1 Time +1 time.n.08 TSU now
+p34/d3553,female.n.02 approve.v.01 Agent -1 Time +1 Theme +2 time.n.08 EQU now person.n.01
+p23/d1567,male.n.02 Name "Tom" time.n.08 EQU now awake.a.01 AttributeOf -2 Time -1
+p54/d2531,dog.n.01 NEGATION -1 time.n.08 EQU now shy.a.01 AttributeOf -2 Time -1
+p53/d1441,male.n.02 Name "Tom" time.n.08 EQU now exile.v.01 Theme -2 Time -1 Destination +1 country.n.02 Name "Giappone"
+p53/d2793,person.n.01 Role +1 wife.n.01 Of speaker suffer.v.02 Experiencer -2 Time +1 Stimulus +2 time.n.08 EQU now osteoporosis.n.01
+p04/d2829,time.n.08 EQU now person.n.01 EQU speaker go.v.01 Time -2 Agent -1 Theme +1 german.n.02
+p34/d3219,dog.n.01 bite.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now person.n.01
+p52/d3490,girl.n.01 time.n.08 EQU now married.a.01 AttributeOf -2 Time -1 Agent +1 male.n.02 Name "Tom"
+p74/d1790,person.n.01 Role +1 girlfriend.n.02 time.n.08 EQU now very.r.01 jealous.a.02 Experiencer -3 Time -2 Degree -1
+p43/d2842,male.n.02 Name "Tom" cooperate.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Mary"
+p94/d2689,person.n.01 EQU speaker old.a.01 Theme -1 Time +1 Value +2 time.n.08 TPR now measure.n.02 Quantity 3 Unit +1 year.n.01
+p02/d3279,male.n.02 Name "Andre Agassi" live.v.01 Theme -1 Time +1 Co-Theme +2 time.n.08 TPR now city.n.01 Name "Corsica"
+p44/d2158,girl.n.01 wear.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now baby.n.01
+p14/d0716,male.n.02 Name "Ibrahim Sofu" time.n.08 TPR now murder.v.01 Patient -2 Time -1 Agent +1 country.n.02 Name "Metin Kaplan"
+p43/d2852,female.n.02 adore.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now osteoporosis.n.01
+p03/d0837,male.n.02 be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 TPR now measure.n.02 Quantity 3 Unit +1 dollar.n.01
+p34/d2650,person.n.01 time.n.08 EQU now in_love.a.01 Experiencer -2 Time -1
+p54/d2968,male.n.02 Name "Pinocchio" walk.v.01 Theme -1 Time +1 time.n.08 TPR now
+p42/d2000,ice.n.02 look.v.02 Theme -1 Time +1 time.n.08 TPR now
+p82/d1991,person.n.01 Role +1 policeman.n.01 chase.v.01 Agent -2 Time +1 Patient +2 time.n.08 TPR now baby.n.01
+p24/d2692,person.n.01 EQU speaker marry.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity 20
+p92/d0803,duck.n.01 quack.v.01 Agent -1 Time +1 Theme +2 time.n.08 EQU now lightning_rod.n.02
+p32/d2867,male.n.02 Name "Tom" wiggle.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now hole.n.01
+p14/d2118,person.n.01 time.n.08 TPR now unlocked.a.01 AttributeOf -2 Time -1
+p84/d3109,male.n.02 Name "Taro" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now measure.n.02
+p92/d0764,male.n.02 Name "Andre Agassi" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 singer.n.01 famous.a.01 AttributeOf -1
+p72/d2036,person.n.01 EQU speaker time.n.08 EQU now in_love.a.01 Experiencer -2 Time -1
+p43/d2025,entity.n.01 time.n.08 EQU now very.r.01 thick.a.01 AttributeOf -3 Time -2 Degree -1
+p14/d2122,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p02/d2428,male.n.02 Name "Tom" understand.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now milk.n.01
+p54/d0864,male.n.02 Name "Dick" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 singer.n.01
+p32/d1530,time.n.08 EQU now person.n.01 EQU speaker old.a.01 Time -2 AttributeOf -1
+p53/d3432,female.n.02 Name "Mary" person.n.01 EQU speaker wake_up.v.01 Agent -2 Patient -1 Time +1 time.n.08 TPR now
+p74/d0760,female.n.02 Name "Dean Lynn Hart" live.v.01 Theme -1 Time +1 Location +2 time.n.08 EQU now country.n.02 Name "Nuova Zelanda"
+p53/d0764,male.n.02 Name "Charles de Gaulle" die.v.01 Patient -1 Time +1 time.n.08 YearOfCentury 1967 TPR now
+p34/d2877,person.n.01 EQU speaker like.v.03 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now person.n.01 Creator speaker
+p74/d1471,male.n.02 Name "GUS" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 writer.n.01
+p14/d2823,book.n.02 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 EQU now measure.n.02 Quantity 3000 Unit +1 yen.n.02
+p02/d2393,time.n.08 TPR now male.n.02 completely.r.01 pissed.a.02 Time -2 AttributeOf -1
+p03/d3283,time.n.08 EQU now female.n.02 stubborn.a.01 Time -2 AttributeOf -1
+p63/d0862,person.n.01 EQU speaker pay.v.01 Agent -1 Time +1 Theme +2 time.n.08 +3 time.n.08 TPR now book.n.01 Quantity +
+p02/d1382,person.n.01 Name ? make.v.06 Agent -1 Time +1 Theme +2 time.n.08 EQU now country.n.02 Name "Aaron Copland"
+p94/d2752,person.n.01 EQU speaker time.n.08 EQU now eat.v.01 Agent -2 Time -1 Patient +1 shirt.n.01
+p63/d1851,male.n.02 Name "Tom" time.n.08 EQU now swim.v.01 Theme -2 Time -1
+p14/d2976,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p22/d0932,person.n.01 Name ? make.v.06 Agent -1 Time +1 Patient +2 time.n.08 TPR now baby.n.01
+p24/d1869,person.n.01 EQU speaker time.n.08 EQU now in_love.a.01 Experiencer -2 Time -1
+p94/d0759,male.n.02 Name "Dick" be.v.08 Agent -1 Time +1 Result +2 time.n.08 TPR now male.n.02 Name "Melbourne"
+p14/d3473,person.n.01 Role +1 mother.n.01 cut.v.01 Agent -2 Time +1 Patient +2 Destination +3 time.n.08 TPR now ink.n.01 desk.n.01
+p04/d2386,person.n.01 EQU speaker buy.v.01 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now tree.n.01 desk.n.01
+p52/d2366,person.n.01 Role +1 mother.n.01 Of speaker be.v.08 Theme -2 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p74/d1400,male.n.02 Name "Tom" time.n.08 TPR now impolite.a.01 AttributeOf -2 Time -1
+p34/d1588,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p24/d2077,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p33/d2427,NEGATION -1 person.n.01 SubOf +1 person.n.01 time.n.08 EQU now alive.a.01 AttributeOf -3 Time -1
+p33/d3195,male.n.02 Name "Tom" time.n.08 EQU now thirsty.a.02 Experiencer -2 Time -1
+p54/d2957,ice.n.02 time.n.08 TPR now unlocked.a.01 AttributeOf -2 Time -1
+p13/d2987,fast_food.n.01 time.n.08 EQU now popular.a.01 AttributeOf -2 Time -1 Theme +1 country.n.02 Name "Giappone"
+p94/d2197,NEGATION -1 turtle.n.02 NEGATION -1 reptile.n.01 terra_incognita.n.01 EQU -2 EQU -1
+p93/d2377,male.n.02 Name "Tom" yawn.v.01 Agent -1 Time +1 time.n.08 TPR now
+p74/d3242,dog.n.01 snort.v.02 Agent -1 Time +1 time.n.08 EQU now
+p13/d3153,male.n.02 Name "Hideyo Noguchi" live.v.01 Theme -1 Time +1 Location +2 time.n.08 EQU now country.n.02 Name "Stati Uniti"
+p14/d1901,NEGATION -1 person.n.01 lie.v.05 Agent -1 Time +1 time.n.08 TPR now
+p54/d1766,person.n.01 Role +1 milkman.n.01 time.n.08 TPR now arrest.v.01 Patient -3 Time -1
+p72/d2159,person.n.01 EQU speaker play.v.07 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now tree.n.01 desk.n.01
+p82/d2388,girl.n.01 time.n.08 TPR now unlocked.a.01 AttributeOf -2 Time -1
+p62/d2532,person.n.01 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p22/d3376,person.n.01 EQU speaker buy.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now woman.n.01
+p33/d0765,country.n.02 Name "Van Horn" break_out.v.01 Theme -1 Time +1 time.n.08 YearOfCentury 1914 TPR now
+p42/d2544,time.n.08 EQU now person.n.01 rather.r.02 pissed.a.02 Time -3 AttributeOf -2 Degree -1
+p02/d2916,person.n.01 Role +1 student.n.01 grin.v.01 Agent -2 Time +1 time.n.08 TPR now
+p53/d2540,male.n.02 Name "John" buy.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now book.n.01 Owner -3
+p64/d2139,NEGATION -1 time.n.08 EQU now person.n.01 EQU speaker old.a.01 Time -2 AttributeOf -1
+p03/d1397,manner.n.01 EQU ? be.v.08 Co-Theme -1 Time +1 Agent +2 time.n.08 TPR now male.n.02 Name "Alfred Nobel"
+p13/d2501,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 private_detective.n.01
+p72/d2995,male.n.02 Name "Tom" pay.v.01 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now ink.n.01 desk.n.01
+p24/d2767,male.n.02 Name "Tom" have.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now dog.n.01
+p44/d0868,person.n.01 EQU speaker buy.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now book.n.01
+p52/d3450,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p42/d2740,person.n.01 EQU speaker marry.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Tom"
+p94/d0760,male.n.02 Name "Le Beau Serge" time.n.08 TPR now direct.v.03 Theme -2 Time -1 Agent +1 country.n.02 Name "Africa"
+p13/d2643,plus.n.02 Co-Theme 2 Theme 2 equal.v.01 Co-Theme 5 Theme -1
+p33/d0764,movie.n.01 Name "Speed" time.n.08 TPR now direct.v.03 Theme -2 Time -1 Agent +1 male.n.02 Name "Jan De Bont"
+p22/d0712,male.n.02 Name "Akira" time.n.08 EQU now drunk.a.01 AttributeOf -2 Time -1
+p92/d2422,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now smoke.v.01 Agent -2 Time -1
+p74/d2410,person.n.01 EQU speaker want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now woman.n.01
+p14/d1740,NEGATION -1 person.n.01 have.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now man.n.01
+p23/d0711,male.n.02 Name "Aurore Paquiss" Name "Mary" time.n.08 TPR now direct.v.03 Theme -2 Time -1 Agent +1 male.n.02 Name "Metin Kaplan"
+p03/d1775,person.n.01 EQU speaker want.v.01 Pivot -1 Time +1 Theme +3 time.n.08 EQU now title.n.02 Creator speaker
+p63/d3025,female.n.02 Name "Lin Piao" be.v.02 Theme -1 Time +1 Co-Theme +2 time.n.08 TPR now person.n.01 Role +1 friend.n.01 Of speaker
+p63/d2098,person.n.01 Role +1 wife.n.01 Of speaker suffer.v.02 Experiencer -2 Time +1 Stimulus +2 time.n.08 EQU now osteoporosis.n.01
+p53/d2767,person.n.01 EQU speaker time.n.08 EQU now eat.v.01 Agent -2 Time -1 Theme +1 hat.n.01
+p82/d0716,male.n.02 Name "John" marry.v.01 Agent -1 Time +1 Theme +2 Destination +2 time.n.08 EQU now country.n.02 Name "New Jersey"
+p42/d1727,male.n.02 Name "Tom" play.v.07 Agent -1 Time +1 Theme +2 time.n.08 TPR now sandwich.n.01
+p63/d2704,person.n.01 Role +1 grandfather.n.01 Of speaker time.n.08 TPR now arrest.v.01 Patient -3 Time -1
+p13/d1462,male.n.02 write.v.01 Agent -1 Time +1 Co-Theme +3 time.n.08 TPR now person.n.01 Role +1 private_detective.n.01
+p62/d2448,male.n.02 Name "Tom" time.n.08 EQU now wear.v.01 Agent -2 Time -1 Co-Agent +1 female.n.02 Name "Mary"
+p73/d1579,male.n.02 be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p64/d3390,time.n.08 EQU now person.n.01 play.v.03 Time -2 Agent -1 Theme +1 porch.n.01
+p04/d2078,male.n.02 Name "Tom" give.v.03 Agent -1 Time +1 Theme +2 Theme +3 time.n.08 TPR now envelope.n.01 female.n.02 Name "Mary"
+p03/d0925,male.n.02 Name "Tom" be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now plan.n.01
+p22/d1492,female.n.02 wear.v.01 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now ink.n.01 desk.n.01
+p54/d2512,crocodile.n.01 eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now tree.n.01
+p14/d2644,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p53/d3342,NEGATION -1 banana.n.02 NEGATION -1 laugh.v.01 Agent -1 Time +1 time.n.08 EQU now
+p73/d2984,male.n.02 Name "Carl Smith" die.v.01 Patient -1 Time +1 time.n.08 YearOfCentury 1914 TPR now
+p34/d0711,film.n.01 Order 1 Role +1 composer.n.01 sail.v.01 Theme -2 Time +1 Location +2 time.n.08 EQU now country.n.02 Name "Caterina la Grande"
+p02/d3114,time.n.08 EQU now person.n.01 EQU speaker awake.a.01 Time -2 AttributeOf -1
+p03/d2374,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 dust.n.01
+p34/d2345,male.n.02 Name "Tom" yawn.v.01 Agent -1 Time +1 time.n.08 TPR now
+p22/d1967,male.n.02 Name "Tom" yawn.v.01 Agent -1 Time +1 time.n.08 TPR now
+p02/d1561,entity.n.01 time.n.08 EQU now very.r.01 thick.a.01 AttributeOf -3 Time -2 Degree -1
+p13/d1384,person.n.01 Name ? make.v.06 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Aaron Copland"
+p24/d2900,male.n.02 Name "Tom" time.n.08 TPR now stab.v.01 Patient -2 Time -1
+p63/d2294,entity.n.01 stink.v.02 Theme -1 Time +1 time.n.08 TSU now
+p03/d2557,male.n.02 win.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now book.n.01
+p22/d2695,tiger.n.01 time.n.08 EQU now sleep.v.01 Agent -2 Time -1 Theme +1 german.n.02
+p34/d1392,manner.n.01 EQU ? be.v.08 Co-Theme -1 Time +1 Agent +2 time.n.08 EQU now male.n.02 Name "Aaron Copland"
+p83/d2561,male.n.02 Name "Tom" NEGATION -1 speak.v.03 Agent -1 Time +1 Theme +2 time.n.08 EQU now tree.n.01
+p04/d1834,male.n.02 speech.n.01 Creator -1 laugh.v.01 Agent -2 Time +1 time.n.08 TPR now
+p84/d2741,NEGATION -1 entity.n.01 SubOf +1 book.n.01 time.n.08 EQU now more.r.01 Theme -3 Time -1
+p54/d1622,find.v.03 Theme +1 book.n.01 time.n.08 EQU now beautiful.a.01 AttributeOf -3 Time -1
+p03/d2642,male.n.02 Name "Tom" time.n.08 EQU now young.a.01 AttributeOf -2 Time -1 Value +
+p92/d1392,manner.n.01 EQU ? die.v.01 Manner -1 Time +1 Patient +2 time.n.08 TPR now
+p22/d3450,male.n.02 Name "Tom" work.v.02 Agent -1 Time +1 Patient +2 time.n.08 TPR now chess.n.02
+p54/d2318,male.n.02 Name "Tom" person.n.01 EQU speaker time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p24/d2799,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 nut.n.01
+p02/d2943,person.n.01 EQU speaker like.v.03 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now woman.n.01
+p73/d0792,girl.n.01 wear.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now tree.n.01
+p44/d2221,male.n.02 Name "Tom" NEGATION -1 POSSIBILITY -1 swim.v.01 Theme -1
+p54/d1871,dog.n.01 person.n.01 EQU speaker soothe.v.01 Stimulus -2 Experiencer -1 Time +1 time.n.08 TPR now
+p93/d3441,person.n.01 time.n.08 EQU now arrest.v.01 Patient -2 Time -1
+p52/d1971,person.n.01 EQU speaker want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now milk.n.01
+p83/d1583,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p03/d1600,female.n.02 speech.n.01 Creator -1 person.n.01 EQU speaker bore.v.01 Stimulus -2 Experiencer -1 Time +1 time.n.08 TPR now
+p24/d2228,male.n.02 Name "Tom" time.n.08 EQU now tipsy.a.01 AttributeOf -2 Time -1
+p04/d2330,male.n.02 male.n.02 whisper.v.01 Agent -2 Theme -1 Time +1 time.n.08 TPR now
+p44/d1558,male.n.02 male.n.02 Agent -1 Time +1 Theme +2 time.n.08 EQU now person.n.01
+p63/d2634,male.n.02 Name "Eduardo" time.n.08 EQU now exile.v.01 Theme -2 Time -1 Location +1 country.n.02 Name "Giappone"
+p53/d2805,male.n.02 Name "GUS" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 singer.n.01 famous.a.01 AttributeOf -1
+p22/d0919,time.n.08 EQU now person.n.01 EQU speaker short.a.03 Time -2 AttributeOf -1
+p22/d0761,continent.n.01 Name "PM" acquire.v.01 Agent -1 Time +1 Theme +2 time.n.08 EQU now country.n.02 Name "Giappone"
+p04/d1724,time.n.08 EQU now person.n.01 EQU speaker awake.a.01 Time -2 AttributeOf -1
+p93/d2676,duck.n.01 quack.v.01 Agent -1 Time +1 time.n.08 TPR now
+p54/d2709,male.n.02 Name "Sita" smile.v.01 Agent -1 Time +1 time.n.08 EQU now
+p12/d3429,male.n.02 Name "Tom" suffer.v.02 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now osteoporosis.n.01
+p03/d0946,entity.n.01 happen.v.01 Theme -1 Time +1 Co-Theme +3 time.n.08 EQU now person.n.01 Role +1 worker.n.01
+p13/d3557,dog.n.01 time.n.08 EQU now bark.v.04 Agent -2 Time -1
+p43/d2409,female.n.02 female.n.02 whisper.v.01 Agent -2 Experiencer -1 Time +1 time.n.08 TPR now
+p94/d0906,male.n.02 time.n.08 TPR now in_love.a.01 Experiencer -2 Time -1 Stimulus +1 dress.n.01
+p42/d2218,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p53/d3106,person.n.01 EQU speaker want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now plan.n.01
+p02/d0713,person.n.01 Role +1 pirate.n.02 write.v.06 Agent -2 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Marilyn Manson"
+p03/d2742,person.n.01 Quantity 13 time.n.08 TPR now arrest.v.01 Patient -2 Time -1
+p62/d2811,female.n.02 Name "Emily" love.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now person.n.01
+p02/d2050,time.n.08 EQU now female.n.02 stubborn.a.01 Time -2 AttributeOf -1
+p52/d1768,mr.n.01 male.n.02 Name "Zhao" Title -1 die.v.01 Patient -1 Time +1 Location +2 time.n.08 TPR now city.n.01 Name "Pechino"
+p14/d1711,male.n.02 male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1
+p84/d1638,male.n.02 Name "Jane" time.n.08 EQU now wear.v.01 Agent -2 Time -1 Theme +1 hat.n.01
+p23/d2401,NEGATION -1 person.n.01 EQU speaker understand.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now
+p32/d2929,male.n.02 Name "Tom" eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now plan.n.01
+p44/d1592,NEGATION -1 person.n.01 NEGATION -1 jump.v.01 Theme -1 Time +1 time.n.08 TSU now
+p04/d1630,person.n.01 EQU ? person.n.01 EQU speaker time.n.08 EQU now very.r.01 jealous.a.02 Experiencer -3 Time -2 Degree -1
+p64/d0712,male.n.02 Name "Edison" invent.v.01 Agent -1 Time +1 Patient +2 time.n.08 EQU now male.n.02 Name "Chabrol"
+p43/d0761,match.n.02 time.n.08 YearOfCentury 1650 TPR now found.v.01 Theme -2 Time -1
+p93/d0762,male.n.02 Name "Ibrahim Sofu" time.n.08 TPR now murder.v.01 Patient -2 Time -1
+p14/d0898,male.n.02 Name "Taro" time.n.08 EQU now more.r.01 Theme -2 Co-Theme +2 young.a.01 AttributeOf -3 Time -2 Degree -1 male.n.02 Name "Marcus"
+p03/d2676,female.n.02 Name "Mary" eat.v.01 Agent -1 Time +1 Patient +2 time.n.08 EQU now female.n.02 Name "Mary"
+p13/d1529,female.n.02 Name "Mary" have.v.01 Agent -1 Time +1 Patient +2 time.n.08 EQU now ngo.n.01
+p02/d3468,female.n.02 person.n.01 EQU speaker pass.v.05 Agent -2 Recipient -1 Time +1 Theme +2 time.n.08 TPR now person.n.01 Role +1 singer.n.01
+p23/d1730,male.n.02 time.n.08 EQU now wear.v.01 Agent -2 Time -1 Theme +1 chess.n.02
+p62/d2858,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p64/d2039,country.n.02 Name "General Motors" lay_off.v.02 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now measure.n.02 Quantity 7
+p13/d1559,male.n.02 Name "Tom" understand.v.01 Experiencer -1 Time +1 time.n.08 EQU now
+p52/d1677,apple.n.01 time.n.08 EQU now lonely.a.01 AttributeOf -2 Time -1
+p64/d2547,person.n.01 EQU speaker time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 dust.n.01
+p34/d0764,movie.n.01 Name "Speed" time.n.08 TPR now direct.v.03 Theme -2 Time -1 Agent +1 male.n.02 Name "Jan De Bont"
+p64/d1917,male.n.02 Name "Tom" give.v.03 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 TPR now country.n.02 Name "Monte Aso"
+p02/d1823,person.n.01 NEGATION -1 time.n.08 EQU now dead.a.01 AttributeOf -2 Time -1
+p93/d2744,male.n.02 Name "Tom" pay.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now bill.n.02
+p04/d3409,book.n.02 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 EQU now measure.n.02 Quantity 3000 Unit +1 dollar.n.01
+p92/d2363,time.n.08 EQU now person.n.01 EQU hearer sexist.a.01 Time -2 AttributeOf -1
+p92/d2961,female.n.02 Name "Aurore Paquiss" buy.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Chabrol"
+p54/d0716,male.n.02 Name ? time.n.08 TPR now arrest.v.01 Patient -2 Time -1 Agent +1 male.n.02 Name "africa"
+p34/d2063,person.n.01 EQU speaker POSSIBILITY -1 speak.v.03 Agent -1 Theme +1 german.n.02
+p94/d2717,female.n.02 Name "Mary" slap.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Tom"
+p94/d2309,female.n.02 Name "Mary" NEGATION -1 time.n.08 EQU now play.v.01 Agent -2 Time -1
+p04/d1593,time.n.08 EQU now female.n.02 stubborn.a.01 Time -2 Experiencer -1
+p44/d1559,NEGATION -1 person.n.01 NEGATION -1 person.n.01 EQU speaker understand.v.01 Experiencer -2 Stimulus -1 Time +1 time.n.08 TSU now
+p14/d2890,person.n.01 Of speaker person.n.01 Role +1 wife.n.01 Of speaker
+p92/d2921,time.n.08 EQU now person.n.01 EQU speaker play.v.01 Time -2 Agent -1
+p32/d0760,male.n.02 Name "Edison" invent.v.01 Agent -1 Time +1 Result +2 time.n.08 TPR now company.n.01 Name "Wehkamp"
+p32/d2542,person.n.01 Name ? coach.v.01 Agent -1 Time +1 time.n.08 TPR now
+p84/d2005,male.n.02 Name "Tom" yawn.v.01 Agent -1 Time +1 time.n.08 TPR now
+p62/d2524,female.n.02 be.v.02 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 singer.n.01
+p72/d2704,entity.n.01 time.n.08 EQU now very.r.01 thick.a.01 AttributeOf -3 Time -2 Degree -1
+p24/d2943,male.n.02 Name "Tom" time.n.08 TPR now impolite.a.01 AttributeOf -2 Time -1
+p72/d2965,female.n.02 NEGATION -1 have.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now person.n.01 Quantity +
+p43/d3026,male.n.02 Name "Tom" wiggle.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now goal.n.04
+p73/d0760,male.n.02 female.n.02 slap.v.01 Patient -1 Time +1 time.n.08 TPR now
+p02/d0716,male.n.02 Name "Charles de Gaulle" die.v.01 Patient -1 Time +1 time.n.08 YearOfCentury 1967 TPR now
+p02/d2207,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now dead.a.01 AttributeOf -2 Time -1
+p04/d1680,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now play.v.01 Agent -2 Time -1
+p22/d1390,person.n.01 Name ? be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 author.n.01 Of +1 country.n.02 Name "Caterina la Grande"
+p13/d1997,frog.n.01 croak.v.02 Agent -1 Time +1 time.n.08 EQU now
+p02/d2479,male.n.02 Name "Tom" slug.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now female.n.02 Name "Mary"
+p43/d2532,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 mold.n.05
+p02/d3090,duck.n.01 quack.v.01 Agent -1 Time +1 time.n.08 TPR now
+p03/d0900,female.n.02 wear.v.01 Agent -1 Time +1 Theme +2 time.n.08 EQU now nice.a.01 AttributeOf +1 woman.n.01
+p44/d3078,book.n.02 cost.v.01 Theme -1 Time +1 Value +2 time.n.08 EQU now measure.n.02 Quantity 3000 Unit +1 dollar.n.01
+p24/d2178,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now very.r.01 enthusiastic.a.01 AttributeOf -3 Time -2 Degree -1
+p62/d1385,person.n.01 Name ? be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 country.n.02 Name "Art Tatum"
+p24/d3251,person.n.01 Role +1 hunter.n.01 be.v.03 Theme -2 Time +1 Location +2 time.n.08 EQU now country.n.02
+p02/d3379,person.n.01 fail.v.01 Agent -1 Time +1 time.n.08 TPR now
+p24/d1476,male.n.02 Name "Tom" time.n.08 EQU now count.v.01 Agent -2 Time -1 Theme +1 german.n.02
+p82/d3447,male.n.02 Name "Tom" time.n.08 EQU now awake.a.01 AttributeOf -2 Time -1
+p23/d1395,manner.n.01 EQU ? be.v.03 Location -1 Time +1 Patient +2 time.n.08 TPR now male.n.02 Name "Eva Peron"
+p12/d1730,person.n.01 EQU speaker NEGATION -1 person.n.01 EQU speaker understand.v.01 Experiencer -2 Stimulus -1 Time +1 time.n.08 EQU now
+p14/d1977,NEGATION -1 entity.n.01 SubOf +1 book.n.01 time.n.08 EQU now alive.a.01 AttributeOf -3 Time -1
+p12/d0761,male.n.02 Name "GUS" sell.v.01 Agent -1 Time +1 Theme +2 Destination +3 time.n.08 EQU now mr.n.01 male.n.02 Name "america"
+p42/d0765,male.n.02 Name "Gabriel Garcia Marquez" be.v.08 Theme -1 Time +1 Location +2 time.n.08 EQU now country.n.02 Name "Truckee River Trail"
+p54/d2510,male.n.02 Name "Tom" NEGATION -1 be.v.01 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p34/d3525,person.n.01 Role +1 policeman.n.01 chase.v.01 Agent -2 Time +1 Patient +2 time.n.08 TPR now tree.n.01
+p34/d3246,person.n.01 EQU speaker time.n.08 EQU now in_love.a.01 Experiencer -2 Time -1 Stimulus +1 person.n.01
+p53/d3394,male.n.02 Name "Tom" be.v.01 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01 Role +1 private_detective.n.01
+p62/d3416,person.n.01 EQU speaker NEGATION -1 POSSIBILITY -1 speak.v.03 Agent -1 Theme +1 language.n.01
+p04/d0843,male.n.02 male.n.02 Agent -1 Time +1 time.n.08 TPR now
+p74/d2975,male.n.02 be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 TPR now champagne.n.01
+p14/d0713,girl.n.02 be.v.02 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now country.n.02 Name "Cina"
+p04/d0830,NEGATION -1 person.n.01 want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now person.n.01
+p22/d0805,time.n.08 EQU now person.n.01 EQU speaker shy.a.01 Time -2 AttributeOf -1
+p02/d2383,time.n.08 TPR now person.n.01 create.v.02 Time -2 Agent -1 Theme +1 german.n.02
+p02/d2730,entity.n.01 time.n.08 EQU now beautiful.a.01 AttributeOf -2 Time -1
+p02/d1743,male.n.02 Name "Tom" seem.v.01 Theme -1 Time +1 time.n.08 TPR now
+p03/d3552,time.n.08 EQU now female.n.02 stubborn.a.01 Time -2 AttributeOf -1
+p03/d1893,person.n.01 EQU speaker like.v.03 Experiencer -1 Time +1 Stimulus +2 time.n.08 EQU now
+p84/d3515,dog.n.01 time.n.08 TPR now empty.a.01 AttributeOf -2 Time -1
+p03/d2101,ice.n.02 time.n.08 EQU now very.r.01 AttributeOf -2 Time -1 Value +
+p94/d3255,male.n.02 Name "Tom" time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 dress.n.01 Colour +1 light-blue.a.01
+p04/d2793,male.n.02 Name "Tom" NEGATION -1 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p84/d1589,male.n.02 Name "Tom" time.n.08 TPR now stab.v.01 Patient -2 Time -1
+p72/d0841,time.n.08 EQU now female.n.02 stubborn.a.01 Time -2 AttributeOf -1
+p72/d1868,male.n.02 Name "Tom" wave.v.01 Agent -1 Time +1 time.n.08 TPR now
+p54/d2466,female.n.02 Name "Jane" time.n.08 EQU now eat.v.01 Agent -2 Time -1 Patient +1 bone.n.01
+p02/d1421,male.n.02 Name "Tom" time.n.08 EQU now wear.v.01 Agent -2 Time -1 Theme +1 chess.n.02
+p03/d2483,person.n.01 EQU speaker want.v.01 Pivot -1 Time +1 Theme +2 time.n.08 EQU now ice_cream.n.01
+p62/d2006,male.n.02 Time +1 male.n.02 Name "Antonio"
+p02/d0712,male.n.02 Name "Mario" buy.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now microscope.n.01
+p23/d1387,person.n.01 Name ? write.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now company.n.01 Name "Fiddler of the Roof"
+p74/d2866,male.n.02 cut_down.v.01 Agent -1 Time +1 Patient +2 time.n.08 TPR now street.n.01
+p84/d3376,person.n.01 Role +1 hunter.n.01 shoot.v.02 Agent -2 Time +1 Patient +2 time.n.08 TPR now kimono.n.01
+p34/d2525,NEGATION -1 person.n.01 time.n.08 EQU now happy.a.01 Experiencer -2 Time -1
+p73/d0761,male.n.02 Name "Ibrahim Sofu" time.n.08 TPR now murder.v.01 Patient -2 Time -1
+p34/d1939,NEGATION -1 time.n.08 EQU now watch.v.01 Agent -2 Time -1 Theme +1 door.n.01
+p03/d1867,dog.n.01 time.n.08 EQU now bark.v.04 Agent -2 Time -1
+p54/d2660,male.n.02 Name "Tom" be.v.08 Theme -1 Time +1 Co-Theme +2 time.n.08 EQU now person.n.01
+p34/d0879,girl.n.01 NEGATION -1 time.n.08 EQU now beautiful.a.01 AttributeOf -2 Time -1
+p83/d0814,person.n.01 Role +1 sister.n.01 Of speaker time.n.08 EQU now beautiful.a.01 AttributeOf -3 Time -1
+p14/d2023,person.n.01 EQU speaker time.n.08 EQU now thirsty.a.02 Experiencer -2 Time -1
+p12/d1428,person.n.01 EQU speaker time.n.08 EQU now allergic.a.02 Experiencer -2 Time -1 Stimulus +1 dust.n.01
+p03/d0872,girl.n.01 male.n.02 Name "america" Title -1 die.v.01 Patient -1 Time +1 time.n.08 TPR now

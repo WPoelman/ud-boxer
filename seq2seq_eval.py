@@ -13,7 +13,7 @@ from ud_boxer.config import Config
 from ud_boxer.helpers import PMB, create_record, smatch_score
 from ud_boxer.misc import ensure_ext
 from ud_boxer.sbn import SBNGraph, SBNSource
-from ud_boxer.sbn_spec import get_base_id, get_doc_id
+from ud_boxer.sbn_spec import SBNError, get_base_id, get_doc_id
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -74,18 +74,27 @@ def get_args() -> Namespace:
 
 
 def generate_result(args, sbn_line, gold_path):
-    current_dir = gold_path.parent
+    # current_dir = gold_path.parent
 
     G = SBNGraph(source=args.sbn_source).from_string(
         sbn_line, is_single_line=True
     )
 
     with tempfile.NamedTemporaryFile("w") as f:
-        scores = smatch_score(gold_path, G.to_penman(f.name))
-        lenient_scores = smatch_score(
-            current_dir / f"{args.language}.drs.lenient.penman",
-            G.to_penman(f.name, evaluate_sense=False),
-        )
+        try:
+            scores = smatch_score(gold_path, G.to_penman(f.name))
+        except SBNError:
+            scores = dict()
+        try:
+            lenient_scores = smatch_score(
+                gold_path, G.to_penman(f.name, strict=False)
+            )
+        except SBNError:
+            lenient_scores = dict()
+        # lenient_scores = smatch_score(
+        # current_dir / f"{args.language}.drs.lenient.penman",
+        # G.to_penman(f.name, evaluate_sense=False),
+        # )
 
     return scores, lenient_scores, G.to_sbn_string()
 
@@ -151,8 +160,9 @@ def main():
             )
         ]
 
-    result_path = Config.SEQ2SEQ_DIR / args.data_split
-    result_path.mkdir(exist_ok=True)
+    result_path = Config.get_result_dir(
+        args.language, args.data_split, "seq2seq"
+    )
 
     df = pd.DataFrame().from_records(result_records)
     if args.results_file:

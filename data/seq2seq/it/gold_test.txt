@@ -1,0 +1,461 @@
+p24/d2787,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p33/d3224,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d2524,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p54/d3130,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p74/d1820,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p42/d0712,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p82/d1510,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p84/d2232,male.n.02 Name ? be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p44/d1392,female.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d1396,female.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p62/d1388,person.n.01 EQU speaker be.v.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d1979,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +1
+p12/d2192,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d2418,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p13/d2551,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p64/d2214,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d2821,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p03/d2661,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p24/d3458,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p73/d2412,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d2518,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p12/d2804,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p33/d1992,female.n.02 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d2390,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p94/d1905,person.n.01 Role +1 invent.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p42/d2027,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p72/d1709,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p04/d2252,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p12/d2370,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p04/d2212,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p82/d3242,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p72/d1516,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p42/d2430,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p64/d2381,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p83/d2732,person.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p24/d2573,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p23/d1962,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1926,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p23/d0851,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p32/d2835,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d3358,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d3554,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p93/d2411,male.n.02 drink.v.01 Agent -1 Time +1 time.n.08 TPR now
+p34/d0781,female.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p13/d1964,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d1918,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p92/d0711,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p84/d1389,female.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d2679,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d0712,female.n.02 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p02/d2133,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d1401,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p52/d2976,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d3109,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p62/d3327,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p94/d2222,person.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d0716,male.n.02 Name ? be.v.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d1605,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p42/d0945,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d1659,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d2838,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d0766,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p44/d1464,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p92/d0712,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d2699,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p04/d3302,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p72/d2331,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p32/d3159,female.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p32/d1935,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d0824,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p82/d2688,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p72/d0945,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d3414,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p94/d3046,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d2017,dog.n.01 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p64/d0762,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p42/d0760,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p24/d1595,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p64/d3519,female.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p52/d1396,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p82/d3317,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p43/d2503,person.n.01 Role Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d3365,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p93/d1915,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d0877,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p74/d2862,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p73/d2380,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p23/d1869,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d2639,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p44/d2390,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d2764,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p52/d2428,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d1809,female.n.02 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p02/d1713,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p12/d2068,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d2318,female.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p22/d2715,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p04/d2803,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p34/d2534,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p82/d1886,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p82/d1779,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d0713,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d2713,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d1484,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d2705,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p53/d2818,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p83/d2123,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p42/d3126,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p34/d2521,person.n.01 Role Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p73/d1611,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d1952,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p23/d2962,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p13/d1527,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p23/d3069,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p92/d2192,door.n.01 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p42/d2328,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p24/d2402,person.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now male.n.02 Name "Tom"
+p53/d2869,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d2003,dog.n.01 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p83/d2406,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d2195,person.n.01 Role +1 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p12/d2367,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p73/d1582,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p62/d2314,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d1814,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1870,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d1927,person.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p02/d3454,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p24/d1602,person.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p53/d2394,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p02/d1850,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d3162,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p33/d1425,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p82/d3009,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d2673,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d0884,person.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d3424,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p23/d1947,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d3518,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d3377,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p64/d3225,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d1997,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d2554,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p64/d1386,female.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now male.n.02 Name "Mary"
+p92/d1846,person.n.01 EQU speaker eat.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p43/d2115,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p63/d2262,dog.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p53/d3110,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p63/d3213,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p52/d0887,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p43/d3001,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d2470,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d1590,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d2533,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1985,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p93/d1391,person.n.01 Role speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p14/d2982,person.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d1773,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d2563,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d2322,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d0794,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p64/d3246,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p04/d1571,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p52/d2223,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p34/d2398,person.n.01 Role Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p62/d3415,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p92/d2261,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p83/d2327,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d1499,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p33/d0768,NEGATION -1 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p92/d2159,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1881,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d1435,person.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0787,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d0927,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p82/d2129,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p04/d3017,dog.n.01 time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p02/d2217,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p12/d1720,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1592,person.n.01 Role Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p32/d3329,person.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p82/d3517,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d2828,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p62/d1632,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d0884,male.n.02 drink.v.01 Agent -1 Time +1 time.n.08 TPR now
+p02/d2775,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p34/d1396,person.n.01 Role speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1550,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p54/d1782,female.n.02 Name ? time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d2182,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p44/d3494,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p03/d3442,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p13/d3488,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 EQU now
+p12/d2624,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p42/d1889,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d3337,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p32/d1472,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p32/d0930,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p43/d2556,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p03/d2290,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p34/d3553,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p23/d1567,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d2531,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p53/d1441,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p53/d2793,person.n.01 Role +1 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d2829,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p34/d3219,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 EQU now
+p52/d3490,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p74/d1790,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p43/d2842,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p94/d2689,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p02/d3279,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p44/d2158,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p14/d0716,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p43/d2852,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d0837,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p34/d2650,person.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d2968,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p42/d2000,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p82/d1991,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p24/d2692,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p92/d0803,dog.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p32/d2867,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d2118,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p84/d3109,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p92/d0764,female.n.02 Name ? be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p72/d2036,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p43/d2025,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d2122,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p02/d2428,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d0864,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p32/d1530,person.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p53/d3432,female.n.02 Name ? time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p74/d0760,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p53/d0764,male.n.02 Name ? be.v.08 Agent -1 Time +1 time.n.08 EQU now
+p34/d2877,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p74/d1471,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p14/d2823,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p02/d2393,time.n.08 EQU now entity.n.01 Experiencer -2 Time -1
+p03/d3283,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p63/d0862,person.n.01 EQU speaker be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p02/d1382,person.n.01 Role speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p94/d2752,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p63/d1851,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p14/d2976,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p22/d0932,person.n.01 Role speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p24/d1869,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p94/d0759,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d3473,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p04/d2386,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p52/d2366,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p74/d1400,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d1588,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d2077,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p33/d2427,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p33/d3195,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d2957,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d2987,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 EQU now
+p94/d2197,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p93/d2377,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p74/d3242,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p13/d3153,female.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p14/d1901,NEGATION -1 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d1766,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p72/d2159,person.n.01 EQU speaker be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p82/d2388,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p62/d2532,person.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d3376,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p33/d0765,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p42/d2544,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p02/d2916,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p53/d2540,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p64/d2139,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1397,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p13/d2501,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d2995,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p24/d2767,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d0868,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p52/d3450,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p42/d2740,person.n.01 EQU speaker eat.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p94/d0760,female.n.02 Name ? be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p13/d2643,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p33/d0764,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 EQU now
+p22/d0712,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p92/d2422,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p74/d2410,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p14/d1740,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p23/d0711,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p03/d1775,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +1
+p63/d3025,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +1
+p63/d2098,person.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p53/d2767,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p82/d0716,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +1
+p42/d1727,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p63/d2704,person.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p13/d1462,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p62/d2448,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p73/d1579,male.n.02 drink.v.01 Agent -1 Time +1 time.n.08 TPR now
+p64/d3390,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d2078,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p03/d0925,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p22/d1492,female.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p54/d2512,dog.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p14/d2644,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p53/d3342,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p73/d2984,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p34/d0711,dog.n.01 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p02/d3114,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d2374,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d2345,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p22/d1967,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d1561,person.n.01 time.n.08 EQU now very.r.01 AttributeOf -2 Time -1
+p13/d1384,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now male.n.02 Name "Tom"
+p24/d2900,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p63/d2294,dog.n.01 time.n.08 EQU now very.r.01 AttributeOf -2 Time -1
+p03/d2557,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p22/d2695,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p34/d1392,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p83/d2561,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d1834,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p84/d2741,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d1622,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p03/d2642,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p92/d1392,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p22/d3450,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p54/d2318,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p24/d2799,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d2943,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p73/d0792,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p44/d2221,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d1871,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p93/d3441,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p52/d1971,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p83/d1583,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d1600,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d2228,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p04/d2330,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p44/d1558,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p63/d2634,female.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p53/d2805,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p22/d0919,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d0761,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p04/d1724,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p93/d2676,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d2709,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p12/d3429,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d0946,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p13/d3557,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p43/d2409,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p94/d0906,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p42/d2218,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p53/d3106,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p02/d0713,female.n.02 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p03/d2742,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p62/d2811,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d2050,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p52/d1768,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d1711,male.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p84/d1638,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p23/d2401,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p32/d2929,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p44/d1592,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d1630,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p64/d0712,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now male.n.02 Name "Mary"
+p43/d0761,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p93/d0762,female.n.02 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p14/d0898,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p03/d2676,female.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +1
+p13/d1529,female.n.02 Name ? be.v.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d3468,female.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p23/d1730,male.n.02 drink.v.01 Agent -1 Time +1 time.n.08 EQU now
+p62/d2858,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p64/d2039,dog.n.01 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p13/d1559,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p52/d1677,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p64/d2547,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p34/d0764,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 EQU now
+p64/d1917,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p02/d1823,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p93/d2744,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d3409,dog.n.01 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p92/d2363,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p92/d2961,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p54/d0716,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p34/d2063,person.n.01 EQU speaker be.v.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p94/d2717,female.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p94/d2309,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p04/d1593,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p44/d1559,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d2890,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p92/d2921,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p32/d0760,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now male.n.02 Name "Mary"
+p32/d2542,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p84/d2005,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p62/d2524,female.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p72/d2704,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p24/d2943,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p72/d2965,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p43/d3026,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p73/d0760,male.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d0716,male.n.02 Name ? be.v.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d2207,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p04/d1680,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p22/d1390,person.n.01 Role +1 invent.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p13/d1997,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d2479,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p43/d2532,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d3090,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d0900,female.n.02 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p44/d3078,dog.n.01 cost.v.01 Theme -1 Time +1 time.n.08 TPR now
+p24/d2178,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p62/d1385,person.n.01 Role +1 invent.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p24/d3251,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d3379,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p24/d1476,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p82/d3447,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p23/d1395,person.n.01 Role +1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d1730,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p14/d1977,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p12/d0761,female.n.02 Name ? be.v.08 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p42/d0765,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now male.n.02 Name "Mary"
+p54/d2510,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d3525,dog.n.01 cost.v.01 Theme -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p34/d3246,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p53/d3394,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p62/d3416,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p04/d0843,male.n.02 time.n.08 Agent -1 Time +1 time.n.08 TPR now
+p74/d2975,male.n.02 drink.v.01 Agent -1 Time +1 time.n.08 TPR now
+p14/d0713,dog.n.01 time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d0830,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p22/d0805,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d2383,female.n.02 dig.v.02 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +
+p02/d2730,dog.n.01 time.n.08 EQU now very.r.01 AttributeOf -2 Time -1
+p02/d1743,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d3552,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1893,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p84/d3515,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d2101,dog.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p94/d3255,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p04/d2793,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p84/d1589,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p72/d0841,female.n.02 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p72/d1868,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p54/d2466,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +1
+p02/d1421,male.n.02 Name "Tom" time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p03/d2483,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p62/d2006,female.n.02 Name ? time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p02/d0712,male.n.02 Name ? be.v.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p23/d1387,person.n.01 Role +1 invent.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now measure.n.02 Quantity +1
+p74/d2866,male.n.02 drink.v.01 Agent -1 Time +1 Theme +2 time.n.08 TPR now
+p84/d3376,female.n.02 belong.v.01 Theme -1 Time +1 Theme +2 time.n.08 EQU now measure.n.02 Quantity +
+p34/d2525,NEGATION -1 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p73/d0761,male.n.02 Name ? time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d1939,NEGATION -1 person.n.01 NEGATION -1 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d1867,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p54/d2660,male.n.02 Name "Tom" time.n.08 Agent -1 Time +1 Theme +2 time.n.08 EQU now
+p34/d0879,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p83/d0814,person.n.01 time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p14/d2023,person.n.01 EQU speaker time.n.08 EQU -1 Time +1 time.n.08 EQU now
+p12/d1428,person.n.01 EQU speaker time.n.08 Agent -1 Time +1 time.n.08 EQU now
+p03/d0872,dog.n.01 time.n.08 EQU -1 Time +1 time.n.08 EQU now

@@ -53,11 +53,15 @@ class Config:
     SEQ2SEQ_DIR = Path(DATA_DIR / "results/seq2seq").resolve()
 
     @staticmethod
-    def get_result_dir(lang: SUPPORTED_LANGUAGES, data_split: DATA_SPLIT):
+    def get_result_dir(
+        lang: SUPPORTED_LANGUAGES,
+        data_split: DATA_SPLIT,
+        system: str = "rewrite",
+    ):
         path = Path(
-            Config.DATA_DIR / f"results/rewrite/{lang}/{data_split}"
+            Config.DATA_DIR / f"results/{system}/{lang}/{data_split}"
         ).resolve()
-        path.mkdir(exist_ok=True)
+        path.mkdir(exist_ok=True, parents=True)
         return path
 
     @staticmethod

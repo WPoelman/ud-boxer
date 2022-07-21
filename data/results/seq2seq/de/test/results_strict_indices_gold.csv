@@ -1,0 +1,2127 @@
+pmb_id,source,raw_sent,sbn_str,error,precision,recall,f1,precision_lenient,recall_lenient,f1_lenient
+de/p12/d1730,SEQ2SEQ,Ich hasse mich nicht.,,invalid literal for int() with base 10: 'Agent',,,,,,
+de/p12/d0922,SEQ2SEQ,Es hat geschneit.,"snow.v.01 Time +1
+time.n.08 TPR now",,0.8666666666666667,0.8666666666666667,0.8666666666666667,0.8666666666666667,0.8666666666666667,0.8666666666666667
+de/p12/d2264,SEQ2SEQ,Das Haus ist fünfhundert Jahre alt.,"entity.n.01
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+meter.n.01
+high.a.02    Theme -4 Time -3 Value -2",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429
+de/p12/d3079,SEQ2SEQ,Tom hat die Suppe aufgegessen.,"male.n.02   Name ""Tom""
+key.n.01
+pocket.v.01 Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p12/d1720,SEQ2SEQ,"Sie ist nicht jung, oder?","female.n.02
+time.n.08   EQU now
+easy.a.01   AttributeOf -2 Time -1",,0.7142857142857143,0.6521739130434783,0.6818181818181819,0.7142857142857143,0.6521739130434783,0.6818181818181819
+de/p12/d0821,SEQ2SEQ,Er ist stolz auf seinen Sohn.,"male.n.02
+time.n.08  EQU now
+male.n.02
+happy.a.01 Experiencer -3 Time -2 Stimulus -1",,0.7407407407407407,0.5882352941176471,0.6557377049180328,0.7407407407407407,0.5882352941176471,0.6557377049180328
+de/p12/d1922,SEQ2SEQ,Maria hat sich ein Mikroskop gekauft.,"female.n.02 Name ""Maria""
+person.n.01
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p12/d2868,SEQ2SEQ,Er studiert gerade.,"male.n.02
+crawl.v.01 Theme -1 Time +1
+time.n.08  EQU now",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p12/d1910,SEQ2SEQ,Ich bin auch ziemlich aufgeregt.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+de/p12/d3094,SEQ2SEQ,Er ist acht.,"male.n.02
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.8095238095238095,0.5483870967741935,0.6538461538461537,0.8095238095238095,0.5483870967741935,0.6538461538461537
+de/p12/d1817,SEQ2SEQ,Maria lachte und bewarf mich mit einem Kissen.,"female.n.02   Name ""Maria""
+design.v.03   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08     TPR now
+person.n.01   EQU speaker
+shoulder.n.01",,0.6756756756756757,0.46296296296296297,0.5494505494505494,0.6756756756756757,0.46296296296296297,0.5494505494505494
+de/p12/d2136,SEQ2SEQ,Herr Smith lebt jetzt in Kioto.,"mr.n.01
+male.n.02 Name ""Smith"" Title -1
+be.v.02   Co-Theme -1 Time +1 Co-Theme +2
+time.n.08 EQU now
+city.n.01 Name ""Melbourne""",,0.7297297297297297,0.7297297297297297,0.7297297297297297,0.7297297297297297,0.7297297297297297,0.7297297297297297
+de/p12/d0929,SEQ2SEQ,"Ich habe ein Taxi genommen, weil es regnete.","person.n.01        EQU speaker
+return_ticket.n.01
+buy.v.01           Agent -2 Theme -1 Time +1
+time.n.08          TPR now",,0.7586206896551724,0.4888888888888889,0.5945945945945945,0.7586206896551724,0.4888888888888889,0.5945945945945945
+de/p12/d0875,SEQ2SEQ,Ich bin in dich verliebt.,"person.n.01 EQU speaker
+time.n.08   EQU now
+male.n.02
+happy.a.01  Experiencer -3 Time -2 Degree -1",,0.7241379310344828,0.6774193548387096,0.7,0.7241379310344828,0.6774193548387096,0.7
+de/p12/d1165,SEQ2SEQ,Paul Keast,"event.v.01  Participant +1
+female.n.02 Name ""Liz Mohn""",,0.7333333333333333,0.7333333333333333,0.7333333333333333,0.7333333333333333,0.7333333333333333,0.7333333333333333
+de/p12/d0877,SEQ2SEQ,Ich wurde von einem alten Freund eingeladen.,"person.n.01  EQU speaker
+time.n.08    TPR now
+person.n.01  Quantity +
+measure.n.02 Quantity -2 Unit +1
+year.n.01
+old.a.01     Theme -4 Time -3 Value -2",,0.6046511627906976,0.6341463414634146,0.6190476190476191,0.6046511627906976,0.6341463414634146,0.6190476190476191
+de/p12/d2043,SEQ2SEQ,Er kaufte Gemüse und ein bisschen Obst.,"male.n.02
+throw.v.01   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.6666666666666666,0.5853658536585366,0.6233766233766234,0.6666666666666666,0.5853658536585366,0.6233766233766234
+de/p12/d1366,SEQ2SEQ,Die vier grossen Irrthümer.,"boy.n.01
+last.v.01    Theme -1 Time +1 Value +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.2571428571428571,0.42857142857142855,0.3214285714285714,0.2571428571428571,0.42857142857142855,0.3214285714285714
+de/p12/d1127,SEQ2SEQ,Todesstrafe,"event.v.01  Participant +1
+female.n.02 Name ""Liz Mohn""",,0.6,0.6923076923076923,0.6428571428571429,0.6,0.6923076923076923,0.6428571428571429
+de/p12/d3037,SEQ2SEQ,"Ich glaube, mein rechter Arm ist gebrochen.","person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.6451612903225806,0.37735849056603776,0.4761904761904762,0.6451612903225806,0.37735849056603776,0.4761904761904762
+de/p12/d0837,SEQ2SEQ,Er trug sein Hemd verkehrt herum.,"male.n.02
+throw.v.01  Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+face.n.01   User -1",,0.6470588235294118,0.6470588235294118,0.6470588235294118,0.6470588235294118,0.6470588235294118,0.6470588235294118
+de/p12/d2981,SEQ2SEQ,Wo ist deine Jacke?,"entity.n.01 Name ?
+be.v.02     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p12/d0949,SEQ2SEQ,Sie haben einen Ara gekauft.,"person.n.01
+egg.n.02
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7037037037037037,0.6551724137931034,0.6785714285714286,0.7037037037037037,0.6551724137931034,0.6785714285714286
+de/p12/d2176,SEQ2SEQ,Tom nahm seinen Schirm und begab sich zum Aufzug.,"male.n.02     Name ""Tom""
+give.v.03     Agent -1 Time +1 Recipient +2 Source +3
+time.n.08     TPR now
+female.n.02   Name ""Maria""
+shoulder.n.01",,0.6486486486486487,0.4067796610169492,0.5,0.6486486486486487,0.4067796610169492,0.5
+de/p12/d1995,SEQ2SEQ,Der Krieg endete 1945.,"train.n.01
+arrive.v.01 Theme -1 Time +1
+time.n.08   TPR now",,0.7619047619047619,0.6956521739130435,0.7272727272727272,0.7619047619047619,0.6956521739130435,0.7272727272727272
+de/p12/d0869,SEQ2SEQ,Meine Eltern stammen aus China.,"person.n.01 Role +1
+wife.n.01   Of speaker
+live.v.01   Theme -1 Time +1
+time.n.08   TPR now",,0.6896551724137931,0.5405405405405406,0.6060606060606061,0.6896551724137931,0.5405405405405406,0.6060606060606061
+de/p12/d3065,SEQ2SEQ,Er ist nicht reicher als ich.,"male.n.02
+NEGATION    -1
+time.n.08   EQU now
+very.r.01   AttributeOf -2 Time -1 Degree +1
+more.r.01   Theme -3 Co-Theme +1
+person.n.01",,0.8055555555555556,0.7631578947368421,0.7837837837837838,0.8055555555555556,0.7631578947368421,0.7837837837837838
+de/p12/d1544,SEQ2SEQ,Der Drucker funktioniert nicht.,"lift.n.01
+NEGATION      -1
+function.v.01 Theme -1 Time +1
+time.n.08     EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+de/p12/d1756,SEQ2SEQ,Dein Reißverschluss ist offen.,"person.n.01    Role +1
+time.n.08      EQU now
+beautiful.a.01 AttributeOf -2 Time -1",,0.7272727272727273,0.6956521739130435,0.711111111111111,0.7272727272727273,0.6956521739130435,0.711111111111111
+de/p12/d2920,SEQ2SEQ,Wir schließen den Laden.,"person.n.01 EQU speaker
+eat.v.01    Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p12/d2424,SEQ2SEQ,Hast du mit ihr geschlafen?,"person.n.01 EQU hearer
+male.n.02
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p12/d2453,SEQ2SEQ,Ich liebe Hunde.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Stimulus +2
+time.n.08   EQU now
+person.n.01",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p12/d0896,SEQ2SEQ,Ich habe das Radio für ihn repariert.,"person.n.01 EQU speaker
+child.n.01
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7586206896551724,0.6285714285714286,0.6875,0.7586206896551724,0.6285714285714286,0.6875
+de/p61/d3298,SEQ2SEQ,Maria zückte ihre Stricknadeln.,"female.n.02 Name ""Maria""
+wear.v.01   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+cat.n.01",,0.7241379310344828,0.7,0.711864406779661,0.7241379310344828,0.7,0.711864406779661
+de/p61/d3472,SEQ2SEQ,Eine Ratte hat ein Loch in die Wand genagt.,"bus.n.01
+destroy.v.01 Causer -1 Time +1 Theme +2
+time.n.08    TPR now
+entity.n.01",,0.6666666666666666,0.5454545454545454,0.6,0.6666666666666666,0.5454545454545454,0.6
+de/p61/d1699,SEQ2SEQ,Ich habe ihn im Januar getroffen.,"person.n.01  EQU speaker
+measure.n.02 Quantity 13
+win.v.01     Agent -2 Theme -1 Time +1
+time.n.08    TPR now",,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096
+de/p61/d2121,SEQ2SEQ,Der Donner grollte.,"wind.n.01
+leak.v.04 Source -1 Time +1
+time.n.08 EQU now",,0.5714285714285714,0.5714285714285714,0.5714285714285714,0.5714285714285714,0.5714285714285714,0.5714285714285714
+de/p61/d0711,SEQ2SEQ,Spartan Air Lines hat die United Airways übernommen.,"mr.n.01
+male.n.02   Name ""Smith"" Title -1
+come.v.02   Theme -1 Time +1 Theme +2
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,0.4864864864864865,0.5806451612903226,0.5294117647058824,0.4864864864864865,0.5806451612903226,0.5294117647058824
+de/p61/d2129,SEQ2SEQ,Tom ist gerade in meinem Büro.,"male.n.02   Name ""Tom""
+be.v.08     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.7586206896551724,0.7096774193548387,0.7333333333333333
+de/p61/d0780,SEQ2SEQ,Der Arzt untersuchte die Patienten.,"person.n.01 Role +1
+doctor.n.01
+bless.v.01  Agent -2 Time +1 Theme +2
+time.n.08   TPR now
+person.n.01",,0.7878787878787878,0.6666666666666666,0.7222222222222221,0.7878787878787878,0.6666666666666666,0.7222222222222221
+de/p61/d2827,SEQ2SEQ,Nichts ist heilig.,"NEGATION    -1
+person.n.01
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p61/d1641,SEQ2SEQ,Mein fauler Zahn wurde entfernt.,"person.n.01 Role +1
+father.n.01 Of speaker
+time.n.08   TPR now
+female.n.02 Name ""Maria""",,0.5172413793103449,0.5172413793103449,0.5172413793103449,0.5172413793103449,0.5172413793103449,0.5172413793103449
+de/p61/d0863,SEQ2SEQ,Das Geld liegt auf dem Tisch.,"plane.n.01
+be.v.03    Theme -1 Time +1 Location +2
+time.n.08  TPR now
+city.n.01  Name ""Melbourne""",,0.6551724137931034,0.7037037037037037,0.6785714285714286,0.6551724137931034,0.7037037037037037,0.6785714285714286
+de/p61/d0761,SEQ2SEQ,Wehkamp war in den UK ansässig.,"male.n.02   Name ""Martin Luther King""
+time.n.08   YearOfCentury 1968 TPR now
+murder.v.01 Patient -2 Time -1",,0.6,0.4838709677419355,0.5357142857142857,0.6,0.4838709677419355,0.5357142857142857
+de/p61/d2597,SEQ2SEQ,In der Schachtel sind viele Eier.,"prostitution.n.01
+time.n.08         EQU now
+full.a.01         AttributeOf -2 Time -1 Value +",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+de/p61/d2718,SEQ2SEQ,Nimm ein Ei aus dem Kühlschrank.,"female.n.02 Name ?
+coach.v.01  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.4482758620689655,0.48148148148148145,0.4642857142857143,0.4482758620689655,0.48148148148148145,0.4642857142857143
+de/p61/d2022,SEQ2SEQ,Der Kühlschrank ist offen.,"dog.n.01
+time.n.08 EQU now
+easy.a.01 AttributeOf -2 Time -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619
+de/p61/d2391,SEQ2SEQ,Diese Uhr hat deinem Großvater gehört.,"hall.n.03
+hold.v.12   Theme -1 Time +1 Value +2
+time.n.08   EQU now
+entity.n.01",,0.5925925925925926,0.45714285714285713,0.5161290322580645,0.5925925925925926,0.45714285714285713,0.5161290322580645
+de/p61/d2484,SEQ2SEQ,Ich bin leicht hungrig.,"person.n.01 EQU speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Value +",,0.72,0.6206896551724138,0.6666666666666666,0.72,0.6206896551724138,0.6666666666666666
+de/p61/d1803,SEQ2SEQ,Tom hat Hunderte von Büchern.,"male.n.02    Name ""Tom""
+have.v.02    Pivot -1 Time +1 Theme +2
+time.n.08    EQU now
+measure.n.02 Quantity 2",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7741935483870968,0.6486486486486487,0.7058823529411764
+de/p61/d1511,SEQ2SEQ,Sind sie groß?,"person.n.01 EQU hearer
+time.n.08   EQU now
+red.a.01    ColourOf -2 Time -1",,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
+de/p61/d1948,SEQ2SEQ,Toni wohnt in Kōbe.,"male.n.02 Name ""Laurie""
+live.v.01 Theme -1 Time +1 Location +2
+time.n.08 EQU now
+city.n.01 Name ""Melbourne""",,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8064516129032258,0.8064516129032258
+de/p61/d0766,SEQ2SEQ,Das wird 30 € kosten.,"entity.n.01
+time.n.08    TSU now
+measure.n.02 Quantity 2 Unit +1
+year.n.01
+old.a.01     Theme -4 Time -3 Value -2",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429
+de/p61/d1085,SEQ2SEQ,"Scrooge zitterte mehr und mehr.""","male.n.02    Name ""Édith Piaf""
+be.v.01      Theme -1 Time +1 Theme +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.4864864864864865,0.6206896551724138,0.5454545454545455,0.4864864864864865,0.6206896551724138,0.5454545454545455
+de/p61/d1864,SEQ2SEQ,Ich lerne Chinesisch.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+chess.n.02",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p61/d2802,SEQ2SEQ,Drei mal fünf ist fünfzehn.,"times.n.02 Theme 3 Co-Theme 5
+be.v.06    Co-Theme -1",,0.8235294117647058,0.7368421052631579,0.7777777777777778,0.8235294117647058,0.7368421052631579,0.7777777777777778
+de/p61/d2362,SEQ2SEQ,Tom riss die Seite heraus.,"male.n.02  Name ""Tom""
+shear.v.02 Agent -1 Time +1 Source +2
+time.n.08  TPR now
+sheep.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p61/d2289,SEQ2SEQ,Ich habe Wein getrunken.,"person.n.01     EQU speaker
+exaggerate.v.01 Agent -1 Time +1
+time.n.08       TPR now",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.8260869565217391,0.6551724137931034,0.7307692307692308
+de/p61/d3536,SEQ2SEQ,Maria kniet.,"female.n.02 Name ""Maria""
+kneel.v.01  Agent -1 Time +1
+time.n.08   TPR now",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p61/d1520,SEQ2SEQ,Er ist stärker als du.,"male.n.02
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Degree +1
+more.r.01   Theme -3 Co-Theme +1
+person.n.01 EQU speaker",,0.8055555555555556,0.8055555555555556,0.8055555555555556,0.8055555555555556,0.8055555555555556,0.8055555555555556
+de/p61/d0826,SEQ2SEQ,Ein Elefant hat eine lange Nase.,"NEGATION         -1
+birch.n.02
+NEGATION         -1
+have.v.02        Pivot -1 Time +1 Theme +2
+time.n.08        EQU now
+credit_card.n.01",,0.5806451612903226,0.5806451612903226,0.5806451612903226,0.5806451612903226,0.5806451612903226,0.5806451612903226
+de/p62/d2568,SEQ2SEQ,Ich spreche kein Französisch.,"person.n.01 EQU speaker
+NEGATION    -1
+speak.v.03  Agent -1 Time +1 Theme +2
+time.n.08   EQU now
+entity.n.01",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549
+de/p62/d0784,SEQ2SEQ,Betty hat ihn getötet.,"female.n.02    Name ""Mayuko""
+male.n.02
+blackmail.v.01 Agent -2 Patient -1 Time +1
+time.n.08      TPR now",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p62/d1657,SEQ2SEQ,Sie klopfte an die Tür.,"female.n.02
+sew.v.02    Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+door.n.01",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148
+de/p61/d0764,SEQ2SEQ,Vladislav Listyev wurde in Moskau ermordet.,"male.n.02   Name ""Vladislav Listyev""
+time.n.08   TPR now
+male.n.02   Name ""Jan De Bont""
+direct.v.03 Theme -3 Time -2 Agent -1",,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806
+de/p62/d2973,SEQ2SEQ,Der Orkan Sandy kommt.,"war.n.01  Name ""Zweite Weltkrieg""
+die.v.01  Patient -1 Time +1
+time.n.08 TPR now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+de/p62/d1986,SEQ2SEQ,Ich habe auch nicht angerufen.,"person.n.01 EQU speaker
+NEGATION    -1
+time.n.08   TPR now
+sing.v.01   Agent -2 Time -1",,0.8,0.6060606060606061,0.689655172413793,0.8,0.6060606060606061,0.689655172413793
+de/p62/d2037,SEQ2SEQ,Ich habe das Wochenende mit Freunden verbracht.,"person.n.01 EQU speaker
+diary.n.01
+keep.v.08   Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7241379310344828,0.5121951219512195,0.6000000000000001,0.7241379310344828,0.5121951219512195,0.6000000000000001
+de/p62/d2598,SEQ2SEQ,Niemand wettet.,"NEGATION    -1
+person.n.01
+NEGATION    -1
+dance.v.02  Theme -1 Time +1
+time.n.08   EQU now",,0.64,0.6956521739130435,0.6666666666666666,0.64,0.6956521739130435,0.6666666666666666
+de/p62/d2730,SEQ2SEQ,Tom streute etwas Zucker auf den Toast.,"male.n.02  Name ""Tom""
+fill.v.01  Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08  TPR now
+dog.n.01
+water.n.06",,0.5142857142857142,0.6666666666666666,0.5806451612903226,0.5142857142857142,0.6666666666666666,0.5806451612903226
+de/p62/d1397,SEQ2SEQ,Er wurde von Tom verführt.,"male.n.02
+time.n.08      TPR now
+male.n.02
+blackmail.v.01 Patient -3 Time -2 Agent -1",,0.6296296296296297,0.7391304347826086,0.68,0.6296296296296297,0.7391304347826086,0.68
+de/p62/d2811,SEQ2SEQ,Emily aß einen Apfel.,"female.n.02 Name ""Alice""
+smile.v.01  Agent -1 Time +1 Theme +2
+time.n.08   EQU now
+sheep.n.01",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p62/d2982,SEQ2SEQ,Sie ergriff meine Hand.,"female.n.02
+wipe_away.v.01 Agent -1 Time +1 Patient +2
+time.n.08      TPR now
+person.n.01",,0.7037037037037037,0.6551724137931034,0.6785714285714286,0.7037037037037037,0.6551724137931034,0.6785714285714286
+de/p62/d1901,SEQ2SEQ,Sie gab mir ihre Telefonnummer.,"female.n.02
+wear.v.01     Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08     TPR now
+person.n.01   EQU speaker
+shoulder.n.01",,0.7714285714285715,0.75,0.7605633802816902,0.7714285714285715,0.75,0.7605633802816902
+de/p62/d2524,SEQ2SEQ,Sie hat einen Amerikaner geheiratet.,"female.n.02
+egg.n.02
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7407407407407407,0.5714285714285714,0.6451612903225806,0.7407407407407407,0.5714285714285714,0.6451612903225806
+de/p62/d3484,SEQ2SEQ,Mein Bruder ist acht Jahre älter als ich.,"person.n.01 Role +1
+sister.n.01 Of speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -2 Degree -1
+person.n.01 EQU speaker",,0.7567567567567568,0.4827586206896552,0.5894736842105263,0.7567567567567568,0.4827586206896552,0.5894736842105263
+de/p62/d2006,SEQ2SEQ,"Mit anderen Worten, er ist faul.","entity.n.01
+time.n.08   EQU now
+full.a.01   AttributeOf -2 Time -1 Value +",,0.6086956521739131,0.6666666666666666,0.6363636363636365,0.6086956521739131,0.6666666666666666,0.6363636363636365
+de/p62/d3415,SEQ2SEQ,Tom ist bestürzt.,"male.n.02 Name ""Tom""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+de/p51/d3342,SEQ2SEQ,"Wenn du ihn einlädst, kommt er vielleicht.","time.n.08      EQU now
+male.n.02
+blackmail.v.01 Experiencer -3 Time -2 Stimulus -1",,,,,0.6521739130434783,0.2777777777777778,0.3896103896103896
+de/p62/d3416,SEQ2SEQ,Ich habe nie Golf gespielt.,"person.n.01 EQU speaker
+want.v.01   Pivot -1 Time +1 Theme +2
+time.n.08   TPR now
+person.n.01 EQU speaker",,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806
+de/p51/d3287,SEQ2SEQ,Ich bin genauso groß wie er.,"person.n.01 EQU speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Degree +1
+more.r.01   Theme -3 Co-Theme +1
+person.n.01 EQU speaker",,0.7368421052631579,0.7777777777777778,0.7567567567567567,0.7368421052631579,0.7777777777777778,0.7567567567567567
+de/p51/d0914,SEQ2SEQ,Der Polizist trägt eine Gasmaske.,,Invalid token found '-1' in line: person.n.01 Role Agent -1 Time +1 Patient +2,,,,,,
+de/p51/d3252,SEQ2SEQ,Mary jodelt.,"event.v.01  Participant +1
+female.n.02 Name ""Mary""",,0.7333333333333333,0.4782608695652174,0.5789473684210527,0.7333333333333333,0.4782608695652174,0.5789473684210527
+de/p62/d3524,SEQ2SEQ,Tom hat verschlafen.,"male.n.02    Name ""Tom""
+applaud.v.01 Agent -1 Time +1
+time.n.08    TPR now",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p62/d2217,SEQ2SEQ,Ich fahre einen Lieferwagen.,"person.n.01 EQU speaker
+keep.v.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now
+apple.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p51/d2390,SEQ2SEQ,Dein Hosenstall ist offen.,"location.n.01 Role +1
+sister.n.01   Of speaker
+time.n.08     EQU now
+easy.a.01     AttributeOf -3 Time -1",,0.5172413793103449,0.6521739130434783,0.576923076923077,0.5172413793103449,0.6521739130434783,0.576923076923077
+de/p51/d2164,SEQ2SEQ,Ich habe den Fuji bestiegen.,"person.n.01 EQU speaker
+pizza.n.01
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7241379310344828,0.6774193548387096,0.7,0.7241379310344828,0.6774193548387096,0.7
+de/p51/d2339,SEQ2SEQ,Ist sie nicht süß?,"NEGATION  -1
+time.n.08 EQU now
+red.a.01  ColourOf -2 Time -1",,,,,0.7368421052631579,0.6086956521739131,0.6666666666666666
+de/p51/d2373,SEQ2SEQ,Der Stier muht.,"cd.n.04
+ring.v.01 Theme -1 Time +1
+time.n.08 EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p51/d1485,SEQ2SEQ,J. J. Thomson war ein englischer Wissenschaftler.,"male.n.02    Name ""Laurie""
+be.v.08      Theme -1 Time +1 Co-Theme +2
+time.n.08    EQU now
+country.n.02 Name ""cuba""
+cigar.n.01   Source -1",,0.7297297297297297,0.627906976744186,0.675,0.7297297297297297,0.627906976744186,0.675
+de/p51/d2827,SEQ2SEQ,Ich streckte die Beine aus.,"person.n.01 EQU speaker
+shear.v.02  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+sheep.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p51/d2167,SEQ2SEQ,Sie hat einen gigantischen Appetit.,"female.n.02
+toaster.n.02
+break.v.03   Agent -2 Patient -1 Time +1
+time.n.08    TPR now",,0.5925925925925926,0.48484848484848486,0.5333333333333333,0.5925925925925926,0.48484848484848486,0.5333333333333333
+de/p51/d3436,SEQ2SEQ,Mein Flug landete um halb drei nachmittags.,"location.n.01    SZN +1
+grandfather.n.01 Of speaker Unit +1
+dollar.n.01",,0.47619047619047616,0.3225806451612903,0.3846153846153846,0.47619047619047616,0.3225806451612903,0.3846153846153846
+de/p51/d0935,SEQ2SEQ,Sie heuerte einen Privatdetektiv an.,"female.n.02
+win.v.01    Agent -1 Time +1 Theme +2
+time.n.08   TPR now
+apple.n.01",,0.7777777777777778,0.6363636363636364,0.7000000000000001,0.7777777777777778,0.6363636363636364,0.7000000000000001
+de/p51/d2461,SEQ2SEQ,Dieser Reis ist klebrig.,"lake.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619
+de/p92/d2129,SEQ2SEQ,Der Hund jagte die Katze auf einen Baum.,,Invalid token found '-1' in line: person.n.01 Role Agent -1 Time +1 Recipient +2 Theme +3,,,,,,
+de/p51/d0887,SEQ2SEQ,Diese CD kostet 10 Dollar.,"cd.n.04
+cost.v.01    Theme -1 Time +1 Value +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8285714285714286
+de/p51/d2947,SEQ2SEQ,Ich bin wie meine Mutter.,"person.n.01 EQU speaker
+time.n.08   EQU now
+tall.a.01
+happy.a.01  Experiencer -3 Time -2 Degree -1",,0.6896551724137931,0.5405405405405406,0.6060606060606061,0.6896551724137931,0.5405405405405406,0.6060606060606061
+de/p51/d3263,SEQ2SEQ,Tom übertrieb.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+de/p51/d1926,SEQ2SEQ,Du stinkst nach Zigaretten.,"person.n.01
+knock.v.02  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+room.n.01",,0.7037037037037037,0.6551724137931034,0.6785714285714286,0.7037037037037037,0.6551724137931034,0.6785714285714286
+de/p92/d2379,SEQ2SEQ,Die Stadt wurde 573 gegründet.,"hall.n.03
+hold.v.12 Location -1 Time +1
+time.n.08 TPR now",,0.6190476190476191,0.5652173913043478,0.5909090909090909,0.6190476190476191,0.5652173913043478,0.5909090909090909
+de/p92/d1143,SEQ2SEQ,Wir öffneten die Tür.,"person.n.01 EQU speaker
+eat.v.01    Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p92/d1400,SEQ2SEQ,Es schneite an jenem Tag.,"snow.v.01   Time +1 Location +2
+time.n.08   EQU now
+person.n.01",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p92/d0861,SEQ2SEQ,Herr Spencer arbeitet in einem Geschäft.,"mr.n.01
+male.n.02 Name ""Smith"" Title -1
+come.v.02 Theme -1 Time +1 Location +2
+time.n.08 EQU now
+city.n.01 Name ""Melbourne""",,0.7027027027027027,0.7428571428571429,0.7222222222222223,0.7027027027027027,0.7428571428571429,0.7222222222222223
+de/p51/d2206,SEQ2SEQ,Ich komme aus Georgien.,"person.n.01 EQU speaker
+live.v.01   Theme -1 Time +1 Location +2
+time.n.08   EQU now
+room.n.01",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p92/d2921,SEQ2SEQ,Ich übertreibe.,"person.n.01 EQU speaker
+get_up.v.02 Agent -1 Time +1
+time.n.08   EQU now",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p92/d3199,SEQ2SEQ,"Sie nennen Robert ""Bob"".","female.n.02
+pick.v.02   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,0.5862068965517241,0.4594594594594595,0.5151515151515151,0.5862068965517241,0.4594594594594595,0.5151515151515151
+de/p92/d1552,SEQ2SEQ,Tom fuhr mit der Berg- und Talbahn.,"male.n.02 Name ""Tom""
+work.v.02 Agent -1 Time +1 Theme +2 Destination +3
+time.n.08 TPR now
+city.n.01 Name ""San Francisco""",,,,,0.6666666666666666,0.7586206896551724,0.7096774193548386
+de/p92/d0902,SEQ2SEQ,Dieser Schuh ist eine Nummer größer.,"entity.n.01
+time.n.08   EQU now
+full.a.01   AttributeOf -2 Time -1 Value +",,0.6956521739130435,0.38095238095238093,0.4923076923076923,0.6956521739130435,0.38095238095238093,0.4923076923076923
+de/p92/d0711,SEQ2SEQ,Dickson arbeitete für Edison.,"male.n.02 Name ""Beverly""
+work.v.02 Agent -1 Time +1 Theme +2
+time.n.08 TPR now
+city.n.01 Name ""London""",,0.7096774193548387,0.7096774193548387,0.7096774193548389,0.7096774193548387,0.7096774193548387,0.7096774193548389
+de/p92/d2611,SEQ2SEQ,Das ist mein Hund.,"entity.n.01
+time.n.08   EQU now
+red.a.01    ColourOf -2 Time -1",,0.6666666666666666,0.4827586206896552,0.56,0.6666666666666666,0.4827586206896552,0.56
+de/p92/d1691,SEQ2SEQ,Er räumte seine Fehler ein.,"male.n.02
+drive.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+apple.n.01",,0.7407407407407407,0.7142857142857143,0.7272727272727273,0.7407407407407407,0.7142857142857143,0.7272727272727273
+de/p92/d3092,SEQ2SEQ,Tom erstickte Maria mit einer Plastiktüte.,"male.n.02   Name ""Tom""
+put.v.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02 Name ""Maria""",,,,,0.7575757575757576,0.6756756756756757,0.7142857142857142
+de/p92/d0712,SEQ2SEQ,Nancy Ianiero wurde in Mexiko getötet.,"male.n.02   Name ""Vladislav Listyev""
+time.n.08   TPR now
+male.n.02   Name ""Jan De Bont""
+direct.v.03 Theme -3 Time -2 Agent -1",,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516
+de/p92/d3501,SEQ2SEQ,Das Schiff wird um fünf Uhr ankommen.,"plane.n.01
+time.n.08  ClockTime 17:00 TSU now
+ready.a.01 AttributeOf -2 Time -1",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+de/p92/d3458,SEQ2SEQ,Das Baby ist wach.,"meat.n.01
+time.n.08 EQU now
+red.a.01  ColourOf -2 Time -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p92/d2781,SEQ2SEQ,Zucchini sind grün.,"city.n.01 Name ?
+time.n.08 EQU now
+red.a.01  ColourOf -2 Time -1",,0.6521739130434783,0.7142857142857143,0.6818181818181819,0.6521739130434783,0.7142857142857143,0.6818181818181819
+de/p92/d2261,SEQ2SEQ,Tom rief Mary an.,"male.n.02   Name ""Tom""
+flirt.v.01  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7741935483870968
+de/p92/d3480,SEQ2SEQ,Der Hund ist auf einem Auge blind.,"dog.n.01
+time.n.08        EQU now
+custom-made.a.01 AttributeOf -2 Time -1",,0.7619047619047619,0.5517241379310345,0.64,0.7619047619047619,0.5517241379310345,0.64
+de/p92/d3173,SEQ2SEQ,Tom ist total bekloppt.,"male.n.02 Name ""Tom""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.8260869565217391,0.6551724137931034,0.7307692307692308
+de/p92/d0923,SEQ2SEQ,Ihm wurden zehntausend Dollar gezahlt.,"male.n.02
+time.n.08    TPR now
+measure.n.02 Quantity 2 Unit +1
+dollar.n.01
+cost.v.01    Theme -4 Time -3 Value -2",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429
+de/p92/d0820,SEQ2SEQ,Meine Uhr wurde gestohlen.,"person.n.01 Role +1
+father.n.01 Of speaker
+time.n.08   TPR now",,0.6363636363636364,0.6086956521739131,0.6222222222222223,0.6363636363636364,0.6086956521739131,0.6222222222222223
+de/p92/d3273,SEQ2SEQ,Eine Bande raubte tausende von Dollars aus einer Bank.,"measure.n.02 Quantity 3
+win.v.01     Agent -1 Time +1 Theme +2
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.7027027027027027,0.49056603773584906,0.5777777777777777,0.7027027027027027,0.49056603773584906,0.5777777777777777
+de/p92/d3481,SEQ2SEQ,Ich lebe in Tiflis.,"person.n.01 EQU speaker
+live.v.01   Theme -1 Time +1 Location +2
+time.n.08   EQU now
+room.n.01",,0.8275862068965517,0.7741935483870968,0.7999999999999999,0.8275862068965517,0.7741935483870968,0.7999999999999999
+de/p92/d2070,SEQ2SEQ,Muiriel ist zwanzig.,"male.n.02 Name ""Jack""
+time.n.08 EQU now
+easy.a.01 AttributeOf -2 Time -1",,0.7391304347826086,0.5151515151515151,0.6071428571428571,0.7391304347826086,0.5151515151515151,0.6071428571428571
+de/p92/d0764,SEQ2SEQ,Verdens Gang ist eine norwegische Zeitung.,"city.n.01   Name ""Buenos Aires""
+be.v.02     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01 Role +1
+actor.n.01",,0.6285714285714286,0.5945945945945946,0.611111111111111,0.6285714285714286,0.5945945945945946,0.611111111111111
+de/p92/d3235,SEQ2SEQ,Der Holzfäller fällt einen Baum mit einer Axt.,"person.n.01  Role +1
+hunter.n.01
+appoint.v.02 Agent -2 Time +1 Theme +2
+time.n.08    TPR now
+apple.n.01",,0.6666666666666666,0.5641025641025641,0.611111111111111,0.6666666666666666,0.5641025641025641,0.611111111111111
+de/p11/d3253,SEQ2SEQ,Ich bin Samuel.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
+de/p11/d1949,SEQ2SEQ,Ich habe Tom immer gehasst.,"person.n.01 EQU speaker
+time.n.08   EQU now
+female.n.02
+see.v.01    Experiencer -3 Time -2 Stimulus -1",,0.6896551724137931,0.4878048780487805,0.5714285714285714,0.6896551724137931,0.4878048780487805,0.5714285714285714
+de/p11/d1955,SEQ2SEQ,Tom hat viele Rennen gewonnen.,"male.n.02    Name ""Tom""
+have.v.02    Pivot -1 Time +1 Theme +2
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.5945945945945946,0.7096774193548387,0.6470588235294118,0.5945945945945946,0.7096774193548387,0.6470588235294118
+de/p11/d2934,SEQ2SEQ,Er durchsegelte die Sieben Meere.,"male.n.02
+win.v.01   Agent -1 Time +1 Theme +2
+time.n.08  TPR now
+apple.n.01 Value +",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034
+de/p11/d3113,SEQ2SEQ,Die Feuerwehrmänner löschten das Feuer.,"cat.n.01
+sniff.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+apple.n.01",,0.7037037037037037,0.5757575757575758,0.6333333333333334,0.7037037037037037,0.5757575757575758,0.6333333333333334
+de/p11/d2669,SEQ2SEQ,Edward Sapir war ein US-amerikanischer Linguist.,"male.n.02    Name ""Laurie""
+be.v.08      Theme -1 Time +1 Co-Theme +2
+time.n.08    EQU now
+country.n.02 Name ""cuba""
+cigar.n.01   Source -1",,0.7297297297297297,0.627906976744186,0.675,0.7297297297297297,0.627906976744186,0.675
+de/p11/d2402,SEQ2SEQ,Maria hat nichts gesehen.,"female.n.02 Name ""Maria""
+NEGATION    -1
+time.n.08   TPR now
+afraid.a.01 Experiencer -2 Time -1",,0.76,0.6129032258064516,0.6785714285714285,0.76,0.6129032258064516,0.6785714285714285
+de/p11/d1815,SEQ2SEQ,Das war ganz und gar geheim.,"entity.n.01
+time.n.08   EQU now
+full.a.01   AttributeOf -2 Time -1 Value +",,0.6956521739130435,0.5925925925925926,0.6399999999999999,0.6956521739130435,0.5925925925925926,0.6399999999999999
+de/p11/d1675,SEQ2SEQ,Das Flugzeug flog nach Osten.,"cd.n.04
+belong.v.01 Theme -1 Time +1 Source +2
+time.n.08   EQU now
+east.n.05",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p11/d1417,SEQ2SEQ,Er gab mir Getränke aus.,"male.n.02
+throw.v.01  Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+person.n.01 EQU speaker",,,,,0.7741935483870968,0.6857142857142857,0.7272727272727272
+de/p11/d3468,SEQ2SEQ,Er trug eine Maske.,"male.n.02
+throw.v.01 Agent -1 Time +1 Theme +2
+time.n.08  TPR now
+apple.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p11/d2833,SEQ2SEQ,Wir sind vor zwei Tagen angekommen.,"person.n.01  EQU speaker
+time.n.08    EQU now
+measure.n.02 Quantity 2 Unit +1
+year.n.01
+old.a.01     Theme -4 Time -3 Value -2",,0.7297297297297297,0.6923076923076923,0.7105263157894737,0.7297297297297297,0.6923076923076923,0.7105263157894737
+de/p11/d0957,SEQ2SEQ,Tom wohnt in einem Elendsviertel.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1 Location +2
+time.n.08  EQU now
+east.n.05",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p11/d2216,SEQ2SEQ,Der Flug nach Boston sollte etwa neunzig Minuten dauern.,"movie.n.01
+cost.v.01    Theme -1 Time +1 Value +2
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.45714285714285713,0.32653061224489793,0.3809523809523809,0.45714285714285713,0.32653061224489793,0.3809523809523809
+de/p11/d0859,SEQ2SEQ,Der Hund wurde von einem Auto überfahren.,"person.n.01
+time.n.08     TSU now
+truck.n.01
+run_over.v.01 Patient -3 Time -2 Agent -1",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p11/d1120,SEQ2SEQ,Hunderttausende von Frauen wurden vergewaltigt.,"person.n.01   Role +1
+newcomer.n.01
+time.n.08     TPR now
+measure.n.02  Quantity 20 Unit +1
+year.n.01
+old.a.02      Theme -4 Time -3 Value -2",,0.3902439024390244,0.5517241379310345,0.4571428571428572,0.3902439024390244,0.5517241379310345,0.4571428571428572
+de/p11/d1412,SEQ2SEQ,Er bewaffnete sich mit einer Pistole.,"male.n.02
+throw.v.01  Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+water.n.06",,0.5757575757575758,0.7037037037037037,0.6333333333333334,0.5757575757575758,0.7037037037037037,0.6333333333333334
+de/p11/d2664,SEQ2SEQ,Tom ist jetzt wach.,"male.n.02  Name ""Tom""
+time.n.08  EQU now
+happy.a.01 Experiencer -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p11/d1193,SEQ2SEQ,Die Permatex GmbH beschäftigt zur Zeit 180 Mitarbeiter.,"wind.n.01
+blow.v.02    Theme -1 Time +1 Location +3
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.5714285714285714,0.5405405405405406,0.5555555555555556,0.5714285714285714,0.5405405405405406,0.5555555555555556
+de/p11/d2088,SEQ2SEQ,Tom führt seinen Hund aus.,"male.n.02 Name ""Tom""
+iron.v.01 Agent -1 Time +1 Patient +2
+time.n.08 TPR now
+cat.n.01",,0.6896551724137931,0.6666666666666666,0.6779661016949153,0.6896551724137931,0.6666666666666666,0.6779661016949153
+de/p11/d2885,SEQ2SEQ,Jedes Gebäude hat einen Namen.,"NEGATION    -1
+person.n.01
+NEGATION    -1
+law.n.02
+break.v.06  Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806
+de/p11/d3473,SEQ2SEQ,Ich zahlte zwanzigtausend Yen für dieses Hörgerät.,"person.n.01  EQU speaker
+owe.v.03     Agent -1 Time +1 Recipient +2 Theme +4
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,,,,0.6923076923076923,0.627906976744186,0.6585365853658537
+de/p11/d2490,SEQ2SEQ,Ich bin auch glücklich.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.8695652173913043
+de/p11/d3447,SEQ2SEQ,Ich bin lesbisch.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p11/d2018,SEQ2SEQ,Tom saß an seinem Schreibtisch.,"male.n.02     Name ""Tom""
+take_off.v.02 Agent -1 Time +1 Patient +2
+time.n.08     TPR now
+room.n.01     User -3",,0.7333333333333333,0.7333333333333333,0.7333333333333333,0.7333333333333333,0.7333333333333333,0.7333333333333333
+de/p11/d2196,SEQ2SEQ,Er hat ein Buch.,"male.n.02
+have.v.01        Pivot -1 Time +1 Theme +2
+time.n.08        EQU now
+credit_card.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778
+de/p11/d0850,SEQ2SEQ,Sie war tapfer.,"female.n.02
+time.n.08      EQU now
+surprised.a.01 Experiencer -2 Time -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p32/d0930,SEQ2SEQ,Tom hat einen Wagen.,,invalid literal for int() with base 10: 'Agent',,,,,,
+de/p32/d1837,SEQ2SEQ,Ich schulde ihm 100 Yen.,"person.n.01  EQU speaker
+owe.v.03     Agent -1 Time +1 Recipient +2 Theme +4
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,,,,0.6923076923076923,0.627906976744186,0.6585365853658537
+de/p11/d2448,SEQ2SEQ,In diesem Raum ist jemand.,"prostitution.n.01
+time.n.08         EQU now
+full.a.01         AttributeOf -2 Time -1 Value +",,0.5652173913043478,0.48148148148148145,0.52,0.5652173913043478,0.48148148148148145,0.52
+de/p32/d2799,SEQ2SEQ,Sie stand auf.,"female.n.02
+die.v.01    Patient -1 Time +1
+time.n.08   TPR now",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619
+de/p11/d0951,SEQ2SEQ,Der Himmel ist blau.,"lake.n.01
+time.n.08 EQU now
+easy.a.01 AttributeOf -2 Time -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p11/d0910,SEQ2SEQ,Das Komitee besteht aus zwölf Mitgliedern.,"hall.n.03
+hold.v.12   Theme -1 Time +1 Value +2
+time.n.08   EQU now
+entity.n.01",,0.6296296296296297,0.4857142857142857,0.5483870967741936,0.6296296296296297,0.4857142857142857,0.5483870967741936
+de/p32/d1440,SEQ2SEQ,Der Hund bellte einen Fremden an.,,Invalid token found '-1' in line: person.n.01 Role Agent -1 Time +1 Patient +2,,,,,,
+de/p11/d3423,SEQ2SEQ,Er ist Detektiv.,"male.n.02
+time.n.08 EQU now
+red.a.01  ColourOf -2 Time -1",,0.6666666666666666,0.42424242424242425,0.5185185185185185,0.6666666666666666,0.42424242424242425,0.5185185185185185
+de/p32/d2518,SEQ2SEQ,Das Buch kostet vier Dollar.,"entity.n.01
+cost.v.01    Theme -1 Time +1 Value +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7714285714285715,0.7714285714285715
+de/p32/d2650,SEQ2SEQ,Sie räumten den Schnee vom Gehweg.,"female.n.02
+lay.v.01    Agent -1 Time +1 Patient +2 Instrument +3
+time.n.08   TPR now
+apple.n.01
+water.n.06",,0.6060606060606061,0.6060606060606061,0.6060606060606061,0.6060606060606061,0.6060606060606061,0.6060606060606061
+de/p32/d0955,SEQ2SEQ,Mein Onkel ist verärgert.,"person.n.01 Role +1
+sister.n.01 Of speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -1",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p32/d2542,SEQ2SEQ,Wer hat gefurzt?,"person.n.01 Name ?
+coach.v.01  Agent -1 Time +1
+time.n.08   TPR now",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p32/d2751,SEQ2SEQ,Diebe plünderten das Museum.,"cat.n.01
+sniff.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+apple.n.01",,0.6666666666666666,0.5454545454545454,0.6,0.6666666666666666,0.5454545454545454,0.6
+de/p32/d3162,SEQ2SEQ,Das Düsenflugzeug landete in Tokyo.,"room.n.01
+last.v.01 Theme -1 Time +1 Location +2
+time.n.08 TPR now
+city.n.01 Name ""London""",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p32/d2570,SEQ2SEQ,Sie hat den Saft von vielen Orangen ausgepresst.,"female.n.02
+egg.n.02
+drown.v.04  Agent -3 Patient -2 Theme -1 Time +1
+time.n.08   TPR now",,,,,0.5862068965517241,0.4857142857142857,0.53125
+de/p32/d1444,SEQ2SEQ,Der Mann blies Rauch in ihr Gesicht.,"movie.n.01
+fly.v.01   Theme -1 Time +1 Location +2
+time.n.08  TPR now
+male.n.02",,0.7037037037037037,0.48717948717948717,0.5757575757575758,0.7037037037037037,0.48717948717948717,0.5757575757575758
+de/p32/d2715,SEQ2SEQ,Tom ist immer online.,"male.n.02 Name ""Tom""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.7391304347826086,0.5151515151515151,0.6071428571428571,0.7391304347826086,0.5151515151515151,0.6071428571428571
+de/p32/d0760,SEQ2SEQ,FermiLab hat Linux LTS entwickelt.,"male.n.02      Name ""Anna Politkovskaya""
+time.n.08      TPR now
+male.n.02
+blackmail.v.01 Patient -3 Time -2 Agent -1",,0.5862068965517241,0.5483870967741935,0.5666666666666665,0.5862068965517241,0.5483870967741935,0.5666666666666665
+de/p32/d2221,SEQ2SEQ,Wir sind nicht verheiratet.,"person.n.01 EQU speaker
+NEGATION    -1
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+de/p32/d3363,SEQ2SEQ,Der Fuji ist nicht so hoch wie der Mount Everest.,"tower.n.01
+time.n.08    EQU now
+person.n.01  EQU hearer
+measure.n.02 Quantity -2 Unit +1
+year.n.01
+old.a.01     Theme -4 Time -3 Value -2",,0.3902439024390244,0.4,0.39506172839506176,0.3902439024390244,0.4,0.39506172839506176
+de/p32/d1472,SEQ2SEQ,Tom ist überhaupt nicht glücklich.,"male.n.02 Name ""Tom""
+NEGATION  -1
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+de/p32/d2195,SEQ2SEQ,Mein Großvater war Müller.,"person.n.01 Role +1
+sister.n.01 Of speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -1",,0.6551724137931034,0.4634146341463415,0.5428571428571429,0.6551724137931034,0.4634146341463415,0.5428571428571429
+de/p32/d1912,SEQ2SEQ,"Sie verachtet Menschen, die faul sind.","female.n.02
+time.n.08   EQU now
+afraid.a.01 Experiencer -2 Time -1 Stimulus +1
+person.n.01",,0.7407407407407407,0.5882352941176471,0.6557377049180328,0.7407407407407407,0.5882352941176471,0.6557377049180328
+de/p41/d1861,SEQ2SEQ,Ich traf im Bus einen Freund.,"person.n.01 EQU speaker
+keep.v.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now
+letter.n.01",,0.7241379310344828,0.5121951219512195,0.6000000000000001,0.7241379310344828,0.5121951219512195,0.6000000000000001
+de/p41/d2810,SEQ2SEQ,Ich spreche Usbekisch.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+chess.n.02",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p32/d0835,SEQ2SEQ,Ich brauche seine Hilfe.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+cat.n.01",,0.7241379310344828,0.6,0.65625,0.7241379310344828,0.6,0.65625
+de/p41/d2065,SEQ2SEQ,John Lennon wurde 1940 geboren.,"male.n.02   Name ""Martin Luther King""
+time.n.08   YearOfCentury 1968 TPR now
+murder.v.01 Patient -2 Time -1",,0.72,0.72,0.72,0.72,0.72,0.72
+de/p41/d1390,SEQ2SEQ,Welche Organisation leitet Hope Holcomb?,"school.n.01 Name ?
+work.v.02   Agent -1 Time +1 Theme +2
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516
+de/p32/d2926,SEQ2SEQ,Zwei ist die vierte Wurzel von sechzehn.,"be.v.01 Theme 11 Co-Theme 5
+be.v.06 Co-Theme 14 Theme -1",,0.42105263157894735,0.42105263157894735,0.42105263157894735,0.42105263157894735,0.42105263157894735,0.42105263157894735
+de/p41/d3340,SEQ2SEQ,Sie mag russischen Pop.,"female.n.02
+pick.v.02   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+person.n.01 EQU speaker",,0.5862068965517241,0.4857142857142857,0.53125,0.5862068965517241,0.4857142857142857,0.53125
+de/p41/d1780,SEQ2SEQ,Sie stellte die Kiste auf dem Tisch ab.,"female.n.02
+lay.v.01    Agent -1 Time +1 Patient +2 Result +3
+time.n.08   TPR now
+tree.n.01",,,,,0.6551724137931034,0.5757575757575758,0.6129032258064515
+de/p41/d0879,SEQ2SEQ,Die Eltern nannten das Baby Akiyoshi.,"person.n.01 Name ""Mayuko""
+design.v.03 Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02 Name ""Maria""",,,,,0.5757575757575758,0.4634146341463415,0.5135135135135135
+de/p41/d2151,SEQ2SEQ,Lucy hat Mary gefeuert.,"female.n.02    Name ""Anna Politkovskaya""
+time.n.08      TPR now
+male.n.02
+blackmail.v.01 Patient -3 Time -2 Agent -1",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p41/d2989,SEQ2SEQ,Ich wurde mit einem Messer verwundet.,"person.n.01 EQU speaker
+time.n.08   TPR now
+person.n.01
+kill.v.01   Patient -3 Time -2 Agent -1",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p41/d3552,SEQ2SEQ,George ist so groß wie sein Vater.,"male.n.02   Name ""Keisuke""
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Degree +1
+more.r.01   Theme -3 Co-Theme +1
+person.n.01",,0.8055555555555556,0.6744186046511628,0.7341772151898734,0.8055555555555556,0.6744186046511628,0.7341772151898734
+de/p41/d2355,SEQ2SEQ,Ich melke meine Ziege.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+chess.n.02",,0.7241379310344828,0.6774193548387096,0.7,0.7241379310344828,0.6774193548387096,0.7
+de/p41/d1779,SEQ2SEQ,Er buk Muffins.,"male.n.02
+brew.v.01 Agent -1 Time +1 Patient +2
+time.n.08 EQU now
+room.n.01",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p41/d1817,SEQ2SEQ,Taninna wird blass.,"female.n.02 Name ""Brad Pitt""
+time.n.08   EQU now
+sick.a.01   AttributeOf -2 Time -1",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+de/p41/d1560,SEQ2SEQ,Tom schwenkte die Fahne.,"male.n.02  Name ""Tom""
+dial.v.02  Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+sheep.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p41/d2052,SEQ2SEQ,Ich habe Tom vor drei Stunden gesehen.,"person.n.01  EQU speaker
+measure.n.02 Quantity 5
+score.v.01   Agent -2 Theme -1 Time +1
+time.n.08    TPR now",,0.7419354838709677,0.48936170212765956,0.5897435897435898,0.7419354838709677,0.48936170212765956,0.5897435897435898
+de/p41/d1800,SEQ2SEQ,Es schneite.,"snow.v.01 Time +1
+time.n.08 EQU now",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+de/p41/d1664,SEQ2SEQ,Tom wurde von Außerirdischen entführt.,"male.n.02      Name ""Tom""
+time.n.08      TPR now
+book.n.01
+blackmail.v.01 Patient -3 Time -2 Agent -1",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p41/d2056,SEQ2SEQ,Ich wurde von einem Moskito gestochen.,"person.n.01 EQU speaker
+time.n.08   TPR now
+person.n.01
+eat.v.01    Patient -3 Time -2 Agent -1",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p41/d2557,SEQ2SEQ,Ich wurde am 22. November 1948 geboren.,"person.n.01  EQU speaker
+time.n.08    TPR now
+country.n.02 Name ""Ägypten""
+arrest.v.01  Patient -3 Time -2 Agent -1",,0.5806451612903226,0.6206896551724138,0.6000000000000001,0.5806451612903226,0.6206896551724138,0.6000000000000001
+de/p91/d1265,SEQ2SEQ,Er besiegte den Australier Patrick Rafter 7:5 und 6:4.,"male.n.02
+weigh.v.01   Theme -1 Time +1 Location +2
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.6285714285714286,0.3728813559322034,0.4680851063829788,0.6285714285714286,0.3728813559322034,0.4680851063829788
+de/p41/d2274,SEQ2SEQ,Sie haben das Gesetz nicht gebrochen.,"person.n.01
+marshmallow.n.01
+eat.v.01         Agent -2 Patient -1 Time +1
+time.n.08        TPR now",,0.6296296296296297,0.4358974358974359,0.5151515151515151,0.6296296296296297,0.4358974358974359,0.5151515151515151
+de/p91/d1766,SEQ2SEQ,Wir sind nicht verheiratet.,"person.n.01 EQU speaker
+NEGATION    -1
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+de/p91/d2742,SEQ2SEQ,Tom wurde in den 1990ern geboren.,"male.n.02   Name ""Tom""
+time.n.08   YearOfCentury 1968 TPR now
+murder.v.01 Patient -2 Time -1",,0.76,0.76,0.76,0.76,0.76,0.76
+de/p91/d2974,SEQ2SEQ,Tom tätschelt seinen Hund.,"male.n.02 Name ""Tom""
+iron.v.01 Agent -1 Time +1 Patient +2
+time.n.08 TPR now
+cat.n.01",,0.6896551724137931,0.6666666666666666,0.6779661016949153,0.6896551724137931,0.6666666666666666,0.6779661016949153
+de/p91/d3541,SEQ2SEQ,Tom vertraute ihr.,"male.n.02 Name ""Tom""
+iron.v.01 Agent -1 Time +1 Patient +2
+time.n.08 TPR now
+male.n.02",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p91/d1460,SEQ2SEQ,Tom schuldet Maria 300 Dollar.,"male.n.02    Name ""Tom""
+pay.v.01     Agent -1 Time +1 Theme +2 Destination +3
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.7368421052631579,0.6222222222222222,0.6746987951807228,0.7368421052631579,0.6222222222222222,0.6746987951807228
+de/p91/d2673,SEQ2SEQ,Jemand betrat den Raum.,"person.n.01
+knock.v.02  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+male.n.02",,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297
+de/p91/d3345,SEQ2SEQ,Ich wurde von einer Biene gestochen.,"person.n.01 EQU speaker
+time.n.08   TPR now
+person.n.01
+eat.v.01    Patient -3 Time -2 Agent -1",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p91/d2614,SEQ2SEQ,Dieser Laptop ist sehr dünn.,"entity.n.01
+time.n.08          EQU now
+very.r.01
+understanding.a.01 AttributeOf -3 Time -2 Degree -1",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778
+de/p91/d1703,SEQ2SEQ,Der Supermarkt stellte viele Teilzeitkräfte ein.,"dog.n.01
+eat.v.01   Agent -1 Time +1 Theme +2
+time.n.08  TPR now
+apple.n.01",,0.7407407407407407,0.5714285714285714,0.6451612903225806,0.7407407407407407,0.5714285714285714,0.6451612903225806
+de/p91/d1550,SEQ2SEQ,Tom arbeitet bei einer Bank.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1 Location +2
+time.n.08  EQU now
+east.n.05",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p91/d2487,SEQ2SEQ,Die Ampel funktioniert nicht.,"lift.n.01
+NEGATION  -1
+work.v.04 Theme -1 Time +1
+time.n.08 EQU now",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p91/d2315,SEQ2SEQ,Ist Geld für dich wichtig?,"time.n.08   EQU now
+person.n.01 EQU hearer
+tall.a.01   AttributeOf -3 Time -2 Degree -1
+person.n.01 EQU speaker",,,,,0.625,0.6896551724137931,0.6557377049180328
+de/p91/d3461,SEQ2SEQ,Sie bügelte seine Hemden.,"female.n.02
+slap.v.01   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+male.n.02",,0.7777777777777778,0.6363636363636364,0.7000000000000001,0.7777777777777778,0.6363636363636364,0.7000000000000001
+de/p91/d1813,SEQ2SEQ,Ich komme aus Russland.,"person.n.01 EQU speaker
+live.v.01   Theme -1 Time +1 Location +2
+time.n.08   EQU now
+room.n.01",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p91/d0835,SEQ2SEQ,Er ist Volleyballspieler.,"male.n.02
+time.n.08 EQU now
+sick.a.01 AttributeOf -2 Time -1",,0.6666666666666666,0.42424242424242425,0.5185185185185185,0.6666666666666666,0.42424242424242425,0.5185185185185185
+de/p91/d3349,SEQ2SEQ,Sie braucht einen Mantel.,"female.n.02
+suffer.v.02 Experiencer -1 Time +1 Patient +2
+time.n.08   EQU now
+sheep.n.01",,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037
+de/p91/d1767,SEQ2SEQ,Tom hat seine Hose gebügelt.,"male.n.02   Name ""Tom""
+have.v.02   Pivot -1 Time +1 Theme +2
+time.n.08   TPR now
+entity.n.01",,0.6551724137931034,0.6333333333333333,0.6440677966101694,0.6551724137931034,0.6333333333333333,0.6440677966101694
+de/p31/d3253,SEQ2SEQ,Tom geleitete Maria aus dem Gebäude.,"male.n.02   Name ""Tom""
+put.v.01    Agent -1 Time +1 Patient +2 Destination +3
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,,,,0.7272727272727273,0.6486486486486487,0.6857142857142857
+de/p91/d0790,SEQ2SEQ,Der alte Mann fing einen großen Fisch.,"boy.n.01
+take_apart.v.01 Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08       TPR now
+dog.n.01
+water.n.06",,0.6060606060606061,0.46511627906976744,0.5263157894736842,0.6060606060606061,0.46511627906976744,0.5263157894736842
+de/p31/d2226,SEQ2SEQ,Auf dem Tisch war eine Katze.,"country.n.02   Name ""Mexiko""
+break_out.v.01 Location -1 Time +1 Source +2
+time.n.08      EQU now
+location.n.01  STI +1
+cradle.n.01",,0.4857142857142857,0.6296296296296297,0.5483870967741936,0.4857142857142857,0.6296296296296297,0.5483870967741936
+de/p91/d2924,SEQ2SEQ,Tom war dreißig.,"male.n.02 Name ""Tom""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.782608695652174,0.5454545454545454,0.6428571428571429,0.782608695652174,0.5454545454545454,0.6428571428571429
+de/p31/d1689,SEQ2SEQ,Sie malte einen Baum.,"female.n.02
+use.v.01    Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+beer.n.01",,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037
+de/p31/d1404,SEQ2SEQ,Bist du gegen etwas allergisch?,"time.n.08   EQU now
+person.n.01 EQU hearer
+short.a.03  AttributeOf -3 Time -2 Degree -1",,,,,0.68,0.5862068965517241,0.6296296296296295
+de/p91/d3245,SEQ2SEQ,Ich mag Eiscreme.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1
+time.n.08   EQU now",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+de/p31/d1905,SEQ2SEQ,Das Eichhörnchen kletterte auf den Baum.,"train.n.01
+arrive.v.01 Theme -1 Time +1 Location +2
+time.n.08   TPR now
+room.n.01",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p31/d3276,SEQ2SEQ,Tom ergriff Marias Hand.,"male.n.02   Name ""Tom""
+flirt.v.01  Agent -1 Time +1 Co-Agent +2
+time.n.08   TPR now
+female.n.02 Name ""Maria""",,0.7741935483870968,0.6486486486486487,0.7058823529411764,0.7741935483870968,0.6486486486486487,0.7058823529411764
+de/p31/d0862,SEQ2SEQ,Tom ist noch im Krankenhaus.,"male.n.02   Name ""Tom""
+be.v.08     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p31/d2713,SEQ2SEQ,Tom lebte früher in Boston.,"male.n.02 Name ""Tom""
+live.v.01 Theme -1 Time +1 Location +2
+time.n.08 TPR now
+city.n.01 Name ""London""",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549
+de/p31/d1626,SEQ2SEQ,Wie viel wiegt ein Fußball?,"measure.n.02 Quantity 2 Unit +1
+box.n.01",,0.6666666666666666,0.3225806451612903,0.4347826086956521,0.6666666666666666,0.3225806451612903,0.4347826086956521
+de/p31/d1390,SEQ2SEQ,Welcher Preis wurde Elizabeth Neufeld verliehen?,"location.n.01 Name ?
+time.n.08     TPR now
+male.n.02     Name ""Jan De Bont""
+direct.v.03   Theme -3 Time -2 Agent -1",,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806
+de/p31/d3060,SEQ2SEQ,Sie ist dreiunddreißig.,"female.n.02
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1",,0.8095238095238095,0.5483870967741935,0.6538461538461537,0.8095238095238095,0.5483870967741935,0.6538461538461537
+de/p31/d1675,SEQ2SEQ,Der Verkehrsstau dauerte eine Stunde.,"child.n.01
+last.v.01        Theme -1 Time +1 Value +2
+time.n.08        EQU now
+credit_card.n.01",,0.7037037037037037,0.5428571428571428,0.6129032258064516,0.7037037037037037,0.5428571428571428,0.6129032258064516
+de/p31/d1903,SEQ2SEQ,Französisch ist ihre Muttersprache.,"urdu.n.01
+be.v.02     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.7777777777777778,0.6363636363636364,0.7000000000000001,0.7777777777777778,0.6363636363636364,0.7000000000000001
+de/p31/d3155,SEQ2SEQ,Der Hund schläft.,"cat.n.01
+leave.v.01 Theme -1 Time +1
+time.n.08  EQU now",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p31/d2344,SEQ2SEQ,Tom reichte Maria ein Glas Milch.,"male.n.02     Name ""Tom""
+give.v.03     Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08     TPR now
+female.n.02   Name ""Maria""
+shoulder.n.01",,0.7567567567567568,0.6511627906976745,0.7000000000000001,0.7567567567567568,0.6511627906976745,0.7000000000000001
+de/p31/d3119,SEQ2SEQ,Es wird etwa zehntausend Yen kosten.,"entity.n.01
+time.n.08    EQU now
+measure.n.02 Quantity 2 Unit +1
+year.n.01
+old.a.01     Theme -4 Time -3 Value -2",,0.6857142857142857,0.5106382978723404,0.5853658536585366,0.6857142857142857,0.5106382978723404,0.5853658536585366
+de/p31/d1995,SEQ2SEQ,Der Jäger erschoss einen Bären.,,Invalid token found '-1' in line: person.n.01 Role Agent -1 Time +1 Patient +2,,,,,,
+de/p31/d1485,SEQ2SEQ,Weder Tom noch Mary gehen in den Laden.,"NEGATION    -1
+person.n.01 EQU speaker
+go.v.01     Theme -1 Time +1 Theme +2
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,0.696969696969697,0.38333333333333336,0.4946236559139786,0.696969696969697,0.38333333333333336,0.4946236559139786
+de/p31/d3385,SEQ2SEQ,Ich mag Erdbeereis.,"person.n.01 EQU speaker
+like.v.03   Experiencer -1 Time +1 Stimulus +2
+time.n.08   EQU now
+person.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p31/d1985,SEQ2SEQ,Tom kichert.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+de/p31/d2450,SEQ2SEQ,Es ist halb zwei.,time.n.08 ClockTime 13:45 EQU now,,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8181818181818182
+de/p31/d2942,SEQ2SEQ,Ich packte Tom am Ellenbogen.,"person.n.01 EQU speaker
+go.v.01     Theme -1 Time +1 Co-Agent +2
+time.n.08   TPR now
+male.n.02",,0.7241379310344828,0.5675675675675675,0.6363636363636365,0.7241379310344828,0.5675675675675675,0.6363636363636365
+de/p31/d1856,SEQ2SEQ,Tom seufzte.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+de/p31/d3382,SEQ2SEQ,Sie kauften sich etwas Zucker.,"person.n.01
+eat.v.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+person.n.01 Role +1
+thief.n.01",,0.7058823529411765,0.7272727272727273,0.7164179104477613,0.7058823529411765,0.7272727272727273,0.7164179104477613
+de/p31/d0793,SEQ2SEQ,Diese Schule wurde 1650 eröffnet.,"hall.n.03
+hold.v.12 Location -1 Time +1
+time.n.08 TPR now",,0.6190476190476191,0.5652173913043478,0.5909090909090909,0.6190476190476191,0.5652173913043478,0.5909090909090909
+de/p31/d2000,SEQ2SEQ,Wir wurden von Seeräubern angegriffen!,"person.n.01 EQU speaker
+time.n.08   TPR now
+person.n.01
+eat.v.01    Patient -3 Time -2 Agent -1",,0.8275862068965517,0.6857142857142857,0.75,0.8275862068965517,0.6857142857142857,0.75
+de/p31/d2958,SEQ2SEQ,Maximilian war ebenso nervös wie Sophie.,"male.n.02 Name ""Bill""
+time.n.08 EQU now
+as.r.01   Theme -2 Co-Theme +2
+tall.a.01 AttributeOf -3 Time -2 Degree -1",,,,,0.75,0.631578947368421,0.6857142857142857
+de/p31/d3545,SEQ2SEQ,Ich schulde ihm 100 $.,"person.n.01  EQU speaker
+owe.v.03     Agent -1 Time +1 Recipient +2 Theme +4
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,,,,0.7435897435897436,0.6744186046511628,0.7073170731707318
+de/p31/d2724,SEQ2SEQ,Jemand hat meine Tasche gestohlen.,"person.n.01
+person.n.01
+bathtub.n.01
+drown.v.04   Agent -2 Patient -1 Time +1
+time.n.08    TPR now",,0.59375,0.6551724137931034,0.6229508196721311,0.59375,0.6551724137931034,0.6229508196721311
+de/p31/d3277,SEQ2SEQ,Tom süßt seinen Tee mit Honig statt mit Zucker.,"male.n.02     Name ""Tom""
+fill.v.01     Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08     TPR now
+female.n.02   Name ""Maria""
+shoulder.n.01",,0.6486486486486487,0.48,0.5517241379310345,0.6486486486486487,0.48,0.5517241379310345
+de/p31/d1828,SEQ2SEQ,Sie kaufte einen Staubsauger im Supermarkt.,"female.n.02
+win.v.01    Agent -1 Time +1 Theme +2 Destination +3
+time.n.08   TPR now
+stone.n.01
+tree.n.01",,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7272727272727273
+de/p31/d3379,SEQ2SEQ,Sie hat mich hereingelegt.,"female.n.02
+person.n.01 EQU speaker
+trick.v.01  Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.8620689655172413,0.8620689655172413
+de/p52/d3368,SEQ2SEQ,Meine Frau ist Polin.,"tie.n.01  User speaker
+time.n.08 EQU now
+red.a.01  ColourOf -2 Time -1",,0.6521739130434783,0.3488372093023256,0.4545454545454546,0.6521739130434783,0.3488372093023256,0.4545454545454546
+de/p31/d1616,SEQ2SEQ,Er starb vor zehn Jahren.,"male.n.02
+weigh.v.01 Theme -1 Time +1 Value +2
+time.n.08  TPR now
+score.n.03 Value 4-1",,0.6206896551724138,0.4864864864864865,0.5454545454545455,0.6206896551724138,0.4864864864864865,0.5454545454545455
+de/p31/d1966,SEQ2SEQ,Ich hole dich um sechs Uhr ab.,"person.n.01      EQU speaker
+get_up.v.02      Agent -1 Time +1 Theme +2
+time.n.08        EQU now
+credit_card.n.01",,0.7241379310344828,0.6363636363636364,0.6774193548387097,0.7241379310344828,0.6363636363636364,0.6774193548387097
+de/p52/d2976,SEQ2SEQ,Ich spreche kein Schwedisch.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Theme +2
+time.n.08   EQU now
+person.n.01",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p52/d1489,SEQ2SEQ,Tom las das Etikett auf der Flasche.,"male.n.02   Name ""Tom""
+put.v.01    Agent -1 Time +1 Theme +2 Destination +3
+time.n.08   TPR now
+female.n.02
+face.n.01",,0.6857142857142857,0.6857142857142857,0.6857142857142857,0.6857142857142857,0.6857142857142857,0.6857142857142857
+de/p31/d1585,SEQ2SEQ,Du baust Nähmaschinen zusammen.,"person.n.01 EQU hearer
+smirk.v.01  Agent -1 Time +1
+time.n.08   EQU now",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.8260869565217391,0.6551724137931034,0.7307692307692308
+de/p52/d1672,SEQ2SEQ,Du bist größer als sie.,"person.n.01 EQU hearer
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -2 Degree -1",,,,,0.72,0.5,0.5901639344262295
+de/p31/d1834,SEQ2SEQ,Das Blasorchester spielte drei Märsche.,"song.n.01
+last.v.01    Theme -1 Time +1 Value +2
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.4857142857142857,0.5862068965517241,0.53125,0.4857142857142857,0.5862068965517241,0.53125
+de/p52/d2324,SEQ2SEQ,Fünfzehn ist keine Primzahl.,"times.n.02
+NEGATION   -1
+time.n.08  EQU now
+easy.a.01  AttributeOf -2 Time -1",,0.34782608695652173,0.47058823529411764,0.39999999999999997,0.34782608695652173,0.47058823529411764,0.39999999999999997
+de/p52/d2223,SEQ2SEQ,Die Mütter nähen.,"cat.n.01
+sleep.v.01 Agent -1 Time +1
+time.n.08  EQU now",,0.7619047619047619,0.5925925925925926,0.6666666666666666,0.7619047619047619,0.5925925925925926,0.6666666666666666
+de/p71/d3001,SEQ2SEQ,Er fuhr sein Auto nach Yokohama.,,Invalid token found '-1' in line: female.n.02 Name User -1,,,,,,
+de/p52/d1596,SEQ2SEQ,Ich schlug ihm auf das Kinn.,"person.n.01    EQU speaker
+telegraph.v.01 Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08      TPR now
+male.n.02
+name.n.01",,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429,0.7428571428571429
+de/p52/d2057,SEQ2SEQ,Keiner von uns ist ein Feigling.,"NEGATION       -1
+person.n.01
+NEGATION       -1
+time.n.08      EQU now
+beautiful.a.01 AttributeOf -2 Time -1",,0.6,0.3488372093023256,0.4411764705882353,0.6,0.3488372093023256,0.4411764705882353
+de/p52/d3385,SEQ2SEQ,Tom fuhr zur Schule.,"male.n.02    Name ""Tom""
+get_out.v.01 Theme -1 Time +1 Source +2
+time.n.08    TPR now
+tree.n.01",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034
+de/p52/d1897,SEQ2SEQ,Das Boot segelte über den Pazifischen Ozean.,"fire.n.01
+destroy.v.01 Causer -1 Time +1 Recipient +2 Theme +3
+time.n.08    TPR now
+female.n.02
+book.n.02    User -1",,0.5294117647058824,0.6206896551724138,0.5714285714285715,0.5294117647058824,0.6206896551724138,0.5714285714285715
+de/p52/d3066,SEQ2SEQ,Er hat Alzheimer.,"male.n.02
+dance.v.02 Theme -1 Time +1
+time.n.08  TPR now",,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+de/p52/d1514,SEQ2SEQ,Anton schnitzte mit einem Messer seinen Namen in einen Baum.,"male.n.02   Name ""Roy""
+fasten.v.01 Agent -1 Time +1 Recipient +2 Source +3
+time.n.08   TPR now
+female.n.02
+water.n.06",,0.6,0.5,0.5454545454545454,0.6,0.5,0.5454545454545454
+de/p52/d1677,SEQ2SEQ,Dieses Café ist gemütlich.,"entity.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p52/d3216,SEQ2SEQ,Abrams jagte Browne.,"event.v.01  Participant +1
+female.n.02 Name ""Liz Mohn""
+kneel.v.01  Agent -1 Time +1
+time.n.08   TPR now",,0.6206896551724138,0.5806451612903226,0.6000000000000001,0.6206896551724138,0.5806451612903226,0.6000000000000001
+de/p52/d1971,SEQ2SEQ,Wir verkaufen Orangensaft.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+chess.n.02",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p52/d0761,SEQ2SEQ,"Die Einnahmen von Tom Online sind um 38,5% gestiegen.","movie.n.01  Name ?
+time.n.08   TPR now
+time.n.08   TPR now
+person.n.01 Theme -2 Time -1",,0.5666666666666667,0.3953488372093023,0.46575342465753417,0.5666666666666667,0.3953488372093023,0.46575342465753417
+de/p52/d3137,SEQ2SEQ,Mir tut der Nacken weh.,"person.n.01 EQU speaker
+need.v.01   Pivot -1 Time +1 Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.6774193548387096,0.7241379310344828,0.7,0.6774193548387096,0.7241379310344828,0.7
+de/p52/d1544,SEQ2SEQ,Dieses Huhn ist verkocht.,"offer.n.02
+adjourn.v.01 Theme -1 Time +1
+time.n.08    EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p52/d3190,SEQ2SEQ,Niemand ist intelligenter als er.,"NEGATION    -1
+person.n.01
+time.n.08   EQU now
+tall.a.01
+happy.a.01  Experiencer -3 Time -2 Degree -1",,0.6896551724137931,0.5555555555555556,0.6153846153846154,0.6896551724137931,0.5555555555555556,0.6153846153846154
+de/p52/d1926,SEQ2SEQ,Tom spendete dem Museum drei Bilder.,"male.n.02   Name ""Tom""
+pay.v.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+water.n.06",,0.7142857142857143,0.6756756756756757,0.6944444444444444,0.7142857142857143,0.6756756756756757,0.6944444444444444
+de/p71/d3296,SEQ2SEQ,Ich fällte einen Baum.,"person.n.01      EQU speaker
+shear.v.02       Agent -1 Time +1 Theme +2
+time.n.08        EQU now
+credit_card.n.01",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p71/d3472,SEQ2SEQ,Du bist verwirrt.,"person.n.01 EQU hearer
+time.n.08   EQU now
+broken.a.01 AttributeOf -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p71/d2599,SEQ2SEQ,Ich aß die grünen Äpfel.,"person.n.01 EQU speaker
+keep.v.08   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.7931034482758621,0.6571428571428571,0.71875,0.7931034482758621,0.6571428571428571,0.71875
+de/p52/d0808,SEQ2SEQ,"Mein Bruder ist zwei Jahre älter als ich, aber er ist drei Zentimeter kleiner.","person.n.01 Role +1
+sister.n.01 Of speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -2 Degree -1
+person.n.01 EQU speaker",,0.7567567567567568,0.27722772277227725,0.4057971014492754,0.7567567567567568,0.27722772277227725,0.4057971014492754
+de/p71/d3532,SEQ2SEQ,Diese Mauer ist höher als jene.,"firm.n.01
+time.n.08      EQU now
+beautiful.a.01 AttributeOf -2 Time -1 Value +",,0.6956521739130435,0.47058823529411764,0.5614035087719297,0.6956521739130435,0.47058823529411764,0.5614035087719297
+de/p71/d2621,SEQ2SEQ,"Jim mag keine Äpfel, oder?","male.n.02    Name ""Tom""
+NEGATION     -1
+NEGATION     -1
+time.n.08    EQU now
+ashamed.a.01 Experiencer -2 Time -1",,0.6296296296296297,0.5483870967741935,0.5862068965517241,0.6296296296296297,0.5483870967741935,0.5862068965517241
+de/p71/d1643,SEQ2SEQ,Ich stand um sechs auf.,"person.n.01 EQU speaker
+work.v.01   Agent -1 Time +1
+time.n.08   TPR now",,0.782608695652174,0.72,0.7499999999999999,0.782608695652174,0.72,0.7499999999999999
+de/p71/d2866,SEQ2SEQ,Sie mag kurze Röcke.,"female.n.02
+time.n.08   EQU now
+afraid.a.01 Experiencer -2 Time -1 Stimulus +1
+person.n.01",,0.6666666666666666,0.5454545454545454,0.6,0.6666666666666666,0.5454545454545454,0.6
+de/p71/d0906,SEQ2SEQ,Tom spitzte einen Bleistift an.,"male.n.02       Name ""Tom""
+switch_off.v.01 Agent -1 Time +1 Patient +2
+time.n.08       TPR now
+apple.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p71/d0917,SEQ2SEQ,Maria wurde wegen Ladendiebstahls verhaftet.,"female.n.02 Name ""Mary""
+time.n.08   TPR now
+murder.v.01 Patient -2 Time -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+de/p71/d0860,SEQ2SEQ,Ich bin müde.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p71/d2552,SEQ2SEQ,Maria kreischte.,"female.n.02 Name ""Maria""
+kneel.v.01  Agent -1 Time +1
+time.n.08   EQU now",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p71/d0712,SEQ2SEQ,"""Der Konsum von Kindern"" wurde von Susan Linn geschrieben.","company.n.01 Name ?
+time.n.08    TPR now
+male.n.02    Name ""Jan De Bont""
+direct.v.03  Theme -3 Time -2 Agent -1",,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806
+de/p71/d1795,SEQ2SEQ,Tom holte einen Stift heraus.,"male.n.02  Name ""Tom""
+drive.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+beer.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p71/d1695,SEQ2SEQ,Thomas Edison hat die Glühbirne erfunden.,"male.n.02       Name ""Edison""
+light_bulb.n.01
+invent.v.01     Agent -2 Theme -1 Time +1
+time.n.08       TPR now",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p72/d2936,SEQ2SEQ,Ich bin ein ehemaliger Marinesoldat.,"person.n.01          EQU speaker
+be.v.08              Theme -1 Time +1 Co-Theme +2
+time.n.08            EQU now
+person.n.01          Role +1
+baseball_player.n.01",,0.8,0.6511627906976745,0.7179487179487181,0.8,0.6511627906976745,0.7179487179487181
+de/p72/d3507,SEQ2SEQ,Zwei Schafe wurden von einem Wolf getötet.,"person.n.01   Role +1
+quantity.n.01 APX +1
+quantity.n.01 APX +1
+quantity.n.01 EQU 20
+measure.n.02  Quantity -2 Unit +1
+yen.n.02",,0.3076923076923077,0.41379310344827586,0.35294117647058826,0.3076923076923077,0.41379310344827586,0.35294117647058826
+de/p72/d2962,SEQ2SEQ,Jeder Einzelne zahlte 7.000 Dollar.,"NEGATION     -1
+person.n.01
+NEGATION     -1
+pay.v.01     Agent -1 Time +1 Theme +3
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.7948717948717948,0.7948717948717948,0.7948717948717948,0.7948717948717948,0.7948717948717948,0.7948717948717948
+de/p72/d1494,SEQ2SEQ,Wir haben 3 zu 0 verloren.,"person.n.01 EQU speaker
+fox.n.01
+adopt.v.05  Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p72/d2326,SEQ2SEQ,Er starb an einem Herzanfall.,"male.n.02
+lie.v.02  Theme -1 Time +1 Location +2
+time.n.08 TPR now
+tree.n.01",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p72/d0843,SEQ2SEQ,Er verstieß gegen das Gesetz.,"male.n.02
+throw.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+apple.n.01",,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037
+de/p72/d1641,SEQ2SEQ,Ein Elefant ist ein starkes Tier.,"NEGATION             -1
+hedgehog.n.02
+NEGATION             -1
+be.v.01              Theme -1 Time +1 Co-Theme +2
+time.n.08            EQU now
+person.n.01          Role +1
+baseball_player.n.01",,0.43243243243243246,0.5517241379310345,0.48484848484848486,0.43243243243243246,0.5517241379310345,0.48484848484848486
+de/p72/d0940,SEQ2SEQ,Er wurde gefoltert und ermordet.,"male.n.02
+time.n.08 TPR now
+male.n.02
+kill.v.01 Patient -3 Time -2 Agent -1",,0.6296296296296297,0.4594594594594595,0.53125,0.6296296296296297,0.4594594594594595,0.53125
+de/p72/d2920,SEQ2SEQ,Tom bezahlte es mit Kreditkarte.,"male.n.02   Name ""Tom""
+wear.v.01   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,,,,0.6666666666666666,0.6285714285714286,0.6470588235294118
+de/p72/d0916,SEQ2SEQ,Vielleicht war er krank.,"entity.n.01
+time.n.08   EQU now
+boil.v.05   ColourOf -2 Time -1",,0.47619047619047616,0.43478260869565216,0.4545454545454545,0.47619047619047616,0.43478260869565216,0.4545454545454545
+de/p72/d2908,SEQ2SEQ,Der Techniker kletterte auf den Telefonmast.,"dog.n.01
+sniff.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+apple.n.01",,0.7037037037037037,0.5757575757575758,0.6333333333333334,0.7037037037037037,0.5757575757575758,0.6333333333333334
+de/p72/d1933,SEQ2SEQ,Der Journalist wurde von Terroristen entführt.,"person.n.01  Name ?
+time.n.08    TPR now
+person.n.01  Role +1
+fan.n.02
+acclaim.v.02 Theme -3 Time -2 Agent -1",,0.6,0.5384615384615384,0.5675675675675675,0.6,0.5384615384615384,0.5675675675675675
+de/p72/d0714,SEQ2SEQ,Christo verhüllt den deutschen Reichstag.,"male.n.02   Name ""Mario""
+buy.v.01    Agent -1 Time +1 Theme +2 Destination +3
+time.n.08   TPR now
+female.n.02
+jacket.n.01 User -1",,0.6111111111111112,0.5641025641025641,0.5866666666666667,0.6111111111111112,0.5641025641025641,0.5866666666666667
+de/p72/d2423,SEQ2SEQ,Ich bin enttäuscht über die Nachricht.,"person.n.01 EQU speaker
+time.n.08   EQU now
+tall.a.01
+happy.a.01  Experiencer -3 Time -2 Stimulus -1",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p72/d0760,SEQ2SEQ,Lukoil hat 2004 eine Milliarde Dollar verdient.,"male.n.02    Name ""Rudolf""
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01
+pay.v.01     Agent -3 Theme -2 Time +1
+time.n.08    TPR now",,0.7297297297297297,0.6923076923076923,0.7105263157894737,0.7297297297297297,0.6923076923076923,0.7105263157894737
+de/p72/d2159,SEQ2SEQ,Ich erschlug die Ratte mit einem Stock.,"person.n.01 EQU speaker
+take.v.04   Agent -1 Time +1 Patient +2 Instrument +3
+time.n.08   TPR now
+apple.n.01
+water.n.06",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p72/d2704,SEQ2SEQ,Dieses Tier ist sehr intelligent.,"entity.n.01
+time.n.08      EQU now
+beautiful.a.01 AttributeOf -2 Time -1 Value +",,0.6521739130434783,0.5555555555555556,0.6,0.6521739130434783,0.5555555555555556,0.6
+de/p72/d2957,SEQ2SEQ,Tom hat sich gewaschen.,"male.n.02    Name ""Tom""
+applaud.v.01 Agent -1 Time +1
+time.n.08    TPR now",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p72/d1515,SEQ2SEQ,Tom schreibt gerade an einem Roman.,"male.n.02      Name ""Tom""
+dance.v.02     Theme -1 Time +1 Location +2
+time.n.08      EQU now
+blowtorch.n.01",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p72/d1695,SEQ2SEQ,Er stopfte seine Wäsche in einen großen Sack.,"male.n.02
+throw.v.01  Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+road.n.01
+ground.n.01",,0.7272727272727273,0.5714285714285714,0.64,0.7272727272727273,0.5714285714285714,0.64
+de/p72/d3306,SEQ2SEQ,Sie ist etwas jünger als ich.,"female.n.02
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Degree +1
+more.r.01   Theme -3 Co-Theme +1
+person.n.01 EQU speaker",,0.8333333333333334,0.6818181818181818,0.7499999999999999,0.8333333333333334,0.6818181818181818,0.7499999999999999
+de/p72/d2529,SEQ2SEQ,Du bist nicht weniger hübsch wie sie.,"person.n.01 EQU hearer
+time.n.08   EQU now
+as.r.01     Theme -2 Co-Theme +2
+tall.a.01   AttributeOf -3 Time -2 Degree -1
+person.n.01 EQU speaker",,0.6578947368421053,0.6578947368421053,0.6578947368421053,0.6578947368421053,0.6578947368421053,0.6578947368421053
+de/p72/d0841,SEQ2SEQ,Er ist faul.,"male.n.02
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619
+de/p81/d1878,SEQ2SEQ,Ich traue Politikern nicht.,,Invalid token found '-1' in line: NEGATION -1 -1 Time +1 Experiencer +2,,,,,,
+de/p81/d2077,SEQ2SEQ,Der Diamant funkelte hell.,"train.n.01
+arrive.v.01 Theme -1 Time +1
+time.n.08   TPR now",,0.7619047619047619,0.5925925925925926,0.6666666666666666,0.7619047619047619,0.5925925925925926,0.6666666666666666
+de/p72/d0945,SEQ2SEQ,Der Vogel fliegt.,"wind.n.01
+leak.v.04 Source -1 Time +1
+time.n.08 EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p81/d0711,SEQ2SEQ,Reinventing Comics ist ein Buch von Scott McCloud.,"city.n.01    Name ""Buenos Aires""
+be.v.02      Theme -1 Time +1 Co-Theme +2
+time.n.08    EQU now
+country.n.02 Name ""Argentinien""",,0.6774193548387096,0.5675675675675675,0.6176470588235294,0.6774193548387096,0.5675675675675675,0.6176470588235294
+de/p81/d2669,SEQ2SEQ,Dieses Auto fährt 60 km/h.,"cd.n.04
+cost.v.01    Theme -1 Time +1 Value +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.6857142857142857,0.43636363636363634,0.5333333333333333,0.6857142857142857,0.43636363636363634,0.5333333333333333
+de/p81/d2583,SEQ2SEQ,Ich mag Ihre Krawatte.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+chess.n.02",,0.6551724137931034,0.6129032258064516,0.6333333333333333,0.6551724137931034,0.6129032258064516,0.6333333333333333
+de/p81/d3488,SEQ2SEQ,Meine Schwester hat einen Arzt geheiratet.,"person.n.01  Role +1
+mother.n.01  Of speaker
+pick_up.v.03 Agent -2 Theme -1 Time +1
+time.n.08    TPR now",,0.7333333333333333,0.5365853658536586,0.6197183098591549,0.7333333333333333,0.5365853658536586,0.6197183098591549
+de/p81/d1788,SEQ2SEQ,Ihr Vater ist ein ausgezeichneter Pianist.,"female.n.02
+time.n.08          EQU now
+very.r.01
+understanding.a.01 AttributeOf -3 Time -2 Degree -1",,0.6296296296296297,0.3333333333333333,0.43589743589743585,0.6296296296296297,0.3333333333333333,0.43589743589743585
+de/p81/d1985,SEQ2SEQ,Naoko kann schnell laufen.,"female.n.02  Name ""Emily""
+NEGATION     -1
+time.n.08    EQU now
+potable.a.01 AttributeOf -2 Time -1",,0.44,0.4782608695652174,0.4583333333333333,0.44,0.4782608695652174,0.4583333333333333
+de/p81/d0920,SEQ2SEQ,Sie ist sechs Jahre älter als ich.,"female.n.02
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+year.n.01
+old.a.01     AttributeOf -4 Time -3 Value -2",,0.8,0.56,0.6588235294117648,0.8,0.56,0.6588235294117648
+de/p81/d1855,SEQ2SEQ,Ich habe in der Themse geangelt.,"person.n.01 EQU speaker
+pizza.n.01
+sleep.v.01  Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.7241379310344828,0.6774193548387096,0.7,0.7241379310344828,0.6774193548387096,0.7
+de/p81/d0931,SEQ2SEQ,Tom nickte.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+de/p81/d2814,SEQ2SEQ,Ich habe keinen Durst.,"person.n.01 EQU speaker
+NEGATION    -1
+time.n.08   EQU now
+afraid.a.01 Experiencer -2 Time -1",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+de/p81/d3425,SEQ2SEQ,Dan reinigte seine Zähne mit Zahnseide.,"male.n.02   Name ""Mario""
+buy.v.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+face.n.01",,0.6857142857142857,0.6666666666666666,0.676056338028169,0.6857142857142857,0.6666666666666666,0.676056338028169
+de/p81/d2149,SEQ2SEQ,Jemand öffnete das Fenster.,"person.n.01
+knock.v.02  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+door.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p81/d2615,SEQ2SEQ,Tom rutschte auf einer Bananenschale aus.,"male.n.02 Name ""Tom""
+face.v.02 Agent -1 Time +1 Patient +2
+time.n.08 TPR now
+beer.n.01",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p81/d1398,SEQ2SEQ,Tom nahm seine Gasmaske ab.,"male.n.02       Name ""Tom""
+switch_off.v.01 Agent -1 Time +1 Patient +2
+time.n.08       TPR now
+cow.n.01",,0.7241379310344828,0.7,0.711864406779661,0.7241379310344828,0.7,0.711864406779661
+de/p81/d1707,SEQ2SEQ,Bilal ist größer als Karam.,"female.n.02 Name ""Keisuke""
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Value +",,0.72,0.47368421052631576,0.5714285714285714,0.72,0.47368421052631576,0.5714285714285714
+de/p81/d1518,SEQ2SEQ,Tom verschränkte seine Arme.,"male.n.02 Name ""Tom""
+iron.v.01 Agent -1 Time +1 Patient +2
+time.n.08 TPR now
+cat.n.01",,0.7931034482758621,0.7666666666666667,0.7796610169491527,0.7931034482758621,0.7666666666666667,0.7796610169491527
+de/p81/d0820,SEQ2SEQ,Ich komme aus Shikoku.,"person.n.01 EQU speaker
+live.v.01   Theme -1 Time +1 Location +2
+time.n.08   EQU now
+room.n.01",,0.7241379310344828,0.6774193548387096,0.7,0.7241379310344828,0.6774193548387096,0.7
+de/p02/d0897,SEQ2SEQ,Sie beleidigte ihn.,"female.n.02
+slap.v.01   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+male.n.02",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778
+de/p81/d2278,SEQ2SEQ,Tom spendet Blut.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1 Source +2
+time.n.08  EQU now
+east.n.05",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034
+de/p02/d2340,SEQ2SEQ,Du hast mit ihr geschlafen?,"person.n.01 EQU hearer
+person.n.01
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p02/d2916,SEQ2SEQ,Kens Hund ist weiß.,"male.n.02 Name ""Ken""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+de/p02/d2123,SEQ2SEQ,Wie viele Personen sind gestorben?,"person.n.01 Quantity ?
+die.v.01    Patient -1 Time +1
+time.n.08   TPR now",,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.8695652173913043,0.8695652173913043
+de/p02/d2775,SEQ2SEQ,Unsere Mannschaft gewann 3 zu 0 gegen die Lions.,"hot-air_balloon.n.01 User speaker
+win.v.01             Agent -1 Time +1 Theme +2
+time.n.08            TPR now
+measure.n.02         Quantity 5 Unit +1
+dollar.n.01",,0.5945945945945946,0.5641025641025641,0.5789473684210528,0.5945945945945946,0.5641025641025641,0.5789473684210528
+de/p02/d2723,SEQ2SEQ,Ich wurde von Außerirdischen entführt.,"person.n.01 EQU speaker
+time.n.08   TPR now
+person.n.01 Role +1
+sister.n.01 Of -2",,0.6785714285714286,0.6551724137931034,0.6666666666666666,0.6785714285714286,0.6551724137931034,0.6666666666666666
+de/p02/d3017,SEQ2SEQ,Der berühmte Dirigent lebt in New York.,"movie.n.01
+live.v.01    Theme -1 Time +1 Location +2
+time.n.08    EQU now
+country.n.02 Name ""Argentinien""",,0.7241379310344828,0.5121951219512195,0.6000000000000001,0.7241379310344828,0.5121951219512195,0.6000000000000001
+de/p02/d1850,SEQ2SEQ,Wir arbeiten für Sie.,"person.n.01 EQU speaker
+eat.v.01    Agent -1 Time +1 Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677
+de/p02/d1970,SEQ2SEQ,Der Gefangene wurde freigelassen.,"person.n.01
+time.n.08     TSU now
+truck.n.01
+run_over.v.01 Patient -3 Time -2 Agent -1",,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297
+de/p02/d0932,SEQ2SEQ,Ich habe gerade deinen Brief bekommen.,"person.n.01 EQU speaker
+pizza.n.01
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7586206896551724,0.5945945945945946,0.6666666666666667,0.7586206896551724,0.5945945945945946,0.6666666666666667
+de/p02/d2690,SEQ2SEQ,Tom grillt Fleisch.,"male.n.02  Name ""Tom""
+iron.v.01  Agent -1 Time +1 Patient +2
+time.n.08  EQU now
+chess.n.02",,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724,0.7586206896551724
+de/p02/d3114,SEQ2SEQ,Wir sind beeindruckt.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p02/d2236,SEQ2SEQ,Vielleicht hat Tom Mary geküsst.,"entity.n.01
+time.n.08      TSU now
+male.n.02
+blackmail.v.01 Experiencer -3 Time -2 Agent -1 Time +1
+time.n.08      TPR now",,0.5142857142857142,0.5454545454545454,0.5294117647058822,0.5142857142857142,0.5454545454545454,0.5294117647058822
+de/p02/d3279,SEQ2SEQ,Sasaki Sadako starb am 25. Oktober 1955.,"female.n.02 Name ""Carl Smith""
+die.v.01    Patient -1 Time +1 Source +2
+time.n.08   TPR now
+tree.n.01",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034
+de/p02/d1943,SEQ2SEQ,Ich bin größer als er.,"person.n.01 EQU speaker
+time.n.08   EQU now
+tall.a.01
+happy.a.01  Experiencer -3 Time -2 Degree -1",,0.7241379310344828,0.5833333333333334,0.6461538461538462,0.7241379310344828,0.5833333333333334,0.6461538461538462
+de/p02/d2037,SEQ2SEQ,Tom hat einen Geigerzähler gekauft.,"male.n.02   Name ""Tom""
+key.n.01
+pocket.v.01 Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p02/d2102,SEQ2SEQ,Es ist unter dem Bett versteckt.,"snow.v.01   Time +1 Location +2
+time.n.08   EQU now
+person.n.01",,0.7619047619047619,0.48484848484848486,0.5925925925925926,0.7619047619047619,0.48484848484848486,0.5925925925925926
+de/p02/d3454,SEQ2SEQ,Tom wartet auf Maria.,"male.n.02   Name ""Tom""
+dance.v.02  Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+female.n.02 Name ""Mary""",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677
+de/p02/d1705,SEQ2SEQ,Sie ist in keiner Weise egoistisch.,"female.n.02
+time.n.08          EQU now
+very.r.01
+understanding.a.01 AttributeOf -3 Time -2 Degree -1",,0.5555555555555556,0.6521739130434783,0.6,0.5555555555555556,0.6521739130434783,0.6
+de/p02/d2031,SEQ2SEQ,Tom kann überhaupt nicht schwimmen.,,invalid literal for int() with base 10: 'Agent',,,,,,
+de/p02/d2344,SEQ2SEQ,Tom lernt gerade in der Bibliothek.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1 Location +2
+time.n.08  EQU now
+east.n.05",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p02/d3335,SEQ2SEQ,Dieses Gemälde von Rembrandt ist ein Meisterwerk.,"entity.n.01
+consist.v.04         Theme -1 Time +1 Co-Theme +2
+time.n.08            EQU now
+person.n.01          Role +1
+baseball_player.n.01",,0.6363636363636364,0.6,0.6176470588235293,0.6363636363636364,0.6,0.6176470588235293
+de/p02/d2318,SEQ2SEQ,Sie hat ihm das Geld gegeben.,"female.n.02
+person.n.01   Role +1
+musician.n.01
+marry.v.01    Agent -3 Co-Agent -2 Time -1 Time +1
+time.n.08     TPR now",,0.6176470588235294,0.6363636363636364,0.6268656716417911,0.6176470588235294,0.6363636363636364,0.6268656716417911
+de/p02/d1641,SEQ2SEQ,Zweitausendfünfhundert britische Soldaten bewachten die Grenze.,"female.n.02
+defeat.v.01   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08     TPR now
+female.n.02   Name ""Maria""
+shoulder.n.01",,0.6,0.4883720930232558,0.5384615384615383,0.6,0.4883720930232558,0.5384615384615383
+de/p02/d0917,SEQ2SEQ,Maria wurde von Piraten entführt.,"female.n.02    Name ""Mary""
+time.n.08      TPR now
+male.n.02
+blackmail.v.01 Patient -3 Time -2 Agent -1",,0.6896551724137931,0.5714285714285714,0.625,0.6896551724137931,0.5714285714285714,0.625
+de/p02/d3417,SEQ2SEQ,Mary ölte ihr Fahrrad.,"female.n.02 Name ""Maria""
+design.v.03 Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+female.n.02 Name ""Maria""",,0.6129032258064516,0.6333333333333333,0.6229508196721313,0.6129032258064516,0.6333333333333333,0.6229508196721313
+de/p02/d0713,SEQ2SEQ,9 Menschen wurden von Raman Raghav ermordet.,"male.n.02   Name ?
+time.n.08   TPR now
+male.n.02   Name ""Jan De Bont""
+direct.v.03 Theme -3 Time -2 Agent -1",,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516
+de/p02/d1581,SEQ2SEQ,Sie gehorcht ihm.,"female.n.02
+slap.v.01   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+male.n.02",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p02/d2227,SEQ2SEQ,Ich mache eine Ausbildung bei Ford.,"person.n.01 EQU speaker
+keep.v.08   Agent -1 Time +1 Theme +2 Theme +3
+time.n.08   TPR now
+person.n.01 EQU speaker",,,,,0.6363636363636364,0.5675675675675675,0.6000000000000001
+de/p02/d2162,SEQ2SEQ,Tom hat keinen Gesetzen zuwidergehandelt.,"male.n.02   Name ""Tom""
+NEGATION    -1
+time.n.08   EQU now
+afraid.a.01 Experiencer -2 Time -1",,0.68,0.5483870967741935,0.6071428571428571,0.68,0.5483870967741935,0.6071428571428571
+de/p02/d2477,SEQ2SEQ,Ich verwechsle John immer mit Paul.,"person.n.01 EQU speaker
+live.v.01   Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01 Role +1
+sister.n.01 Of speaker",,0.5405405405405406,0.40816326530612246,0.46511627906976744,0.5405405405405406,0.40816326530612246,0.46511627906976744
+de/p02/d2479,SEQ2SEQ,Tom umarmte Mary.,"male.n.02   Name ""Tom""
+flirt.v.01  Agent -1 Time +1 Co-Agent +2
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549
+de/p02/d2269,SEQ2SEQ,Ihr Hund ist nicht besonders flink.,"female.n.02
+time.n.08          EQU now
+very.r.01
+understanding.a.01 AttributeOf -3 Time -2 Degree -1",,0.7037037037037037,0.5135135135135135,0.59375,0.7037037037037037,0.5135135135135135,0.59375
+de/p02/d0847,SEQ2SEQ,"Sie wusste, dass John sie liebte.","female.n.02
+pick.v.02   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+person.n.01 EQU speaker
+entity.n.01",,0.4857142857142857,0.3269230769230769,0.3908045977011494,0.4857142857142857,0.3269230769230769,0.3908045977011494
+de/p02/d1800,SEQ2SEQ,Mit wem spreche ich?,"person.n.01 Name ?
+coach.v.01  Agent -1 Time +1 Experiencer +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677
+de/p02/d2639,SEQ2SEQ,Tom und Maria spielten Schach.,"male.n.02   Name ""Tom""
+have.v.02   Pivot -1 Time +1 Theme +2
+time.n.08   TPR now
+female.n.02 Name ""Maria""",,0.7419354838709677,0.5348837209302325,0.6216216216216216,0.7419354838709677,0.5348837209302325,0.6216216216216216
+de/p42/d1889,SEQ2SEQ,Der Hund grub ein Loch.,,Invalid token found '-1' in line: person.n.01 Role Agent -1 Time +1 Patient +2,,,,,,
+de/p02/d0712,SEQ2SEQ,Kraft verkaufte Celestial Seasonings.,"times.n.02  Theme 11 Time +1 Location +2
+time.n.08   EQU now
+person.n.01",,0.5652173913043478,0.41935483870967744,0.4814814814814815,0.5652173913043478,0.41935483870967744,0.4814814814814815
+de/p02/d1435,SEQ2SEQ,Sie pflanzten Apfelbäume.,"person.n.01
+knock.v.02  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+person.n.01",,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037
+de/p02/d2551,SEQ2SEQ,Tom war schon dreimal in Boston.,"male.n.02    Name ""Tom""
+time.n.08    EQU now
+country.n.02 Name ""Japan""
+make.v.06    Patient -3 Time -2 Location -1",,0.6451612903225806,0.5128205128205128,0.5714285714285714,0.6451612903225806,0.5128205128205128,0.5714285714285714
+de/p02/d2472,SEQ2SEQ,Dieser Pinguin ist echt süß!,"lake.n.01
+time.n.08 EQU now
+easy.a.01 AttributeOf -2 Time -1 Value +",,0.6956521739130435,0.5925925925925926,0.6399999999999999,0.6956521739130435,0.5925925925925926,0.6399999999999999
+de/p02/d2984,SEQ2SEQ,Mein Vater ist zwei Jahre jünger als meine Mutter.,"person.n.01 Role +1
+sister.n.01 Of speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -2 Stimulus -1",,0.7333333333333333,0.34375,0.4680851063829787,0.7333333333333333,0.34375,0.4680851063829787
+de/p02/d3292,SEQ2SEQ,Du trägst dein T-Shirt verkehrt herum.,"person.n.01 EQU hearer
+towel.n.01
+count.v.01  Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.7586206896551724,0.5945945945945946,0.6666666666666667,0.7586206896551724,0.5945945945945946,0.6666666666666667
+de/p02/d1823,SEQ2SEQ,Das Pferd ist nicht weiß.,"entity.n.01
+NEGATION    -1
+time.n.08   EQU now
+easy.a.01   AttributeOf -2 Time -1",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+de/p02/d2207,SEQ2SEQ,Tom ist nicht berühmt.,"male.n.02  Name ""Tom""
+NEGATION   -1
+time.n.08  EQU now
+happy.a.01 Experiencer -2 Time -1",,0.8,0.8,0.8000000000000002,0.8,0.8,0.8000000000000002
+de/p02/d2210,SEQ2SEQ,Lämmchen sind sehr süß.,"times.n.02
+time.n.08  EQU now
+very.r.01
+deep.a.03  AttributeOf -3 Time -2 Degree -1",,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037,0.7037037037037037
+de/p42/d2326,SEQ2SEQ,Er verbrachte ein paar Monate in Schottland.,"male.n.02
+weigh.v.01   Theme -1 Time +1 Location +4
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,,,,0.7222222222222222,0.6046511627906976,0.6582278481012659
+de/p02/d2505,SEQ2SEQ,Sie trägt falsche Wimpern.,"female.n.02
+sew.v.02    Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.6666666666666666,0.46153846153846156,0.5454545454545455,0.6666666666666666,0.46153846153846156,0.5454545454545455
+de/p02/d1535,SEQ2SEQ,Der Löwe brüllt.,"person.n.01   Role +1
+prisoner.n.01
+escape.v.01   Theme -2 Time +1
+time.n.08     TPR now",,0.48148148148148145,0.6190476190476191,0.5416666666666666,0.48148148148148145,0.6190476190476191,0.5416666666666666
+de/p02/d2217,SEQ2SEQ,Er spricht fünf Sprachen.,"male.n.02
+throw.v.01  Agent -1 Time +1 Theme +2
+time.n.08   TPR now
+person.n.01 EQU speaker",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034
+de/p02/d3148,SEQ2SEQ,Er hat das Auto entworfen.,"male.n.02
+bull's_eye.n.03
+hit.v.16        Agent -2 Patient -1 Time +1
+time.n.08       TPR now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p42/d2376,SEQ2SEQ,Tom ist allergisch auf Milchprodukte.,"male.n.02  Name ""Tom""
+time.n.08  EQU now
+very.r.01
+happy.a.01 Experiencer -3 Time -2 Degree -1",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p42/d2299,SEQ2SEQ,Ich habe Tom verziehen.,"person.n.01    EQU speaker
+male.n.02
+blackmail.v.01 Agent -2 Patient -1 Time +1
+time.n.08      TPR now",,0.7931034482758621,0.7419354838709677,0.7666666666666667,0.7931034482758621,0.7419354838709677,0.7666666666666667
+de/p42/d3088,SEQ2SEQ,Tom tat etwas Reis in eine Schüssel.,"male.n.02   Name ""Tom""
+put.v.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+water.n.06",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p02/d1537,SEQ2SEQ,Beethoven hat neun Sinfonien geschrieben.,"female.n.02 Name ""Steven Jenkins""
+time.n.08   TPR now
+person.n.01 Quantity +
+bomb.v.01   Patient -2 Time -1",,0.6,0.5806451612903226,0.5901639344262295,0.6,0.5806451612903226,0.5901639344262295
+de/p02/d2758,SEQ2SEQ,Wessen Handtasche ist das?,"person.n.01  Name ?
+bicycle.n.01 User -1
+be.v.02      Co-Theme -1 Time +1 Theme +2
+time.n.08    EQU now
+entity.n.01",,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8285714285714286,0.8285714285714286
+de/p42/d3112,SEQ2SEQ,Dieser Bleistift gehört mir.,"entity.n.01
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p42/d0760,SEQ2SEQ,Hooper hat ein Haus in Portland gekauft.,"male.n.02 Name ""Allan Chapman""
+work.v.02 Agent -2 Theme -1 Time +1
+time.n.08 TPR now",,,,,0.64,0.43243243243243246,0.5161290322580645
+de/p42/d0765,SEQ2SEQ,Wolfgang Amadeus Mozart wurde in Salzburg geboren.,"male.n.02   Name ""El-Nashar""
+time.n.08   TPR now
+male.n.02   Name ""Jan De Bont""
+direct.v.03 Theme -3 Time -2 Location -1",,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806,0.6451612903225806
+de/p42/d2000,SEQ2SEQ,Das Hemd muss gebügelt werden.,"entity.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.5714285714285714,0.5217391304347826,0.5454545454545454,0.5714285714285714,0.5217391304347826,0.5454545454545454
+de/p42/d2835,SEQ2SEQ,Auch ich mag Süßigkeiten.,"time.n.08   EQU speaker
+like.v.03   Experiencer -1 Time +1 Stimulus +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.6774193548387096,0.7241379310344828,0.7,0.6774193548387096,0.7241379310344828,0.7
+de/p01/d3319,SEQ2SEQ,Er langweilt jeden.,,invalid literal for int() with base 10: 'Agent',,,,,,
+de/p42/d2885,SEQ2SEQ,Träumen Katzen?,"cat.n.01
+meow.v.01 Agent -1 Time +1
+time.n.08 EQU now",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p42/d2781,SEQ2SEQ,Sie rührte die Suppe mit einem Löffel um.,"female.n.02
+wear.v.01   Agent -1 Time +1 Patient +2 Instrument +3
+time.n.08   TPR now
+apple.n.01
+water.n.06",,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7272727272727273,0.7272727272727273
+de/p42/d2099,SEQ2SEQ,Meine Mama hat meinen Papa in den 80ern geheiratet.,"person.n.01 Role +1
+mother.n.01 Of speaker
+father.n.01 Of -2
+pay.v.01    Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.6944444444444444,0.5555555555555556,0.6172839506172839,0.6944444444444444,0.5555555555555556,0.6172839506172839
+de/p01/d2062,SEQ2SEQ,Ted liebt seine Frau Elizabeth.,,"Invalid token found '-1' in line: female.n.02 Name ""Mario"" -1 Time -1 Time +1 Theme +2",,,,,,
+de/p42/d2409,SEQ2SEQ,Ich bin drei Jahre jünger als du.,"person.n.01  EQU speaker
+time.n.08    EQU now
+measure.n.02 Quantity 2 Unit +1
+year.n.01
+old.a.01     AttributeOf -4 Time -3 Value -2",,0.7837837837837838,0.5576923076923077,0.651685393258427,0.7837837837837838,0.5576923076923077,0.651685393258427
+de/p42/d0712,SEQ2SEQ,André Henri Constant van Hasselt wurde in Maastricht ausgebildet.,"company.n.01 Name ""El-Nashar""
+time.n.08    TPR now
+country.n.02 Name ""Japan""
+engage.v.05  Theme -3 Time -2 Location -1",,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516
+de/p42/d2863,SEQ2SEQ,Sie bügelte ihr Shirt.,"female.n.02
+slap.v.01   Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+male.n.02",,0.7407407407407407,0.7142857142857143,0.7272727272727273,0.7407407407407407,0.7142857142857143,0.7272727272727273
+de/p42/d3160,SEQ2SEQ,Der Hund knurrte.,"cat.n.01
+leave.v.01 Theme -1 Time +1
+time.n.08  EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p42/d3003,SEQ2SEQ,Es ist fünf vor neun.,time.n.08 ClockTime 16:30 EQU now,,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8181818181818182,0.8181818181818182
+de/p42/d1745,SEQ2SEQ,Ich klettere auf eine Palme.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+sheep.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p42/d0945,SEQ2SEQ,Ich ess' den Apfel.,"person.n.01 EQU speaker
+eat.v.01    Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+sheep.n.01",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p42/d1926,SEQ2SEQ,Sie spielte einen Walzer auf dem Klavier.,"female.n.02
+win.v.01    Agent -1 Time +1 Theme +2 Destination +3
+time.n.08   TPR now
+stone.n.01
+tree.n.01",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p01/d2144,SEQ2SEQ,Jeder kennt jeden.,"NEGATION    -1
+person.n.01
+NEGATION    -1
+like.v.03   Experiencer -1 Time +1 Stimulus +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.696969696969697,0.6571428571428571,0.676470588235294,0.696969696969697,0.6571428571428571,0.676470588235294
+de/p42/d2430,SEQ2SEQ,Sie hat ihn erstochen.,"female.n.02
+male.n.02
+pinch.v.01  Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148
+de/p01/d2455,SEQ2SEQ,Ich hustete.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1
+time.n.08   EQU now",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p01/d0784,SEQ2SEQ,Bob war sehr glücklich.,"male.n.02 Name ""Bill""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1 Value +",,0.64,0.5517241379310345,0.5925925925925927,0.64,0.5517241379310345,0.5925925925925927
+de/p01/d0801,SEQ2SEQ,Haben Sie eine Kreditkarte?,"person.n.01
+eat.v.01         Agent -1 Time +1 Theme +2
+time.n.08        EQU now
+credit_card.n.01",,0.7407407407407407,0.6896551724137931,0.7142857142857143,0.7407407407407407,0.6896551724137931,0.7142857142857143
+de/p01/d2355,SEQ2SEQ,Du bist ungezogen.,"person.n.01 EQU hearer
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
+de/p01/d3260,SEQ2SEQ,Er ist kein guter Fahrer.,"male.n.02
+NEGATION  -1
+time.n.08 EQU now
+as.r.01   Theme -2 Time -1 Value +",,0.68,0.4146341463414634,0.5151515151515151,0.68,0.4146341463414634,0.5151515151515151
+de/p01/d1945,SEQ2SEQ,Ich schreibe Gedichte.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1
+time.n.08   EQU now",,0.8260869565217391,0.6551724137931034,0.7307692307692308,0.8260869565217391,0.6551724137931034,0.7307692307692308
+de/p01/d0877,SEQ2SEQ,Grüezi.,"shit.n.01
+stink.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.38095238095238093,0.5333333333333333,0.4444444444444444,0.38095238095238093,0.5333333333333333,0.4444444444444444
+de/p01/d2778,SEQ2SEQ,Das Wörterbuch enthält ungefähr eine halbe Million Wörter.,"entity.n.01
+cost.v.01    Theme -1 Time +1 Value +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.6,0.5121951219512195,0.5526315789473684,0.6,0.5121951219512195,0.5526315789473684
+de/p01/d1404,SEQ2SEQ,"Ich weiß nicht, wo Toms Büro ist.","person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.6129032258064516,0.30158730158730157,0.40425531914893614,0.6129032258064516,0.30158730158730157,0.40425531914893614
+de/p01/d1554,SEQ2SEQ,Er fällt Bäume auf dem Berg.,"male.n.02
+weigh.v.01    Theme -1 Time +1 Location +2
+time.n.08     TPR now
+location.n.01 STI +1
+couch.n.01",,0.6363636363636364,0.6363636363636364,0.6363636363636364,0.6363636363636364,0.6363636363636364,0.6363636363636364
+de/p01/d3362,SEQ2SEQ,Tom ist vor drei Jahren gestorben.,"male.n.02    Name ""Tom""
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+year.n.01
+old.a.01     Theme -4 Time -3 Value -2",,0.7297297297297297,0.6923076923076923,0.7105263157894737,0.7297297297297297,0.6923076923076923,0.7105263157894737
+de/p01/d1908,SEQ2SEQ,Wir sind unglücklich.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p01/d1817,SEQ2SEQ,Sie ist keine gute Köchin.,"female.n.02
+NEGATION    -1
+time.n.08   EQU now
+as.r.01     Theme -2 Time -1 Value +",,0.68,0.4146341463414634,0.5151515151515151,0.68,0.4146341463414634,0.5151515151515151
+de/p01/d1918,SEQ2SEQ,Sue hob einen Bleistift vom Fußboden auf.,"male.n.02   Name ""Roy""
+fasten.v.01 Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+apple.n.01
+water.n.06",,0.6285714285714286,0.6285714285714286,0.6285714285714286,0.6285714285714286,0.6285714285714286,0.6285714285714286
+de/p01/d0925,SEQ2SEQ,Es ist sehr stickig.,"entity.n.01
+time.n.08   EQU now
+easy.a.01   AttributeOf -2 Time -1",,0.8095238095238095,0.6296296296296297,0.7083333333333334,0.8095238095238095,0.6296296296296297,0.7083333333333334
+de/p01/d3278,SEQ2SEQ,Liu Bei und Zhuge Liang sind ein unschlagbares Team.,"female.n.02 Name ""Lucy""
+be.v.08     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.6451612903225806,0.40816326530612246,0.5000000000000001,0.6451612903225806,0.40816326530612246,0.5000000000000001
+de/p01/d3026,SEQ2SEQ,Ihre Zähne waren weiß.,"female.n.02
+nail.n.01   PartOf -1
+time.n.08   TPR now
+red.a.01    ColourOf -2 Time -1",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778
+de/p01/d2471,SEQ2SEQ,Mein Vater mag starken Kaffee.,"person.n.01 Role +1
+mother.n.01 Of speaker
+play.v.01   Agent -2 Time +1 Theme +2
+time.n.08   EQU now
+entity.n.01",,0.6857142857142857,0.5853658536585366,0.6315789473684211,0.6857142857142857,0.5853658536585366,0.6315789473684211
+de/p01/d1641,SEQ2SEQ,Tom ist genial.,"male.n.02  Name ""Tom""
+time.n.08  EQU now
+happy.a.01 Experiencer -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p01/d2510,SEQ2SEQ,Ich habe in dem Geschäft einen Hut gekauft.,"person.n.01 EQU speaker
+egg.n.02
+adopt.v.05  Agent -2 Theme -1 Time +1
+time.n.08   TPR now",,0.7241379310344828,0.6,0.65625,0.7241379310344828,0.6,0.65625
+de/p01/d0761,SEQ2SEQ,Pierce wohnt in der E. 28th Street.,"male.n.02 Name ""Laurie""
+live.v.01 Theme -1 Time +1 Location +2
+time.n.08 EQU now
+city.n.01 Name ""Melbourne""",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677
+de/p01/d1934,SEQ2SEQ,Der Prinz erschlug den Drachen.,"dog.n.01
+sniff.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+apple.n.01",,0.7407407407407407,0.6060606060606061,0.6666666666666666,0.7407407407407407,0.6060606060606061,0.6666666666666666
+de/p01/d0818,SEQ2SEQ,Ich habe das Buch für zehn Dollar gekauft.,"person.n.01   EQU speaker
+quantity.n.01 APX +1
+quantity.n.01 EQU speaker
+measure.n.02  Quantity 3
+buy.v.01      Agent -4 Asset -3 Theme -1 Time +1
+time.n.08     TPR now",,0.6666666666666666,0.6976744186046512,0.6818181818181818,0.6666666666666666,0.6976744186046512,0.6818181818181818
+de/p01/d0958,SEQ2SEQ,Hallo!,"event.v.01  Participant +1
+female.n.02 Name ""Liz Mohn""",,0.4666666666666667,0.4666666666666667,0.4666666666666667,0.4666666666666667,0.4666666666666667,0.4666666666666667
+de/p01/d1895,SEQ2SEQ,Er ist ein Verräter.,"male.n.02
+be.v.08     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p01/d1973,SEQ2SEQ,Wen hast du gewählt?,"person.n.01 Name ?
+have.v.04   Pivot -1 Time +1 Theme +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096
+de/p01/d1681,SEQ2SEQ,Er wechselte den verletzten Spieler aus.,"male.n.02
+throw.v.01 Agent -1 Time +1 Theme +2 Destination +3
+time.n.08  TPR now
+stone.n.01
+water.n.06",,0.6363636363636364,0.5384615384615384,0.5833333333333334,0.6363636363636364,0.5384615384615384,0.5833333333333334
+de/p01/d2404,SEQ2SEQ,Alle Schüler sind anwesend.,"NEGATION    -1
+person.n.01
+NEGATION    -1
+time.n.08   EQU now
+red.a.01    ColourOf -2 Time -1",,0.76,0.6129032258064516,0.6785714285714285,0.76,0.6129032258064516,0.6785714285714285
+de/p01/d2627,SEQ2SEQ,Sie zeigte ihm das Foto.,"female.n.02
+lay.v.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+male.n.02
+name.n.01",,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7575757575757576,0.7575757575757576
+de/p01/d2214,SEQ2SEQ,Tom war ein Erpresser.,"male.n.02   Name ""Tom""
+be.v.08     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.7931034482758621,0.6571428571428571,0.71875,0.7931034482758621,0.6571428571428571,0.71875
+de/p01/d1277,SEQ2SEQ,http://www.anl.siemens.de/news/press_d.html,"event.v.01  Participant +1
+female.n.02 Name ""Liz Mohn""",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p01/d0937,SEQ2SEQ,Ich komme aus Portugal.,"person.n.01 EQU speaker
+live.v.01   Theme -1 Time +1 Location +2
+time.n.08   EQU now
+room.n.01",,0.6896551724137931,0.6451612903225806,0.6666666666666667,0.6896551724137931,0.6451612903225806,0.6666666666666667
+de/p01/d2590,SEQ2SEQ,Daisuke erklomm den Gipfel.,"male.n.02  Name ""Mayuko""
+smile.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+door.n.01",,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034,0.6551724137931034
+de/p01/d3263,SEQ2SEQ,Alle hatten Hunger.,"NEGATION    -1
+person.n.01
+NEGATION    -1
+have.v.02   Pivot -1 Time +1
+time.n.08   TPR now",,0.72,0.72,0.72,0.72,0.72,0.72
+de/p01/d2553,SEQ2SEQ,Mein Chef leidet an einer schlimmen Erkältung.,"person.n.01 Role +1
+mother.n.01 Of speaker
+itch.v.03   Patient -1 Time +1
+time.n.08   EQU now",,0.7241379310344828,0.5121951219512195,0.6000000000000001,0.7241379310344828,0.5121951219512195,0.6000000000000001
+de/p01/d3029,SEQ2SEQ,Ich habe Kekse gebacken.,"person.n.01     EQU speaker
+exaggerate.v.01 Agent -1 Time +1
+time.n.08       TPR now",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+de/p01/d2630,SEQ2SEQ,Tom öffnete den Gefrierschrank und nahm das Eis heraus.,"male.n.02   Name ""Tom""
+put.v.01    Agent -1 Time +1 Recipient +2 Source +3
+time.n.08   TPR now
+string.n.01
+kite.n.03",,0.6571428571428571,0.4423076923076923,0.528735632183908,0.6571428571428571,0.4423076923076923,0.528735632183908
+de/p01/d3459,SEQ2SEQ,Er ist sehr sachkundig.,"male.n.02
+time.n.08          EQU now
+very.r.01
+understanding.a.01 AttributeOf -3 Time -2 Degree -1",,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148,0.8148148148148148
+de/p01/d2185,SEQ2SEQ,Der Teich ist ausgetrocknet.,"plane.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
+de/p01/d2622,SEQ2SEQ,Sie wusch einen Teppich.,"female.n.02
+suffer.v.02 Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p01/d1800,SEQ2SEQ,Ich muss scheißen.,"person.n.01  EQU speaker
+NEGATION     -1
+time.n.08    EQU now
+ashamed.a.01 Experiencer -2 Time -1",,0.4,0.5882352941176471,0.4761904761904762,0.4,0.5882352941176471,0.4761904761904762
+de/p01/d3529,SEQ2SEQ,Ich fühlte einen heftigen Schmerz.,"person.n.01      EQU speaker
+keep.v.08        Agent -1 Time +1 Theme +2
+time.n.08        EQU now
+credit_card.n.01",,0.6551724137931034,0.5428571428571428,0.5937499999999999,0.6551724137931034,0.5428571428571428,0.5937499999999999
+de/p22/d0783,SEQ2SEQ,Maria versteht Chinesisch.,"female.n.02 Name ""Maria""
+kneel.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+room.n.01",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p01/d0845,SEQ2SEQ,Sie bewaffneten sich mit Gewehren.,"person.n.01
+call.v.01   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+water.n.06",,0.696969696969697,0.696969696969697,0.696969696969697,0.696969696969697,0.696969696969697,0.696969696969697
+de/p01/d1844,SEQ2SEQ,Das Auto überschreitet die Geschwindigkeitsbegrenzung.,"child.n.01
+stroke.v.01 Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+apple.n.01",,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297
+de/p01/d1585,SEQ2SEQ,Tom fotografierte seinen Hund und schickte das Bild Maria.,"male.n.02     Name ""Tom""
+fill.v.01     Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08     TPR now
+person.n.01   EQU speaker
+shoulder.n.01",,0.6756756756756757,0.4098360655737705,0.5102040816326531,0.6756756756756757,0.4098360655737705,0.5102040816326531
+de/p22/d0805,SEQ2SEQ,Du bist verrückt.,"person.n.01 EQU hearer
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174,0.782608695652174
+de/p22/d1865,SEQ2SEQ,Das Kätzchen rollte das Garn über den Fußboden.,"entity.n.01
+destroy.v.01 Causer -1 Time +1 Recipient +2 Theme +3
+time.n.08    TPR now
+dog.n.01
+water.n.06",,0.6363636363636364,0.6363636363636364,0.6363636363636364,0.6363636363636364,0.6363636363636364,0.6363636363636364
+de/p22/d2444,SEQ2SEQ,Ein Vogel singt auf dem Baum.,"crocodile.n.01
+blow.v.02      Theme -1 Time +1 Location +2
+time.n.08      EQU now
+east.n.05",,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297
+de/p22/d3088,SEQ2SEQ,Er hat mich zweimal geschlagen.,"male.n.02
+person.n.01 EQU speaker
+buy.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7931034482758621,0.6216216216216216,0.696969696969697,0.7931034482758621,0.6216216216216216,0.696969696969697
+de/p22/d1484,SEQ2SEQ,Robert hat mit seinem großen Boot angegeben.,"male.n.02       Name ""Edison""
+light_bulb.n.01
+invent.v.01     Agent -2 Theme -1 Time +1
+time.n.08       TPR now",,0.7586206896551724,0.6111111111111112,0.676923076923077,0.7586206896551724,0.6111111111111112,0.676923076923077
+de/p22/d1202,SEQ2SEQ,http://www.hoechst.com/willk.htm,"event.v.01  Participant +1
+female.n.02 Name ""Liz Mohn""",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+de/p22/d1390,SEQ2SEQ,Wer ist der Führer der algerischen Bewaffneten Islamischen Gruppe?,"person.n.01  Name ?
+have.v.02    Pivot -1 Time +1 Theme +3
+time.n.08    EQU now
+country.n.02 Name ""cuba""
+cigar.n.01   Source -1",,0.7297297297297297,0.5294117647058824,0.6136363636363636,0.7297297297297297,0.5294117647058824,0.6136363636363636
+de/p22/d2640,SEQ2SEQ,Hat jemand mit ihm gesprochen?,"person.n.01
+male.n.02
+talk.v.01   Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p22/d3214,SEQ2SEQ,Mein Freund ist siebzehn.,"person.n.01 Role +1
+sister.n.01 Of speaker
+time.n.08   EQU now
+tall.a.01   AttributeOf -3 Time -1",,0.7931034482758621,0.5897435897435898,0.676470588235294,0.7931034482758621,0.5897435897435898,0.676470588235294
+de/p22/d1868,SEQ2SEQ,Hast du einen Schuhanzieher?,,invalid literal for int() with base 10: 'Agent',,,,,,
+de/p22/d0932,SEQ2SEQ,Wer hat die Bibel geschrieben?,"person.n.01  Name ?
+glasses.n.01
+eat.v.01     Agent -2 Patient -1 Time +1
+time.n.08    TPR now",,0.7586206896551724,0.7096774193548387,0.7333333333333333,0.7586206896551724,0.7096774193548387,0.7333333333333333
+de/p22/d3460,SEQ2SEQ,Die Rebellen haben den Rundfunksender erobert.,,Invalid token found '-3' in line: mother.n.01 Of Agent -3 Patient -1 Time +1,,,,,,
+de/p22/d2422,SEQ2SEQ,Maria erhielt ein Telegramm von Tom.,"female.n.02 Name ""Maria""
+key.n.01    Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02 Name ""Mary""",,,,,0.696969696969697,0.6216216216216216,0.6571428571428571
+de/p22/d1491,SEQ2SEQ,Mein Großvater wurde im Krieg verletzt.,"person.n.01     Role +1
+father.n.01     Of speaker
+time.n.08       TPR now
+gold_medal.n.01
+kill.v.01       Patient -3 Time -2 Agent -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p22/d1967,SEQ2SEQ,Tom beschleunigte.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+de/p22/d2375,SEQ2SEQ,Die Verletzten wurden vom Rettungswagen transportiert.,"person.n.01      Role +1
+quantity.n.01
+time.n.08        TPR now
+person.n.01      Role +1
+grandfather.n.01 Of -2",,0.59375,0.5757575757575758,0.5846153846153846,0.59375,0.5757575757575758,0.5846153846153846
+de/p22/d2901,SEQ2SEQ,Mit wem redest du?,"person.n.01  Name ?
+bicycle.n.01 User -1
+be.v.02      Co-Theme -1 Time +1 Theme +2
+time.n.08    EQU now
+person.n.01  EQU speaker",,0.5945945945945946,0.7096774193548387,0.6470588235294118,0.5945945945945946,0.7096774193548387,0.6470588235294118
+de/p22/d1401,SEQ2SEQ,Der Krieg dauerte fast zehn Jahre.,"house.n.01
+cost.v.01    Theme -1 Time +1 Value +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.7142857142857143,0.5319148936170213,0.6097560975609756,0.7142857142857143,0.5319148936170213,0.6097560975609756
+de/p22/d2673,SEQ2SEQ,Tom hackt Holz.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1
+time.n.08  EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+de/p22/d2695,SEQ2SEQ,Schwalben fliegen am Himmel.,"male.n.02 Name ""Lincoln""
+die.v.01  Patient -1 Time +1 Source +2
+time.n.08 EQU now
+east.n.05",,0.5517241379310345,0.5925925925925926,0.5714285714285714,0.5517241379310345,0.5925925925925926,0.5714285714285714
+de/p22/d0818,SEQ2SEQ,Ich habe es für zwölf Dollar gekauft.,"person.n.01  EQU speaker
+measure.n.02 Quantity 5
+score.v.01   Agent -2 Theme -1 Time +1
+time.n.08    TPR now",,0.7741935483870968,0.5581395348837209,0.6486486486486487,0.7741935483870968,0.5581395348837209,0.6486486486486487
+de/p21/d3054,SEQ2SEQ,Viele bewundern sie.,,Invalid token found '-1' in line: person.n.01 Role +1 NEQ Agent -1 Time +1 Theme +2,,,,,,
+de/p22/d2237,SEQ2SEQ,Das ist Brians Auto.,"entity.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.6666666666666666,0.4,0.5,0.6666666666666666,0.4,0.5
+de/p22/d1923,SEQ2SEQ,Er wurde durch eine Kugel verwundet.,"male.n.02
+time.n.08     TPR now
+truck.n.01
+run_over.v.01 Patient -3 Time -2 Agent -1",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p22/d0813,SEQ2SEQ,Wir haben dreizehn Knüppel.,"person.n.01  EQU speaker
+have.v.01    Pivot -1 Time +1 Theme +2
+time.n.08    EQU now
+measure.n.02 Quantity 2",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677
+de/p22/d2603,SEQ2SEQ,Sie schluchzte heftig.,"female.n.02
+suffer.v.02 Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+sheep.n.01",,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297
+de/p22/d1586,SEQ2SEQ,Er kaufte einige Bücher in dem Buchladen.,"male.n.02
+throw.v.01   Agent -1 Time +1 Theme +2 Destination +3
+time.n.08    TPR now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.6944444444444444,0.7142857142857143,0.7042253521126761,0.6944444444444444,0.7142857142857143,0.7042253521126761
+de/p22/d0712,SEQ2SEQ,Maler lebte in Yucatán.,"male.n.02 Name ""Laurie""
+live.v.01 Theme -1 Time +1 Location +2
+time.n.08 TPR now
+city.n.01 Name ""London""",,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7741935483870968,0.7741935483870968
+de/p22/d1607,SEQ2SEQ,"Er mag alles, was süß ist.","male.n.02
+time.n.08     EQU now
+person.n.01   EQU hearer
+allergic.a.02 Experiencer -3 Time -2 Stimulus -1",,0.5862068965517241,0.3695652173913043,0.4533333333333333,0.5862068965517241,0.3695652173913043,0.4533333333333333
+de/p22/d1939,SEQ2SEQ,Wir ignorieren Tom.,"person.n.01 EQU speaker
+like.v.03   Experiencer -1 Time +1 Stimulus +2
+time.n.08   TPR now
+person.n.01 EQU speaker",,0.5806451612903226,0.5806451612903226,0.5806451612903226,0.5806451612903226,0.5806451612903226,0.5806451612903226
+de/p22/d0944,SEQ2SEQ,Der Polizist verfolgte den Einbrecher.,"person.n.01  Role +1
+doctor.n.01
+appoint.v.02 Agent -2 Time +1 Theme +2
+time.n.08    TPR now
+person.n.01",,0.7575757575757576,0.6410256410256411,0.6944444444444444,0.7575757575757576,0.6410256410256411,0.6944444444444444
+de/p22/d3143,SEQ2SEQ,Toms Magen knurrte.,"male.n.02  Name ""Tom""
+iron.v.01  Agent -1 Time +1 Stimulus +2
+time.n.08  EQU now
+chess.n.02",,0.6206896551724138,0.6206896551724138,0.6206896551724138,0.6206896551724138,0.6206896551724138,0.6206896551724138
+de/p22/d1526,SEQ2SEQ,Ihr Vater betrat das Zimmer.,"female.n.02
+lay.v.01    Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+room.n.01",,0.7407407407407407,0.5128205128205128,0.6060606060606061,0.7407407407407407,0.5128205128205128,0.6060606060606061
+de/p22/d1974,SEQ2SEQ,Er bürstete seinen Hut.,"male.n.02
+throw.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+male.n.02",,0.7037037037037037,0.6785714285714286,0.6909090909090909,0.7037037037037037,0.6785714285714286,0.6909090909090909
+de/p21/d0922,SEQ2SEQ,Ich habe deine Nummer nicht.,"person.n.01 EQU speaker
+want.v.01   Pivot -1 Time +1 Theme +2
+time.n.08   EQU now
+entity.n.01",,0.6896551724137931,0.6060606060606061,0.6451612903225807,0.6896551724137931,0.6060606060606061,0.6451612903225807
+de/p21/d2628,SEQ2SEQ,Tom gab eine Erklärung ab.,"male.n.02  Name ""Tom""
+drive.v.01 Agent -1 Time +1 Patient +2
+time.n.08  TPR now
+beer.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p21/d0851,SEQ2SEQ,Der Wind hat nachgelassen.,"wind.n.01
+blow.v.02 Theme -1 Time +1
+time.n.08 TPR now",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+de/p21/d1764,SEQ2SEQ,Die Sitzung endete um Sieben.,"cd.n.04
+last.v.01 Theme -1 Time +1
+time.n.08 ClockTime 09:00 TSU now",,0.5652173913043478,0.5652173913043478,0.5652173913043478,0.5652173913043478,0.5652173913043478,0.5652173913043478
+de/p21/d2001,SEQ2SEQ,Die Kardinäle haben einen neuen Papst gewählt.,,Invalid token found '-2' in line: mother.n.01 Of Agent -2 Theme -1 Time +1,,,,,,
+de/p21/d3552,SEQ2SEQ,Er gewann eine Bronzemedaille.,"male.n.02
+win.v.01  Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,,,,0.8260869565217391,0.7037037037037037,0.76
+de/p21/d1983,SEQ2SEQ,Es ist eine fesselnde Geschichte.,"entity.n.01
+time.n.08   EQU now
+full.a.01   AttributeOf -2 Time -1 Value +",,0.6521739130434783,0.45454545454545453,0.5357142857142857,0.6521739130434783,0.45454545454545453,0.5357142857142857
+de/p21/d0913,SEQ2SEQ,Ich mag Schokoladeneis!,"person.n.01 EQU speaker
+like.v.03   Experiencer -1 Time +1 Stimulus +2
+time.n.08   EQU now
+chess.n.02",,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621,0.7931034482758621
+de/p21/d3513,SEQ2SEQ,Ich sehe eine Giraffe.,"person.n.01    EQU speaker
+learn.v.01     Agent -1 Time +1 Theme +2
+time.n.08      EQU now
+blowtorch.n.01",,0.7241379310344828,0.7241379310344828,0.7241379310344829,0.7241379310344828,0.7241379310344828,0.7241379310344829
+de/p21/d3266,SEQ2SEQ,Sein Neffe war in das brillante Feuerwerk vertieft.,"male.n.02
+time.n.08    TPR now
+full.a.01    AttributeOf -2 Time -1 Stimulus +1
+country.n.02 Name ""China""",,0.6551724137931034,0.4222222222222222,0.5135135135135135,0.6551724137931034,0.4222222222222222,0.5135135135135135
+de/p21/d3018,SEQ2SEQ,Er lieh mir dreißig Pesos.,"male.n.02
+have.v.01    Pivot -1 Time +1 Theme +4
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,,,,0.6111111111111112,0.5116279069767442,0.5569620253164557
+de/p21/d0875,SEQ2SEQ,In diesem Haus wohnt niemand.,"hall.n.03
+hold.v.12 Theme -1 Time +1
+time.n.08 EQU now",,0.6190476190476191,0.4482758620689655,0.52,0.6190476190476191,0.4482758620689655,0.52
+de/p21/d3335,SEQ2SEQ,Die Möbel wurden bei einer Auktion gekauft.,"dog.n.01
+time.n.08     TPR now
+truck.n.01
+run_over.v.01 Patient -3 Time -2 Agent -1",,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297,0.6296296296296297
+de/p21/d1918,SEQ2SEQ,Die Waffe ist nicht geladen.,"answer.n.01
+NEGATION    -1
+time.n.08   EQU now
+easy.a.01   AttributeOf -2 Time -1",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+de/p21/d1954,SEQ2SEQ,Viele Leute bewundern Nikko.,"person.n.01 Role +1
+mother.n.01 Of -1 Time +1 Experiencer +2
+time.n.08   EQU now
+person.n.01 EQU speaker",,,,,,,
+de/p21/d2189,SEQ2SEQ,Mein Natel läutet.,"sweater.n.01 User speaker
+twitch.v.01  Patient -1 Time +1
+time.n.08    EQU now",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+de/p21/d1848,SEQ2SEQ,Ich bin unglücklich.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  Experiencer -2 Time -1",,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391,0.8260869565217391
+de/p21/d0917,SEQ2SEQ,Er ist drei Jahre älter als sie.,"male.n.02
+time.n.08    EQU now
+measure.n.02 Quantity 2 Unit +1
+year.n.01
+old.a.01     AttributeOf -4 Time -3 Value -2",,0.8,0.5833333333333334,0.674698795180723,0.8,0.5833333333333334,0.674698795180723
+de/p21/d0777,SEQ2SEQ,Das Feuer ist ausgegangen.,"plane.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,0.5238095238095238,0.5238095238095238,0.5238095238095238,0.5238095238095238,0.5238095238095238,0.5238095238095238
+de/p21/d2922,SEQ2SEQ,Sie melkte die Kuh.,"female.n.02
+shear.v.02  Agent -1 Time +1 Source +2
+time.n.08   TPR now
+sheep.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p21/d2484,SEQ2SEQ,Er ist krank.,"male.n.02
+time.n.08 EQU now
+sick.a.01 AttributeOf -2 Time -1",,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8095238095238095,0.8095238095238095
+de/p21/d0894,SEQ2SEQ,Sie besitzt zweitausend Bücher.,"female.n.02
+win.v.01     Agent -1 Time +1 Theme +2
+time.n.08    EQU now
+measure.n.02 Quantity 5 Unit +1
+dollar.n.01",,0.6,0.7241379310344828,0.65625,0.6,0.7241379310344828,0.65625
+de/p21/d2179,SEQ2SEQ,Tom ist äußerst unfreundlich.,"male.n.02 Name ""Tom""
+time.n.08 EQU now
+tall.a.01 AttributeOf -2 Time -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+de/p21/d1454,SEQ2SEQ,Sie hat einen Feuerwehrmann geheiratet.,"female.n.02
+egg.n.02
+eat.v.01    Agent -2 Patient -1 Time +1
+time.n.08   TPR now",,0.7037037037037037,0.5757575757575758,0.6333333333333334,0.7037037037037037,0.5757575757575758,0.6333333333333334
+de/p21/d2841,SEQ2SEQ,"Dieses Buch enthält einige Fehler, aber es ist interessant.","entity.n.01
+NEGATION      -1
+time.n.08     EQU now
+allergic.a.02 Experiencer -2 Time -1 Stimulus +1
+person.n.01   EQU speaker",,0.5806451612903226,0.34615384615384615,0.43373493975903615,0.5806451612903226,0.34615384615384615,0.43373493975903615
+de/p21/d3514,SEQ2SEQ,Tom gab seinem Hund einen Knochen.,"male.n.02   Name ""Tom""
+fill.v.01   Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08   TPR now
+female.n.02
+water.n.06",,0.6857142857142857,0.6666666666666666,0.676056338028169,0.6857142857142857,0.6666666666666666,0.676056338028169
+de/p21/d0950,SEQ2SEQ,Das ist eine Falle!,"entity.n.01
+be.v.01     Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778
+de/p21/d3273,SEQ2SEQ,Ich wischte für den Lehrer die Tafel.,"person.n.01    EQU speaker
+telegraph.v.01 Agent -1 Time +1 Recipient +2 Theme +3
+time.n.08      TPR now
+dog.n.01
+water.n.06",,0.6571428571428571,0.5609756097560976,0.605263157894737,0.6571428571428571,0.5609756097560976,0.605263157894737
+de/p21/d0867,SEQ2SEQ,Marilyn Monroe starb vor 33 Jahren.,"female.n.02 Name ""Japan""
+work.v.02   Agent -1 Time +1 Location +2
+time.n.08   TPR now
+city.n.01   Name ""London""",,0.6129032258064516,0.48717948717948717,0.5428571428571428,0.6129032258064516,0.48717948717948717,0.5428571428571428
+de/p82/d1409,SEQ2SEQ,Du hast mich hereingelegt!,,invalid literal for int() with base 10: 'Agent',,,,,,
+de/p21/d0860,SEQ2SEQ,Zwei plus zwei gibt vier.,"plus.n.02 Co-Theme 3 Theme 4
+be.v.06   Co-Theme 12 Theme -1",,0.631578947368421,0.631578947368421,0.631578947368421,0.631578947368421,0.631578947368421,0.631578947368421
+de/p21/d2399,SEQ2SEQ,Die Katze fraß die Maus.,"cat.n.01
+sniff.v.01 Agent -1 Time +1 Patient +2
+time.n.08  EQU now
+sheep.n.01",,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407,0.7407407407407407
+de/p21/d1834,SEQ2SEQ,Ich liebe Vanilleeis.,"person.n.01 EQU speaker
+dance.v.02  Theme -1 Time +1 Co-Theme +2
+time.n.08   EQU now
+person.n.01",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p21/d0764,SEQ2SEQ,Tony Blair gehört der Labour-Partei an.,"female.n.02   Name ""Mayuko""
+turn_off.v.01 Agent -1 Time +1 Patient +2 Result +3
+time.n.08     TPR now
+female.n.02
+face.n.01     User -1",,0.4722222222222222,0.5483870967741935,0.5074626865671641,0.4722222222222222,0.5483870967741935,0.5074626865671641
+de/p21/d0915,SEQ2SEQ,Edward ist jünger als Robert.,"male.n.02   Name ""Jack""
+time.n.08   EQU now
+tall.a.01   AttributeOf -2 Time -1 Degree +1
+more.r.01   Theme -3 Co-Theme +1
+person.n.01",,0.75,0.7105263157894737,0.7297297297297298,0.75,0.7105263157894737,0.7297297297297298
+de/p82/d1970,SEQ2SEQ,Dein Portemonnaie liegt auf dem Fernseher.,"male.n.02   Name ""Bill Clinton""
+belong.v.05 Theme -1 Time +1 Location +2
+time.n.08   EQU now
+city.n.01   Name ""Melbourne""",,0.5806451612903226,0.6206896551724138,0.6000000000000001,0.5806451612903226,0.6206896551724138,0.6000000000000001
+de/p82/d2142,SEQ2SEQ,Tom sagte nichts.,"male.n.02    Name ""Tom""
+NEGATION     -1
+have_on.v.01 Agent -1 Time +1
+time.n.08    TPR now",,0.84,0.6774193548387096,0.75,0.84,0.6774193548387096,0.75
+de/p82/d1425,SEQ2SEQ,Er wackelte mit den Zehen.,"male.n.02
+throw.v.01  Agent -1 Time +1 Patient +2
+time.n.08   TPR now
+letter.n.01",,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778,0.7777777777777778
+de/p82/d2292,SEQ2SEQ,Jane ist nicht so groß wie Mary.,"female.n.02 Name ""Keisuke""
+time.n.08   EQU now
+as.r.01     Theme -2 Co-Theme +2
+tall.a.01   AttributeOf -3 Time -2 Degree -1
+person.n.01 EQU speaker",,0.6842105263157895,0.65,0.6666666666666667,0.6842105263157895,0.65,0.6666666666666667
+de/p82/d2254,SEQ2SEQ,Ich habe überhaupt nichts gesehen.,"person.n.01 EQU speaker
+want.v.01   Pivot -1 Time +1 Theme +2
+time.n.08   TPR now
+person.n.01 EQU speaker",,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516,0.6129032258064516
+de/p82/d2308,SEQ2SEQ,Wir erreichten London um Mitternacht.,"person.n.01 EQU speaker
+work.v.02   Agent -1 Time +1 Theme +2
+time.n.08   TPR now
+city.n.01   Name ""London""",,0.7419354838709677,0.696969696969697,0.71875,0.7419354838709677,0.696969696969697,0.71875
+de/p82/d2043,SEQ2SEQ,Die Leitung ist besetzt.,"frontier.n.02
+time.n.08     EQU now
+closed.a.01   AttributeOf -2 Time -1",,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
+de/p82/d2462,SEQ2SEQ,Die Möwen fliegen tief.,"boy.n.01
+last.v.01     Theme -1 Time +1 Value +2
+time.n.08     EQU now
+location.n.01 STI +1
+cradle.n.01",,0.5454545454545454,0.6666666666666666,0.6,0.5454545454545454,0.6666666666666666,0.6
+de/p82/d2353,SEQ2SEQ,Mein Ballon platzte.,"face.n.01   User speaker
+twitch.v.01 Patient -1 Time +1
+time.n.08   EQU now",,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
+de/p82/d0716,SEQ2SEQ,Johann Wolfgang von Goethe wurde in Deutschland geboren.,"male.n.02   Name ""Vladislav Listyev""
+time.n.08   TPR now
+male.n.02   Name ""Jan De Bont""
+direct.v.03 Theme -3 Time -2 Location -1",,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096,0.6774193548387096
+de/p82/d1968,SEQ2SEQ,Du bist ein Serienmörder.,"person.n.01 EQU hearer
+get_up.v.02 Agent -1 Time +1
+time.n.08   EQU now",,0.7391304347826086,0.4857142857142857,0.5862068965517241,0.7391304347826086,0.4857142857142857,0.5862068965517241
+de/p82/d1886,SEQ2SEQ,Tom wohnt in Boston.,"male.n.02  Name ""Tom""
+dance.v.02 Theme -1 Time +1 Co-Theme +2
+time.n.08  EQU now
+city.n.01  Name ""Melbourne""",,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677,0.7419354838709677
+de/p82/d2388,SEQ2SEQ,Der Wein war ausgezeichnet.,"war.n.01
+time.n.08 TPR now
+warm.a.01 AttributeOf -2 Time -1",,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619,0.7619047619047619
+de/p82/d2239,SEQ2SEQ,Wir verschwenden Munition.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1 Patient +2
+time.n.08   EQU now
+chess.n.02",,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931,0.6896551724137931
+de/p82/d1894,SEQ2SEQ,Ich mag auch Kuchen.,"person.n.01 EQU speaker
+learn.v.01  Agent -1 Time +1
+time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+de/p82/d2011,SEQ2SEQ,Napoleon Bonaparte hatte Angst vor schwarzen Katzen.,"male.n.02   Name ""Bill""
+NEGATION    -1
+have.v.02   Pivot -1 Time +1 Theme +2
+time.n.08   EQU now
+entity.n.01",,0.4838709677419355,0.42857142857142855,0.4545454545454545,0.4838709677419355,0.42857142857142855,0.4545454545454545
+de/p82/d2132,SEQ2SEQ,Sie lehrt uns Französisch.,"female.n.02
+suffer.v.02 Experiencer -1 Time +1 Patient +2
+time.n.08   TPR now
+person.n.01 EQU speaker",,0.6896551724137931,0.5714285714285714,0.625,0.6896551724137931,0.5714285714285714,0.625
+de/p82/d1795,SEQ2SEQ,Sie ist zwei Jahre jünger als er.,"female.n.02
+time.n.08    EQU now
+measure.n.02 Quantity 2 Unit +1
+year.n.01
+old.a.01     AttributeOf -4 Time -3 Value -2",,0.8,0.5833333333333334,0.674698795180723,0.8,0.5833333333333334,0.674698795180723
+de/p82/d2217,SEQ2SEQ,Tom kicherte mädchenhaft.,"male.n.02  Name ""Tom""
+dance.v.02 Agent -1 Time +1
+time.n.08  EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+de/p82/d1991,SEQ2SEQ,Der Chirurg amputierte das falsche Bein.,"person.n.01  Role +1
+hunter.n.01
+appoint.v.02 Agent -2 Time +1 Theme +2
+time.n.08    TPR now
+person.n.01",,0.7272727272727273,0.6153846153846154,0.6666666666666667,0.7272727272727273,0.6153846153846154,0.6666666666666667
