@@ -136,7 +136,7 @@ class SBNGraph(BaseGraph):
                             f"Missing box index in line: {sbn_line}"
                         )
 
-                    if (box_index := int(tokens.pop(0))) != -1:
+                    if (box_index := self._try_parse_idx(tokens.pop(0))) != -1:
                         raise SBNError(
                             f"Unexpected box index found '{box_index}'"
                         )
@@ -172,7 +172,7 @@ class SBNGraph(BaseGraph):
                     )
 
                     if index_match := SBNSpec.INDEX_PATTERN.match(target):
-                        idx = int(index_match.group(0))
+                        idx = self._try_parse_idx(index_match.group(0))
                         active_id = self._active_synset_id
                         target_idx = active_id[1] + idx
                         to_id = (active_id[0], target_idx)
@@ -679,6 +679,14 @@ class SBNGraph(BaseGraph):
                 "instance."
             )
         return self.is_dag
+
+    @staticmethod
+    def _try_parse_idx(possible_idx: str) -> int:
+        """Try to parse a possible index, raises an SBNError if this fails."""
+        try:
+            return int(possible_idx)
+        except ValueError:
+            raise SBNError(f"Invalid index '{possible_idx}' found.")
 
     @staticmethod
     def quote(in_str: str) -> str:
