@@ -142,6 +142,7 @@ def full_run(args, ud_filepath):
         error = str(e)
         logger.error(f"{ud_filepath}: {error}")
 
+    # TODO: fix this with the new explicit strict/lenient names
     record = create_record(
         pmb_id=get_doc_id(args.language, ud_filepath),
         raw_sent=raw_sent,

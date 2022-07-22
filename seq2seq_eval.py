@@ -79,24 +79,33 @@ def generate_result(args, sbn_line, gold_path):
     G = SBNGraph(source=args.sbn_source).from_string(
         sbn_line, is_single_line=True
     )
+    lenient_err, strict_err = None, None
 
     with tempfile.NamedTemporaryFile("w") as f:
         try:
-            scores = smatch_score(gold_path, G.to_penman(f.name))
-        except SBNError:
-            scores = dict()
+            strict_scores = smatch_score(gold_path, G.to_penman(f.name))
+        except SBNError as e_strict:
+            strict_scores = dict()
+            strict_err = str(e_strict)
         try:
             lenient_scores = smatch_score(
                 gold_path, G.to_penman(f.name, strict=False)
             )
-        except SBNError:
+        except SBNError as e:
             lenient_scores = dict()
+            lenient_err = str(e)
         # lenient_scores = smatch_score(
         # current_dir / f"{args.language}.drs.lenient.penman",
         # G.to_penman(f.name, evaluate_sense=False),
         # )
 
-    return scores, lenient_scores, G.to_sbn_string()
+    return (
+        strict_scores,
+        lenient_scores,
+        G.to_sbn_string(),
+        lenient_err,
+        strict_err,
+    )
 
 
 def full_run(args, sbn_line, filepath):
@@ -104,21 +113,27 @@ def full_run(args, sbn_line, filepath):
         Path(filepath.parent / f"{args.language}.raw").read_text().rstrip()
     )
 
-    sbn, error = None, None
-    scores, lenient_scores = dict(), dict()
+    sbn, lenient_error, strict_error = None, None, None
+    strict_scores, lenient_scores = dict(), dict()
     try:
-        scores, lenient_scores, sbn = generate_result(args, sbn_line, filepath)
+        (
+            strict_scores,
+            lenient_scores,
+            sbn,
+            lenient_error,
+            strict_error,
+        ) = generate_result(args, sbn_line, filepath)
     except Exception as e:
-        error = str(e)
-        logger.error(error)
+        logger.error(e)
 
     record = create_record(
         pmb_id=get_doc_id(args.language, filepath),
         raw_sent=raw_sent,
         sbn_source=args.sbn_source,
         sbn=sbn,
-        error=error,
-        scores=scores,
+        lenient_error=lenient_error,
+        strict_error=strict_error,
+        strict_scores=strict_scores,
         lenient_scores=lenient_scores,
     )
     return record
@@ -156,7 +171,7 @@ def main():
             res.result()
             for res in tqdm(
                 concurrent.futures.as_completed(futures),
-                desc="Running inference",
+                desc="Running evaluation",
             )
         ]
 
@@ -179,8 +194,8 @@ def main():
     ARGS: {args}
 
     DATA SPLIT:           {args.data_split}
-    PARSED DOCS:          {len(df[df['error'].isnull()])}
-    FAILED DOCS:          {len(df[df['error'].notnull()])}
+    PARSED DOCS:          {len(df[df['lenient_error'].isnull()])}
+    FAILED DOCS:          {len(df[df['lenient_error'].notnull()])}
     TOTAL DOCS:           {len(df)}
 
     AVERAGE F1 (strict):  {df["f1"].mean():.3} ({df["f1"].min():.3} - {df["f1"].max():.3})

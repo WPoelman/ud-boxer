@@ -1,1445 +1,1445 @@
-pmb_id,source,raw_sent,sbn_str,error,precision_lenient,recall_lenient,f1_lenient,precision,recall,f1
-nl/p12/d0929,SEQ2SEQ,"Ik nam een taxi, omdat het regende.","person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.4,0.5142857142857142,,,
-nl/p12/d0949,SEQ2SEQ,U heeft een ara gekocht.,"person.n.01 Role +1
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,,,,,,
+pmb_id,source,raw_sent,sbn_str,lenient_error,strict_error,precision_lenient,recall_lenient,f1_lenient,precision,recall,f1
 nl/p12/d1922,SEQ2SEQ,Mary kocht een microscoop voor zichzelf.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5517241379310345,0.5925925925925927,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5517241379310345,0.5925925925925927,,,
 nl/p12/d0877,SEQ2SEQ,Ik werd door een oude vriend uitgenodigd.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.43902439024390244,0.5454545454545455,,,
-nl/p12/d0837,SEQ2SEQ,Hij had zijn hemd binnenste buiten aan.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.47058823529411764,0.5614035087719297,,,
-nl/p12/d0761,SEQ2SEQ,Romano Prodi wint de Italiaanse voorverkiezingen.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.43243243243243246,0.5161290322580645,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.43902439024390244,0.5454545454545455,,,
+nl/p12/d0949,SEQ2SEQ,U heeft een ara gekocht.,"person.n.01 Role +1
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",Exporting a cyclic SBN graph to Penman is not possible.,Exporting a cyclic SBN graph to Penman is not possible.,,,,,,
 nl/p12/d0902,SEQ2SEQ,Ik heb de zakdoek gestreken.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.5862068965517241,0.6296296296296295,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p12/d0929,SEQ2SEQ,"Ik nam een taxi, omdat het regende.","person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4,0.5142857142857142,,,
 nl/p12/d0869,SEQ2SEQ,Mijn ouders komen uit China.,"person.n.01 EQU speaker
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.40540540540540543,0.48387096774193555,,,
-nl/p12/d0799,SEQ2SEQ,Mogen we rolschaatsen in dit park?,"person.n.01 Role +1
-time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.4090909090909091,0.391304347826087,0.4,0.4090909090909091,0.391304347826087,0.4
-nl/p12/d2561,SEQ2SEQ,Hij spreekt geen Engels.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
-nl/p12/d0875,SEQ2SEQ,Ik ben verliefd op jou.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
-nl/p12/d0847,SEQ2SEQ,Ze is tevreden met de jurk.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.4444444444444444,0.48,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.40540540540540543,0.48387096774193555,,,
+nl/p12/d0761,SEQ2SEQ,Romano Prodi wint de Italiaanse voorverkiezingen.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
 nl/p12/d0922,SEQ2SEQ,Het had gesneeuwd.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.42857142857142855,0.6,0.5,0.42857142857142855,0.6,0.5
-nl/p12/d0789,SEQ2SEQ,Iemand roept je.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
-nl/p12/d3475,SEQ2SEQ,Het jonge meisje is aan het zingen.,"entity.n.01
-time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.7142857142857143,0.5172413793103449,0.6000000000000001,0.7142857142857143,0.5172413793103449,0.6000000000000001
-nl/p65/d3279,SEQ2SEQ,Hij is niet dommer dan jij.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.5217391304347826,0.3157894736842105,0.39344262295081966,,,
-nl/p12/d0821,SEQ2SEQ,Hij is trots op zijn zoon.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6190476190476191,0.38235294117647056,0.4727272727272727,0.6190476190476191,0.38235294117647056,0.4727272727272727
-nl/p65/d0819,SEQ2SEQ,Ik heb keer op keer geprobeerd.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.6956521739130435,0.6666666666666666,,,
-nl/p12/d3094,SEQ2SEQ,Hij is acht.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.45161290322580644,0.5384615384615384,0.6666666666666666,0.45161290322580644,0.5384615384615384
-nl/p65/d0846,SEQ2SEQ,Ze werd gediskwalificeerd van de race wegens twee valse starts.,"male.n.02
+time.n.08 EQU now",,,0.42857142857142855,0.6,0.5,0.42857142857142855,0.6,0.5
+nl/p12/d0837,SEQ2SEQ,Hij had zijn hemd binnenste buiten aan.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.34146341463414637,0.4375,,,
-nl/p65/d0778,SEQ2SEQ,We zagen de vogel toen we Okinawa bezochten.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.76,0.3275862068965517,0.45783132530120474,,,
-nl/p12/d3548,SEQ2SEQ,Iedereen maakt fouten.,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.5217391304347826,0.3870967741935484,0.4444444444444444,0.5217391304347826,0.3870967741935484,0.4444444444444444
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.47058823529411764,0.5614035087719297,,,
 nl/p12/d0896,SEQ2SEQ,Ik heb de radio gerepareerd voor hem.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4857142857142857,0.5666666666666667,,,
-nl/p65/d0878,SEQ2SEQ,Mevrouw Ogawa is zeer goed in tennis.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.3902439024390244,0.48484848484848486,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4857142857142857,0.5666666666666667,,,
+nl/p12/d2561,SEQ2SEQ,Hij spreekt geen Engels.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
+nl/p12/d0875,SEQ2SEQ,Ik ben verliefd op jou.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
+nl/p12/d0847,SEQ2SEQ,Ze is tevreden met de jurk.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.4444444444444444,0.48,,,
+nl/p65/d0846,SEQ2SEQ,Ze werd gediskwalificeerd van de race wegens twee valse starts.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.34146341463414637,0.4375,,,
+nl/p12/d0821,SEQ2SEQ,Hij is trots op zijn zoon.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.6190476190476191,0.38235294117647056,0.4727272727272727,0.6190476190476191,0.38235294117647056,0.4727272727272727
+nl/p12/d0799,SEQ2SEQ,Mogen we rolschaatsen in dit park?,"person.n.01 Role +1
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,,0.4090909090909091,0.391304347826087,0.4,0.4090909090909091,0.391304347826087,0.4
+nl/p65/d0778,SEQ2SEQ,We zagen de vogel toen we Okinawa bezochten.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.76,0.3275862068965517,0.45783132530120474,,,
+nl/p65/d3279,SEQ2SEQ,Hij is niet dommer dan jij.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.3157894736842105,0.39344262295081966,,,
+nl/p12/d3094,SEQ2SEQ,Hij is acht.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6666666666666666,0.45161290322580644,0.5384615384615384,0.6666666666666666,0.45161290322580644,0.5384615384615384
+nl/p65/d0819,SEQ2SEQ,Ik heb keer op keer geprobeerd.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.6956521739130435,0.6666666666666666,,,
+nl/p12/d0789,SEQ2SEQ,Iemand roept je.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
 nl/p65/d0714,SEQ2SEQ,Fastfood is zeer populair in Japan.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.4,0.4666666666666667,,,
-nl/p64/d0828,SEQ2SEQ,Hij ging vissen in de rivier.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6521739130434783,0.5555555555555556,0.6,,,
-nl/p64/d2196,SEQ2SEQ,Je moet om zes uur opstaan.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.48,0.48,0.48,,,
-nl/p65/d0811,SEQ2SEQ,Mijn vrouw lijdt aan een longontsteking.,"person.n.01 Role +1
-time.n.08   TPR now
-closed.a.01 AttributeOf -2 Time -1",,0.5909090909090909,0.37142857142857144,0.456140350877193,0.5909090909090909,0.37142857142857144,0.456140350877193
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.4,0.4666666666666667,,,
+nl/p12/d3475,SEQ2SEQ,Het jonge meisje is aan het zingen.,"entity.n.01
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,,0.7142857142857143,0.5172413793103449,0.6000000000000001,0.7142857142857143,0.5172413793103449,0.6000000000000001
+nl/p12/d3548,SEQ2SEQ,Iedereen maakt fouten.,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.5217391304347826,0.3870967741935484,0.4444444444444444,0.5217391304347826,0.3870967741935484,0.4444444444444444
+nl/p65/d0878,SEQ2SEQ,Mevrouw Ogawa is zeer goed in tennis.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.3902439024390244,0.48484848484848486,,,
 nl/p64/d3167,SEQ2SEQ,Tom woont in het hart van de stad.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.68,0.4857142857142857,0.5666666666666667,,,
-nl/p64/d1386,SEQ2SEQ,Waar is Adolf Hitler geboren?,"male.n.02 Name ""Tom""
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4857142857142857,0.5666666666666667,,,
+nl/p64/d2196,SEQ2SEQ,Je moet om zes uur opstaan.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.48,0.48,0.48,,,
+nl/p64/d0828,SEQ2SEQ,Hij ging vissen in de rivier.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.5555555555555556,0.6,,,
+nl/p65/d0811,SEQ2SEQ,Mijn vrouw lijdt aan een longontsteking.,"person.n.01 Role +1
+time.n.08   TPR now
+closed.a.01 AttributeOf -2 Time -1",,,0.5909090909090909,0.37142857142857144,0.456140350877193,0.5909090909090909,0.37142857142857144,0.456140350877193
 nl/p64/d0762,SEQ2SEQ,Kieslowski is een filmregisseur.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.76,0.5428571428571428,0.6333333333333332,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.76,0.5428571428571428,0.6333333333333332,,,
 nl/p53/d0711,SEQ2SEQ,De Amerikaanse Burgeroorlog begon in 1861.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.52,0.5416666666666667,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.52,0.5416666666666667,,,
 nl/p64/d0822,SEQ2SEQ,Ik betaalde hem vijf dollar.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.3953488372093023,0.5,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.3953488372093023,0.5,,,
+nl/p64/d1386,SEQ2SEQ,Waar is Adolf Hitler geboren?,"male.n.02 Name ""Tom""
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
 nl/p53/d2191,SEQ2SEQ,Ik ga de politie bellen!,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
 nl/p53/d0942,SEQ2SEQ,Ik groeide op in dat huis.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4857142857142857,0.5666666666666667,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4857142857142857,0.5666666666666667,,,
 nl/p64/d2012,SEQ2SEQ,De trein kwam aan in Londen.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.4482758620689655,0.52,0.6190476190476191,0.4482758620689655,0.52
-nl/p64/d0712,SEQ2SEQ,Beverly werkte voor WEDCOR.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6086956521739131,0.45161290322580644,0.5185185185185185,0.6086956521739131,0.45161290322580644,0.5185185185185185
+time.n.08   TPR now",,,0.6190476190476191,0.4482758620689655,0.52,0.6190476190476191,0.4482758620689655,0.52
 nl/p64/d2903,SEQ2SEQ,Het is tien minuten voor elf.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
-nl/p64/d2214,SEQ2SEQ,De lucht is bewolkt.,"male.n.02
-time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+time.n.08 EQU now",,,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
 nl/p53/d1386,SEQ2SEQ,"Welke prijs hebben Weinberg, Salam en Glashow gewonnen?","male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.68,0.32075471698113206,0.43589743589743585,,,
-nl/p64/d3519,SEQ2SEQ,Maria is linkshandig.,"male.n.02 Name ""Tom""
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.6086956521739131
-nl/p34/d0794,SEQ2SEQ,Een spons neemt water op.,,Invalid token found '-1' in line: male.n.02 Name User -1 Time +1 Theme +2,,,,,,
-nl/p53/d0764,SEQ2SEQ,Charles de Gaulle overleed in 1970.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.64,0.64,,,
-nl/p53/d0883,SEQ2SEQ,Zij is veel groter dan ik.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.5652173913043478,0.29545454545454547,0.3880597014925373,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.32075471698113206,0.43589743589743585,,,
 nl/p53/d3113,SEQ2SEQ,Misschien heb ik overdreven.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.6,0.6250000000000001,0.6521739130434783,0.6,0.6250000000000001
-nl/p53/d0857,SEQ2SEQ,Het sneeuwt.,"time.n.08 EQU now
-time.n.08 EQU now",,0.5625,0.6,0.5806451612903225,0.5625,0.6,0.5806451612903225
-nl/p34/d0781,SEQ2SEQ,Londen werd verscheidene keren gebombardeerd.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.56,0.45161290322580644,0.5,,,
+time.n.08   EQU now",,,0.6521739130434783,0.6,0.6250000000000001,0.6521739130434783,0.6,0.6250000000000001
+nl/p53/d0883,SEQ2SEQ,Zij is veel groter dan ik.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.29545454545454547,0.3880597014925373,,,
+nl/p64/d0712,SEQ2SEQ,Beverly werkte voor WEDCOR.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6086956521739131,0.45161290322580644,0.5185185185185185,0.6086956521739131,0.45161290322580644,0.5185185185185185
+nl/p34/d0794,SEQ2SEQ,Een spons neemt water op.,,,,,,,,,
+nl/p64/d3519,SEQ2SEQ,Maria is linkshandig.,"male.n.02 Name ""Tom""
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.6086956521739131,0.6086956521739131
+nl/p64/d2214,SEQ2SEQ,De lucht is bewolkt.,"male.n.02
+time.n.08  EQU now
+happy.a.01 AttributeOf -2 Time -1",,,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
 nl/p53/d3342,SEQ2SEQ,Een bij zoemt.,"male.n.02
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.14285714285714285,0.17647058823529413,0.15789473684210528,0.14285714285714285,0.17647058823529413,0.15789473684210528
-nl/p34/d0821,SEQ2SEQ,Ik was gewend aan de hitte.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5517241379310345,0.5925925925925927,,,
-nl/p34/d0888,SEQ2SEQ,Ik strijk mijn zakdoeken.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
-nl/p34/d2126,SEQ2SEQ,Zijn tanden zijn geel.,"person.n.01 Role +1
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6818181818181818,0.5555555555555556,0.6122448979591836,0.6818181818181818,0.5555555555555556,0.6122448979591836
+time.n.08 EQU now",,,0.14285714285714285,0.17647058823529413,0.15789473684210528,0.14285714285714285,0.17647058823529413,0.15789473684210528
+nl/p53/d0857,SEQ2SEQ,Het sneeuwt.,"time.n.08 EQU now
+time.n.08 EQU now",,,0.5625,0.6,0.5806451612903225,0.5625,0.6,0.5806451612903225
+nl/p53/d0764,SEQ2SEQ,Charles de Gaulle overleed in 1970.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.64,0.64,,,
+nl/p34/d0781,SEQ2SEQ,Londen werd verscheidene keren gebombardeerd.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
 nl/p34/d2998,SEQ2SEQ,We zijn gelukkig.,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p53/d2488,SEQ2SEQ,Maria zoutte het vlees.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
-nl/p53/d2818,SEQ2SEQ,De zee was erg glad.,"male.n.02
-time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+time.n.08   EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
 nl/p34/d0824,SEQ2SEQ,We werken van negen tot vijf.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.64,0.48484848484848486,0.5517241379310344,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.48484848484848486,0.5517241379310344,,,
+nl/p34/d0888,SEQ2SEQ,Ik strijk mijn zakdoeken.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
+nl/p34/d0821,SEQ2SEQ,Ik was gewend aan de hitte.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5517241379310345,0.5925925925925927,,,
+nl/p34/d2126,SEQ2SEQ,Zijn tanden zijn geel.,"person.n.01 Role +1
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6818181818181818,0.5555555555555556,0.6122448979591836,0.6818181818181818,0.5555555555555556,0.6122448979591836
+nl/p53/d2818,SEQ2SEQ,De zee was erg glad.,"male.n.02
+time.n.08  EQU now
+happy.a.01 AttributeOf -2 Time -1",,,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+nl/p53/d2488,SEQ2SEQ,Maria zoutte het vlees.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
 nl/p34/d0834,SEQ2SEQ,Hij heeft een zoon met de naam Johano.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.34146341463414637,0.4375,,,
-nl/p34/d0711,SEQ2SEQ,De rockgroep Spock's Beard komt uit Japan.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.35135135135135137,0.4482758620689656,0.6190476190476191,0.35135135135135137,0.4482758620689656
-nl/p75/d1391,SEQ2SEQ,Bij welke partij hoorde Noriega?,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.34146341463414637,0.4375,,,
 nl/p34/d2326,SEQ2SEQ,Haar auto is twee jaar oud.,"person.n.01 Role +1
 time.n.08   TPR now
-closed.a.01 AttributeOf -2 Time -1",,0.5909090909090909,0.3170731707317073,0.41269841269841273,0.5909090909090909,0.3170731707317073,0.41269841269841273
+closed.a.01 AttributeOf -2 Time -1",,,0.5909090909090909,0.3170731707317073,0.41269841269841273,0.5909090909090909,0.3170731707317073,0.41269841269841273
+nl/p75/d1391,SEQ2SEQ,Bij welke partij hoorde Noriega?,,,,,,,,,
 nl/p34/d2657,SEQ2SEQ,We hebben verloren.,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
-nl/p62/d0847,SEQ2SEQ,Ze bezoekt nu Parijs.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
+time.n.08   EQU now",,,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
+nl/p34/d0711,SEQ2SEQ,De rockgroep Spock's Beard komt uit Japan.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.35135135135135137,0.4482758620689656,0.6190476190476191,0.35135135135135137,0.4482758620689656
 nl/p75/d0895,SEQ2SEQ,Welke taal spreken ze in de VS?,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.43243243243243246,0.5161290322580645,,,
-nl/p34/d0880,SEQ2SEQ,Ze is langer dan haar zus.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.5714285714285714,0.2926829268292683,0.3870967741935484,0.5714285714285714,0.2926829268292683,0.3870967741935484
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
 nl/p62/d1385,SEQ2SEQ,Wie is bestuursvoorzitter van Fiat?,"person.n.01 Name ""Tom""
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.4186046511627907,0.5294117647058824,,,
-nl/p75/d0948,SEQ2SEQ,Er is een nieuw restaurant op Cherry Avenue.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.34285714285714286,0.4137931034482759,,,
-nl/p62/d1388,SEQ2SEQ,Hoeveel kinderen heeft Anthony Quinn?,"person.n.01 Role +1
-time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.5909090909090909,0.41935483870967744,0.4905660377358491,0.5909090909090909,0.41935483870967744,0.4905660377358491
-nl/p75/d0913,SEQ2SEQ,Jiro Akagawa heeft meer dan 480 romans geschreven.,"person.n.01 Name ""Tom""
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.56,0.32558139534883723,0.411764705882353,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4186046511627907,0.5294117647058824,,,
 nl/p34/d0879,SEQ2SEQ,Het water is niet drinkbaar.,"male.n.02
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.47619047619047616,0.43478260869565216,0.4545454545454545,0.47619047619047616,0.43478260869565216,0.4545454545454545
-nl/p75/d0910,SEQ2SEQ,Koningin Elizabeth overleed in 1603.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p62/d1632,SEQ2SEQ,Tom is allergisch voor pinda's.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+time.n.08 EQU now",,,0.47619047619047616,0.43478260869565216,0.4545454545454545,0.47619047619047616,0.43478260869565216,0.4545454545454545
+nl/p34/d0880,SEQ2SEQ,Ze is langer dan haar zus.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.5714285714285714,0.2926829268292683,0.3870967741935484,0.5714285714285714,0.2926829268292683,0.3870967741935484
+nl/p75/d0948,SEQ2SEQ,Er is een nieuw restaurant op Cherry Avenue.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.34285714285714286,0.4137931034482759,,,
+nl/p62/d0847,SEQ2SEQ,Ze bezoekt nu Parijs.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
 nl/p62/d0784,SEQ2SEQ,Betty heeft hem gedood.,"male.n.02  Name ""Tom""
 time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
-nl/p75/d0716,SEQ2SEQ,Paus Johannes Paulus II werd geboren in Polen.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.43243243243243246,0.5161290322580645,,,
-nl/p62/d0943,SEQ2SEQ,Hij is bang voor de honden.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
+happy.a.01 AttributeOf -2 Time -1",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
 nl/p34/d0764,SEQ2SEQ,De film 'Speed' werd geregisseerd door Jan de Bont.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.41935483870967744,0.5,0.6190476190476191,0.41935483870967744,0.5
+time.n.08   TPR now",,,0.6190476190476191,0.41935483870967744,0.5,0.6190476190476191,0.41935483870967744,0.5
+nl/p75/d0910,SEQ2SEQ,Koningin Elizabeth overleed in 1603.,,,,,,,,,
+nl/p62/d1632,SEQ2SEQ,Tom is allergisch voor pinda's.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p62/d0943,SEQ2SEQ,Hij is bang voor de honden.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
 nl/p62/d2622,SEQ2SEQ,Melanie drinkt melk.,"person.n.01 EQU speaker
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
-nl/p75/d0935,SEQ2SEQ,Ik ben gelukkig met mijn vriendin.,"person.n.01 EQU speaker
+happy.a.01  AttributeOf -2 Time -1",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+nl/p62/d1388,SEQ2SEQ,Hoeveel kinderen heeft Anthony Quinn?,"person.n.01 Role +1
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,,0.5909090909090909,0.41935483870967744,0.4905660377358491,0.5909090909090909,0.41935483870967744,0.4905660377358491
+nl/p75/d0913,SEQ2SEQ,Jiro Akagawa heeft meer dan 480 romans geschreven.,"person.n.01 Name ""Tom""
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.43243243243243246,0.5161290322580645,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.32558139534883723,0.411764705882353,,,
 nl/p75/d0921,SEQ2SEQ,Ik heb genoeg van hem.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5517241379310345,0.5925925925925927,,,
-nl/p24/d0931,SEQ2SEQ,Ik kauwde de gom.,"person.n.01 EQU speaker
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5517241379310345,0.5925925925925927,,,
-nl/p75/d0806,SEQ2SEQ,Ik verwachtte je om 11 uur.,"person.n.01 EQU speaker
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5517241379310345,0.5925925925925927,,,
+nl/p75/d0935,SEQ2SEQ,Ik ben gelukkig met mijn vriendin.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.5454545454545454,0.6206896551724138,,,
-nl/p75/d1389,SEQ2SEQ,"Wie regisseerde ""North by Northwest""?","person.n.01 Name ""Tom""
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p75/d0853,SEQ2SEQ,De wekker wekt me om zeven uur.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.3870967741935484,0.4615384615384615,0.5714285714285714,0.3870967741935484,0.4615384615384615
-nl/p24/d0711,SEQ2SEQ,Minton werd geboren in Australië.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.56,0.45161290322580644,0.5,,,
-nl/p75/d0818,SEQ2SEQ,Ik ben een bakker.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.8260869565217391,0.5428571428571428,0.6551724137931034,0.8260869565217391,0.5428571428571428,0.6551724137931034
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
 nl/p75/d0912,SEQ2SEQ,Wie is die persoon?,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+time.n.08   EQU now",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+nl/p75/d0716,SEQ2SEQ,Paus Johannes Paulus II werd geboren in Polen.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
+nl/p75/d0853,SEQ2SEQ,De wekker wekt me om zeven uur.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.3870967741935484,0.4615384615384615,0.5714285714285714,0.3870967741935484,0.4615384615384615
+nl/p75/d0806,SEQ2SEQ,Ik verwachtte je om 11 uur.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.5454545454545454,0.6206896551724138,,,
+nl/p75/d1389,SEQ2SEQ,"Wie regisseerde ""North by Northwest""?","person.n.01 Name ""Tom""
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p24/d0711,SEQ2SEQ,Minton werd geboren in Australië.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
 nl/p75/d0914,SEQ2SEQ,"Mijn oom is mager, maar mijn tante is dik.","person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.2542372881355932,0.3571428571428571,,,
-nl/p75/d2162,SEQ2SEQ,Het vliegtuig landde op het vliegveld in Narita.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.37142857142857144,0.4642857142857143,0.6190476190476191,0.37142857142857144,0.4642857142857143
-nl/p54/d2660,SEQ2SEQ,Tom scoorde een doelpunt.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.6206896551724138,0.6666666666666666,,,
-nl/p54/d0930,SEQ2SEQ,Tom is de ketchup vergeten.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.2542372881355932,0.3571428571428571,,,
 nl/p24/d0892,SEQ2SEQ,De top van de speer was gedrenkt in een dodelijk vergif.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.358974358974359,0.45161290322580644,,,
-nl/p24/d1895,SEQ2SEQ,Kan je schaatsen?,"person.n.01 EQU speaker
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.34782608695652173,0.47058823529411764,0.39999999999999997,0.34782608695652173,0.47058823529411764,0.39999999999999997
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.358974358974359,0.45161290322580644,,,
+nl/p24/d0931,SEQ2SEQ,Ik kauwde de gom.,"person.n.01 EQU speaker
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5517241379310345,0.5925925925925927,,,
+nl/p75/d2162,SEQ2SEQ,Het vliegtuig landde op het vliegveld in Narita.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.37142857142857144,0.4642857142857143,0.6190476190476191,0.37142857142857144,0.4642857142857143
+nl/p54/d2660,SEQ2SEQ,Tom scoorde een doelpunt.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.6206896551724138,0.6666666666666666,,,
+nl/p75/d0818,SEQ2SEQ,Ik ben een bakker.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.8260869565217391,0.5428571428571428,0.6551724137931034,0.8260869565217391,0.5428571428571428,0.6551724137931034
+nl/p54/d0930,SEQ2SEQ,Tom is de ketchup vergeten.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
 nl/p24/d0955,SEQ2SEQ,Ik ben gek op jou.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
-nl/p24/d0850,SEQ2SEQ,Hij knuffelde haar.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
-nl/p54/d0953,SEQ2SEQ,Ze zei niets.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.43478260869565216,0.3448275862068966,0.38461538461538464,,,
-nl/p24/d1961,SEQ2SEQ,Mijn stropdas is oranje.,"person.n.01 EQU speaker
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p54/d2466,SEQ2SEQ,Millie eet een banaan.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.5172413793103449,0.5555555555555556,,,
-nl/p24/d0887,SEQ2SEQ,De wekker loopt af.,"male.n.02
-time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
+time.n.08   EQU now",,,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
 nl/p54/d0716,SEQ2SEQ,O.J. Simpson werd beschuldigd van moord.,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.4827586206896552,0.5185185185185185,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.4827586206896552,0.5185185185185185,,,
+nl/p54/d2466,SEQ2SEQ,Millie eet een banaan.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.5172413793103449,0.5555555555555556,,,
 nl/p24/d3251,SEQ2SEQ,De kat zit onder de tafel.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.36363636363636365,0.4444444444444444,0.5714285714285714,0.36363636363636365,0.4444444444444444
+time.n.08   TPR now",,,0.5714285714285714,0.36363636363636365,0.4444444444444444,0.5714285714285714,0.36363636363636365,0.4444444444444444
+nl/p54/d0953,SEQ2SEQ,Ze zei niets.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.43478260869565216,0.3448275862068966,0.38461538461538464,,,
 nl/p54/d0840,SEQ2SEQ,Hij berekende de kosten.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.5925925925925926,0.6399999999999999,,,
-nl/p24/d0810,SEQ2SEQ,Nu sneeuwt het.,"time.n.08 EQU speaker
-time.n.08 EQU now",,0.5625,0.6,0.5806451612903225,0.5625,0.6,0.5806451612903225
-nl/p54/d0914,SEQ2SEQ,Je O's lijken op je A's.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.56,0.45161290322580644,0.5,,,
-nl/p92/d0861,SEQ2SEQ,Meneer Spencer werkt in een winkel.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.45714285714285713,0.5333333333333333,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.5925925925925926,0.6399999999999999,,,
+nl/p24/d0850,SEQ2SEQ,Hij knuffelde haar.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
 nl/p54/d1499,SEQ2SEQ,Ik heb een beslissing getroffen.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.6206896551724138,0.6666666666666666,,,
-nl/p92/d0829,SEQ2SEQ,Wie heeft de boom geplant?,"person.n.01 EQU speaker
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.6206896551724138,0.6666666666666666,,,
+nl/p24/d1961,SEQ2SEQ,Mijn stropdas is oranje.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p24/d1895,SEQ2SEQ,Kan je schaatsen?,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.34782608695652173,0.47058823529411764,0.39999999999999997,0.34782608695652173,0.47058823529411764,0.39999999999999997
+nl/p24/d0887,SEQ2SEQ,De wekker loopt af.,"male.n.02
+time.n.08  EQU now
+happy.a.01 AttributeOf -2 Time -1",,,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
+nl/p54/d0914,SEQ2SEQ,Je O's lijken op je A's.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.5172413793103449,0.5555555555555556,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
+nl/p24/d0810,SEQ2SEQ,Nu sneeuwt het.,"time.n.08 EQU speaker
+time.n.08 EQU now",,,0.5625,0.6,0.5806451612903225,0.5625,0.6,0.5806451612903225
+nl/p92/d0861,SEQ2SEQ,Meneer Spencer werkt in een winkel.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.45714285714285713,0.5333333333333333,,,
 nl/p92/d0711,SEQ2SEQ,Dickson werkte voor Edison.,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
-nl/p92/d0833,SEQ2SEQ,De romans die hij geschreven heeft zijn interessant.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6521739130434783,0.36585365853658536,0.46874999999999994,,,
-nl/p92/d0712,SEQ2SEQ,Nancy Ianiero werd gedood in Mexico.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.41935483870967744,0.46428571428571425,,,
-nl/p54/d0864,SEQ2SEQ,Betty is een seriemoordenares.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.7391304347826086,0.4857142857142857,0.5862068965517241,0.7391304347826086,0.4857142857142857,0.5862068965517241
-nl/p54/d0863,SEQ2SEQ,Bent u getrouwd?,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
-nl/p92/d0875,SEQ2SEQ,Dit kostte minder dan vijftien dollar.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.2978723404255319,0.39999999999999997,,,
-nl/p92/d0923,SEQ2SEQ,Hij werd 10.000 dollar betaald.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.4,0.48275862068965525,,,
-nl/p92/d0764,SEQ2SEQ,Verdens Gang is een Noorse krant.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.3783783783783784,0.4516129032258065,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
 nl/p54/d3130,SEQ2SEQ,Ik was aan het slapen.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+time.n.08   EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p92/d0875,SEQ2SEQ,Dit kostte minder dan vijftien dollar.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.2978723404255319,0.39999999999999997,,,
+nl/p92/d0829,SEQ2SEQ,Wie heeft de boom geplant?,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.5172413793103449,0.5555555555555556,,,
+nl/p92/d0833,SEQ2SEQ,De romans die hij geschreven heeft zijn interessant.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.36585365853658536,0.46874999999999994,,,
+nl/p92/d0923,SEQ2SEQ,Hij werd 10.000 dollar betaald.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.4,0.48275862068965525,,,
 nl/p92/d3199,SEQ2SEQ,Ze noemen Robert „Bob”.,"person.n.01 EQU speaker
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6086956521739131,0.3783783783783784,0.4666666666666667,0.6086956521739131,0.3783783783783784,0.4666666666666667
-nl/p83/d0784,SEQ2SEQ,Meneer Brown heeft vier kinderen.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.4594594594594595,0.5483870967741935,,,
-nl/p85/d0893,SEQ2SEQ,Een dokter onderzocht meneer Brown.,,Invalid token found '-1' in line: male.n.02 Name User -1 Time +1 Theme +2,,,,,,
+time.n.08   TPR now",,,0.6086956521739131,0.3783783783783784,0.4666666666666667,0.6086956521739131,0.3783783783783784,0.4666666666666667
 nl/p92/d2898,SEQ2SEQ,Wat is je voornaam?,"male.n.02 Name ?
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5652173913043478,0.41935483870967744,0.4814814814814815,0.5652173913043478,0.41935483870967744,0.4814814814814815
-nl/p83/d0814,SEQ2SEQ,Mijn moeder is mooi.,"person.n.01 EQU speaker
+time.n.08 EQU now",,,0.5652173913043478,0.41935483870967744,0.4814814814814815,0.5652173913043478,0.41935483870967744,0.4814814814814815
+nl/p54/d0863,SEQ2SEQ,Bent u getrouwd?,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
-nl/p83/d1973,SEQ2SEQ,Ze is vriendelijk tegen hem.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
-nl/p83/d0760,SEQ2SEQ,MG Rover is gekocht door Airbus.,"male.n.02 Name ""Tom""
+time.n.08   EQU now",,,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
+nl/p54/d0864,SEQ2SEQ,Betty is een seriemoordenares.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.7391304347826086,0.4857142857142857,0.5862068965517241,0.7391304347826086,0.4857142857142857,0.5862068965517241
+nl/p83/d0784,SEQ2SEQ,Meneer Brown heeft vier kinderen.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
-nl/p92/d0820,SEQ2SEQ,Mijn horloge was gestolen.,"person.n.01 Role +1
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.5909090909090909,0.5652173913043478,0.5777777777777778,0.5909090909090909,0.5652173913043478,0.5777777777777778
-nl/p92/d0902,SEQ2SEQ,Deze schoen is een maat groter.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.2857142857142857,0.38095238095238093,0.5714285714285714,0.2857142857142857,0.38095238095238093
-nl/p83/d0903,SEQ2SEQ,Tom schraapte zijn keel.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.5333333333333333,0.5818181818181818,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p92/d0764,SEQ2SEQ,Verdens Gang is een Noorse krant.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.3783783783783784,0.4516129032258065,,,
+nl/p85/d0893,SEQ2SEQ,Een dokter onderzocht meneer Brown.,,,,,,,,,
+nl/p92/d0712,SEQ2SEQ,Nancy Ianiero werd gedood in Mexico.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.41935483870967744,0.46428571428571425,,,
 nl/p92/d2611,SEQ2SEQ,Dat is mijn hond.,"male.n.02
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
+time.n.08 EQU now",,,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
+nl/p83/d0903,SEQ2SEQ,Tom schraapte zijn keel.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5333333333333333,0.5818181818181818,,,
+nl/p92/d0820,SEQ2SEQ,Mijn horloge was gestolen.,"person.n.01 Role +1
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.5909090909090909,0.5652173913043478,0.5777777777777778,0.5909090909090909,0.5652173913043478,0.5777777777777778
+nl/p83/d1973,SEQ2SEQ,Ze is vriendelijk tegen hem.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
 nl/p83/d2854,SEQ2SEQ,Er zit een aal in het water.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5652173913043478,0.48148148148148145,0.52,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.48148148148148145,0.52,,,
+nl/p92/d0902,SEQ2SEQ,Deze schoen is een maat groter.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.2857142857142857,0.38095238095238093,0.5714285714285714,0.2857142857142857,0.38095238095238093
+nl/p83/d0814,SEQ2SEQ,Mijn moeder is mooi.,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+nl/p83/d0760,SEQ2SEQ,MG Rover is gekocht door Airbus.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
 nl/p83/d0848,SEQ2SEQ,Zij is veel groter dan ik.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.5652173913043478,0.29545454545454547,0.3880597014925373,,,
-nl/p85/d1764,SEQ2SEQ,Ik ben groter dan je.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.42105263157894735,0.5079365079365079,,,
-nl/p83/d1570,SEQ2SEQ,De hitte van de zon verhardt klei.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.3939393939393939,0.48148148148148145,0.6190476190476191,0.3939393939393939,0.48148148148148145
-nl/p85/d3375,SEQ2SEQ,We huurden een film.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p83/d2278,SEQ2SEQ,We hebben twee dochters.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.4594594594594595,0.5666666666666667,0.7391304347826086,0.4594594594594595,0.5666666666666667
-nl/p85/d1815,SEQ2SEQ,Leo Tolstoj was een vegetariër.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.4857142857142857,0.5666666666666667,,,
-nl/p83/d0836,SEQ2SEQ,Hij is groter dan zijn vader.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6190476190476191,0.3170731707317073,0.4193548387096774,0.6190476190476191,0.3170731707317073,0.4193548387096774
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.29545454545454547,0.3880597014925373,,,
 nl/p83/d2406,SEQ2SEQ,We begrijpen het.,"person.n.01 EQU speaker
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
-nl/p85/d0712,SEQ2SEQ,Manchester United versloeg Fulham.,"male.n.02 Name ""Tom""
+happy.a.01  AttributeOf -2 Time -1",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p85/d3375,SEQ2SEQ,We huurden een film.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p85/d1764,SEQ2SEQ,Ik ben groter dan je.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.42105263157894735,0.5079365079365079,,,
+nl/p85/d1815,SEQ2SEQ,Leo Tolstoj was een vegetariër.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.41935483870967744,0.46428571428571425,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4857142857142857,0.5666666666666667,,,
 nl/p83/d2551,SEQ2SEQ,Ik leer Perzisch.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+time.n.08   EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p83/d0836,SEQ2SEQ,Hij is groter dan zijn vader.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.6190476190476191,0.3170731707317073,0.4193548387096774,0.6190476190476191,0.3170731707317073,0.4193548387096774
+nl/p83/d1570,SEQ2SEQ,De hitte van de zon verhardt klei.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.3939393939393939,0.48148148148148145,0.6190476190476191,0.3939393939393939,0.48148148148148145
 nl/p85/d2966,SEQ2SEQ,Jij bent groter dan ik.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.42105263157894735,0.5079365079365079,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.42105263157894735,0.5079365079365079,,,
+nl/p85/d0712,SEQ2SEQ,Manchester United versloeg Fulham.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.41935483870967744,0.46428571428571425,,,
+nl/p83/d2278,SEQ2SEQ,We hebben twee dochters.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.4594594594594595,0.5666666666666667,0.7391304347826086,0.4594594594594595,0.5666666666666667
 nl/p85/d1577,SEQ2SEQ,Zij is intelligent.,"male.n.02
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
+time.n.08 EQU now",,,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
 nl/p85/d0942,SEQ2SEQ,Ik at het.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p85/d0766,SEQ2SEQ,Ik ga hem neerschieten.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p32/d3159,SEQ2SEQ,Maria is twee maanden zwanger.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.56,0.3783783783783784,0.4516129032258065,,,
-nl/p85/d0825,SEQ2SEQ,De school begint om half negen.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5238095238095238,0.4782608695652174,0.5,0.5238095238095238,0.4782608695652174,0.5
+time.n.08   EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
 nl/p32/d0906,SEQ2SEQ,Ik eet omdat ik honger heb.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.3617021276595745,0.4722222222222222,,,
-nl/p32/d0886,SEQ2SEQ,Extremisten ontvoerden de vrouw van de president.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p85/d0936,SEQ2SEQ,Ik ben gelukkig.,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p85/d0940,SEQ2SEQ,Tom is sterk.,"male.n.02 Name ""Tom""
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p85/d0889,SEQ2SEQ,Ik ben Antonio.,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.43478260869565216,0.5882352941176471,0.5,0.43478260869565216,0.5882352941176471,0.5
-nl/p32/d0760,SEQ2SEQ,FermiLab ontwikkelde Linux LTS.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.41935483870967744,0.46428571428571425,,,
-nl/p32/d0890,SEQ2SEQ,Ik heb het je dikwijls gezegd.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.37777777777777777,0.48571428571428565,,,
-nl/p85/d0915,SEQ2SEQ,Hij dronk bier.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
-nl/p32/d0955,SEQ2SEQ,Mijn oom is boos.,"person.n.01 EQU speaker
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.3617021276595745,0.4722222222222222,,,
 nl/p85/d0903,SEQ2SEQ,Tom kleedde zich om.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p32/d0913,SEQ2SEQ,Alle appels zijn rood.,"person.n.01 EQU speaker
+time.n.08 EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p85/d0825,SEQ2SEQ,De school begint om half negen.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5238095238095238,0.4782608695652174,0.5,0.5238095238095238,0.4782608695652174,0.5
+nl/p85/d0940,SEQ2SEQ,Tom is sterk.,"male.n.02 Name ""Tom""
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p32/d0886,SEQ2SEQ,Extremisten ontvoerden de vrouw van de president.,,,,,,,,,
+nl/p32/d0955,SEQ2SEQ,Mijn oom is boos.,"person.n.01 EQU speaker
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.5652173913043478,0.52,0.5416666666666667,0.5652173913043478,0.52,0.5416666666666667
-nl/p32/d0835,SEQ2SEQ,Ik heb zijn hulp nodig.,"person.n.01 EQU speaker
+happy.a.01  AttributeOf -2 Time -1",,,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+nl/p85/d0915,SEQ2SEQ,Hij dronk bier.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+nl/p32/d3159,SEQ2SEQ,Maria is twee maanden zwanger.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.3783783783783784,0.4516129032258065,,,
+nl/p85/d0889,SEQ2SEQ,Ik ben Antonio.,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.43478260869565216,0.5882352941176471,0.5,0.43478260869565216,0.5882352941176471,0.5
+nl/p85/d0766,SEQ2SEQ,Ik ga hem neerschieten.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p32/d0890,SEQ2SEQ,Ik heb het je dikwijls gezegd.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.5142857142857142,0.6,,,
-nl/p32/d1935,SEQ2SEQ,De gevangene is ontsnapt!,"male.n.02
-time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.37777777777777777,0.48571428571428565,,,
+nl/p85/d0936,SEQ2SEQ,Ik ben gelukkig.,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p32/d0760,SEQ2SEQ,FermiLab ontwikkelde Linux LTS.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.41935483870967744,0.46428571428571425,,,
 nl/p32/d0931,SEQ2SEQ,Is dat niet schattig?,"time.n.08 EQU speaker
-time.n.08 EQU now",,0.5625,0.391304347826087,0.46153846153846156,0.5625,0.391304347826087,0.46153846153846156
+time.n.08 EQU now",,,0.5625,0.391304347826087,0.46153846153846156,0.5625,0.391304347826087,0.46153846153846156
 nl/p32/d0930,SEQ2SEQ,Tom heeft een auto.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
-nl/p93/d1391,SEQ2SEQ,Wie is de uitvinder van de radio?,"person.n.01 Name ""Tom""
+time.n.08 EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p32/d0913,SEQ2SEQ,Alle appels zijn rood.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.5652173913043478,0.52,0.5416666666666667,0.5652173913043478,0.52,0.5416666666666667
+nl/p32/d0835,SEQ2SEQ,Ik heb zijn hulp nodig.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.43902439024390244,0.5454545454545455,,,
-nl/p93/d1524,SEQ2SEQ,Ik staarde naar de man.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p93/d0913,SEQ2SEQ,Ze heeft ongeveer 2000 boeken.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5652173913043478,0.3170731707317073,0.40625,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.5142857142857142,0.6,,,
+nl/p32/d1935,SEQ2SEQ,De gevangene is ontsnapt!,"male.n.02
+time.n.08  EQU now
+happy.a.01 AttributeOf -2 Time -1",,,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
 nl/p93/d0836,SEQ2SEQ,Hij nam een foto van de koala.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.48484848484848486,0.5714285714285715,,,
-nl/p93/d0842,SEQ2SEQ,Hij gaat de stad nooit meer bezoeken.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.48484848484848486,0.5714285714285715,,,
+nl/p93/d1391,SEQ2SEQ,Wie is de uitvinder van de radio?,"person.n.01 Name ""Tom""
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.43902439024390244,0.5454545454545455,,,
+nl/p93/d1524,SEQ2SEQ,Ik staarde naar de man.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
 nl/p93/d3548,SEQ2SEQ,De bibliotheek is tachtig jaar oud.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.37142857142857144,0.4482758620689655,,,
-nl/p32/d0766,SEQ2SEQ,De Falklandoorlog vond plaats in 1982.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.52,0.5652173913043478,0.6190476190476191,0.52,0.5652173913043478
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.34285714285714286,0.4137931034482759,,,
+nl/p93/d0842,SEQ2SEQ,Hij gaat de stad nooit meer bezoeken.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
 nl/p93/d0887,SEQ2SEQ,Ik ga met u naar Hannover.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.46153846153846156,0.5625,,,
-nl/p93/d0926,SEQ2SEQ,Ben ik in Londen?,"person.n.01 EQU speaker
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.46153846153846156,0.5625,,,
 nl/p93/d2849,SEQ2SEQ,De mensen in Brazilië waren trots op hem.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.37142857142857144,0.4482758620689655,,,
-nl/p43/d2299,SEQ2SEQ,We schatten de schade op duizend dollar.,"person.n.01 Role +1
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,,,,,,
-nl/p93/d3306,SEQ2SEQ,Tom verbleef een week op Bali met zijn vriendin.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.68,0.34,0.4533333333333334,,,
-nl/p32/d0944,SEQ2SEQ,Hij kan Frans spreken.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.37142857142857144,0.4482758620689655,,,
+nl/p93/d0913,SEQ2SEQ,Ze heeft ongeveer 2000 boeken.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.3170731707317073,0.40625,,,
 nl/p93/d2799,SEQ2SEQ,Het is vijf voor vier.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
+time.n.08 EQU now",,,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
+nl/p32/d0766,SEQ2SEQ,De Falklandoorlog vond plaats in 1982.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.52,0.5652173913043478,0.6190476190476191,0.52,0.5652173913043478
+nl/p43/d2299,SEQ2SEQ,We schatten de schade op duizend dollar.,"person.n.01 Role +1
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",Exporting a cyclic SBN graph to Penman is not possible.,Exporting a cyclic SBN graph to Penman is not possible.,,,,,,
+nl/p93/d3306,SEQ2SEQ,Tom verbleef een week op Bali met zijn vriendin.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.34,0.4533333333333334,,,
+nl/p93/d0926,SEQ2SEQ,Ben ik in Londen?,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
 nl/p93/d0848,SEQ2SEQ,Ze is trots op haar dochter.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.35294117647058826,0.4210526315789474,,,
-nl/p13/d0712,SEQ2SEQ,Illinois grenst aan Missouri.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.35294117647058826,0.4210526315789474,,,
+nl/p32/d0944,SEQ2SEQ,Hij kan Frans spreken.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093
 nl/p93/d1921,SEQ2SEQ,Iedereen behalve Tom glimlachte.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.5217391304347826,0.36363636363636365,0.42857142857142855,0.5217391304347826,0.36363636363636365,0.42857142857142855
+time.n.08   EQU now",,,0.5217391304347826,0.36363636363636365,0.42857142857142855,0.5217391304347826,0.36363636363636365,0.42857142857142855
 nl/p93/d0901,SEQ2SEQ,Wat is de wortel van 100?,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.43478260869565216,0.43478260869565216,0.43478260869565216,0.43478260869565216,0.43478260869565216,0.43478260869565216
-nl/p43/d0875,SEQ2SEQ,"Ik mag Tom, omdat hij eerlijk is.","person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.3148148148148148,0.43037974683544306,,,
+time.n.08 EQU now",,,0.43478260869565216,0.43478260869565216,0.43478260869565216,0.43478260869565216,0.43478260869565216,0.43478260869565216
 nl/p13/d0894,SEQ2SEQ,Hij is niet zo slim als zijn broer.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.4782608695652174,0.22448979591836735,0.3055555555555556,,,
-nl/p43/d1387,SEQ2SEQ,Uit welk land komt de makelaar Schneider?,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.43243243243243246,0.5161290322580645,,,
-nl/p43/d0938,SEQ2SEQ,Agnès keek naar de bruine boten.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.45714285714285713,0.5333333333333333,,,
-nl/p43/d0899,SEQ2SEQ,Die kat is bruin.,"time.n.08 EQU now
-time.n.08 EQU now",,0.625,0.47619047619047616,0.5405405405405405,0.625,0.47619047619047616,0.5405405405405405
-nl/p63/d2262,SEQ2SEQ,Een dollar is gelijk aan honderd dollarcent.,,Invalid token found '-1' in line: male.n.02 Name User -1 Time +1 Theme +2,,,,,,
-nl/p13/d0913,SEQ2SEQ,Je bent een workaholic.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.782608695652174,0.5142857142857142,0.6206896551724138,0.782608695652174,0.5142857142857142,0.6206896551724138
-nl/p13/d0950,SEQ2SEQ,Die vent is helemaal kierewiet!,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
-nl/p43/d3370,SEQ2SEQ,Ik heb een kaart naar Tom gefaxt.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4594594594594595,0.5483870967741935,,,
-nl/p43/d0948,SEQ2SEQ,Jullie spreken geen Engels.,"person.n.01 Role +1
-time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.5454545454545454,0.3870967741935484,0.45283018867924524,0.5454545454545454,0.3870967741935484,0.45283018867924524
-nl/p63/d0926,SEQ2SEQ,Mijn ouders spreken geen Nederlands.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.40540540540540543,0.48387096774193555,,,
-nl/p63/d0862,SEQ2SEQ,Ik heb de boeken aan deze student gegeven.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.43902439024390244,0.5454545454545455,,,
-nl/p13/d0907,SEQ2SEQ,Hij kan fluit spelen.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093
-nl/p63/d1896,SEQ2SEQ,Hoeveel bloemen koop je?,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p63/d0828,SEQ2SEQ,De rivier stroomt uit in de Pacifische oceaan.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.24489795918367346,0.3333333333333333,,,
+nl/p13/d0712,SEQ2SEQ,Illinois grenst aan Missouri.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
 nl/p13/d0897,SEQ2SEQ,Zij is veel zwaarder dan hij.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6190476190476191,0.30952380952380953,0.41269841269841273,0.6190476190476191,0.30952380952380953,0.41269841269841273
+time.n.08 TPR now",,,0.6190476190476191,0.30952380952380953,0.41269841269841273,0.6190476190476191,0.30952380952380953,0.41269841269841273
+nl/p43/d0875,SEQ2SEQ,"Ik mag Tom, omdat hij eerlijk is.","person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.3148148148148148,0.43037974683544306,,,
+nl/p13/d0913,SEQ2SEQ,Je bent een workaholic.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.782608695652174,0.5142857142857142,0.6206896551724138,0.782608695652174,0.5142857142857142,0.6206896551724138
+nl/p43/d3370,SEQ2SEQ,Ik heb een kaart naar Tom gefaxt.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p63/d2262,SEQ2SEQ,Een dollar is gelijk aan honderd dollarcent.,,,,,,,,,
+nl/p43/d0938,SEQ2SEQ,Agnès keek naar de bruine boten.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.45714285714285713,0.5333333333333333,,,
+nl/p43/d1387,SEQ2SEQ,Uit welk land komt de makelaar Schneider?,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
+nl/p13/d0713,SEQ2SEQ,Canada versloeg de VS.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.5652173913043478,0.41935483870967744,0.4814814814814815,0.5652173913043478,0.41935483870967744,0.4814814814814815
+nl/p63/d0828,SEQ2SEQ,De rivier stroomt uit in de Pacifische oceaan.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
+nl/p13/d0950,SEQ2SEQ,Die vent is helemaal kierewiet!,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
+nl/p63/d0926,SEQ2SEQ,Mijn ouders spreken geen Nederlands.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.40540540540540543,0.48387096774193555,,,
+nl/p63/d1896,SEQ2SEQ,Hoeveel bloemen koop je?,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p43/d0899,SEQ2SEQ,Die kat is bruin.,"time.n.08 EQU now
+time.n.08 EQU now",,,0.625,0.47619047619047616,0.5405405405405405,0.625,0.47619047619047616,0.5405405405405405
+nl/p43/d0948,SEQ2SEQ,Jullie spreken geen Engels.,"person.n.01 Role +1
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,,0.5454545454545454,0.3870967741935484,0.45283018867924524,0.5454545454545454,0.3870967741935484,0.45283018867924524
+nl/p63/d0862,SEQ2SEQ,Ik heb de boeken aan deze student gegeven.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.43902439024390244,0.5454545454545455,,,
+nl/p13/d0907,SEQ2SEQ,Hij kan fluit spelen.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093,0.38095238095238093
+nl/p63/d0850,SEQ2SEQ,De top van de Fuji was bedekt met sneeuw.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.4,0.48275862068965525,,,
+nl/p63/d2634,SEQ2SEQ,Dan ontmoette Linda in de kerk.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
+nl/p63/d0955,SEQ2SEQ,Marilyn Monroe overleed 33 jaar geleden.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.38461538461538464,0.46875,,,
+nl/p25/d2748,SEQ2SEQ,Daniël bedankte de politiemensen.,,,,,,,,,
+nl/p43/d0785,SEQ2SEQ,Wie heeft Hamlet geschreven?,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6086956521739131,0.45161290322580644,0.5185185185185185,0.6086956521739131,0.45161290322580644,0.5185185185185185
 nl/p43/d2498,SEQ2SEQ,Jullie zijn heel schattige jongens.,"male.n.02  Name ""Tom""
 time.n.08  EQU now
 happy.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08  EQU now",,0.5483870967741935,0.4146341463414634,0.4722222222222222,0.5483870967741935,0.4146341463414634,0.4722222222222222
-nl/p13/d0713,SEQ2SEQ,Canada versloeg de VS.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.5652173913043478,0.41935483870967744,0.4814814814814815,0.5652173913043478,0.41935483870967744,0.4814814814814815
-nl/p63/d0955,SEQ2SEQ,Marilyn Monroe overleed 33 jaar geleden.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6,0.38461538461538464,0.46875,,,
-nl/p63/d2634,SEQ2SEQ,Dan ontmoette Linda in de kerk.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.43243243243243246,0.5161290322580645,,,
-nl/p25/d2748,SEQ2SEQ,Daniël bedankte de politiemensen.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p43/d0785,SEQ2SEQ,Wie heeft Hamlet geschreven?,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6086956521739131,0.45161290322580644,0.5185185185185185,0.6086956521739131,0.45161290322580644,0.5185185185185185
-nl/p63/d0850,SEQ2SEQ,De top van de Fuji was bedekt met sneeuw.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.4,0.48275862068965525,,,
-nl/p25/d0761,SEQ2SEQ,Swift stierf in 1745.,,Invalid token found '-1' in line: male.n.02 Name User -1 Time +1 Theme +2,,,,,,
-nl/p63/d2934,SEQ2SEQ,Ik ben allergisch voor katten.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
-nl/p84/d0879,SEQ2SEQ,Maciek overleed in december.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.56,0.56,,,
+time.n.08  EQU now",,,0.5483870967741935,0.4146341463414634,0.4722222222222222,0.5483870967741935,0.4146341463414634,0.4722222222222222
 nl/p84/d0784,SEQ2SEQ,Brian nam een paar rozen.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.68,0.5483870967741935,0.6071428571428571,,,
-nl/p84/d1389,SEQ2SEQ,Hoe stierf Charles Bukowski?,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
-nl/p25/d3304,SEQ2SEQ,Ik heb mijn T-shirt gewassen.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p63/d3175,SEQ2SEQ,Het was half acht.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.3333333333333333,0.6363636363636364,0.43749999999999994,0.3333333333333333,0.6363636363636364,0.43749999999999994
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5483870967741935,0.6071428571428571,,,
+nl/p25/d0761,SEQ2SEQ,Swift stierf in 1745.,,,,,,,,,
 nl/p63/d0863,SEQ2SEQ,Er is melk in de koelkast.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.5238095238095238,0.4074074074074074,0.4583333333333333,0.5238095238095238,0.4074074074074074,0.4583333333333333
-nl/p84/d1796,SEQ2SEQ,Het krioelt van de vissen in die rivier.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
-nl/p63/d2233,SEQ2SEQ,Ik hou van schaken.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
-nl/p25/d0813,SEQ2SEQ,Onze ploeg heeft onze tegenstander met 5-4 verslagen.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.52,0.3333333333333333,0.40625000000000006,,,
-nl/p25/d3470,SEQ2SEQ,Ze heeft haar handtas verloren.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.5,0.5490196078431373,,,
-nl/p25/d0799,SEQ2SEQ,Deze muziek is populair bij jonge mensen.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.34285714285714286,0.42857142857142855,0.5714285714285714,0.34285714285714286,0.42857142857142855
-nl/p25/d0760,SEQ2SEQ,Edison heeft de kinetoscoop uitgevonden.,"male.n.02 Name ""Tom""
+time.n.08 TPR now",,,0.5238095238095238,0.4074074074074074,0.4583333333333333,0.5238095238095238,0.4074074074074074,0.4583333333333333
+nl/p84/d0879,SEQ2SEQ,Maciek overleed in december.,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.5172413793103449,0.5555555555555556,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.56,0.56,,,
+nl/p84/d1389,SEQ2SEQ,Hoe stierf Charles Bukowski?,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
+nl/p63/d2934,SEQ2SEQ,Ik ben allergisch voor katten.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p63/d3175,SEQ2SEQ,Het was half acht.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.3333333333333333,0.6363636363636364,0.43749999999999994,0.3333333333333333,0.6363636363636364,0.43749999999999994
 nl/p84/d2746,SEQ2SEQ,Mijn horloge werd gestolen.,"person.n.01 Role +1
 time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.5909090909090909,0.5652173913043478,0.5777777777777778,0.5909090909090909,0.5652173913043478,0.5777777777777778
-nl/p84/d1385,SEQ2SEQ,Hoeveel inwoners heeft Irak?,"person.n.01 Role +1
-time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.6363636363636364,0.3783783783783784,0.4745762711864407,0.6363636363636364,0.3783783783783784,0.4745762711864407
+closed.a.01 AttributeOf -2 Time -1",,,0.5909090909090909,0.5652173913043478,0.5777777777777778,0.5909090909090909,0.5652173913043478,0.5777777777777778
+nl/p63/d2233,SEQ2SEQ,Ik hou van schaken.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p84/d1796,SEQ2SEQ,Het krioelt van de vissen in die rivier.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
+nl/p25/d3304,SEQ2SEQ,Ik heb mijn T-shirt gewassen.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p25/d0813,SEQ2SEQ,Onze ploeg heeft onze tegenstander met 5-4 verslagen.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.3333333333333333,0.40625000000000006,,,
+nl/p25/d3470,SEQ2SEQ,Ze heeft haar handtas verloren.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.5,0.5490196078431373,,,
+nl/p25/d0799,SEQ2SEQ,Deze muziek is populair bij jonge mensen.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.34285714285714286,0.42857142857142855,0.5714285714285714,0.34285714285714286,0.42857142857142855
+nl/p25/d0760,SEQ2SEQ,Edison heeft de kinetoscoop uitgevonden.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.5172413793103449,0.5555555555555556,,,
 nl/p25/d0775,SEQ2SEQ,Er ligt een pen op het bureau.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.4444444444444444,0.48,,,
-nl/p25/d0940,SEQ2SEQ,Dat is niet belangrijk.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.47619047619047616,0.43478260869565216,0.4545454545454545,0.47619047619047616,0.43478260869565216,0.4545454545454545
-nl/p25/d2934,SEQ2SEQ,Het restaurant was niet vol.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.42857142857142855,0.391304347826087,0.4090909090909091,0.42857142857142855,0.391304347826087,0.4090909090909091
-nl/p25/d0713,SEQ2SEQ,Overstromingen verwoesten Europa.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
-nl/p25/d2372,SEQ2SEQ,Heb je geld nodig?,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.4444444444444444,0.48,,,
+nl/p84/d1385,SEQ2SEQ,Hoeveel inwoners heeft Irak?,"person.n.01 Role +1
+time.n.08   EQU now
+closed.a.01 AttributeOf -2 Time -1",,,0.6363636363636364,0.3783783783783784,0.4745762711864407,0.6363636363636364,0.3783783783783784,0.4745762711864407
 nl/p25/d0870,SEQ2SEQ,Frans is zijn moedertaal.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.48484848484848486,0.5714285714285715,0.6956521739130435,0.48484848484848486,0.5714285714285715
-nl/p55/d0872,SEQ2SEQ,Iedereen die hem kende bewonderde hem.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.56,0.2641509433962264,0.358974358974359,,,
-nl/p55/d1888,SEQ2SEQ,Ik ben verschillende keren in Italië geweest.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.46153846153846156,0.5625,,,
-nl/p55/d0891,SEQ2SEQ,Ik ontmoette een wolf in een droom.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4857142857142857,0.5666666666666667,,,
-nl/p55/d0813,SEQ2SEQ,We stonden aan de rand van een klif.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.5142857142857142,0.6,,,
-nl/p05/d0895,SEQ2SEQ,Haar favoriete band is Warpaint.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p55/d0775,SEQ2SEQ,De rekening bedroeg 100 dollar.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.4,0.48275862068965525,,,
+time.n.08 EQU now",,,0.6956521739130435,0.48484848484848486,0.5714285714285715,0.6956521739130435,0.48484848484848486,0.5714285714285715
+nl/p25/d0940,SEQ2SEQ,Dat is niet belangrijk.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.47619047619047616,0.43478260869565216,0.4545454545454545,0.47619047619047616,0.43478260869565216,0.4545454545454545
+nl/p25/d2934,SEQ2SEQ,Het restaurant was niet vol.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.42857142857142855,0.391304347826087,0.4090909090909091,0.42857142857142855,0.391304347826087,0.4090909090909091
+nl/p25/d2372,SEQ2SEQ,Heb je geld nodig?,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
 nl/p55/d1776,SEQ2SEQ,Ik ben verliefd op Toms vrouw.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.37209302325581395,0.4705882352941177,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.37209302325581395,0.4705882352941177,,,
+nl/p25/d0713,SEQ2SEQ,Overstromingen verwoesten Europa.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+nl/p55/d0891,SEQ2SEQ,Ik ontmoette een wolf in een droom.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4857142857142857,0.5666666666666667,,,
+nl/p55/d0872,SEQ2SEQ,Iedereen die hem kende bewonderde hem.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.2641509433962264,0.358974358974359,,,
+nl/p55/d0775,SEQ2SEQ,De rekening bedroeg 100 dollar.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.4,0.48275862068965525,,,
+nl/p05/d0895,SEQ2SEQ,Haar favoriete band is Warpaint.,,,,,,,,,
+nl/p55/d0813,SEQ2SEQ,We stonden aan de rand van een klif.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.5142857142857142,0.6,,,
+nl/p55/d1888,SEQ2SEQ,Ik ben verschillende keren in Italië geweest.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.46153846153846156,0.5625,,,
 nl/p55/d1389,SEQ2SEQ,In welke Londense wijk staat het British Museum?,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.358974358974359,0.4375,,,
-nl/p52/d3045,SEQ2SEQ,Ik heb een brief geschreven.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.5862068965517241,0.6296296296296295,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.358974358974359,0.4375,,,
 nl/p25/d3281,SEQ2SEQ,Mijn vrouw keek verbaasd.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.4722222222222222,0.5762711864406781,0.7391304347826086,0.4722222222222222,0.5762711864406781
-nl/p55/d0790,SEQ2SEQ,Het kostte minder dan vijftig dollar.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.2978723404255319,0.39999999999999997,,,
-nl/p52/d1389,SEQ2SEQ,Wie is de Hongaarse premier?,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.3488372093023256,0.4411764705882353,,,
-nl/p55/d1726,SEQ2SEQ,U bent langer dan ik.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.42105263157894735,0.5245901639344263,0.6956521739130435,0.42105263157894735,0.5245901639344263
-nl/p55/d0943,SEQ2SEQ,Die kerel is dubbelhartig.,"person.n.01 Role +1
-time.n.08   EQU now",,0.7333333333333333,0.5238095238095238,0.611111111111111,0.7333333333333333,0.5238095238095238,0.611111111111111
+time.n.08   EQU now",,,0.7391304347826086,0.4722222222222222,0.5762711864406781,0.7391304347826086,0.4722222222222222,0.5762711864406781
 nl/p55/d0764,SEQ2SEQ,Charles de Gaulle overleed in 1970.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.64,0.64,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.64,0.64,,,
+nl/p55/d0790,SEQ2SEQ,Het kostte minder dan vijftig dollar.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.2978723404255319,0.39999999999999997,,,
+nl/p52/d3045,SEQ2SEQ,Ik heb een brief geschreven.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p55/d1726,SEQ2SEQ,U bent langer dan ik.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.42105263157894735,0.5245901639344263,0.6956521739130435,0.42105263157894735,0.5245901639344263
+nl/p52/d1389,SEQ2SEQ,Wie is de Hongaarse premier?,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.3488372093023256,0.4411764705882353,,,
 nl/p52/d2006,SEQ2SEQ,Hij kocht een dozijn eieren.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,,,
-nl/p52/d0808,SEQ2SEQ,"Mijn broer is twee jaar ouder dan ik, maar hij is drie centimeter kleiner.","person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.1485148514851485,0.23809523809523808,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.5517241379310345,0.6153846153846154,,,
+nl/p55/d0943,SEQ2SEQ,Die kerel is dubbelhartig.,"person.n.01 Role +1
+time.n.08   EQU now",,,0.7333333333333333,0.5238095238095238,0.611111111111111,0.7333333333333333,0.5238095238095238,0.611111111111111
 nl/p55/d0931,SEQ2SEQ,Tom heeft geen kredietkaart.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6521739130434783,0.4838709677419355,0.5555555555555556,0.6521739130434783,0.4838709677419355,0.5555555555555556
+time.n.08 EQU now",,,0.6521739130434783,0.4838709677419355,0.5555555555555556,0.6521739130434783,0.4838709677419355,0.5555555555555556
 nl/p55/d0766,SEQ2SEQ,"Het wachtwoord is ""Muiriël"".","person.n.01 Role +1
-time.n.08   EQU now",,0.7333333333333333,0.3793103448275862,0.5,0.7333333333333333,0.3793103448275862,0.5
+time.n.08   EQU now",,,0.7333333333333333,0.3793103448275862,0.5,0.7333333333333333,0.3793103448275862,0.5
+nl/p52/d0808,SEQ2SEQ,"Mijn broer is twee jaar ouder dan ik, maar hij is drie centimeter kleiner.","person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.1485148514851485,0.23809523809523808,,,
 nl/p05/d0838,SEQ2SEQ,Hij sneed het vlees met een mes.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
-nl/p05/d1392,SEQ2SEQ,Met wie is Miguel Indurain getrouwd?,"male.n.02 Name ""Tom""
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
+nl/p05/d0789,SEQ2SEQ,Met wie was je aan het praten?,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p05/d2458,SEQ2SEQ,Zijn mobiele telefoon staat uit.,"person.n.01 Role +1
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6363636363636364,0.4117647058823529,0.5,0.6363636363636364,0.4117647058823529,0.5
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.41935483870967744,0.46428571428571425,,,
 nl/p05/d3075,SEQ2SEQ,Tom stapte op zijn fiets en reed weg.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.3829787234042553,0.4999999999999999,,,
-nl/p05/d2795,SEQ2SEQ,Dick speelde piano en Lucy zong.,"male.n.02 Name ""Tom""
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.3829787234042553,0.4999999999999999,,,
+nl/p05/d0814,SEQ2SEQ,We hebben de kolen opgemaakt.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p05/d0781,SEQ2SEQ,Momenteel werk ik in Tokio.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6086956521739131,0.45161290322580644,0.5185185185185185,0.6086956521739131,0.45161290322580644,0.5185185185185185
+nl/p05/d3375,SEQ2SEQ,Het vlees is rauw.,"time.n.08 EQU now
+time.n.08 EQU now",,,0.625,0.47619047619047616,0.5405405405405405,0.625,0.47619047619047616,0.5405405405405405
+nl/p05/d1392,SEQ2SEQ,Met wie is Miguel Indurain getrouwd?,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.68,0.32075471698113206,0.43589743589743585,,,
-nl/p05/d2956,SEQ2SEQ,De lucht die we inademen bestaat uit zuurstof en stikstof.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.2692307692307692,0.37333333333333335,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p05/d1726,SEQ2SEQ,Iedereen sprong.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.5652173913043478,0.52,0.5416666666666667,0.5652173913043478,0.52,0.5416666666666667
+nl/p05/d0780,SEQ2SEQ,Ik kan mijn rechter arm niet optillen.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.4,0.30303030303030304,0.3448275862068965,,,
+nl/p05/d2458,SEQ2SEQ,Zijn mobiele telefoon staat uit.,"person.n.01 Role +1
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6363636363636364,0.4117647058823529,0.5,0.6363636363636364,0.4117647058823529,0.5
 nl/p05/d1390,SEQ2SEQ,Welke tennisspeelster werd op 30 april 1993 met een mes in de rug gestoken?,"male.n.02 Name ""Tom""
 live.v.01 Theme -1 Time +1 Theme +2
 time.n.08 TPR now
-male.n.02 Name ""Starbucks""",,0.5806451612903226,0.3829787234042553,0.46153846153846156,0.5806451612903226,0.3829787234042553,0.46153846153846156
-nl/p05/d0814,SEQ2SEQ,We hebben de kolen opgemaakt.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p05/d0780,SEQ2SEQ,Ik kan mijn rechter arm niet optillen.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.4,0.30303030303030304,0.3448275862068965,,,
-nl/p05/d0789,SEQ2SEQ,Met wie was je aan het praten?,"male.n.02 Name ""Tom""
+male.n.02 Name ""Starbucks""",,,0.5806451612903226,0.3829787234042553,0.46153846153846156,0.5806451612903226,0.3829787234042553,0.46153846153846156
+nl/p05/d2795,SEQ2SEQ,Dick speelde piano en Lucy zong.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.41935483870967744,0.46428571428571425,,,
-nl/p05/d0846,SEQ2SEQ,Ik ken haar helemaal niet.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.4838709677419355,0.5555555555555556,0.6521739130434783,0.4838709677419355,0.5555555555555556
-nl/p05/d0781,SEQ2SEQ,Momenteel werk ik in Tokio.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6086956521739131,0.45161290322580644,0.5185185185185185,0.6086956521739131,0.45161290322580644,0.5185185185185185
-nl/p05/d1726,SEQ2SEQ,Iedereen sprong.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.5652173913043478,0.52,0.5416666666666667,0.5652173913043478,0.52,0.5416666666666667
-nl/p05/d0859,SEQ2SEQ,Ze haatte haar echtgenoot.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6190476190476191,0.38235294117647056,0.4727272727272727,0.6190476190476191,0.38235294117647056,0.4727272727272727
-nl/p05/d3467,SEQ2SEQ,Ik kan jullie niet helpen.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.4782608695652174,0.4074074074074074,0.44000000000000006,0.4782608695652174,0.4074074074074074,0.44000000000000006
-nl/p05/d3375,SEQ2SEQ,Het vlees is rauw.,"time.n.08 EQU now
-time.n.08 EQU now",,0.625,0.47619047619047616,0.5405405405405405,0.625,0.47619047619047616,0.5405405405405405
-nl/p05/d3451,SEQ2SEQ,Ik heb mijn portefeuille verloren.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5483870967741935,0.6071428571428571,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.32075471698113206,0.43589743589743585,,,
 nl/p05/d0806,SEQ2SEQ,Je horloge ligt op het bureau.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.5172413793103449,0.5555555555555556,,,
-nl/p05/d0822,SEQ2SEQ,"Ik woon in een stad, maar mijn ouders wonen op het platteland.","person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.26153846153846155,0.37777777777777777,,,
-nl/p05/d0919,SEQ2SEQ,"De koe loeit, de haan kraait, het varken knort, de eend kwaakt en de kat miauwt.","entity.n.01
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.5172413793103449,0.5555555555555556,,,
+nl/p05/d2956,SEQ2SEQ,De lucht die we inademen bestaat uit zuurstof en stikstof.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.12264150943396226,0.20155038759689922,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.2692307692307692,0.37333333333333335,,,
+nl/p05/d3467,SEQ2SEQ,Ik kan jullie niet helpen.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.4782608695652174,0.4074074074074074,0.44000000000000006,0.4782608695652174,0.4074074074074074,0.44000000000000006
 nl/p05/d0904,SEQ2SEQ,Ik eet een appel.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p72/d0940,SEQ2SEQ,Hij was gemarteld en gemoord.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6521739130434783,0.40540540540540543,0.5,,,
-nl/p05/d0830,SEQ2SEQ,Niemand heeft het probleem opgelost.,"person.n.01 EQU speaker
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p05/d0846,SEQ2SEQ,Ik ken haar helemaal niet.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.5652173913043478,0.4482758620689655,0.4999999999999999,0.5652173913043478,0.4482758620689655,0.4999999999999999
+time.n.08   EQU now",,,0.6521739130434783,0.4838709677419355,0.5555555555555556,0.6521739130434783,0.4838709677419355,0.5555555555555556
+nl/p05/d0859,SEQ2SEQ,Ze haatte haar echtgenoot.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.6190476190476191,0.38235294117647056,0.4727272727272727,0.6190476190476191,0.38235294117647056,0.4727272727272727
+nl/p05/d0822,SEQ2SEQ,"Ik woon in een stad, maar mijn ouders wonen op het platteland.","person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.26153846153846155,0.37777777777777777,,,
+nl/p05/d3451,SEQ2SEQ,Ik heb mijn portefeuille verloren.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5483870967741935,0.6071428571428571,,,
+nl/p05/d0919,SEQ2SEQ,"De koe loeit, de haan kraait, het varken knort, de eend kwaakt en de kat miauwt.","entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.12264150943396226,0.20155038759689922,,,
 nl/p72/d1933,SEQ2SEQ,De journalist werd door terroristen ontvoerd.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6521739130434783,0.38461538461538464,0.4838709677419355,,,
-nl/p05/d0848,SEQ2SEQ,Zij plukte bloemen.,"male.n.02
-time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
-nl/p05/d0915,SEQ2SEQ,Mijn vriendin is erg jaloers.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.45714285714285713,0.5517241379310345,0.6956521739130435,0.45714285714285713,0.5517241379310345
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.38461538461538464,0.4838709677419355,,,
+nl/p72/d0760,SEQ2SEQ,Lukoil verdiende in 2004 een miljard dollar.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.38461538461538464,0.46875,,,
 nl/p05/d2432,SEQ2SEQ,Onze heteluchtballon steeg op naar de hemel.,"person.n.01 Role +1
 time.n.08   TPR now
 closed.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.5333333333333333,0.5517241379310345,0.5423728813559322,0.5333333333333333,0.5517241379310345,0.5423728813559322
-nl/p72/d0760,SEQ2SEQ,Lukoil verdiende in 2004 een miljard dollar.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6,0.38461538461538464,0.46875,,,
-nl/p72/d0843,SEQ2SEQ,Hij overtrad de wet.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
+time.n.08   TPR now",,,0.5333333333333333,0.5517241379310345,0.5423728813559322,0.5333333333333333,0.5517241379310345,0.5423728813559322
+nl/p05/d0830,SEQ2SEQ,Niemand heeft het probleem opgelost.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.5652173913043478,0.4482758620689655,0.4999999999999999,0.5652173913043478,0.4482758620689655,0.4999999999999999
 nl/p05/d3216,SEQ2SEQ,Zij is zeer mooi.,"male.n.02
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
+time.n.08 EQU now",,,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
+nl/p72/d0940,SEQ2SEQ,Hij was gemarteld en gemoord.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.40540540540540543,0.5,,,
 nl/p05/d0820,SEQ2SEQ,De rode rok is nieuw.,"entity.n.01
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.7619047619047619,0.5925925925925926,0.6666666666666666,0.7619047619047619,0.5925925925925926,0.6666666666666666
+happy.a.01  AttributeOf -2 Time -1",,,0.7619047619047619,0.5925925925925926,0.6666666666666666,0.7619047619047619,0.5925925925925926,0.6666666666666666
+nl/p05/d0915,SEQ2SEQ,Mijn vriendin is erg jaloers.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.45714285714285713,0.5517241379310345,0.6956521739130435,0.45714285714285713,0.5517241379310345
+nl/p05/d0848,SEQ2SEQ,Zij plukte bloemen.,"male.n.02
+time.n.08  EQU now
+happy.a.01 AttributeOf -2 Time -1",,,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
 nl/p05/d0867,SEQ2SEQ,Ik was mij.,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.64,0.6666666666666666,0.6956521739130435,0.64,0.6666666666666666
-nl/p02/d0781,SEQ2SEQ,Ons vliegtuig vloog boven de wolken.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6,0.42857142857142855,0.5,,,
-nl/p02/d1388,SEQ2SEQ,Welk bedrijf is door Nicholas Brady opgericht?,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.5483870967741935,0.6071428571428571,,,
-nl/p72/d0800,SEQ2SEQ,Zal ik uw jas dragen?,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
-nl/p72/d1449,SEQ2SEQ,Mijn hond kijkt ook tv.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p02/d0932,SEQ2SEQ,Ik heb zojuist uw brief ontvangen.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.4864864864864865,0.5806451612903226,,,
-nl/p72/d0841,SEQ2SEQ,Hij is lui.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
-nl/p02/d2236,SEQ2SEQ,Misschien heeft Tom Mary gekust.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.45454545454545453,0.5172413793103449,,,
-nl/p72/d0916,SEQ2SEQ,Misschien was hij ziek.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5714285714285714,0.5217391304347826,0.5454545454545454,0.5714285714285714,0.5217391304347826,0.5454545454545454
-nl/p72/d2634,SEQ2SEQ,Hij kneep me!,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.4827586206896552,0.56,0.6666666666666666,0.4827586206896552,0.56
-nl/p02/d0716,SEQ2SEQ,Charles de Gaulle overleed in 1970.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.64,0.64,,,
+time.n.08   EQU now",,,0.6956521739130435,0.64,0.6666666666666666,0.6956521739130435,0.64,0.6666666666666666
 nl/p02/d0926,SEQ2SEQ,Meneer White's tuin is groot.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.40540540540540543,0.48387096774193555,,,
-nl/p02/d0761,SEQ2SEQ,Paus Pius VI stierf in Frankrijk.,"male.n.02 Name ""Tom""
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.40540540540540543,0.48387096774193555,,,
+nl/p72/d0841,SEQ2SEQ,Hij is lui.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+nl/p72/d2634,SEQ2SEQ,Hij kneep me!,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6666666666666666,0.4827586206896552,0.56,0.6666666666666666,0.4827586206896552,0.56
+nl/p02/d1388,SEQ2SEQ,Welk bedrijf is door Nicholas Brady opgericht?,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.41025641025641024,0.5,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5483870967741935,0.6071428571428571,,,
+nl/p02/d0781,SEQ2SEQ,Ons vliegtuig vloog boven de wolken.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.42857142857142855,0.5,,,
+nl/p72/d0843,SEQ2SEQ,Hij overtrad de wet.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
+nl/p02/d0932,SEQ2SEQ,Ik heb zojuist uw brief ontvangen.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4864864864864865,0.5806451612903226,,,
+nl/p02/d2236,SEQ2SEQ,Misschien heeft Tom Mary gekust.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.45454545454545453,0.5172413793103449,,,
+nl/p72/d1449,SEQ2SEQ,Mijn hond kijkt ook tv.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p72/d0916,SEQ2SEQ,Misschien was hij ziek.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.5714285714285714,0.5217391304347826,0.5454545454545454,0.5714285714285714,0.5217391304347826,0.5454545454545454
+nl/p72/d0800,SEQ2SEQ,Zal ik uw jas dragen?,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.5161290322580645,0.5925925925925926,0.6956521739130435,0.5161290322580645,0.5925925925925926
 nl/p02/d1557,SEQ2SEQ,Ik kijk naar kunstschaatsen.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.6206896551724138,0.6666666666666666,,,
-nl/p02/d2208,SEQ2SEQ,Ik heb de wijn gedronken.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p02/d0713,SEQ2SEQ,Raman Raghav vermoordde negen mensen.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p02/d0917,SEQ2SEQ,Mary werd ontvoerd door piraten.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.45714285714285713,0.5333333333333333,,,
-nl/p02/d0712,SEQ2SEQ,Kraft heeft Celestial Seasonings verkocht.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.6206896551724138,0.6666666666666666,,,
 nl/p72/d0945,SEQ2SEQ,De vogel vliegt.,"male.n.02
 time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
-nl/p02/d2511,SEQ2SEQ,De grote witte hond kijkt naar die kat.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6086956521739131,0.34146341463414637,0.4375,,,
-nl/p04/d0888,SEQ2SEQ,Morgen ga ik naar Parijs.,"male.n.02 Name ""Tom""
+happy.a.01 AttributeOf -2 Time -1",,,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
+nl/p02/d0716,SEQ2SEQ,Charles de Gaulle overleed in 1970.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.27450980392156865,0.368421052631579,,,
-nl/p04/d0897,SEQ2SEQ,Ze houdt van hem.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
-nl/p02/d2690,SEQ2SEQ,Tom grillt vlees.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
-nl/p73/d0792,SEQ2SEQ,Dat kind wierp een steen naar de hond.,,Invalid token found '-1' in line: male.n.02 Name User -1 Time +1 Theme +2,,,,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.64,0.64,,,
 nl/p02/d0897,SEQ2SEQ,Ze beledigde hem.,"person.n.01 EQU speaker
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.5217391304347826,0.4444444444444444,0.48,0.5217391304347826,0.4444444444444444,0.48
-nl/p04/d0909,SEQ2SEQ,Ik ging naar Bali in de zomer.,"person.n.01 EQU speaker
+happy.a.01  AttributeOf -2 Time -1",,,0.5217391304347826,0.4444444444444444,0.48,0.5217391304347826,0.4444444444444444,0.48
+nl/p02/d2208,SEQ2SEQ,Ik heb de wijn gedronken.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.4864864864864865,0.5806451612903226,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p02/d0713,SEQ2SEQ,Raman Raghav vermoordde negen mensen.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p02/d0761,SEQ2SEQ,Paus Pius VI stierf in Frankrijk.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.41025641025641024,0.5,,,
+nl/p02/d2511,SEQ2SEQ,De grote witte hond kijkt naar die kat.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.34146341463414637,0.4375,,,
+nl/p02/d0917,SEQ2SEQ,Mary werd ontvoerd door piraten.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.45714285714285713,0.5333333333333333,,,
+nl/p02/d0712,SEQ2SEQ,Kraft heeft Celestial Seasonings verkocht.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
+nl/p02/d2690,SEQ2SEQ,Tom grillt vlees.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p04/d0897,SEQ2SEQ,Ze houdt van hem.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
+nl/p73/d0792,SEQ2SEQ,Dat kind wierp een steen naar de hond.,,,,,,,,,
+nl/p04/d0888,SEQ2SEQ,Morgen ga ik naar Parijs.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.27450980392156865,0.368421052631579,,,
 nl/p02/d1743,SEQ2SEQ,Tom zingt mooi.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+time.n.08 EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+nl/p04/d0909,SEQ2SEQ,Ik ging naar Bali in de zomer.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4864864864864865,0.5806451612903226,,,
 nl/p04/d0787,SEQ2SEQ,Tom is een vriend van mij.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.76,0.4418604651162791,0.5588235294117647,,,
-nl/p02/d0785,SEQ2SEQ,Bill is twee jaar ouder dan ik.,"male.n.02  Name ""Tom""
-time.n.08  TPR now
-happy.a.01 AttributeOf -2 Time -1",,0.7391304347826086,0.3269230769230769,0.4533333333333333,0.7391304347826086,0.3269230769230769,0.4533333333333333
-nl/p73/d0956,SEQ2SEQ,De rivier komt uit in de Pacifische oceaan.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.76,0.4418604651162791,0.5588235294117647,,,
 nl/p04/d0851,SEQ2SEQ,Mijn vader verfde de brievenbus rood.,"person.n.01 Role +1
 time.n.08   TPR now
 closed.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.6,0.42857142857142855,0.5,0.6,0.42857142857142855,0.5
-nl/p94/d0899,SEQ2SEQ,Vijf plus twee is zeven.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p73/d2380,SEQ2SEQ,Tom streek zijn kleren.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.5333333333333333,0.5818181818181818,,,
-nl/p04/d2056,SEQ2SEQ,Tom fluistert iets tegen Mary.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.4594594594594595,0.5483870967741935,,,
-nl/p04/d0857,SEQ2SEQ,Hoi.,"time.n.08 EQU speaker
-time.n.08 EQU now",,0.375,0.4,0.38709677419354843,0.375,0.4,0.38709677419354843
-nl/p02/d2967,SEQ2SEQ,Ik hou van chocoladeijs!,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+time.n.08   TPR now",,,0.6,0.42857142857142855,0.5,0.6,0.42857142857142855,0.5
 nl/p04/d2513,SEQ2SEQ,Mijn naam is Emily.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.782608695652174,0.5806451612903226,0.6666666666666667,0.782608695652174,0.5806451612903226,0.6666666666666667
-nl/p73/d0791,SEQ2SEQ,De stad ligt aan de voet van de berg.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.3939393939393939,0.4642857142857143,,,
-nl/p73/d0796,SEQ2SEQ,Dit is een miljoen yen waard.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.34285714285714286,0.4137931034482759,,,
+time.n.08   EQU now",,,0.782608695652174,0.5806451612903226,0.6666666666666667,0.782608695652174,0.5806451612903226,0.6666666666666667
+nl/p04/d2056,SEQ2SEQ,Tom fluistert iets tegen Mary.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p94/d0899,SEQ2SEQ,Vijf plus twee is zeven.,,,,,,,,,
+nl/p02/d2967,SEQ2SEQ,Ik hou van chocoladeijs!,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.782608695652174,0.6206896551724138,0.6923076923076923,0.782608695652174,0.6206896551724138,0.6923076923076923
+nl/p02/d0785,SEQ2SEQ,Bill is twee jaar ouder dan ik.,"male.n.02  Name ""Tom""
+time.n.08  TPR now
+happy.a.01 AttributeOf -2 Time -1",,,0.7391304347826086,0.3269230769230769,0.4533333333333333,0.7391304347826086,0.3269230769230769,0.4533333333333333
+nl/p73/d2380,SEQ2SEQ,Tom streek zijn kleren.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5333333333333333,0.5818181818181818,,,
 nl/p73/d0760,SEQ2SEQ,Louis Riel vermoordde Scott.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
+nl/p04/d0857,SEQ2SEQ,Hoi.,"time.n.08 EQU speaker
+time.n.08 EQU now",,,0.375,0.4,0.38709677419354843,0.375,0.4,0.38709677419354843
+nl/p73/d0956,SEQ2SEQ,De rivier komt uit in de Pacifische oceaan.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.4482758620689655,0.4999999999999999,,,
 nl/p04/d0843,SEQ2SEQ,Hij is oud.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.6086956521739131,0.6363636363636365,0.6666666666666666,0.6086956521739131,0.6363636363636365
+time.n.08 EQU now",,,0.6666666666666666,0.6086956521739131,0.6363636363636365,0.6666666666666666,0.6086956521739131,0.6363636363636365
+nl/p73/d0791,SEQ2SEQ,De stad ligt aan de voet van de berg.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.3939393939393939,0.4642857142857143,,,
 nl/p04/d1724,SEQ2SEQ,Ik ben bezig.,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p04/d0960,SEQ2SEQ,Dit is mijn fiets.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
-nl/p94/d0759,SEQ2SEQ,Berlinguer volgde Natta op.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
-nl/p94/d0851,SEQ2SEQ,Bijen vliegen van bloem tot bloem.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.3939393939393939,0.44827586206896547,,,
-nl/p94/d0956,SEQ2SEQ,Ze speelt iedere dag tennis.,"male.n.02
+time.n.08   EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p73/d0796,SEQ2SEQ,Dit is een miljoen yen waard.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.32432432432432434,0.4,,,
-nl/p94/d3533,SEQ2SEQ,Dat radiootje is niet groter dan een lucifersdoosje.,"entity.n.01
-time.n.08   EQU -1 Time +1 Theme +2
-time.n.08   EQU now",,0.5217391304347826,0.3333333333333333,0.4067796610169491,,,
-nl/p73/d1515,SEQ2SEQ,Ik heb het dak lichtblauw geverfd.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4722222222222222,0.5573770491803278,,,
-nl/p94/d0711,SEQ2SEQ,Koning Henry II verbood het steekspel.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.45714285714285713,0.5333333333333333,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.37142857142857144,0.4482758620689655,,,
 nl/p04/d0830,SEQ2SEQ,Niemand kan dit probleem oplossen.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.34782608695652173,0.34782608695652173,0.34782608695652173,0.34782608695652173,0.34782608695652173,0.34782608695652173
-nl/p94/d0872,SEQ2SEQ,Hij klopte op de gesloten deur.,"male.n.02
+time.n.08   EQU now",,,0.34782608695652173,0.34782608695652173,0.34782608695652173,0.34782608695652173,0.34782608695652173,0.34782608695652173
+nl/p94/d0851,SEQ2SEQ,Bijen vliegen van bloem tot bloem.,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.3939393939393939,0.44827586206896547,,,
+nl/p73/d1515,SEQ2SEQ,Ik heb het dak lichtblauw geverfd.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4722222222222222,0.5573770491803278,,,
+nl/p94/d0711,SEQ2SEQ,Koning Henry II verbood het steekspel.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.45714285714285713,0.5333333333333333,,,
+nl/p04/d0960,SEQ2SEQ,Dit is mijn fiets.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
+nl/p94/d0956,SEQ2SEQ,Ze speelt iedere dag tennis.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.32432432432432434,0.4,,,
+nl/p94/d0759,SEQ2SEQ,Berlinguer volgde Natta op.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
 nl/p94/d0817,SEQ2SEQ,Ik heb met de actrice zelf gesproken.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4146341463414634,0.5151515151515151,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4146341463414634,0.5151515151515151,,,
 nl/p94/d0760,SEQ2SEQ,Nelson Beavers werkte voor Eurofins.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
+nl/p73/d2412,SEQ2SEQ,Die emmer lekt.,"person.n.01 Role +1
+time.n.08   EQU now",,,0.7333333333333333,0.5238095238095238,0.611111111111111,0.7333333333333333,0.5238095238095238,0.611111111111111
+nl/p94/d3533,SEQ2SEQ,Dat radiootje is niet groter dan een lucifersdoosje.,"entity.n.01
+time.n.08   EQU -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.3333333333333333,0.4067796610169491,,,
 nl/p94/d0906,SEQ2SEQ,Hij werd aangevallen door een haai.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
-nl/p73/d2412,SEQ2SEQ,Die emmer lekt.,"person.n.01 Role +1
-time.n.08   EQU now",,0.7333333333333333,0.5238095238095238,0.611111111111111,0.7333333333333333,0.5238095238095238,0.611111111111111
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
 nl/p94/d1905,SEQ2SEQ,Wie heeft radium ontdekt?,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+time.n.08   EQU now",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+nl/p94/d0872,SEQ2SEQ,Hij klopte op de gesloten deur.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
 nl/p95/d0797,SEQ2SEQ,Dit antwoord maakte hem woedend.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.4117647058823529,0.4912280701754386,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.4117647058823529,0.4912280701754386,,,
 nl/p95/d1390,SEQ2SEQ,Wat was de voornaam van de vader van Gottfried Reinhardt?,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.3673469387755102,0.4864864864864865,,,
-nl/p35/d0948,SEQ2SEQ,"Ik spreek Engels, Frans en Spaans.","person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.3617021276595745,0.4722222222222222,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.3673469387755102,0.4864864864864865,,,
 nl/p95/d0712,SEQ2SEQ,Apple Inc. is gevestigd in San Jose.,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
 nl/p95/d2508,SEQ2SEQ,Tom gaf Mary een banaan.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.4594594594594595,0.5483870967741935,,,
-nl/p94/d0934,SEQ2SEQ,Ik ben aan het dutten.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p35/d0948,SEQ2SEQ,"Ik spreek Engels, Frans en Spaans.","person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.3617021276595745,0.4722222222222222,,,
 nl/p94/d1965,SEQ2SEQ,Ze is getrouwd met een muzikant.,"person.n.01
 NEGATION    -1
 time.n.08   TPR now
-closed.a.01 AttributeOf -2 Time -1",,0.5652173913043478,0.3939393939393939,0.4642857142857143,0.5652173913043478,0.3939393939393939,0.4642857142857143
+closed.a.01 AttributeOf -2 Time -1",,,0.5652173913043478,0.3939393939393939,0.4642857142857143,0.5652173913043478,0.3939393939393939,0.4642857142857143
+nl/p94/d0934,SEQ2SEQ,Ik ben aan het dutten.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.7391304347826086,0.7391304347826085,0.7391304347826086,0.7391304347826086,0.7391304347826085
 nl/p35/d0841,SEQ2SEQ,Hij heeft meer dan vijf woordenboeken.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.34146341463414637,0.4375,,,
-nl/p95/d0791,SEQ2SEQ,De oorlog duurde twee jaar.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.37142857142857144,0.4642857142857143,0.6190476190476191,0.37142857142857144,0.4642857142857143
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.34146341463414637,0.4375,,,
 nl/p03/d0805,SEQ2SEQ,Je mag mijn pen niet gebruiken.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.4,0.37037037037037035,0.3846153846153846,,,
-nl/p03/d0900,SEQ2SEQ,Ze lijdt aan een besmettelijke ziekte.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5217391304347826,0.36363636363636365,0.42857142857142855,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.4,0.37037037037037035,0.3846153846153846,,,
 nl/p95/d0872,SEQ2SEQ,Hij klopte op de deur.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
+time.n.08 TPR now",,,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
+nl/p35/d0856,SEQ2SEQ,Niemand is perfect.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p95/d0791,SEQ2SEQ,De oorlog duurde twee jaar.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.37142857142857144,0.4642857142857143,0.6190476190476191,0.37142857142857144,0.4642857142857143
 nl/p35/d3280,SEQ2SEQ,Ik ben nu niet gewapend.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6086956521739131,0.56,0.5833333333333334,0.6086956521739131,0.56,0.5833333333333334
+time.n.08   EQU now",,,0.6086956521739131,0.56,0.5833333333333334,0.6086956521739131,0.56,0.5833333333333334
 nl/p95/d0953,SEQ2SEQ,Tom morste de melk.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+time.n.08 EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p35/d0875,SEQ2SEQ,Iedereen lachte hem uit.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.5217391304347826,0.3870967741935484,0.4444444444444444,0.5217391304347826,0.3870967741935484,0.4444444444444444
+nl/p03/d0900,SEQ2SEQ,Ze lijdt aan een besmettelijke ziekte.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.36363636363636365,0.42857142857142855,,,
 nl/p03/d1650,SEQ2SEQ,Ik ben zeker dat hij zal slagen.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.35555555555555557,0.4571428571428572,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.35555555555555557,0.4571428571428572,,,
 nl/p35/d2693,SEQ2SEQ,Niemand houdt van oorlog.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+time.n.08   EQU now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+nl/p35/d0915,SEQ2SEQ,De kip heeft vier eieren gelegd.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.4482758620689655,0.52,0.6190476190476191,0.4482758620689655,0.52
+nl/p03/d2101,SEQ2SEQ,Het meer is heel diep.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
 nl/p03/d0877,SEQ2SEQ,Ze draagt een zonnebril.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
 nl/p03/d0849,SEQ2SEQ,Ze vergat de brief te posten.,"person.n.01 Role +1
 time.n.08   TPR now
 closed.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.5,0.4411764705882353,0.46875,0.5,0.4411764705882353,0.46875
-nl/p35/d0875,SEQ2SEQ,Iedereen lachte hem uit.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.5217391304347826,0.3870967741935484,0.4444444444444444,0.5217391304347826,0.3870967741935484,0.4444444444444444
-nl/p35/d0856,SEQ2SEQ,Niemand is perfect.,"person.n.01 EQU speaker
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p35/d0915,SEQ2SEQ,De kip heeft vier eieren gelegd.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.4482758620689655,0.52,0.6190476190476191,0.4482758620689655,0.52
+time.n.08   TPR now",,,0.5,0.4411764705882353,0.46875,0.5,0.4411764705882353,0.46875
 nl/p03/d0873,SEQ2SEQ,Ik heb pijn aan mijn achterste.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5483870967741935,0.6071428571428571,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5483870967741935,0.6071428571428571,,,
 nl/p03/d0716,SEQ2SEQ,Charles de Gaulle overleed in 1970.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.64,0.64,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.64,0.64,,,
 nl/p03/d0815,SEQ2SEQ,Het dak van mijn huis is rood.,"entity.n.01
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.7142857142857143,0.5172413793103449,0.6000000000000001,0.7142857142857143,0.5172413793103449,0.6000000000000001
-nl/p03/d2382,SEQ2SEQ,Ik hou van de oceaan.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p03/d2101,SEQ2SEQ,Het meer is heel diep.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5714285714285714,0.41379310344827586,0.48000000000000004,0.5714285714285714,0.41379310344827586,0.48000000000000004
-nl/p03/d0955,SEQ2SEQ,Je bent erg sexy.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+happy.a.01  AttributeOf -2 Time -1",,,0.7142857142857143,0.5172413793103449,0.6000000000000001,0.7142857142857143,0.5172413793103449,0.6000000000000001
 nl/p03/d0837,SEQ2SEQ,Hij heeft 1000 yen betaald voor dit boek.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.3902439024390244,0.5000000000000001,,,
-nl/p03/d0787,SEQ2SEQ,Tom is groter dan zijn moeder.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.37209302325581395,0.4705882352941177,,,
-nl/p03/d0766,SEQ2SEQ,Alfred Nobel vond in 1866 het dynamiet uit.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p03/d0925,SEQ2SEQ,Tom knoeide de melk.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p03/d3002,SEQ2SEQ,Tom is geen slechte trainer.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.7391304347826086,0.3953488372093023,0.5151515151515151,0.7391304347826086,0.3953488372093023,0.5151515151515151
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.3902439024390244,0.5000000000000001,,,
 nl/p03/d2059,SEQ2SEQ,Ik ben geen dertig jaar oud.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.38461538461538464,0.46875,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.38461538461538464,0.46875,,,
+nl/p03/d0955,SEQ2SEQ,Je bent erg sexy.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+nl/p03/d0925,SEQ2SEQ,Tom knoeide de melk.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p03/d2382,SEQ2SEQ,Ik hou van de oceaan.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p03/d0787,SEQ2SEQ,Tom is groter dan zijn moeder.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.37209302325581395,0.4705882352941177,,,
+nl/p03/d3002,SEQ2SEQ,Tom is geen slechte trainer.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.7391304347826086,0.3953488372093023,0.5151515151515151,0.7391304347826086,0.3953488372093023,0.5151515151515151
+nl/p03/d0766,SEQ2SEQ,Alfred Nobel vond in 1866 het dynamiet uit.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p03/d0946,SEQ2SEQ,Er zijn ook Franse touristen.,"person.n.01 Role +1
+time.n.08   EQU now",,,0.8,0.34285714285714286,0.48000000000000004,0.8,0.34285714285714286,0.48000000000000004
 nl/p03/d0872,SEQ2SEQ,"Mr.
 Smith kwam.","male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p03/d2553,SEQ2SEQ,Ik zal de borden nog eens afwassen.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.64,0.5517241379310345,0.5925925925925927,,,
-nl/p03/d0946,SEQ2SEQ,Er zijn ook Franse touristen.,"person.n.01 Role +1
-time.n.08   EQU now",,0.8,0.34285714285714286,0.48000000000000004,0.8,0.34285714285714286,0.48000000000000004
-nl/p14/d2301,SEQ2SEQ,Karel de Grote werd door de paus gekroond.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p03/d3041,SEQ2SEQ,Deze kaas heeft een scherpe smaak.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.36363636363636365,0.4444444444444444,0.5714285714285714,0.36363636363636365,0.4444444444444444
-nl/p03/d0903,SEQ2SEQ,Ik ben geboren in Rusland.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p14/d0849,SEQ2SEQ,Ze ruimde de tafel af.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
-nl/p14/d0716,SEQ2SEQ,Vladislav Listjev is in Moskou vermoord.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5161290322580645,0.5714285714285714,,,
+time.n.08 EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
 nl/p03/d0761,SEQ2SEQ,Pretoria ligt in Ivoorkust.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6521739130434783,0.4838709677419355,0.5555555555555556,0.6521739130434783,0.4838709677419355,0.5555555555555556
+time.n.08 EQU now",,,0.6521739130434783,0.4838709677419355,0.5555555555555556,0.6521739130434783,0.4838709677419355,0.5555555555555556
+nl/p14/d2301,SEQ2SEQ,Karel de Grote werd door de paus gekroond.,,,,,,,,,
+nl/p03/d0903,SEQ2SEQ,Ik ben geboren in Rusland.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p03/d3041,SEQ2SEQ,Deze kaas heeft een scherpe smaak.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.36363636363636365,0.4444444444444444,0.5714285714285714,0.36363636363636365,0.4444444444444444
 nl/p03/d0936,SEQ2SEQ,Betty heeft hem gedood.,"male.n.02  Name ""Tom""
 time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
-nl/p14/d0898,SEQ2SEQ,Tokyo is groter als Rome,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.34210526315789475,0.41269841269841273,,,
-nl/p03/d0884,SEQ2SEQ,Hij brouwde bier.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
-nl/p03/d0823,SEQ2SEQ,Ik ken niemand van hen.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.40540540540540543,0.5,0.6521739130434783,0.40540540540540543,0.5
-nl/p14/d0876,SEQ2SEQ,Ik heb dat telefoonummer opgeschreven.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p03/d0880,SEQ2SEQ,Hij leert Chinees.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+happy.a.01 AttributeOf -2 Time -1",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
 nl/p14/d0713,SEQ2SEQ,Italië versloeg Kazachstan.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.41935483870967744,0.46428571428571425,,,
-nl/p03/d2401,SEQ2SEQ,Het is vijf voor vier.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
-nl/p42/d0783,SEQ2SEQ,De Mississippirivier mondt uit in de Golf van Mexico.,"entity.n.01
-time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.5652173913043478,0.41935483870967744,0.4814814814814815,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.41935483870967744,0.46428571428571425,,,
 nl/p14/d0953,SEQ2SEQ,Tom heeft geen creditcard.,"male.n.02 Name ""Tom""
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
+nl/p14/d0716,SEQ2SEQ,Vladislav Listjev is in Moskou vermoord.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p14/d0876,SEQ2SEQ,Ik heb dat telefoonummer opgeschreven.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
 nl/p14/d2443,SEQ2SEQ,Ze waren erg aardig voor me.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.4782608695652174,0.3142857142857143,0.3793103448275862,,,
-nl/p74/d1391,SEQ2SEQ,Waar overleed Irving Mitchell?,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.4782608695652174,0.3142857142857143,0.3793103448275862,,,
+nl/p14/d0849,SEQ2SEQ,Ze ruimde de tafel af.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.5185185185185185,0.5599999999999999,,,
+nl/p03/d2553,SEQ2SEQ,Ik zal de borden nog eens afwassen.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5517241379310345,0.5925925925925927,,,
+nl/p03/d0884,SEQ2SEQ,Hij brouwde bier.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.7142857142857143,0.5555555555555556,0.6250000000000001,0.7142857142857143,0.5555555555555556,0.6250000000000001
+nl/p03/d0880,SEQ2SEQ,Hij leert Chinees.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 TPR now",,,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+nl/p14/d0898,SEQ2SEQ,Tokyo is groter als Rome,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.34210526315789475,0.41269841269841273,,,
+nl/p42/d0783,SEQ2SEQ,De Mississippirivier mondt uit in de Golf van Mexico.,"entity.n.01
+time.n.08   Agent -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.41935483870967744,0.4814814814814815,,,
 nl/p42/d2986,SEQ2SEQ,Waar is Tom bang voor?,"male.n.02 Name ""Tom""
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p42/d0712,SEQ2SEQ,André Henri Constant van Hasselt werd opgeleid in Maastricht.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5161290322580645,0.5714285714285714,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p03/d0823,SEQ2SEQ,Ik ken niemand van hen.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6521739130434783,0.40540540540540543,0.5,0.6521739130434783,0.40540540540540543,0.5
+nl/p74/d1391,SEQ2SEQ,Waar overleed Irving Mitchell?,,,,,,,,,
 nl/p42/d0760,SEQ2SEQ,Hooper kocht een huis in Portland.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.68,0.4594594594594595,0.5483870967741935,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p42/d0712,SEQ2SEQ,André Henri Constant van Hasselt werd opgeleid in Maastricht.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
 nl/p42/d0828,SEQ2SEQ,Het sneeuwde van maandag tot vrijdag.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6666666666666666,0.45161290322580644,0.5384615384615384,0.6666666666666666,0.45161290322580644,0.5384615384615384
-nl/p14/d1740,SEQ2SEQ,Niemand houdt van oorlog.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
+time.n.08   TPR now",,,0.6666666666666666,0.45161290322580644,0.5384615384615384,0.6666666666666666,0.45161290322580644,0.5384615384615384
 nl/p42/d0879,SEQ2SEQ,Er zijn 43 prefecturen in Japan.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6086956521739131,0.45161290322580644,0.5185185185185185,,,
-nl/p74/d0760,SEQ2SEQ,Mabel Normand speelde in The Extra Girl.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
-nl/p74/d0893,SEQ2SEQ,De egel is een klein dier.,"male.n.02
-time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.2608695652173913,0.20689655172413793,0.23076923076923075,,,
-nl/p42/d2163,SEQ2SEQ,Emily eet chips.,"male.n.02 Name ""Tom""
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.45161290322580644,0.5185185185185185,,,
+nl/p03/d2401,SEQ2SEQ,Het is vijf voor vier.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
-nl/p42/d0838,SEQ2SEQ,Hij was totaal niet tevreden.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5238095238095238,0.4782608695652174,0.5,0.5238095238095238,0.4782608695652174,0.5
-nl/p42/d2306,SEQ2SEQ,Er zijn eilanden in de zee.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.5238095238095238,0.4074074074074074,0.4583333333333333,0.5238095238095238,0.4074074074074074,0.4583333333333333
+time.n.08 EQU now",,,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
 nl/p42/d1926,SEQ2SEQ,Ze speelde een wals op de piano.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
-nl/p74/d0858,SEQ2SEQ,Hij veegde het zweet van zijn gezicht af.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.47058823529411764,0.5614035087719297,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
+nl/p14/d1740,SEQ2SEQ,Niemand houdt van oorlog.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6086956521739131,0.4827586206896552,0.5384615384615384,0.6086956521739131,0.4827586206896552,0.5384615384615384
 nl/p42/d2885,SEQ2SEQ,Dromen katten?,"male.n.02 Name ""Tom""
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.5217391304347826,0.5714285714285714,0.5454545454545454,0.5217391304347826,0.5714285714285714,0.5454545454545454
-nl/p22/d2444,SEQ2SEQ,Een vogel is aan het zingen in de boom.,,Invalid token found '-1' in line: male.n.02 Name User -1 Time +1 Theme +2,,,,,,
+time.n.08 EQU now",,,0.5217391304347826,0.5714285714285714,0.5454545454545454,0.5217391304347826,0.5714285714285714,0.5454545454545454
+nl/p74/d0893,SEQ2SEQ,De egel is een klein dier.,"male.n.02
+time.n.08 EQU -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.2608695652173913,0.20689655172413793,0.23076923076923075,,,
 nl/p42/d2000,SEQ2SEQ,Het hemd moet worden gestreken.,"male.n.02
 time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.5238095238095238,0.4782608695652174,0.5,0.5238095238095238,0.4782608695652174,0.5
-nl/p74/d1561,SEQ2SEQ,Tom gooide de sleutels naar Mary.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.4864864864864865,0.5806451612903226,,,
-nl/p42/d2218,SEQ2SEQ,Tom mopperde.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p22/d0932,SEQ2SEQ,Wie heeft de bijbel geschreven?,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.56,0.45161290322580644,0.5,,,
-nl/p22/d2422,SEQ2SEQ,Mary heeft een telegram ontvangen van Tom.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.4864864864864865,0.5806451612903226,,,
+happy.a.01 AttributeOf -2 Time -1",,,0.5238095238095238,0.4782608695652174,0.5,0.5238095238095238,0.4782608695652174,0.5
+nl/p74/d0858,SEQ2SEQ,Hij veegde het zweet van zijn gezicht af.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.47058823529411764,0.5614035087719297,,,
+nl/p22/d2444,SEQ2SEQ,Een vogel is aan het zingen in de boom.,,,,,,,,,
+nl/p42/d2163,SEQ2SEQ,Emily eet chips.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+nl/p42/d0838,SEQ2SEQ,Hij was totaal niet tevreden.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.5238095238095238,0.4782608695652174,0.5,0.5238095238095238,0.4782608695652174,0.5
 nl/p42/d0945,SEQ2SEQ,Ik zal de appel eten.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
-nl/p74/d1455,SEQ2SEQ,Hij heeft geboerd.,"male.n.02
+time.n.08   EQU now",,,0.6956521739130435,0.5517241379310345,0.6153846153846154,0.6956521739130435,0.5517241379310345,0.6153846153846154
+nl/p74/d0760,SEQ2SEQ,Mabel Normand speelde in The Extra Girl.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
+nl/p42/d2306,SEQ2SEQ,Er zijn eilanden in de zee.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
-nl/p22/d0814,SEQ2SEQ,We verkozen hem tot burgemeester.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.4146341463414634,0.5151515151515151,,,
+time.n.08 TPR now",,,0.5238095238095238,0.4074074074074074,0.4583333333333333,0.5238095238095238,0.4074074074074074,0.4583333333333333
+nl/p42/d2218,SEQ2SEQ,Tom mopperde.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
 nl/p22/d1390,SEQ2SEQ,Wie is de leider van de Algerijnse Gewapende Islamitische Groep?,"person.n.01 Name ""Tom""
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.3333333333333333,0.4473684210526316,,,
-nl/p22/d0818,SEQ2SEQ,Ik kocht het voor ongeveer twaalf dollar.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.32727272727272727,0.4499999999999999,,,
-nl/p22/d0805,SEQ2SEQ,Je bent gek.,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
-nl/p22/d0783,SEQ2SEQ,Maria verstaat Chinees.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
-nl/p22/d0928,SEQ2SEQ,Het konijn eet de wortel.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.3333333333333333,0.4473684210526316,,,
+nl/p74/d1561,SEQ2SEQ,Tom gooide de sleutels naar Mary.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4864864864864865,0.5806451612903226,,,
+nl/p22/d0932,SEQ2SEQ,Wie heeft de bijbel geschreven?,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
+nl/p22/d0814,SEQ2SEQ,We verkozen hem tot burgemeester.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4146341463414634,0.5151515151515151,,,
+nl/p74/d1455,SEQ2SEQ,Hij heeft geboerd.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
 nl/p74/d3273,SEQ2SEQ,Millie is geen water aan het drinken.,"male.n.02  Name ""Tom""
 time.n.08  EQU now
 happy.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08  EQU now",,0.4838709677419355,0.4838709677419355,0.4838709677419355,0.4838709677419355,0.4838709677419355,0.4838709677419355
-nl/p22/d0712,SEQ2SEQ,Maler woonde in Yucatán.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.56,0.45161290322580644,0.5,,,
-nl/p22/d1871,SEQ2SEQ,Hij is drie dagen geleden vertrokken.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.3783783783783784,0.4666666666666667,,,
-nl/p22/d0815,SEQ2SEQ,Mijn broer werkt bij een bank.,"person.n.01 Role +1
-time.n.08   TPR now
-closed.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.5333333333333333,0.45714285714285713,0.4923076923076923,0.5333333333333333,0.45714285714285713,0.4923076923076923
+time.n.08  EQU now",,,0.4838709677419355,0.4838709677419355,0.4838709677419355,0.4838709677419355,0.4838709677419355,0.4838709677419355
 nl/p74/d2498,SEQ2SEQ,Mijn broer werkt in een benzinestation.,"person.n.01 Role +1
 time.n.08   TPR now
 closed.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.5333333333333333,0.45714285714285713,0.4923076923076923,0.5333333333333333,0.45714285714285713,0.4923076923076923
-nl/p22/d0841,SEQ2SEQ,Hij noemde zijn hond Popeye.,"male.n.02
+time.n.08   TPR now",,,0.5333333333333333,0.45714285714285713,0.4923076923076923,0.5333333333333333,0.45714285714285713,0.4923076923076923
+nl/p22/d0818,SEQ2SEQ,Ik kocht het voor ongeveer twaalf dollar.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.32727272727272727,0.4499999999999999,,,
+nl/p22/d0815,SEQ2SEQ,Mijn broer werkt bij een bank.,"person.n.01 Role +1
+time.n.08   TPR now
+closed.a.01 AttributeOf -2 Time -1 Time +1
+time.n.08   TPR now",,,0.5333333333333333,0.45714285714285713,0.4923076923076923,0.5333333333333333,0.45714285714285713,0.4923076923076923
+nl/p22/d2422,SEQ2SEQ,Mary heeft een telegram ontvangen van Tom.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4864864864864865,0.5806451612903226,,,
+nl/p22/d1871,SEQ2SEQ,Hij is drie dagen geleden vertrokken.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.4444444444444444,0.5423728813559322,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.3783783783783784,0.4666666666666667,,,
+nl/p22/d0712,SEQ2SEQ,Maler woonde in Yucatán.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.56,0.45161290322580644,0.5,,,
+nl/p22/d0805,SEQ2SEQ,Je bent gek.,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783,0.6521739130434783
 nl/p22/d1868,SEQ2SEQ,Hebt u een schoentrekker?,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.5862068965517241,0.6296296296296295,,,
-nl/p33/d0899,SEQ2SEQ,Tom schepte op over zijn nieuwe telefoon.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.5,0.5901639344262295,,,
-nl/p22/d0939,SEQ2SEQ,Laten we feesten.,"person.n.01 EQU speaker
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5862068965517241,0.6296296296296295,,,
+nl/p22/d0783,SEQ2SEQ,Maria verstaat Chinees.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
+nl/p22/d0928,SEQ2SEQ,Het konijn eet de wortel.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
 nl/p22/d0766,SEQ2SEQ,Lopez nam documenten van GM mee naar VW.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.35555555555555557,0.4571428571428572,,,
-nl/p33/d0877,SEQ2SEQ,Indonesië bestaat uit vele eilanden en twee schiereilanden.,"male.n.02 Name ""Tom""
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.35555555555555557,0.4571428571428572,,,
+nl/p22/d0841,SEQ2SEQ,Hij noemde zijn hond Popeye.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.4444444444444444,0.5423728813559322,,,
+nl/p22/d0939,SEQ2SEQ,Laten we feesten.,"person.n.01 EQU speaker
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
+nl/p33/d0899,SEQ2SEQ,Tom schepte op over zijn nieuwe telefoon.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6,0.3333333333333333,0.42857142857142855,,,
-nl/p33/d2714,SEQ2SEQ,Ik rijd iedere dag naar Tokio.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.64,0.3902439024390244,0.48484848484848486,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.5,0.5901639344262295,,,
 nl/p22/d0813,SEQ2SEQ,We hebben dertien knuppels.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
-nl/p45/d0886,SEQ2SEQ,Grote delen van de oceaan zijn vervuild.,,Invalid token found '-1' in line: male.n.02 Name User -1,,,,,,
-nl/p33/d2557,SEQ2SEQ,Mijn tandvlees bloedt wanneer ik ook mijn tanden flos.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.2909090909090909,0.39999999999999997,,,
-nl/p45/d2454,SEQ2SEQ,Mijn vader is een beetje ouderwets.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.43243243243243246,0.5161290322580645,,,
-nl/p45/d0783,SEQ2SEQ,Mayuko kwam de kamer binnen.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.52,0.4482758620689655,0.48148148148148145,,,
-nl/p45/d0760,SEQ2SEQ,Hughes was getrouwd met Gracia.,"male.n.02 Name ""Tom""
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.4838709677419355,0.5357142857142857,,,
-nl/p22/d0944,SEQ2SEQ,De politieman achtervolgde de inbreker.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6666666666666666,0.358974358974359,0.4666666666666667,0.6666666666666666,0.358974358974359,0.4666666666666667
-nl/p33/d0765,SEQ2SEQ,De Titanic zonk in 1912.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.52,0.5652173913043478,0.6190476190476191,0.52,0.5652173913043478
-nl/p45/d0942,SEQ2SEQ,Ik ga naar school met Tom.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4594594594594595,0.5483870967741935,,,
+time.n.08   EQU now",,,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
 nl/p22/d0919,SEQ2SEQ,Ze zijn geel.,"male.n.02
 time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
-nl/p33/d0838,SEQ2SEQ,Hij is allergisch voor stof.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
-nl/p45/d0895,SEQ2SEQ,De kunstenaar tekende met Chinese inkt.,"entity.n.01
+happy.a.01 AttributeOf -2 Time -1",,,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+nl/p33/d2714,SEQ2SEQ,Ik rijd iedere dag naar Tokio.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.3902439024390244,0.48484848484848486,,,
+nl/p45/d0886,SEQ2SEQ,Grote delen van de oceaan zijn vervuild.,,,,,,,,,
+nl/p33/d0877,SEQ2SEQ,Indonesië bestaat uit vele eilanden en twee schiereilanden.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.3333333333333333,0.42857142857142855,,,
+nl/p45/d0783,SEQ2SEQ,Mayuko kwam de kamer binnen.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.4482758620689655,0.48148148148148145,,,
+nl/p33/d2557,SEQ2SEQ,Mijn tandvlees bloedt wanneer ik ook mijn tanden flos.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.2909090909090909,0.39999999999999997,,,
+nl/p22/d0944,SEQ2SEQ,De politieman achtervolgde de inbreker.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6666666666666666,0.34146341463414637,0.4516129032258065,0.6666666666666666,0.34146341463414637,0.4516129032258065
-nl/p45/d0822,SEQ2SEQ,Ik mag hem omdat hij eerlijk is.,"person.n.01 EQU speaker
+time.n.08   TPR now",,,0.6666666666666666,0.358974358974359,0.4666666666666667,0.6666666666666666,0.358974358974359,0.4666666666666667
+nl/p45/d0942,SEQ2SEQ,Ik ga naar school met Tom.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.3269230769230769,0.44155844155844154,,,
-nl/p23/d1387,SEQ2SEQ,Wie won de Ronde van Frankrijk?,"person.n.01 Name ""Tom""
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.5483870967741935,0.6071428571428571,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p45/d2454,SEQ2SEQ,Mijn vader is een beetje ouderwets.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.43243243243243246,0.5161290322580645,,,
+nl/p45/d0760,SEQ2SEQ,Hughes was getrouwd met Gracia.,"male.n.02 Name ""Tom""
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.4838709677419355,0.5357142857142857,,,
 nl/p33/d3224,SEQ2SEQ,Ik ben allergisch voor katten.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
+time.n.08   EQU now",,,0.7391304347826086,0.5862068965517241,0.6538461538461539,0.7391304347826086,0.5862068965517241,0.6538461538461539
 nl/p45/d3117,SEQ2SEQ,Hij is verslaafd.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
-nl/p33/d0764,SEQ2SEQ,De film 'Speed' werd geregisseerd door Jan de Bont.,"entity.n.01
+time.n.08 EQU now",,,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+nl/p33/d0765,SEQ2SEQ,De Titanic zonk in 1912.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.41935483870967744,0.5,0.6190476190476191,0.41935483870967744,0.5
+time.n.08   TPR now",,,0.6190476190476191,0.52,0.5652173913043478,0.6190476190476191,0.52,0.5652173913043478
+nl/p45/d0822,SEQ2SEQ,Ik mag hem omdat hij eerlijk is.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.3269230769230769,0.44155844155844154,,,
+nl/p33/d0838,SEQ2SEQ,Hij is allergisch voor stof.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.6666666666666666,0.5185185185185185,0.5833333333333334,0.6666666666666666,0.5185185185185185,0.5833333333333334
+nl/p45/d0895,SEQ2SEQ,De kunstenaar tekende met Chinese inkt.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6666666666666666,0.34146341463414637,0.4516129032258065,0.6666666666666666,0.34146341463414637,0.4516129032258065
 nl/p45/d0906,SEQ2SEQ,Mijn huis staat op een heuvel.,"person.n.01 Role +1
 time.n.08   EQU now
-closed.a.01 AttributeOf -2 Time -1",,0.5909090909090909,0.4482758620689655,0.5098039215686274,0.5909090909090909,0.4482758620689655,0.5098039215686274
-nl/p15/d0895,SEQ2SEQ,Ik ben groter dan hij.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.64,0.4444444444444444,0.5245901639344263,,,
-nl/p23/d0808,SEQ2SEQ,Rosa Montero is een heel bijzondere vrouw.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.4146341463414634,0.5151515151515151,,,
-nl/p23/d0840,SEQ2SEQ,Hij is nu de straat over aan het steken.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5652173913043478,0.48148148148148145,0.52,,,
+closed.a.01 AttributeOf -2 Time -1",,,0.5909090909090909,0.4482758620689655,0.5098039215686274,0.5909090909090909,0.4482758620689655,0.5098039215686274
 nl/p23/d0711,SEQ2SEQ,Sandra Goudie werd verslagen door Max Purnell.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5161290322580645,0.5714285714285714,,,
-nl/p15/d1983,SEQ2SEQ,Tom zat op een boomstam.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.5517241379310345,0.5925925925925927,,,
-nl/p45/d0867,SEQ2SEQ,De thee kost twee euro.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.34285714285714286,0.42857142857142855,0.5714285714285714,0.34285714285714286,0.42857142857142855
-nl/p15/d0801,SEQ2SEQ,Mevrouw Klein geeft elke vrijdag een test.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.52,0.2765957446808511,0.36111111111111105,,,
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
 nl/p45/d0938,SEQ2SEQ,Hij is groot en slank.,"male.n.02
 time.n.08 Agent -1 Time +1
-time.n.08 TPR now",,0.6666666666666666,0.358974358974359,0.4666666666666667,0.6666666666666666,0.358974358974359,0.4666666666666667
+time.n.08 TPR now",,,0.6666666666666666,0.358974358974359,0.4666666666666667,0.6666666666666666,0.358974358974359,0.4666666666666667
+nl/p33/d0764,SEQ2SEQ,De film 'Speed' werd geregisseerd door Jan de Bont.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.41935483870967744,0.5,0.6190476190476191,0.41935483870967744,0.5
+nl/p23/d1387,SEQ2SEQ,Wie won de Ronde van Frankrijk?,"person.n.01 Name ""Tom""
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5483870967741935,0.6071428571428571,,,
+nl/p23/d0840,SEQ2SEQ,Hij is nu de straat over aan het steken.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.48148148148148145,0.52,,,
+nl/p15/d0895,SEQ2SEQ,Ik ben groter dan hij.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.4444444444444444,0.5245901639344263,,,
+nl/p23/d0808,SEQ2SEQ,Rosa Montero is een heel bijzondere vrouw.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4146341463414634,0.5151515151515151,,,
+nl/p45/d0867,SEQ2SEQ,De thee kost twee euro.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.34285714285714286,0.42857142857142855,0.5714285714285714,0.34285714285714286,0.42857142857142855
+nl/p15/d0801,SEQ2SEQ,Mevrouw Klein geeft elke vrijdag een test.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.52,0.2765957446808511,0.36111111111111105,,,
+nl/p15/d1983,SEQ2SEQ,Tom zat op een boomstam.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5517241379310345,0.5925925925925927,,,
+nl/p23/d1637,SEQ2SEQ,Ik ben getrouwd met Lori.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
+nl/p23/d0851,SEQ2SEQ,De wind waait uit het oosten.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
+nl/p15/d0771,SEQ2SEQ,Ben je niet moe?,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.5652173913043478,0.52,0.5416666666666667,0.5652173913043478,0.52,0.5416666666666667
 nl/p23/d1847,SEQ2SEQ,Mijn vader is in Vietnam gestorven.,"person.n.01 Role +1
 time.n.08   TPR now
 closed.a.01 AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.6,0.4864864864864865,0.5373134328358209,0.6,0.4864864864864865,0.5373134328358209
+time.n.08   TPR now",,,0.6,0.4864864864864865,0.5373134328358209,0.6,0.4864864864864865,0.5373134328358209
+nl/p15/d0761,SEQ2SEQ,Saad Hariri werd verkozen tot minister-president van Libanon.,"male.n.02 Name ""Tom""
+live.v.01 Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4864864864864865,0.5806451612903226,,,
 nl/p23/d2922,SEQ2SEQ,Mijn auto is uitgerust met een cd-speler.,"person.n.01 EQU speaker
 time.n.08   EQU now
 happy.a.01  AttributeOf -2 Time -1 Time +1
-time.n.08   TPR now",,0.5483870967741935,0.5862068965517241,0.5666666666666665,0.5483870967741935,0.5862068965517241,0.5666666666666665
-nl/p23/d0851,SEQ2SEQ,De wind waait uit het oosten.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.5714285714285714,0.4444444444444444,0.5,0.5714285714285714,0.4444444444444444,0.5
+time.n.08   TPR now",,,0.5483870967741935,0.5862068965517241,0.5666666666666665,0.5483870967741935,0.5862068965517241,0.5666666666666665
 nl/p15/d0925,SEQ2SEQ,Tom en Mary spelen tikkertje.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.72,0.4186046511627907,0.5294117647058824,,,
-nl/p23/d1637,SEQ2SEQ,Ik ben getrouwd met Lori.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.5483870967741935,0.6296296296296297,0.7391304347826086,0.5483870967741935,0.6296296296296297
-nl/p15/d0761,SEQ2SEQ,Saad Hariri werd verkozen tot minister-president van Libanon.,"male.n.02 Name ""Tom""
-live.v.01 Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.72,0.4864864864864865,0.5806451612903226,,,
-nl/p15/d0851,SEQ2SEQ,De kamer was propvol mensen.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
-nl/p15/d0771,SEQ2SEQ,Ben je niet moe?,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.5652173913043478,0.52,0.5416666666666667,0.5652173913043478,0.52,0.5416666666666667
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4186046511627907,0.5294117647058824,,,
 nl/p15/d0906,SEQ2SEQ,Tom was heel boos op Mary.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.6,0.40540540540540543,0.48387096774193555,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.40540540540540543,0.48387096774193555,,,
 nl/p15/d0956,SEQ2SEQ,De deur is dicht.,"male.n.02
 time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
-nl/p15/d0880,SEQ2SEQ,Ik wil Korea bezoeken.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.72,0.47368421052631576,0.5714285714285714,,,
+happy.a.01 AttributeOf -2 Time -1",,,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+nl/p15/d0851,SEQ2SEQ,De kamer was propvol mensen.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6190476190476191,0.48148148148148145,0.5416666666666666,0.6190476190476191,0.48148148148148145,0.5416666666666666
 nl/p15/d0816,SEQ2SEQ,Mijn zuster is beroemd.,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.5172413793103449,0.5555555555555556,,,
-nl/p15/d0858,SEQ2SEQ,Ik heb twee nichtjes.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.4594594594594595,0.5666666666666667,0.7391304347826086,0.4594594594594595,0.5666666666666667
-nl/p15/d3217,SEQ2SEQ,Het is vijf voor zes.,"male.n.02
-time.n.08 Agent -1 Time +1
-time.n.08 EQU now",,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
-nl/p44/d3322,SEQ2SEQ,Ik ben 19 jaar.,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   EQU now",,0.68,0.4594594594594595,0.5483870967741935,,,
-nl/p15/d0788,SEQ2SEQ,Waar is het toilet?,"male.n.02 Name ?
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5652173913043478,0.4482758620689655,0.4999999999999999,0.5652173913043478,0.4482758620689655,0.4999999999999999
-nl/p15/d3504,SEQ2SEQ,Je bent een schurk.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.782608695652174,0.5142857142857142,0.6206896551724138,0.782608695652174,0.5142857142857142,0.6206896551724138
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.5172413793103449,0.5555555555555556,,,
 nl/p15/d0797,SEQ2SEQ,Is dit uw boek?,"person.n.01 EQU speaker
 time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.5652173913043478,0.4482758620689655,0.4999999999999999,0.5652173913043478,0.4482758620689655,0.4999999999999999
-nl/p15/d2517,SEQ2SEQ,Tom was heel behulpzaam.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1
-time.n.08 EQU now",,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
-nl/p44/d2762,SEQ2SEQ,Zij huurde een privé-detective.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
-nl/p15/d0794,SEQ2SEQ,Ik ben helemaal niet moe.,"person.n.01 EQU speaker
-time.n.08   EQU -1 Time +1
-time.n.08   EQU now",,0.6086956521739131,0.56,0.5833333333333334,0.6086956521739131,0.56,0.5833333333333334
+happy.a.01  AttributeOf -2 Time -1",,,0.5652173913043478,0.4482758620689655,0.4999999999999999,0.5652173913043478,0.4482758620689655,0.4999999999999999
+nl/p15/d0788,SEQ2SEQ,Waar is het toilet?,"male.n.02 Name ?
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.5652173913043478,0.4482758620689655,0.4999999999999999,0.5652173913043478,0.4482758620689655,0.4999999999999999
+nl/p44/d3322,SEQ2SEQ,Ik ben 19 jaar.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p15/d3217,SEQ2SEQ,Het is vijf voor zes.,"male.n.02
+time.n.08 Agent -1 Time +1
+time.n.08 EQU now",,,0.38095238095238093,0.7272727272727273,0.5,0.38095238095238093,0.7272727272727273,0.5
 nl/p44/d1565,SEQ2SEQ,Hij was erg bang toen hij deze grote slang zag.,"male.n.02
 time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6086956521739131,0.2857142857142857,0.3888888888888889,,,
-nl/p44/d2971,SEQ2SEQ,Tom vouwt zijn kleren op.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.5666666666666667,0.6181818181818183,,,
-nl/p15/d3378,SEQ2SEQ,Het was geen grap.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.42857142857142855,0.3103448275862069,0.36000000000000004,0.42857142857142855,0.3103448275862069,0.36000000000000004
-nl/p44/d0868,SEQ2SEQ,Ik heb twee hamburgers besteld.,"person.n.01 EQU speaker
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6086956521739131,0.2857142857142857,0.3888888888888889,,,
+nl/p15/d0794,SEQ2SEQ,Ik ben helemaal niet moe.,"person.n.01 EQU speaker
+time.n.08   EQU -1 Time +1
+time.n.08   EQU now",,,0.6086956521739131,0.56,0.5833333333333334,0.6086956521739131,0.56,0.5833333333333334
+nl/p15/d0858,SEQ2SEQ,Ik heb twee nichtjes.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.7391304347826086,0.4594594594594595,0.5666666666666667,0.7391304347826086,0.4594594594594595,0.5666666666666667
+nl/p15/d0880,SEQ2SEQ,Ik wil Korea bezoeken.,"person.n.01 EQU speaker
 be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.5806451612903226,0.6428571428571428,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.47368421052631576,0.5714285714285714,,,
+nl/p44/d2762,SEQ2SEQ,Zij huurde een privé-detective.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.45454545454545453,0.5357142857142857,,,
+nl/p15/d3504,SEQ2SEQ,Je bent een schurk.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.782608695652174,0.5142857142857142,0.6206896551724138,0.782608695652174,0.5142857142857142,0.6206896551724138
+nl/p15/d2517,SEQ2SEQ,Tom was heel behulpzaam.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1
+time.n.08 EQU now",,,0.6521739130434783,0.5172413793103449,0.576923076923077,0.6521739130434783,0.5172413793103449,0.576923076923077
 nl/p44/d0927,SEQ2SEQ,Hou je van heet eten?,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.7391304347826086,0.4857142857142857,0.5862068965517241,0.7391304347826086,0.4857142857142857,0.5862068965517241
-nl/p15/d0820,SEQ2SEQ,Ik ben getrouwd.,"person.n.01 EQU speaker
-be.v.02     Theme -1 Time +1
-time.n.08   EQU now",,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
-nl/p15/d0874,SEQ2SEQ,Zijn vriendin is Japans.,"person.n.01 Role +1
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.6363636363636364,0.34146341463414637,0.4444444444444445,0.6363636363636364,0.34146341463414637,0.4444444444444445
+time.n.08   EQU now",,,0.7391304347826086,0.4857142857142857,0.5862068965517241,0.7391304347826086,0.4857142857142857,0.5862068965517241
+nl/p44/d2971,SEQ2SEQ,Tom vouwt zijn kleren op.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.5666666666666667,0.6181818181818183,,,
+nl/p15/d3378,SEQ2SEQ,Het was geen grap.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.42857142857142855,0.3103448275862069,0.36000000000000004,0.42857142857142855,0.3103448275862069,0.36000000000000004
+nl/p44/d0868,SEQ2SEQ,Ik heb twee hamburgers besteld.,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.5806451612903226,0.6428571428571428,,,
 nl/p44/d2494,SEQ2SEQ,We hebben de schade op duizend dollar geschat.,"person.n.01 EQU speaker
 be.v.02     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.72,0.4186046511627907,0.5294117647058824,,,
-nl/p82/d0783,SEQ2SEQ,Mike noemde zijn hond Spike.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.64,0.42105263157894735,0.5079365079365079,,,
-nl/p44/d1534,SEQ2SEQ,Ik zag een nijlpaard in de zoo,"person.n.01 EQU speaker
-be.v.08     Theme -1 Time +1 Theme +2
-time.n.08   TPR now",,0.68,0.4857142857142857,0.5666666666666667,,,
-nl/p44/d1998,SEQ2SEQ,Het eekhoorntje at uit haar hand.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6666666666666666,0.42424242424242425,0.5185185185185185,0.6666666666666666,0.42424242424242425,0.5185185185185185
-nl/p15/d2508,SEQ2SEQ,Het vlees is bevroren.,"male.n.02
-time.n.08  EQU now
-happy.a.01 AttributeOf -2 Time -1",,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
-nl/p82/d3414,SEQ2SEQ,Tom gaf Mary de zaklamp.,"male.n.02 Name ""Tom""
-be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 EQU now",,0.68,0.4594594594594595,0.5483870967741935,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.72,0.4186046511627907,0.5294117647058824,,,
 nl/p82/d3508,SEQ2SEQ,Wie is dit mooie meisje?,"person.n.01 EQU speaker
 time.n.08   EQU -1 Time +1 Theme +2
-time.n.08   EQU now",,0.6,0.42857142857142855,0.5,,,
-nl/p44/d1939,SEQ2SEQ,Ze is zwanger.,"male.n.02
-time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
-nl/p82/d0836,SEQ2SEQ,Hij schonk melk in zijn tea en roerde het.,"male.n.02
-time.n.08 Agent -1 Time +1 Theme +2
-time.n.08 TPR now",,0.6956521739130435,0.27586206896551724,0.3950617283950617,,,
+time.n.08   EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6,0.42857142857142855,0.5,,,
+nl/p44/d1998,SEQ2SEQ,Het eekhoorntje at uit haar hand.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6666666666666666,0.42424242424242425,0.5185185185185185,0.6666666666666666,0.42424242424242425,0.5185185185185185
+nl/p15/d0820,SEQ2SEQ,Ik ben getrouwd.,"person.n.01 EQU speaker
+be.v.02     Theme -1 Time +1
+time.n.08   EQU now",,,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435,0.6956521739130435
 nl/p82/d0928,SEQ2SEQ,Dat is een goedkope uitvlucht.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 EQU now",,0.5217391304347826,0.36363636363636365,0.42857142857142855,,,
-nl/p82/d0716,SEQ2SEQ,Johann Wolfgang von Goethe werd geboren in Duitsland.,"male.n.02 Name ""Tom""
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5217391304347826,0.36363636363636365,0.42857142857142855,,,
+nl/p15/d2508,SEQ2SEQ,Het vlees is bevroren.,"male.n.02
+time.n.08  EQU now
+happy.a.01 AttributeOf -2 Time -1",,,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+nl/p82/d0783,SEQ2SEQ,Mike noemde zijn hond Spike.,"male.n.02 Name ""Tom""
 be.v.08   Theme -1 Time +1 Theme +2
-time.n.08 TPR now",,0.64,0.5161290322580645,0.5714285714285714,,,
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.42105263157894735,0.5079365079365079,,,
+nl/p82/d0836,SEQ2SEQ,Hij schonk melk in zijn tea en roerde het.,"male.n.02
+time.n.08 Agent -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6956521739130435,0.27586206896551724,0.3950617283950617,,,
+nl/p44/d1534,SEQ2SEQ,Ik zag een nijlpaard in de zoo,"person.n.01 EQU speaker
+be.v.08     Theme -1 Time +1 Theme +2
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4857142857142857,0.5666666666666667,,,
+nl/p82/d3414,SEQ2SEQ,Tom gaf Mary de zaklamp.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 EQU now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.68,0.4594594594594595,0.5483870967741935,,,
+nl/p15/d0874,SEQ2SEQ,Zijn vriendin is Japans.,"person.n.01 Role +1
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.6363636363636364,0.34146341463414637,0.4444444444444445,0.6363636363636364,0.34146341463414637,0.4444444444444445
+nl/p44/d1939,SEQ2SEQ,Ze is zwanger.,"male.n.02
+time.n.08 EQU -1 Time +1
+time.n.08 EQU now",,,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191,0.6190476190476191
 nl/p82/d1795,SEQ2SEQ,Ze is twee jaar jonger dan hij.,"male.n.02
 time.n.08 EQU -1 Time +1 Theme +2
-time.n.08 TPR now",,0.5652173913043478,0.2708333333333333,0.3661971830985915,,,
-nl/p82/d3399,SEQ2SEQ,De stad is vol toeristen.,"entity.n.01
-time.n.08   EQU now
-happy.a.01  AttributeOf -2 Time -1",,0.7619047619047619,0.48484848484848486,0.5925925925925926,0.7619047619047619,0.48484848484848486,0.5925925925925926
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.5652173913043478,0.2708333333333333,0.3661971830985915,,,
 nl/p82/d1991,SEQ2SEQ,De chirurg heeft het verkeerde been afgezet.,"entity.n.01
 time.n.08   Agent -1 Time +1 Theme +2
-time.n.08   TPR now",,0.6521739130434783,0.38461538461538464,0.4838709677419355,,,
+time.n.08   TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.6521739130434783,0.38461538461538464,0.4838709677419355,,,
+nl/p82/d0716,SEQ2SEQ,Johann Wolfgang von Goethe werd geboren in Duitsland.,"male.n.02 Name ""Tom""
+be.v.08   Theme -1 Time +1 Theme +2
+time.n.08 TPR now",,"Strict evaluation mode, possibly ill-formed graph not exported.",0.64,0.5161290322580645,0.5714285714285714,,,
+nl/p82/d3399,SEQ2SEQ,De stad is vol toeristen.,"entity.n.01
+time.n.08   EQU now
+happy.a.01  AttributeOf -2 Time -1",,,0.7619047619047619,0.48484848484848486,0.5925925925925926,0.7619047619047619,0.48484848484848486,0.5925925925925926
 nl/p82/d2767,SEQ2SEQ,Dat is een mooi verhaal.,"male.n.02
 time.n.08 EQU -1 Time +1
-time.n.08 EQU now",,0.5714285714285714,0.36363636363636365,0.4444444444444444,0.5714285714285714,0.36363636363636365,0.4444444444444444
-nl/p82/d2388,SEQ2SEQ,De wijn was uitstekend.,"person.n.01 Role +1
-time.n.08   EQU now",,0.6666666666666666,0.47619047619047616,0.5555555555555556,0.6666666666666666,0.47619047619047616,0.5555555555555556
-nl/p82/d0946,SEQ2SEQ,De twee honden vochten voor het been.,"entity.n.01
-time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6666666666666666,0.4827586206896552,0.56,0.6666666666666666,0.4827586206896552,0.56
+time.n.08 EQU now",,,0.5714285714285714,0.36363636363636365,0.4444444444444444,0.5714285714285714,0.36363636363636365,0.4444444444444444
 nl/p82/d1816,SEQ2SEQ,De jager vilde het hert.,"entity.n.01
 time.n.08   Agent -1 Time +1
-time.n.08   TPR now",,0.6666666666666666,0.42424242424242425,0.5185185185185185,0.6666666666666666,0.42424242424242425,0.5185185185185185
+time.n.08   TPR now",,,0.6666666666666666,0.42424242424242425,0.5185185185185185,0.6666666666666666,0.42424242424242425,0.5185185185185185
+nl/p82/d2388,SEQ2SEQ,De wijn was uitstekend.,"person.n.01 Role +1
+time.n.08   EQU now",,,0.6666666666666666,0.47619047619047616,0.5555555555555556,0.6666666666666666,0.47619047619047616,0.5555555555555556
+nl/p82/d0946,SEQ2SEQ,De twee honden vochten voor het been.,"entity.n.01
+time.n.08   Agent -1 Time +1
+time.n.08   TPR now",,,0.6666666666666666,0.4827586206896552,0.56,0.6666666666666666,0.4827586206896552,0.56
