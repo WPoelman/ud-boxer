@@ -257,6 +257,7 @@ class SBNGraph(BaseGraph):
                     raise SBNError(
                         f"Invalid token found '{token}' in line: {sbn_line}"
                     )
+                tok_count += 1
 
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)
