@@ -14,6 +14,10 @@ Note that the `thesis-hand-in-branch` is the branch that corresponds to the exac
 Additional development will be done on other branches.
 These changes will not be merged to the hand in branch!
 
+## Resources
+- Thesis: https://arts.studenttheses.ub.rug.nl/31168/1/master_thesis_wessel_poelman.pdf
+- Peer-reviewed COLING-2022 paper about the system: https://aclanthology.org/2022.coling-1.367/
+
 ## Installation
 A script with the required steps is included: `install.sh`.
 Note however that this is to illustrate the steps needed, you probably need to edit it in order to work for your system.
