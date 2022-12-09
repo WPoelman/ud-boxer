@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from ud_boxer.sbn import SBNGraph, sbn_graphs_are_isomorphic
-from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, split_comments
+from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, split_comments, split_single
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 SBN_DIR = EXAMPLES_DIR / "sbn"
@@ -99,3 +99,27 @@ def test_can_parse_and_reconstruct_with_comments(tmp_path, example_string):
     reconstructed_graph = SBNGraph().from_path(path)
 
     assert sbn_graphs_are_isomorphic(starting_graph, reconstructed_graph)
+
+
+def test_can_parse_single_line_sbn_string():
+    test_str = 'male.n.02 Name "Tom" see.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now note.n.01'
+    result = split_single(test_str)
+    # Weird formatting, it's supposed to be this:
+    # male.n.02 Name "Tom"
+    # see.v.01 Experiencer -1 Time +1 Stimulus +2
+    # time.n.08 TPR now
+    # note.n.01
+    target = """male.n.02 Name "Tom" 
+see.v.01 Experiencer -1 Time +1 Stimulus +2 
+time.n.08 TPR now 
+note.n.01"""
+
+    assert result == target
+
+
+def test_can_parse_single_line_sbn():
+    test_str = 'male.n.02 Name "Tom" see.v.01 Experiencer -1 Time +1 Stimulus +2 time.n.08 TPR now note.n.01'
+    graph = SBNGraph().from_string(test_str)
+
+    assert len(graph.nodes) == (6 + 1)  # 6 sbn nodes, 1 box
+    assert len(graph.edges) == (5 + 4)  # 5 sbn edges, 4 box edges

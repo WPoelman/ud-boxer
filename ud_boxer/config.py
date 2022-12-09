@@ -49,7 +49,6 @@ class Config:
     DATA_DIR = PROJECT_ROOT / "data"
     MAPPINGS_DIR = DATA_DIR / "mappings"
     LOG_PATH = Path(DATA_DIR / "logs").resolve()
-    # NOTE: seq2seq is currently only for english!
     SEQ2SEQ_DIR = Path(DATA_DIR / "results/seq2seq").resolve()
 
     @staticmethod

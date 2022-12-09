@@ -24,11 +24,6 @@ def get_args() -> Namespace:
         required=True,
         help="Predicted SBN file to evaluate.",
     )
-    parser.add_argument(
-        "--is_single_line",
-        action="store_true",
-        help="Flag to indicate if predicted_sbn is in single line format.",
-    )
 
     return parser.parse_args()
 
@@ -37,9 +32,7 @@ def main():
     args = get_args()
 
     G = SBNGraph().from_path(args.gold_sbn)
-    P = SBNGraph().from_path(
-        args.predicted_sbn, is_single_line=args.is_single_line
-    )
+    P = SBNGraph().from_path(args.predicted_sbn)
 
     with tempfile.NamedTemporaryFile("w") as gold_f:
         with tempfile.NamedTemporaryFile("w") as pred_f:

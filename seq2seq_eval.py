@@ -76,9 +76,7 @@ def get_args() -> Namespace:
 def generate_result(args, sbn_line, gold_path):
     # current_dir = gold_path.parent
 
-    G = SBNGraph(source=args.sbn_source).from_string(
-        sbn_line, is_single_line=True
-    )
+    G = SBNGraph(source=args.sbn_source).from_string(sbn_line)
     lenient_err, strict_err = None, None
 
     with tempfile.NamedTemporaryFile("w") as f:

@@ -64,19 +64,15 @@ class SBNGraph(BaseGraph):
         self.is_possibly_ill_formed: bool = False
         self.source: SBNSource = source
 
-    def from_path(
-        self, path: PathLike, is_single_line: bool = False
-    ) -> SBNGraph:
+    def from_path(self, path: PathLike) -> SBNGraph:
         """Construct a graph from the provided filepath."""
-        return self.from_string(Path(path).read_text(), is_single_line)
+        return self.from_string(Path(path).read_text())
 
-    def from_string(
-        self, input_string: str, is_single_line: bool = False
-    ) -> SBNGraph:
+    def from_string(self, input_string: str) -> SBNGraph:
         """Construct a graph from a single SBN string."""
         # Determine if we're dealing with an SBN file with newlines (from the
         # PMB for instance) or without (from neural output).
-        if is_single_line:
+        if "\n" not in input_string:
             input_string = split_single(input_string)
 
         lines = split_comments(input_string)
