@@ -48,8 +48,8 @@ class Config:
     GRS_PATH = Path(PROJECT_ROOT / "grew/main.grs").resolve()
     DATA_DIR = PROJECT_ROOT / "data"
     MAPPINGS_DIR = DATA_DIR / "mappings"
+    MARKERS_DIR = DATA_DIR / "markers"
     LOG_PATH = Path(DATA_DIR / "logs").resolve()
-    # NOTE: seq2seq is currently only for english!
     SEQ2SEQ_DIR = Path(DATA_DIR / "results/seq2seq").resolve()
 
     @staticmethod
@@ -103,6 +103,11 @@ class Config:
     def get_split_ids(lang: SUPPORTED_LANGUAGES, split: DATA_SPLIT):
         path = Path(Config.DATA_DIR / f"splits/{lang}_{split}.txt").resolve()
         return path.read_text().rstrip().split("\n")
+
+    @staticmethod
+    def get_markers(lang: SUPPORTED_LANGUAGES):
+        """Get the negation and quantifier markers for the selected language"""
+        pass
 
     # -- Defaults --
     DEFAULT_BOX_CONNECT = "CONTINUATION"
