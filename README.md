@@ -26,7 +26,7 @@ Note however that this is to illustrate the steps needed, you probably need to e
 2. Install `graphviz` to generate visualizations. (**Optional**)
    1. On Debian-based systems: `apt install graphviz libgraphviz-dev pkg-config`
 3. Install GREW
-   1. Follow the instructions on https://grew.fr/usage/install/
+   1. Follow the instructions on https://grew.fr/usage/install/ (NOTE: if you have trouble, make sure `ocamlbuild` is installed: `opam install ocamlbuild`)
    2. Make sure `opam` is active by running `opam --version`
    3. If `opam` is not avaible, try activating it with `eval $(opam env)`
 4. Install dependencies with `pip install -r requirements/requirements.txt`
