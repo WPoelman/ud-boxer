@@ -26,9 +26,11 @@ Note however that this is to illustrate the steps needed, you probably need to e
 2. Install `graphviz` to generate visualizations. (**Optional**)
    1. On Debian-based systems: `apt install graphviz libgraphviz-dev pkg-config`
 3. Install GREW
-   1. Follow the instructions on https://grew.fr/usage/install/ (NOTE: if you have trouble, make sure `ocamlbuild` is installed: `opam install ocamlbuild`)
-   2. Make sure `opam` is active by running `opam --version`
-   3. If `opam` is not avaible, try activating it with `eval $(opam env)`
+   1. *Update December 2022*: the newer GREW versions break the old graph format GREW had. Make sure to use `opam install grew.1.8.1 grewpy.1.8.0 libcaml-grew.1.9.2` these versions to make UD-Boxer work as is. I will work on updating to the new format if I have time.
+   2. Follow the instructions on https://grew.fr/usage/install/ (NOTE: if you have trouble, make sure `ocamlbuild` is installed: `opam install ocamlbuild`)
+   3. Make sure `opam` is active by running `opam --version`
+   4. If `opam` is not avaible, try activating it with `eval $(opam env)`
+   5. Grew versions used in development
 4. Install dependencies with `pip install -r requirements/requirements.txt`
    1. `requirements/requirements-ud.txt` contains alternative UD parsing systems (**Optional**)
    2. `requirements/requirements-dev.txt` contains development libraries for testing, formatting etc. (**Optional**)
