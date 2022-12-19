@@ -6,5 +6,5 @@ Penman==1.2.2
 stanza==1.4.2
 tqdm==4.64.1
 pydot==1.4.2
-joblib==1.1.0
+joblib==1.2.0
 git+https://github.com/cfmrp/mtool.git#egg=mtool
