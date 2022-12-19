@@ -3,7 +3,12 @@ from pathlib import Path
 import pytest
 
 from ud_boxer.sbn import SBNGraph, sbn_graphs_are_isomorphic
-from ud_boxer.sbn_spec import SBN_EDGE_TYPE, SBN_NODE_TYPE, split_comments, split_single
+from ud_boxer.sbn_spec import (
+    SBN_EDGE_TYPE,
+    SBN_NODE_TYPE,
+    split_comments,
+    split_single,
+)
 
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 SBN_DIR = EXAMPLES_DIR / "sbn"
