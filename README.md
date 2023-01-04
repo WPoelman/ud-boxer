@@ -10,6 +10,7 @@ The following images show the basic idea for the sentence **Tracy lost her glass
   </tr>
 </table>
 
+UD-Boxer is the system created for my thesis for the MSc Information Science at the University of Groningen.
 Note that the `thesis-hand-in-branch` is the branch that corresponds to the exact state of the system described my thesis.
 Additional development will be done on other branches.
 These changes will not be merged to the hand in branch!
