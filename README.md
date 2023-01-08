@@ -15,23 +15,6 @@ Note that the `thesis-hand-in-branch` is the branch that corresponds to the exac
 Additional development will be done on other branches.
 These changes will not be merged to the hand in branch!
 
-## Resources
-- Thesis: https://arts.studenttheses.ub.rug.nl/31168/1/master_thesis_wessel_poelman.pdf
-- Peer-reviewed COLING-2022 paper about the system: https://aclanthology.org/2022.coling-1.367/
-```
-@inproceedings{poelman-etal-2022-transparent,
-    title = "Transparent Semantic Parsing with {U}niversal {D}ependencies Using Graph Transformations",
-    author = "Poelman, Wessel  and van Noord, Rik  and Bos, Johan",
-    booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
-    month = oct,
-    year = "2022",
-    address = "Gyeongju, Republic of Korea",
-    publisher = "International Committee on Computational Linguistics",
-    url = "https://aclanthology.org/2022.coling-1.367",
-    pages = "4186--4192"
-}
-```
-
 ## Installation
 A script with the required steps is included: `install.sh`.
 Note however that this is to illustrate the steps needed, you probably need to edit it in order to work for your system.
@@ -224,6 +207,23 @@ We will add the option to install `ud-boxer` as a package at a later moment.
 - [ ] Generated SBN does not adhere to the spec entirely, in particular when it comes to constants. The evaluation in Penman notation is not bothered by this since everything gets consistently quoted there:
   - [ ] Names are not quoted properly with `"John Doe"`, now they are formatted as `John_Doe`. This requires keeping track of an additional flag/type indicating if something is a name. I am a bit hesitant to do this since we might introduce a NER component that will help with this a lot.
   - [ ] Year constants are not quoted properly like `'2022'`, now they are formatted as `2022`, again something for a possible NER component since date parsing in general is not ideal currently.
+
+## Resources
+- Thesis: https://arts.studenttheses.ub.rug.nl/31168/1/master_thesis_wessel_poelman.pdf
+- Peer-reviewed COLING-2022 paper about the system: https://aclanthology.org/2022.coling-1.367/
+```
+@inproceedings{poelman-etal-2022-transparent,
+    title = "Transparent Semantic Parsing with {U}niversal {D}ependencies Using Graph Transformations",
+    author = "Poelman, Wessel  and van Noord, Rik  and Bos, Johan",
+    booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
+    month = oct,
+    year = "2022",
+    address = "Gyeongju, Republic of Korea",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2022.coling-1.367",
+    pages = "4186--4192"
+}
+```
 
 ## Test cases
 * **p00/d0004**: `entity` that combines multiple subtypes
