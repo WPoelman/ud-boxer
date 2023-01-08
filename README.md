@@ -18,6 +18,19 @@ These changes will not be merged to the hand in branch!
 ## Resources
 - Thesis: https://arts.studenttheses.ub.rug.nl/31168/1/master_thesis_wessel_poelman.pdf
 - Peer-reviewed COLING-2022 paper about the system: https://aclanthology.org/2022.coling-1.367/
+```
+@inproceedings{poelman-etal-2022-transparent,
+    title = "Transparent Semantic Parsing with {U}niversal {D}ependencies Using Graph Transformations",
+    author = "Poelman, Wessel  and van Noord, Rik  and Bos, Johan",
+    booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
+    month = oct,
+    year = "2022",
+    address = "Gyeongju, Republic of Korea",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2022.coling-1.367",
+    pages = "4186--4192"
+}
+```
 
 ## Installation
 A script with the required steps is included: `install.sh`.
