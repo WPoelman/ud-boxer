@@ -805,6 +805,6 @@ def main(filepath):
 
 if __name__=="__main__":
     
-    starting_path = Path("/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p96/d2622/en.drs.sbn")
+    starting_path = Path("p96/d2622/en.drs.sbn")
     main(starting_path)
     
