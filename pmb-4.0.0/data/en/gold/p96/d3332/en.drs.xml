@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- ø Tom threw ø Mary 's phone into the pool . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">0</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Tom</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">tom</tag>
+     <tag type="lemma">tom</tag>
+     <tag type="from">0</tag>
+     <tag type="to">3</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">PER</tag>
+     <tag type="wordnet">male.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="tok">threw</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">throw</tag>
+     <tag type="lemma">throw</tag>
+     <tag type="from">4</tag>
+     <tag type="to">9</tag>
+     <tag type="pos">VBD</tag>
+     <tag type="sem">EPS</tag>
+     <tag type="wordnet">throw.v.01</tag>
+     <tag type="verbnet" n="2">[Theme,Agent]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">10</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Mary</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">mary</tag>
+     <tag type="lemma">mary</tag>
+     <tag type="from">10</tag>
+     <tag type="to">14</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">PER</tag>
+     <tag type="wordnet">female.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="tok">'s</tag>
+     <tag type="cat">(np/(n/pp))\np</tag>
+     <tag type="sym">'s</tag>
+     <tag type="lemma">'s</tag>
+     <tag type="from">14</tag>
+     <tag type="to">16</tag>
+     <tag type="pos">POS</tag>
+     <tag type="sem">HAS</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[User]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">phone</tag>
+     <tag type="cat">n/pp</tag>
+     <tag type="sym">phone</tag>
+     <tag type="lemma">phone</tag>
+     <tag type="from">17</tag>
+     <tag type="to">22</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">phone.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="tok">into</tag>
+     <tag type="cat">((s:dcl\np)\(s:dcl\np))/np</tag>
+     <tag type="sym">into</tag>
+     <tag type="lemma">into</tag>
+     <tag type="from">23</tag>
+     <tag type="to">27</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Destination]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1009">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">the</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">the</tag>
+     <tag type="lemma">the</tag>
+     <tag type="from">28</tag>
+     <tag type="to">31</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1010">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">pool</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">pool</tag>
+     <tag type="lemma">pool</tag>
+     <tag type="from">32</tag>
+     <tag type="to">36</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">pool.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1011">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">36</tag>
+     <tag type="to">37</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b4">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="-1"></dr>
+   <dr label="b2" name="x2" from="10" to="-1"></dr>
+   <dr label="b3" name="x3" from="14" to="16"></dr>
+   <dr label="b4" name="e1" from="4" to="9"></dr>
+   <dr label="b4" name="t1" from="4" to="9"></dr>
+   <dr label="b5" name="x4" from="28" to="31"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="male" synset="male.n.02" from="0" to="3"></pred>
+   </cond>
+   <cond label="b1">
+    <named arg="x1" symbol="tom" from="0" to="3"></named>
+   </cond>
+   <cond label="b4">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="4" to="9"></pred>
+   </cond>
+   <cond label="b4">
+    <comp symbol="TPR" arg1="t1" arg2="now" from="4" to="9"></comp>
+   </cond>
+   <cond label="b4">
+    <pred arg="e1" symbol="throw" synset="throw.v.01" from="4" to="9"></pred>
+   </cond>
+   <cond label="b4">
+    <rel arg1="e1" arg2="x4" symbol="Destination" framenet="Cause_impact@Impactee" from="23" to="27"></rel>
+   </cond>
+   <cond label="b4">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="4" to="9"></rel>
+   </cond>
+   <cond label="b4">
+    <rel arg1="e1" arg2="x3" symbol="Theme" framenet="Cause_impact@Impactor" from="4" to="9"></rel>
+   </cond>
+   <cond label="b4">
+    <rel arg1="e1" arg2="x1" symbol="Agent" framenet="Cause_impact@Agent" from="4" to="9"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x2" symbol="female" synset="female.n.02" from="10" to="14"></pred>
+   </cond>
+   <cond label="b2">
+    <named arg="x2" symbol="mary" from="10" to="14"></named>
+   </cond>
+   <cond label="b3">
+    <pred arg="x3" symbol="phone" synset="phone.n.01" from="17" to="22"></pred>
+   </cond>
+   <cond label="b3">
+    <rel arg1="x3" arg2="x2" symbol="User" framenet="User" from="14" to="16"></rel>
+   </cond>
+   <cond label="b5">
+    <pred arg="x4" symbol="pool" synset="pool.n.01" from="32" to="36"></pred>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

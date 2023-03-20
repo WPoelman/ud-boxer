@@ -1,0 +1,19 @@
+(b0 / "box"
+	:member (s0 / male.n.02)
+	:member (s1 / car.n.02
+		:User s0)
+	:member (s2 / time.n.08
+		:TPR (c0 / "now"))
+	:member (s3 / blue.a.01
+		:Colour-of s1
+		:Time s2)
+	:CONTINUATION (b1 / "box"
+		:member (s4 / entity.n.01
+			:User (s5 / female.n.02))
+		:member s5
+		:member (s6 / time.n.08
+			:TPR (c1 / "now")
+			:EQU s2)
+		:member (s7 / red.a.01
+			:Colour-of s4
+			:Time s6)))

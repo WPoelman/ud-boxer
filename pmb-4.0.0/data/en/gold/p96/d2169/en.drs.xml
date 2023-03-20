@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- The man robbed her of her bag . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">The</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">the</tag>
+     <tag type="lemma">the</tag>
+     <tag type="from">0</tag>
+     <tag type="to">3</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">man</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">man</tag>
+     <tag type="lemma">man</tag>
+     <tag type="from">4</tag>
+     <tag type="to">7</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">man.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="tok">robbed</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">rob</tag>
+     <tag type="lemma">rob</tag>
+     <tag type="from">8</tag>
+     <tag type="to">14</tag>
+     <tag type="pos">VBN</tag>
+     <tag type="sem">EPS</tag>
+     <tag type="wordnet">rob.v.01</tag>
+     <tag type="verbnet" n="2">[Source,Agent]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">her</tag>
+     <tag type="cat">np</tag>
+     <tag type="sym">female</tag>
+     <tag type="lemma">female</tag>
+     <tag type="from">15</tag>
+     <tag type="to">18</tag>
+     <tag type="pos">PRP$</tag>
+     <tag type="sem">PRO</tag>
+     <tag type="wordnet">female.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">of</tag>
+     <tag type="cat">((s:dcl\np)\(s:dcl\np))/np</tag>
+     <tag type="sym">of</tag>
+     <tag type="lemma">of</tag>
+     <tag type="from">19</tag>
+     <tag type="to">21</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Theme]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="tok">her</tag>
+     <tag type="cat">np/(n/pp)</tag>
+     <tag type="sym">female</tag>
+     <tag type="lemma">female</tag>
+     <tag type="from">22</tag>
+     <tag type="to">25</tag>
+     <tag type="pos">PRP$</tag>
+     <tag type="sem">HAS</tag>
+     <tag type="wordnet">female.n.02</tag>
+     <tag type="verbnet" n="1">[Owner]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">bag</tag>
+     <tag type="cat">n/pp</tag>
+     <tag type="sym">bag</tag>
+     <tag type="lemma">bag</tag>
+     <tag type="from">26</tag>
+     <tag type="to">29</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">bag.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">29</tag>
+     <tag type="to">30</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b3">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="3"></dr>
+   <dr label="b2" name="x2" from="0" to="0"></dr>
+   <dr label="b3" name="e1" from="8" to="14"></dr>
+   <dr label="b3" name="t1" from="8" to="14"></dr>
+   <dr label="b4" name="x3" from="22" to="25"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="man" synset="man.n.01" from="4" to="7"></pred>
+   </cond>
+   <cond label="b3">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="8" to="14"></pred>
+   </cond>
+   <cond label="b3">
+    <comp symbol="TPR" arg1="t1" arg2="now" from="8" to="14"></comp>
+   </cond>
+   <cond label="b3">
+    <pred arg="e1" symbol="rob" synset="rob.v.01" from="8" to="14"></pred>
+   </cond>
+   <cond label="b3">
+    <rel arg1="e1" arg2="x3" symbol="Theme" framenet="Emptying@Theme" from="19" to="21"></rel>
+   </cond>
+   <cond label="b3">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="8" to="14"></rel>
+   </cond>
+   <cond label="b3">
+    <rel arg1="e1" arg2="x2" symbol="Source" framenet="Cure@Patient" from="8" to="14"></rel>
+   </cond>
+   <cond label="b3">
+    <rel arg1="e1" arg2="x1" symbol="Agent" framenet="Cure@Healer" from="8" to="14"></rel>
+   </cond>
+   <cond label="b4">
+    <pred arg="x3" symbol="bag" synset="bag.n.01" from="26" to="29"></pred>
+   </cond>
+   <cond label="b4">
+    <rel arg1="x3" arg2="x2" symbol="Owner" framenet="Owner" from="22" to="25"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x2" symbol="female" synset="female.n.02" from="0" to="0"></pred>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

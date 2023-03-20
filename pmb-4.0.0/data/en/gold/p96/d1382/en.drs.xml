@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- Where is ø Mae~West buried ? --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="tok">Where</tag>
+     <tag type="cat">s:wq/s:q</tag>
+     <tag type="sym">location</tag>
+     <tag type="lemma">location</tag>
+     <tag type="from">0</tag>
+     <tag type="to">5</tag>
+     <tag type="pos">WRB</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">location.n.01</tag>
+     <tag type="verbnet" n="2">[Location,Name]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">is</tag>
+     <tag type="cat">(s:q/(s:pss\np))/np</tag>
+     <tag type="sym">be</tag>
+     <tag type="lemma">be</tag>
+     <tag type="from">6</tag>
+     <tag type="to">8</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">NOW</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">9</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Mae~West</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">mae~west</tag>
+     <tag type="lemma">mae~west</tag>
+     <tag type="from">9</tag>
+     <tag type="to">17</tag>
+     <tag type="pos">JJS</tag>
+     <tag type="sem">PER</tag>
+     <tag type="wordnet">female.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">buried</tag>
+     <tag type="cat">s:pss\np</tag>
+     <tag type="sym">bury</tag>
+     <tag type="lemma">bury</tag>
+     <tag type="from">18</tag>
+     <tag type="to">24</tag>
+     <tag type="pos">VBN</tag>
+     <tag type="sem">EXS</tag>
+     <tag type="wordnet">bury.v.02</tag>
+     <tag type="verbnet" n="1">[Theme]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">?</tag>
+     <tag type="cat">s:wq\s:wq</tag>
+     <tag type="sym">?</tag>
+     <tag type="lemma">?</tag>
+     <tag type="from">24</tag>
+     <tag type="to">25</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b2">
+  <domain>
+   <dr label="b1" name="x1" from="9" to="-1"></dr>
+   <dr label="b2" name="e1" from="18" to="24"></dr>
+   <dr label="b2" name="t1" from="6" to="8"></dr>
+   <dr label="b2" name="x2" from="0" to="5"></dr>
+  </domain>
+  <conds>
+   <cond label="b2">
+    <pred arg="e1" symbol="bury" synset="bury.v.02" from="18" to="24"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="x2" symbol="Location" framenet="Location" from="0" to="5"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="6" to="8"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="x1" symbol="Theme" framenet="Placing@Theme" from="18" to="24"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x2" symbol="location" synset="location.n.01" from="0" to="5"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="x2" arg2="?" symbol="Name" framenet="Name" from="0" to="5"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="6" to="8"></pred>
+   </cond>
+   <cond label="b2">
+    <comp symbol="EQU" arg1="t1" arg2="now" from="6" to="8"></comp>
+   </cond>
+   <cond label="b1">
+    <pred arg="x1" symbol="female" synset="female.n.02" from="9" to="17"></pred>
+   </cond>
+   <cond label="b1">
+    <named arg="x1" symbol="mae~west" from="9" to="17"></named>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

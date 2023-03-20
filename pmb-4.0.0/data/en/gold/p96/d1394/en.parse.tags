@@ -1,0 +1,26 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:wq,
+  fa(s:wq/(s:q/np),
+   t((s:wq/(s:q/np))/n, 'What', [from:0, to:4, pos:'WP', lemma:'entity', sem:'QUE', wordnet:'O', verbnet:['Name']]),
+   fa(n,
+    t(n/n, 'famous', [from:5, to:11, pos:'JJ', lemma:'famous', sem:'IST', wordnet:'famous.a.01', verbnet:['Attribute']]),
+    t(n, 'verse', [from:12, to:17, pos:'NN', lemma:'verse', sem:'CON', wordnet:'verse.n.02']))),
+  fc(s:q/np,
+   fa(s:q/(s:b\np),
+    t((s:q/(s:b\np))/np, 'did', [from:18, to:21, pos:'VBD', lemma:'do', sem:'PST', wordnet:'O']),
+    lx(np, n,
+     t(n, 'Sarah~Hale', [from:22, to:32, pos:'NNP', lemma:'sarah~hale', sem:'PER', wordnet:'female.n.02']))),
+   bxc((s:b\np)/np,
+    t((s:b\np)/np, 'write', [from:33, to:38, pos:'VB', lemma:'write', sem:'EXS', wordnet:'write.v.01', verbnet:['Result','Agent']]),
+    fa((s\np)\(s\np),
+     t(((s\np)\(s\np))/np, 'in', [from:39, to:41, pos:'IN', lemma:'in', sem:'REL', wordnet:'O', verbnet:['Time']]),
+     rp(np,
+      lx(np, n,
+       t(n, '1830', [from:42, to:46, pos:'CD', lemma:'1830', sem:'YOC', wordnet:'O'])),
+      t(., '?', [from:46, to:47, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))))).
+

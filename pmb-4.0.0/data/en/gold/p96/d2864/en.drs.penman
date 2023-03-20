@@ -1,0 +1,7 @@
+(b0 / "box"
+	:member (s0 / dog.n.01)
+	:member (s1 / time.n.08
+		:EQU (c0 / "now"))
+	:member (s2 / bark.v.04
+		:Agent s0
+		:Time s1))

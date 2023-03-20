@@ -1,0 +1,24 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'She', [from:0, to:3, pos:'PRP', lemma:'female', sem:'PRO', wordnet:'female.n.02']),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'has', [from:4, to:7, pos:'VBZ', lemma:'have', sem:'ENS', wordnet:'have.v.01', verbnet:['Theme','Pivot']]),
+   fa(np,
+    t(np/n, 'a', [from:8, to:9, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+    ba(n,
+     t(n, 'daughter', [from:10, to:18, pos:'NN', lemma:'daughter', sem:'ROL', wordnet:'daughter.n.01']),
+     fa(n\n,
+      t((n\n)/(s:dcl\np), 'who', [from:19, to:22, pos:'WP', lemma:'who', sem:'AND', wordnet:'O']),
+      rp(s:dcl\np,
+       fa(s:dcl\np,
+        t((s:dcl\np)/np, 'is', [from:23, to:25, pos:'VBZ', lemma:'be', sem:'ENS', wordnet:'be.v.08', verbnet:['Co-Theme','Theme']]),
+        fa(np,
+         t(np/n, 'a', [from:26, to:27, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+         t(n, 'pianist', [from:28, to:35, pos:'NN', lemma:'pianist', sem:'ROL', wordnet:'pianist.n.01']))),
+       t(., '.', [from:35, to:36, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))))).
+

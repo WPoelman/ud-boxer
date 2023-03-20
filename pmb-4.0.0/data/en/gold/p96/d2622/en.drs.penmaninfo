@@ -1,0 +1,17 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	entity.n.01
+b0	:member	s1
+s1	:instance	be.v.01
+s1	:Theme	s0
+s1	:Time	s2
+s2	:instance	time.n.08
+s2	:EQU	c0
+c0	:instance	"now"
+s1	:Co-Theme	s4
+s4	:instance	operation.n.03
+b0	:member	s2
+b0	:member	s3
+s3	:instance	cloak-and-dagger.a.01
+s4	:Attribute	s3
+b0	:member	s4

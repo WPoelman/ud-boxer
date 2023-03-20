@@ -1,0 +1,13 @@
+(b0 / "box"
+	:member (s0 / time.n.08
+		:EQU (c0 / "now"))
+	:member (s1 / person.n.01
+		:EQU (c1 / "hearer"))
+	:member (s2 / have.v.01
+		:Time s0
+		:Pivot s1
+		:Theme (s3 / map.n.01
+			:Content (s4 / city.n.01
+				:Name (c2 / "Kyoto"))))
+	:member s3
+	:member s4)

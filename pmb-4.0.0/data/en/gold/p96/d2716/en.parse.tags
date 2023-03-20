@@ -1,0 +1,17 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:wq,
+  t(s:wq/(s:q/pp), 'Where', [from:0, to:5, pos:'WRB', lemma:'location', sem:'QUE', wordnet:'location.n.01', verbnet:['Name']]),
+  fc(s:q/pp,
+   fa(s:q/(s:b\np),
+    t((s:q/(s:b\np))/np, 'does', [from:6, to:10, pos:'VBZ', lemma:'do', sem:'NOW', wordnet:'O']),
+    lx(np, n,
+     t(n, 'Tom', [from:11, to:14, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02']))),
+   rp((s:b\np)/pp,
+    t((s:b\np)/pp, 'live', [from:15, to:19, pos:'VB', lemma:'live', sem:'EXS', wordnet:'live.v.01', verbnet:['Theme']]),
+    t(., '?', [from:19, to:20, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))).
+

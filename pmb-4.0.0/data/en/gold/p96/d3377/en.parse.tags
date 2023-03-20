@@ -1,0 +1,23 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'I', [from:0, to:1, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+  fa(s:dcl\np,
+   fa((s:dcl\np)/pp,
+    t(((s:dcl\np)/pp)/np, 'bet', [from:2, to:5, pos:'VBP', lemma:'bet', sem:'ENS', wordnet:'bet.v.02', verbnet:['Asset','Agent']]),
+    lx(np, n,
+     fa(n,
+      t(n/n, 'ten', [from:6, to:9, pos:'JJ', lemma:'10', sem:'QUC', wordnet:'O', verbnet:['Quantity']]),
+      t(n, 'dollars', [from:10, to:17, pos:'NNS', lemma:'dollar', sem:'UOM', wordnet:'dollar.n.01'])))),
+   fa(pp,
+    t(pp/np, 'on', [from:18, to:20, pos:'IN', lemma:'on', sem:'REL', wordnet:'O', verbnet:['Theme']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'that', [from:21, to:25, pos:'DT', lemma:'entity', sem:'DST', wordnet:'entity.n.01']),
+      t(n, 'horse', [from:26, to:31, pos:'NN', lemma:'horse', sem:'CON', wordnet:'horse.n.01'])),
+     t(., '.', [from:31, to:32, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

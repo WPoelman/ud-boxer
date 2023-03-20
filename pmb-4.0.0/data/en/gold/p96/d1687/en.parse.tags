@@ -1,0 +1,31 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  ba(s:dcl,
+   ba(s:dcl,
+    t(np, 'I', [from:0, to:1, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+    fa(s:dcl\np,
+     t((s:dcl\np)/(s:adj\np), 'was', [from:2, to:5, pos:'VBD', lemma:'be', sem:'PST', wordnet:'O']),
+     ba(s:adj\np,
+      t(s:adj\np, 'sixteen', [from:6, to:13, pos:'VBN', lemma:'16', sem:'QUC', wordnet:'O', verbnet:['Theme']]),
+      fa((s\np)\(s\np),
+       t(((s\np)\(s\np))/np, 'in', [from:14, to:16, pos:'IN', lemma:'in', sem:'REL', wordnet:'O', verbnet:['Context']]),
+       fa(np,
+        t(np/n, 'this', [from:17, to:21, pos:'DT', lemma:'this', sem:'PRX', wordnet:'O']),
+        t(n, 'picture', [from:22, to:29, pos:'NN', lemma:'picture', sem:'CON', wordnet:'picture.n.01'])))))),
+   t(s:dcl\s:dcl, ',', [from:29, to:30, pos:',', lemma:',', sem:'NIL', wordnet:'O'])),
+  conj(s:dcl\s:dcl,
+   t(conj, 'and', [from:31, to:34, pos:'CC', lemma:'and', sem:'GRP', wordnet:'O']),
+   ba(s:dcl,
+    ba(s:dcl,
+     lx(np, n,
+      t(n, 'Tom', [from:35, to:38, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+     fa(s:dcl\np,
+      t((s:dcl\np)/(s:adj\np), 'was', [from:39, to:42, pos:'VBD', lemma:'be', sem:'PST', wordnet:'O']),
+      t(s:adj\np, 'ten', [from:43, to:46, pos:'VBN', lemma:'10', sem:'QUC', wordnet:'O', verbnet:['Theme']]))),
+    t(s:dcl\s:dcl, '.', [from:46, to:47, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

@@ -1,0 +1,23 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:wq,
+  t(s:wq/(s:dcl\np), 'What', [from:0, to:4, pos:'WP', lemma:'entity', sem:'QUE', wordnet:'entity.n.01', verbnet:['Equal']]),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'was', [from:5, to:8, pos:'VBD', lemma:'be', sem:'EPS', wordnet:'be.v.02', verbnet:['Co-Theme','Theme']]),
+   fa(np,
+    ba(np/(n/pp),
+     fa(np,
+      ba(np/(n/pp),
+       lx(np, n,
+        t(n, 'Andrew~Jackson', [from:9, to:23, pos:'NNP', lemma:'andrew~jackson', sem:'PER', wordnet:'male.n.02'])),
+       t((np/(n/pp))\np, '\'s', [from:23, to:25, pos:'POS', lemma:'\'s', sem:'HAS', wordnet:'O', verbnet:['Of']])),
+      t(n/pp, 'wife', [from:26, to:30, pos:'NN', lemma:'wife', sem:'ROL', wordnet:'wife.n.01'])),
+     t((np/(n/pp))\np, '\'s', [from:30, to:32, pos:'POS', lemma:'\'s', sem:'HAS', wordnet:'O', verbnet:['Bearer']])),
+    rp(n/pp,
+     t(n/pp, 'name', [from:33, to:37, pos:'NN', lemma:'name', sem:'CON', wordnet:'name.n.01']),
+     t(., '?', [from:37, to:38, pos:'.', lemma:'?', sem:'QUE', wordnet:'O'])))))).
+

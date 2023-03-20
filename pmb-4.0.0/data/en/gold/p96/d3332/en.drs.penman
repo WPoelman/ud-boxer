@@ -1,0 +1,15 @@
+(b0 / "box"
+	:member (s0 / male.n.02
+		:Name (c0 / "Tom"))
+	:member (s1 / throw.v.01
+		:Agent s0
+		:Time (s2 / time.n.08
+			:TPR (c1 / "now"))
+		:Theme (s4 / phone.n.01
+			:User (s3 / female.n.02
+				:Name (c2 / "Mary")))
+		:Destination (s5 / pool.n.01))
+	:member s2
+	:member s3
+	:member s4
+	:member s5)

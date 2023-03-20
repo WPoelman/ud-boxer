@@ -1,0 +1,7 @@
+(b0 / "box"
+	:member (s0 / female.n.02)
+	:member (s1 / time.n.08
+		:EQU (c0 / "now"))
+	:member (s2 / happy.a.01
+		:Experiencer s0
+		:Time s1))

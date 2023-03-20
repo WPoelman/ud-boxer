@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / manner.n.01
+		:EQU (c0 / "?"))
+	:member (s1 / time.n.08
+		:TPR (c1 / "now"))
+	:member (s2 / male.n.02
+		:Name (c2 / "Jackie Robinson"))
+	:member (s3 / die.v.01
+		:Manner s0
+		:Time s1
+		:Patient s2))

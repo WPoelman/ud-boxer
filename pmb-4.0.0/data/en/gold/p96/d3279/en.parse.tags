@@ -1,0 +1,22 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:q,
+  fa(s:q/(s:b\np),
+   t((s:q/(s:b\np))/np, 'Do', [from:0, to:2, pos:'VBP', lemma:'do', sem:'NOW', wordnet:'O']),
+   t(np, 'you', [from:3, to:6, pos:'PRP', lemma:'hearer', sem:'PRO', wordnet:'O'])),
+  fa(s:b\np,
+   t((s:b\np)/np, 'support', [from:7, to:14, pos:'VB', lemma:'support', sem:'EXS', wordnet:'support.v.03', verbnet:['Stimulus','Experiencer']]),
+   ba(np,
+    lx(np, n,
+     t(n, 'Mitt~Romney', [from:15, to:26, pos:'NNP', lemma:'mitt~romney', sem:'PER', wordnet:'male.n.02'])),
+    conj(np\np,
+     t(conj, 'or', [from:27, to:29, pos:'CC', lemma:'or', sem:'DIS', wordnet:'O']),
+     rp(np,
+      lx(np, n,
+       t(n, 'Barack~Obama', [from:30, to:42, pos:'NNP', lemma:'barack~obama', sem:'PER', wordnet:'male.n.02'])),
+      t(., '?', [from:42, to:43, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))))).
+

@@ -1,0 +1,16 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	male.n.02
+s0	:Name	c0
+c0	:instance	"Tom"
+b0	:member	s1
+s1	:instance	time.n.08
+s1	:TPR	c1
+c1	:instance	"now"
+b0	:member	s2
+s2	:instance	moan.v.01
+s2	:Agent	s0
+s2	:Time	s1
+s2	:Theme	s3
+s3	:instance	pain.n.01
+b0	:member	s3

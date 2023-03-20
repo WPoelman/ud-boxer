@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / location.n.01
+		:Name (c0 / "?"))
+	:member (s1 / time.n.08
+		:EQU (c1 / "now"))
+	:member (s2 / female.n.02
+		:Name (c2 / "Mae West"))
+	:member (s3 / bury.v.02
+		:Location s0
+		:Time s1
+		:Theme s2))

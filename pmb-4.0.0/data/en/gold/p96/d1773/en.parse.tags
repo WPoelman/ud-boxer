@@ -1,0 +1,22 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'He', [from:0, to:2, pos:'PRP', lemma:'male', sem:'PRO', wordnet:'male.n.02']),
+  fa(s:dcl\np,
+   fa((s:dcl\np)/pp,
+    t(((s:dcl\np)/pp)/np, 'wiped', [from:3, to:8, pos:'VBD', lemma:'wipe', sem:'EPS', wordnet:'wipe.v.01', verbnet:['Theme','Agent']]),
+    fa(np,
+     t(np/n, 'the', [from:9, to:12, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+     t(n, 'sweat', [from:13, to:18, pos:'NN', lemma:'sweat', sem:'CON', wordnet:'sweat.n.01']))),
+   fa(pp,
+    t(pp/np, 'from', [from:19, to:23, pos:'IN', lemma:'from', sem:'REL', wordnet:'O', verbnet:['Source']]),
+    rp(np,
+     fa(np,
+      t(np/(n/pp), 'his', [from:24, to:27, pos:'PRP$', lemma:'male', sem:'HAS', wordnet:'male.n.02', verbnet:['PartOf']]),
+      t(n/pp, 'forehead', [from:28, to:36, pos:'NN', lemma:'forehead', sem:'CON', wordnet:'forehead.n.01'])),
+     t(., '.', [from:36, to:37, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

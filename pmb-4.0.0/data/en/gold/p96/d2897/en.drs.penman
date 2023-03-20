@@ -1,0 +1,9 @@
+(b0 / "box"
+	:member (s0 / find.v.03
+		:Theme (s1 / house.n.01))
+	:member s1
+	:member (s2 / time.n.08
+		:EQU (c0 / "now"))
+	:member (s3 / stressful.a.01
+		:Attribute-of s0
+		:Time s2))

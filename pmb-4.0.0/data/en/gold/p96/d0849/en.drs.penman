@@ -1,0 +1,12 @@
+(b0 / "box"
+	:member (s0 / female.n.02)
+	:member (s1 / turn.v.10
+		:Agent s0
+		:Time (s2 / time.n.08
+			:TPR (c0 / "now"))
+		:Theme (s3 / page.n.01
+			:Part-of (s4 / book.n.02
+				:User s0)))
+	:member s2
+	:member s3
+	:member s4)

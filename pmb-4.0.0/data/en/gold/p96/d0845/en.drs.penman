@@ -1,0 +1,18 @@
+(b0 / "box"
+	:member (s0 / female.n.02)
+	:member (s1 / have.v.01
+		:Pivot s0
+		:Time (s2 / time.n.08
+			:EQU (c0 / "now"))
+		:Theme (s3 / person.n.01
+			:Role (s4 / daughter.n.01)))
+	:member s2
+	:member s3
+	:member s4
+	:member (s5 / be.v.08
+		:Time s2
+		:Theme s3
+		:Co-Theme (s6 / person.n.01
+			:Role (s7 / pianist.n.01)))
+	:member s6
+	:member s7)

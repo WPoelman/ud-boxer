@@ -1,0 +1,26 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Tom', [from:0, to:3, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+  ba(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/np, 'threw', [from:4, to:9, pos:'VBD', lemma:'throw', sem:'EPS', wordnet:'throw.v.01', verbnet:['Theme','Agent']]),
+    fa(np,
+     ba(np/(n/pp),
+      lx(np, n,
+       t(n, 'Mary', [from:10, to:14, pos:'NNP', lemma:'mary', sem:'PER', wordnet:'female.n.02'])),
+      t((np/(n/pp))\np, '\'s', [from:14, to:16, pos:'POS', lemma:'\'s', sem:'HAS', wordnet:'O', verbnet:['User']])),
+     t(n/pp, 'phone', [from:17, to:22, pos:'NN', lemma:'phone', sem:'CON', wordnet:'phone.n.01']))),
+   fa((s\np)\(s\np),
+    t(((s\np)\(s\np))/np, 'into', [from:23, to:27, pos:'IN', lemma:'into', sem:'REL', wordnet:'O', verbnet:['Destination']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'the', [from:28, to:31, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+      t(n, 'pool', [from:32, to:36, pos:'NN', lemma:'pool', sem:'CON', wordnet:'pool.n.01'])),
+     t(., '.', [from:36, to:37, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

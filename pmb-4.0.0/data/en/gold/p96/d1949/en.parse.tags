@@ -1,0 +1,25 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:q,
+  ba(s:dcl,
+   lx(np, n,
+    t(n, 'Tom', [from:0, to:3, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+   fa(s:dcl\np,
+    bxc((s:dcl\np)/(s:pt\np),
+     t((s:dcl\np)/(s:pt\np), 'has', [from:4, to:7, pos:'VBZ', lemma:'have', sem:'NOW', wordnet:'O']),
+     t((s\np)\(s\np), 'n\'t', [from:7, to:10, pos:'RB', lemma:'not', sem:'NOT', wordnet:'O'])),
+    ba(s:pt\np,
+     t(s:pt\np, 'eaten', [from:11, to:16, pos:'VBN', lemma:'eat', sem:'EXT', wordnet:'eat.v.01', verbnet:['Agent']]),
+     t((s\np)\(s\np), 'yet', [from:17, to:20, pos:'RB', lemma:'yet', sem:'ALT', wordnet:'O'])))),
+  fa(s:q\s:dcl,
+   t((s:q\s:dcl)/(s:q/(s:pt\np)), ',', [from:20, to:21, pos:',', lemma:',', sem:'NIL', wordnet:'O']),
+   rp(s:q/(s:pt\np),
+    fa(s:q/(s:pt\np),
+     t((s:q/(s:pt\np))/np, 'has', [from:22, to:25, pos:'VBZ', lemma:'have', sem:'NOW', wordnet:'O']),
+     t(np, 'he', [antecedent:'0,3', from:26, to:28, pos:'PRP', lemma:'male', sem:'PRO', wordnet:'male.n.02'])),
+    t(., '?', [from:28, to:29, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))).
+

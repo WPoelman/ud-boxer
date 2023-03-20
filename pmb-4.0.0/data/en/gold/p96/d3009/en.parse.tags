@@ -1,0 +1,36 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  ba(s:dcl,
+   lx(np, n,
+    t(n, 'Tom', [from:0, to:3, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+   fa(s:dcl\np,
+    t((s:dcl\np)/np, 'wrote', [from:4, to:9, pos:'VBD', lemma:'write', sem:'EPS', wordnet:'write.v.02', verbnet:['Topic','Agent']]),
+    fa(np,
+     t(np/n, 'a', [from:10, to:11, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+     fa(n,
+      t(n/pp, 'love~letter', [from:12, to:23, pos:'NN', lemma:'love~letter', sem:'CON', wordnet:'love_letter.n.01']),
+      rp(pp,
+       fa(pp,
+        t(pp/np, 'to', [from:24, to:26, pos:'TO', lemma:'to', sem:'REL', wordnet:'O', verbnet:['Recipient']]),
+        lx(np, n,
+         t(n, 'Mary', [from:27, to:31, pos:'NNP', lemma:'mary', sem:'PER', wordnet:'female.n.02']))),
+       t(,, ',', [from:31, to:32, pos:',', lemma:',', sem:'NIL', wordnet:'O'])))))),
+  conj(s:dcl\s:dcl,
+   t(conj, 'but', [from:33, to:36, pos:'CC', lemma:'but', sem:'BUT', wordnet:'O']),
+   ba(s:dcl,
+    t(np, 'she', [from:37, to:40, pos:'PRP', lemma:'female', sem:'PRO', wordnet:'female.n.02']),
+    fa(s:dcl\np,
+     bxc((s:dcl\np)/(s:b\np),
+      t((s:dcl\np)/(s:b\np), 'did', [from:41, to:44, pos:'VBD', lemma:'do', sem:'PST', wordnet:'O']),
+      t((s\np)\(s\np), 'n\'t', [from:44, to:47, pos:'RB', lemma:'not', sem:'NOT', wordnet:'O'])),
+     rp(s:b\np,
+      fa(s:b\np,
+       t((s:b\np)/np, 'read', [from:48, to:52, pos:'VB', lemma:'read', sem:'EXS', wordnet:'read.v.01', verbnet:['Stimulus','Experiencer']]),
+       t(np, 'it', [antecedent:'12,23', from:53, to:55, pos:'PRP', lemma:'entity', sem:'PRO', wordnet:'entity.n.01'])),
+      t(., '.', [from:55, to:56, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))))).
+

@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / male.n.02
+		:Name (c0 / "Tom"))
+	:member (s1 / time.n.08
+		:EQU (c1 / "now"))
+	:member (s2 / very.r.01)
+	:member (s3 / young.a.01
+		:Time s1
+		:Attribute-of s0
+		:Degree s2
+		:Value (c2 / "+")))

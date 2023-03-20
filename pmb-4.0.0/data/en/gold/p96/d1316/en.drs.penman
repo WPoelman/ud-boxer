@@ -1,0 +1,13 @@
+(b0 / "box"
+	:member (s0 / male.n.02
+		:Name (c0 / "Lenz"))
+	:member (s1 / shake.v.09
+		:Agent s0
+		:Time (s2 / time.n.08
+			:TPR (c1 / "now"))
+		:Patient (s3 / head.n.01
+			:Part-of s0)
+		:Manner (s4 / hopelessly.r.01))
+	:member s2
+	:member s3
+	:member s4)

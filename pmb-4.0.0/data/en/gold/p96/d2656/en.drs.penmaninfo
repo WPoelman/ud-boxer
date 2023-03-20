@@ -1,0 +1,14 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	male.n.02
+b0	:member	s1
+s1	:instance	time.n.08
+s1	:EQU	c0
+c0	:instance	"now"
+b0	:member	s2
+s2	:instance	extremely.r.02
+b0	:member	s3
+s3	:instance	unbiased.a.01
+s0	:Attribute	s3
+s3	:Time	s1
+s3	:Degree	s2

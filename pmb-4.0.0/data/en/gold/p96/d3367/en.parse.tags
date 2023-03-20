@@ -1,0 +1,14 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'She', [from:0, to:3, pos:'PRP', lemma:'female', sem:'PRO', wordnet:'female.n.02']),
+  fa(s:dcl\np,
+   t((s:dcl\np)/(s:adj\np), 'was', [from:4, to:7, pos:'VBD', lemma:'be', sem:'PST', wordnet:'O']),
+   rp(s:adj\np,
+    t(s:adj\np, 'good~for~nothing', [from:8, to:24, pos:'VBG', lemma:'good-for-nothing', sem:'IST', wordnet:'good-for-nothing.a.01', verbnet:['Attribute']]),
+    t(., '.', [from:24, to:25, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

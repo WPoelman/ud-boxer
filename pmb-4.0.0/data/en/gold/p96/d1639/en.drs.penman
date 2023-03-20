@@ -1,0 +1,8 @@
+(b0 / "box"
+	:member (s0 / vagina.n.01
+		:Part-of (c0 / "speaker"))
+	:member (s1 / time.n.08
+		:EQU (c1 / "now"))
+	:member (s2 / beautiful.a.01
+		:Attribute-of s0
+		:Time s1))

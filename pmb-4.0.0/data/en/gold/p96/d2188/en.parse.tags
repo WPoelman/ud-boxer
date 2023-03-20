@@ -1,0 +1,18 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'I', [from:0, to:1, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'swept', [from:2, to:7, pos:'VBD', lemma:'sweep', sem:'EPS', wordnet:'sweep.v.06', verbnet:['Source','Agent']]),
+   rp(np,
+    fa(np,
+     t(np/n, 'the', [from:8, to:11, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+     fa(n,
+      t(n/n, 'kitchen', [from:12, to:19, pos:'NN', lemma:'kitchen', sem:'CON', wordnet:'kitchen.n.01', verbnet:['PartOf']]),
+      t(n, 'floor', [from:20, to:25, pos:'NN', lemma:'floor', sem:'CON', wordnet:'floor.n.01']))),
+    t(., '.', [from:25, to:26, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

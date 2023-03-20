@@ -1,0 +1,17 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Tom', [from:0, to:3, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'weeded', [from:4, to:10, pos:'VBD', lemma:'weed', sem:'EPS', wordnet:'weed.v.01', verbnet:['Source','Agent']]),
+   rp(np,
+    fa(np,
+     t(np/n, 'the', [from:11, to:14, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+     t(n, 'garden', [from:15, to:21, pos:'NN', lemma:'garden', sem:'CON', wordnet:'garden.n.01'])),
+    t(., '.', [from:21, to:22, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

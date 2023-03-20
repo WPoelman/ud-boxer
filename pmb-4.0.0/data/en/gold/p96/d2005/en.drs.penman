@@ -1,0 +1,13 @@
+(b0 / "box"
+	:member (s0 / person.n.01
+		:EQU (c0 / "speaker"))
+	:member (s1 / see.v.01
+		:Experiencer s0
+		:Time (s2 / time.n.08
+			:TPR (c1 / "now"))
+		:Stimulus (s3 / wolf.n.01)
+		:Location (s4 / geological_formation.n.01
+			:Name (c2 / "apennines")))
+	:member s2
+	:member s3
+	:member s4)

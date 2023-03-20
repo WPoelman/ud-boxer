@@ -1,0 +1,15 @@
+(b0 / "box"
+	:member (s0 / group.n.01
+		:Part (s1 / person.n.01
+			:Role (s2 / foreigner.n.01)))
+	:member s1
+	:member s2
+	:member (s3 / arrive.v.01
+		:Theme s0
+		:Time (s4 / time.n.08
+			:TPR (c0 / "now"))
+		:Destination (s5 / city.n.01
+			:Name (c1 / "Edo")
+			:Name (c2 / "Tokyo")))
+	:member s4
+	:member s5)

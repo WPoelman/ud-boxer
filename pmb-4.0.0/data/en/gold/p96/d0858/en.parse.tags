@@ -1,0 +1,16 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'She', [from:0, to:3, pos:'PRP', lemma:'female', sem:'PRO', wordnet:'female.n.02']),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'slapped', [from:4, to:11, pos:'VBD', lemma:'slap', sem:'EPS', wordnet:'slap.v.01', verbnet:['Location','Agent']]),
+   fa(np,
+    t(np/(n/pp), 'his', [from:12, to:15, pos:'PRP$', lemma:'male', sem:'HAS', wordnet:'male.n.02', verbnet:['PartOf']]),
+    rp(n/pp,
+     t(n/pp, 'face', [from:16, to:20, pos:'NN', lemma:'face', sem:'CON', wordnet:'face.n.01']),
+     t(., '.', [from:20, to:21, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

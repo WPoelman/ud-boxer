@@ -1,0 +1,6 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	turtle.n.02
+b0	:member	s1
+s1	:instance	reptile.n.01
+s1	:EQU	s0

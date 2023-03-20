@@ -1,0 +1,22 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Tom', [from:0, to:3, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+  ba(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/np, 'hired', [from:4, to:9, pos:'VBD', lemma:'hire', sem:'EPS', wordnet:'hire.v.01', verbnet:['Theme','Agent']]),
+    lx(np, n,
+     t(n, 'Mary', [from:10, to:14, pos:'NNP', lemma:'mary', sem:'PER', wordnet:'female.n.02']))),
+   rp((s\np)\(s\np),
+    fa((s\np)\(s\np),
+     t(((s\np)\(s\np))/np, 'as', [from:15, to:17, pos:'IN', lemma:'as', sem:'REL', wordnet:'O', verbnet:['Attribute']]),
+     fa(np,
+      t(np/n, 'an', [from:18, to:20, pos:'DT', lemma:'an', sem:'DIS', wordnet:'O']),
+      t(n, 'interpreter', [from:21, to:32, pos:'NN', lemma:'interpreter', sem:'CON', wordnet:'interpreter.n.01']))),
+    t(., '.', [from:32, to:33, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

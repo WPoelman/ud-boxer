@@ -1,0 +1,30 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:dcl,
+  t(s/s, 'Yesterday', [from:0, to:9, pos:'NN', lemma:'day', sem:'PST', wordnet:'day.n.03']),
+  ba(s:dcl,
+   t(np, 'I', [from:10, to:11, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+   rp(s:dcl\np,
+    fa(s:dcl\np,
+     t((s:dcl\np)/np, 'met', [from:12, to:15, pos:'VBD', lemma:'meet', sem:'EPS', wordnet:'meet.v.01', verbnet:['Co-Agent','Agent']]),
+     lx(np, n,
+      ba(n,
+       fa(n,
+        t(n/n, 'two', [from:16, to:19, pos:'CD', lemma:'2', sem:'QUC', wordnet:'O', verbnet:['Quantity']]),
+        t(n, 'Americans', [from:20, to:29, pos:'NNPS', lemma:'america', sem:'GPO', wordnet:'country.n.02'])),
+       fa(n\n,
+        t((n\n)/(s:dcl\np), 'who', [from:30, to:33, pos:'WP', lemma:'who', sem:'AND', wordnet:'O']),
+        fa(s:dcl\np,
+         t((s:dcl\np)/(s:ng\np), '\'re', [from:33, to:36, pos:'VBP', lemma:'be', sem:'NOW', wordnet:'O']),
+         ba(s:ng\np,
+          t(s:ng\np, 'bicycling', [from:37, to:46, pos:'VBG', lemma:'bicycle', sem:'EXG', wordnet:'bicycle.v.01', verbnet:['Theme']]),
+          fa((s\np)\(s\np),
+           t(((s\np)\(s\np))/np, 'through', [from:47, to:54, pos:'IN', lemma:'through', sem:'REL', wordnet:'O', verbnet:['Path']]),
+           lx(np, n,
+            t(n, 'Japan', [from:55, to:60, pos:'NNP', lemma:'japan', sem:'GPE', wordnet:'country.n.02']))))))))),
+    t(., '.', [from:60, to:61, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

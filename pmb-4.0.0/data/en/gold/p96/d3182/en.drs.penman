@@ -1,0 +1,30 @@
+(b0 / "box"
+	:member (s0 / day.n.03
+		:TAB (s1 / day.n.03)
+		:EQU (c0 / "now"))
+	:member s1
+	:member (s2 / time.n.08
+		:TIN s0
+		:TPR (c1 / "now"))
+	:member (s3 / person.n.01
+		:EQU (c2 / "speaker"))
+	:member (s4 / meet.v.01
+		:Time s2
+		:Agent s3
+		:Co-Agent (s5 / person.n.01
+			:Quantity (c3 / "2")
+			:Source (s6 / country.n.02
+				:Name (c4 / "america"))))
+	:member s5
+	:member s6
+	:member (s7 / time.n.08
+		:EQU s0)
+	:member (s8 / bicycle.v.01
+		:Theme s5
+		:Time s7
+		:Path (s9 / country.n.02
+			:Name (c5 / "Japan")))
+	:member s9
+	:member (s10 / terra_incognita.n.01
+		:EQU (c6 / "now")
+		:TIN s1))

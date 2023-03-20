@@ -1,0 +1,23 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	famous.a.01
+s1	:Attribute	s0
+s1	:instance	verse.n.02
+s1	:Name	c0
+c0	:instance	"?"
+b0	:member	s1
+b0	:member	s2
+s2	:instance	time.n.08
+s2	:YearOfCentury	c1
+c1	:instance	"1830"
+s2	:TPR	c2
+c2	:instance	"now"
+b0	:member	s3
+s3	:instance	female.n.02
+s3	:Name	c3
+c3	:instance	"Sarah Hale"
+b0	:member	s4
+s4	:instance	write.v.01
+s4	:Result	s1
+s4	:Time	s2
+s4	:Agent	s3

@@ -1,0 +1,12 @@
+(b0 / "box"
+	:member (s0 / person.n.01
+		:Role (s1 / sister.n.01
+			:Of (c0 / "speaker")))
+	:member s1
+	:member (s2 / time.n.08
+		:EQU (c1 / "now"))
+	:member (s3 / engage.v.05
+		:Patient s0
+		:Time s2
+		:Co-Patient (s4 / male.n.02))
+	:member s4)

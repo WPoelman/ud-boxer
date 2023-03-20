@@ -1,0 +1,17 @@
+(b0 / "box"
+	:member (s0 / entity.n.01
+		:EQU (c0 / "?"))
+	:member (s1 / be.v.02
+		:Theme s0
+		:Time (s2 / time.n.08
+			:EQU (c1 / "now"))
+		:Co-Theme (s3 / name.n.02
+			:Bearer (s5 / person.n.01
+				:Role (s6 / son.n.01
+					:Of (s4 / male.n.02
+						:Name (c2 / "Kim Il Sung"))))))
+	:member s2
+	:member s3
+	:member s4
+	:member s5
+	:member s6)

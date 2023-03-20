@@ -1,0 +1,25 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:wq,
+  t(s:wq/(s:dcl\np), 'What', [from:0, to:4, pos:'WP', lemma:'entity', sem:'QUE', wordnet:'entity.n.01', verbnet:['Equal']]),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'is', [from:5, to:7, pos:'VBZ', lemma:'be', sem:'ENS', wordnet:'be.v.02', verbnet:['Co-Theme','Theme']]),
+   fa(np,
+    t(np/n, 'the', [from:8, to:11, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+    fa(n,
+     t(n/n, 'scientific', [from:12, to:22, pos:'JJ', lemma:'scientific', sem:'IST', wordnet:'scientific.a.01', verbnet:['Attribute']]),
+     fa(n,
+      t(n/pp, 'name', [from:23, to:27, pos:'NN', lemma:'name', sem:'CON', wordnet:'name.n.01']),
+      fa(pp,
+       t(pp/np, 'for', [from:28, to:31, pos:'IN', lemma:'for', sem:'REL', wordnet:'O', verbnet:['Bearer']]),
+       rp(np,
+        lx(np, n,
+         fa(n,
+          t(n/n, 'red', [from:32, to:35, pos:'JJ', lemma:'red', sem:'COL', wordnet:'red.a.01', verbnet:['Colour']]),
+          t(n, 'ants', [from:36, to:40, pos:'NNS', lemma:'ant', sem:'CON', wordnet:'ant.n.01']))),
+        t(., '?', [from:40, to:41, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))))))).
+

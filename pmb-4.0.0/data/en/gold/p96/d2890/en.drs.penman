@@ -1,0 +1,10 @@
+(b0 / "box"
+	:member (s0 / male.n.02
+		:Name (c0 / "Tom"))
+	:member (s1 / crawl.v.01
+		:Theme s0
+		:Time (s2 / time.n.08
+			:TPR (c1 / "now"))
+		:Source (s3 / bed.n.01))
+	:member s2
+	:member s3)

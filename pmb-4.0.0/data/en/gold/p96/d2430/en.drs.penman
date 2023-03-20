@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / earthquake.n.01)
+	:member (s1 / trigger.v.01
+		:Causer s0
+		:Time (s2 / time.n.08
+			:TPR (c0 / "now"))
+		:Theme (s4 / tsunami.n.01))
+	:member s2
+	:member (s3 / powerful.a.01
+		:Attribute-of s4)
+	:member s4)

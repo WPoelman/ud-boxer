@@ -1,0 +1,18 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:dcl,
+  fa(s:dcl/(s:b\np),
+   t((s:dcl/(s:b\np))/np, 'Let', [from:0, to:3, pos:'VB', lemma:'let', sem:'FUT', wordnet:'O']),
+   t(np, '\'s', [from:3, to:5, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O'])),
+  fa(s:b\np,
+   t((s:b\np)/np, 'start', [from:6, to:11, pos:'VB', lemma:'start', sem:'EXS', wordnet:'start.v.06', verbnet:['Theme','Agent']]),
+   rp(np,
+    fa(np,
+     t(np/n, 'a', [from:12, to:13, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+     t(n, 'band', [from:14, to:18, pos:'NN', lemma:'band', sem:'CON', wordnet:'band.n.05'])),
+    t(., '.', [from:18, to:19, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

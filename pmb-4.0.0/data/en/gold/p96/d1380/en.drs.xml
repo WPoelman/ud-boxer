@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- What was ø Andrew~Jackson 's wife 's name ? --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="tok">What</tag>
+     <tag type="cat">s:wq/(s:dcl\np)</tag>
+     <tag type="sym">entity</tag>
+     <tag type="lemma">entity</tag>
+     <tag type="from">0</tag>
+     <tag type="to">4</tag>
+     <tag type="pos">WP</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">entity.n.01</tag>
+     <tag type="verbnet" n="1">[Equal]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="tok">was</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">be</tag>
+     <tag type="lemma">be</tag>
+     <tag type="from">5</tag>
+     <tag type="to">8</tag>
+     <tag type="pos">VBD</tag>
+     <tag type="sem">EPS</tag>
+     <tag type="wordnet">be.v.02</tag>
+     <tag type="verbnet" n="2">[Co-Theme,Theme]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">9</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Andrew~Jackson</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">andrew~jackson</tag>
+     <tag type="lemma">andrew~jackson</tag>
+     <tag type="from">9</tag>
+     <tag type="to">23</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">PER</tag>
+     <tag type="wordnet">male.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">'s</tag>
+     <tag type="cat">(np/(n/pp))\np</tag>
+     <tag type="sym">'s</tag>
+     <tag type="lemma">'s</tag>
+     <tag type="from">23</tag>
+     <tag type="to">25</tag>
+     <tag type="pos">POS</tag>
+     <tag type="sem">HAS</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Of]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">wife</tag>
+     <tag type="cat">n/pp</tag>
+     <tag type="sym">wife</tag>
+     <tag type="lemma">wife</tag>
+     <tag type="from">26</tag>
+     <tag type="to">30</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">ROL</tag>
+     <tag type="wordnet">wife.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="tok">'s</tag>
+     <tag type="cat">(np/(n/pp))\np</tag>
+     <tag type="sym">'s</tag>
+     <tag type="lemma">'s</tag>
+     <tag type="from">30</tag>
+     <tag type="to">32</tag>
+     <tag type="pos">POS</tag>
+     <tag type="sem">HAS</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Bearer]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">name</tag>
+     <tag type="cat">n/pp</tag>
+     <tag type="sym">name</tag>
+     <tag type="lemma">name</tag>
+     <tag type="from">33</tag>
+     <tag type="to">37</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">name.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1009">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">?</tag>
+     <tag type="cat">s:wq\s:wq</tag>
+     <tag type="sym">?</tag>
+     <tag type="lemma">?</tag>
+     <tag type="from">37</tag>
+     <tag type="to">38</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b1">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="4"></dr>
+   <dr label="b2" name="x2" from="9" to="-1"></dr>
+   <dr label="b3" name="x3" from="23" to="25"></dr>
+   <dr label="b3" name="x4" from="26" to="30"></dr>
+   <dr label="b4" name="x5" from="30" to="32"></dr>
+   <dr label="b1" name="e1" from="5" to="8"></dr>
+   <dr label="b1" name="t1" from="5" to="8"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="entity" synset="entity.n.01" from="0" to="4"></pred>
+   </cond>
+   <cond label="b1">
+    <comp symbol="EQU" arg1="x1" arg2="?" from="0" to="4"></comp>
+   </cond>
+   <cond label="b1">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="5" to="8"></pred>
+   </cond>
+   <cond label="b1">
+    <comp symbol="TPR" arg1="t1" arg2="now" from="5" to="8"></comp>
+   </cond>
+   <cond label="b1">
+    <pred arg="e1" symbol="be" synset="be.v.02" from="5" to="8"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="5" to="8"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="x5" symbol="Co-Theme" framenet="Replacing@New" from="5" to="8"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="x1" symbol="Theme" framenet="Placing@Theme" from="5" to="8"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x2" symbol="male" synset="male.n.02" from="9" to="23"></pred>
+   </cond>
+   <cond label="b2">
+    <named arg="x2" symbol="andrew~jackson" from="9" to="23"></named>
+   </cond>
+   <cond label="b3">
+    <pred arg="x4" symbol="wife" synset="wife.n.01" from="26" to="30"></pred>
+   </cond>
+   <cond label="b3">
+    <rel arg1="x4" arg2="x2" symbol="Of" framenet="Of" from="23" to="25"></rel>
+   </cond>
+   <cond label="b3">
+    <pred arg="x3" symbol="person" synset="person.n.01" from="26" to="30"></pred>
+   </cond>
+   <cond label="b3">
+    <rel arg1="x3" arg2="x4" symbol="Role" framenet="Role" from="26" to="30"></rel>
+   </cond>
+   <cond label="b4">
+    <pred arg="x5" symbol="name" synset="name.n.01" from="33" to="37"></pred>
+   </cond>
+   <cond label="b4">
+    <rel arg1="x5" arg2="x3" symbol="Bearer" framenet="Bearer" from="30" to="32"></rel>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

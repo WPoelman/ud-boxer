@@ -1,0 +1,19 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/n, 'The', [from:0, to:3, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+   t(n, 'play', [from:4, to:8, pos:'NN', lemma:'play', sem:'CON', wordnet:'play.n.01'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'lasts', [from:9, to:14, pos:'VBZ', lemma:'last', sem:'ENS', wordnet:'last.v.01', verbnet:['Value','Theme']]),
+   rp(np,
+    lx(np, n,
+     fa(n,
+      t(n/n, 'two~and~a~half', [from:15, to:29, pos:'JJ', lemma:'2.5', sem:'QUC', wordnet:'O', verbnet:['Quantity']]),
+      t(n, 'hours', [from:30, to:35, pos:'NNS', lemma:'hour', sem:'UOM', wordnet:'hour.n.01']))),
+    t(., '.', [from:35, to:36, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

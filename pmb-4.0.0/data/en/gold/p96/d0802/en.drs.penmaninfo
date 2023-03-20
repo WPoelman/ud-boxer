@@ -1,0 +1,13 @@
+b0	:instance	"box"
+b0	:NEGATION	b1
+b1	:instance	"box"
+b1	:member	s0
+s0	:instance	dolphin.n.02
+b1	:NEGATION	b2
+b2	:instance	"box"
+b2	:member	s1
+s1	:instance	mammal.n.01
+b2	:member	s2
+s2	:instance	terra_incognita.n.01
+s2	:EQU	s0
+s2	:EQU	s1

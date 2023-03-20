@@ -1,0 +1,17 @@
+(b0 / "box"
+	:member (s0 / ship.n.01)
+	:member (s1 / sail.v.01
+		:Theme s0
+		:Time (s2 / time.n.08
+			:EQU (c0 / "now")
+			:TIN (s5 / day.n.03))
+		:Destination (s3 / city.n.01
+			:Name (c1 / "Honolulu")))
+	:member s2
+	:member s3
+	:member (s4 / day.n.03
+		:TAB s5)
+	:member s5
+	:member (s6 / terra_incognita.n.01
+		:EQU (c2 / "now")
+		:TIN s4))

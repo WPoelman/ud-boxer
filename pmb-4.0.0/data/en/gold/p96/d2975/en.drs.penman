@@ -1,0 +1,9 @@
+(b0 / "box"
+	:member (s0 / film.n.01)
+	:member (s1 / time.n.08
+		:EQU (c0 / "now"))
+	:member (s2 / base.v.01
+		:Theme s0
+		:Time s1
+		:Source (s3 / novel.n.01))
+	:member s3)

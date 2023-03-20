@@ -1,0 +1,21 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'I', [from:0, to:1, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+  ba(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/np, 'saw', [from:2, to:5, pos:'VBD', lemma:'see', sem:'EPS', wordnet:'see.v.01', verbnet:['Stimulus','Experiencer']]),
+    lx(np, n,
+     t(n, 'wolves', [from:6, to:12, pos:'NNS', lemma:'wolf', sem:'CON', wordnet:'wolf.n.01']))),
+   fa((s\np)\(s\np),
+    t(((s\np)\(s\np))/np, 'in', [from:13, to:15, pos:'IN', lemma:'in', sem:'REL', wordnet:'O', verbnet:['Location']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'the', [from:16, to:19, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+      t(n, 'Appennines', [from:20, to:30, pos:'NNS', lemma:'apennines', sem:'GEO', wordnet:'geological_formation.n.01'])),
+     t(., '.', [from:30, to:31, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

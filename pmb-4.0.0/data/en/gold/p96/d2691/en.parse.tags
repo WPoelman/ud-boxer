@@ -1,0 +1,19 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Andre~Agassi', [from:0, to:12, pos:'NNP', lemma:'andre~agassi', sem:'PER', wordnet:'male.n.02'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'is', [from:13, to:15, pos:'VBZ', lemma:'be', sem:'ENS', wordnet:'be.v.08', verbnet:['Co-Theme','Theme']]),
+   rp(np,
+    fa(np,
+     t(np/n, 'a', [from:16, to:17, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+     fa(n,
+      t(n/(n/pp), 'former', [from:18, to:24, pos:'JJ', lemma:'former', sem:'PST', wordnet:'O']),
+      t(n/pp, 'tennis~player', [from:25, to:38, pos:'NN', lemma:'tennis~player', sem:'ROL', wordnet:'tennis_player.n.01']))),
+    t(., '.', [from:38, to:39, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

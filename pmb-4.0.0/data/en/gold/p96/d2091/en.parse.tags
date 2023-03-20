@@ -1,0 +1,28 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:q,
+  fa(s:q/(s:b\np),
+   t((s:q/(s:b\np))/np, 'Do', [from:0, to:2, pos:'NNP', lemma:'do', sem:'NOW', wordnet:'O']),
+   t(np, 'you', [from:3, to:6, pos:'PRP', lemma:'hearer', sem:'PRO', wordnet:'O'])),
+  fa(s:b\np,
+   t((s:b\np)/np, 'have', [from:7, to:11, pos:'VBP', lemma:'have', sem:'EXS', wordnet:'have.v.01', verbnet:['Theme','Pivot']]),
+   fa(np,
+    t(np/n, 'a', [from:12, to:13, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+    fa(n,
+     t(n/pp, 'map', [from:14, to:17, pos:'NN', lemma:'map', sem:'CON', wordnet:'map.n.01']),
+     fa(pp,
+      t(pp/np, 'of', [from:18, to:20, pos:'IN', lemma:'of', sem:'REL', wordnet:'O', verbnet:['Content']]),
+      fa(np,
+       t(np/n, 'the', [from:21, to:24, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+       fa(n,
+        t(n/pp, 'city', [from:25, to:29, pos:'NN', lemma:'city', sem:'CON', wordnet:'city.n.01']),
+        rp(pp,
+         fa(pp,
+          t(pp/n, 'of', [from:30, to:32, pos:'IN', lemma:'of', sem:'REL', wordnet:'O', verbnet:['Equal']]),
+          t(n, 'Kyoto', [from:33, to:38, pos:'NNP', lemma:'kyoto', sem:'GPE', wordnet:'city.n.01'])),
+         t(., '?', [from:38, to:39, pos:'.', lemma:'?', sem:'QUE', wordnet:'O'])))))))))).
+

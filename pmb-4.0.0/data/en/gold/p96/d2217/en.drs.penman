@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / male.n.02
+		:Name (c0 / "Tom"))
+	:member (s1 / steal.v.01
+		:Agent s0
+		:Time (s2 / time.n.08
+			:TPR (c1 / "now"))
+		:Theme (s3 / wallet.n.01
+			:Owner (c2 / "speaker")))
+	:member s2
+	:member s3)

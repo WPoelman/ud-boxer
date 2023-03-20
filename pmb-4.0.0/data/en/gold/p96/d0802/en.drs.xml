@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- A dolphin is a mammal . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">A</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">a</tag>
+     <tag type="lemma">a</tag>
+     <tag type="from">0</tag>
+     <tag type="to">1</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">AND</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">dolphin</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">dolphin</tag>
+     <tag type="lemma">dolphin</tag>
+     <tag type="from">2</tag>
+     <tag type="to">9</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">dolphin.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">is</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">be</tag>
+     <tag type="lemma">be</tag>
+     <tag type="from">10</tag>
+     <tag type="to">12</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">EQU</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">a</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">a</tag>
+     <tag type="lemma">a</tag>
+     <tag type="from">13</tag>
+     <tag type="to">14</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DIS</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">mammal</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">mammal</tag>
+     <tag type="lemma">mammal</tag>
+     <tag type="from">15</tag>
+     <tag type="to">21</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">mammal.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">21</tag>
+     <tag type="to">22</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b1">
+  <domain>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <not from="0" to="1">
+     <drs label="b2">
+      <domain>
+       <dr label="b2" name="x1" from="0" to="1"></dr>
+      </domain>
+      <conds>
+       <cond label="b2">
+        <not from="0" to="1">
+         <drs label="b3">
+          <domain>
+           <dr label="b3" name="x2" from="13" to="14"></dr>
+          </domain>
+          <conds>
+           <cond label="b3">
+            <comp symbol="EQU" arg1="x1" arg2="x2" from="10" to="12"></comp>
+           </cond>
+           <cond label="b3">
+            <pred arg="x2" symbol="mammal" synset="mammal.n.01" from="15" to="21"></pred>
+           </cond>
+          </conds>
+         </drs>
+        </not>
+       </cond>
+       <cond label="b2">
+        <pred arg="x1" symbol="dolphin" synset="dolphin.n.02" from="2" to="9"></pred>
+       </cond>
+      </conds>
+     </drs>
+    </not>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

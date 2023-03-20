@@ -1,0 +1,21 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'She', [from:0, to:3, pos:'PRP', lemma:'female', sem:'PRO', wordnet:'female.n.02']),
+  fa(s:dcl\np,
+   fa((s:dcl\np)/pp,
+    t(((s:dcl\np)/pp)/np, 'added', [from:4, to:9, pos:'VBD', lemma:'add', sem:'EPS', wordnet:'add.v.01', verbnet:['Theme','Agent']]),
+    lx(np, n,
+     t(n, 'milk', [from:10, to:14, pos:'NN', lemma:'milk', sem:'CON', wordnet:'milk.n.01']))),
+   fa(pp,
+    t(pp/np, 'to', [from:15, to:17, pos:'TO', lemma:'to', sem:'REL', wordnet:'O', verbnet:['Destination']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'the', [from:18, to:21, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+      t(n, 'coffee', [from:22, to:28, pos:'NN', lemma:'coffee', sem:'CON', wordnet:'coffee.n.01'])),
+     t(., '.', [from:28, to:29, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

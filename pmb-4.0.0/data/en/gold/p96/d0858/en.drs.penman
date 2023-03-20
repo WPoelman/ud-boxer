@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / female.n.02)
+	:member (s1 / slap.v.01
+		:Agent s0
+		:Time (s2 / time.n.08
+			:TPR (c0 / "now"))
+		:Location (s4 / face.n.01
+			:Part-of (s3 / male.n.02)))
+	:member s2
+	:member s3
+	:member s4)

@@ -1,0 +1,15 @@
+(b0 / "box"
+	:member (s0 / country.n.02
+		:Name (c0 / "america"))
+	:member (s1 / person.n.01
+		:Source s0
+		:Role (s2 / hostage.n.01))
+	:member s2
+	:member (s3 / time.n.08
+		:TPR (c1 / "now"))
+	:member (s4 / release.v.02
+		:Theme s1
+		:Time s3
+		:Location (s5 / city.n.01
+			:Name (c2 / "Tehran")))
+	:member s5)

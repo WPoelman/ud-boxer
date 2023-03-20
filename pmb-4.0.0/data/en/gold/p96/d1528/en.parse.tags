@@ -1,0 +1,24 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/n, 'The', [from:0, to:3, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+   fa(n,
+    t(n/n, 'American', [from:4, to:12, pos:'JJ', lemma:'america', sem:'GPO', wordnet:'country.n.02', verbnet:['Source']]),
+    t(n, 'people', [from:13, to:19, pos:'NNS', lemma:'person', sem:'CON', wordnet:'person.n.01']))),
+  fa(s:dcl\np,
+   fa((s:dcl\np)/np,
+    t(((s:dcl\np)/np)/np, 'elected', [from:20, to:27, pos:'VBN', lemma:'elect', sem:'PER', wordnet:'elect.v.01', verbnet:['Theme','Result','Agent']]),
+    lx(np, n,
+     fa(n,
+      t(n/n, 'Mr', [from:28, to:30, pos:'NNP', lemma:'mr', sem:'ROL', wordnet:'mr.n.01', verbnet:['Title']]),
+      t(n, 'Clinton', [from:31, to:38, pos:'NNP', lemma:'clinton', sem:'PER', wordnet:'male.n.02'])))),
+   rp(np,
+    lx(np, n,
+     t(n, 'President', [from:39, to:48, pos:'NNP', lemma:'president', sem:'CON', wordnet:'president.n.02'])),
+    t(., '.', [from:48, to:49, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

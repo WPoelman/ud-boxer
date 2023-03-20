@@ -1,0 +1,10 @@
+(b0 / "box"
+	:member (s0 / dog.n.01)
+	:member (s1 / run_away.v.01
+		:Theme s0
+		:Time (s2 / time.n.08
+			:TPR (c0 / "now"))
+		:Source (s3 / person.n.01
+			:EQU (c1 / "speaker")))
+	:member s2
+	:member s3)

@@ -1,0 +1,9 @@
+(b0 / "box"
+	:member (s0 / female.n.02)
+	:member (s1 / plunge.v.01
+		:Theme s0
+		:Time (s2 / time.n.08
+			:TPR (c0 / "now"))
+		:Destination (s3 / water.n.02))
+	:member s2
+	:member s3)

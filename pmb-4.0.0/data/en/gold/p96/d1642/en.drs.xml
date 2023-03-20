@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- ø Brazil is located in ø South~America . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">0</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Brazil</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">brazil</tag>
+     <tag type="lemma">brazil</tag>
+     <tag type="from">0</tag>
+     <tag type="to">6</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">GPE</tag>
+     <tag type="wordnet">country.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">is</tag>
+     <tag type="cat">(s:dcl\np)/(s:adj\np)</tag>
+     <tag type="sym">be</tag>
+     <tag type="lemma">be</tag>
+     <tag type="from">7</tag>
+     <tag type="to">9</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">NOW</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="tok">located</tag>
+     <tag type="cat">s:adj\np</tag>
+     <tag type="sym">located</tag>
+     <tag type="lemma">located</tag>
+     <tag type="from">10</tag>
+     <tag type="to">17</tag>
+     <tag type="pos">VBN</tag>
+     <tag type="sem">IST</tag>
+     <tag type="wordnet">located.a.01</tag>
+     <tag type="verbnet" n="1">[Theme]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">in</tag>
+     <tag type="cat">((s:dcl\np)\(s:dcl\np))/np</tag>
+     <tag type="sym">in</tag>
+     <tag type="lemma">in</tag>
+     <tag type="from">18</tag>
+     <tag type="to">20</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Location]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">21</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">South~America</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">south~america</tag>
+     <tag type="lemma">south~america</tag>
+     <tag type="from">21</tag>
+     <tag type="to">34</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">GPE</tag>
+     <tag type="wordnet">continent.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">34</tag>
+     <tag type="to">35</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b2">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="-1"></dr>
+   <dr label="b2" name="s1" from="10" to="17"></dr>
+   <dr label="b2" name="t1" from="7" to="9"></dr>
+   <dr label="b3" name="x2" from="21" to="-1"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="country" synset="country.n.02" from="0" to="6"></pred>
+   </cond>
+   <cond label="b1">
+    <named arg="x1" symbol="brazil" from="0" to="6"></named>
+   </cond>
+   <cond label="b2">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="7" to="9"></pred>
+   </cond>
+   <cond label="b2">
+    <comp symbol="EQU" arg1="t1" arg2="now" from="7" to="9"></comp>
+   </cond>
+   <cond label="b2">
+    <pred arg="s1" symbol="located" synset="located.a.01" from="10" to="17"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="s1" arg2="x2" symbol="Location" framenet="Containing@Container" from="18" to="20"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="s1" arg2="t1" symbol="Time" framenet="Time" from="7" to="9"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="s1" arg2="x1" symbol="Theme" framenet="Theme" from="10" to="17"></rel>
+   </cond>
+   <cond label="b3">
+    <pred arg="x2" symbol="continent" synset="continent.n.01" from="21" to="34"></pred>
+   </cond>
+   <cond label="b3">
+    <named arg="x2" symbol="south~america" from="21" to="34"></named>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

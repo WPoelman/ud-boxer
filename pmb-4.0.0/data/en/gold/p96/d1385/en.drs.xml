@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- What is the name of ø Kim~Il~Sung 's son ? --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="tok">What</tag>
+     <tag type="cat">s:wq/(s:dcl\np)</tag>
+     <tag type="sym">entity</tag>
+     <tag type="lemma">entity</tag>
+     <tag type="from">0</tag>
+     <tag type="to">4</tag>
+     <tag type="pos">WP</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">entity.n.01</tag>
+     <tag type="verbnet" n="1">[Equal]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="tok">is</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">be</tag>
+     <tag type="lemma">be</tag>
+     <tag type="from">5</tag>
+     <tag type="to">7</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">ENS</tag>
+     <tag type="wordnet">be.v.02</tag>
+     <tag type="verbnet" n="2">[Co-Theme,Theme]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">the</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="sym">the</tag>
+     <tag type="lemma">the</tag>
+     <tag type="from">8</tag>
+     <tag type="to">11</tag>
+     <tag type="pos">DT</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">name</tag>
+     <tag type="cat">n/pp</tag>
+     <tag type="sym">name</tag>
+     <tag type="lemma">name</tag>
+     <tag type="from">12</tag>
+     <tag type="to">16</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">CON</tag>
+     <tag type="wordnet">name.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">of</tag>
+     <tag type="cat">pp/np</tag>
+     <tag type="sym">of</tag>
+     <tag type="lemma">of</tag>
+     <tag type="from">17</tag>
+     <tag type="to">19</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">REL</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Bearer]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">20</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Kim~Il~Sung</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">kim~il~sung</tag>
+     <tag type="lemma">kim~il~sung</tag>
+     <tag type="from">20</tag>
+     <tag type="to">31</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">PER</tag>
+     <tag type="wordnet">male.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="tok">'s</tag>
+     <tag type="cat">(np/(n/pp))\np</tag>
+     <tag type="sym">'s</tag>
+     <tag type="lemma">'s</tag>
+     <tag type="from">31</tag>
+     <tag type="to">33</tag>
+     <tag type="pos">POS</tag>
+     <tag type="sem">HAS</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Of]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1009">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">son</tag>
+     <tag type="cat">n/pp</tag>
+     <tag type="sym">son</tag>
+     <tag type="lemma">son</tag>
+     <tag type="from">34</tag>
+     <tag type="to">37</tag>
+     <tag type="pos">NN</tag>
+     <tag type="sem">ROL</tag>
+     <tag type="wordnet">son.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1010">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">?</tag>
+     <tag type="cat">s:wq\s:wq</tag>
+     <tag type="sym">?</tag>
+     <tag type="lemma">?</tag>
+     <tag type="from">37</tag>
+     <tag type="to">38</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b1">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="4"></dr>
+   <dr label="b1" name="x2" from="8" to="11"></dr>
+   <dr label="b2" name="x3" from="20" to="-1"></dr>
+   <dr label="b3" name="x4" from="31" to="33"></dr>
+   <dr label="b3" name="x5" from="34" to="37"></dr>
+   <dr label="b1" name="e1" from="5" to="7"></dr>
+   <dr label="b1" name="t1" from="5" to="7"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="entity" synset="entity.n.01" from="0" to="4"></pred>
+   </cond>
+   <cond label="b1">
+    <comp symbol="EQU" arg1="x1" arg2="?" from="0" to="4"></comp>
+   </cond>
+   <cond label="b1">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="5" to="7"></pred>
+   </cond>
+   <cond label="b1">
+    <comp symbol="EQU" arg1="t1" arg2="now" from="5" to="7"></comp>
+   </cond>
+   <cond label="b1">
+    <pred arg="e1" symbol="be" synset="be.v.02" from="5" to="7"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="5" to="7"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="x2" symbol="Co-Theme" framenet="Replacing@New" from="5" to="7"></rel>
+   </cond>
+   <cond label="b1">
+    <rel arg1="e1" arg2="x1" symbol="Theme" framenet="Placing@Theme" from="5" to="7"></rel>
+   </cond>
+   <cond label="b1">
+    <pred arg="x2" symbol="name" synset="name.n.02" from="12" to="16"></pred>
+   </cond>
+   <cond label="b1">
+    <rel arg1="x2" arg2="x4" symbol="Bearer" framenet="Bearer" from="17" to="19"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x3" symbol="male" synset="male.n.02" from="20" to="31"></pred>
+   </cond>
+   <cond label="b2">
+    <named arg="x3" symbol="kim~il~sung" from="20" to="31"></named>
+   </cond>
+   <cond label="b3">
+    <pred arg="x5" symbol="son" synset="son.n.01" from="34" to="37"></pred>
+   </cond>
+   <cond label="b3">
+    <rel arg1="x5" arg2="x3" symbol="Of" framenet="Of" from="31" to="33"></rel>
+   </cond>
+   <cond label="b3">
+    <pred arg="x4" symbol="person" synset="person.n.01" from="34" to="37"></pred>
+   </cond>
+   <cond label="b3">
+    <rel arg1="x4" arg2="x5" symbol="Role" framenet="Role" from="34" to="37"></rel>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

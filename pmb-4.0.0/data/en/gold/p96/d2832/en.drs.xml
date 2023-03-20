@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- He weighs ø around 300 pounds . --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">He</tag>
+     <tag type="cat">np</tag>
+     <tag type="sym">male</tag>
+     <tag type="lemma">male</tag>
+     <tag type="from">0</tag>
+     <tag type="to">2</tag>
+     <tag type="pos">PRP</tag>
+     <tag type="sem">PRO</tag>
+     <tag type="wordnet">male.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="tok">weighs</tag>
+     <tag type="cat">(s:dcl\np)/np</tag>
+     <tag type="sym">weigh</tag>
+     <tag type="lemma">weigh</tag>
+     <tag type="from">3</tag>
+     <tag type="to">9</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">ENS</tag>
+     <tag type="wordnet">weigh.v.01</tag>
+     <tag type="verbnet" n="2">[Value,Theme]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DIS</tag>
+     <tag type="from">10</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">around</tag>
+     <tag type="cat">(n/n)/(n/n)</tag>
+     <tag type="sym">around</tag>
+     <tag type="lemma">around</tag>
+     <tag type="from">10</tag>
+     <tag type="to">16</tag>
+     <tag type="pos">IN</tag>
+     <tag type="sem">APX</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">300</tag>
+     <tag type="cat">n/n</tag>
+     <tag type="sym">300</tag>
+     <tag type="lemma">300</tag>
+     <tag type="from">17</tag>
+     <tag type="to">20</tag>
+     <tag type="pos">CD</tag>
+     <tag type="sem">QUC</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="verbnet" n="1">[Equal]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">pounds</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">pound</tag>
+     <tag type="lemma">pound</tag>
+     <tag type="from">21</tag>
+     <tag type="to">27</tag>
+     <tag type="pos">NNS</tag>
+     <tag type="sem">UOM</tag>
+     <tag type="wordnet">pound.n.01</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">.</tag>
+     <tag type="cat">s:dcl\s:dcl</tag>
+     <tag type="sym">.</tag>
+     <tag type="lemma">.</tag>
+     <tag type="from">27</tag>
+     <tag type="to">28</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b2">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="2"></dr>
+   <dr label="b2" name="x2" from="10" to="-1"></dr>
+   <dr label="b2" name="x3" from="10" to="16"></dr>
+   <dr label="b2" name="x4" from="10" to="16"></dr>
+   <dr label="b2" name="x5" from="21" to="27"></dr>
+   <dr label="b2" name="e1" from="3" to="9"></dr>
+   <dr label="b2" name="t1" from="3" to="9"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="male" synset="male.n.02" from="0" to="2"></pred>
+   </cond>
+   <cond label="b2">
+    <pred arg="t1" symbol="time" synset="time.n.08" from="3" to="9"></pred>
+   </cond>
+   <cond label="b2">
+    <comp symbol="EQU" arg1="t1" arg2="now" from="3" to="9"></comp>
+   </cond>
+   <cond label="b2">
+    <pred arg="e1" symbol="weigh" synset="weigh.v.01" from="3" to="9"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="3" to="9"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="x2" symbol="Value" framenet="Dimension@Measurement" from="3" to="9"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="e1" arg2="x1" symbol="Theme" framenet="Dimension@Object" from="3" to="9"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x3" symbol="quantity" synset="quantity.n.01" from="10" to="16"></pred>
+   </cond>
+   <cond label="b2">
+    <comp symbol="APX" arg1="x3" arg2="x4" from="10" to="16"></comp>
+   </cond>
+   <cond label="b2">
+    <pred arg="x4" symbol="quantity" synset="quantity.n.01" from="10" to="16"></pred>
+   </cond>
+   <cond label="b2">
+    <comp symbol="EQU" arg1="x4" arg2="300" from="17" to="20"></comp>
+   </cond>
+   <cond label="b2">
+    <pred arg="x2" symbol="measure" synset="measure.n.02" from="21" to="27"></pred>
+   </cond>
+   <cond label="b2">
+    <rel arg1="x2" arg2="x5" symbol="Unit" framenet="Unit" from="21" to="27"></rel>
+   </cond>
+   <cond label="b2">
+    <rel arg1="x2" arg2="x3" symbol="Quantity" framenet="Quantity" from="10" to="16"></rel>
+   </cond>
+   <cond label="b2">
+    <pred arg="x5" symbol="pound" synset="pound.n.01" from="21" to="27"></pred>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

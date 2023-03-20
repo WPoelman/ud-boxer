@@ -1,0 +1,35 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	person.n.01
+s0	:EQU	c0
+c0	:instance	"hearer"
+b0	:ALTERNATION	b1
+b1	:instance	"box"
+b1	:member	s1
+s1	:instance	time.n.08
+s1	:EQU	c1
+c1	:instance	"now"
+b1	:member	s2
+s2	:instance	support.v.03
+s2	:Experiencer	s0
+s2	:Time	s1
+s2	:Stimulus	s3
+s3	:instance	male.n.02
+s3	:Name	c2
+c2	:instance	"Mitt Romney"
+b1	:member	s3
+b1	:ALTERNATION	b2
+b2	:instance	"box"
+b2	:member	s4
+s4	:instance	time.n.08
+s4	:EQU	c3
+c3	:instance	"now"
+b2	:member	s5
+s5	:instance	support.v.03
+s5	:Experiencer	s0
+s5	:Time	s4
+s5	:Stimulus	s6
+s6	:instance	male.n.02
+s6	:Name	c4
+c4	:instance	"Barack Obama"
+b2	:member	s6

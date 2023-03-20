@@ -1,0 +1,16 @@
+b0	:instance	"box"
+b0	:member	s0
+s0	:instance	boat.n.01
+b0	:member	s1
+s1	:instance	time.n.08
+s1	:TPR	c0
+c0	:instance	"now"
+b0	:member	s2
+s2	:instance	approach.v.01
+s2	:Theme	s0
+s2	:Time	s1
+s2	:Destination	s3
+s3	:instance	sea.n.01
+s3	:Name	c1
+c1	:instance	"English Channel"
+b0	:member	s3

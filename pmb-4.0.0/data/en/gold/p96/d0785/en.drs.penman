@@ -1,0 +1,6 @@
+(b0 / "box"
+	:member (s0 / cat.n.01)
+	:member (s1 / catch.v.04
+		:Agent s0
+		:Theme (s2 / mouse.n.01))
+	:member s2)

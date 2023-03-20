@@ -1,0 +1,18 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ bc(s:b\np,
+  ba(s:b\np,
+   ba(s:b\np,
+    fa(s:b\np,
+     t((s:b\np)/np, 'Fasten', [from:0, to:6, pos:'NNP', lemma:'fasten', sem:'EXS', wordnet:'fasten.v.01', verbnet:['Patient','Agent']]),
+     fa(np,
+      t(np/(n/pp), 'your', [from:7, to:11, pos:'PRP$', lemma:'hearer', sem:'HAS', wordnet:'O', verbnet:['Of']]),
+      t(n/pp, 'seat~belt', [from:12, to:21, pos:'NN', lemma:'seat~belt', sem:'CON', wordnet:'seat_belt.n.01']))),
+    t((s:b\np)\(s:b\np), ',', [from:21, to:22, pos:',', lemma:',', sem:'NIL', wordnet:'O'])),
+   t((s:b\np)\(s:b\np), 'please', [from:23, to:29, pos:'VB', lemma:'please', sem:'IST', wordnet:'please.r.01', verbnet:['Manner']])),
+  t(s:b\s:b, '.', [from:29, to:30, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))).
+

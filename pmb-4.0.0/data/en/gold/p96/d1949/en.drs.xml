@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xdrs-output SYSTEM "src/dtd/xdrs.dtd">
+<xdrs-output version="'boxer v1.00 (unix build on 21 May 2021, 16:29:40)'">
+<!-- ø Tom has n't eaten yet , has he ? --> 
+
+<xdrs xml:id="xdrs1">
+ <taggedtokens>
+  <tagtoken xml:id="i1001">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">ø</tag>
+     <tag type="cat">np/n</tag>
+     <tag type="wordnet">O</tag>
+     <tag type="sense">0</tag>
+     <tag type="sym">ø</tag>
+     <tag type="lemma">ø</tag>
+     <tag type="sem">DEF</tag>
+     <tag type="from">0</tag>
+     <tag type="to">-1</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1002">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">Tom</tag>
+     <tag type="cat">n</tag>
+     <tag type="sym">tom</tag>
+     <tag type="lemma">tom</tag>
+     <tag type="from">0</tag>
+     <tag type="to">3</tag>
+     <tag type="pos">NNP</tag>
+     <tag type="sem">PER</tag>
+     <tag type="wordnet">male.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1003">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">has</tag>
+     <tag type="cat">(s:dcl\np)/(s:pt\np)</tag>
+     <tag type="sym">have</tag>
+     <tag type="lemma">have</tag>
+     <tag type="from">4</tag>
+     <tag type="to">7</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">NOW</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1004">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">n't</tag>
+     <tag type="cat">(s:dcl\np)\(s:dcl\np)</tag>
+     <tag type="sym">not</tag>
+     <tag type="lemma">not</tag>
+     <tag type="from">7</tag>
+     <tag type="to">10</tag>
+     <tag type="pos">RB</tag>
+     <tag type="sem">NOT</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1005">
+   <tags>
+     <tag type="tok">eaten</tag>
+     <tag type="cat">s:pt\np</tag>
+     <tag type="sym">eat</tag>
+     <tag type="lemma">eat</tag>
+     <tag type="from">11</tag>
+     <tag type="to">16</tag>
+     <tag type="pos">VBN</tag>
+     <tag type="sem">EXT</tag>
+     <tag type="wordnet">eat.v.01</tag>
+     <tag type="verbnet" n="1">[Agent]</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1006">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">yet</tag>
+     <tag type="cat">(s:pt\np)\(s:pt\np)</tag>
+     <tag type="sym">yet</tag>
+     <tag type="lemma">yet</tag>
+     <tag type="from">17</tag>
+     <tag type="to">20</tag>
+     <tag type="pos">RB</tag>
+     <tag type="sem">ALT</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1007">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">,</tag>
+     <tag type="cat">(s:q\s:dcl)/(s:q/(s:pt\np))</tag>
+     <tag type="sym">,</tag>
+     <tag type="lemma">,</tag>
+     <tag type="from">20</tag>
+     <tag type="to">21</tag>
+     <tag type="pos">,</tag>
+     <tag type="sem">NIL</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1008">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">has</tag>
+     <tag type="cat">(s:q/(s:pt\np))/np</tag>
+     <tag type="sym">have</tag>
+     <tag type="lemma">have</tag>
+     <tag type="from">22</tag>
+     <tag type="to">25</tag>
+     <tag type="pos">VBZ</tag>
+     <tag type="sem">NOW</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1009">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">he</tag>
+     <tag type="cat">np</tag>
+     <tag type="sym">male</tag>
+     <tag type="lemma">male</tag>
+     <tag type="antecedent">0,3</tag>
+     <tag type="from">26</tag>
+     <tag type="to">28</tag>
+     <tag type="pos">PRP</tag>
+     <tag type="sem">PRO</tag>
+     <tag type="wordnet">male.n.02</tag>
+   </tags>
+  </tagtoken>
+  <tagtoken xml:id="i1010">
+   <tags>
+     <tag type="verbnet" n="0">[]</tag>
+     <tag type="tok">?</tag>
+     <tag type="cat">s:q\s:q</tag>
+     <tag type="sym">?</tag>
+     <tag type="lemma">?</tag>
+     <tag type="from">28</tag>
+     <tag type="to">29</tag>
+     <tag type="pos">.</tag>
+     <tag type="sem">QUE</tag>
+     <tag type="wordnet">O</tag>
+   </tags>
+  </tagtoken>
+ </taggedtokens>
+ <drs label="b2">
+  <domain>
+   <dr label="b1" name="x1" from="0" to="-1"></dr>
+  </domain>
+  <conds>
+   <cond label="b1">
+    <pred arg="x1" symbol="male" synset="male.n.02" from="0" to="3"></pred>
+   </cond>
+   <cond label="b1">
+    <named arg="x1" symbol="tom" from="0" to="3"></named>
+   </cond>
+   <cond label="b2">
+    <not from="7" to="10">
+     <drs label="b3">
+      <domain>
+       <dr label="b3" name="e1" from="11" to="16"></dr>
+       <dr label="b2" name="t1" from="11" to="16"></dr>
+      </domain>
+      <conds>
+       <cond label="b2">
+        <pred arg="t1" symbol="time" synset="time.n.08" from="11" to="16"></pred>
+       </cond>
+       <cond label="b2">
+        <comp symbol="TPR" arg1="t1" arg2="now" from="11" to="16"></comp>
+       </cond>
+       <cond label="b3">
+        <pred arg="e1" symbol="eat" synset="eat.v.01" from="11" to="16"></pred>
+       </cond>
+       <cond label="b3">
+        <rel arg1="e1" arg2="t1" symbol="Time" framenet="Time" from="11" to="16"></rel>
+       </cond>
+       <cond label="b3">
+        <rel arg1="e1" arg2="x1" symbol="Agent" framenet="Ingestion@Ingestor" from="11" to="16"></rel>
+       </cond>
+      </conds>
+     </drs>
+    </not>
+   </cond>
+  </conds>
+ </drs>
+</xdrs>
+</xdrs-output>

@@ -1,0 +1,18 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'She', [from:0, to:3, pos:'PRP', lemma:'female', sem:'PRO', wordnet:'female.n.02']),
+  fa(s:dcl\np,
+   t((s:dcl\np)/pp, 'plunged', [from:4, to:11, pos:'VBD', lemma:'plunge', sem:'EPS', wordnet:'plunge.v.01', verbnet:['Theme']]),
+   fa(pp,
+    t(pp/np, 'into', [from:12, to:16, pos:'IN', lemma:'into', sem:'REL', wordnet:'O', verbnet:['Destination']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'the', [from:17, to:20, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+      t(n, 'water', [from:21, to:26, pos:'NN', lemma:'water', sem:'CON', wordnet:'water.n.02'])),
+     t(., '.', [from:26, to:27, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

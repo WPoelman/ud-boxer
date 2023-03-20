@@ -1,0 +1,22 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'He', [from:0, to:2, pos:'PRP', lemma:'male', sem:'PRO', wordnet:'male.n.02']),
+  fa(s:dcl\np,
+   fa((s:dcl\np)/pp,
+    t(((s:dcl\np)/pp)/np, 'put', [from:3, to:6, pos:'VBD', lemma:'put', sem:'EPS', wordnet:'put.v.01', verbnet:['Theme','Agent']]),
+    fa(np,
+     t(np/n, 'the', [from:7, to:10, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+     t(n, 'key', [from:11, to:14, pos:'NN', lemma:'key', sem:'CON', wordnet:'key.n.01']))),
+   fa(pp,
+    t(pp/np, 'in', [from:15, to:17, pos:'IN', lemma:'in', sem:'REL', wordnet:'O', verbnet:['Destination']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'the', [from:18, to:21, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+      t(n, 'lock', [from:22, to:26, pos:'NN', lemma:'lock', sem:'CON', wordnet:'lock.n.01'])),
+     t(., '.', [from:26, to:27, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

@@ -1,0 +1,6 @@
+(b0 / "box"
+	:member (s3 / live.v.01
+		:Location (s0 / location.n.01
+			:Name (c0 / "?"))
+		:Time (s1 / time.n.08
+			:EQU (c1 / "now"))))

@@ -1,0 +1,14 @@
+(b0 / "box"
+	:member (s0 / country.n.02
+		:Name (c0 / "america"))
+	:member (s1 / person.n.01
+		:Source s0)
+	:member (s2 / elect.v.01
+		:Agent s1
+		:Theme (s4 / male.n.02
+			:Name (c1 / "Clinton")
+			:Title (s3 / mr.n.01))
+		:Result (s5 / president.n.02))
+	:member s3
+	:member s4
+	:member s5)

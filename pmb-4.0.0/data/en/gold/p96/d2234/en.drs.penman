@@ -1,0 +1,11 @@
+(b0 / "box"
+	:member (s0 / male.n.02
+		:Name (c0 / "Tom"))
+	:NEGATION (b1 / "box"
+		:member (s1 / time.n.08
+			:EQU (c1 / "now"))
+		:member (s2 / like.v.02
+			:Experiencer s0
+			:Time s1
+			:Stimulus (s3 / banana.n.01))
+		:member s3))

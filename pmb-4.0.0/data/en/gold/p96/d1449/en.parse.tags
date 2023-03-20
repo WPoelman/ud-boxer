@@ -1,0 +1,20 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   fa(n,
+    t(n/n, 'Thirty-five', [from:0, to:11, pos:'JJ', lemma:'35', sem:'QUC', wordnet:'O', verbnet:['Quantity']]),
+    t(n, 'degrees~centigrade', [from:12, to:30, pos:'JJ', lemma:'degree~celsius', sem:'UOM', wordnet:'degree_celsius.n.01']))),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'equals', [from:31, to:37, pos:'NNS', lemma:'equal', sem:'EXS', wordnet:'equal.v.01', verbnet:['Co-Theme','Theme']]),
+   rp(np,
+    lx(np, n,
+     fa(n,
+      t(n/n, 'ninety-five', [from:38, to:49, pos:'JJ', lemma:'95', sem:'QUC', wordnet:'O', verbnet:['Quantity']]),
+      t(n, 'degrees~Fahrenheit', [from:50, to:68, pos:'NN', lemma:'degree~fahrenheit', sem:'UOM', wordnet:'degree_fahrenheit.n.01']))),
+    t(., '.', [from:68, to:69, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

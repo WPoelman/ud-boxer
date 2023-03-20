@@ -1,0 +1,20 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/n, 'The', [from:0, to:3, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+   t(n, 'boat', [from:4, to:8, pos:'NN', lemma:'boat', sem:'CON', wordnet:'boat.n.01'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/(s:ng\np), 'was', [from:9, to:12, pos:'VBD', lemma:'be', sem:'PST', wordnet:'O']),
+   fa(s:ng\np,
+    t((s:ng\np)/np, 'approaching', [from:13, to:24, pos:'VBG', lemma:'approach', sem:'EXG', wordnet:'approach.v.01', verbnet:['Destination','Theme']]),
+    rp(np,
+     fa(np,
+      t(np/n, 'the', [from:25, to:28, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+      t(n, 'English~Channel', [from:29, to:44, pos:'NNP', lemma:'english~channel', sem:'GEO', wordnet:'sea.n.01'])),
+     t(., '.', [from:44, to:45, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

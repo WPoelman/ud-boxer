@@ -1,0 +1,17 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:wq,
+  t(s:wq/s:q, 'How', [from:0, to:3, pos:'WRB', lemma:'manner', sem:'QUE', wordnet:'manner.n.01', verbnet:['Manner','Equal']]),
+  fa(s:q,
+   fa(s:q/(s:b\np),
+    t((s:q/(s:b\np))/np, 'did', [from:4, to:7, pos:'VBD', lemma:'do', sem:'PST', wordnet:'O']),
+    lx(np, n,
+     t(n, 'Jackie~Robinson', [from:8, to:23, pos:'NNP', lemma:'jackie~robinson', sem:'PER', wordnet:'male.n.02']))),
+   rp(s:b\np,
+    t(s:b\np, 'die', [from:24, to:27, pos:'VB', lemma:'die', sem:'EXS', wordnet:'die.v.01', verbnet:['Patient']]),
+    t(., '?', [from:27, to:28, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))).
+

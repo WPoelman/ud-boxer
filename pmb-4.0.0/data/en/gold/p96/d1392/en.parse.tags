@@ -1,0 +1,21 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ fa(s:wq,
+  fa(s:wq/(s:q/np),
+   t((s:wq/(s:q/np))/n, 'How', [from:0, to:3, pos:'WRB', lemma:'how', sem:'QUE', wordnet:'O', verbnet:['Quantity']]),
+   fa(n,
+    t(n/n, 'many', [from:4, to:8, pos:'JJ', lemma:'?', sem:'QUV', wordnet:'O', verbnet:['Quantity']]),
+    t(n, 'moons', [from:9, to:14, pos:'NNS', lemma:'moon', sem:'CON', wordnet:'moon.n.06']))),
+  fc(s:q/np,
+   fa(s:q/(s:b\np),
+    t((s:q/(s:b\np))/np, 'does', [from:15, to:19, pos:'VBZ', lemma:'do', sem:'NOW', wordnet:'O']),
+    lx(np, n,
+     t(n, 'Venus', [from:20, to:25, pos:'NNP', lemma:'venus', sem:'NTH', wordnet:'planet.n.03']))),
+   rp((s:b\np)/np,
+    t((s:b\np)/np, 'have', [from:26, to:30, pos:'VB', lemma:'have', sem:'EXS', wordnet:'have.v.02', verbnet:['Theme','Pivot']]),
+    t(., '?', [from:30, to:31, pos:'.', lemma:'?', sem:'QUE', wordnet:'O']))))).
+

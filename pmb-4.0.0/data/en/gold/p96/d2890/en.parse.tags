@@ -1,0 +1,18 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Tom', [from:0, to:3, pos:'NNP', lemma:'tom', sem:'PER', wordnet:'male.n.02'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/pp, 'crawled', [from:4, to:11, pos:'VBD', lemma:'crawl', sem:'EPS', wordnet:'crawl.v.01', verbnet:['Theme']]),
+   fa(pp,
+    t(pp/np, 'out~of', [from:12, to:18, pos:'JJ', lemma:'out~of', sem:'REL', wordnet:'O', verbnet:['Source']]),
+    rp(np,
+     lx(np, n,
+      t(n, 'bed', [from:19, to:22, pos:'NN', lemma:'bed', sem:'CON', wordnet:'bed.n.01'])),
+     t(., '.', [from:22, to:23, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))))).
+

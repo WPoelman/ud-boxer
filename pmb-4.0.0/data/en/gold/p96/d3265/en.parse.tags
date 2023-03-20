@@ -1,0 +1,16 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  lx(np, n,
+   t(n, 'Turtles', [from:0, to:7, pos:'NNS', lemma:'turtle', sem:'CON', wordnet:'turtle.n.02'])),
+  fa(s:dcl\np,
+   t((s:dcl\np)/np, 'are', [from:8, to:11, pos:'VBP', lemma:'be', sem:'EQU', wordnet:'O']),
+   rp(np,
+    lx(np, n,
+     t(n, 'reptiles', [from:12, to:20, pos:'NNS', lemma:'reptile', sem:'CON', wordnet:'reptile.n.01'])),
+    t(., '.', [from:20, to:21, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

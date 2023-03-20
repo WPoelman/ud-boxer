@@ -1,0 +1,16 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/(n/pp), 'My', [from:0, to:2, pos:'PRP$', lemma:'speaker', sem:'HAS', wordnet:'O', verbnet:['PartOf']]),
+   t(n/pp, 'vagina', [from:3, to:9, pos:'NN', lemma:'vagina', sem:'CON', wordnet:'vagina.n.01'])),
+  rp(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/(s:adj\np), 'is', [from:10, to:12, pos:'VBZ', lemma:'be', sem:'NOW', wordnet:'O']),
+    t(s:adj\np, 'beautiful', [from:13, to:22, pos:'JJ', lemma:'beautiful', sem:'IST', wordnet:'beautiful.a.01', verbnet:['Attribute']])),
+   t(., '!', [from:22, to:23, pos:'.', lemma:'!', sem:'EMP', wordnet:'O'])))).
+

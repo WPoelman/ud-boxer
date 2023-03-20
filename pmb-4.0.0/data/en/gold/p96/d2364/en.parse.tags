@@ -1,0 +1,20 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/n, 'The', [from:0, to:3, pos:'DT', lemma:'the', sem:'DEF', wordnet:'O']),
+   t(n, 'dog', [from:4, to:7, pos:'NN', lemma:'dog', sem:'CON', wordnet:'dog.n.01'])),
+  fa(s:dcl\np,
+   fa((s:dcl\np)/pp,
+    t(((s:dcl\np)/pp)/pr, 'ran', [from:8, to:11, pos:'VBD', lemma:'run~away', sem:'EPS', wordnet:'run_away.v.01', verbnet:['Theme']]),
+    t(pr, 'away', [from:12, to:16, pos:'RB', lemma:'away', sem:'REL', wordnet:'O'])),
+   rp(pp,
+    fa(pp,
+     t(pp/np, 'from', [from:17, to:21, pos:'IN', lemma:'from', sem:'REL', wordnet:'O', verbnet:['Source']]),
+     t(np, 'us', [from:22, to:24, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O'])),
+    t(., '.', [from:24, to:25, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))).
+

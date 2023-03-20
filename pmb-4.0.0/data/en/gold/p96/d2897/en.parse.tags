@@ -1,0 +1,18 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  fa(np,
+   t(np/np, 'Finding', [from:0, to:7, pos:'VBG', lemma:'find', sem:'EXG', wordnet:'find.v.03', verbnet:['Theme']]),
+   fa(np,
+    t(np/n, 'a', [from:8, to:9, pos:'DT', lemma:'a', sem:'DIS', wordnet:'O']),
+    t(n, 'house', [from:10, to:15, pos:'NN', lemma:'house', sem:'CON', wordnet:'house.n.01']))),
+  rp(s:dcl\np,
+   fa(s:dcl\np,
+    t((s:dcl\np)/(s:adj\np), 'is', [from:16, to:18, pos:'VBZ', lemma:'be', sem:'NOW', wordnet:'O']),
+    t(s:adj\np, 'stressful', [from:19, to:28, pos:'JJ', lemma:'stressful', sem:'IST', wordnet:'stressful.a.01', verbnet:['Attribute']])),
+   t(., '.', [from:28, to:29, pos:'.', lemma:'.', sem:'NIL', wordnet:'O'])))).
+

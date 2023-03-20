@@ -1,0 +1,21 @@
+:- op(601, xfx, (/)).
+:- op(601, xfx, (\)).
+:- multifile ccg/2, id/2.
+:- discontiguous ccg/2, id/2.
+
+ccg(1,
+ ba(s:dcl,
+  t(np, 'I', [from:0, to:1, pos:'PRP', lemma:'speaker', sem:'PRO', wordnet:'O']),
+  fa(s:dcl\np,
+   bxc((s:dcl\np)/(s:adj\np),
+    t((s:dcl\np)/(s:adj\np), 'am', [from:2, to:4, pos:'VBP', lemma:'be', sem:'NOW', wordnet:'O']),
+    t((s\np)\(s\np), 'not', [from:5, to:8, pos:'RB', lemma:'not', sem:'NOT', wordnet:'O'])),
+   fa(s:adj\np,
+    t((s:adj\np)/pp, 'allergic', [from:9, to:17, pos:'JJ', lemma:'allergic', sem:'IST', wordnet:'allergic.a.02', verbnet:['Experiencer']]),
+    fa(pp,
+     t(pp/np, 'to', [from:18, to:20, pos:'TO', lemma:'to', sem:'REL', wordnet:'O', verbnet:['Stimulus']]),
+     rp(np,
+      lx(np, n,
+       t(n, 'penicillin', [from:21, to:31, pos:'VB', lemma:'penicillin', sem:'CON', wordnet:'penicillin.n.01'])),
+      t(., '.', [from:31, to:32, pos:'.', lemma:'.', sem:'NIL', wordnet:'O']))))))).
+
