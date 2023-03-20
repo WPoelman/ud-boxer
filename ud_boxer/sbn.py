@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import os
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
@@ -25,13 +26,12 @@ from sbn_spec import (
 
 import spacy
 
+# load_model = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
 
 
-load_model = spacy.load('en_core_web_sm', disable = ['parser','ner'])
-
-def get_lemma(text):
-    doc = load_model(text)
-    return [token.lemma_ for token in doc]
+# def get_lemma(text):
+#     doc = load_model(text)
+#     return [token.lemma_ for token in doc]
 
 
 logger = logging.getLogger(__name__)
@@ -43,7 +43,6 @@ __all__ = [
     "SBNGraph",
     "sbn_graphs_are_isomorphic",
 ]
-
 
 # Node / edge ids, unique combination of type and index / count for the current
 # document.
@@ -65,10 +64,10 @@ class SBNSource(BaseEnum):
 
 class SBNGraph(BaseGraph):
     def __init__(
-        self,
-        incoming_graph_data=None,
-        source: SBNSource = SBNSource.UNKNOWN,
-        **attr,
+            self,
+            incoming_graph_data=None,
+            source: SBNSource = SBNSource.UNKNOWN,
+            **attr,
     ):
         super().__init__(incoming_graph_data, **attr)
         self.is_dag: bool = False
@@ -90,7 +89,7 @@ class SBNGraph(BaseGraph):
         lines = split_comments(input_string)
         sbn_info = [(x.split(), y) for x, y in lines]
         sbn_info_reference = deepcopy(sbn_info)
-        sbn_node_reference = [(x[0],y) for x, y in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
+        sbn_node_reference = [(x[0], y) for x, y in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference2 = [x[0] for x, _ in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference_with_boxes = [x[0] for x, _ in sbn_info_reference]
         sbn_info.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
@@ -101,15 +100,14 @@ class SBNGraph(BaseGraph):
             )
 
         self.__init_type_indices()
-        
+
         starting_box = self.create_node(
             SBN_NODE_TYPE.BOX, self._active_box_token
         )
 
-        
         nodes, edges = [starting_box], []
         max_wn_idx = len(lines) - 1
-        reference_nodes =[]
+        reference_nodes = []
         for idx, (basic_node, basic_comment) in enumerate(sbn_node_reference):
             if synset_match := SBNSpec.SYNSET_PATTERN.match(basic_node):
                 synset_node = self.create_node(
@@ -123,7 +121,7 @@ class SBNGraph(BaseGraph):
                 nodes.append(synset_node)
                 reference_nodes.append((SBN_NODE_TYPE.SYNSET, idx))
 
-        for j,(sbn_line, comment) in enumerate(sbn_info):
+        for j, (sbn_line, comment) in enumerate(sbn_info):
             for i, token in enumerate(sbn_line):
                 if i == 0:
                     if SBNSpec.SYNSET_PATTERN.match(token):
@@ -134,7 +132,7 @@ class SBNGraph(BaseGraph):
                 if i > 0:
                     sub_token = sbn_line.pop(0)
                     if (is_role := sub_token in SBNSpec.ROLES) or (
-                        sub_token in SBNSpec.DRS_OPERATORS
+                            sub_token in SBNSpec.DRS_OPERATORS
                     ):
 
                         if not sbn_line:
@@ -153,7 +151,6 @@ class SBNGraph(BaseGraph):
                         if index_match := SBNSpec.INDEX_PATTERN.match(target):
 
                             idx = self._try_parse_idx(index_match.group(0))
-
 
                             active_id = self._active_node_synset_id(sbn_info_reference[j][0][0], sbn_node_reference2)
 
@@ -199,7 +196,6 @@ class SBNGraph(BaseGraph):
                         elif SBNSpec.NAME_CONSTANT_PATTERN.match(target):
                             name_parts = [target]
 
-
                             # Some names contain whitspace and need to be
                             # reconstructed
                             while not target.endswith('"'):
@@ -208,7 +204,6 @@ class SBNGraph(BaseGraph):
 
                             # This is faster than constantly creating new strings
                             name = " ".join(name_parts)
-
 
                             active_id = self._active_node_synset_id(sbn_info_reference[j][0][0], sbn_node_reference2)
                             name_node = self.create_node(
@@ -257,11 +252,9 @@ class SBNGraph(BaseGraph):
                                 f"Unexpected box index found '{box_index}'"
                             )
 
-
                         indicator_index = sbn_node_reference_with_boxes.index(sub_token)
-                        next_node = sbn_node_reference_with_boxes[indicator_index+1]
+                        next_node = sbn_node_reference_with_boxes[indicator_index + 1]
                         active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(next_node))
-
 
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
                             new_node = self.create_node(
@@ -277,13 +270,14 @@ class SBNGraph(BaseGraph):
                                 "+1",
                             )
                         else:
-                            pre, after = sbn_node_reference_with_boxes[:indicator_index], sbn_node_reference_with_boxes[indicator_index+1:]
+                            pre, after = sbn_node_reference_with_boxes[:indicator_index], sbn_node_reference_with_boxes[
+                                                                                          indicator_index + 1:]
                             pre.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             after.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0]))
-                            afterverb_id = (SBN_NODE_TYPE.SYNSET,sbn_node_reference2.index(after[0]))
+                            afterverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(after[0]))
 
-                            new_edge= self.create_edge(
+                            new_edge = self.create_edge(
                                 preverb_id,
                                 afterverb_id,
                                 SBN_EDGE_TYPE.ROLE,
@@ -383,12 +377,12 @@ class SBNGraph(BaseGraph):
         return self
 
     def create_edge(
-        self,
-        from_node_id: SBN_ID,
-        to_node_id: SBN_ID,
-        type: SBN_EDGE_TYPE,
-        token: Optional[str] = None,
-        meta: Optional[Dict[str, Any]] = None,
+            self,
+            from_node_id: SBN_ID,
+            to_node_id: SBN_ID,
+            type: SBN_EDGE_TYPE,
+            token: Optional[str] = None,
+            meta: Optional[Dict[str, Any]] = None,
     ):
         """Create an edge, if no token is provided, the id will be used."""
         edge_id = self._id_for_type(type)
@@ -400,16 +394,16 @@ class SBNGraph(BaseGraph):
                 "_id": str(edge_id),
                 "type": type,
                 "type_idx": edge_id[1],
-                "token": token or str(edge_id), #xiulin: it seems it's always str(edge_id)?
+                "token": token or str(edge_id),  # xiulin: it seems it's always str(edge_id)?
                 **meta,
             },
         )
 
     def create_node(
-        self,
-        type: SBN_NODE_TYPE,
-        token: Optional[str] = None,
-        meta: Optional[Dict[str, Any]] = None,
+            self,
+            type: SBN_NODE_TYPE,
+            token: Optional[str] = None,
+            meta: Optional[Dict[str, Any]] = None,
     ):
         """Create a node, if no token is provided, the id will be used."""
         node_id = self._id_for_type(type)
@@ -457,8 +451,8 @@ class SBNGraph(BaseGraph):
                         box_box_connect_to_insert = edge_data["token"]
 
                 if to_node_type in (
-                    SBN_NODE_TYPE.SYNSET,
-                    SBN_NODE_TYPE.CONSTANT,
+                        SBN_NODE_TYPE.SYNSET,
+                        SBN_NODE_TYPE.CONSTANT,
                 ):
                     if to_node_id in synset_idx_map:
                         raise SBNError(
@@ -472,8 +466,8 @@ class SBNGraph(BaseGraph):
 
                         syn_edge_data = self.edges.get(syn_edge_id)
                         if syn_edge_data["type"] not in (
-                            SBN_EDGE_TYPE.ROLE,
-                            SBN_EDGE_TYPE.DRS_OPERATOR,
+                                SBN_EDGE_TYPE.ROLE,
+                                SBN_EDGE_TYPE.DRS_OPERATOR,
                         ):
                             raise SBNError(
                                 f"Invalid synset edge connect found: "
@@ -568,7 +562,7 @@ class SBNGraph(BaseGraph):
         return sbn_string
 
     def to_penman(
-        self, path: PathLike, evaluate_sense: bool = False, strict: bool = True
+            self, path: PathLike, evaluate_sense: bool = False, strict: bool = True
     ) -> PathLike:
         """
         Writes the SBNGraph to a file in Penman (AMR-like) format.
@@ -580,7 +574,7 @@ class SBNGraph(BaseGraph):
         return final_path
 
     def to_penman_string(
-        self, evaluate_sense: bool = False, strict: bool = True
+            self, evaluate_sense: bool = False, strict: bool = True
     ) -> str:
         """
         Creates a string in Penman (AMR-like) format from the SBNGraph.
@@ -696,7 +690,7 @@ class SBNGraph(BaseGraph):
         # Assume there always is the starting box to serve as the "root"
         starting_node = (SBN_NODE_TYPE.BOX, 0)
         final_result = __to_penman_str(G, starting_node, set(), "", 1)
-        
+
         try:
             g = penman.decode(final_result)
 
@@ -724,7 +718,7 @@ class SBNGraph(BaseGraph):
         }
 
     def _id_for_type(
-        self, type: Union[SBN_EDGE_TYPE, SBN_NODE_TYPE]
+            self, type: Union[SBN_EDGE_TYPE, SBN_NODE_TYPE]
     ) -> SBN_ID:
         _id = (type, self.type_indices[type])
         self.type_indices[type] += 1
@@ -759,22 +753,22 @@ class SBNGraph(BaseGraph):
 
         return f'"{in_str}"'
 
-
     @property
     def _active_synset_id(self) -> SBN_ID:
         return (
             SBN_NODE_TYPE.SYNSET,
-            self.type_indices[SBN_NODE_TYPE.SYNSET]-1)
+            self.type_indices[SBN_NODE_TYPE.SYNSET] - 1)
 
     def _active_node_synset_id(self, target_node, reference) -> SBN_ID:
 
         return (SBN_NODE_TYPE.SYNSET,
                 reference.index(target_node))
+
     @property
     def _active_box_id(self) -> SBN_ID:
-        return (SBN_NODE_TYPE.BOX, 
+        return (SBN_NODE_TYPE.BOX,
                 self.type_indices[SBN_NODE_TYPE.BOX] - 1)
-    
+
     # def 
 
     def _prev_box_id(self, offset: int) -> SBN_ID:
@@ -817,6 +811,7 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
     Checks if two SBNGraphs are isomorphic this is based on node and edge
     ids as well as the 'token' meta data per node and edge
     """
+
     # Type and count are already compared implicitly in the id comparison that
     # is done in the 'is_isomorphic' function. The tokens are important to
     # compare since some constants (names, dates etc.) need to be reconstructed
@@ -829,6 +824,7 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
 
     return nx.is_isomorphic(A, B, node_cmp, edge_cmp)
 
+
 def main(filepath):
     # for filepath in pmb_generator(
     #     starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
@@ -839,16 +835,18 @@ def main(filepath):
     #
     #             print(file)
     #             print(filepath)
-        G = SBNGraph().from_path(filepath)
-        G.to_penman(filepath.parent / f"{filepath.stem}.penman")
+    G = SBNGraph().from_path(filepath)
+    G.to_penman(filepath.parent / f"{filepath.stem}.penman")
+
+
 def pmb_generator(
-    starting_path: PathLike,
-    pattern: str,
-    # By default we don't want to regenerate predicted output
-    exclude: str = "predicted",
-    disable_tqdm: bool = False,
-    desc_tqdm: str = "",
-) :
+        starting_path: PathLike,
+        pattern: str,
+        # By default we don't want to regenerate predicted output
+        exclude: str = "predicted",
+        disable_tqdm: bool = False,
+        desc_tqdm: str = "",
+):
     """Helper to glob over the pmb dataset"""
     path_glob = Path(starting_path).glob(pattern)
     return tqdm(
@@ -857,8 +855,16 @@ def pmb_generator(
         desc=desc_tqdm,
     )
 
-if __name__=="__main__":
-    
-    starting_path = Path("/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d3168/en.drs.sbn")
-    main(starting_path)
-    
+
+if __name__ == "__main__":
+    test_data_dir = "test_data/"
+    files = os.listdir(test_data_dir)
+    # Filter the list of files to only include those with a .sbn extension
+    sbn_files = [test_data_dir+f for f in files if f.endswith('.sbn')]
+    for f in sbn_files:
+        print(f)
+        try:
+            main(Path(f))
+        except Exception as e:
+            print(f"{f} does not work")
+            continue
