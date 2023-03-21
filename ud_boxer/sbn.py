@@ -5,6 +5,7 @@ import os
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
+from tqdm.contrib.logging import logging_redirect_tqdm
 from typing import Any, Dict, List, Optional, Tuple, Union
 # from helpers import pmb_generator
 import networkx as nx
@@ -89,6 +90,7 @@ class SBNGraph(BaseGraph):
         lines = split_comments(input_string)
         sbn_info = [(x.split(), y) for x, y in lines]
         sbn_info_reference = deepcopy(sbn_info)
+        sbn_node_reference_with_boxes_info = [(x[0], y) for x, y in sbn_info_reference]
         sbn_node_reference = [(x[0], y) for x, y in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference2 = [x[0] for x, _ in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference_with_boxes = [x[0] for x, _ in sbn_info_reference]
@@ -108,8 +110,11 @@ class SBNGraph(BaseGraph):
         nodes, edges = [starting_box], []
         max_wn_idx = len(lines) - 1
         reference_nodes = []
-        for idx, (basic_node, basic_comment) in enumerate(sbn_node_reference):
+        reference_nodes_without_null=[]
+        count =-1
+        for idx, (basic_node, basic_comment) in enumerate(sbn_node_reference_with_boxes_info):
             if synset_match := SBNSpec.SYNSET_PATTERN.match(basic_node):
+                count+=1
                 synset_node = self.create_node(
                     SBN_NODE_TYPE.SYNSET,
                     basic_node,
@@ -119,14 +124,21 @@ class SBNGraph(BaseGraph):
                     },
                 )
                 nodes.append(synset_node)
-                reference_nodes.append((SBN_NODE_TYPE.SYNSET, idx))
+                reference_nodes_without_null.append((SBN_NODE_TYPE.SYNSET, count))
+                reference_nodes.append((SBN_NODE_TYPE.SYNSET, count, basic_node))
                 # reference_nodes.append(synset_node[0])
+            elif basic_node in SBNSpec.NEW_BOX_INDICATORS:
+                reference_nodes.append('null')
+            else:
+                raise SBNError(
+                    "The structure of sbn is not correct!"
+                )
 
 
         for j, (sbn_line, comment) in enumerate(sbn_info):
             while len(sbn_line)>0:
                 token = sbn_line[0]
-                print(token)
+
                 if SBNSpec.SYNSET_PATTERN.match(token):
                     sbn_line.pop(0)
                 else:
@@ -147,12 +159,11 @@ class SBNGraph(BaseGraph):
                             else SBN_EDGE_TYPE.DRS_OPERATOR
                         )
 
-                        current_node = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(sbn_info_reference[j][0][0]))
+                        current_node = (reference_nodes[j][0], reference_nodes[j][1])
                         if index_match := SBNSpec.INDEX_PATTERN.match(target):
                             idx = self._try_parse_idx(index_match.group(0))
                             if SBNSpec.MIN_SYNSET_IDX <= current_node[1]+idx <= max_wn_idx:
-
-                                target_node = reference_nodes[current_node[1]+idx]
+                                target_node =reference_nodes_without_null[current_node[1]+idx]
                                 role_edge = self.create_edge(
                                     current_node,
                                     target_node,
@@ -233,7 +244,7 @@ class SBNGraph(BaseGraph):
                             edges.append(role_edge)
 
                     elif sub_token in SBNSpec.NEW_BOX_INDICATORS:
-                        print(f'text2{sub_token}')
+
                         # In the entire dataset there are no indices for box
                         # references other than -1. Maybe they are needed later and
                         # the exception triggers if something different comes up.
@@ -248,16 +259,16 @@ class SBNGraph(BaseGraph):
                             )
                         sbn_node_reference_without_comment = [x for x, _ in sbn_info_reference]
                         sbn_node_reference_without_comment.sort(key=lambda t: ('v' in t[0], len(t)), reverse=True)
-                        active_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(sbn_node_reference_without_comment[0][0]))
-                        print(active_id)
-#TODO: check the node that share the identical string!!!!
+                        target_node = [x for x in reference_nodes if sbn_node_reference_without_comment[0][0] in x][0]
+                        active_id = (target_node[0], target_node[1])
+
+
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
 
                             freq = len([x for x in sbn_node_reference_with_boxes if x ==sub_token])
                             if freq > 1:
-                                print(f'text1{sub_token}')
-                                t_node = sbn_node_reference_with_boxes[j+1]
-                                target_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(t_node))
+
+                                active_id = (reference_nodes[j+1][0], reference_nodes[j+1][1])
                                 new_node = self.create_node(
                                     SBN_NODE_TYPE.CONSTANT,
                                     "+1",
@@ -291,8 +302,10 @@ class SBNGraph(BaseGraph):
                             pre, after = [x for x, _ in sbn_info_reference][:j], [x for x, _ in sbn_info_reference][j + 1:]
                             pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
                             after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
-                            preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0][0]))
-                            afterverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(after[0][0]))
+                            preverb_id_node = [x for x in reference_nodes if pre[0][0] in x][0]
+                            afterverb_id_node = [x for x in reference_nodes if after[0][0] in x][0]
+                            preverb_id = (preverb_id_node[0], preverb_id_node[1])
+                            afterverb_id = (afterverb_id_node[0], afterverb_id_node[1])
 
                             new_edge = self.create_edge(
                                 preverb_id,
@@ -302,19 +315,17 @@ class SBNGraph(BaseGraph):
                             )
                             edges.append(new_edge)
 
-                        sbn_node_reference_with_boxes.pop(j)
 
                     else:
                         raise SBNError(
                             f"Invalid token found '{sub_token}' in line: {sbn_line}"
                         )
-        print([(edge[0],edge[1]) for edge in edges])
-        print(edges)
+        # print([(edge[0],edge[1]) for edge in edges])
+        # print(edges)
         from_node = set([edge[0] for edge in edges])
         to_node = set([edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET])
         predicate_nodes = [x for x in from_node if x not in to_node]
-        print(from_node)
-        print(to_node)
+
 
         # assert len(to_node) <= len(from_node)
 
@@ -642,6 +653,8 @@ class SBNGraph(BaseGraph):
         }
         # print(G.nodes.items())
         for node_id, node_data in G.nodes.items():
+
+
             pre, count = prefix_map[node_data["type"]]
             prefix_map[node_data["type"]][1] += 1  # type: ignore
             G.nodes[node_id]["var_id"] = f"{pre}{count}"
@@ -690,7 +703,7 @@ class SBNGraph(BaseGraph):
                 for edge_id in S.edges(current_n):
                     edge_name = S.edges[edge_id]["token"]
                     if edge_name in SBNSpec.INVERTIBLE_ROLES:
-                        print(edge_name)
+                        # print(edge_name)
                         # SMATCH can invert edges that end in '-of'.
                         # This means that,
                         #   A -[AttributeOf]-> B
@@ -718,10 +731,6 @@ class SBNGraph(BaseGraph):
 
             if errors := pm_model.errors(g):
                 raise penman.DecodeError(str(errors))
-            print(g.edges())
-            print(self.edges)
-            print(len(g.edges()))
-            print(len(self.edges))
             assert len(g.edges()) == len(self.edges), "Wrong number of edges"
         except (penman.DecodeError, AssertionError) as e:
             raise SBNError(f"Generated Penman output is invalid: {e}")
@@ -847,18 +856,23 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
     return nx.is_isomorphic(A, B, node_cmp, edge_cmp)
 
 
-def main(filepath):
-    # for filepath in pmb_generator(
-    #     starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
-    # ):
-    #     with open(filepath, mode='r') as target_file:
-    #         file = target_file.read()
-    #         if bool(set(file.split()) & set(SBNSpec.NEW_BOX_INDICATORS)):
-    #
-    #             print(file)
-    #             print(filepath)
-    G = SBNGraph().from_path(filepath)
-    G.to_penman(filepath.parent / f"{filepath.stem}.penman")
+def main(starting_path):
+    error = 0
+    for filepath in pmb_generator(
+        starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
+    ):
+        try:
+            G = SBNGraph().from_path(filepath)
+            output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
+            G.to_penman(output_path)
+            print(f'correct{output_path}')
+
+        except:
+            error += 1
+            print(error)
+            print(f'error {filepath}')
+            print(SBNError)
+
 
 
 def pmb_generator(
@@ -879,16 +893,8 @@ def pmb_generator(
 
 
 if __name__ == "__main__":
-    test_data_dir = "test_data/"
-    files = os.listdir(test_data_dir)
-    print(files)
-    # Filter the list of files to only include those with a .sbn extension
-    sbn_files = [test_data_dir+f for f in files if f.strip().endswith('.sbn')]
-    print(sbn_files)
-    for f in sbn_files:
-        print(f)
-        main(Path(f))
-        print('done!')
-        # except Exception as e:
-        #     print(e)
+    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold')
+    with logging_redirect_tqdm():
+        main(starting_path)
+
 
