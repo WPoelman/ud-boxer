@@ -92,7 +92,7 @@ class SBNGraph(BaseGraph):
         sbn_node_reference = [(x[0], y) for x, y in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference2 = [x[0] for x, _ in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference_with_boxes = [x[0] for x, _ in sbn_info_reference]
-        sbn_info.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
+        # sbn_info.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
 
         if not lines:
             raise SBNError(
@@ -119,16 +119,22 @@ class SBNGraph(BaseGraph):
                     },
                 )
                 nodes.append(synset_node)
-                reference_nodes.append((SBN_NODE_TYPE.SYNSET, idx))
+                # reference_nodes.append((SBN_NODE_TYPE.SYNSET, idx))
+                reference_nodes.append(synset_node[0])
+
 
         for j, (sbn_line, comment) in enumerate(sbn_info):
             for i, token in enumerate(sbn_line):
                 if i == 0:
+                    print(token)
                     if SBNSpec.SYNSET_PATTERN.match(token):
                         sbn_line.pop(0)
-
+                    elif token in SBNSpec.NEW_BOX_INDICATORS:
+                        continue
                     else:
-                        print("Something was wrong!")
+                        raise SBNError(
+                            "The first item is not a token!"
+                        )
                 if i > 0:
                     sub_token = sbn_line.pop(0)
                     if (is_role := sub_token in SBNSpec.ROLES) or (
@@ -147,21 +153,14 @@ class SBNGraph(BaseGraph):
                             if is_role
                             else SBN_EDGE_TYPE.DRS_OPERATOR
                         )
-
+                        current_node = reference_nodes[j]
                         if index_match := SBNSpec.INDEX_PATTERN.match(target):
-
                             idx = self._try_parse_idx(index_match.group(0))
-
-                            active_id = self._active_node_synset_id(sbn_info_reference[j][0][0], sbn_node_reference2)
-
-                            target_idx = active_id[1] + idx
-                            to_id = (active_id[0], target_idx)
-
-                            if SBNSpec.MIN_SYNSET_IDX <= target_idx <= max_wn_idx:
-
+                            if SBNSpec.MIN_SYNSET_IDX <= j+idx <= max_wn_idx:
+                                target_node = reference_nodes[j + idx]
                                 role_edge = self.create_edge(
-                                    active_id,
-                                    to_id,
+                                    current_node,
+                                    target_node,
                                     edge_type,
                                     sub_token,
                                 )
@@ -186,33 +185,34 @@ class SBNGraph(BaseGraph):
                                     {"comment": comment},
                                 )
                                 role_edge = self.create_edge(
-                                    active_id,
+                                    current_node,
                                     const_node[0],
                                     edge_type,
                                     sub_token,
                                 )
                                 nodes.append(const_node)
                                 edges.append(role_edge)
+
                         elif SBNSpec.NAME_CONSTANT_PATTERN.match(target):
                             name_parts = [target]
 
                             # Some names contain whitspace and need to be
                             # reconstructed
                             while not target.endswith('"'):
+
                                 target = sbn_line.pop(0)
                                 name_parts.append(target)
 
                             # This is faster than constantly creating new strings
                             name = " ".join(name_parts)
 
-                            active_id = self._active_node_synset_id(sbn_info_reference[j][0][0], sbn_node_reference2)
                             name_node = self.create_node(
                                 SBN_NODE_TYPE.CONSTANT,
                                 name,
                                 {"comment": comment},
                             )
                             role_edge = self.create_edge(
-                                active_id,
+                                current_node,
                                 name_node[0],
                                 SBN_EDGE_TYPE.ROLE,
                                 sub_token,
@@ -222,15 +222,15 @@ class SBNGraph(BaseGraph):
                             edges.append(role_edge)
                         else:
                             print(j)
-                            print(sbn_info_reference[j][0][0])
-                            active_id = self._active_node_synset_id(sbn_info_reference[j][0][0], sbn_node_reference2)
+                            print(f'interesting {sbn_info_reference[j][0][0]}')
+
                             const_node = self.create_node(
                                 SBN_NODE_TYPE.CONSTANT,
                                 target,
                                 {"comment": comment},
                             )
                             role_edge = self.create_edge(
-                                active_id,
+                                current_node,
                                 const_node[0],
                                 SBN_EDGE_TYPE.ROLE,
                                 sub_token,
@@ -238,6 +238,7 @@ class SBNGraph(BaseGraph):
 
                             nodes.append(const_node)
                             edges.append(role_edge)
+
                     elif sub_token in SBNSpec.NEW_BOX_INDICATORS:
                         # In the entire dataset there are no indices for box
                         # references other than -1. Maybe they are needed later and
@@ -252,8 +253,8 @@ class SBNGraph(BaseGraph):
                                 f"Unexpected box index found '{box_index}'"
                             )
 
-                        indicator_index = sbn_node_reference_with_boxes.index(sub_token)
-                        next_node = sbn_node_reference_with_boxes[indicator_index + 1]
+
+                        next_node = sbn_node_reference_with_boxes[j+1]
                         active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(next_node))
 
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
@@ -270,8 +271,8 @@ class SBNGraph(BaseGraph):
                                 "+1",
                             )
                         else:
-                            pre, after = sbn_node_reference_with_boxes[:indicator_index], sbn_node_reference_with_boxes[
-                                                                                          indicator_index + 1:]
+                            pre, after = sbn_node_reference_with_boxes[:j], sbn_node_reference_with_boxes[
+                                                                                          j + 1:]
                             pre.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             after.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0]))
@@ -866,5 +867,5 @@ if __name__ == "__main__":
         try:
             main(Path(f))
         except Exception as e:
-            print(f"{f} does not work")
+            print(e)
             continue
