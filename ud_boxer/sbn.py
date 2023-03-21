@@ -126,7 +126,7 @@ class SBNGraph(BaseGraph):
         for j, (sbn_line, comment) in enumerate(sbn_info):
             for i, token in enumerate(sbn_line):
                 if i == 0:
-                    print(token)
+
                     if SBNSpec.SYNSET_PATTERN.match(token):
                         sbn_line.pop(0)
                     elif token in SBNSpec.NEW_BOX_INDICATORS:
@@ -136,7 +136,9 @@ class SBNGraph(BaseGraph):
                             "The first item is not a token!"
                         )
                 if i > 0:
+
                     sub_token = sbn_line.pop(0)
+                    print(sub_token)
                     if (is_role := sub_token in SBNSpec.ROLES) or (
                             sub_token in SBNSpec.DRS_OPERATORS
                     ):
@@ -221,8 +223,8 @@ class SBNGraph(BaseGraph):
                             nodes.append(name_node)
                             edges.append(role_edge)
                         else:
-                            print(j)
-                            print(f'interesting {sbn_info_reference[j][0][0]}')
+                            # print(j)
+                            # print(f'interesting {sbn_info_reference[j][0][0]}')
 
                             const_node = self.create_node(
                                 SBN_NODE_TYPE.CONSTANT,
@@ -252,10 +254,9 @@ class SBNGraph(BaseGraph):
                             raise SBNError(
                                 f"Unexpected box index found '{box_index}'"
                             )
-
-
-                        next_node = sbn_node_reference_with_boxes[j+1]
-                        active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(next_node))
+                        sbn_node_reference_without_comment = [x for x, _ in sbn_node_reference]
+                        target_node = sbn_node_reference_without_comment.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
+                        active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(target_node))
 
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
                             new_node = self.create_node(
@@ -270,9 +271,11 @@ class SBNGraph(BaseGraph):
                                 SBN_EDGE_TYPE.DRS_OPERATOR,
                                 "+1",
                             )
+                            nodes.append(new_node)
+                            edges.append(new_edge)
+
                         else:
-                            pre, after = sbn_node_reference_with_boxes[:j], sbn_node_reference_with_boxes[
-                                                                                          j + 1:]
+                            pre, after = sbn_node_reference_with_boxes[:j], sbn_node_reference_with_boxes[j + 1:]
                             pre.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             after.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0]))
@@ -284,7 +287,7 @@ class SBNGraph(BaseGraph):
                                 SBN_EDGE_TYPE.ROLE,
                                 comment,
                             )
-                        sbn_node_reference_with_boxes.pop(indicator_index)
+                        sbn_node_reference_with_boxes.pop(j)
                         nodes.append(new_node)
                         edges.append(new_edge)
                     else:
@@ -293,6 +296,8 @@ class SBNGraph(BaseGraph):
                         )
         from_node = set([edge[0] for edge in edges])
         to_node = set([edge[1] for edge in edges])
+        print(from_node)
+        print(to_node)
         assert len(to_node) < len(from_node)
 
         predicate_nodes = [x for x in to_node if x not in reference_nodes]
