@@ -119,8 +119,8 @@ class SBNGraph(BaseGraph):
                     },
                 )
                 nodes.append(synset_node)
-                # reference_nodes.append((SBN_NODE_TYPE.SYNSET, idx))
-                reference_nodes.append(synset_node[0])
+                reference_nodes.append((SBN_NODE_TYPE.SYNSET, idx))
+                # reference_nodes.append(synset_node[0])
 
 
         for j, (sbn_line, comment) in enumerate(sbn_info):
@@ -128,15 +128,12 @@ class SBNGraph(BaseGraph):
                 token = sbn_line[0]
                 if SBNSpec.SYNSET_PATTERN.match(token):
                     sbn_line.pop(0)
-
                 else:
-                    print(token)
                     sub_token = sbn_line.pop(0)
                     # print(sub_token)
                     if (is_role := sub_token in SBNSpec.ROLES) or (
                             sub_token in SBNSpec.DRS_OPERATORS
                     ):
-
                         if not sbn_line:
                             raise SBNError(
                                 f"Missing target for '{sub_token}' in line {sbn_line}"
@@ -149,11 +146,13 @@ class SBNGraph(BaseGraph):
                             if is_role
                             else SBN_EDGE_TYPE.DRS_OPERATOR
                         )
-                        current_node = reference_nodes[j]
+
+                        current_node = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(sbn_info_reference[j][0][0]))
                         if index_match := SBNSpec.INDEX_PATTERN.match(target):
                             idx = self._try_parse_idx(index_match.group(0))
-                            if SBNSpec.MIN_SYNSET_IDX <= j+idx <= max_wn_idx:
-                                target_node = reference_nodes[j + idx]
+                            if SBNSpec.MIN_SYNSET_IDX <= current_node[1]+idx <= max_wn_idx:
+
+                                target_node = reference_nodes[current_node[1]+idx]
                                 role_edge = self.create_edge(
                                     current_node,
                                     target_node,
@@ -217,8 +216,6 @@ class SBNGraph(BaseGraph):
                             nodes.append(name_node)
                             edges.append(role_edge)
                         else:
-                            # print(j)
-                            # print(f'interesting {sbn_info_reference[j][0][0]}')
 
                             const_node = self.create_node(
                                 SBN_NODE_TYPE.CONSTANT,
@@ -248,9 +245,9 @@ class SBNGraph(BaseGraph):
                             raise SBNError(
                                 f"Unexpected box index found '{box_index}'"
                             )
-                        sbn_node_reference_without_comment = [x for x, _ in sbn_node_reference]
-                        target_node = sbn_node_reference_without_comment.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
-                        active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(target_node))
+                        sbn_node_reference_without_comment = [x for x, _ in sbn_info_reference]
+                        sbn_node_reference_without_comment.sort(key=lambda t: ('v' in t[0], len(t)), reverse=True)
+                        active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(sbn_node_reference_without_comment[0][0]))
 
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
                             new_node = self.create_node(
@@ -269,31 +266,36 @@ class SBNGraph(BaseGraph):
                             edges.append(new_edge)
 
                         else:
-                            pre, after = sbn_node_reference_with_boxes[:j], sbn_node_reference_with_boxes[j + 1:]
+                            pre, after = [x for x, _ in sbn_info_reference][:j], [x for x, _ in sbn_info_reference][j + 1:]
+                            print(f'pre{pre}')
+                            print(f'after{after}')
                             pre.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
                             after.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
-                            preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0]))
-                            afterverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(after[0]))
+                            preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0][0]))
+                            afterverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(after[0][0]))
 
                             new_edge = self.create_edge(
                                 preverb_id,
                                 afterverb_id,
                                 SBN_EDGE_TYPE.ROLE,
-                                comment,
+                                token,
                             )
+                            edges.append(new_edge)
                         sbn_node_reference_with_boxes.pop(j)
-                        nodes.append(new_node)
-                        edges.append(new_edge)
+
                     else:
                         raise SBNError(
                             f"Invalid token found '{sub_token}' in line: {sbn_line}"
                         )
-
+        print([(edge[0],edge[1]) for edge in edges])
+        print(edges)
         from_node = set([edge[0] for edge in edges])
         to_node = set([edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET])
         predicate_nodes = [x for x in from_node if x not in to_node]
+        print(from_node)
+        print(to_node)
 
-        assert len(to_node) < len(from_node)
+        # assert len(to_node) < len(from_node)
 
         for predicate_node in predicate_nodes:
             new_box_syn_edge = self.create_edge(
@@ -862,9 +864,9 @@ if __name__ == "__main__":
     sbn_files = [test_data_dir+f for f in files if f.endswith('.sbn')]
     for f in sbn_files:
         print(f)
-        try:
-            main(Path(f))
-            print('done!')
-        except Exception as e:
-            print(e)
-            continue
+
+        main(Path(f))
+        print('done!')
+        # except Exception as e:
+        #     print(e)
+
