@@ -75,6 +75,7 @@ class SBNSpec:
         "NECESSITY",
         "POSSIBILITY",
         "CONDITION",
+        'NEGATION'
     }
 
     NEW_BOX_INDICATORS_VERB2VERB = {
