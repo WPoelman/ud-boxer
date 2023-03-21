@@ -124,21 +124,15 @@ class SBNGraph(BaseGraph):
 
 
         for j, (sbn_line, comment) in enumerate(sbn_info):
-            for i, token in enumerate(sbn_line):
-                if i == 0:
+            while len(sbn_line)>0:
+                token = sbn_line[0]
+                if SBNSpec.SYNSET_PATTERN.match(token):
+                    sbn_line.pop(0)
 
-                    if SBNSpec.SYNSET_PATTERN.match(token):
-                        sbn_line.pop(0)
-                    elif token in SBNSpec.NEW_BOX_INDICATORS:
-                        continue
-                    else:
-                        raise SBNError(
-                            "The first item is not a token!"
-                        )
-                if i > 0:
-
+                else:
+                    print(token)
                     sub_token = sbn_line.pop(0)
-                    print(sub_token)
+                    # print(sub_token)
                     if (is_role := sub_token in SBNSpec.ROLES) or (
                             sub_token in SBNSpec.DRS_OPERATORS
                     ):
@@ -294,13 +288,12 @@ class SBNGraph(BaseGraph):
                         raise SBNError(
                             f"Invalid token found '{sub_token}' in line: {sbn_line}"
                         )
-        from_node = set([edge[0] for edge in edges])
-        to_node = set([edge[1] for edge in edges])
-        print(from_node)
-        print(to_node)
-        assert len(to_node) < len(from_node)
 
-        predicate_nodes = [x for x in to_node if x not in reference_nodes]
+        from_node = set([edge[0] for edge in edges])
+        to_node = set([edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET])
+        predicate_nodes = [x for x in from_node if x not in to_node]
+
+        assert len(to_node) < len(from_node)
 
         for predicate_node in predicate_nodes:
             new_box_syn_edge = self.create_edge(
@@ -871,6 +864,7 @@ if __name__ == "__main__":
         print(f)
         try:
             main(Path(f))
+            print('done!')
         except Exception as e:
             print(e)
             continue
