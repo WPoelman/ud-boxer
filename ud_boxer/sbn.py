@@ -126,11 +126,11 @@ class SBNGraph(BaseGraph):
         for j, (sbn_line, comment) in enumerate(sbn_info):
             while len(sbn_line)>0:
                 token = sbn_line[0]
+                print(token)
                 if SBNSpec.SYNSET_PATTERN.match(token):
                     sbn_line.pop(0)
                 else:
                     sub_token = sbn_line.pop(0)
-                    # print(sub_token)
                     if (is_role := sub_token in SBNSpec.ROLES) or (
                             sub_token in SBNSpec.DRS_OPERATORS
                     ):
@@ -233,6 +233,7 @@ class SBNGraph(BaseGraph):
                             edges.append(role_edge)
 
                     elif sub_token in SBNSpec.NEW_BOX_INDICATORS:
+                        print(f'text2{sub_token}')
                         # In the entire dataset there are no indices for box
                         # references other than -1. Maybe they are needed later and
                         # the exception triggers if something different comes up.
@@ -247,30 +248,49 @@ class SBNGraph(BaseGraph):
                             )
                         sbn_node_reference_without_comment = [x for x, _ in sbn_info_reference]
                         sbn_node_reference_without_comment.sort(key=lambda t: ('v' in t[0], len(t)), reverse=True)
-                        active_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(sbn_node_reference_without_comment[0][0]))
-
+                        active_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(sbn_node_reference_without_comment[0][0]))
+                        print(active_id)
+#TODO: check the node that share the identical string!!!!
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
-                            new_node = self.create_node(
-                                SBN_NODE_TYPE.CONSTANT,
-                                "+1",
-                                {"comment": comment},
-                            )
-                            '''No node to be created because in our case it is taken as an edge label'''
-                            new_edge = self.create_edge(
-                                active_id,
-                                new_node[0],
-                                SBN_EDGE_TYPE.DRS_OPERATOR,
-                                "+1",
-                            )
-                            nodes.append(new_node)
-                            edges.append(new_edge)
+
+                            freq = len([x for x in sbn_node_reference_with_boxes if x ==sub_token])
+                            if freq > 1:
+                                print(f'text1{sub_token}')
+                                t_node = sbn_node_reference_with_boxes[j+1]
+                                target_id = (SBN_NODE_TYPE.CONSTANT, sbn_node_reference2.index(t_node))
+                                new_node = self.create_node(
+                                    SBN_NODE_TYPE.CONSTANT,
+                                    "+1",
+                                    {"comment": comment},
+                                )
+                                new_edge = self.create_edge(
+                                    active_id,
+                                    new_node[0],
+                                    SBN_EDGE_TYPE.DRS_OPERATOR,
+                                    sub_token,
+                                )
+                                nodes.append(new_node)
+                                edges.append(new_edge)
+
+                            else:
+                                new_node = self.create_node(
+                                    SBN_NODE_TYPE.CONSTANT,
+                                    "+1",
+                                    {"comment": comment},
+                                )
+                                new_edge = self.create_edge(
+                                    active_id,
+                                    new_node[0],
+                                    SBN_EDGE_TYPE.DRS_OPERATOR,
+                                    sub_token,
+                                )
+                                nodes.append(new_node)
+                                edges.append(new_edge)
 
                         else:
                             pre, after = [x for x, _ in sbn_info_reference][:j], [x for x, _ in sbn_info_reference][j + 1:]
-                            print(f'pre{pre}')
-                            print(f'after{after}')
-                            pre.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
-                            after.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
+                            pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
+                            after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
                             preverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(pre[0][0]))
                             afterverb_id = (SBN_NODE_TYPE.SYNSET, sbn_node_reference2.index(after[0][0]))
 
@@ -281,6 +301,7 @@ class SBNGraph(BaseGraph):
                                 token,
                             )
                             edges.append(new_edge)
+
                         sbn_node_reference_with_boxes.pop(j)
 
                     else:
@@ -295,7 +316,7 @@ class SBNGraph(BaseGraph):
         print(from_node)
         print(to_node)
 
-        # assert len(to_node) < len(from_node)
+        # assert len(to_node) <= len(from_node)
 
         for predicate_node in predicate_nodes:
             new_box_syn_edge = self.create_edge(
@@ -860,11 +881,12 @@ def pmb_generator(
 if __name__ == "__main__":
     test_data_dir = "test_data/"
     files = os.listdir(test_data_dir)
+    print(files)
     # Filter the list of files to only include those with a .sbn extension
-    sbn_files = [test_data_dir+f for f in files if f.endswith('.sbn')]
+    sbn_files = [test_data_dir+f for f in files if f.strip().endswith('.sbn')]
+    print(sbn_files)
     for f in sbn_files:
         print(f)
-
         main(Path(f))
         print('done!')
         # except Exception as e:
