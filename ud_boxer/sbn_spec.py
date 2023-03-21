@@ -71,7 +71,23 @@ class SBNSpec:
         "RESULT",
         "SOURCE",
     }
+    NEW_BOX_INDICATORS_2VERB = {
+        "NECESSITY",
+        "POSSIBILITY",
+        "CONDITION",
+    }
 
+    NEW_BOX_INDICATORS_VERB2VERB = {
+        "ALTERNATION",
+        "ATTRIBUTION",
+        "CONSEQUENCE",
+        "CONTINUATION",
+        "CONTRAST",
+        "EXPLANATION",
+        "RESULT",
+        "SOURCE",
+
+    }
     DRS_OPERATORS = {
         # Manually added (not part of clf_signature.yaml)
         "TSU",  # What does this mean?
