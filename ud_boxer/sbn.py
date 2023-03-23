@@ -923,9 +923,10 @@ def main(starting_path):
                     elif len(split_tokens) == 1 and len(node_info)>1:
                         alignment['node_name'] = [x[0] for x in node_info]
                         alignment['token_id'] = comment_list.index(token)
-
+                print(comment_list)
                 print(comment_node_pair_info)
-
+                print(edges_info)
+                print(nodes_info)
                 for n in nodes_info:
                     if n[-1]==None:
                         possible_nodes = []

@@ -257,6 +257,7 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
 
     # Separate the actual SBN and the comments
     temp_lines: List[Tuple[str, Optional[str]]] = []
+    count =-1
     for line in split_lines:
         # Full comment lines are discarded here.
         if line.startswith(SBNSpec.COMMENT_LINE):
@@ -276,7 +277,8 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
             temp_lines.append((items[0], None))
         # We have a comment
         elif len(items) == 2:
-            temp_lines.append((items[0], items[1]))
+            count+=1
+            temp_lines.append((items[0], items[1].split('[')[0].strip()+str(count)))
         else:
             raise SBNError(
                 "Unreachable, multiple comments per line are impossible"
