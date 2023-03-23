@@ -1,6 +1,7 @@
 from __future__ import annotations
-
+import re
 import logging
+from collections import Counter
 import os
 from copy import deepcopy
 from os import PathLike
@@ -14,6 +15,7 @@ from tqdm import tqdm
 from base import BaseEnum, BaseGraph
 from graph_resolver import GraphResolver
 from misc import ensure_ext
+from penman.graph import Graph
 from penman_model import pm_model
 from sbn_spec import (
     SBN_EDGE_TYPE,
@@ -110,11 +112,11 @@ class SBNGraph(BaseGraph):
         nodes, edges = [starting_box], []
         max_wn_idx = len(lines) - 1
         reference_nodes = []
-        reference_nodes_without_null=[]
-        count =-1
+        reference_nodes_without_null = []
+        count = -1
         for idx, (basic_node, basic_comment) in enumerate(sbn_node_reference_with_boxes_info):
             if synset_match := SBNSpec.SYNSET_PATTERN.match(basic_node):
-                count+=1
+                count += 1
                 synset_node = self.create_node(
                     SBN_NODE_TYPE.SYNSET,
                     basic_node,
@@ -134,9 +136,8 @@ class SBNGraph(BaseGraph):
                     "The structure of sbn is not correct!"
                 )
 
-
         for j, (sbn_line, comment) in enumerate(sbn_info):
-            while len(sbn_line)>0:
+            while len(sbn_line) > 0:
                 token = sbn_line[0]
 
                 if SBNSpec.SYNSET_PATTERN.match(token):
@@ -162,8 +163,17 @@ class SBNGraph(BaseGraph):
                         current_node = (reference_nodes[j][0], reference_nodes[j][1])
                         if index_match := SBNSpec.INDEX_PATTERN.match(target):
                             idx = self._try_parse_idx(index_match.group(0))
-                            if SBNSpec.MIN_SYNSET_IDX <= current_node[1]+idx <= max_wn_idx:
-                                target_node =reference_nodes_without_null[current_node[1]+idx]
+                            if SBNSpec.MIN_SYNSET_IDX <= current_node[1] + idx <= max_wn_idx:
+                                target_node = reference_nodes_without_null[current_node[1] + idx]
+                                # if sub_token in SBNSpec.INVERTIBLE_ROLES:
+                                #     role_edge = self.create_edge(
+                                #         target_node,
+                                #         current_node,
+                                #         edge_type,
+                                #         sub_token[:-2],
+                                #     )
+                                #     edges.append(role_edge)
+                                # else:
                                 role_edge = self.create_edge(
                                     current_node,
                                     target_node,
@@ -205,7 +215,6 @@ class SBNGraph(BaseGraph):
                             # Some names contain whitspace and need to be
                             # reconstructed
                             while not target.endswith('"'):
-
                                 target = sbn_line.pop(0)
                                 name_parts.append(target)
 
@@ -262,13 +271,12 @@ class SBNGraph(BaseGraph):
                         target_node = [x for x in reference_nodes if sbn_node_reference_without_comment[0][0] in x][0]
                         active_id = (target_node[0], target_node[1])
 
-
                         if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
 
-                            freq = len([x for x in sbn_node_reference_with_boxes if x ==sub_token])
+                            freq = len([x for x in sbn_node_reference_with_boxes if x == sub_token])
                             if freq > 1:
 
-                                active_id = (reference_nodes[j+1][0], reference_nodes[j+1][1])
+                                active_id = (reference_nodes[j + 1][0], reference_nodes[j + 1][1])
                                 new_node = self.create_node(
                                     SBN_NODE_TYPE.CONSTANT,
                                     "+1",
@@ -299,7 +307,8 @@ class SBNGraph(BaseGraph):
                                 edges.append(new_edge)
 
                         else:
-                            pre, after = [x for x, _ in sbn_info_reference][:j], [x for x, _ in sbn_info_reference][j + 1:]
+                            pre, after = [x for x, _ in sbn_info_reference][:j], [x for x, _ in sbn_info_reference][
+                                                                                 j + 1:]
                             pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
                             after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
                             preverb_id_node = [x for x in reference_nodes if pre[0][0] in x][0]
@@ -325,7 +334,6 @@ class SBNGraph(BaseGraph):
         from_node = set([edge[0] for edge in edges])
         to_node = set([edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET])
         predicate_nodes = [x for x in from_node if x not in to_node]
-
 
         # assert len(to_node) <= len(from_node)
 
@@ -654,7 +662,6 @@ class SBNGraph(BaseGraph):
         # print(G.nodes.items())
         for node_id, node_data in G.nodes.items():
 
-
             pre, count = prefix_map[node_data["type"]]
             prefix_map[node_data["type"]][1] += 1  # type: ignore
             G.nodes[node_id]["var_id"] = f"{pre}{count}"
@@ -857,22 +864,111 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
 
 
 def main(starting_path):
+    pre_map = {
+        SBN_NODE_TYPE.BOX: "b",
+        SBN_NODE_TYPE.CONSTANT: "c",
+        SBN_NODE_TYPE.SYNSET: "s",
+    }
     error = 0
-    for filepath in pmb_generator(
-        starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
-    ):
-        try:
-            G = SBNGraph().from_path(filepath)
-            output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
-            G.to_penman(output_path)
-            print(f'correct{output_path}')
+    with open('correct_penman.txt', 'w') as penman_link:
+        for filepath in pmb_generator(
+                starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
+        ):
+            alignment = {}
+            nodes_info = []
+            edges_info = []
+            comments = []
+            comment_taken = []
+            comment_node_pair_info = ()
+            comment_node=[]
+            none_node_pair = {}
 
-        except:
-            error += 1
-            print(error)
-            print(f'error {filepath}')
-            print(SBNError)
+            # TODO punctuations
+            # punctuations= {'.','?', '!'}
+            try:
+                G = SBNGraph().from_path(filepath)
+                for edge_info in G.edges.data(True):
+                    current_id = pre_map[edge_info[0][0]] + str(edge_info[0][1])
+                    to_id = pre_map[edge_info[1][0]] + str(edge_info[1][1])
+                    if current_id != 'b0':
+                        edges_info.append((current_id, to_id))
 
+                for info in G.nodes.data(True):
+
+                    if 'comment' in list(info[1].keys()):
+                        node_type = info[0][0]
+                        var_id = pre_map[node_type] + str(info[0][1])
+                        token = info[1]['token']
+                        comment = info[1]['comment']
+                        nodes_info.append((var_id, token, comment))
+                        if comment != None:
+                            comments.append(comment)
+                            if comment not in comment_taken:
+                                comment_node_pair_info.append(comment,[(var_id, token)])
+                                comment_node.append(var_id)
+                                comment_taken.append(comment)
+                            else:
+                                comment_node_pair_info[comment].append((var_id, token))
+                                comment_node.append(var_id)
+
+                comment_list = ' '.join(comments).split()
+                for token, node_info in comment_node_pair_info.items():
+                    split_tokens = token.split()
+                    if len(split_tokens) == 1 and len(node_info)==1:
+                        alignment['node_name'] = node_info[0][0]
+                        token_id = comment_list.index(token)
+                        alignment['token_id'] = token_id
+                        # comment_list[token_id] ='null'
+
+                    elif len(split_tokens) == 1 and len(node_info)>1:
+                        alignment['node_name'] = [x[0] for x in node_info]
+                        alignment['token_id'] = comment_list.index(token)
+
+                print(comment_node_pair_info)
+
+                for n in nodes_info:
+                    if n[-1]==None:
+                        possible_nodes = []
+                        def find_node(var_id1):
+                            target_n = [x[0] for x in edges_info if x[1] == var_id1][0]
+                            possible_nodes.append((var_id1, target_n))
+                            if target_n not in comment_node:
+                                find_node(target_n)
+                            else:
+                                return possible_nodes
+
+                        find_node(var_id)
+                        for k, v in comment_node_pair_info.items():
+                            cluster = [x[0] for x in v]
+                            if possible_nodes[-1][-1] in cluster:
+                                possible_nodes = [x for y in possible_nodes for x in y]
+                                possible_nodes = list(dict.fromkeys(possible_nodes))
+                                v.append(possible_nodes)
+
+
+
+                output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
+                G.to_penman(output_path)
+                with open(output_path, 'r') as penman_file:
+                    penman_string = penman_file.read()
+
+                    b0_freq = Counter(penman_string.split())[':member']
+                    if int(b0_freq) > 1:
+                        print(f'isolate node {output_path}')
+                    triple = penman.decode(penman_string).triples
+                    output_path_penmaninfo = Path(f"{filepath.parent}/{filepath.stem}.penmaninfo")
+                    with open(output_path_penmaninfo, 'w') as penmaninfo:
+                        for t in triple:
+                            penmaninfo.write(f'{t}\n')
+                print(f'correct{output_path}')
+                penman_link.write(f"{output_path_penmaninfo}\n")
+
+            except SBNError:
+
+                error += 1
+                print(error)
+                print(f'error {filepath}')
+                print(SBNError)
 
 
 def pmb_generator(
@@ -893,8 +989,6 @@ def pmb_generator(
 
 
 if __name__ == "__main__":
-    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold')
+    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/ud_boxer/test_data')
     with logging_redirect_tqdm():
         main(starting_path)
-
-
