@@ -29,6 +29,8 @@ from sbn_spec import (
 
 import spacy
 
+from ud_boxer.list_manipulator import manipulate
+
 # load_model = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
 
 
@@ -923,7 +925,11 @@ def main(starting_path):
                     elif len(split_tokens) == 1 and len(node_info)>1:
                         alignment['node_name'] = [x[0] for x in node_info]
                         alignment['token_id'] = comment_list.index(token)
-                print(comment_list)
+                print("comment_list: ", comment_list)
+
+                # transform list into correctly indexed
+                x_new_list = manipulate(comment_list)
+                print("new_list: ", x_new_list)
                 print(comment_node_pair_info)
                 print(edges_info)
                 print(nodes_info)
