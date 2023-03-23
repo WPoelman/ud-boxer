@@ -879,7 +879,7 @@ def main(starting_path):
             edges_info = []
             comments = []
             comment_taken = []
-            comment_node_pair_info = ()
+            comment_node_pair_info = {}
             comment_node=[]
             none_node_pair = {}
 
@@ -904,7 +904,7 @@ def main(starting_path):
                         if comment != None:
                             comments.append(comment)
                             if comment not in comment_taken:
-                                comment_node_pair_info.append(comment,[(var_id, token)])
+                                comment_node_pair_info[comment] = [(var_id, token)]
                                 comment_node.append(var_id)
                                 comment_taken.append(comment)
                             else:

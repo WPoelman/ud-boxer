@@ -276,7 +276,7 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
             temp_lines.append((items[0], None))
         # We have a comment
         elif len(items) == 2:
-            temp_lines.append((items[0], items[1].split('[')[0].strip()))
+            temp_lines.append((items[0], items[1]))
         else:
             raise SBNError(
                 "Unreachable, multiple comments per line are impossible"
