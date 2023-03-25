@@ -6,6 +6,8 @@ import os
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
+import json
+import nltk
 from tqdm.contrib.logging import logging_redirect_tqdm
 from typing import Any, Dict, List, Optional, Tuple, Union
 # from helpers import pmb_generator
@@ -26,11 +28,18 @@ from sbn_spec import (
     split_single,
     split_synset_id,
 )
+from nltk.corpus import stopwords
+from penman.graph import Graph
+from penman.codec import PENMANCodec
+
+nltk.download('stopwords')
+from nltk.tokenize import word_tokenize
 
 import spacy
 
-from ud_boxer.list_manipulator import manipulate
+from ud_boxer.list_manipulator import manipulate, overlap
 
+stopwords = ['the', 'a', 'to', 'in']
 # load_model = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
 
 
@@ -281,7 +290,7 @@ class SBNGraph(BaseGraph):
                                 active_id = (reference_nodes[j + 1][0], reference_nodes[j + 1][1])
                                 new_node = self.create_node(
                                     SBN_NODE_TYPE.CONSTANT,
-                                    "+1",
+                                    "+",
                                     {"comment": comment},
                                 )
                                 new_edge = self.create_edge(
@@ -864,7 +873,131 @@ def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
 
     return nx.is_isomorphic(A, B, node_cmp, edge_cmp)
 
+def get_edge_info(graph, pre_map):
+    '''
+    :graph: the built SBNGraph
+    :return: [Tuple(current_id, to_id)]the edge information for the graph G
+    '''
+    edges_info = []
+    for edge_info in graph.edges.data(True):
+        current_id = pre_map[edge_info[0][0]] + str(edge_info[0][1])
+        to_id = pre_map[edge_info[1][0]] + str(edge_info[1][1])
+        if current_id == 'b0':
+            continue
+        else:
+            edges_info.append((current_id, to_id))
+    return edges_info
 
+def get_node_info(graph, pre_map):
+    '''
+    :param graph: SBNGraph
+    :param pre_map: node and id map
+    :return: comment_node: List[String] that denote the node ids that have comments;
+    comment_node_pair_info: Dict{comment: (node info)}
+    cleaned_comment_list: List[Tuple(token, id)]
+    '''
+    nodes_info = []
+    comments = []
+    comment_taken = []
+    comment_node_pair_info = {} #TODO: the node info can be used to get a more fine-grained token-node alignment
+    comment_node_pair ={}
+    for info in graph.nodes.data(True):
+        if 'comment' in list(info[1].keys()):
+            node_type = info[0][0]
+            var_id = pre_map[node_type] + str(info[0][1])
+            token_node = info[1]['token']
+            comment = info[1]['comment']
+            nodes_info.append((var_id, token_node, comment))
+            if comment != None:
+                comments.append(comment)
+                if comment not in comment_taken:
+                    comment_node_pair[comment] = [var_id]
+                    comment_node_pair_info[comment] = [(var_id, token_node)]
+                    comment_taken.append(comment)
+                else:
+                    comment_node_pair_info[comment].append((var_id, token_node))
+                    comment_node_pair[comment].append(var_id)
+    comment_list = ' '.join(comments).split()
+    x_new_list = manipulate(comment_list)
+    tokenized_comment_list = word_tokenize(' '.join(x for x, y in x_new_list))
+    cleaned_comment_list = [(x, i) for i, x in enumerate(tokenized_comment_list)]
+
+    return nodes_info, comment_node_pair, cleaned_comment_list
+
+def flatten_list(nested_list):
+    """
+    Flatten the given nested list if there are nested lists, otherwise return the list.
+    """
+    flattened_list = []
+    for item in nested_list:
+        if isinstance(item, list):
+            flattened_list.extend(flatten_list(item))
+        else:
+            flattened_list.append(item)
+    return flattened_list
+
+def group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair):
+    comment_node = [x for y in list(comment_node_pair.values()) for x in y]
+    for n in nodes_info:
+        if n[-1] == None:
+            possible_nodes = []
+            def find_node(var_id1):
+                target_n = [x[0] for x in edges_info if x[1] == var_id1]
+                if len(target_n) > 0:
+                    possible_nodes.append((var_id1, target_n[0]))
+                    if target_n[0] not in comment_node:
+                        find_node(target_n[0])
+                    else:
+                        return possible_nodes
+                else:
+                    raise SBNError(
+                        "The node does not have a parent node!"
+                    )
+
+            find_node(n[0])
+            if not possible_nodes:
+                continue
+            else:
+                for comment_token, aligned_nodes in comment_node_pair.items():
+                    if possible_nodes[-1][-1] in aligned_nodes:
+                        possible_nodes = [x for y in possible_nodes for x in y]
+                        possible_nodes = list(dict.fromkeys(possible_nodes))
+                        aligned_nodes.append(possible_nodes)
+    for k, v in comment_node_pair.items():
+        comment_node_pair[k] = list(set(flatten_list(v)))
+    return comment_node_pair
+
+def alignment(comment_node_pair, cleaned_comment_list):
+    '''
+
+    :param comment_node_pair_info: the dictionary of comment and its corresponding node_id and node info pair
+    :param cleaned_comment_list: the tokenized sentence
+    :return:
+    '''
+    alignment_list = []
+    for tok, nodes in comment_node_pair.items():
+        tok = word_tokenize(tok[:-1])
+        tokens_without_sw = [word for word in tok if not word in stopwords]
+        tokens_without_sw.sort(key=len, reverse=True)
+        aligned_token = tokens_without_sw[0]
+        for t in cleaned_comment_list:
+            if t[0] == aligned_token:
+                alignment = {}
+                alignment['token_id'] = t[1]
+                if len(nodes) == 1:
+                    alignment['node_id'] = nodes[0]
+                    alignment_list.append(alignment)
+                    cleaned_comment_list.remove(t)
+                elif len(nodes)>1:
+                    alignment['node_id'] = nodes
+                    alignment['lexical_node'] = nodes[0]
+                    alignment_list.append(alignment)
+                    cleaned_comment_list.remove(t)
+                else:
+                    raise SBNError(
+                        'The token does not have a corresponding node!'
+                    )
+    return alignment_list
 def main(starting_path):
     pre_map = {
         SBN_NODE_TYPE.BOX: "b",
@@ -872,105 +1005,49 @@ def main(starting_path):
         SBN_NODE_TYPE.SYNSET: "s",
     }
     error = 0
+
     with open('correct_penman.txt', 'w') as penman_link:
         for filepath in pmb_generator(
                 starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
         ):
-            alignment = {}
-            nodes_info = []
-            edges_info = []
-            comments = []
-            comment_taken = []
-            comment_node_pair_info = {}
-            comment_node=[]
-            none_node_pair = {}
-
-            # TODO punctuations
-            # punctuations= {'.','?', '!'}
             try:
                 G = SBNGraph().from_path(filepath)
-                for edge_info in G.edges.data(True):
-                    current_id = pre_map[edge_info[0][0]] + str(edge_info[0][1])
-                    to_id = pre_map[edge_info[1][0]] + str(edge_info[1][1])
-                    if current_id != 'b0':
-                        edges_info.append((current_id, to_id))
-
-                for info in G.nodes.data(True):
-
-                    if 'comment' in list(info[1].keys()):
-                        node_type = info[0][0]
-                        var_id = pre_map[node_type] + str(info[0][1])
-                        token = info[1]['token']
-                        comment = info[1]['comment']
-                        nodes_info.append((var_id, token, comment))
-                        if comment != None:
-                            comments.append(comment)
-                            if comment not in comment_taken:
-                                comment_node_pair_info[comment] = [(var_id, token)]
-                                comment_node.append(var_id)
-                                comment_taken.append(comment)
-                            else:
-                                comment_node_pair_info[comment].append((var_id, token))
-                                comment_node.append(var_id)
-
-                comment_list = ' '.join(comments).split()
-                for token, node_info in comment_node_pair_info.items():
-                    split_tokens = token.split()
-                    if len(split_tokens) == 1 and len(node_info)==1:
-                        alignment['node_name'] = node_info[0][0]
-                        token_id = comment_list.index(token)
-                        alignment['token_id'] = token_id
-                        # comment_list[token_id] ='null'
-
-                    elif len(split_tokens) == 1 and len(node_info)>1:
-                        alignment['node_name'] = [x[0] for x in node_info]
-                        alignment['token_id'] = comment_list.index(token)
-                print("comment_list: ", comment_list)
-
-                # transform list into correctly indexed
-                x_new_list = manipulate(comment_list)
-                print("new_list: ", x_new_list)
-                print(comment_node_pair_info)
-                print(edges_info)
-                print(nodes_info)
-                for n in nodes_info:
-                    if n[-1]==None:
-                        possible_nodes = []
-                        def find_node(var_id1):
-                            target_n = [x[0] for x in edges_info if x[1] == var_id1][0]
-                            possible_nodes.append((var_id1, target_n))
-                            if target_n not in comment_node:
-                                find_node(target_n)
-                            else:
-                                return possible_nodes
-
-                        find_node(var_id)
-                        for k, v in comment_node_pair_info.items():
-                            cluster = [x[0] for x in v]
-                            if possible_nodes[-1][-1] in cluster:
-                                possible_nodes = [x for y in possible_nodes for x in y]
-                                possible_nodes = list(dict.fromkeys(possible_nodes))
-                                v.append(possible_nodes)
-
-
-
+                edges_info = get_edge_info(G,pre_map)
+                nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map)
+                comment_node_pair = group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair)
+                alignment_list = alignment(comment_node_pair, cleaned_comment_list)
                 output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
                 G.to_penman(output_path)
                 with open(output_path, 'r') as penman_file:
                     penman_string = penman_file.read()
-
                     b0_freq = Counter(penman_string.split())[':member']
                     if int(b0_freq) > 1:
                         print(f'isolate node {output_path}')
                     triple = penman.decode(penman_string).triples
+                    # new_triple = []
+                    # for tri in triple:
+                    #     if 'b0' in tri:
+                    #         continue
+                    #     else:
+                    #         new_triple.append(tri)
+                    #
+                    # codec = PENMANCodec()
+                    # codec.encode(Graph(new_triple))
                     output_path_penmaninfo = Path(f"{filepath.parent}/{filepath.stem}.penmaninfo")
                     with open(output_path_penmaninfo, 'w') as penmaninfo:
                         for t in triple:
                             penmaninfo.write(f'{t}\n')
+                        penmaninfo.write('tokenized sentence:')
+                        tokenized_sent = ' '.join([x[0] for x in cleaned_comment_list])
+                        penmaninfo.write(tokenized_sent)
+                        penmaninfo.write('\n')
+                        penmaninfo.write('alignment:')
+                        json.dump(alignment_list, penmaninfo)
+
                 print(f'correct{output_path}')
                 penman_link.write(f"{output_path_penmaninfo}\n")
 
-            except SBNError:
+            except:
 
                 error += 1
                 print(error)
