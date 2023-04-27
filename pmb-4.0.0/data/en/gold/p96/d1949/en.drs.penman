@@ -1,9 +1,0 @@
-(b0 / "box"
-	:member (s0 / male.n.02
-		:Name (c0 / "Tom"))
-	:NEGATION (b1 / "box"
-		:member (s1 / eat.v.01
-			:Agent s0
-			:Time (s2 / time.n.08
-				:TPR (c1 / "now")))
-		:member s2))

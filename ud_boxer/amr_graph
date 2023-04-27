@@ -1,0 +1,5 @@
+digraph G {
+	a -> b [label=ARG0]
+	b -> c [label=ARG1]
+	c -> d [label=ARG2]
+}

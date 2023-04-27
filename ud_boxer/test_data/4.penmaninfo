@@ -1,0 +1,17 @@
+('s1', ':instance', 'release.v.04')
+('s1', ':Agent', 's0')
+('s0', ':instance', 'musical_organization.n.01')
+('s0', ':Name', 'c0')
+('c0', ':instance', '"Steve Miller Band"')
+('s1', ':Theme', 's3')
+('s3', ':instance', 'album.n.01')
+('s1', ':Time', 's4')
+('s4', ':instance', 'time.n.08')
+('s4', ':MonthOfYear', 'c1')
+('c1', ':instance', '"6"')
+('s4', ':YearOfCentury', 'c2')
+('c2', ':instance', '"2010"')
+('s4', ':TPR', 'c3')
+('c3', ':instance', '"now"')
+tokenized sentence:The Steve Miller Band released a new album in June of 2010 .
+alignment:[{"token_id": 2, "node_id": ["c0", "s0"], "lexical_node": "c0"}, {"token_id": 4, "node_id": "s1"}, {"token_id": 6, "node_id": "s2"}, {"token_id": 7, "node_id": "s3"}, {"token_id": 9, "node_id": ["c3", "s4", "c2", "c1"], "lexical_node": "c3"}]

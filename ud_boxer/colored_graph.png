@@ -1,0 +1,7 @@
+digraph G {
+	want [label=want fontweight=bold penwidth=2]
+	S [label=S fontcolor=blue]
+	"O[S]" [label="O[S]" fontcolor=blue]
+	want -> S [label=ARG0]
+	want -> "O[S]" [label=ARG1]
+}

@@ -1,0 +1,14 @@
+('s1', ':instance', 'lose.v.05')
+('s1', ':Agent', 's0')
+('s0', ':instance', 'female.n.02')
+('s0', ':Name', 'c0')
+('c0', ':instance', '"Tracy"')
+('s1', ':Time', 's2')
+('s2', ':instance', 'time.n.08')
+('s2', ':TPR', 'c1')
+('c1', ':instance', '"now"')
+('s1', ':Theme', 's3')
+('s3', ':instance', 'glasses.n.01')
+('s3', ':User', 's0')
+tokenized sentence:Tracy lost her glasses .
+alignment:[{"token_id": 0, "node_id": ["c0", "s0"], "lexical_node": "c0"}, {"token_id": 1, "node_id": ["s1", "c1", "s2"], "lexical_node": "s1"}, {"token_id": 3, "node_id": "s3"}]

@@ -21,6 +21,7 @@ __all__ = [
     "SBN_NODE_TYPE",
     "SBN_EDGE_TYPE",
     "SBNError",
+    "AlignmentError",
     "SBNSpec",
     "split_comments",
     "split_synset_id",
@@ -48,7 +49,8 @@ class SBN_EDGE_TYPE(BaseEnum):
 class SBNError(Exception):
     pass
 
-
+class AlignmentError(Exception):
+    pass
 class SBNSpec:
     COMMENT = r" % "
     COMMENT_LINE = r"%%%"

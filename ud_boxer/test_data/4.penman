@@ -1,0 +1,8 @@
+(s1 / release.v.04
+    :Agent (s0 / musical_organization.n.01
+               :Name (c0 / "Steve Miller Band"))
+    :Theme (s3 / album.n.01)
+    :Time (s4 / time.n.08
+              :MonthOfYear (c1 / "6")
+              :YearOfCentury (c2 / "2010")
+              :TPR (c3 / "now")))

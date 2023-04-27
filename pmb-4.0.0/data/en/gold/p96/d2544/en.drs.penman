@@ -1,8 +1,0 @@
-(b0 / "box"
-	:member (s0 / headphone.n.01)
-	:NEGATION (b1 / "box"
-		:member (s1 / time.n.08
-			:EQU (c0 / "now"))
-		:member (s2 / work.v.04
-			:Theme s0
-			:Time s1)))

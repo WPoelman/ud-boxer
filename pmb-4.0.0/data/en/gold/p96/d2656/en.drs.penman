@@ -1,5 +1,0 @@
-(b0 / "box"
-	:member (s3 / unbiased.a.01
-		:Attribute-of (s0 / male.n.02)
-		:Time (s1 / time.n.08
-			:EQU (c0 / "now"))))

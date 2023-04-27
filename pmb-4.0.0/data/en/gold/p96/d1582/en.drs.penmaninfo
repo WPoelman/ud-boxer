@@ -1,8 +1,0 @@
-b0	:instance	"box"
-b0	:member	s0
-s0	:instance	person.n.01
-b0	:NECESSITY	b1
-b1	:instance	"box"
-b1	:member	s1
-s1	:instance	love.v.01
-s1	:Experiencer	s0

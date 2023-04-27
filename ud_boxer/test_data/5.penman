@@ -1,0 +1,7 @@
+(s3 / like.v.02
+    :Stimulus (s1 / entity.n.01
+                  :NEGATION (c1 / "+"))
+    :Experiencer (s2 / person.n.01
+                     :EQU (c2 / "hearer"))
+    :Time (s4 / time.n.08
+              :EQU (c3 / "now")))

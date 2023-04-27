@@ -1,0 +1,15 @@
+('s2', ':instance', 'lie.v.05')
+('s2', ':NEGATION', 'c1')
+('c1', ':instance', '"+"')
+('s2', ':Agent', 's0')
+('s0', ':instance', 'person.n.01')
+('s0', ':EQU', 'c0')
+('c0', ':instance', '"speaker"')
+('s2', ':Time', 's1')
+('s1', ':instance', 'time.n.08')
+('s1', ':TSU', 'c2')
+('c2', ':instance', '"now"')
+('s2', ':Recipient', 's3')
+('s3', ':instance', 'female.n.02')
+tokenized sentence:I will lie to her . not
+alignment:[{"token_id": 0, "node_id": ["c0", "s0"], "lexical_node": "c0"}, {"token_id": 1, "node_id": ["s1", "c2"], "lexical_node": "s1"}, {"token_id": 2, "node_id": "s2"}, {"token_id": 4, "node_id": "s3"}, {"token_id": 6, "node_id": "c1"}]

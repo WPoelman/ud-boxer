@@ -1,0 +1,24 @@
+digraph G_combined {
+	subgraph G1 {
+		want [label=want fontweight=bold penwidth=2]
+		S1 [label=S fontcolor=blue]
+		"O[S]" [label="O[S]" fontcolor=blue]
+		want -> S1 [label=ARG0]
+		want -> "O[S]" [label=ARG1]
+	}
+	subgraph G2 {
+		write [label=write]
+		person [label=person fontweight=bold penwidth=2]
+		write -> person [label=ARG1]
+	}
+	subgraph G3 {
+		sleep [label=sleep fontweight=bold penwidth=2]
+		S [label=S fontcolor=blue]
+		sleep -> S [label=ARG0]
+	}
+	subgraph G4 {
+		m [label=m fontcolor=blue]
+		sound [label=sound fontweight=bold penwidth=2]
+		m -> sound [label=manner]
+	}
+}

@@ -1,8 +1,0 @@
-(b0 / "box"
-	:NEGATION (b1 / "box"
-		:member (s0 / dolphin.n.02)
-		:NEGATION (b2 / "box"
-			:member (s1 / mammal.n.01)
-			:member (s2 / terra_incognita.n.01
-				:EQU s0
-				:EQU s1))))

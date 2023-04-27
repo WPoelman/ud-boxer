@@ -1,9 +1,0 @@
-b0	:instance	"box"
-b0	:member	s0
-s0	:instance	cat.n.01
-b0	:member	s1
-s1	:instance	catch.v.04
-s1	:Agent	s0
-s1	:Theme	s2
-s2	:instance	mouse.n.01
-b0	:member	s2

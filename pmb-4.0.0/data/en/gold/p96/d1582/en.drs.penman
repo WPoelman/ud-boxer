@@ -1,5 +1,0 @@
-(b0 / "box"
-	:member (s0 / person.n.01)
-	:NECESSITY (b1 / "box"
-		:member (s1 / love.v.01
-			:Experiencer s0)))

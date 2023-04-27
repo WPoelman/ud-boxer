@@ -1,9 +1,0 @@
-(b0 / "box"
-	:member (s0 / male.n.02)
-	:member (s1 / dig.v.02
-		:Agent s0
-		:Time (s2 / time.n.08
-			:TPR (c0 / "now"))
-		:Result (s3 / hole.n.01))
-	:member s2
-	:member s3)

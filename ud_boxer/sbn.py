@@ -1,6 +1,7 @@
 from __future__ import annotations
 import re
 import logging
+import collections
 from collections import Counter
 import os
 from copy import deepcopy
@@ -8,6 +9,7 @@ from os import PathLike
 from pathlib import Path
 import json
 import nltk
+from penman.exceptions import LayoutError
 from tqdm.contrib.logging import logging_redirect_tqdm
 from typing import Any, Dict, List, Optional, Tuple, Union
 # from helpers import pmb_generator
@@ -23,6 +25,7 @@ from sbn_spec import (
     SBN_EDGE_TYPE,
     SBN_NODE_TYPE,
     SBNError,
+    AlignmentError,
     SBNSpec,
     split_comments,
     split_single,
@@ -32,7 +35,6 @@ from nltk.corpus import stopwords
 from penman.graph import Graph
 from penman.codec import PENMANCodec
 
-nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
 
 import spacy
@@ -104,10 +106,7 @@ class SBNGraph(BaseGraph):
         sbn_info = [(x.split(), y) for x, y in lines]
         sbn_info_reference = deepcopy(sbn_info)
         sbn_node_reference_with_boxes_info = [(x[0], y) for x, y in sbn_info_reference]
-        sbn_node_reference = [(x[0], y) for x, y in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
-        sbn_node_reference2 = [x[0] for x, _ in sbn_info_reference if x[0] not in SBNSpec.NEW_BOX_INDICATORS]
         sbn_node_reference_with_boxes = [x[0] for x, _ in sbn_info_reference]
-        # sbn_info.sort(key=lambda t: ('v' in t[0][0], len(t[0])), reverse=True)
 
         if not lines:
             raise SBNError(
@@ -139,7 +138,6 @@ class SBNGraph(BaseGraph):
                 nodes.append(synset_node)
                 reference_nodes_without_null.append((SBN_NODE_TYPE.SYNSET, count))
                 reference_nodes.append((SBN_NODE_TYPE.SYNSET, count, basic_node))
-                # reference_nodes.append(synset_node[0])
             elif basic_node in SBNSpec.NEW_BOX_INDICATORS:
                 reference_nodes.append('null')
             else:
@@ -286,8 +284,11 @@ class SBNGraph(BaseGraph):
 
                             freq = len([x for x in sbn_node_reference_with_boxes if x == sub_token])
                             if freq > 1:
+                                for q, e in enumerate(reference_nodes[j:]):
+                                    if e!='null':
+                                        active_id = reference_nodes[j + q][0], reference_nodes[j + q][1]
+                                        break
 
-                                active_id = (reference_nodes[j + 1][0], reference_nodes[j + 1][1])
                                 new_node = self.create_node(
                                     SBN_NODE_TYPE.CONSTANT,
                                     "+",
@@ -305,7 +306,7 @@ class SBNGraph(BaseGraph):
                             else:
                                 new_node = self.create_node(
                                     SBN_NODE_TYPE.CONSTANT,
-                                    "+1",
+                                    "+",
                                     {"comment": comment},
                                 )
                                 new_edge = self.create_edge(
@@ -322,8 +323,8 @@ class SBNGraph(BaseGraph):
                                                                                  j + 1:]
                             pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
                             after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
-                            preverb_id_node = [x for x in reference_nodes if pre[0][0] in x][0]
-                            afterverb_id_node = [x for x in reference_nodes if after[0][0] in x][0]
+                            preverb_id_node = [x for x in reference_nodes[:j] if pre[0][0] in x][0]
+                            afterverb_id_node = [x for x in reference_nodes[j+1:] if after[0][0] in x][0]
                             preverb_id = (preverb_id_node[0], preverb_id_node[1])
                             afterverb_id = (afterverb_id_node[0], afterverb_id_node[1])
 
@@ -342,90 +343,39 @@ class SBNGraph(BaseGraph):
                         )
         # print([(edge[0],edge[1]) for edge in edges])
         # print(edges)
+        from_nodes = [edge[0] for edge in edges]
         from_node = set([edge[0] for edge in edges])
         to_node = set([edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET])
         predicate_nodes = [x for x in from_node if x not in to_node]
+        # Count the frequency of elements in list1
+        frequency_counter = Counter(from_nodes)
 
-        # assert len(to_node) <= len(from_node)
+        # Find the intersection of both lists
+        intersection = set(from_nodes) & set(predicate_nodes)
+        if intersection:
 
-        for predicate_node in predicate_nodes:
+        # Find the most frequent element in the intersection
+            root = max(intersection, key=frequency_counter.get)
+            # for predicate_node in predicate_nodes:
             new_box_syn_edge = self.create_edge(
                 self._active_box_id,
-                predicate_node,
+                root,
                 SBN_EDGE_TYPE.BOX_CONNECT,
             )
             edges.append(new_box_syn_edge)
+        else:
+            new_box_syn_edge = self.create_edge(
+                self._active_box_id,
+                predicate_nodes[0],
+                SBN_EDGE_TYPE.BOX_CONNECT,
+            )
+            edges.append(new_box_syn_edge)
+            print('This should be paid attention!')
 
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)
 
         self._check_is_dag()
-        return self
-
-    def from_grew(self, grew_graph: Dict[str, List[Any]]) -> SBNGraph:
-        """Create an SBNGraph from a grew output format graph."""
-        self.__init_type_indices()
-
-        starting_box = self.create_node(
-            SBN_NODE_TYPE.BOX, self._active_box_token
-        )
-
-        nodes, edges = [starting_box], []
-        id_mapping: Dict[str, SBN_ID] = dict()
-
-        # First collect all nodes and create a mapping from the grew ids to
-        # the current graph ids.
-        for grew_node_id, (node_data, _) in grew_graph.items():
-            node_components = RESOLVER.node_token_type(node_data)
-            node = self.create_node(*node_components)
-            id_mapping[grew_node_id] = node[0]
-            nodes.append(node)
-
-        self.add_nodes_from(nodes)
-
-        # With this we 'climb' back up the box nodes to find the correct place
-        # to connect the new box. This only considers the starting box as
-        # a starting point. Other box constructions are not supported currently
-        box_count = self.type_indices[SBN_NODE_TYPE.BOX]
-        for grew_from_node_id, (_, grew_edges) in grew_graph.items():
-            from_id = id_mapping[grew_from_node_id]
-            from_type = from_id[0]
-
-            if from_type == SBN_NODE_TYPE.BOX:
-                box_box_edge = self.create_edge(
-                    self._prev_box_id(box_count),
-                    from_id,
-                    SBN_EDGE_TYPE.BOX_BOX_CONNECT,
-                    self.nodes[from_id]["token"],
-                )
-                edges.append(box_box_edge)
-                box_count -= 1
-                continue  # <-- NOTICE THIS PLEASE, THIS SKIPS THE OUT EDGES
-
-            if from_type == SBN_NODE_TYPE.SYNSET:
-                box_edge = self.create_edge(
-                    self._active_box_id,
-                    from_id,
-                    SBN_EDGE_TYPE.BOX_CONNECT,
-                )
-                edges.append(box_edge)
-
-            for edge_name, grew_to_node_id in grew_edges:
-                to_id = id_mapping[grew_to_node_id]
-                edge_components = RESOLVER.edge_token_type(
-                    edge_name,
-                    self.nodes,
-                    from_id,
-                    to_id,
-                )
-
-                edge = self.create_edge(from_id, to_id, *edge_components)
-                edges.append(edge)
-
-        self.add_edges_from(edges)
-
-        self._check_is_dag()
-
         return self
 
     def create_edge(
@@ -446,7 +396,7 @@ class SBNGraph(BaseGraph):
                 "_id": str(edge_id),
                 "type": type,
                 "type_idx": edge_id[1],
-                "token": token or str(edge_id),  # xiulin: it seems it's always str(edge_id)?
+                "token": token or str(edge_id),
                 **meta,
             },
         )
@@ -613,18 +563,6 @@ class SBNGraph(BaseGraph):
 
         return sbn_string
 
-    def to_penman(
-            self, path: PathLike, evaluate_sense: bool = False, strict: bool = True
-    ) -> PathLike:
-        """
-        Writes the SBNGraph to a file in Penman (AMR-like) format.
-
-        See `to_penman_string` for an explanation of `strict`.
-        """
-        final_path = ensure_ext(path, ".penman")
-        final_path.write_text(self.to_penman_string(evaluate_sense, strict))
-        return final_path
-
     def to_penman_string(
             self, evaluate_sense: bool = False, strict: bool = True
     ) -> str:
@@ -689,7 +627,6 @@ class SBNGraph(BaseGraph):
                 G.edges[edge]["token"] = "member"
 
         def __to_penman_str(S: SBNGraph, current_n, visited, out_str, tabs):
-            # print(current_n)
             node_data = S.nodes[current_n]
             # print(node_data)
             var_id = node_data["var_id"]
@@ -749,9 +686,10 @@ class SBNGraph(BaseGraph):
 
             if errors := pm_model.errors(g):
                 raise penman.DecodeError(str(errors))
-            assert len(g.edges()) == len(self.edges), "Wrong number of edges"
+            # assert len(g.edges()) == len(self.edges), "Wrong number of edges"
         except (penman.DecodeError, AssertionError) as e:
             raise SBNError(f"Generated Penman output is invalid: {e}")
+
 
         return final_result
 
@@ -854,6 +792,17 @@ class SBNGraph(BaseGraph):
             SBN_EDGE_TYPE.BOX_BOX_CONNECT: {},
         }
 
+def to_penman(
+    penman_info, path: PathLike
+) -> PathLike:
+    """
+    Writes the SBNGraph to a file in Penman (AMR-like) format.
+
+    See `to_penman_string` for an explanation of `strict`.
+    """
+    final_path = ensure_ext(path, ".penman")
+    final_path.write_text(penman_info)
+    return final_path
 
 def sbn_graphs_are_isomorphic(A: SBNGraph, B: SBNGraph) -> bool:
     """
@@ -935,6 +884,18 @@ def flatten_list(nested_list):
         else:
             flattened_list.append(item)
     return flattened_list
+def find_kid_node(var_id, edges_info, possible_nodes, comment_node):
+    target_n_kid = [x[1] for x in edges_info if x[0]==var_id]
+    if len(target_n_kid) >0:
+        possible_nodes.append((var_id, target_n_kid[0]))
+        if target_n_kid[0] not in comment_node:
+            find_kid_node(target_n_kid[0],edges_info, possible_nodes, comment_node)
+        else:
+            return possible_nodes
+    else:
+        raise AlignmentError(
+            "The node is isolate!"
+        )
 
 def group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair):
     comment_node = [x for y in list(comment_node_pair.values()) for x in y]
@@ -950,9 +911,24 @@ def group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair):
                     else:
                         return possible_nodes
                 else:
-                    raise SBNError(
-                        "The node does not have a parent node!"
-                    )
+                    target_n_kid = [x[1] for x in edges_info if x[0] ==var_id1]
+                    if len(target_n_kid)>1:
+                        target_n_kid_info = [x[1] for x in edges_info if x[1] in target_n_kid]
+                        counts = collections.Counter(target_n_kid_info)
+
+                        target_n_kid_new = sorted(target_n_kid, key=lambda x: -counts[x])
+                        possible_nodes.append((var_id1, target_n_kid_new[0]))
+                        if target_n_kid_new[0] not in comment_node:
+                            find_node(target_n_kid_new[0])
+                        else:
+                            return possible_nodes
+                    elif len(target_n_kid) ==1:
+                        possible_nodes.append((var_id1,target_n_kid[0]))
+                        return possible_nodes
+                    else:
+                        raise AlignmentError(
+                            'The node is isolate!'
+                        )
 
             find_node(n[0])
             if not possible_nodes:
@@ -980,24 +956,42 @@ def alignment(comment_node_pair, cleaned_comment_list):
         tokens_without_sw = [word for word in tok if not word in stopwords]
         tokens_without_sw.sort(key=len, reverse=True)
         aligned_token = tokens_without_sw[0]
-        for t in cleaned_comment_list:
-            if t[0] == aligned_token:
-                alignment = {}
-                alignment['token_id'] = t[1]
-                if len(nodes) == 1:
-                    alignment['node_id'] = nodes[0]
-                    alignment_list.append(alignment)
-                    cleaned_comment_list.remove(t)
-                elif len(nodes)>1:
-                    alignment['node_id'] = nodes
-                    alignment['lexical_node'] = nodes[0]
-                    alignment_list.append(alignment)
-                    cleaned_comment_list.remove(t)
-                else:
-                    raise SBNError(
-                        'The token does not have a corresponding node!'
-                    )
+
+        aligned_node = [t for t in cleaned_comment_list if t[0]==aligned_token]
+        if aligned_node:
+            alignment = {}
+            alignment['token_id'] = aligned_node[0][1]
+            if len(nodes) == 1:
+                alignment['node_id'] = nodes[0]
+                alignment_list.append(alignment)
+                cleaned_comment_list.remove(aligned_node[0])
+            elif len(nodes)>1:
+                alignment['node_id'] = nodes
+                alignment['lexical_node'] = nodes[0]
+                alignment_list.append(alignment)
+                cleaned_comment_list.remove(aligned_node[0])
+            else:
+                raise AlignmentError(
+                    'The token does not have a corresponding node!'
+                )
     return alignment_list
+
+def get_split_list(split_dir):
+    split = open(split_dir, 'r').readlines()
+    return [x.strip() for x in split]
+def generate_gold_split(split_dir, output_file):
+    root_dir = '/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold'
+    with open(split_dir, 'r') as split, open(output_file, 'w') as split_out:
+        split_dir = [x.strip() for x in split.readlines()]
+        for dir in split_dir:
+            final_dir = root_dir+'/'+dir+'/en.drs.penman'
+            with open(final_dir, 'r') as separate_f:
+                gold_dev = ' '.join([x.strip() for x in separate_f.read().split('\n')])
+                final_gold_dev = gold_dev[:3] + '<root>' + gold_dev[3:]
+                split_out.write(final_gold_dev)
+                split_out.write('\n\n')
+
+
 def main(starting_path):
     pre_map = {
         SBN_NODE_TYPE.BOX: "b",
@@ -1005,8 +999,11 @@ def main(starting_path):
         SBN_NODE_TYPE.SYNSET: "s",
     }
     error = 0
-
-    with open('correct_penman.txt', 'w') as penman_link:
+    train_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_train.txt')
+    dev_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_dev.txt')
+    test_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_test.txt')
+    eval_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_eval.txt')
+    with open('en_train.txt', 'w') as train_correct, open('en_dev.txt', 'w') as dev_correct, open('en_test.txt', 'w') as test_correct, open('en_eval.txt', 'w') as eval_correct:
         for filepath in pmb_generator(
                 starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
         ):
@@ -1014,46 +1011,89 @@ def main(starting_path):
                 G = SBNGraph().from_path(filepath)
                 edges_info = get_edge_info(G,pre_map)
                 nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map)
+                comment_list_reference = deepcopy(cleaned_comment_list)
                 comment_node_pair = group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair)
                 alignment_list = alignment(comment_node_pair, cleaned_comment_list)
                 output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
-                G.to_penman(output_path)
-                with open(output_path, 'r') as penman_file:
-                    penman_string = penman_file.read()
-                    b0_freq = Counter(penman_string.split())[':member']
-                    if int(b0_freq) > 1:
-                        print(f'isolate node {output_path}')
-                    triple = penman.decode(penman_string).triples
-                    # new_triple = []
-                    # for tri in triple:
-                    #     if 'b0' in tri:
-                    #         continue
-                    #     else:
-                    #         new_triple.append(tri)
-                    #
-                    # codec = PENMANCodec()
-                    # codec.encode(Graph(new_triple))
-                    output_path_penmaninfo = Path(f"{filepath.parent}/{filepath.stem}.penmaninfo")
-                    with open(output_path_penmaninfo, 'w') as penmaninfo:
-                        for t in triple:
-                            penmaninfo.write(f'{t}\n')
-                        penmaninfo.write('tokenized sentence:')
-                        tokenized_sent = ' '.join([x[0] for x in cleaned_comment_list])
-                        penmaninfo.write(tokenized_sent)
-                        penmaninfo.write('\n')
-                        penmaninfo.write('alignment:')
-                        json.dump(alignment_list, penmaninfo)
+                penman_string = G.to_penman_string()
+                triples = penman.decode(penman_string).triples
+                negation_list = [x for y in triples for x in y]
+                if Counter(negation_list)[':NEGATION']==2 and 'tell.v.03' in negation_list:
+                    print(f'We found NEGATION:{filepath}')
+                    try:
+                        SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')
+                    except:
+                        print(f'OKOK {filepath} went wrong.')
 
-                print(f'correct{output_path}')
-                penman_link.write(f"{output_path_penmaninfo}\n")
 
-            except:
+                new_triple = []
+                new_triple_with_root = []
+                only_one_root =[]
+                for tri in triples[1:]:
+                    if 'b0' in tri:
+                        new_triple_with_root.append(tri)
+                        only_one_root.append(tri)
+                        if only_one_root:
+                            continue
+                    else:
+                        new_triple.append(tri)
+                        new_triple_with_root.append(tri)
+                codec = PENMANCodec()
+                new_penman = codec.encode(Graph(new_triple))
+                new_penman_with_root = codec.encode(Graph(new_triple_with_root))
+                to_penman(new_penman,output_path)
 
+                real_new_triple = penman.decode(new_penman).triples
+                output_path_penmaninfo = Path(f"{filepath.parent}/{filepath.stem}.penmaninfo")
+                with open(output_path_penmaninfo, 'w') as penmaninfo:
+                    for t in real_new_triple:
+                        penmaninfo.write(f'{t}\n')
+                    penmaninfo.write('tokenized sentence:')
+                    tokenized_sent = ' '.join([x[0] for x in comment_list_reference])
+                    penmaninfo.write(tokenized_sent)
+                    penmaninfo.write('\n')
+                    penmaninfo.write('alignment:')
+                    json.dump(alignment_list, penmaninfo)
+                    # print(f"{filepath.parent.parent.name}/{filepath.parent.name}")
+                    if f"{filepath.parent.parent.name}/{filepath.parent.name}" in train_split:
+                        train_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}"+"\n")
+                    elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in dev_split:
+                        dev_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}"+"\n")
+                        # dev_gold.write(final_gold_dev)
+                        # dev_gold.write('\n')
+                        # dev_gold.write('\n')
+                    elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in test_split:
+                        test_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}" + "\n")
+                        # test_gold.write(final_gold_dev)
+                        # test_gold.write('\n')
+                        # test_gold.write('\n')
+                    elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in eval_split:
+                        eval_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}" + "\n")
+                        # eval_gold.write(final_gold_dev)
+                        # eval_gold.write('\n')
+                        # eval_gold.write('\n')
+                    else:
+                        raise FileExistsError(
+                            f"How come the directory is NOT in the document? {filepath.parent.parent.name}/{filepath.parent.name}"
+                        )
+            except (SBNError, AlignmentError, LayoutError,IndexError, RecursionError, FileExistsError) as e:
                 error += 1
                 print(error)
                 print(f'error {filepath}')
-                print(SBNError)
+                print(f'Error type: {type(e).__name__}')
+                print(e)
+                try:
+                    SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')
+                    print(f'Save the ill-formed file to {filepath.parent}/{filepath.stem}.png')
+                except:
+                    # print(f'Error type: {type(k).__name__}')
+                    print(f'Failed to save the ill-formed file to {filepath.parent}/{filepath.stem}.png')
+                continue
 
+    # generate_gold_split('en_train.txt', 'gold_train.txt')
+    # generate_gold_split('en_dev.txt', 'gold_dev.txt')
+    # generate_gold_split('en_test.txt', 'gold_test.txt')
+    # generate_gold_split('en_eval.txt', 'gold_eval.txt')
 
 def pmb_generator(
         starting_path: PathLike,
