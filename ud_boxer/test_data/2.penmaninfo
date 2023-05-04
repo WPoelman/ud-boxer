@@ -12,4 +12,4 @@
 ('s2', ':Recipient', 's3')
 ('s3', ':instance', 'female.n.02')
 tokenized sentence:I will lie to her . not
-alignment:[{"token_id": 0, "node_id": ["c0", "s0"], "lexical_node": "c0"}, {"token_id": 1, "node_id": ["s1", "c2"], "lexical_node": "s1"}, {"token_id": 2, "node_id": "s2"}, {"token_id": 4, "node_id": "s3"}, {"token_id": 6, "node_id": "c1"}]
+alignment:[{"token_id": 0, "node_id": ["s0", "c0"], "lexical_node": "s0"}, {"token_id": 1, "node_id": ["c2", "s1"], "lexical_node": "c2"}, {"token_id": 2, "node_id": "s2"}, {"token_id": 4, "node_id": "s3"}, {"token_id": 6, "node_id": "c1"}]

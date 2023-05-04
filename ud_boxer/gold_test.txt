@@ -2,7 +2,7 @@
 
 (s1<root> / abate.v.01 :Patient (s0 / wind.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")))
 
-(s5<root> / do.v.02 :Theme (s3 / entity.n.01) :Agent (s4 / female.n.02) :Time (s6 / time.n.08 :TPR (c2 / "now")))
+(s2<root> / grateful.a.01 :Experiencer (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Stimulus (s3 / entity.n.01))
 
 (s1<root> / accompany.v.02 :Agent (s0 / female.n.02) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Theme (s3 / person.n.01 :EQU (c1 / "speaker")) :Destination (s4 / hospital.n.01))
 
@@ -134,7 +134,7 @@
 
 (s3<root> / hungry.a.01 :Experiencer (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :EQU (c2 / "now")) :Degree (s2 / very.r.01 :NEGATION (c1 / "+")))
 
-(s5<root> / win.v.01 :Time (s2 / time.n.08 :TPR (c0 / "now")) :Theme (s3 / gold_medal.n.01 :Order (c1 / "1")) :Agent (s4 / female.n.02))
+(s1<root> / be.v.02 :Theme (s0 / entity.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Co-Theme (s3 / gold_medal.n.01 :Order (c1 / "1")))
 
 (s2<root> / tall.a.01 :Attribute-of (s0 / person.n.01 :EQU (c0 / "hearer")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Degree (s3 / more.r.01 :Theme s0 :Co-Theme (s4 / person.n.01 :EQU (c2 / "speaker"))))
 
@@ -352,7 +352,7 @@
 
 (s1<root> / be.v.01 :Theme (s0 / book.n.01 :Name (c0 / "Reinventing Comics")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Co-Theme (s3 / book.n.01 :Creator (s4 / male.n.02 :Name (c2 / "Scott McCloud"))))
 
-(s4<root> / lower.v.01 :Time (s2 / time.n.08 :TPR (c1 / "now")) :Theme (s3 / rope.n.01) :Source (s5 / helicopter.n.01))
+(s1<root> / grab.v.03 :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Theme (s3 / rope.n.01))
 
 (s1<root> / shine.v.01 :Theme (s0 / diamond.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Manner (s3 / brightly.r.01))
 
@@ -840,7 +840,7 @@
 
 (s1<root> / be.v.03 :Theme (s0 / bread.n.01) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Location (s3 / oven.n.01))
 
-(s4<root> / big.a.01 :Attribute-of (s0 / country.n.02 :Name (c0 / "Russia")) :Degree (s3 / very.r.01) :Value (c2 / "+"))
+(s1<root> / be.v.01 :Theme (s0 / country.n.02 :Name (c0 / "Russia")) :Time (s2 / time.n.08 :EQU (c1 / "now")))
 
 (s2<root> / wipe.v.01 :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Source (s3 / table.n.02))
 
@@ -1254,7 +1254,7 @@
 
 (s2<root> / ill.a.01 :Attribute-of (s0 / male.n.02) :Time (s1 / time.n.08 :EQU (c1 / "now")) :CONSEQUENCE (s5 / come.v.02 :NEGATION (c0 / "+") :Theme (s3 / male.n.02 :EQU s0) :Time (s4 / time.n.08 :TSU (c2 / "now"))))
 
-(s4<root> / beautiful.a.01 :Attribute-of (s0 / dog.n.01) :Time (s2 / time.n.08 :EQU (c1 / "now")))
+(s3<root> / green.a.01 :Colour-of (s0 / dog.n.01) :Time (s1 / time.n.08 :EQU (c0 / "now")))
 
 (s2<root> / allergic.a.02 :Experiencer (s0 / male.n.02) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Stimulus (s3 / cat.n.01))
 
@@ -1570,7 +1570,7 @@
 
 (s2<root> / expel.v.01 :Theme (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :TPR (c1 / "now")) :Source (s3 / private_school.n.01))
 
-(s4<root> / kill.v.01 :Agent (s3 / person.n.01) :Time (s5 / time.n.08 :TPR (c2 / "now")) :Patient (s6 / female.n.02))
+(s1<root> / be.v.02 :Theme (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Co-Theme (s3 / person.n.01))
 
 (s2<root> / risky.a.01 :Attribute-of (s0 / entity.n.01) :Time (s1 / time.n.08 :TPR (c0 / "now")))
 
@@ -1584,7 +1584,7 @@
 
 (s1<root> / die.v.01 :Patient (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now") :TAB (s3 / measure.n.02 :Quantity (c2 / "3") :Unit (s4 / year.n.01) :TAB (c3 / "now"))))
 
-(s1<root>0 / terra_incognita.n.01 :NEGATION (c7 / "+") :EQU (s1 / entity.n.01 :NEGATION (c1 / "+") :Sub (s2 / male.n.02 :Name (c2 / "Luis"))) :Sub (s8 / entity.n.01 :NEGATION (c4 / "+") :Sub-of (s9 / female.n.02 :Name (c5 / "Cristina") :Quantity (c6 / "2"))))
+(s3<root> / dream.v.01 :Time (s0 / time.n.08 :NEGATION (c0 / "+")) :Experiencer (s1 / entity.n.01 :NEGATION (c1 / "+") :Sub (s2 / male.n.02 :Name (c2 / "Luis"))) :Stimulus (s6 / study.v.04 :Agent (s5 / entity.n.01) :Theme (s7 / medicine.n.03)))
 
 (s2<root> / die.v.01 :Patient (s0 / person.n.01 :Quantity (c0 / "+") :Role (s1 / peasant.n.01)) :Time (s3 / time.n.08 :TPR (c1 / "now")) :Duration (s4 / drought.n.01))
 
@@ -1774,7 +1774,7 @@
 
 (s1<root> / last.v.01 :Theme (s0 / traffic_jam.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Value (s3 / measure.n.02 :Quantity (c1 / "1") :Unit (s4 / hour.n.01)))
 
-(s5<root> / go.v.01 :Theme (s4 / female.n.02 :NEGATION (c3 / "+") :Name (c4 / "Mary")) :Time (s6 / time.n.08 :EQU (c5 / "now")) :Destination (s7 / store.n.01))
+(s1<root> / go.v.01 :Theme (s0 / male.n.02 :NEGATION (c0 / "+") :Name (c1 / "Tom")) :Time (s2 / time.n.08 :EQU (c2 / "now")) :Destination (s3 / store.n.01))
 
 (s3<root> / weigh.v.01 :Value (s0 / measure.n.02 :Unit (c0 / "?") :Quantity (c1 / "?")) :Time (s1 / time.n.08 :EQU (c2 / "now")) :Theme (s2 / soccer_ball.n.01))
 

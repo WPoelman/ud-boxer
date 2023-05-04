@@ -12,7 +12,7 @@
 
 (s2<root> / go.v.01 :Theme (s0 / female.n.02) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Destination (s3 / city.n.01 :Name (c1 / "Ooita")))
 
-(s4<root> / answer.v.02 :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Theme (s3 / phone.n.01))
+(s1<root> / hear.v.01 :Experiencer (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Stimulus (s3 / phone.n.01))
 
 (s0<root> / be.v.01 :Theme (s1 / entity.n.01) :Co-Theme (s3 / sunset.n.03))
 
@@ -66,7 +66,7 @@
 
 (s4<root> / old.a.01 :Theme (s0 / baby.n.01) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Value (s2 / measure.n.02 :Quantity (c1 / "3") :Unit (s3 / week.n.01)))
 
-(s4<root> / be.v.02 :Theme (s0 / person.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Co-Theme (s5 / male.n.02 :Name (c1 / "Éamonn")))
+(s1<root> / do.v.02 :Agent (s0 / person.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Theme (s3 / entity.n.01))
 
 (s3<root> / have.v.02 :Theme (s0 / chromosome.n.01 :Quantity (c0 / "?")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Pivot (s2 / human_being.n.01))
 

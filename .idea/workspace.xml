@@ -6,10 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="85b24432-74f5-4a4f-bb0c-415a45d29723" name="Changes" comment="UPDATE CODE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ud_boxer/experiment.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/experiment.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/en_dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/en_dev.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/en_eval.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/en_eval.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/en_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/en_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/en_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/en_train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/gold_dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/gold_dev.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/gold_eval.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/gold_eval.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/gold_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/gold_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/gold_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/gold_train.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ud_boxer/sbn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/sbn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/0.penman" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ud_boxer/tests/examples/penman/normal_example.penman" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/1.penmaninfo" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/test_data/1.penmaninfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/2.penmaninfo" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/test_data/2.penmaninfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/3.penmaninfo" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/test_data/3.penmaninfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/4.penmaninfo" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/test_data/4.penmaninfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/5.penmaninfo" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/test_data/5.penmaninfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ud_boxer/test_data/6.penmaninfo" beforeDir="false" afterPath="$PROJECT_DIR$/ud_boxer/test_data/6.penmaninfo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +83,7 @@
       <workItem from="1681852810023" duration="11147000" />
       <workItem from="1682066939381" duration="9266000" />
       <workItem from="1682200849976" duration="3464000" />
-      <workItem from="1682519672178" duration="12465000" />
+      <workItem from="1682519672178" duration="14363000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE CODE">
       <created>1679581622974</created>
@@ -263,7 +274,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ud_boxer$sbn_scope.coverage" NAME="sbn_scope Coverage Results" MODIFIED="1682519733573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ud_boxer" />
-    <SUITE FILE_PATH="coverage/ud_boxer$sbn.coverage" NAME="sbn Coverage Results" MODIFIED="1682520318586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ud_boxer" />
+    <SUITE FILE_PATH="coverage/ud_boxer$sbn.coverage" NAME="sbn Coverage Results" MODIFIED="1683198711769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ud_boxer" />
     <SUITE FILE_PATH="coverage/ud_boxer$visualize.coverage" NAME="visualize Coverage Results" MODIFIED="1682170367611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ud_boxer" />
     <SUITE FILE_PATH="coverage/ud_boxer$sbn_spec.coverage" NAME="sbn_spec Coverage Results" MODIFIED="1679583715647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ud_boxer" />
   </component>

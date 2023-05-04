@@ -1,0 +1,9 @@
+(s6 / fight.v.01
+    :Agent (s2 / entity.n.01
+               :Sub (s1 / dog.n.01
+                        :Colour (s0 / brown.a.01))
+               :Sub (s4 / dog.n.01
+                        :Colour (s3 / grey.a.01)))
+    :Time (s5 / time.n.08
+              :EQU (c0 / "now"))
+    :Location (s7 / snow.n.02))

@@ -12,4 +12,4 @@
 ('s4', ':EQU', 'c3')
 ('c3', ':instance', '"now"')
 tokenized sentence:you like . Eat whatever
-alignment:[{"token_id": 0, "node_id": ["c2", "s2"], "lexical_node": "c2"}, {"token_id": 1, "node_id": ["s3", "c3", "s1", "s4"], "lexical_node": "s3"}, {"token_id": 3, "node_id": ["s5", "c0", "c4", "s0"], "lexical_node": "s5"}, {"token_id": 4, "node_id": "c1"}]
+alignment:[{"token_id": 0, "node_id": ["s2", "c2"], "lexical_node": "s2"}, {"token_id": 1, "node_id": ["s3", "s4", "c3", "s1"], "lexical_node": "s3"}, {"token_id": 3, "node_id": ["s0", "s5", "c0", "c4"], "lexical_node": "s0"}, {"token_id": 4, "node_id": "c1"}]

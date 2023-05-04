@@ -1012,15 +1012,18 @@ def main(starting_path):
                 edges_info = get_edge_info(G,pre_map)
                 nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map)
                 comment_list_reference = deepcopy(cleaned_comment_list)
+                token_list = [x[0] for x in comment_list_reference]
                 comment_node_pair = group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair)
                 alignment_list = alignment(comment_node_pair, cleaned_comment_list)
                 output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
                 penman_string = G.to_penman_string()
                 triples = penman.decode(penman_string).triples
                 negation_list = [x for y in triples for x in y]
+                questions = ['who', 'Who', 'What', 'what', 'How', 'how', 'Where', 'where', 'When', 'when']
+                intersection = [x for x in token_list if x in questions]
                 # if Counter(negation_list)[':NEGATION']==2 and 'tell.v.03' in negation_list:
-                if
-                    print(f'We found NEGATION:{filepath}')
+                if intersection:
+                    print(f'We found questions:{filepath}')
                     try:
                         SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')
                     except:
@@ -1091,10 +1094,10 @@ def main(starting_path):
                     print(f'Failed to save the ill-formed file to {filepath.parent}/{filepath.stem}.png')
                 continue
 
-    # generate_gold_split('en_train.txt', 'gold_train.txt')
-    # generate_gold_split('en_dev.txt', 'gold_dev.txt')
-    # generate_gold_split('en_test.txt', 'gold_test.txt')
-    # generate_gold_split('en_eval.txt', 'gold_eval.txt')
+    generate_gold_split('en_train.txt', 'gold_train.txt')
+    generate_gold_split('en_dev.txt', 'gold_dev.txt')
+    generate_gold_split('en_test.txt', 'gold_test.txt')
+    generate_gold_split('en_eval.txt', 'gold_eval.txt')
 
 def pmb_generator(
         starting_path: PathLike,
@@ -1114,6 +1117,6 @@ def pmb_generator(
 
 
 if __name__ == "__main__":
-    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/ud_boxer/test_data')
+    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold')
     with logging_redirect_tqdm():
         main(starting_path)
