@@ -1018,8 +1018,7 @@ def main(starting_path):
                 penman_string = G.to_penman_string()
                 triples = penman.decode(penman_string).triples
                 negation_list = [x for y in triples for x in y]
-                # if Counter(negation_list)[':NEGATION']==2 and 'tell.v.03' in negation_list:
-                if
+                if Counter(negation_list)[':NEGATION']==2 and 'tell.v.03' in negation_list:
                     print(f'We found NEGATION:{filepath}')
                     try:
                         SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')
