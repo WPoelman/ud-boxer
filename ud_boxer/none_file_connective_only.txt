@@ -1,0 +1,682 @@
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d2841/en.drs.sbnI haven't decided yet whether I will attend the party.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d0172/en.drs.sbnCan you tell me where the flea market is?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2606/en.drs.sbn"Are you from Australia?" asked the Filipino.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2094/en.drs.sbnTom asked Mary if she had been to Boston.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d3035/en.drs.sbnIn 1964, Roger Miller agreed to record sixteen songs. One of those songs was "Dang Me." It became his first number one selling record.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d3035/en.drs.sbnIn 1964, Roger Miller agreed to record sixteen songs. One of those songs was "Dang Me." It became his first number one selling record.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d0887/en.drs.sbnOleg is happy that someone loves him.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2674/en.drs.sbnI knew it was unhealthy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2272/en.drs.sbnI know where he is.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2575/en.drs.sbnI know you can do this.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d0852/en.drs.sbnDo you know where my watch is?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2737/en.drs.sbnWhoever comes, say I am away from home.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d0854/en.drs.sbnAunt Yoko is too weak to work.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2645/en.drs.sbnI think he ate about 10 oysters.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p28/d3226/en.drs.sbnAccording to her, he won't come.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d3197/en.drs.sbnAccording to Vladimir Chizhov, the word "pussy" is indecent.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d0823/en.drs.sbnI know that she is beautiful.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d0895/en.drs.sbnAccording to the radio, it will rain tomorrow.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d2074/en.drs.sbnI wonder if this milk is still good.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d2815/en.drs.sbnTom suspected that his father was dyslexic.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1953/en.drs.sbnWe expect that he will pass the examination.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1901/en.drs.sbnMaybe he is Italian or Spanish.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1433/en.drs.sbnI think Tom is outgoing.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d0171/en.drs.sbnHe asked if I like mathematics.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3393/en.drs.sbnSmoking is not a habit; it's an addiction.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3239/en.drs.sbnTom is hoping that he can hitch a ride to Boston.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d2063/en.drs.sbnHe pretended that he was a lawyer.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p43/d2051/en.drs.sbnHe who has the money, also has the power.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d2319/en.drs.sbnHe who risks not gains not.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d2952/en.drs.sbn"Whose books are these?" "They are Alice's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d3533/en.drs.sbnTom said you like popcorn.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p75/d1561/en.drs.sbn"Whose gloves are these?" "They are Lisa's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p81/d2987/en.drs.sbnMelanie said that she likes swimming.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d2003/en.drs.sbnI have a nephew. He's a bartender.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d3353/en.drs.sbnTom is by no means unintelligent. He is just lazy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d2401/en.drs.sbnTom says he doesn't like air conditioning.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d0779/en.drs.sbnIn case it rains, I won't go.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d2790/en.drs.sbn"Whose tools are these?" "They are my uncle's."
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d2478/en.drs.sbnTom is too busy now to talk to you.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d1095/en.drs.sbn"The colour hurts my eyes," she said.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d2958/en.drs.sbnWe're not sure where Tom is.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d1542/en.drs.sbnAccording to a survey, 1 billion people are suffering from poverty in the world.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d3265/en.drs.sbnThis stone is beautiful. Where did you find it?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d1089/en.drs.sbn"I was a boy," he said impatiently.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d0849/en.drs.sbnShe's by no means lacking in consideration.
+She's just shy.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2539/en.drs.sbn"Whose earrings are these?" "They are Tania's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2905/en.drs.sbn"Whose newspapers are these?" "They are my father's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2011/en.drs.sbnAccording to the newspaper, he committed suicide.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2028/en.drs.sbnTom noticed the front door was open.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d3442/en.drs.sbnI didn't know you played chess.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d1986/en.drs.sbnI think Tom is all right.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d1849/en.drs.sbnI cannot lie to Taninna. She's my wife.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d1811/en.drs.sbnTom looked like he was healthy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d3195/en.drs.sbnI don't know how they did it.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d2455/en.drs.sbn"Whose examples are these?" "They are Meryem's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d0849/en.drs.sbnI think that she is honest.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d1810/en.drs.sbnTom is kind of tired. He wants to go home.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d3033/en.drs.sbnIs Tom left-handed or right-handed?
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d3229/en.drs.sbnShe was too shocked to speak.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d1959/en.drs.sbnTom wondered if Mary could speak French.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d2744/en.drs.sbnI'm sorry. I forgot.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d1630/en.drs.sbnTom said he wouldn't shoot an unarmed man.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d3107/en.drs.sbnTom claimed he saw a UFO.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d2469/en.drs.sbnI need a pencil. Can I use one of yours?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d1730/en.drs.sbnCycling is good exercise. Moreover, it doesn't pollute the air.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d3287/en.drs.sbnThat he grew up in America is well-known.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p87/d2385/en.drs.sbnI dreamed I was eating an apple pie.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2654/en.drs.sbnI think you're jealous.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2373/en.drs.sbnShe stopped studying. She left the university without a degree.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d1502/en.drs.sbn"Whose jewels are these?" "They are Taninna's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d0554/en.drs.sbn
+Nepal's government and the non- profit World Wildlife fund are launching a new
+appeal to save the critically endangered one-horned rhino.  Paul Sisco reports.
+ 
+ 
+ 
+ 
+ 
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2668/en.drs.sbnI'm convinced Tom is lying.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2384/en.drs.sbnYou said his name was Tom, didn't you?
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2949/en.drs.sbnTom was too tired to speak.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p74/d3061/en.drs.sbnI cannot phone Marika. She lives in Finland!
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d0704/en.drs.sbnAndré Henri Constant van Hasselt was born at Maastricht, in Limburg. He was educated in his native town, and at the university of Liège.
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d1416/en.drs.sbnShe is convinced that her son is still alive.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d3251/en.drs.sbnEither you or he is wrong.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d2599/en.drs.sbnI don't recognize this shirt. Whose is it?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d0892/en.drs.sbnIt's not blood.
+It's beet.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d1861/en.drs.sbnIs this baby a he or a she?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d1973/en.drs.sbn"Whose pencils are these?" "They are Walt Disney's."
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d3087/en.drs.sbnNeither Tom nor Mary can speak French.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d3198/en.drs.sbnHe sold all that he owned.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d0907/en.drs.sbnI think she's forty.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d3186/en.drs.sbnI'm sorry I misunderstood you.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d0833/en.drs.sbnI am convinced that he is innocent.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d3028/en.drs.sbnI have a Vietnamese friend. Her name is Tiên.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d2005/en.drs.sbnMoney and I are strangers; in other words, I am poor.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d2900/en.drs.sbn"Whose socks are these?" "They are my sister's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d0224/en.drs.sbnThe court adjudged that the will was valid.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d2111/en.drs.sbnBrian's all muddy. He played football.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d3206/en.drs.sbnI apologize. It was my mistake.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d1474/en.drs.sbnIf a dog bites you, wash the wound with soap and water.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d2812/en.drs.sbnI convinced him that he was wrong.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d1097/en.drs.sbnHe sha'n't know who sends it.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d0799/en.drs.sbnI assure you that an error like this will never happen again.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d0775/en.drs.sbnI'm very sensitive to cold.
+May I have another blanket?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d1224/en.drs.sbnThis supports the suspicion that a bank employee was involved in the crime.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d3120/en.drs.sbnCat Stevens is not a cat. He's a singer.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d2783/en.drs.sbn"Where is my classroom?" "It's on the third floor."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d0896/en.drs.sbnThe Titanic sank on her maiden voyage.
+She was a large ship.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d2313/en.drs.sbnI watched that new film about giraffes; I didn't like it.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d1145/en.drs.sbn"Some delegates are present," he said.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d2649/en.drs.sbnI can't squeeze this orange. It's dry.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d2044/en.drs.sbnI think my girlfriend is kind of cute.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d1404/en.drs.sbnWe tried to put out the fire but we were unsuccessful. We had to call the fire brigade.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2368/en.drs.sbnThis box is too bulky to carry.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2840/en.drs.sbnThe coworker claimed he had missed the bus.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2473/en.drs.sbnTom knew who the kidnappers were.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1817/en.drs.sbnI believe Elvis is still alive.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1601/en.drs.sbnShe is called Mei. She is cooking in the kitchen.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d3129/en.drs.sbnThis desk was too heavy to lift.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3410/en.drs.sbnStop yelling. My head hurts.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3405/en.drs.sbnI wonder if he likes me.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3082/en.drs.sbnThe thief told the police he hadn't stolen anything.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d2592/en.drs.sbnI'm afraid you misunderstood me.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3151/en.drs.sbnI know where you are.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3309/en.drs.sbnTom knows where I work.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d0136/en.drs.sbnTom asks his mother if she can but him a new toy.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d1539/en.drs.sbnThe weather is clearing up. I needn't have brought an umbrella.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d0847/en.drs.sbnShe knew that John loved her.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3463/en.drs.sbnHe's rich. He doesn't need money!
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d0790/en.drs.sbnIs it sweet or sour?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2221/en.drs.sbnAccording to her, he isn't coming.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2438/en.drs.sbnYoko is in London now. She's studying English.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p33/d2760/en.drs.sbnTom saw where Mary lives.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0834/en.drs.sbnShe was too proud to ask him for help.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2697/en.drs.sbnI guess that she is 40.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2774/en.drs.sbnI know he's still in love with you.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2550/en.drs.sbnTom told me that he'd lost his watch.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3414/en.drs.sbnTom said it didn't matter.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0704/en.drs.sbnThe Egyptian government on Tuesday dismissed speculation that a group of missing Pakistanis had helped in the bombings.
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3346/en.drs.sbnI think Tom is nasty.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2174/en.drs.sbnAnybody who wants this book can be given it.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0841/en.drs.sbnThey say that he is seriously ill.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2784/en.drs.sbnThat galloping inflation has been lasting for three years now. People are frustrated and angry.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p68/d3071/en.drs.sbnI thought that was kind of strange.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d1982/en.drs.sbnYou're right. I'll go by taxi.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d0862/en.drs.sbnI found a note on my desk, but I don't know whose it is.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d3371/en.drs.sbnI'm afraid you have dialed a wrong number.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p61/d0818/en.drs.sbnI'm too busy to help her.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p61/d3477/en.drs.sbn"Whose shoes are these?" "They are my brother's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d0707/en.drs.sbnBush returned home as a war hero. He married Barbara and enrolled at Yale.
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d1727/en.drs.sbnHe acted like he didn't know me.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p59/d2699/en.drs.sbnIs it true that you beat Taninna?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p59/d2974/en.drs.sbnTom didn't know you were joking.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p59/d2149/en.drs.sbnHe knows I don't like face to face meetings.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p92/d2641/en.drs.sbnTom's a nice guy. Everyone likes him.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p66/d1536/en.drs.sbnNo one knew who owned the land.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d3246/en.drs.sbnAccording to the police, no one was injured.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d2432/en.drs.sbnIn case of emergency, call 119.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d0927/en.drs.sbnMary thinks martial arts are silly.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d1650/en.drs.sbnI am sure that he will succeed.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3386/en.drs.sbnWe believed that the object was a UFO (Unidentified Flying Object).
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3115/en.drs.sbnThe teacher joked that she was 90 years old.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3146/en.drs.sbnI think Tom is persuasive.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2307/en.drs.sbnTom admitted he was afraid.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3479/en.drs.sbnDo you think Mary is too fat to be a cheerleader?
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3479/en.drs.sbnDo you think Mary is too fat to be a cheerleader?
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d0178/en.drs.sbnI'm too drunk to do that.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d1517/en.drs.sbnTom thinks I stole the money.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d0064/en.drs.sbnParliamentary elections were held in Iceland on 12 May 2007. The Independence Party remained the largest party in the Althing, winning 25 of the 63 seats.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d1518/en.drs.sbnTom asked Mary if she knew John.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3319/en.drs.sbnI believe she's 40 years old.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d2865/en.drs.sbnI don't have the time or the money.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3388/en.drs.sbnIs it true that he won the race?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3052/en.drs.sbn"Whose notebooks are these?" "They are Karim's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d2598/en.drs.sbnHe loves her. She loves him, too.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d2631/en.drs.sbnI'm glad you asked that.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d1418/en.drs.sbnYou said that Tom wasn't hungry.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d1463/en.drs.sbnEither you or I am wrong.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d0755/en.drs.sbnThe Salt Lake City 2002 Winter Olympics will take place from February 8th to February 24th 2002. The Paralympics will take place in Salt Lake City from March 7th to March 16th 2002.
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d2493/en.drs.sbnA DNA test showed he was innocent.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d0807/en.drs.sbn"How old is she?"
+"She is twelve years old."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d1839/en.drs.sbnHe resented that she was dating his brother.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p85/d2514/en.drs.sbnMy name is not "you"; it's Ricardo.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p71/d0869/en.drs.sbnAccording to the newspaper there was an earthquake in Mexico.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p71/d2539/en.drs.sbnI heard that footprints of an abominable snowman have been discovered in the Himalayas.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p71/d2285/en.drs.sbnTom didn't realize he had his sweater on inside out.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p71/d1801/en.drs.sbnI am convinced that I am right.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2223/en.drs.sbnHe who sleeps with dogs gets up with fleas.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2839/en.drs.sbnI bought an Apple mouse. It's only 69 €!
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d1486/en.drs.sbn"Whose keys are these?" "They are Mary's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p82/d1943/en.drs.sbn'What is that?' asked Tony.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p49/d2814/en.drs.sbn"Whose cats are these?" "They are Fatima's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p49/d3111/en.drs.sbnI hear that Bob and Lucy have broken up.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d3168/en.drs.sbnWhat kind of movie is it? Is it popular?
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d1607/en.drs.sbnHe likes all that is sweet.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d2759/en.drs.sbnHe who pays the piper calls the tune.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d1437/en.drs.sbnI know who likes Sachiko.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d2533/en.drs.sbnShe observed how butterflies fly.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d3227/en.drs.sbnTom doesn't have a credit card or a bank account.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d3309/en.drs.sbnThe doctor confirmed that Linda was pregnant.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d2905/en.drs.sbnOuch! I've pricked myself!
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d2278/en.drs.sbnI like Tom. He's a nice guy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d0827/en.drs.sbnAccording to the papers, the man has finally confessed.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d0773/en.drs.sbnI guess you are right.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d3187/en.drs.sbnEveryone said that I was wrong.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d1992/en.drs.sbnTom doesn't have a cat. However, Tom does have a dog, doesn't he?
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d0895/en.drs.sbnHe was too tired to study.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2005/en.drs.sbnHe who pays the piper, calls the tune.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2731/en.drs.sbn"Whose pillows are these?" "They are Kenza's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p83/d3087/en.drs.sbnDan realized he was in love with Linda.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p83/d1787/en.drs.sbnTom told Mary that she looked like Marilyn Monroe.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p83/d1653/en.drs.sbnShe cabled us that she was coming.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d0145/en.drs.sbnTom doubts whether Mary is honest.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2293/en.drs.sbnI'm Nana. I'm Hideki Yamauchi's daughter.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2090/en.drs.sbnThat guy stole my wallet! Stop him!
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2724/en.drs.sbnTom thinks I'm jealous.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d1602/en.drs.sbnTom thinks Mary is kind of cute.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d2122/en.drs.sbnIs it true that Tom is dating a Japanese girl?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d2301/en.drs.sbnNobody knows where he lives.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d3425/en.drs.sbn"Whose pens are these?" "They are Tom's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d2413/en.drs.sbnI guess Tom is looking for Mary.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d1553/en.drs.sbnThe red lamp lights up in case of danger.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d0833/en.drs.sbnAll that he says is true.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d1634/en.drs.sbnMary senses the aliens are watching her.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d2860/en.drs.sbnI'm convinced that this job is perfect for you.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d0871/en.drs.sbnThis woman is from China.
+She speaks Chinese.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d3343/en.drs.sbn"Whose dogs are these?" "They are my neighbor's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d0920/en.drs.sbnShe promised me that she would clean my room.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p46/d1666/en.drs.sbnHe says that raw vegetables are healthier.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d2000/en.drs.sbnTom claimed that he didn't see anything.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p41/d3522/en.drs.sbnShe is too tired to study.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d1096/en.drs.sbn"Everybody knows that." said Peter."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d2660/en.drs.sbnMy pen is old. I want a new one.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1982/en.drs.sbnI thought everyone was busy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d2625/en.drs.sbnHe whispered to me that he was hungry.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1660/en.drs.sbnI'm sorry he committed suicide.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d2239/en.drs.sbnShe admits that she stole the jewels.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d3230/en.drs.sbnTom told me you were allergic to cats.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1557/en.drs.sbnIs it true that you bought a house in London?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d3037/en.drs.sbnI think my right arm is broken.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p24/d2741/en.drs.sbnI think Tom is too old to be dating my daughter.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p24/d2741/en.drs.sbnI think Tom is too old to be dating my daughter.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d0064/en.drs.sbnParliamentary elections were held in Greece on 9 April 2000. The ruling Panhellenic Socialist Movement (PASOK) of Prime Minister Costas Simitis was narrowly re-elected, defeating the conservative New Democracy party. Simitis formed his third cabinet.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d0064/en.drs.sbnParliamentary elections were held in Greece on 9 April 2000. The ruling Panhellenic Socialist Movement (PASOK) of Prime Minister Costas Simitis was narrowly re-elected, defeating the conservative New Democracy party. Simitis formed his third cabinet.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d3214/en.drs.sbnI'm too tired to argue.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d3472/en.drs.sbnI know who stole your diary.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d1258/en.drs.sbnExperts are still cooling the wagons with water, the fire brigade reports.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d0114/en.drs.sbnMy mother from Malaysia thinks that those three horses are so-so.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2708/en.drs.sbnIf you're tired, go to bed.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1663/en.drs.sbnTom knows Mary lied.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1404/en.drs.sbnI don't know where Tom's office is.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1958/en.drs.sbnI think Tom is drunk.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d3191/en.drs.sbn"Whose chair is this?" "It is mine."
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d0776/en.drs.sbnNo one is too old to learn.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1742/en.drs.sbnHe suggested to her that she should buy it.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1402/en.drs.sbnI thought Tom hated me.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d0065/en.drs.sbnParliamentary elections were held in Greece on 22 September 1996. The ruling Panhellenic Socialist Movement (PASOK) of Costas Simitis was re-elected, defeating the liberal-conservative New Democracy party of Miltiadis Evert.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d1758/en.drs.sbnThis soup is too salty to eat.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d3453/en.drs.sbnHe who marries changes.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d3455/en.drs.sbnShe said she was happy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1948/en.drs.sbnI'm waiting for her to climb into her car.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d0195/en.drs.sbnHe asked me whether I like math.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d3169/en.drs.sbnI thought Tom had stopped dating Mary.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1640/en.drs.sbnHe dreams that everybody in China speaks Esperanto.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1420/en.drs.sbnHe asked her if she was Jane.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d2197/en.drs.sbnLook at that cat. It is Mr. Brown's.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d1783/en.drs.sbn"Whose magazines are these?" "They are the doctor's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d1913/en.drs.sbn"Whose bags are these?" "They are my aunt's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d3432/en.drs.sbnI think Tom said his last name is Jackson.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d3432/en.drs.sbnI think Tom said his last name is Jackson.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2954/en.drs.sbnIs it true that Tom and Mary are dating?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d3415/en.drs.sbn"Whose knives are these?" "They are the butcher's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d0838/en.drs.sbnI am afraid he is going to spill the beans.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d0821/en.drs.sbnHe replied that he did not know.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d3194/en.drs.sbnIn case of a fire, use the stairs.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d0911/en.drs.sbnI'm not ashamed that I am poor.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d2001/en.drs.sbnHe asked her where she lived.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d3045/en.drs.sbnTom doesn't think he's as creative as Mary.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d1459/en.drs.sbn"Whose letters are these?" "They are Linda's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d1421/en.drs.sbnTom is acting like nothing happened.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p64/d2663/en.drs.sbnAaah!! My computer is broken!
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p64/d2301/en.drs.sbnJim could hear whom she was phoning.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0064/en.drs.sbnGeneral elections were held in Chile on 30 October 1932. Arturo Alessandri of the Liberal Party was elected president, whilst the Conservative Party and Radical Party emerged as the largest parties in the Chamber of Deputies.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d2279/en.drs.sbnIt's strange that Tom didn't mention that.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0952/en.drs.sbnAccording to the newspaper there was an earthquake in Mexico.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d3171/en.drs.sbnHe said that he grew up in Tunisia.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0806/en.drs.sbnI'm afraid the line is busy.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d3065/en.drs.sbnI cannot wipe the table. I don't have a cloth.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0824/en.drs.sbnSet the clock right.
+It's ten minutes fast.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d2531/en.drs.sbnShe said, "He is handsome."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d3366/en.drs.sbnTom said it was an emergency.
+
+CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d1243/en.drs.sbnAll who were arrested have been released.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d1836/en.drs.sbnYou can trust John. He will never let you down.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d2984/en.drs.sbnI know whose bag this is.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d1360/en.drs.sbnThe effect was that the death rate dropped 50%.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d3497/en.drs.sbnI don't think this is a wasp.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d1439/en.drs.sbnPinocchio says: "Now my nose will grow."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d1582/en.drs.sbnI didn't know you had a sister.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d0756/en.drs.sbnGenevieve de Gaulle-Anthonics, 81, niece of the late Charles de Gaulle, died in Paris on February 14, 2002. She joined the French resistance when the Germans occupied Paris.
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p55/d3082/en.drs.sbn"Whose CD's are these?" "They are Samir's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p55/d0935/en.drs.sbn"Whose boots are these?"
+"They are Lidya's."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p36/d0797/en.drs.sbnDo you know whose car this is?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p36/d1402/en.drs.sbnNobody knows where he has escaped to.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d3109/en.drs.sbn"Who is Norman Finkelstein?" "He is an American political scientist."
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d1616/en.drs.sbnTom was surprised the police knew his name.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d2150/en.drs.sbnAccording to the paper, it will snow tomorrow.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d2084/en.drs.sbnIs it true that you came by plane?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d2014/en.drs.sbnI'm hungry. How about you?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2196/en.drs.sbnTom isn't sure whether he locked the door.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d1400/en.drs.sbnIs it true that you are in love with me?
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d0133/en.drs.sbnNo one is working. Everyone's watching the World Cup.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d3318/en.drs.sbnThe concert starts at seven. We must not be late.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2389/en.drs.sbnTom noticed the door was unlocked.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2917/en.drs.sbnTom hoped that Mary was all right.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2484/en.drs.sbn"Whose brushes are these?" "They are Picasso's."
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d1948/en.drs.sbnI was too astonished to speak.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d2263/en.drs.sbnNeither Tom nor Mary speaks Spanish.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1976/en.drs.sbnThe method was too expensive to be practical.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1730/en.drs.sbnI think Tom is normal.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2321/en.drs.sbnI hope she's all right.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2718/en.drs.sbnTom can't speak French. Tom can't speak Spanish either.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2046/en.drs.sbnI hope Tom agrees.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d0942/en.drs.sbnI don't want pizza.
+I'm not hungry.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1824/en.drs.sbnWhat a lot of books! Do they belong to the university library?
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1957/en.drs.sbnI know that John is honest.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3233/en.drs.sbnThe doctor told Tom that he should eat a lot of vegetables.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1761/en.drs.sbnTom says he's busy.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p53/d1825/en.drs.sbnI don't think I've broken any laws.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d3473/en.drs.sbn"Whose documents are these?" "They are Michael's."
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d0899/en.drs.sbnThe clock stopped.
+It needs a new battery.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d1239/en.drs.sbnAccording to the police, 89 people were temporarily detained.
+
+POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d2770/en.drs.sbnTom is too lazy to cook.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d1574/en.drs.sbnTom told me that he had been skydiving since he was sixteen.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d2685/en.drs.sbnThat she behaves this way is odd.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d1491/en.drs.sbnTom asked Mary if he could kiss her.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d2231/en.drs.sbnTom says that he's allergic to school.
+
+ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d2845/en.drs.sbnTom began to suspect that Mary was cheating on him.
+
+ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p96/d3279/en.drs.sbnDo you support Mitt Romney or Barack Obama?
+

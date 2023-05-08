@@ -350,7 +350,7 @@
 
 (s1<root> / be.v.02 :Theme (s0 / person.n.01 :Name (c0 / "?")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Co-Theme (s3 / person.n.01 :Role (s4 / president.n.03 :Of (s5 / country.n.02 :Name (c2 / "North Korea")))))
 
-(s2<root> / old.a.01 :Attribute-of (s0 / person.n.01 :NEGATION (c0 / "+") :EQU (c1 / "hearer")) :Time (s1 / time.n.08 :EQU (c2 / "now")) :Value (c3 / "+"))
+(s5<root> / old.a.01 :Attribute-of (s3 / person.n.01 :NEGATION (c4 / "+") :EQU (c5 / "speaker")) :Time (s4 / time.n.08 :EQU (c6 / "now")) :Value (c7 / "+"))
 
 (s1<root> / need.v.02 :Pivot (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / car.n.01))
 
@@ -832,7 +832,7 @@
 
 (s1<root> / be.v.01 :NEGATION (c0 / "+") :Theme (s0 / smoking.n.01) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Co-Theme (s3 / habit.n.01) :CONTINUATION (s5 / be.v.01 :Theme (s4 / entity.n.01 :EQU s0) :Time (s6 / time.n.08 :EQU (c2 / "now")) :Co-Theme (s7 / addiction.n.01)))
 
-(s1<root> / know.v.01 :NEGATION (c1 / "+") :Experiencer (s0 / female.n.02 :Name (c0 / "Maria")) :Time (s2 / time.n.08 :TPR (c2 / "now")) :Stimulus (s4 / name.n.01 :Bearer (s3 / male.n.02)))
+(s5<root> / know.v.01 :NEGATION (c3 / "+") :Experiencer (s0 / female.n.02 :Name (c0 / "Maria")) :Time (s6 / time.n.08 :TPR (c4 / "now")) :Stimulus (s8 / phone_number.n.01 :User (s7 / male.n.02 :EQU (s3 / male.n.02))))
 
 (s1<root> / understand.v.02 :Experiencer (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now")))
 
@@ -932,7 +932,7 @@
 
 (s1<root> / have_on.v.01 :NEGATION (c1 / "+") :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c2 / "now")) :Theme (s3 / hat.n.01))
 
-(s3<root> / have.v.04 :Theme (s1 / book.n.02) :Pivot (s2 / male.n.02) :Time (s4 / time.n.08 :EQU (c0 / "now")))
+(s5<root> / be.v.01 :Theme (s0 / entity.n.01 :Sub-of (s1 / book.n.02)) :Time (s4 / time.n.08 :EQU (c0 / "now")) :Co-Theme (s7 / novel.n.02 :Context (s6 / english.n.01)))
 
 (s0<root> / be.v.03 :Time (s1 / time.n.08 :TPR (c0 / "now")) :Theme (s2 / tape_recorder.n.01) :Location (s3 / table.n.02))
 
@@ -2306,7 +2306,7 @@
 
 (s2<root> / move.v.01 :Theme (s0 / train.n.01) :Time (s1 / time.n.08 :TPR (c0 / "now")) :Value (s5 / division.n.11 :Theme (s3 / measure.n.02 :Quantity (c1 / "500") :Unit (s4 / mile.n.01)) :Co-Theme (s6 / measure.n.02 :Quantity (c2 / "1") :Unit (s7 / hour.n.01))))
 
-(s1<root> / be.v.02 :Theme (s0 / entity.n.01) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Co-Theme (s3 / boy.n.01))
+(s5<root> / be.v.02 :Time (s2 / time.n.08 :EQU (c0 / "now")) :Theme (s4 / name.n.01 :Bearer (s3 / boy.n.01)) :Co-Theme (s6 / name.n.01 :EQU (c1 / "Tom Fisher")))
 
 (s1<root> / be.v.02 :Theme (s0 / female.n.02) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Co-Theme (s4 / person.n.01 :Role (s5 / dancer.n.01)))
 
@@ -2710,7 +2710,7 @@
 
 (s1<root> / kiss.v.01 :NEGATION (c1 / "+") :POSSIBILITY (c2 / "+") :Agent (s0 / person.n.01 :EQU (c0 / "speaker")) :Co-Agent (s2 / person.n.01 :EQU (c3 / "hearer")) :Time (s3 / time.n.08 :EQU (c4 / "now")))
 
-(s2<root> / stay.v.02 :Location (s0 / hotel.n.01) :Theme (s1 / person.n.01 :EQU (c0 / "speaker")) :Time (s3 / time.n.08 :TPR (c1 / "now")))
+(s5<root> / comfortable.a.01 :Attribute-of (s0 / hotel.n.01) :Time (s3 / time.n.08 :TPR (c1 / "now")) :Degree (s4 / very.r.01))
 
 (s1<root> / wipe.v.01 :Agent (s0 / female.n.02) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Theme (s3 / tear.n.01) :Source (s4 / cheek.n.01 :Part-of s0))
 
@@ -4312,7 +4312,7 @@
 
 (s1<root> / buy.v.01 :Agent (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / cd.n.04))
 
-(s1<root> / have.v.01 :Pivot (s0 / male.n.02) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Theme (s3 / person.n.01 :Role (s4 / brother.n.01)))
+(s5<root> / live.v.01 :Time (s2 / time.n.08 :EQU (c0 / "now")) :Theme (s3 / person.n.01 :Role (s4 / brother.n.01)) :Location (s6 / city.n.01 :Name (c1 / "Tokyo")))
 
 (s2<root> / be.v.02 :Co-Theme (s1 / car.n.01 :User (s0 / person.n.01 :Name (c0 / "?"))) :Time (s3 / time.n.08 :EQU (c1 / "now")) :Theme (s4 / entity.n.01))
 
@@ -5840,7 +5840,7 @@
 
 (s2<root> / compose.v.01 :Theme (s0 / country.n.02 :Name (c0 / "USA")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Attribute (s3 / state.n.01 :Quantity (c2 / "50")))
 
-(s1<root> / love.v.01 :Experiencer (s0 / female.n.02 :NEGATION (c0 / "+") :Name (c1 / "Ania")) :Time (s2 / time.n.08 :EQU (c2 / "now")) :Stimulus (s3 / male.n.02 :Name (c3 / "Justin Bieber")))
+(s5<root> / love.v.01 :Experiencer (s4 / female.n.02 :NEGATION (c4 / "+") :Name (c5 / "Magdalena")) :Time (s6 / time.n.08 :EQU (c6 / "now")) :Stimulus (s7 / male.n.02 :Name (c7 / "Justin Bieber")))
 
 (s1<root> / make.v.02 :Causer (s0 / answer.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Patient (s3 / male.n.02) :Result (s4 / angry.a.01 :Experiencer s3))
 
@@ -7218,7 +7218,7 @@
 
 (s1<root> / play.v.01 :Agent (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / squash.n.03))
 
-(s3<root> / like.v.02 :Stimulus (s1 / entity.n.01 :NEGATION (c1 / "+")) :Experiencer (s2 / person.n.01 :EQU (c2 / "hearer")) :Time (s4 / time.n.08 :EQU (c3 / "now")))
+(s5<root> / eat.v.01 :NEGATION (c4 / "+") :Agent (s0 / person.n.01 :EQU (c0 / "hearer")) :Patient (s1 / entity.n.01 :NEGATION (c1 / "+")))
 
 (s1<root> / know.v.01 :NEGATION (c0 / "+") :Experiencer (s0 / person.n.01) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Stimulus (s3 / entity.n.01))
 
@@ -7234,7 +7234,7 @@
 
 (s3<root> / forbid.v.01 :Theme (s0 / declaw.v.01 :Patient (s1 / cat.n.01)) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Location (s4 / alliance.n.03 :Name (c1 / "European Union")))
 
-(s1<root> / die.v.01 :Patient (s0 / parrot.n.01 :Owner (c0 / "speaker")) :Time (s2 / time.n.08 :TPR (c1 / "now") :TIN (s4 / day.n.03 :TAB (s3 / day.n.03))))
+(s5<root> / terra_incognita.n.01 :EQU (c2 / "now") :TIN (s3 / day.n.03))
 
 (s1<root> / be.v.02 :Theme (s0 / book.n.02) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Co-Theme (s3 / entity.n.01 :User (c1 / "speaker")))
 
@@ -7260,7 +7260,7 @@
 
 (s1<root> / drive.v.02 :Agent (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Destination (s3 / hospital.n.01))
 
-(s1<root> / read.v.01 :Agent (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Source (s3 / report.n.01))
+(s5<root> / write.v.02 :Time (s2 / time.n.08 :TPR (c1 / "now")) :Result (s3 / report.n.01) :Agent (s4 / person.n.01 :EQU (c2 / "hearer")))
 
 (s2<root> / lie.v.02 :Theme (s0 / male.n.02) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Location (s3 / bench.n.01))
 
@@ -7816,7 +7816,7 @@
 
 (s1<root> / be.v.01 :NEGATION (c0 / "+") :Theme (s0 / male.n.02) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Co-Theme (s3 / person.n.01 :Role (s4 / idiot.n.01)))
 
-(s6<root> / wrinkled.a.02 :Attribute-of (s2 / coat.n.01 :User (s0 / male.n.02) :Colour (s1 / blue.a.01)) :Time (s4 / time.n.08 :TPR (c1 / "now")))
+(s5<root> / dirty.a.01 :Attribute-of (s2 / coat.n.01 :User (s0 / male.n.02) :Colour (s1 / blue.a.01)) :Time (s3 / time.n.08 :TPR (c0 / "now")))
 
 (s2<root> / pale.v.01 :Experiencer (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :EQU (c1 / "now")))
 
@@ -9238,7 +9238,7 @@
 
 (s1<root> / steal.v.01 :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Source (s3 / person.n.01 :EQU (c2 / "speaker")))
 
-(s1<root> / have.v.01 :Pivot (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / person.n.01 :Role (s4 / sister.n.01)))
+(s5<root> / be.v.08 :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / person.n.01 :Role (s4 / sister.n.01)) :Co-Theme (s6 / person.n.01 :Role (s7 / lawyer.n.01)))
 
 (s2<root> / have.v.04 :NEGATION (c1 / "+") :Pivot (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :EQU (c2 / "now")) :Theme (s3 / credit_card.n.01))
 
@@ -10300,7 +10300,7 @@
 
 (s2<root> / stab.v.01 :Patient (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :TPR (c1 / "now")))
 
-(s1<root> / fucking.a.01 :Attribute-of (s2 / asshole.n.01))
+(s0<root> / event.v.01 :Participant (s2 / asshole.n.01))
 
 (s2<root> / fed_up.a.01 :Experiencer (s0 / male.n.02) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Stimulus (s3 / problem.n.01 :Creator (c1 / "speaker")))
 
@@ -10814,7 +10814,7 @@
 
 (s2<root> / stop.v.04 :Theme (s0 / ship.n.01) :Time (s1 / time.n.08 :TSU (c0 / "now")) :Location (s3 / city.n.01 :Name (c1 / "Yokohama")))
 
-(s1<root> / great.a.03 :Attribute-of (s2 / error.n.01 :Quantity (c0 / "4")))
+(s0<root> / event.v.01 :Participant (s2 / error.n.01 :Quantity (c0 / "4")))
 
 (s2<root> / pleased.a.01 :Experiencer (s0 / female.n.02) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Stimulus (s3 / dress.n.01))
 
@@ -13466,7 +13466,7 @@
 
 (s3<root> / good.a.01 :Attribute-of (s0 / desk.n.01) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Degree (s2 / as.r.01 :Theme s0 :Co-Theme (s4 / desk.n.01)))
 
-(s6<root> / good-for-nothing.a.01 :Attribute-of (s1 / person.n.01 :Role (s2 / son.n.01 :Of (s0 / male.n.02))) :Time (s4 / time.n.08 :EQU (c1 / "now")))
+(s5<root> / lazy.a.01 :Attribute-of (s1 / person.n.01 :Role (s2 / son.n.01 :Of (s0 / male.n.02))) :Time (s3 / time.n.08 :EQU (c0 / "now")))
 
 (s1<root> / understand.v.01 :Experiencer (s0 / male.n.02 :Name (c0 / "Wagner")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Stimulus (s3 / entity.n.01))
 
@@ -13886,7 +13886,7 @@
 
 (s1<root> / do.v.02 :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Theme (s3 / pushup.n.01 :Quantity (c2 / "20")))
 
-(s4<root> / time.n.08 :TPR (c2 / "now") :EQU (s1 / time.n.08 :TPR (c0 / "now")))
+(s0<root> / rain.v.01 :Time (s1 / time.n.08 :TPR (c0 / "now")) :EXPLANATION (s3 / take.v.09 :Time s1 :Agent (s2 / person.n.01 :EQU (c1 / "speaker")) :Theme (s5 / taxi.n.01)))
 
 (s3<root> / lazy.a.02 :Attribute-of (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Degree (s2 / really.r.04))
 
@@ -14450,7 +14450,7 @@
 
 (s2<root> / allergic.a.02 :Experiencer (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Stimulus (s7 / entity.n.01 :Sub (s3 / aspirin.n.01 :Content-of (s5 / entity.n.01)) :Sub (s4 / penicillin.n.01 :Content-of (s6 / entity.n.01)) :Sub (s8 / sulfa_drug.n.01)))
 
-(s4<root> / strike.v.07 :Time (s1 / time.n.08 :TIN (s0 / day.n.03) :EQU (c0 / "now")) :Agent (s2 / person.n.01 :Role (s3 / bus_driver.n.01)))
+(s5<root> / terra_incognita.n.01 :EQU (c1 / "now") :TIN (s0 / day.n.03))
 
 (s2<root> / shoot.v.01 :Agent (s0 / person.n.01 :Role (s1 / hunter.n.01)) :Time (s3 / time.n.08 :TPR (c0 / "now")) :Destination (s4 / deer.n.01))
 
@@ -14526,7 +14526,7 @@
 
 (s2<root> / capture.v.06 :Agent (s0 / person.n.01 :Role (s1 / hunter.n.01)) :Time (s3 / time.n.08 :TPR (c0 / "now")) :Theme (s5 / animal.n.01) :Instrument (s8 / net.n.02 :MadeOf (s7 / rope.n.01)))
 
-(s4<root> / up.a.02 :Attribute-of (s0 / person.n.01 :Role (s1 / patient.n.01)) :Time (s2 / time.n.08 :EQU (c0 / "now")))
+(s5<root> / about.a.01 :Attribute-of (s0 / person.n.01 :Role (s1 / patient.n.01)) :Time (s3 / time.n.08 :EQU (c1 / "now")))
 
 (s1<root> / leave.v.01 :Theme (s0 / train.n.01) :Time (s2 / time.n.08 :ClockTime (c0 / "09:00") :TSU (c1 / "now")))
 
@@ -15060,7 +15060,7 @@
 
 (s1<root> / play.v.01 :Agent (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / hockey.n.01))
 
-(s4<root> / meet.v.01 :Time (s2 / time.n.08 :TIN (s0 / day.n.03 :TAB (s1 / day.n.03) :EQU (c0 / "now")) :TPR (c1 / "now")) :Agent (s3 / person.n.01 :EQU (c2 / "speaker")) :Co-Agent (s5 / person.n.01 :Quantity (c3 / "2") :Source (s6 / country.n.02 :Name (c4 / "america"))))
+(s8<root> / bicycle.v.01 :Theme (s5 / person.n.01 :Quantity (c3 / "2") :Source (s6 / country.n.02 :Name (c4 / "america"))) :Time (s7 / time.n.08 :EQU (s0 / day.n.03 :TAB (s1 / day.n.03) :EQU (c0 / "now"))) :Path (s9 / country.n.02 :Name (c5 / "Japan")))
 
 (s1<root> / last.v.01 :Theme (s0 / meeting.n.01) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Finish (s3 / time.n.08 :ClockTime (c1 / "17:00")))
 
@@ -15094,7 +15094,7 @@
 
 (s2<root> / allergic.a.02 :Stimulus (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Stimulus (s3 / carrot.n.01))
 
-(s1<root> / have.v.01 :Pivot (s0 / female.n.02) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Theme (s3 / person.n.01 :Role (s4 / daughter.n.01)))
+(s5<root> / be.v.08 :Time (s2 / time.n.08 :EQU (c0 / "now")) :Theme (s3 / person.n.01 :Role (s4 / daughter.n.01)) :Co-Theme (s6 / person.n.01 :Role (s7 / pianist.n.01)))
 
 (s3<root> / live.v.01 :Location (s0 / location.n.01 :Name (c0 / "?")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Theme (s2 / male.n.02 :Name (c2 / "Tom")))
 

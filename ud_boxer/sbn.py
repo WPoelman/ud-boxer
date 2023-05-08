@@ -886,7 +886,7 @@ def flatten_list(nested_list):
     return flattened_list
 def find_kid_node(var_id, edges_info, possible_nodes, comment_node):
     target_n_kid = [x[1] for x in edges_info if x[0]==var_id]
-    if len(target_n_kid) >0:
+    if len(target_n_kid) > 0:
         possible_nodes.append((var_id, target_n_kid[0]))
         if target_n_kid[0] not in comment_node:
             find_kid_node(target_n_kid[0],edges_info, possible_nodes, comment_node)
@@ -1003,11 +1003,21 @@ def main(starting_path):
     dev_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_dev.txt')
     test_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_test.txt')
     eval_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_eval.txt')
-    with open('en_train.txt', 'w') as train_correct, open('en_dev.txt', 'w') as dev_correct, open('en_test.txt', 'w') as test_correct, open('en_eval.txt', 'w') as eval_correct:
+    with open('en_train.txt', 'w') as train_correct, open('en_dev.txt', 'w') as dev_correct, open('en_test.txt', 'w') as test_correct, open('en_eval.txt', 'w') as eval_correct, open('sbn_sum.txt', 'w') as debug, open('none_file_connective_only.txt', 'w') as debug2, open('none_lines.txt', 'w') as debug3:
         for filepath in pmb_generator(
                 starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
         ):
             try:
+                lines = split_comments(Path(filepath).read_text())
+                empty_connectives =['ATTRIBUTION', 'CONTINUATION', 'POSSIBILITY', 'CONSEQUENCE','ALTERNATION']
+                for line in lines:
+                    debug.write(f'{line[0]}\t%\t{str(line[1])}\n')
+                    if line[1]==None and line[0].split()[0] in empty_connectives:
+                        debug2.write(f'{line[0].split()[0]}\t{str(filepath)}')
+                        raw = Path(f'{filepath.parent}/en.raw').read_text()
+                        debug2.write(raw)
+                        debug2.write('\n')
+                        debug3.write(f'{line[0]}\t%\t{str(line[1])}\n')
                 G = SBNGraph().from_path(filepath)
                 edges_info = get_edge_info(G,pre_map)
                 nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map)
@@ -1019,10 +1029,11 @@ def main(starting_path):
                 penman_string = G.to_penman_string()
                 triples = penman.decode(penman_string).triples
                 negation_list = [x for y in triples for x in y]
-                questions = ['who', 'Who', 'What', 'what', 'How', 'how', 'Where', 'where', 'When', 'when']
-                intersection = [x for x in token_list if x in questions]
-                # if Counter(negation_list)[':NEGATION']==2 and 'tell.v.03' in negation_list:
-                if intersection:
+                # questions = ['he', 'she', 'they', 'it', 'him', 'her', 'them', 'we', 'He', 'She']
+                # questions =['every', 'All', 'Every', 'no one', 'all', 'none', 'whatever']
+                # intersection = [x for x in token_list if x in questions]
+                if Counter(negation_list)[':NEGATION']>2:
+                # if intersection:
                     print(f'We found questions:{filepath}')
                     try:
                         SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')

@@ -340,7 +340,7 @@
 
 (s1<root> / ask.v.01 :Agent (s0 / male.n.02) :Time (s2 / time.n.08 :TPR (c0 / "now")) :ATTRIBUTION (s4 / like.v.02 :Experiencer (s3 / person.n.01 :EQU (c1 / "speaker")) :Time (s5 / time.n.08 :EQU (c2 / "now")) :Stimulus (s6 / mathematics.n.01)))
 
-(s4<root> / ill.a.01 :Time (s2 / time.n.08 :TIN (s1 / day.n.03 :TAB (s0 / day.n.03)) :TPR (c0 / "now")) :Attribute-of (s3 / person.n.01 :EQU (c1 / "speaker")))
+(s5<root> / terra_incognita.n.01 :EQU (c2 / "now") :TIN (s0 / day.n.03))
 
 (s1<root> / prove.v.02 :POSSIBILITY (c1 / "+") :Agent (s0 / person.n.01 :EQU (c0 / "speaker")) :Topic (s2 / entity.n.01) :Recipient (s3 / person.n.01 :EQU (c2 / "hearer")))
 
@@ -442,7 +442,7 @@
 
 (s4<root> / live.v.01 :Location (s0 / location.n.01 :Name (c0 / "?")) :Time (s1 / time.n.08 :EQU (c1 / "now")) :Theme (s2 / person.n.01 :Of (c2 / "hearer") :Role (s3 / grandfather.n.01)))
 
-(s1<root> / hand.v.01 :Agent (s0 / female.n.02) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Destination (s3 / male.n.02) :Theme (s4 / money.n.01))
+(s5<root> / owe.v.01 :Agent (s0 / female.n.02) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Beneficiary (s3 / male.n.02) :Theme (s4 / money.n.01))
 
 (s6<root> / disown.v.02 :Patient (s3 / person.n.01 :Quantity (s0 / quantity.n.01 :APX (s1 / quantity.n.01 :EQU (c0 / "60000"))) :Source (s2 / state.n.01 :Name (c1 / "saxony")) :Role (s4 / farmer.n.01)) :Time (s5 / time.n.08 :TPR (c2 / "now")) :Context (s8 / reform.n.01))
 
@@ -598,7 +598,7 @@
 
 (s1<root> / write_down.v.01 :Agent (s0 / female.n.02) :Time (s2 / time.n.08 :TPR (c0 / "now")) :Theme (s3 / entity.n.01) :Destination (s4 / notebook.n.01 :User s0))
 
-(s1<root> / nice.a.01 :Attribute-of (s2 / dress.n.01))
+(s0<root> / event.v.01 :Participant (s2 / dress.n.01))
 
 (s4<root> / laugh.v.01 :NEGATION (c4 / "+") :Agent (s3 / entity.n.01 :NEGATION (c3 / "+") :Sub-of (s1 / entity.n.01 :Sub (s0 / male.n.02 :Name (c0 / "Tom")) :Sub (s2 / female.n.02 :Name (c2 / "Mary")) :Quantity (c1 / "2"))) :Time (s5 / time.n.08 :TPR (c5 / "now")))
 
@@ -1020,7 +1020,7 @@
 
 (s4<root> / nice.a.01 :Attribute-of (s0 / view.n.02 :Source (s1 / summit.n.02)) :Time (s2 / time.n.08 :EQU (c0 / "now")) :Degree (s3 / very.r.01))
 
-(s2<root> / take.v.01 :Theme (s0 / poll.n.01) :Time (s1 / time.n.08 :TPR (c0 / "now") :TIN (s4 / day.n.03 :TAB (s3 / day.n.03))))
+(s5<root> / terra_incognita.n.01 :EQU (c1 / "now") :TIN (s3 / day.n.03))
 
 (s2<root> / popular.a.01 :Stimulus (s0 / entity.n.01) :Time (s1 / time.n.08 :EQU (c0 / "now")) :Experiencer (s3 / woman.n.01))
 
@@ -1818,7 +1818,7 @@
 
 (s1<root> / start.v.01 :Time (s2 / time.n.08 :TPR (c1 / "now")) :Part-of (s3 / walk.v.01 :Theme (s0 / male.n.02 :Name (c0 / "Tom"))))
 
-(s1<root> / nice.a.01 :Attribute-of (s2 / suit.n.01))
+(s0<root> / event.v.01 :Participant (s2 / suit.n.01))
 
 (s2<root> / angry.a.01 :Experiencer (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s1 / time.n.08 :EQU (c1 / "now")))
 
@@ -1918,7 +1918,7 @@
 
 (s1<root> / swim.v.01 :POSSIBILITY (c0 / "+") :Theme (s0 / male.n.02))
 
-(s1<root> / be.v.02 :Theme (s0 / male.n.02 :Name (c0 / "Tom")) :Time (s2 / time.n.08 :EQU (c1 / "now")) :Co-Theme (s3 / person.n.01))
+(s5<root> / want.v.03 :Time (s2 / time.n.08 :EQU (c1 / "now")) :Theme (s3 / person.n.01) :Pivot (s4 / person.n.01 :EQU (c2 / "speaker")))
 
 (s1<root> / see.v.01 :Experiencer (s0 / person.n.01 :EQU (c0 / "speaker")) :Time (s2 / time.n.08 :TPR (c1 / "now")) :Stimulus (s3 / monkey.n.01) :Location (s4 / zoo.n.01))
 
