@@ -1,3 +1,5 @@
+('b0', ':instance', '"box"')
+('b0', ':member', 's1')
 ('s1', ':instance', 'release.v.04')
 ('s1', ':Agent', 's0')
 ('s0', ':instance', 'musical_organization.n.01')
@@ -13,5 +15,5 @@
 ('c2', ':instance', '"2010"')
 ('s4', ':TPR', 'c3')
 ('c3', ':instance', '"now"')
-tokenized sentence:The Steve Miller Band released a new album in June of 2010 .
-alignment:[{"token_id": 2, "node_id": ["s0", "c0"], "lexical_node": "s0"}, {"token_id": 4, "node_id": "s1"}, {"token_id": 6, "node_id": "s2"}, {"token_id": 7, "node_id": "s3"}, {"token_id": 9, "node_id": ["c1", "c2", "s4", "c3"], "lexical_node": "c1"}]
+tokenized sentence:START The Steve Miller Band released a new album in June of 2010 .
+alignment:[{"token_id": 0, "node_id": "b0"}, {"token_id": 3, "node_id": ["c0", "s0"], "lexical_node": "c0"}, {"token_id": 5, "node_id": "s1"}, {"token_id": 7, "node_id": "s2"}, {"token_id": 8, "node_id": "s3"}, {"token_id": 10, "node_id": ["c3", "c1", "s4", "c2"], "lexical_node": "c3"}]

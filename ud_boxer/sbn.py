@@ -987,7 +987,7 @@ def generate_gold_split(split_dir, output_file):
             final_dir = root_dir+'/'+dir+'/en.drs.penman'
             with open(final_dir, 'r') as separate_f:
                 gold_dev = ' '.join([x.strip() for x in separate_f.read().split('\n')])
-                final_gold_dev = gold_dev[:3] + '<root>' + gold_dev[3:]
+                final_gold_dev = gold_dev[:3] + gold_dev[3:]
                 split_out.write(final_gold_dev)
                 split_out.write('\n\n')
 
@@ -1003,21 +1003,21 @@ def main(starting_path):
     dev_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_dev.txt')
     test_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_test.txt')
     eval_split = get_split_list('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/data/splits/en_eval.txt')
-    with open('en_train.txt', 'w') as train_correct, open('en_dev.txt', 'w') as dev_correct, open('en_test.txt', 'w') as test_correct, open('en_eval.txt', 'w') as eval_correct, open('sbn_sum.txt', 'w') as debug, open('none_file_connective_only.txt', 'w') as debug2, open('none_lines.txt', 'w') as debug3:
+    with open('en_train.txt', 'w') as train_correct, open('en_dev.txt', 'r') as dev_correct, open('en_test.txt', 'w') as test_correct, open('dev_consistent_gold.txt', 'w') as gold_dev, open('gold_dev_postprocessed.txt', 'r') as gold_dev_reference:
         for filepath in pmb_generator(
                 starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
         ):
             try:
                 lines = split_comments(Path(filepath).read_text())
-                empty_connectives =['ATTRIBUTION', 'CONTINUATION', 'POSSIBILITY', 'CONSEQUENCE','ALTERNATION']
-                for line in lines:
-                    debug.write(f'{line[0]}\t%\t{str(line[1])}\n')
-                    if line[1]==None and line[0].split()[0] in empty_connectives:
-                        debug2.write(f'{line[0].split()[0]}\t{str(filepath)}')
-                        raw = Path(f'{filepath.parent}/en.raw').read_text()
-                        debug2.write(raw)
-                        debug2.write('\n')
-                        debug3.write(f'{line[0]}\t%\t{str(line[1])}\n')
+                empty_connectives =['ATTRIBUTION', 'CONTINUATION', 'POSSIBILITY', 'CONSEQUENCE','ALTERNATION','NEGATION']
+                # for line in lines:
+                #     debug.write(f'{line[0]}\t%\t{str(line[1])}\n')
+                #     if line[1]==None and line[0].split()[0].isupper():
+                #         debug2.write(f'{line[0].split()[0]}\t{str(filepath)}')
+                #         raw = Path(f'{filepath.parent}/en.raw').read_text()
+                #         debug2.write(raw)
+                #         debug2.write('\n')
+                #         debug3.write(f'{line[0]}\t%\t{str(line[1])}\n')
                 G = SBNGraph().from_path(filepath)
                 edges_info = get_edge_info(G,pre_map)
                 nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map)
@@ -1070,27 +1070,28 @@ def main(starting_path):
                     penmaninfo.write('alignment:')
                     json.dump(alignment_list, penmaninfo)
                     # print(f"{filepath.parent.parent.name}/{filepath.parent.name}")
-                    if f"{filepath.parent.parent.name}/{filepath.parent.name}" in train_split:
-                        train_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}"+"\n")
-                    elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in dev_split:
-                        dev_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}"+"\n")
-                        # dev_gold.write(final_gold_dev)
-                        # dev_gold.write('\n')
-                        # dev_gold.write('\n')
-                    elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in test_split:
-                        test_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}" + "\n")
-                        # test_gold.write(final_gold_dev)
-                        # test_gold.write('\n')
-                        # test_gold.write('\n')
-                    elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in eval_split:
-                        eval_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}" + "\n")
-                        # eval_gold.write(final_gold_dev)
-                        # eval_gold.write('\n')
-                        # eval_gold.write('\n')
-                    else:
-                        raise FileExistsError(
-                            f"How come the directory is NOT in the document? {filepath.parent.parent.name}/{filepath.parent.name}"
-                        )
+                    # if f"{filepath.parent.parent.name}/{filepath.parent.name}" in train_split:
+                    #     train_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}"+"\n")
+                    # elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in dev_split:
+                    #
+                    #     # dev_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}"+"\n")
+                    #     # dev_gold.write(final_gold_dev)
+                    #     # dev_gold.write('\n')
+                    #     # dev_gold.write('\n')
+                    # elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in test_split:
+                    #     # test_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}" + "\n")
+                    #     # test_gold.write(final_gold_dev)
+                    #     # test_gold.write('\n')
+                    #     # test_gold.write('\n')
+                    # elif f"{filepath.parent.parent.name}/{filepath.parent.name}" in eval_split:
+                    #     # eval_correct.write(f"{filepath.parent.parent.name}/{filepath.parent.name}" + "\n")
+                    #     # eval_gold.write(final_gold_dev)
+                    #     # eval_gold.write('\n')
+                    #     # eval_gold.write('\n')
+                    # else:
+                    #     raise FileExistsError(
+                    #         f"How come the directory is NOT in the document? {filepath.parent.parent.name}/{filepath.parent.name}"
+                    #     )
             except (SBNError, AlignmentError, LayoutError,IndexError, RecursionError, FileExistsError) as e:
                 error += 1
                 print(error)
@@ -1104,11 +1105,11 @@ def main(starting_path):
                     # print(f'Error type: {type(k).__name__}')
                     print(f'Failed to save the ill-formed file to {filepath.parent}/{filepath.stem}.png')
                 continue
-
-    generate_gold_split('en_train.txt', 'gold_train.txt')
-    generate_gold_split('en_dev.txt', 'gold_dev.txt')
-    generate_gold_split('en_test.txt', 'gold_test.txt')
-    generate_gold_split('en_eval.txt', 'gold_eval.txt')
+    #
+    # generate_gold_split('en_train.txt', 'gold_train.txt')
+    # generate_gold_split('en_dev.txt', 'gold_dev.txt')
+    # generate_gold_split('en_test.txt', 'gold_test.txt')
+    # generate_gold_split('en_eval.txt', 'gold_eval.txt')
 
 def pmb_generator(
         starting_path: PathLike,
@@ -1125,6 +1126,18 @@ def pmb_generator(
         disable=disable_tqdm,
         desc=desc_tqdm,
     )
+
+# def regenerate_dev(starting_path):
+#     paths = Path(starting_path).read_text().split('\n')
+#     root_path = '/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/'
+#     for path in paths:
+#         filepath = root_path+path+'/en.drs.sbn'
+#         try:
+#             G = SBNGraph().from_path(filepath)
+#             penman_string = G.to_penman_string()
+#             penman_one_line = penman_string.split()
+
+
 
 
 if __name__ == "__main__":

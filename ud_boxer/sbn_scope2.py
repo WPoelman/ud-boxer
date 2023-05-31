@@ -4,11 +4,11 @@ import logging
 import collections
 from collections import Counter
 import os
+import json
 from copy import deepcopy
 from os import PathLike
 from pathlib import Path
-import json
-import nltk
+from nltk.tokenize import TreebankWordTokenizer
 from penman.exceptions import LayoutError
 from tqdm.contrib.logging import logging_redirect_tqdm
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -41,7 +41,7 @@ import spacy
 
 from ud_boxer.list_manipulator import manipulate, overlap
 
-stopwords = ['the', 'a', 'to', 'in']
+
 # load_model = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
 
 
@@ -116,17 +116,35 @@ class SBNGraph(BaseGraph):
         self.__init_type_indices()
 
         starting_box = self.create_node(
-            SBN_NODE_TYPE.BOX, self._active_box_token
+            SBN_NODE_TYPE.BOX, self._active_box_token,
+            {'comment':'START0'}
         )
-
+# gather the node and box information
         nodes, edges = [starting_box], []
         max_wn_idx = len(lines) - 1
         reference_nodes = []
         reference_nodes_without_null = []
+        reference_nodes_with_scope_info = []
         count = -1
+        count_node =-1
+        count_box =0
+
+        box_indices_list = [i for i, (basic_node, basic_comment) in enumerate(sbn_node_reference_with_boxes_info) if basic_node in SBNSpec.NEW_BOX_INDICATORS]
+        box_indices_num_pair={-1:0}
+        for i, b_id in enumerate(box_indices_list):
+            box_indices_num_pair[b_id] = i+1
+        # box_indices_after_list = replace_with_last(box_indices_list)
+        # box_indices_after_list.insert(len(sbn_node_reference_with_boxes_info), len(sbn_node_reference_with_boxes_info))
+        # box_indices_list = replace_successive_numbers(box_indices_list)
+        box_indices_list.insert(0, -1)
+        # box_indices_list.insert(len(sbn_node_reference_with_boxes_info), len(sbn_node_reference_with_boxes_info))
+         # the list is used to keep track of the previous discourse unit(s)
         for idx, (basic_node, basic_comment) in enumerate(sbn_node_reference_with_boxes_info):
+            # Counter(sbn_node_reference_with_boxes)['NEGATION']
             if synset_match := SBNSpec.SYNSET_PATTERN.match(basic_node):
-                count += 1
+                scope_info = sorted([x for x in box_indices_list if x<idx])[-1]
+                count_node += 1
+                count+=1
                 synset_node = self.create_node(
                     SBN_NODE_TYPE.SYNSET,
                     basic_node,
@@ -136,10 +154,16 @@ class SBNGraph(BaseGraph):
                     },
                 )
                 nodes.append(synset_node)
-                reference_nodes_without_null.append((SBN_NODE_TYPE.SYNSET, count))
-                reference_nodes.append((SBN_NODE_TYPE.SYNSET, count, basic_node))
+                reference_nodes_with_scope_info.append((SBN_NODE_TYPE.SYNSET, count_node, box_indices_num_pair[scope_info]))
+                reference_nodes_without_null.append((SBN_NODE_TYPE.SYNSET, count_node))
+                reference_nodes.append((SBN_NODE_TYPE.SYNSET, count_node, basic_node))
             elif basic_node in SBNSpec.NEW_BOX_INDICATORS:
-                reference_nodes.append('null')
+                count_box += 1
+                count+=1
+                if basic_comment is None:
+                    reference_nodes.append((SBN_NODE_TYPE.BOX,count_box, basic_node, 'null', box_indices_list[count_box-1], count))
+                else:
+                    reference_nodes.append((SBN_NODE_TYPE.BOX,count_box,basic_node, basic_comment,box_indices_list[count_box-1],count))
             else:
                 raise SBNError(
                     "The structure of sbn is not correct!"
@@ -275,106 +299,104 @@ class SBNGraph(BaseGraph):
                             raise SBNError(
                                 f"Unexpected box index found '{box_index}'"
                             )
-                        sbn_node_reference_without_comment = [x for x, _ in sbn_info_reference]
-                        sbn_node_reference_without_comment.sort(key=lambda t: ('v' in t[0], len(t)), reverse=True)
-                        target_node = [x for x in reference_nodes if sbn_node_reference_without_comment[0][0] in x][0]
-                        active_id = (target_node[0], target_node[1])
-
-                        if sub_token in SBNSpec.NEW_BOX_INDICATORS_2VERB:
-
-                            freq = len([x for x in sbn_node_reference_with_boxes if x == sub_token])
-                            if freq > 1:
-                                for q, e in enumerate(reference_nodes[j:]):
-                                    if e!='null':
-                                        active_id = reference_nodes[j + q][0], reference_nodes[j + q][1]
-                                        break
-
-                                new_node = self.create_node(
-                                    SBN_NODE_TYPE.CONSTANT,
-                                    "+",
-                                    {"comment": comment},
-                                )
-                                new_edge = self.create_edge(
-                                    active_id,
-                                    new_node[0],
-                                    SBN_EDGE_TYPE.DRS_OPERATOR,
-                                    sub_token,
-                                )
-                                nodes.append(new_node)
-                                edges.append(new_edge)
-
-                            else:
-                                new_node = self.create_node(
-                                    SBN_NODE_TYPE.CONSTANT,
-                                    "+",
-                                    {"comment": comment},
-                                )
-                                new_edge = self.create_edge(
-                                    active_id,
-                                    new_node[0],
-                                    SBN_EDGE_TYPE.DRS_OPERATOR,
-                                    sub_token,
-                                )
-                                nodes.append(new_node)
-                                edges.append(new_edge)
-
-                        else:
-                            pre, after = [x for x, _ in sbn_info_reference][:j], [x for x, _ in sbn_info_reference][
-                                                                                 j + 1:]
-                            pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
-                            after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
-                            preverb_id_node = [x for x in reference_nodes[:j] if pre[0][0] in x][0]
-                            afterverb_id_node = [x for x in reference_nodes[j+1:] if after[0][0] in x][0]
-                            preverb_id = (preverb_id_node[0], preverb_id_node[1])
-                            afterverb_id = (afterverb_id_node[0], afterverb_id_node[1])
-
-                            new_edge = self.create_edge(
-                                preverb_id,
-                                afterverb_id,
-                                SBN_EDGE_TYPE.ROLE,
-                                token,
-                            )
-                            edges.append(new_edge)
-
+                        current_box_id = self._active_box_id
+                        new_box = self.create_node(
+                            SBN_NODE_TYPE.BOX, self._active_box_token,
+                            {"comment": comment}
+                        )
+                        nodes.append(new_box)
+                        box_box_edge = self.create_edge(
+                            current_box_id,
+                            self._active_box_id,
+                            SBN_EDGE_TYPE.BOX_BOX_CONNECT,
+                            sub_token,
+                        )
+                        edges.append(box_box_edge)
+                        # if j==0:
+                        #     continue
+                        #
+                        # else:
+                        #     if reference_nodes[j+1][0] == SBN_NODE_TYPE.SYNSET and reference_nodes[j-1][0]==SBN_NODE_TYPE.SYNSET:
+                        #         k = reference_nodes[j][-3]+1
+                        #         q = reference_nodes[j][-2]
+                        #         pre, after = [x for x, _ in sbn_info_reference][k:j], [x for x, _ in sbn_info_reference][j+1:q]
+                        #         pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
+                        #         after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
+                        #         preverb_id_node = [x for x in reference_nodes[k:j] if pre[0][0] in x]
+                        #         afterverb_id_node = [x for x in reference_nodes[j + 1:q] if after[0][0] in x]
+                        #         # Connect the current box to the one indicated by the index
+                        #         afterverb_id = (afterverb_id_node[0][0], afterverb_id_node[0][1])
+                        #         new_edge = self.create_edge(
+                        #             self._active_box_id,
+                        #             afterverb_id,
+                        #             SBN_EDGE_TYPE.BOX_CONNECT,
+                        #         )
+                        #         edges.append(new_edge)
+                        #
+                        #         preverb_id = (preverb_id_node[0][0], preverb_id_node[0][1])
+                        #         box_new_edge = self.create_edge(
+                        #             current_box_id,
+                        #             preverb_id,
+                        #             SBN_EDGE_TYPE.BOX_CONNECT,
+                        #         )
+                        #         edges.append(box_new_edge)
+                        #
+                        #     elif reference_nodes[j + 1][0] == SBN_NODE_TYPE.SYNSET:
+                        #
+                        #         q = reference_nodes[j][-2]
+                        #         after = [x for x, _ in sbn_info_reference][j + 1:q]
+                        #         after = sorted(after, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
+                        #         afterverb_id_node = [x for x in reference_nodes[j + 1:q] if after[0][0] in x]
+                        #         afterverb_id = (afterverb_id_node[0][0], afterverb_id_node[0][1])
+                        #         new_edge = self.create_edge(
+                        #             self._active_box_id,
+                        #             afterverb_id,
+                        #             SBN_EDGE_TYPE.BOX_CONNECT,
+                        #         )
+                        #         edges.append(new_edge)
+                        #     elif reference_nodes[j-1][0]==SBN_NODE_TYPE.SYNSET:
+                        #         k = reference_nodes[j][-3] + 1
+                        #         pre = [x for x, _ in sbn_info_reference][k:j]
+                        #         pre = sorted(pre, key=lambda x: (len(x), 'v' in x[0]), reverse=True)
+                        #         preverb_id_node = [x for x in reference_nodes[k:j + 1] if pre[0][0] in x]
+                        #         preverb_id = (preverb_id_node[0][0], preverb_id_node[0][1])
+                        #         box_new_edge = self.create_edge(
+                        #             current_box_id,
+                        #             preverb_id,
+                        #             SBN_EDGE_TYPE.BOX_CONNECT,
+                        #         )
+                        #         edges.append(box_new_edge)
+                        #
+                        #     else:
+                        #         print('There might be something I overlooked.')
+                        #         continue
 
                     else:
                         raise SBNError(
                             f"Invalid token found '{sub_token}' in line: {sbn_line}"
                         )
-        # print([(edge[0],edge[1]) for edge in edges])
-        # print(edges)
-        from_nodes = [edge[0] for edge in edges]
-        from_node = set([edge[0] for edge in edges])
-        to_node = set([edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET])
-        predicate_nodes = [x for x in from_node if x not in to_node]
-        # Count the frequency of elements in list1
-        frequency_counter = Counter(from_nodes)
+        from_node_include_box = set([edge[0] for edge in edges])
 
-        # Find the intersection of both lists
-        intersection = set(from_nodes) & set(predicate_nodes)
-        if intersection:
-
-        # Find the most frequent element in the intersection
-            root = max(intersection, key=frequency_counter.get)
-            # for predicate_node in predicate_nodes:
-            new_box_syn_edge = self.create_edge(
-                self._active_box_id,
-                root,
-                SBN_EDGE_TYPE.BOX_CONNECT,
+        to_node_include_box = set([edge[1] for edge in edges])
+        # to_node_include_box_with_scope_info = set([x for x in reference_nodes_with_scope_info if (x[0],x[1]) in to_node_include_box])
+        from_node_boxes = [x for x in from_node_include_box if x[0]==SBN_NODE_TYPE.BOX]
+        from_nodes = [edge[0] for edge in edges if edge[0][0] == SBN_NODE_TYPE.SYNSET]
+        from_node_with_scope_info = set([x for x in reference_nodes_with_scope_info if (x[0],x[1]) in from_nodes])
+        to_nodes = [edge[1] for edge in edges if edge[1][0] == SBN_NODE_TYPE.SYNSET and edge[0][0] == SBN_NODE_TYPE.SYNSET]
+        to_node_with_scope_info = set([x for x in reference_nodes_with_scope_info if (x[0],x[1]) in to_nodes])
+        predicate_nodes = [x for x in from_node_with_scope_info if x not in to_node_with_scope_info]
+        assert len(predicate_nodes)>0
+        for n in set(predicate_nodes):
+            root_box_id = (SBN_NODE_TYPE.BOX, n[-1])
+            box_new_edge = self.create_edge(
+                from_node_id=root_box_id,
+                to_node_id=n,
+                type=SBN_EDGE_TYPE.BOX_CONNECT,
             )
-            edges.append(new_box_syn_edge)
-        else:
-            new_box_syn_edge = self.create_edge(
-                self._active_box_id,
-                predicate_nodes[0],
-                SBN_EDGE_TYPE.BOX_CONNECT,
-            )
-            edges.append(new_box_syn_edge)
-            print('This should be paid attention!')
+            edges.append(box_new_edge)
 
         self.add_nodes_from(nodes)
         self.add_edges_from(edges)
-
         self._check_is_dag()
         return self
 
@@ -421,147 +443,6 @@ class SBNGraph(BaseGraph):
             },
         )
 
-    def to_sbn(self, path: PathLike, add_comments: bool = False) -> Path:
-        """Writes the SBNGraph to a file in sbn format"""
-        final_path = ensure_ext(path, ".sbn")
-        final_path.write_text(self.to_sbn_string(add_comments))
-        return final_path
-
-    def to_sbn_string(self, add_comments: bool = False) -> str:
-        """Creates a string in sbn format from the SBNGraph"""
-        result = []
-        synset_idx_map: Dict[SBN_ID, int] = dict()
-        line_idx = 0
-
-        box_nodes = [
-            node for node in self.nodes if node[0] == SBN_NODE_TYPE.BOX
-        ]
-        for box_node_id in box_nodes:
-            box_box_connect_to_insert = None
-            for edge_id in self.out_edges(box_node_id):
-                _, to_node_id = edge_id
-                to_node_type, _ = to_node_id
-
-                edge_data = self.edges.get(edge_id)
-                if edge_data["type"] == SBN_EDGE_TYPE.BOX_BOX_CONNECT:
-                    if box_box_connect_to_insert:
-                        raise SBNError(
-                            "Found box connected to multiple boxes, "
-                            "is that possible?"
-                        )
-                    else:
-                        box_box_connect_to_insert = edge_data["token"]
-
-                if to_node_type in (
-                        SBN_NODE_TYPE.SYNSET,
-                        SBN_NODE_TYPE.CONSTANT,
-                ):
-                    if to_node_id in synset_idx_map:
-                        raise SBNError(
-                            "Ambiguous synset id found, should not be possible"
-                        )
-
-                    synset_idx_map[to_node_id] = line_idx
-                    temp_line_result = [to_node_id]
-                    for syn_edge_id in self.out_edges(to_node_id):
-                        _, syn_to_id = syn_edge_id
-
-                        syn_edge_data = self.edges.get(syn_edge_id)
-                        if syn_edge_data["type"] not in (
-                                SBN_EDGE_TYPE.ROLE,
-                                SBN_EDGE_TYPE.DRS_OPERATOR,
-                        ):
-                            raise SBNError(
-                                f"Invalid synset edge connect found: "
-                                f"{syn_edge_data['type']}"
-                            )
-
-                        temp_line_result.append(syn_edge_data["token"])
-
-                        syn_node_to_data = self.nodes.get(syn_to_id)
-                        syn_node_to_type = syn_node_to_data["type"]
-                        if syn_node_to_type == SBN_NODE_TYPE.SYNSET:
-                            temp_line_result.append(syn_to_id)
-                        elif syn_node_to_type == SBN_NODE_TYPE.CONSTANT:
-                            temp_line_result.append(syn_node_to_data["token"])
-                        else:
-                            raise SBNError(
-                                f"Invalid synset node connect found: "
-                                f"{syn_node_to_type}"
-                            )
-
-                    result.append(temp_line_result)
-                    line_idx += 1
-                elif to_node_type == SBN_NODE_TYPE.BOX:
-                    pass
-                else:
-                    raise SBNError(f"Invalid node id found: {to_node_id}")
-
-            if box_box_connect_to_insert:
-                result.append([box_box_connect_to_insert, "-1"])
-
-        # Resolve the indices and the correct synset tokens and create the sbn
-        # line strings for the final string
-        final_result = []
-        if add_comments:
-            final_result.append(
-                (
-                    f"{SBNSpec.COMMENT_LINE} SBN source: {self.source.value}",
-                    " ",
-                )
-            )
-        current_syn_idx = 0
-        for line in result:
-            tmp_line = []
-            comment_for_line = None
-
-            for token_idx, token in enumerate(line):
-                # There can never be an index at the first token of a line, so
-                # always start at the second token.
-                if token_idx == 0:
-                    # It is a synset id that needs to be converted to a token
-                    if token in synset_idx_map:
-                        node_data = self.nodes.get(token)
-                        tmp_line.append(node_data["token"])
-                        comment_for_line = comment_for_line or (
-                            node_data["comment"]
-                            if "comment" in node_data
-                            else None
-                        )
-                        current_syn_idx += 1
-                    # It is a regular token
-                    else:
-                        tmp_line.append(token)
-                # It is a synset which needs to be resolved to an index
-                elif token in synset_idx_map:
-                    target = synset_idx_map[token] - current_syn_idx + 1
-                    # In the PMB dataset, an index of '0' is written as '+0',
-                    # so do that here as well.
-                    tmp_line.append(
-                        f"+{target}" if target >= 0 else str(target)
-                    )
-                # It is a regular token
-                else:
-                    tmp_line.append(token)
-
-            if add_comments and comment_for_line:
-                tmp_line.append(f"{SBNSpec.COMMENT}{comment_for_line}")
-
-            # This is a bit of trickery to vertically align synsets just as in
-            # the PMB dataset.
-            if len(tmp_line) == 1:
-                final_result.append((tmp_line[0], " "))
-            else:
-                final_result.append((tmp_line[0], " ".join(tmp_line[1:])))
-
-        # More formatting and alignment trickery.
-        max_syn_len = max(len(s) for s, _ in final_result) + 1
-        sbn_string = "\n".join(
-            f"{synset: <{max_syn_len}}{rest}".rstrip(" ")
-            for synset, rest in final_result
-        )
-
-        return sbn_string
 
     def to_penman_string(
             self, evaluate_sense: bool = False, strict: bool = True
@@ -603,6 +484,7 @@ class SBNGraph(BaseGraph):
         # changes are no fun to debug.
         G = deepcopy(self)
 
+
         prefix_map = {
             SBN_NODE_TYPE.BOX: ["b", 0],
             SBN_NODE_TYPE.CONSTANT: ["c", 0],
@@ -610,7 +492,6 @@ class SBNGraph(BaseGraph):
         }
         # print(G.nodes.items())
         for node_id, node_data in G.nodes.items():
-
             pre, count = prefix_map[node_data["type"]]
             prefix_map[node_data["type"]][1] += 1  # type: ignore
             G.nodes[node_id]["var_id"] = f"{pre}{count}"
@@ -619,7 +500,7 @@ class SBNGraph(BaseGraph):
             # specification of what that type does is shown by the
             # box-box-connection, such as NEGATION or EXPLANATION.
             if node_data["type"] == SBN_NODE_TYPE.BOX:
-                G.nodes[node_id]["token"] = "root"
+                G.nodes[node_id]["token"] = "box"
 
         for edge in G.edges:
             # Add a proper token to the box connectors
@@ -686,7 +567,7 @@ class SBNGraph(BaseGraph):
 
             if errors := pm_model.errors(g):
                 raise penman.DecodeError(str(errors))
-            # assert len(g.edges()) == len(self.edges), "Wrong number of edges"
+            assert len(g.edges()) == len(self.edges), "Wrong number of edges"
         except (penman.DecodeError, AssertionError) as e:
             raise SBNError(f"Generated Penman output is invalid: {e}")
 
@@ -837,7 +718,7 @@ def get_edge_info(graph, pre_map):
             edges_info.append((current_id, to_id))
     return edges_info
 
-def get_node_info(graph, pre_map):
+def get_node_info(graph, pre_map, raw_text_path):
     '''
     :param graph: SBNGraph
     :param pre_map: node and id map
@@ -866,12 +747,27 @@ def get_node_info(graph, pre_map):
                 else:
                     comment_node_pair_info[comment].append((var_id, token_node))
                     comment_node_pair[comment].append(var_id)
-    comment_list = ' '.join(comments).split()
-    x_new_list = manipulate(comment_list)
-    tokenized_comment_list = word_tokenize(' '.join(x for x, y in x_new_list))
-    cleaned_comment_list = [(x, i) for i, x in enumerate(tokenized_comment_list)]
-
+    cleaned_comment_list = [x if 'every' not in x else x.replace("every", "every ", 1).split() for x in tokenize(Path(raw_text_path).read_text())]
+    cleaned_comment_list = flatten_list(cleaned_comment_list)
+    cleaned_comment_list.insert(0, 'START')
+    cleaned_comment_list = [(x, i) for i, x in enumerate(cleaned_comment_list)]
     return nodes_info, comment_node_pair, cleaned_comment_list
+
+def replace_successive_numbers(lst):
+    result = []
+    i = 0
+    while i < len(lst):
+        if i + 1 < len(lst) and lst[i + 1] == lst[i] + 1:
+            replacement = 0 if i == 0 else lst[i - 1]
+            while i + 1 < len(lst) and lst[i + 1] == lst[i] + 1:
+                result.append(replacement)
+                i += 1
+            result.append(replacement)  # Add replacement for the last number in the group
+        else:
+            result.append(lst[i])
+        i += 1
+    return result
+
 
 def flatten_list(nested_list):
     """
@@ -884,6 +780,20 @@ def flatten_list(nested_list):
         else:
             flattened_list.append(item)
     return flattened_list
+
+def replace_with_last(nums):
+    result = []
+    start_index = 0
+    if len(nums)==0:
+        return nums
+    else:
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1] + 1:
+                result.extend([nums[i - 1]] * (i - start_index))
+                start_index = i
+
+        result.extend([nums[-1]] * (len(nums) - start_index))
+        return result
 def find_kid_node(var_id, edges_info, possible_nodes, comment_node):
     target_n_kid = [x[1] for x in edges_info if x[0]==var_id]
     if len(target_n_kid) >0:
@@ -952,30 +862,40 @@ def alignment(comment_node_pair, cleaned_comment_list):
     '''
     alignment_list = []
     for tok, nodes in comment_node_pair.items():
-        tok = word_tokenize(tok[:-1])
-        tokens_without_sw = [word for word in tok if not word in stopwords]
-        tokens_without_sw.sort(key=len, reverse=True)
-        aligned_token = tokens_without_sw[0]
-
+        tok = tokenize(tok[:-1])
+        tokens_without_sw = [word for word in tok]
+        # tokens_without_sw.sort(key=len, reverse=True) # choose the longest word as the lexical node
+        aligned_token = sorted(tokens_without_sw, key=lambda x: len(x), reverse=True)[0]
         aligned_node = [t for t in cleaned_comment_list if t[0]==aligned_token]
+        alignment = {}
         if aligned_node:
-            alignment = {}
             alignment['token_id'] = aligned_node[0][1]
-            if len(nodes) == 1:
-                alignment['node_id'] = nodes[0]
-                alignment_list.append(alignment)
-                cleaned_comment_list.remove(aligned_node[0])
-            elif len(nodes)>1:
-                alignment['node_id'] = nodes
-                alignment['lexical_node'] = nodes[0]
-                alignment_list.append(alignment)
-                cleaned_comment_list.remove(aligned_node[0])
-            else:
-                raise AlignmentError(
-                    'The token does not have a corresponding node!'
-                )
+        else:
+            tgt_token = sorted([x[0] for x in cleaned_comment_list], key=lambda x: overlap_count(x, tok), reverse=True)[0]
+            aligned_node = [t for t in cleaned_comment_list if t[0]==tgt_token]
+
+        alignment['token_id'] = aligned_node[0][1]
+        if len(nodes) == 1:
+            alignment['node_id'] = nodes[0]
+            alignment_list.append(alignment)
+            cleaned_comment_list.remove(aligned_node[0])
+        elif len(nodes) > 1:
+            alignment['node_id'] = nodes
+            alignment['lexical_node'] = nodes[0]
+            alignment_list.append(alignment)
+            cleaned_comment_list.remove(aligned_node[0])
+        else:
+            raise AlignmentError(
+                'The token does not have a corresponding node!'
+            )
+
     return alignment_list
 
+def overlap_count(element, given_element):
+    return len(set(element).intersection(given_element))
+def tokenize(input):
+    tokenizer = TreebankWordTokenizer()
+    return tokenizer.tokenize(input)
 def get_split_list(split_dir):
     split = open(split_dir, 'r').readlines()
     return [x.strip() for x in split]
@@ -1008,45 +928,23 @@ def main(starting_path):
                 starting_path, "**/*.sbn", desc_tqdm="Generating Penman files "
         ):
             try:
+                raw_path = str(filepath).replace('drs.sbn', 'raw')
                 G = SBNGraph().from_path(filepath)
                 edges_info = get_edge_info(G,pre_map)
-                nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map)
+                nodes_info, comment_node_pair, cleaned_comment_list= get_node_info(G, pre_map, raw_path)
                 comment_list_reference = deepcopy(cleaned_comment_list)
                 comment_node_pair = group_nodes_for_alignment(nodes_info, edges_info, comment_node_pair)
                 alignment_list = alignment(comment_node_pair, cleaned_comment_list)
                 output_path = Path(f"{filepath.parent}/{filepath.stem}.penman")
                 penman_string = G.to_penman_string()
+                # print(penman_string)
+                to_penman(penman_string, output_path)
                 triples = penman.decode(penman_string).triples
                 negation_list = [x for y in triples for x in y]
-                if Counter(negation_list)[':NEGATION']==2 and 'tell.v.03' in negation_list:
-                    print(f'We found NEGATION:{filepath}')
-                    try:
-                        SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')
-                    except:
-                        print(f'OKOK {filepath} went wrong.')
-
-
-                new_triple = []
-                new_triple_with_root = []
-                only_one_root =[]
-                for tri in triples[1:]:
-                    if 'b0' in tri:
-                        new_triple_with_root.append(tri)
-                        only_one_root.append(tri)
-                        if only_one_root:
-                            continue
-                    else:
-                        new_triple.append(tri)
-                        new_triple_with_root.append(tri)
-                codec = PENMANCodec()
-                new_penman = codec.encode(Graph(new_triple))
-                new_penman_with_root = codec.encode(Graph(new_triple_with_root))
-                to_penman(new_penman,output_path)
-
-                real_new_triple = penman.decode(new_penman).triples
+                SBNGraph().from_path(filepath).to_png(f'{filepath.parent}/{filepath.stem}.png')
                 output_path_penmaninfo = Path(f"{filepath.parent}/{filepath.stem}.penmaninfo")
                 with open(output_path_penmaninfo, 'w') as penmaninfo:
-                    for t in real_new_triple:
+                    for t in triples:
                         penmaninfo.write(f'{t}\n')
                     penmaninfo.write('tokenized sentence:')
                     tokenized_sent = ' '.join([x[0] for x in comment_list_reference])
@@ -1076,7 +974,7 @@ def main(starting_path):
                         raise FileExistsError(
                             f"How come the directory is NOT in the document? {filepath.parent.parent.name}/{filepath.parent.name}"
                         )
-            except (SBNError, AlignmentError, LayoutError,IndexError, RecursionError, FileExistsError) as e:
+            except (SBNError, AlignmentError, LayoutError, RecursionError, FileExistsError) as e:
                 error += 1
                 print(error)
                 print(f'error {filepath}')
@@ -1090,10 +988,10 @@ def main(starting_path):
                     print(f'Failed to save the ill-formed file to {filepath.parent}/{filepath.stem}.png')
                 continue
 
-    # generate_gold_split('en_train.txt', 'gold_train.txt')
-    # generate_gold_split('en_dev.txt', 'gold_dev.txt')
-    # generate_gold_split('en_test.txt', 'gold_test.txt')
-    # generate_gold_split('en_eval.txt', 'gold_eval.txt')
+    generate_gold_split('en_train.txt', 'gold_train.txt')
+    generate_gold_split('en_dev.txt', 'gold_dev.txt')
+    generate_gold_split('en_test.txt', 'gold_test.txt')
+    generate_gold_split('en_eval.txt', 'gold_eval.txt')
 
 def pmb_generator(
         starting_path: PathLike,
@@ -1113,6 +1011,6 @@ def pmb_generator(
 
 
 if __name__ == "__main__":
-    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/ud_boxer/test_data')
+    starting_path = Path('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d0704')
     with logging_redirect_tqdm():
         main(starting_path)

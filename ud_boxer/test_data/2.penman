@@ -1,7 +1,9 @@
-(s2 / lie.v.05
-    :NEGATION (c1 / "+")
-    :Agent (s0 / person.n.01
-               :EQU (c0 / "speaker"))
-    :Time (s1 / time.n.08
-              :TSU (c2 / "now"))
-    :Recipient (s3 / female.n.02))
+(b0 / "box"
+	:NEGATION (b1 / "box"
+		:member (s2 / lie.v.05
+			:Agent (s0 / person.n.01
+				:EQU (c0 / "speaker"))
+			:Time (s1 / time.n.08
+				:TSU (c1 / "now"))
+			:Recipient (s3 / female.n.02)))
+	:member s0)

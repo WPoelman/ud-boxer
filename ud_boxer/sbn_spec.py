@@ -259,7 +259,7 @@ def split_comments(sbn_string: str) -> List[Tuple[str, Optional[str]]]:
 
     # Separate the actual SBN and the comments
     temp_lines: List[Tuple[str, Optional[str]]] = []
-    count =-1
+    count =0
     for line in split_lines:
         # Full comment lines are discarded here.
         if line.startswith(SBNSpec.COMMENT_LINE):

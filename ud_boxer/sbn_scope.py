@@ -110,10 +110,7 @@ class SBNGraph(BaseGraph):
                     synset_node = self.create_node(
                         SBN_NODE_TYPE.SYNSET,
                         token,
-                        {
-                            "wn_lemma": synset_match.group(1),
-                            "wn_pos": synset_match.group(2),
-                            "wn_id": synset_match.group(3),
+                        {"wn_lemma": synset_match.group(),
                             "comment": comment,
                         },
                     )
@@ -597,14 +594,14 @@ class SBNGraph(BaseGraph):
                 if not (components := split_synset_id(node_tok)):
                     raise SBNError(f"Cannot split synset id: {node_tok}")
 
-                lemma, pos, sense = [self.quote(i) for i in components]
+                # lemma, pos, sense = [self.quote(i) for i in components]
 
-                out_str += f'({var_id} / {self.quote("synset")}'
-                out_str += f"\n{indents}:lemma {lemma}"
-                out_str += f"\n{indents}:pos {pos}"
+                out_str += f'({var_id} / {".".join(components)}'
+                # out_str += f"\n{indents}:lemma {lemma}"
+                # out_str += f"\n{indents}:pos {pos}"
 
-                if evaluate_sense:
-                    out_str += f"\n{indents}:sense {sense}"
+                # if evaluate_sense:
+                #     out_str += f"\n{indents}:sense {sense}"
             else:
                 out_str += f"({var_id} / {self.quote(node_tok)}"
 
@@ -770,5 +767,22 @@ def store_visualizations(path):
         except Exception as e:
             logger.error(f"Failed: {filepath}: {e}")
 
+def generate_gold_penman(starting_path):
+    with open('postprocessed_sbn_gold_amr.txt', 'w') as goldfile:
+        path_list = Path(starting_path).read_text().split('\n')
+        # path_list =['p66/d1536']
+        root_path = '/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/'
+        for path in path_list:
+            filepath = root_path+ path+ '/en.drs.sbn'
+            G = SBNGraph().from_path(filepath)
+            print(path)
+            penman_string = G.to_penman_string()
+            print(penman_string)
+            goldfile.write(penman_string)
+            goldfile.write('\n\n')
+
+
+
+
 if __name__=='__main__':
-    store_visualizations('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/ud_boxer/test_data/')
+    generate_gold_penman('/Users/shirleenyoung/Desktop/TODO/MA_Thesis/ud-boxer/ud_boxer/en_train.txt')

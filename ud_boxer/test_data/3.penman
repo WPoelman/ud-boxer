@@ -1,11 +1,12 @@
-(s1 / want.v.01
-    :Pivot (s0 / female.n.02
-               :Name (c0 / "Mary"))
-    :Time (s2 / time.n.08
-              :EQU (c1 / "now"))
-    :Theme (s3 / paint.v.02
-               :Agent s0
-               :Patient (s4 / car.n.01
-                            :User s0)
-               :Result (s5 / bright_blue.a.01
-                           :Colour-of s4)))
+(b0 / "box"
+	:member (s1 / want.v.01
+		:Pivot (s0 / female.n.02
+			:Name (c0 / "Mary"))
+		:Time (s2 / time.n.08
+			:EQU (c1 / "now"))
+		:Theme (s3 / paint.v.02
+			:Agent s0
+			:Patient (s4 / car.n.01
+				:User s0)
+			:Result (s5 / bright_blue.a.01
+				:Colour-of s4))))

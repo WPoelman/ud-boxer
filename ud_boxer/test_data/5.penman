@@ -1,7 +1,14 @@
-(s3 / like.v.02
-    :Stimulus (s1 / entity.n.01
-                  :NEGATION (c1 / "+"))
-    :Experiencer (s2 / person.n.01
-                     :EQU (c2 / "hearer"))
-    :Time (s4 / time.n.08
-              :EQU (c3 / "now")))
+(b0 / "box"
+	:NEGATION (b1 / "box"
+		:member (s3 / like.v.02
+			:Stimulus (s1 / entity.n.01)
+			:Experiencer (s2 / person.n.01
+				:EQU (c1 / "hearer"))
+			:Time (s4 / time.n.08
+				:EQU (c2 / "now")))
+		:NEGATION (b2 / "box"
+			:member (s5 / eat.v.01
+				:Agent (s0 / person.n.01
+					:EQU (c0 / "hearer"))
+				:Patient s1)))
+	:member s0)

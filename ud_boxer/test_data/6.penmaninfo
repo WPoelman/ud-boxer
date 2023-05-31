@@ -1,3 +1,5 @@
+('b0', ':instance', '"box"')
+('b0', ':member', 's1')
 ('s1', ':instance', 'lose.v.05')
 ('s1', ':Agent', 's0')
 ('s0', ':instance', 'female.n.02')
@@ -10,5 +12,5 @@
 ('s1', ':Theme', 's3')
 ('s3', ':instance', 'glasses.n.01')
 ('s3', ':User', 's0')
-tokenized sentence:Tracy lost her glasses .
-alignment:[{"token_id": 0, "node_id": ["s0", "c0"], "lexical_node": "s0"}, {"token_id": 1, "node_id": ["c1", "s2", "s1"], "lexical_node": "c1"}, {"token_id": 3, "node_id": "s3"}]
+tokenized sentence:START Tracy lost her glasses .
+alignment:[{"token_id": 0, "node_id": "b0"}, {"token_id": 1, "node_id": ["c0", "s0"], "lexical_node": "c0"}, {"token_id": 2, "node_id": ["s2", "s1", "c1"], "lexical_node": "s2"}, {"token_id": 4, "node_id": "s3"}]

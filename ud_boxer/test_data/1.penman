@@ -1,12 +1,14 @@
-(s2 / call.v.03
-    :Agent (s0 / person.n.01
-               :EQU (c0 / "speaker"))
-    :Time (s1 / time.n.08
-              :EQU (c1 / "now"))
-    :EXPLANATION (s4 / lose.v.05
-                     :Agent (s3 / person.n.01
-                                :EQU (c2 / "speaker"))
-                     :Time (s5 / time.n.08
-                               :TPR (c3 / "now"))
-                     :Theme (s6 / credit_card.n.01
-                                :User (c4 / "speaker"))))
+(b0 / "box"
+	:EXPLANATION (b1 / "box"
+		:member (s4 / lose.v.05
+			:Agent (s3 / person.n.01
+				:EQU (c2 / "speaker"))
+			:Time (s5 / time.n.08
+				:TPR (c3 / "now"))
+			:Theme (s6 / credit_card.n.01
+				:User (c4 / "speaker"))))
+	:member (s2 / call.v.03
+		:Agent (s0 / person.n.01
+			:EQU (c0 / "speaker"))
+		:Time (s1 / time.n.08
+			:EQU (c1 / "now"))))

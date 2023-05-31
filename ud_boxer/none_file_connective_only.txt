@@ -2,9 +2,25 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d0172/en.drs.sbnCan you tell me where the flea market is?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d2862/en.drs.sbnShe gave away all her dolls.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d3140/en.drs.sbnYou cannot tame a wolf.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d2434/en.drs.sbnA banana is yellow.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d0830/en.drs.sbnEach boy has received his diploma.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d3341/en.drs.sbnEverybody's smiling.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p19/d1137/en.drs.sbnFrom a basket one grabbed a greasy wooden spoon....
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2671/en.drs.sbnEvery apple is red.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2606/en.drs.sbn"Are you from Australia?" asked the Filipino.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2094/en.drs.sbnTom asked Mary if she had been to Boston.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2570/en.drs.sbnOne cannot trust surveys.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d3035/en.drs.sbnIn 1964, Roger Miller agreed to record sixteen songs. One of those songs was "Dang Me." It became his first number one selling record.
 
@@ -18,7 +34,15 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p26/d2575/en.drs.sbnI know you can do this.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2131/en.drs.sbnI always eat out.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d1940/en.drs.sbnNowadays anybody can get books.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2297/en.drs.sbnTom and Mary are always flirting with each other.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d0852/en.drs.sbnDo you know where my watch is?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2737/en.drs.sbnWhoever comes, say I am away from home.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2737/en.drs.sbnWhoever comes, say I am away from home.
 
@@ -26,11 +50,39 @@ POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d2645/en.drs.sbnI think he ate about 10 oysters.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p21/d3104/en.drs.sbnI'm always bored with his boastful talk.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p28/d2795/en.drs.sbnHe has set down everything that happened.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p28/d3226/en.drs.sbnAccording to her, he won't come.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p28/d0966/en.drs.sbnI got slapped on both cheeks.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d1724/en.drs.sbnIf you flatter him, he'll do anything.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d3197/en.drs.sbnAccording to Vladimir Chizhov, the word "pussy" is indecent.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d3548/en.drs.sbnBob waved to everyone he saw.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d2459/en.drs.sbnBetty killed everyone.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d3209/en.drs.sbnEvery child misbehaves from time to time.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d3440/en.drs.sbnEverybody loves him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d2440/en.drs.sbnAll of them are not present.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d0935/en.drs.sbnHe's always busy.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d3269/en.drs.sbnWe have consumed all the natural resources.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d0823/en.drs.sbnI know that she is beautiful.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p17/d2746/en.drs.sbnEverybody believes it.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1586/en.drs.sbnThe dove symbolizes peace.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d2993/en.drs.sbnAll journeys begin with a first step.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d0895/en.drs.sbnAccording to the radio, it will rain tomorrow.
 
@@ -38,29 +90,53 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d2815/en.drs.sbnTom suspected that his father was dyslexic.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d2032/en.drs.sbnI told him everything.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1953/en.drs.sbnWe expect that he will pass the examination.
 
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1901/en.drs.sbnMaybe he is Italian or Spanish.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d2171/en.drs.sbnOne cannot not communicate.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d3084/en.drs.sbnEverything is all right now.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1433/en.drs.sbnI think Tom is outgoing.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d0171/en.drs.sbnHe asked if I like mathematics.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p10/d1435/en.drs.sbnI saw everything.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3393/en.drs.sbnSmoking is not a habit; it's an addiction.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d2443/en.drs.sbnA cat abhors a vacuum.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3239/en.drs.sbnTom is hoping that he can hitch a ride to Boston.
 
-CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d1559/en.drs.sbnI apologize to everyone.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d1592/en.drs.sbnEveryone will be hungry.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
+
+CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d3456/en.drs.sbnI'm an alcoholic. I'm a drug addict. I'm homosexual. I'm a genius.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d2753/en.drs.sbnAll of us stared at her.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d2390/en.drs.sbnTom talks to everybody.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p44/d2063/en.drs.sbnHe pretended that he was a lawyer.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p43/d1776/en.drs.sbnAll seats are reserved.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p43/d2051/en.drs.sbnHe who has the money, also has the power.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d1805/en.drs.sbnEveryone at the party was drinking wine.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d2319/en.drs.sbnHe who risks not gains not.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d2372/en.drs.sbnYou won everything!
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p88/d2952/en.drs.sbn"Whose books are these?" "They are Alice's."
 
@@ -68,9 +144,22 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p75/d1561/en.drs.sbn"Whose gloves are these?" "They are Lisa's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p75/d2971/en.drs.sbnEverybody wants to go.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p81/d2987/en.drs.sbnMelanie said that she likes swimming.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p81/d2887/en.drs.sbnPolice arrested everyone in the room.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p81/d2651/en.drs.sbnI'm always tired.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p81/d0761/en.drs.sbnA typhoon batters the Philippines.
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p81/d2776/en.drs.sbnTom goes jogging every morning.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d2003/en.drs.sbnI have a nephew. He's a bartender.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d3114/en.drs.sbnHis slacks are all wrinkled.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d3082/en.drs.sbnIn India, the cow is a sacred animal.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p86/d3353/en.drs.sbnTom is by no means unintelligent. He is just lazy.
 
@@ -80,13 +169,21 @@ CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d2790/en.drs.sbn"Whose tools are these?" "They are my uncle's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d2962/en.drs.sbnEach individual paid 7000 dollars.
+
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d2478/en.drs.sbnTom is too busy now to talk to you.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d1095/en.drs.sbn"The colour hurts my eyes," she said.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p72/d1641/en.drs.sbnAn elephant is a strong animal.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d2958/en.drs.sbnWe're not sure where Tom is.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d1949/en.drs.sbnI've always hated Tom.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d1542/en.drs.sbnAccording to a survey, 1 billion people are suffering from poverty in the world.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d2885/en.drs.sbnEach building has a name.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p11/d3265/en.drs.sbnThis stone is beautiful. Where did you find it?
 
@@ -103,13 +200,35 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2028/en.drs.sbnTom noticed the front door was open.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2459/en.drs.sbnAll of their children were born in Malaysia.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d1798/en.drs.sbnI hate everything about her.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d3511/en.drs.sbnAll my cakes are delicious!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d2669/en.drs.sbnThat sister of yours is always complaining of her husband.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p29/d1758/en.drs.sbnA tanker is a ship carrying oil.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d3442/en.drs.sbnI didn't know you played chess.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d2608/en.drs.sbnTraffic accidents happen daily.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d1524/en.drs.sbnMr. Smith is liked by all the students.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d1986/en.drs.sbnI think Tom is all right.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d1849/en.drs.sbnI cannot lie to Taninna. She's my wife.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p16/d1531/en.drs.sbnA goose is a water bird.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d1970/en.drs.sbnEvery author suffers from writer's block from time to time.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d1811/en.drs.sbnTom looked like he was healthy.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d1819/en.drs.sbnTom and Mary both laughed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d2820/en.drs.sbnTom is liked by everyone.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d3195/en.drs.sbnI don't know how they did it.
 
@@ -117,7 +236,11 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p20/d0849/en.drs.sbnI think that she is honest.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d1454/en.drs.sbnEverybody left.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d1810/en.drs.sbnTom is kind of tired. He wants to go home.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d3112/en.drs.sbnA man of wealth has to pay a lot of income tax.
 
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d3033/en.drs.sbnIs Tom left-handed or right-handed?
 
@@ -125,25 +248,47 @@ POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d1959/en.drs.sbnTom wondered if Mary could speak French.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p18/d1332/en.drs.sbnshe credited him with every kind of intelligence.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d2648/en.drs.sbnThey're either in the shed or in the den.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d2648/en.drs.sbnThey're either in the shed or in the den.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d2744/en.drs.sbnI'm sorry. I forgot.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d1630/en.drs.sbnTom said he wouldn't shoot an unarmed man.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p27/d2667/en.drs.sbnA football team consists of eleven players.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d3107/en.drs.sbnTom claimed he saw a UFO.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d2469/en.drs.sbnI need a pencil. Can I use one of yours?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d3523/en.drs.sbnHis long speech bored everyone.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d1730/en.drs.sbnCycling is good exercise. Moreover, it doesn't pollute the air.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p73/d3287/en.drs.sbnThat he grew up in America is well-known.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p87/d1940/en.drs.sbnEverything is all right.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p87/d2324/en.drs.sbnI always take a bus.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p87/d2385/en.drs.sbnI dreamed I was eating an apple pie.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p87/d2746/en.drs.sbnHe is now either in Rome or in Paris.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p87/d2746/en.drs.sbnHe is now either in Rome or in Paris.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2654/en.drs.sbnI think you're jealous.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2373/en.drs.sbnShe stopped studying. She left the university without a degree.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d1502/en.drs.sbn"Whose jewels are these?" "They are Taninna's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2306/en.drs.sbnI'm always thirsty.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d3476/en.drs.sbnEverybody makes mistakes.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d0554/en.drs.sbn
 Nepal's government and the non- profit World Wildlife fund are launching a new
@@ -158,9 +303,25 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2384/en.drs.sbnYou said his name was Tom, didn't you?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d0813/en.drs.sbnAll of us talk in English.
+
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p80/d2949/en.drs.sbnTom was too tired to speak.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p74/d2359/en.drs.sbnA top-class shearer can shear up to 150 sheep in one day.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p74/d0893/en.drs.sbnThe hedgehog is a small animal.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p74/d3335/en.drs.sbnEverybody was staring at Tom.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p74/d3061/en.drs.sbnI cannot phone Marika. She lives in Finland!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p74/d3405/en.drs.sbnEveryone's hungry.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d1785/en.drs.sbnEach of them bought a new dress.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d2237/en.drs.sbnTom is always flirting with Mary.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d2916/en.drs.sbnEverybody loves my cat.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d0704/en.drs.sbnAndré Henri Constant van Hasselt was born at Maastricht, in Limburg. He was educated in his native town, and at the university of Liège.
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p42/d1416/en.drs.sbnShe is convinced that her son is still alive.
@@ -172,9 +333,31 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d0892/en.drs.sbnIt's not blood.
 It's beet.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d2815/en.drs.sbnEverything's OK now.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d2910/en.drs.sbnEverybody was excited by the news.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d2065/en.drs.sbnMy brother takes a new book out of the library every day.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d3518/en.drs.sbnEverybody was gathered in the living room.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d3315/en.drs.sbnAll of the sugar has fallen to the ground.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p89/d2521/en.drs.sbnEverybody loves Tom.
+
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d1861/en.drs.sbnIs this baby a he or a she?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d2236/en.drs.sbnThe small intestine is about seven meters long.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d1973/en.drs.sbn"Whose pencils are these?" "They are Walt Disney's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d1839/en.drs.sbnEverybody knows everybody.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d1839/en.drs.sbnEverybody knows everybody.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d2415/en.drs.sbnEverybody hates Tom.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p45/d3235/en.drs.sbnEveryone who knows him respects him.
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d3087/en.drs.sbnNeither Tom nor Mary can speak French.
 
@@ -184,9 +367,17 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d3186/en.drs.sbnI'm sorry I misunderstood you.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d1622/en.drs.sbnTom bought drinks for everybody.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d3295/en.drs.sbnTom pushed all the pillows off the bed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p58/d1934/en.drs.sbnEvery ship needs an anchor.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d0833/en.drs.sbnI am convinced that he is innocent.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d3028/en.drs.sbnI have a Vietnamese friend. Her name is Tiên.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d1971/en.drs.sbnEverybody likes money.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d2005/en.drs.sbnMoney and I are strangers; in other words, I am poor.
 
@@ -194,11 +385,35 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p67/d0224/en.drs.sbnThe court adjudged that the will was valid.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d1717/en.drs.sbnNot everybody wins!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d1921/en.drs.sbnEverybody but Tom smiled.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d1456/en.drs.sbnHe's always breaking into our conversation.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d1468/en.drs.sbnEverybody wants to win.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d2111/en.drs.sbnBrian's all muddy. He played football.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p93/d2111/en.drs.sbnBrian's all muddy. He played football.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d2197/en.drs.sbnA diamond is worth a lot of money!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d3509/en.drs.sbnEverything sucks.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d2435/en.drs.sbnAll of a sudden, all the lights went out.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d3206/en.drs.sbnI apologize. It was my mistake.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d3217/en.drs.sbnTom and Mary both prefer watching comedies.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d2482/en.drs.sbnTom gave Mary everything she asked for.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d0956/en.drs.sbnShe plays tennis every day.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p94/d1474/en.drs.sbnIf a dog bites you, wash the wound with soap and water.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d0913/en.drs.sbnA cat has two ears.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d2812/en.drs.sbnI convinced him that he was wrong.
 
@@ -206,14 +421,30 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d0799/en.drs.sbnI assure you that an error like this will never happen again.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d1786/en.drs.sbnAll of my friends like Tom.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d0775/en.drs.sbnI'm very sensitive to cold.
 May I have another blanket?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d3144/en.drs.sbnEvery house had a garden.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d1224/en.drs.sbnThis supports the suspicion that a bank employee was involved in the crime.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d3120/en.drs.sbnCat Stevens is not a cat. He's a singer.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p60/d2783/en.drs.sbn"Where is my classroom?" "It's on the third floor."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d2794/en.drs.sbnWe always looked down on him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d1723/en.drs.sbnMy sister jogs every day.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d2933/en.drs.sbnDo you breastfeed or bottlefeed him?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d2933/en.drs.sbnDo you breastfeed or bottlefeed him?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d2475/en.drs.sbnAll my siblings are taller than me.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d3068/en.drs.sbnEverybody wins!
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p69/d0896/en.drs.sbnThe Titanic sank on her maiden voyage.
 She was a large ship.
@@ -222,25 +453,61 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d1145/en.drs.sbn"Some delegates are present," he said.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d2766/en.drs.sbnHer mother always accompanies her.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d2649/en.drs.sbnI can't squeeze this orange. It's dry.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d2044/en.drs.sbnI think my girlfriend is kind of cute.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d3237/en.drs.sbnI am keeping a diary every day.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p56/d1404/en.drs.sbnWe tried to put out the fire but we were unsuccessful. We had to call the fire brigade.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p51/d2927/en.drs.sbnCamels have either one or two humps.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p51/d2927/en.drs.sbnCamels have either one or two humps.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p51/d2927/en.drs.sbnCamels have either one or two humps.
+
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2368/en.drs.sbnThis box is too bulky to carry.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d3010/en.drs.sbnOne speaks French in France.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2840/en.drs.sbnThe coworker claimed he had missed the bus.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2473/en.drs.sbnTom knew who the kidnappers were.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2493/en.drs.sbnAll of us speak French.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1686/en.drs.sbnEveryone liked Tom.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d3176/en.drs.sbnEveryone likes you.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1817/en.drs.sbnI believe Elvis is still alive.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2094/en.drs.sbnEach of them sang a song.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2986/en.drs.sbnBoth buildings burned down.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1726/en.drs.sbnEverybody jumped.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1716/en.drs.sbnThe birch has white bark.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1601/en.drs.sbnShe is called Mei. She is cooking in the kitchen.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1897/en.drs.sbnA cobbler is also known as a shoemaker.
+
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d3129/en.drs.sbnThis desk was too heavy to lift.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d1932/en.drs.sbnBoth men laughed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p05/d2186/en.drs.sbnI accidentally deleted everything.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3410/en.drs.sbnStop yelling. My head hurts.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d1746/en.drs.sbnEveryone was killed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d2389/en.drs.sbnAll of us like her.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3405/en.drs.sbnI wonder if he likes me.
 
@@ -248,9 +515,17 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d2592/en.drs.sbnI'm afraid you misunderstood me.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3273/en.drs.sbnTom and Mary were both born in Boston.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d2952/en.drs.sbnGive the book to whomever wants it.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3151/en.drs.sbnI know where you are.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d2477/en.drs.sbnI'm always confusing John with Paul.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3309/en.drs.sbnTom knows where I work.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3145/en.drs.sbnEveryone is wearing nametags.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d0136/en.drs.sbnTom asks his mother if she can but him a new toy.
 
@@ -260,28 +535,62 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p02/d3463/en.drs.sbnHe's rich. He doesn't need money!
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d3080/en.drs.sbnA cow chases away flies with its tail.
+
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d0790/en.drs.sbnIs it sweet or sour?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2094/en.drs.sbnTom goes jogging in the park every morning.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2929/en.drs.sbnThey are probably all dead now.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2717/en.drs.sbnEveryone smiled at me.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2944/en.drs.sbnI go to bed at eleven every night.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2221/en.drs.sbnAccording to her, he isn't coming.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d2438/en.drs.sbnYoko is in London now. She's studying English.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p34/d0794/en.drs.sbnA sponge absorbs water.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p33/d2760/en.drs.sbnTom saw where Mary lives.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p33/d0783/en.drs.sbnEveryone calls him Jeff.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p33/d2714/en.drs.sbnI drive to Tokyo every day.
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0834/en.drs.sbnShe was too proud to ask him for help.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2042/en.drs.sbnThe DNA test cleared him of all charges.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3552/en.drs.sbnNot everyone in Boston likes us.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2697/en.drs.sbnI guess that she is 40.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2781/en.drs.sbnAll the apple trees were cut down.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2774/en.drs.sbnI know he's still in love with you.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3050/en.drs.sbnThere are always a lot of vehicles on this road.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2764/en.drs.sbnAll the seats are booked.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2550/en.drs.sbnTom told me that he'd lost his watch.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3414/en.drs.sbnTom said it didn't matter.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3397/en.drs.sbnHe always listens to serious music.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0704/en.drs.sbnThe Egyptian government on Tuesday dismissed speculation that a group of missing Pakistanis had helped in the bombings.
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2408/en.drs.sbnAll of my friends like computer games.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d3346/en.drs.sbnI think Tom is nasty.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0935/en.drs.sbnTom hates everybody.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2174/en.drs.sbnAnybody who wants this book can be given it.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d2370/en.drs.sbnHe's always gossiping.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p50/d0841/en.drs.sbnThey say that he is seriously ill.
 
@@ -291,16 +600,26 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d1982/en.drs.sbnYou're right. I'll go by taxi.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d2609/en.drs.sbnAll of us were homesick.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d0862/en.drs.sbnI found a note on my desk, but I don't know whose it is.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p57/d3371/en.drs.sbnI'm afraid you have dialed a wrong number.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p61/d0826/en.drs.sbnAn elephant has a long nose.
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p61/d0818/en.drs.sbnI'm too busy to help her.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p61/d3477/en.drs.sbn"Whose shoes are these?" "They are my brother's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d0802/en.drs.sbnA dolphin is a kind of mammal.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d2809/en.drs.sbnWhoever stole the money should be punished.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d0707/en.drs.sbnBush returned home as a war hero. He married Barbara and enrolled at Yale.
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d1727/en.drs.sbnHe acted like he didn't know me.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p95/d1733/en.drs.sbnTom shook everybody's hands.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p59/d2699/en.drs.sbnIs it true that you beat Taninna?
 
@@ -308,23 +627,53 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p59/d2149/en.drs.sbnHe knows I don't like face to face meetings.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p59/d2293/en.drs.sbnI always travel with travelers' checks instead of cash.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p92/d2641/en.drs.sbnTom's a nice guy. Everyone likes him.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p92/d2641/en.drs.sbnTom's a nice guy. Everyone likes him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p92/d3053/en.drs.sbnThey are always quarreling.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p66/d2061/en.drs.sbnEveryone but Jim came.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p66/d3457/en.drs.sbnEverybody's happy.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p66/d2407/en.drs.sbnTom bugs everyone.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p66/d1536/en.drs.sbnNo one knew who owned the land.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p32/d0913/en.drs.sbnAll apples are red.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p32/d2452/en.drs.sbnTom saved every letter that Mary sent him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p32/d1361/en.drs.sbnEveryone was afraid of these brutes.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p32/d2715/en.drs.sbnTom is always online.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d3246/en.drs.sbnAccording to the police, no one was injured.
 
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d2432/en.drs.sbnIn case of emergency, call 119.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d1567/en.drs.sbnEverybody laughed at his error.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d0875/en.drs.sbnEveryone laughed at him.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p35/d0927/en.drs.sbnMary thinks martial arts are silly.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d1650/en.drs.sbnI am sure that he will succeed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3321/en.drs.sbnEvery child bowed to the teacher.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3386/en.drs.sbnWe believed that the object was a UFO (Unidentified Flying Object).
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3115/en.drs.sbnThe teacher joked that she was 90 years old.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d3146/en.drs.sbnI think Tom is persuasive.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2719/en.drs.sbnShe always paints her nails red.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2919/en.drs.sbnHe chops wood every day.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2307/en.drs.sbnTom admitted he was afraid.
 
@@ -334,37 +683,77 @@ POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d0178/en.drs.sbnI'm too drunk to do that.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2627/en.drs.sbnTom and Mary were both crying.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2453/en.drs.sbnAll of the town was destroyed by a fire.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p03/d2785/en.drs.sbnThat displeased everyone.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d1517/en.drs.sbnTom thinks I stole the money.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d0064/en.drs.sbnParliamentary elections were held in Iceland on 12 May 2007. The Independence Party remained the largest party in the Althing, winning 25 of the 63 seats.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d1518/en.drs.sbnTom asked Mary if she knew John.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d0778/en.drs.sbnEat whatever you like.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3319/en.drs.sbnI believe she's 40 years old.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3321/en.drs.sbnI itch everywhere.
 
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d2865/en.drs.sbnI don't have the time or the money.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3388/en.drs.sbnIs it true that he won the race?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3389/en.drs.sbnShe always walks to school.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d1630/en.drs.sbnYou and he are both very kind.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d2804/en.drs.sbnYou'll ruin everything.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p04/d3052/en.drs.sbn"Whose notebooks are these?" "They are Karim's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d2795/en.drs.sbnShe's maxed out all her credit cards.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d2598/en.drs.sbnHe loves her. She loves him, too.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d2631/en.drs.sbnI'm glad you asked that.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d2309/en.drs.sbnEverybody paid.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d1418/en.drs.sbnYou said that Tom wasn't hungry.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p40/d1506/en.drs.sbnEverybody lies.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d0894/en.drs.sbnThe elephant is grey.
 
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d1463/en.drs.sbnEither you or I am wrong.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d0755/en.drs.sbnThe Salt Lake City 2002 Winter Olympics will take place from February 8th to February 24th 2002. The Paralympics will take place in Salt Lake City from March 7th to March 16th 2002.
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d2133/en.drs.sbnEvery android is a robot.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p47/d1480/en.drs.sbnAll of us are happy.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d2247/en.drs.sbnWhoever loves me, also loves my dog.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d2493/en.drs.sbnA DNA test showed he was innocent.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d3170/en.drs.sbnThe peacock (Inachis io) is a beautiful and easily recognizable butterfly.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d1937/en.drs.sbnDo whatever's required.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d0807/en.drs.sbn"How old is she?"
 "She is twelve years old."
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p78/d1839/en.drs.sbnHe resented that she was dating his brother.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p85/d2115/en.drs.sbnThe appendix is about 10 cm long.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p85/d2514/en.drs.sbnMy name is not "you"; it's Ricardo.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p85/d1102/en.drs.sbnAll sorts of fancies filled my brain.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p85/d3441/en.drs.sbnTom and Mary were both drunk.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p71/d0869/en.drs.sbnAccording to the newspaper there was an earthquake in Mexico.
 
@@ -374,33 +763,71 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p71/d1801/en.drs.sbnI am convinced that I am right.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d1984/en.drs.sbnNot all of us catch colds.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2756/en.drs.sbnHe's always joking.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d3248/en.drs.sbnTom always exaggerates.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2248/en.drs.sbnNot everyone was happy.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2223/en.drs.sbnHe who sleeps with dogs gets up with fleas.
+
+SOURCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2237/en.drs.sbnI wish you could've come with us.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d2839/en.drs.sbnI bought an Apple mouse. It's only 69 €!
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d3024/en.drs.sbnHe is named Jeff by everyone.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p76/d1486/en.drs.sbn"Whose keys are these?" "They are Mary's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p82/d3428/en.drs.sbnShe doesn't always come late.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p82/d1943/en.drs.sbn'What is that?' asked Tony.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p82/d3242/en.drs.sbnWe must keep a diary every day.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p49/d2814/en.drs.sbn"Whose cats are these?" "They are Fatima's."
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p49/d3111/en.drs.sbnI hear that Bob and Lucy have broken up.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d3215/en.drs.sbnYou can't tickle yourself.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d3531/en.drs.sbnAll of us were shocked by the news.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d3168/en.drs.sbnWhat kind of movie is it? Is it popular?
 
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d1607/en.drs.sbnHe likes all that is sweet.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p22/d3065/en.drs.sbnEvery dog is alive.
 
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d2759/en.drs.sbnHe who pays the piper calls the tune.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d1437/en.drs.sbnI know who likes Sachiko.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d3162/en.drs.sbnEach person paid a thousand dollars.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d3207/en.drs.sbnEach person paid $7,000.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d2533/en.drs.sbnShe observed how butterflies fly.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d1541/en.drs.sbnA book can excite.
 
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d3227/en.drs.sbnTom doesn't have a credit card or a bank account.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d3309/en.drs.sbnThe doctor confirmed that Linda was pregnant.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d2186/en.drs.sbnNot everyone is dishonest.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d1536/en.drs.sbnHe likes neither baseball nor football.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d1536/en.drs.sbnHe likes neither baseball nor football.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p25/d1536/en.drs.sbnHe likes neither baseball nor football.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d2905/en.drs.sbnOuch! I've pricked myself!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d1589/en.drs.sbnI run ten kilometers daily.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d2278/en.drs.sbnI like Tom. He's a nice guy.
 
@@ -408,15 +835,33 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d0773/en.drs.sbnI guess you are right.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d1864/en.drs.sbnShe always gets up at six.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d3187/en.drs.sbnEveryone said that I was wrong.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d3187/en.drs.sbnEveryone said that I was wrong.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p13/d1992/en.drs.sbnTom doesn't have a cat. However, Tom does have a dog, doesn't he?
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d0895/en.drs.sbnHe was too tired to study.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2394/en.drs.sbnEveryone noticed her.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2005/en.drs.sbnHe who pays the piper, calls the tune.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d3262/en.drs.sbnWe are always hungry.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d1916/en.drs.sbnAll the girls in my class are kind.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2158/en.drs.sbnMy parents are both doctors.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2731/en.drs.sbn"Whose pillows are these?" "They are Kenza's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2575/en.drs.sbnTom is always bossing people around.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p14/d2982/en.drs.sbnEverybody saw it.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p83/d3426/en.drs.sbnThe examinations are all over.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p83/d3087/en.drs.sbnDan realized he was in love with Linda.
 
@@ -424,11 +869,15 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p83/d1653/en.drs.sbnShe cabled us that she was coming.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2395/en.drs.sbnI bathe daily.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d0145/en.drs.sbnTom doubts whether Mary is honest.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2293/en.drs.sbnI'm Nana. I'm Hideki Yamauchi's daughter.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2090/en.drs.sbnThat guy stole my wallet! Stop him!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2173/en.drs.sbnTom and his wife both enjoy playing chess.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p77/d2724/en.drs.sbnTom thinks I'm jealous.
 
@@ -442,36 +891,94 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d2413/en.drs.sbnI guess Tom is looking for Mary.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d3453/en.drs.sbnEverybody likes Tom.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p48/d1553/en.drs.sbnThe red lamp lights up in case of danger.
 
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d0833/en.drs.sbnAll that he says is true.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d1634/en.drs.sbnMary senses the aliens are watching her.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d1398/en.drs.sbnEverybody applauded.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d3207/en.drs.sbnWe should drink 64 ounces of fluids a day.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d1927/en.drs.sbnEvery vote counts.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d2446/en.drs.sbnAn airship is lighter than air.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d2860/en.drs.sbnI'm convinced that this job is perfect for you.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d0871/en.drs.sbnThis woman is from China.
 She speaks Chinese.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p70/d2748/en.drs.sbnBush respects all religions.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d3343/en.drs.sbn"Whose dogs are these?" "They are my neighbor's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d1716/en.drs.sbnA parrot can mimic a person's voice.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d0920/en.drs.sbnShe promised me that she would clean my room.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d1759/en.drs.sbnEveryone but Tom laughed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p84/d2741/en.drs.sbnEverybody that came to the street was surprised.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p46/d1740/en.drs.sbnEveryone was fingerprinted.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p46/d2840/en.drs.sbnHe always quarrels with his wife.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p46/d1666/en.drs.sbnHe says that raw vegetables are healthier.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p46/d3377/en.drs.sbnTom always talks about himself.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d2358/en.drs.sbnEverybody claps.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d0914/en.drs.sbnYou ruined everything.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d1465/en.drs.sbnTom had both of his socks on inside out.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d3330/en.drs.sbnTom scares everybody.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d2000/en.drs.sbnTom claimed that he didn't see anything.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p79/d3145/en.drs.sbnAll the kids were dancing.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p41/d1415/en.drs.sbnEverything's free.
+
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p41/d3522/en.drs.sbnShe is too tired to study.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p41/d2929/en.drs.sbnEveryone in the class learned the poem by heart.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p41/d2717/en.drs.sbnEverybody liked Tom.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p41/d0880/en.drs.sbnThis music's annoying everyone.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d1096/en.drs.sbn"Everybody knows that." said Peter."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d1096/en.drs.sbn"Everybody knows that." said Peter."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d2222/en.drs.sbnShe always buys milk.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d2380/en.drs.sbnEverybody laughs.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d0801/en.drs.sbnMiss Klein gives a test every Friday.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d0787/en.drs.sbnNot all children like apples.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p15/d2660/en.drs.sbnMy pen is old. I want a new one.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1982/en.drs.sbnI thought everyone was busy.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1982/en.drs.sbnI thought everyone was busy.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d2625/en.drs.sbnHe whispered to me that he was hungry.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1660/en.drs.sbnI'm sorry he committed suicide.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d3130/en.drs.sbnEverybody agrees with you.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d3548/en.drs.sbnEveryone makes mistakes.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d2239/en.drs.sbnShe admits that she stole the jewels.
 
@@ -479,7 +986,17 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d1557/en.drs.sbnIs it true that you bought a house in London?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d2907/en.drs.sbnTom wrote everything down.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d3307/en.drs.sbnDespite everything, Tom started to relax.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p12/d3037/en.drs.sbnI think my right arm is broken.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p24/d2237/en.drs.sbnI always give something to the beggars.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p24/d1990/en.drs.sbnWhoever guesses the number wins.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p24/d3104/en.drs.sbnTom's response surprised everybody.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p24/d2741/en.drs.sbnI think Tom is too old to be dating my daughter.
 
@@ -495,25 +1012,81 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d1258/en.drs.sbnExperts are still cooling the wagons with water, the fire brigade reports.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d1869/en.drs.sbnEverybody groans.
+
+SOURCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d2513/en.drs.sbn"Are you still cold," she asked, as she kissed him on the forehead.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d1962/en.drs.sbnEveryone respects Erkin.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d0114/en.drs.sbnMy mother from Malaysia thinks that those three horses are so-so.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p23/d0824/en.drs.sbnEveryone except me was invited.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d3416/en.drs.sbnEveryone shook hands.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d0850/en.drs.sbnShe showers every morning.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d3392/en.drs.sbnRussia rejected both demands.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d3366/en.drs.sbnThe ship left every Monday.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d3555/en.drs.sbnTom filled both glasses with wine.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d3319/en.drs.sbnHe bores everybody.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2404/en.drs.sbnAll the students are present.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1560/en.drs.sbnEverybody calls the small cat Tora.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d3263/en.drs.sbnEveryone was hungry.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1963/en.drs.sbnHe is always smoking.
 
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2708/en.drs.sbnIf you're tired, go to bed.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2906/en.drs.sbnA dog is sensitive to smell.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1663/en.drs.sbnTom knows Mary lied.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1058/en.drs.sbnBoth Cristina and Luis always dreamt of studying medicine.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1058/en.drs.sbnBoth Cristina and Luis always dreamt of studying medicine.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1404/en.drs.sbnI don't know where Tom's office is.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2497/en.drs.sbnIt was all delicious!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2312/en.drs.sbnHe put all his money in the box.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d1958/en.drs.sbnI think Tom is drunk.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2144/en.drs.sbnEveryone knows everyone.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p01/d2144/en.drs.sbnEveryone knows everyone.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d3191/en.drs.sbn"Whose chair is this?" "It is mine."
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d0776/en.drs.sbnNo one is too old to learn.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d2002/en.drs.sbnDespite his errors everyone respected him.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1742/en.drs.sbnHe suggested to her that she should buy it.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1718/en.drs.sbnNot everyone likes that book.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1402/en.drs.sbnI thought Tom hated me.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1898/en.drs.sbnEverybody waited.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d3385/en.drs.sbnTom drinks milk every morning.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p06/d1480/en.drs.sbnI ate everything on the plate.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d0065/en.drs.sbnParliamentary elections were held in Greece on 22 September 1996. The ruling Panhellenic Socialist Movement (PASOK) of Costas Simitis was re-elected, defeating the liberal-conservative New Democracy party of Miltiadis Evert.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d0872/en.drs.sbnAn android is a kind of robot.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d2984/en.drs.sbnEach person paid one thousand dollars.
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p39/d1758/en.drs.sbnThis soup is too salty to eat.
 
@@ -523,23 +1096,49 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1948/en.drs.sbnI'm waiting for her to climb into her car.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d2852/en.drs.sbnAll the boys were yelling.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d0195/en.drs.sbnHe asked me whether I like math.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d2999/en.drs.sbnEverybody wants something.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d3169/en.drs.sbnI thought Tom had stopped dating Mary.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1640/en.drs.sbnHe dreams that everybody in China speaks Esperanto.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1640/en.drs.sbnHe dreams that everybody in China speaks Esperanto.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1420/en.drs.sbnHe asked her if she was Jane.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d0793/en.drs.sbnAll the students study English.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d0249/en.drs.sbnEveryone in the class climbed the hill.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p30/d1768/en.drs.sbnEveryone except Tom was wearing a tie.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d2197/en.drs.sbnLook at that cat. It is Mr. Brown's.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d1783/en.drs.sbn"Whose magazines are these?" "They are the doctor's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d0776/en.drs.sbnEverybody laughed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d2808/en.drs.sbnThe maid announced each guest.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p37/d2571/en.drs.sbnEverything is still new for me.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d1725/en.drs.sbnEveryone's looking at me.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2966/en.drs.sbnEverybody will die.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d1913/en.drs.sbn"Whose bags are these?" "They are my aunt's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2841/en.drs.sbnIt's all Tom's.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d3432/en.drs.sbnI think Tom said his last name is Jackson.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d3432/en.drs.sbnI think Tom said his last name is Jackson.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d1719/en.drs.sbnHe solved every problem.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2954/en.drs.sbnIs it true that Tom and Mary are dating?
 
@@ -547,25 +1146,49 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d0838/en.drs.sbnI am afraid he is going to spill the beans.
 
+SOURCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2169/en.drs.sbn"There's a shark in the water" she whispered.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2818/en.drs.sbnNot everyone is worried.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2226/en.drs.sbnAnybody can do this.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p08/d2210/en.drs.sbnTom always complains, doesn't he?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d2705/en.drs.sbnShe was always quarreling with her parents.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d0821/en.drs.sbnHe replied that he did not know.
 
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d3194/en.drs.sbnIn case of a fire, use the stairs.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d0911/en.drs.sbnI'm not ashamed that I am poor.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d2437/en.drs.sbnThe shop sells all sorts of bric-a-brac.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p97/d2001/en.drs.sbnHe asked her where she lived.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d3045/en.drs.sbnTom doesn't think he's as creative as Mary.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d2848/en.drs.sbnI'll take back everything I said.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d2230/en.drs.sbnI'll hire whoever he recommends.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d1459/en.drs.sbn"Whose letters are these?" "They are Linda's."
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d1421/en.drs.sbnTom is acting like nothing happened.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p63/d1951/en.drs.sbnEverybody is waiting for you.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p64/d3304/en.drs.sbnTom piled everything up in the center of the room.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p64/d2663/en.drs.sbnAaah!! My computer is broken!
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p64/d1787/en.drs.sbnTom managed to carry everything himself.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p64/d2301/en.drs.sbnJim could hear whom she was phoning.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0064/en.drs.sbnGeneral elections were held in Chile on 30 October 1932. Arturo Alessandri of the Liberal Party was elected president, whilst the Conservative Party and Radical Party emerged as the largest parties in the Chamber of Deputies.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0802/en.drs.sbnWendy was not always interested in Japanese festivals.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d2279/en.drs.sbnIt's strange that Tom didn't mention that.
 
@@ -573,7 +1196,11 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d3171/en.drs.sbnHe said that he grew up in Tunisia.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d2290/en.drs.sbnI've always been afraid of doctors.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d0806/en.drs.sbnI'm afraid the line is busy.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d2272/en.drs.sbnAll swans are white.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p90/d3065/en.drs.sbnI cannot wipe the table. I don't have a cloth.
 
@@ -584,7 +1211,11 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d3366/en.drs.sbnTom said it was an emergency.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d2840/en.drs.sbnI always get an A in math.
+
 CONSEQUENCE	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d1243/en.drs.sbnAll who were arrested have been released.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d3447/en.drs.sbnA whale is a mammal.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d1836/en.drs.sbnYou can trust John. He will never let you down.
 
@@ -594,15 +1225,29 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d3497/en.drs.sbnI don't think this is a wasp.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p99/d3464/en.drs.sbnA dog is a clever animal.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d1439/en.drs.sbnPinocchio says: "Now my nose will grow."
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d1582/en.drs.sbnI didn't know you had a sister.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d0756/en.drs.sbnGenevieve de Gaulle-Anthonics, 81, niece of the late Charles de Gaulle, died in Paris on February 14, 2002. She joined the French resistance when the Germans occupied Paris.
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d3453/en.drs.sbnA large rock is large; a small one is small.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d3453/en.drs.sbnA large rock is large; a small one is small.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p52/d1951/en.drs.sbnEveryone screamed.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p55/d0872/en.drs.sbnEveryone who knew him admired him.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p55/d3082/en.drs.sbn"Whose CD's are these?" "They are Samir's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p55/d1989/en.drs.sbnA crow is as black as coal.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p55/d0935/en.drs.sbn"Whose boots are these?"
 "They are Lidya's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p36/d2853/en.drs.sbnEveryone smiled.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p36/d0797/en.drs.sbnDo you know whose car this is?
 
@@ -612,57 +1257,173 @@ CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d1616/en.drs.sbnTom was surprised the police knew his name.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d1726/en.drs.sbnHe had lost all hope.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d2150/en.drs.sbnAccording to the paper, it will snow tomorrow.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d0896/en.drs.sbnShe always smiles.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d2084/en.drs.sbnIs it true that you came by plane?
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d2014/en.drs.sbnI'm hungry. How about you?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d3382/en.drs.sbnAll of us were silent.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p09/d3009/en.drs.sbnWe play soccer every Saturday.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p31/d1408/en.drs.sbnHe ate all of the apple.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p31/d2893/en.drs.sbnA shark is a fish while a dolphin is a mammal.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p31/d2893/en.drs.sbnA shark is a fish while a dolphin is a mammal.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2196/en.drs.sbnTom isn't sure whether he locked the door.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2562/en.drs.sbnEverybody wants another chance.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d1400/en.drs.sbnIs it true that you are in love with me?
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d0133/en.drs.sbnNo one is working. Everyone's watching the World Cup.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d0133/en.drs.sbnNo one is working. Everyone's watching the World Cup.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d3318/en.drs.sbnThe concert starts at seven. We must not be late.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d1900/en.drs.sbnHe eats neither meat nor fish.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d1900/en.drs.sbnHe eats neither meat nor fish.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d1900/en.drs.sbnHe eats neither meat nor fish.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2389/en.drs.sbnTom noticed the door was unlocked.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2917/en.drs.sbnTom hoped that Mary was all right.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d0801/en.drs.sbnEvery member of the club was present.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d1974/en.drs.sbnDespite all his setbacks, he remains an optimist.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2681/en.drs.sbnAll the boys were dancing.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d2484/en.drs.sbn"Whose brushes are these?" "They are Picasso's."
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p07/d0824/en.drs.sbnI always buy fresh vegetables instead of frozen ones.
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d1948/en.drs.sbnI was too astonished to speak.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d1610/en.drs.sbnEverybody praised his heroism.
+
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d2263/en.drs.sbnNeither Tom nor Mary speaks Spanish.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d1995/en.drs.sbnAll androids are robots.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p38/d2181/en.drs.sbnEverybody got something.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d0869/en.drs.sbnThe customer is always right.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2303/en.drs.sbnTom didn't answer all the questions.
 
 POSSIBILITY	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1976/en.drs.sbnThe method was too expensive to be practical.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d0850/en.drs.sbnShe used to play tennis every Sunday.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2302/en.drs.sbnEverything is new.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2421/en.drs.sbnDo you prefer Belgian or German beer?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2421/en.drs.sbnDo you prefer Belgian or German beer?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2421/en.drs.sbnDo you prefer Belgian or German beer?
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2080/en.drs.sbnEverybody hates me.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2473/en.drs.sbnThese cups are all broken.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1657/en.drs.sbnEverybody except Joe went to the party.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1234/en.drs.sbnBoth have been arrested already.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1234/en.drs.sbnBoth have been arrested already.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1686/en.drs.sbnThat story is a famous one that everyone knows.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2265/en.drs.sbnWhoever is born in Austria, is an Austrian.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1936/en.drs.sbnMy watch may be one or two minutes fast.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1936/en.drs.sbnMy watch may be one or two minutes fast.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1936/en.drs.sbnMy watch may be one or two minutes fast.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2540/en.drs.sbnKlava oversimplifies everything.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1730/en.drs.sbnI think Tom is normal.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1308/en.drs.sbnBoth were silent.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1308/en.drs.sbnBoth were silent.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2321/en.drs.sbnI hope she's all right.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2718/en.drs.sbnTom can't speak French. Tom can't speak Spanish either.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2132/en.drs.sbnThe blast destroyed everything.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1974/en.drs.sbnAll the passengers died, but he survived.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2046/en.drs.sbnI hope Tom agrees.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1630/en.drs.sbnEveryone wants that.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1461/en.drs.sbnEveryone's eating.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d0942/en.drs.sbnI don't want pizza.
 I'm not hungry.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3518/en.drs.sbnTom loved all of us.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3349/en.drs.sbnYou can buy stamps at any post office.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3349/en.drs.sbnYou can buy stamps at any post office.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1824/en.drs.sbnWhat a lot of books! Do they belong to the university library?
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3325/en.drs.sbnI always get up at 6 o'clock in the morning.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1957/en.drs.sbnI know that John is honest.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3064/en.drs.sbnAll of us were surprised at the news.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d2785/en.drs.sbnBoth roads lead to the station.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d3233/en.drs.sbnThe doctor told Tom that he should eat a lot of vegetables.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p00/d1761/en.drs.sbnTom says he's busy.
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p54/d2287/en.drs.sbnEveryone's watching.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p54/d1646/en.drs.sbnEvery wall is a door.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p54/d1555/en.drs.sbnWe toured all the major cities.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p98/d0867/en.drs.sbnEverybody likes him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p98/d2653/en.drs.sbnSamuel helps everyone who asks him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p98/d1556/en.drs.sbnAt midnight everybody entered.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p53/d3342/en.drs.sbnA bee buzzes.
+
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p53/d1825/en.drs.sbnI don't think I've broken any laws.
 
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d3473/en.drs.sbn"Whose documents are these?" "They are Michael's."
 
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d2241/en.drs.sbnThe music lured everyone.
+
 CONTINUATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d0899/en.drs.sbnThe clock stopped.
 It needs a new battery.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d0921/en.drs.sbnYou can't live on that island.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p91/d1239/en.drs.sbnAccording to the police, 89 people were temporarily detained.
 
@@ -677,6 +1438,24 @@ ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d2231/en.drs.sbnTom says that he's allergic to school.
 
 ATTRIBUTION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d2845/en.drs.sbnTom began to suspect that Mary was cheating on him.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d1457/en.drs.sbnHe is either in London or in Paris.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d1457/en.drs.sbnHe is either in London or in Paris.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p65/d2127/en.drs.sbnThey were both naked.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p62/d2450/en.drs.sbnDespite all his faults he is popular.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p62/d2653/en.drs.sbnA typical Bavarian breakfast consists of white sausage, wheat beer and pretzels.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p62/d2919/en.drs.sbnEveryone in Cuba likes it.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p62/d1552/en.drs.sbnSaburo snatched up all the snacks that were sitting on the table.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p96/d2961/en.drs.sbnEveryone who worked on that project became a millionaire.
+
+NEGATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p96/d0802/en.drs.sbnA dolphin is a mammal.
 
 ALTERNATION	/Users/shirleenyoung/Desktop/TODO/MA_Thesis/pmb-4.0.0/data/en/gold/p96/d3279/en.drs.sbnDo you support Mitt Romney or Barack Obama?
 
